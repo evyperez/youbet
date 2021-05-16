@@ -9,25 +9,18 @@
   {{ end }}
 
   <div class="main-navigation">
-    <label for="menu-controller"
-           onclick></label>
+    <label for="menu-controller" onclick></label>
 
     <div class="logo logo-{{ .Site.LanguageCode  | lower }}">
-      <a href="/{{ .Site.LanguagePrefix }}">
-        {{ .Site.Title }}
-      </a>
+      <a href="/{{ .Site.LanguagePrefix }}"> {{ .Site.Title }} </a>
     </div>
 
     {{ if .Site.Menus.main }}
-    <nav class="main-menu"
-         id="menu">
+    <nav class="main-menu" id="menu">
       <ul>
         {{ range .Site.Menus.main }}
         <li>
-          <a class="sidebar-nav-item"
-             href="{{ .URL }}">
-            {{ .Name }}
-          </a>
+          <a class="sidebar-nav-item" href="{{ .URL }}"> {{ .Name }} </a>
         </li>
         {{ end }}
       </ul>

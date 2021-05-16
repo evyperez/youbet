@@ -25,8 +25,10 @@
     "lint": "npm-run-all --parallel lint:*",
     "lint:es": "eslint --ext .es,.js \"./source/scripts/**\" --format junit --output-file ./testResults/esLint.xml",
     "lint:sass": "./node_modules/.bin/stylelint '**/*.scss' --syntax=scss --formatter --output-file ./testResults/sassLint.xml",
+    "prettier:check": "prettier --check \"src/app/**/*.ts\"",
+    "prettier:write": "prettier --write .",
     "sass:fix": "./node_modules/.bin/stylelint '**/*.scss' --syntax=scss --fix",
-    "serve": "npm-run-all build:assets --parallel watch start:*",
+    "start": "npm-run-all build:assets --parallel watch start:*",
     "start:hugo": "cross-env NODE_ENV=development hugo server --noHTTPCache=true --ignoreCache --templateMetrics --disableFastRender",
     "pretest": "npm run lint",
     "test": "jest",
@@ -41,20 +43,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evyperez/youbet"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --relative"
-    }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --check"
-    ],
-    "*.scss": [
-      "stylelint --syntax=scss"
-    ]
   },
   "keywords": [
     "html",

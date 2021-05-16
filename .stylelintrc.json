@@ -1,15 +1,11 @@
 {
-  "extends": [
-    "stylelint-config-sass-guidelines"
-  ],
+  "extends": ["stylelint-config-sass-guidelines"],
   "rules": {
     "font-family-name-quotes": "always-where-recommended",
     "function-url-quotes": [
       "always",
       {
-        "except": [
-          "empty"
-        ]
+        "except": ["empty"]
       }
     ],
     "selector-attribute-quotes": "always",
@@ -30,32 +26,17 @@
     "selector-no-qualifying-type": [
       true,
       {
-        "ignore": [
-          "attribute",
-          "class",
-          "id"
-        ]
+        "ignore": ["attribute", "class", "id"]
       }
     ],
     "selector-max-universal": 0,
     "selector-pseudo-element-no-unknown": [
       true,
       {
-        "ignorePseudoElements": [
-          "ng-deep"
-        ]
+        "ignorePseudoElements": ["ng-deep"]
       }
     ],
-    "unit-allowed-list": [
-      "px",
-      "%",
-      "em",
-      "rem",
-      "vw",
-      "vh",
-      "deg",
-      "s"
-    ],
+    "unit-allowed-list": ["px", "%", "em", "rem", "vw", "vh", "deg", "s"],
     "max-empty-lines": 2,
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true

@@ -1,0 +1,93 @@
+/* buttons
+---------------------------------------------------------------------------- */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Improve usability and consistency of cursor style between image-type `input` and others.
+ * 3. Address `overflow` set to `hidden` in IE 8/9/10. Corrects inner spacing displayed oddly in IE6/7
+ * 4. Remove inner padding and border in Firefox 4+.
+ * 5. Consistent buttons background color for all browsers (opinionated).
+ * 6. Consistent paddings.
+ * @see  http://archivist.incutio.com/viewlist/css-discuss/98999
+ * @see  http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ * @see  http://christophzillgens.com/en/articles/equal-height-input-and-button-elements-in-firefox-and-safari
+ * @see  http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
+ */
+%button-reset {
+  @extend %os-element-reset;
+
+  align-items: center;
+
+  appearance: button; /* 1 */
+
+  background-color: palette('button'); /* 5 */
+
+  box-sizing: inherit;
+
+  cursor: pointer; /* 2 */
+
+  display: flex;
+
+  overflow: visible; /* 3 */
+
+  padding: 1px 6px; /* 6 */ // sass-lint:disable-line property-units
+
+  white-space: inherit;
+
+  width: auto; /* 3 */
+
+  &::-moz-focus-inner {
+
+    border: 0;
+    padding: 0; /* 4 */
+  }
+
+  &:hover,
+  &:focus {
+    &:not([type='reset']) {
+      background-color: palette('button', 'focus');
+    }
+  }
+
+  &:active {
+  }
+}
+
+/**
+ * Avoid the WebKit bug in Android 4.0.* where (1) destroys native `audio`
+ * and `video` controls.
+ * Please note that this fix DOES NOT work for buttons contained inside table elements.
+ * @see https://github.com/necolas/normalize.css/commit/79b3d21b697e94675d748cd9d42409b83318d2b5
+ * @see https://github.com/necolas/normalize.css/issues/20
+ */
+
+html [type='button'] {
+  appearance: button;
+}
+
+button,
+[role='button'],
+[type='button'] {
+  @extend %button-reset;
+}
+
+[type='reset'] {
+  @extend %button-reset;
+
+  background-color: palette('button', 'reset');
+
+  color: palette('button', 'submit');
+}
+
+[type='submit'] {
+  @extend %button-reset;
+
+  background-color: palette('button', 'submit');
+}
+
+/**
+* Replace focus style removed in the border reset above
+*/
+button:-moz-focusring,
+input:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}

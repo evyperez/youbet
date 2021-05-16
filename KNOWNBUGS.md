@@ -5,5 +5,3 @@ Known Bugs
 ## General
 
 - [ ] Fonts
-
-

@@ -1,152 +1,139 @@
 <head>
-    <link rel="shortcut icon"
-          href="/favicon.ico"
-          type="image/x-icon">
-    <link rel="icon"
-          href="/favicon.ico"
-          type="image/x-icon">
+  <link rel="icon" href="/favicon/favicon.png" type="image/x-icon" />
 
-    <meta content="width=device-width,initial-scale=1.0"
-          name="viewport">
-    <meta content="IE=edge"
-          http-equiv="X-UA-Compatible">
-    <meta charset="utf-8">
-    <link rel="dns-prefetch"
-          href="https://fonts.googleapis.com/">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap"
-          rel="stylesheet">
+  <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta charset="utf-8" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap"
+    rel="stylesheet"
+  />
 
-    {{ $style := resources.Get "/styles/index.css" | resources.Minify | resources.Fingerprint "sha512" }}
-    <link rel="stylesheet"
-          href="{{ $style.RelPermalink }}"
-          integrity="{{ $style.Data.Integrity }}">
+  {{ $style := resources.Get "/styles/index.css" | resources.Minify |
+  resources.Fingerprint "sha512" }}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+  />
 
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="{{ .Site.Title }}" />
 
-    <!-- Schema.org for Google -->
-    <meta itemprop="name"
-          content="{{ .Site.Title }}">
+  {{ with $.Site.Params.siteDescription }}
+  <meta itemprop="description" content="{{ . }}" />
+  {{ end }} {{ with $.Site.Params.shareImages.default }}
+  <meta itemprop="image" content="{{ . | absURL }}" />
+  {{ end }}
 
-    {{ with $.Site.Params.siteDescription }}
-    <meta itemprop="description"
-          content="{{ . }}">
-    {{ end }}
+  <!-- Twitter and Open Graph general -->
+  <meta name="twitter:title" property="og:title" content="{{ .Site.Title }}" />
 
-    {{ with $.Site.Params.shareImages.default }}
-    <meta itemprop="image"
-          content="{{ . | absURL }}">
-    {{ end }}
+  {{ with $.Site.Params.siteDescription }}
+  <meta
+    name="twitter:description"
+    property="og:description"
+    content="{{ . | slicestr 0 200 }}"
+  />
+  <!-- max of 200 characters for Twitter & Facebook -->
+  {{ end }}
 
-    <!-- Twitter and Open Graph general -->
-    <meta name="twitter:title"
-          property="og:title"
-          content="{{ .Site.Title }}">
+  <meta name="twitter:url" property="og:url" content="{{ .Permalink }}" />
 
-    {{ with $.Site.Params.siteDescription }}
-    <meta name="twitter:description"
-          property="og:description"
-          content="{{ . | slicestr 0 200 }}">
-    <!-- max of 200 characters for Twitter & Facebook -->
-    {{ end }}
+  <!-- Twitter -->
+  {{ with $.Site.Params.twitterUsername }}
+  <meta name="twitter:site" content="@{{ . }}" />
+  <meta name="twitter:creator" content="@{{ . }}" />
+  {{ end }} {{ with $.Site.Params.shareImages.twitter }}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:src" content="{{ . | absURL }}" />
+  {{ end }}
+  <!-- Maximum dimension: 1024px x 512px; minimum dimension: 440px x 220px -->
 
-    <meta name="twitter:url"
-          property="og:url"
-          content="{{ .Permalink }}">
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  {{ with $.Site.Params.shareImages.facebook }}
+  <meta property="og:image" content="{{ . | absURL }}" />
+  <!-- Recommended dimension: 1200px x 630px; minimum dimension: 600px x 315px -->
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-    <!-- Twitter -->
-    {{ with $.Site.Params.twitterUsername }}
-    <meta name="twitter:site"
-          content="@{{ . }}">
-    <meta name="twitter:creator"
-          content="@{{ . }}">
-    {{ end }}
+  {{ end }}
 
-    {{ with $.Site.Params.shareImages.twitter }}
-    <meta name="twitter:card"
-          content="summary_large_image">
-    <meta name="twitter:image:src"
-          content="{{ . | absURL }}">
-    {{ end }}
-    <!-- Maximum dimension: 1024px x 512px; minimum dimension: 440px x 220px -->
+  <title>
+    {{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}
+  </title>
 
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-    {{ with $.Site.Params.shareImages.facebook }}
-    <meta property="og:image"
-          content="{{ . | absURL }}">
-    <!-- Recommended dimension: 1200px x 630px; minimum dimension: 600px x 315px -->
-    <meta property="og:image:type"
-          content="image/jpeg" />
-    <meta property="og:image:width"
-          content="1200" />
-    <meta property="og:image:height"
-          content="630" />
+  {{ with $.Site.Params.siteDescription }}
+  <meta name="description" content="{{ . }}" />
+  {{ end }}
 
-    {{ end }}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {{ if eq (getenv "NODE_ENV") "production" }} {{ with $.Site.GoogleAnalytics }}
 
-    <title>{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
+    async
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-    {{ with $.Site.Params.siteDescription }}
-    <meta name="description"
-          content="{{ . }}">{{ end }}
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }} {{ end }} {{ $vendorJS := resources.Get "/scripts/vendor.js" }} {{
+  $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint
+  "sha512" }} {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <link
+    rel="preload"
+    type="text/javascript"
+    as="script"
+    href="{{ $secureVendorJS.RelPermalink }}"
+    integrity="{{ $secureVendorJS.Data.Integrity }}"
+  />
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    {{ if eq (getenv "NODE_ENV") "production" }}
-    {{ with $.Site.GoogleAnalytics }}
+  {{ $js := resources.Get "/scripts/index.js" }} {{ $secureJS := $js |
+  resources.Minify | resources.Fingerprint "sha512" }} {{ .Scratch.Set
+  "secureJS" $secureJS }}
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
-            async></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <link
+    rel="preload"
+    type="text/javascript"
+    as="script"
+    href="{{ $secureJS.RelPermalink }}"
+    integrity="{{ $secureJS.Data.Integrity }}"
+  />
 
-        gtag('config', '{{ . }}');
-    </script>
-    {{ end }}
-    {{ end }}
+  <script type="text/javascript">
+    document.documentElement.className = document.documentElement.className.replace(
+      /\bno-js\b/,
+      ''
+    );
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    setTimeout(() => {
+      var slider = document.querySelector('.glide');
 
-    {{ $vendorJS := resources.Get "/scripts/vendor.js" }}
-    {{ $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
-    {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
+      if (slider) {
+        var glide = new Glide(slider, {
+          type: 'carousel',
+          startAt: 0,
+          perView: 1,
+          autoplay: 3000,
+          hoverpause: false,
+        });
 
-    <link rel="preload"
-          type="text/javascript"
-          as="script"
-          href="{{ $secureVendorJS.RelPermalink }}"
-          integrity="{{ $secureVendorJS.Data.Integrity }}">
-
-    {{ $js := resources.Get "/scripts/index.js" }}
-    {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }}
-    {{ .Scratch.Set "secureJS" $secureJS }}
-
-    <link rel="preload"
-          type="text/javascript"
-          as="script"
-          href="{{ $secureJS.RelPermalink }}"
-          integrity="{{ $secureJS.Data.Integrity }}">
-
-    <script type="text/javascript">
-        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '');
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script>
-        setTimeout(() => {
-            var slider = document.querySelector('.glide');
-
-            if (slider) {
-                var glide = new Glide(slider, {
-                    type: 'carousel',
-                    startAt: 0,
-                    perView: 1,
-                    autoplay: 3000,
-                    hoverpause: false
-                });
-
-                glide.mount();
-            }
-
-        }, 1000);</script>
+        glide.mount();
+      }
+    }, 1000);
+  </script>
 </head>

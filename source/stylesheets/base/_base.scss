@@ -1,0 +1,512 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * 1. Make all elements from the DOM inherit from the parent box-sizing
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+
+  box-sizing: inherit;
+
+  tab-size: inherit;
+}
+
+/* User interaction (https://www.w3.org/TR/html5/editing.html)
+========================================================================== */
+::selection {
+
+  background-color: palette('selection', 'background');
+
+  color: palette('selection', 'foreground');
+  text-shadow: none;
+}
+
+/**
+ * ARIA roles should include visual cursor hints
+ */
+[aria-busy='true'] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements (opinionated).
+ */
+[aria-disabled] {
+  cursor: default;
+}
+
+/*
+ * Remove the tapping delay on clickable elements (opinionated).
+ * 1. Remove the tapping delay in IE 10.
+ */
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation; /* 1 */
+}
+
+/**
+ * If the user can't focus, why should we represent it?
+ */
+[tabindex='-1'] {
+  &:focus {
+    outline: 0;
+  }
+}
+
+:target {
+  animation: highlight 0.8s ease-out;
+
+  @keyframes highlight {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/**
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ * http://clagnut.com/blog/348/#c790
+ * 2. Scaling HTML element to window height
+ * https://github.com/necolas/normalize.css/pull/422#issuecomment-78379521
+ * 3. Keeps page centred in all browsers regardless of content height
+ * 4. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ * www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+
+  background: palette('white');
+
+  box-sizing: border-box;
+
+  font-size: 100.01%; /* 1 */
+  height: 100%; /* 2 */
+  margin: 0;
+
+  overflow-y: scroll; /* 3 */
+
+  padding: 0;
+
+  tab-size: 4;
+
+  text-size-adjust: 100%; /* 4 */
+}
+
+/**
+ * 1. Set sticky footer
+ * 2. Prevents IE10-11 flex container bug
+ * https: //github.com/philipwalton/flexbugs#flexbug-3
+ */
+body {
+
+  background-color: transparent;
+
+  color: palette('black');
+  display: flex; /* 1 */
+
+  flex-direction: column; /* 1 */
+
+  height: 100vh; /* 2 */
+
+  margin: 0;
+  min-height: 100%;
+
+  > * {
+    flex-shrink: 0; /* 1 */
+  }
+}
+
+/**
+ * 1. Set sticky footer
+ */
+main,
+[role='main'] {
+  flex-grow: 1; /* 1 */
+}
+
+/* section items HTML5
+============================================================================ */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+
+  cursor: pointer;
+  display: list-item;
+
+  list-style-type: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &::before {
+
+    content: '\25B6';
+    padding-right: 0.5em;
+  }
+
+  details[open] > &::before {
+    content: '\25BC';
+  }
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none !important; // sass-lint:disable-line no-important
+}
+
+/**
+ * Visually hidden content should remain accessible
+ */
+[hidden][aria-hidden='false'] {
+
+  clip: rect(0, 0, 0, 0);
+
+  display: inherit;
+  position: absolute;
+
+  &:focus {
+    clip: auto;
+  }
+}
+
+/* BLOCK TEXT
+============================================================================ */
+
+/**
+ * @see http://sonspring.com/journal/styling-hr
+ *
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/**
+ */
+hr {
+  /* line-height */
+  @include fallback(
+    'margin',
+    calc(#{$leading * 1em} - 1px) 0 #{$leading * 1em},
+    #{$leading * 1em} 0
+  );
+
+  border: 0;
+  border-top: 1px solid palette('gray');
+
+  box-sizing: content-box; /* 1 */
+
+  clear: both;
+
+  color: palette('gray');
+
+  display: block;
+
+  height: 0; /* 1 */
+
+  overflow: visible; /* 2 */
+
+  padding: 0;
+}
+
+/* MEDIA ELEMENTS
+============================================================================ */
+/**
+ * Corrects overflow displayed oddly in IE9
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * SVGs should fallback to their surrounding text color
+ */
+svg {
+  fill: currentColor;
+}
+
+a > svg {
+  pointer-events: none;
+}
+
+/**
+ * 1. Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ * 2. Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio,
+canvas,
+iframe,
+progress,
+svg,
+video {
+  display: inline-block; /* 1 */
+
+  vertical-align: middle; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Add the correct display in iOS 4-7.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+
+  height: 0;
+}
+
+meter,
+progress {
+
+  appearance: none;
+  background-size: auto;
+}
+
+audio {
+}
+
+iframe,
+img,
+object {
+
+  border-style: none;
+
+  color: currentColor;
+  font-size: 83.3333%;
+}
+
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+video {
+}
+
+video > source {
+  height: auto;
+  width: 100%;
+}
+
+.ie:not(.ie6-8),
+object > img {
+
+  font-size: 1em;
+
+  pointer-events: none;
+  position: relative;
+
+  z-index: layer('below');
+}
+
+/// Stylize broken images
+/// @author [Ire Aderinokun](https://ireaderinokun.com/)
+/// @author Sobral
+/// @group helpers
+/// @link https://bitsofco.de/styling-broken-images/
+%broken-image {
+  font-style: normal;
+
+  text-align: center;
+
+  &::before {
+
+    content: '\f127'' Broken Image of ' attr(alt);
+    display: block;
+
+    margin-bottom: $leading * 1em;
+  }
+
+  &::after {
+
+    color: palette('gray');
+
+    content: '(url: ' attr(src) ')';
+    display: block;
+
+    font-size: small;
+  }
+}
+
+/**
+* 1. Improving quality of image resampling
+* @see  https://developer.mozilla.org/En/CSS/Image-rendering
+* @see  https://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+*/
+img {
+  @extend %broken-image;
+
+  height: auto;
+
+  image-rendering: auto; /* 1 */
+  max-width: 100%;
+}
+
+[usemap] {
+  color: palette('anchor');
+}
+
+map {
+}
+
+area {
+}
+
+object {
+}
+
+li img,
+p img {
+  vertical-align: middle;
+}
+
+a img,
+a > picture {
+  border: 0;
+}
+
+/* links
+============================================================================ */
+a {
+
+  color: palette('anchor', 'base');
+
+  font-size: 100%;
+  margin: 0;
+  // sass-lint:disable-block property-sort-order
+  padding: 0;
+
+  vertical-align: baseline;
+
+  @include on-event {
+    text-decoration: underline;
+  }
+
+  &:link {
+
+    color: palette('anchor', 'link');
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: palette('tap-highlight'); // sass-lint:disable-line no-vendor-prefixes
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: palette('anchor', 'visited');
+
+    @include on-event {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover,
+  &:focus {
+  }
+
+  &:hover {
+    color: palette('anchor', 'hover');
+  }
+
+  &:focus {
+    color: palette('anchor', 'focus');
+
+    outline: 1px dotted;
+    outline-offset: 2px;
+  }
+
+  /**
+	* Improve readability when focused and also mouse hovered in all browsers.
+	*/
+  &:hover,
+  &:active {
+    outline-width: 0;
+  }
+
+  /**
+	* Remove the gray background color from active links in IE 10.
+	* @see https://github.com/necolas/normalize.css/issues/473
+	*/
+  &:active {
+
+    background-color: transparent;
+    color: palette('anchor', 'active');
+  }
+
+  &[target='_blank'],
+  &[rel='external'] {
+  }
+}
+
+/* Contact info and addresses
+---------------------------------------------------------------------------- */
+address {
+
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+/* Coode blocks
+---------------------------------------------------------------------------- */
+pre {
+
+  background-color: palette('text', 'dark');
+
+  color: palette('text', 'light');
+
+  font-size: ms(-1);
+  margin: 0 0 $leading * 1rem;
+
+  overflow: auto;
+  padding: $leading * 0.5rem $gutter * 0.5;
+}

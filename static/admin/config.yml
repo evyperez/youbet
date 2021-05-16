@@ -8,7 +8,7 @@ backend:
 media_folder: 'static/uploads'
 public_folder: '/uploads'
 collections:
-# Portuguese configs
+  # Portuguese configs
   - label: 'Blog'
     name: 'blog_pt'
     folder: 'content/portuguese/blog'

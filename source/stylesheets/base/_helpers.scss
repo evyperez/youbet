@@ -1,0 +1,170 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/* CLASSES
+============================================================================ */
+%loading-bg {
+  background-color: palette('loading', 'background');
+  background-image: image('loading.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+%loading-el {
+
+  cursor: wait;
+  overflow: hidden;
+
+  &::after {
+    bottom: 0;
+
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    z-index: layer('modal');
+  }
+}
+
+/// Content which loads **after** the page does, should be informed to user.
+///
+/// `[aria-busy='true']` adds a loading background to any loading element
+/// which can't be a parent and a pseudo element over any element other than
+/// `html`.
+///
+/// Don't forget to customize it to your needs. Speacially the background
+/// color.
+///
+/// Already applied to `embed` and `img`, which can cause issues with
+/// transparent images.
+///
+/// @author Sobral
+/// @group helpers
+///
+/// @example html
+///
+/// <dialog open aria-busy="true">
+/// 	<form method="dialog">
+/// 		[...]
+/// 	</form>
+/// </dialog>
+///
+[aria-busy='true'] {
+  > body,
+  &:not(html) {
+    @extend %loading-bg;
+    @extend %loading-el;
+  }
+}
+
+img:not([src$='.png']):not([src$='.gif']),
+embed {
+  @extend %loading-bg;
+
+  background-size: auto;
+
+  &::after {
+    /*
+		 *	Future proof reset
+		 */
+    content: none;
+  }
+}
+
+input,
+output,
+keygen,
+textarea {
+  &[aria-busy='true'] {
+    @extend %loading-bg;
+
+    background-size: auto;
+  }
+}
+
+/// Load grid image background under the class `grid`
+///
+/// @author Sobral
+/// @group helpers
+///
+/// @example html
+/// <html class="grid">
+/// 	<body>
+/// 		[...]
+/// 	</body>
+/// </html>
+///
+.grid {
+  $n: $_mobile-columns - 1;
+
+  &::after,
+  &:root::before {
+
+    content: 'breakpoint: phone';
+
+    font-size: 1rem;
+
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    z-index: layer('modal');
+  }
+
+  &::after {
+
+    background-image: grid-image($n);
+    background-position: center top;
+    bottom: 0;
+
+    content: '';
+    left: 0;
+  }
+
+  &:root::before {
+
+    background-color: palette('debug');
+
+    content: 'breakpoint: #{$n}col';
+
+    opacity: 0.75;
+    padding: $gutter;
+  }
+
+  @each $key, $value in $breakpoints {
+    $n: $n + 1;
+
+    @if map-get($toggle-breakpoints, $key) ==null {
+      @media screen and (min-width: breakpoint($key)) {
+        &::after {
+          background-image: grid-image($n);
+        }
+
+        &:root::before {
+          content: 'breakpoint: #{$key}';
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $max-width) {
+    &::after {
+      background-size: $max-width 100%;
+    }
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+  padding-bottom: $leading * 4rem;
+  padding-left: $gutter;
+  padding-right: $gutter;
+
+  padding-top: $leading * 4rem;
+}

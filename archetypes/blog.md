@@ -1,14 +1,14 @@
 ---
-title: ""
-shortTitle: ""
-coverPhoto: ""
-coverPhotoAlt: ""
-slug: ""
-subtitle: ""
-date: {{ .Date }}
-draft: false
+title: ''
+shortTitle: ''
+coverPhoto: ''
+coverPhotoAlt: ''
+slug: ''
+subtitle: ''
+date: { { .Date } }
+draft: true
 relatedProjects:
-  - project: ""
+  - project: ''
 authors:
-  - list: ""
+  - list: ''
 ---
