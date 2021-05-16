@@ -1,0 +1,16 @@
+**/api/**
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/templates/**
+/tests/bench/**
+/tests/fixtures/**
+/tests/performance/**
+/tmp/**
+/tools/internal-rules/node_modules/**
+test.js
+test.ts
+!.eslintrc.js
+*.spec.ts
+*.e2e-spec.ts

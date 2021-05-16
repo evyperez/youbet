@@ -1,0 +1,5 @@
+package.json
+package-lock.json
+yarn.lock
+dist
+projects/meudna/src/app/api

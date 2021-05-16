@@ -1,0 +1,114 @@
+{
+  "name": "youbet",
+  "version": "0.3.0",
+  "description": "CSS Framework",
+  "main": "index.scss",
+  "scripts": {
+    "audit-deps": "rimraf -f package-lock.json && synp --source-file yarn.lock && npm audit & rimraf -f package-lock.json",
+    "prebuild": "npm-run-all --parallel lint clean",
+    "build": "cross-env NODE_ENV=production npm-run-all build:assets",
+    "build:assets": "npm-run-all --parallel build:img build:css build:js",
+    "build:img": "npm-run-all compress:img",
+    "build:css": "npm-run-all compile:sass compress:css",
+    "build:js": "npm-run-all compile:js",
+    "postbuild": "hugo --ignoreCache --cleanDestinationDir",
+    "clean": "npm-run-all --parallel clean:*",
+    "clean:dist": "rimraf ./public/**/*.*",
+    "clean:testResults": "rimraf ./testResults/**/*.xml",
+    "compile:sass": "node-sass ./source/stylesheets --output-style compressed --output ./assets/styles --source-map \"static/assets/styles\"",
+    "compress:css": "postcss --use autoprefixer cssnano --safe -r ./assets/styles/**/*.css",
+    "compress:img": "imagemin \"./source/images/**/*.{gif,jpg,png,svg}\" --out-dir=./static/assets/images",
+    "compile:js": "npm-run-all compile:js:*",
+    "compile:js:app": "browserify ./source/scripts/index.js -o ./assets/scripts/index.js -t [ babelify ]",
+    "compile:js:vendor": "browserify ./source/scripts/vendor.js -o ./assets/scripts/vendor.js -t",
+    "prelint": "rimraf ./testResults/**/*.xml",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:es": "eslint --ext .es,.js \"./source/scripts/**\" --format junit --output-file ./testResults/esLint.xml",
+    "lint:sass": "./node_modules/.bin/stylelint '**/*.scss' --syntax=scss --formatter --output-file ./testResults/sassLint.xml",
+    "sass:fix": "./node_modules/.bin/stylelint '**/*.scss' --syntax=scss --fix",
+    "serve": "npm-run-all build:assets --parallel watch start:*",
+    "start:hugo": "cross-env NODE_ENV=development hugo server --noHTTPCache=true --ignoreCache --templateMetrics --disableFastRender",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "preversion": "git checkout master && git merge dev",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
+    "postversion": "git checkout dev && git merge master",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:sass": "onchange \"./source/stylesheets/**/*.scss\" -- npm run build:css",
+    "watch:img": "onchange \"./source/images/**/*.{gif,jpg,png,svg}\" -- npm run build:img",
+    "watch:es6": "onchange \"./source/scripts/**/*.{es,js,json}\" -- npm run build:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evyperez/youbet"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --relative"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --check"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss"
+    ]
+  },
+  "keywords": [
+    "html",
+    "hugo",
+    "npm",
+    "sass"
+  ],
+  "author": "Evelyn Perez e Stephanie Castro",
+  "license": "MIT",
+  "homepage": "http://youbetschool.com",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "caniuse-lite": "^1.0.30001194",
+    "core-js": "^3.9.1",
+    "formbouncerjs": "^1.4.6",
+    "jest": "^25.5.4",
+    "netlify-cms": "^2.10.96",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@songkick/replaceinfiles": "^1.1.6",
+    "@types/glidejs": "^1.0.30",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.2",
+    "changelog-verify": "^1.1.2",
+    "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "cssnano": "^4.1.10",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^7.21.0",
+    "hashmark": "^5.0.0",
+    "husky": "^4.3.8",
+    "imagemin-cli": "^6.0.0",
+    "include-media": "^1.4.9",
+    "lint-staged": "^10.5.3",
+    "modularscale-sass": "^3.0.10",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.1",
+    "postcss-cli": "^7.1.2",
+    "rimraf": "^3.0.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
+    "stylelint": "^13.11.0",
+    "susy": "^3.0.6",
+    "svgo": "^1.3.2",
+    "uglify-js": "^3.13.0",
+    "version-changelog": "^3.1.1"
+  }
+}
