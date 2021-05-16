@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head.html" . }}
+
+<body>
+  <div class="main-container internal-pages blog">
+
+      {{ partial "header.html" . }}
+      <main role="main" id="conteudo" class="main">
+
+      <section class="section">
+        <div class="container">
+          <div class="row flex-content--center">
+            <div class="col col-mobile--4 col-desktop--8">
+              <h2 class="title">{{ .Title }}</h2>
+
+              {{ if .Params.subtitle }}
+              <div class="project-subtitle">
+                <p>{{ .Params.subtitle }}</p>
+              </div>
+              {{ end }}
+
+              {{ if .Params.imageBeforeText }}
+                <img src="{{ .Params.imageBeforeText }}" alt="{{ .Title }}">
+              {{ end }}
+
+              {{ .Content }}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{ if .Params.relatedProjects }}
+      <aside class="blog__list">
+        <div class="container">
+          <h2 class="title">{{ i18n "seeAlso" | title }}</h2>
+          <ul class="posts">
+              {{ range .Params.relatedProjects }}
+                {{ range where $.Site.Pages "Params.slug" .project }}
+                  <li class="post">
+                    <div class="post__content">
+                      <a href="../{{ .Params.slug }}"><h4>{{ if .Params.shortTitle }} {{ .Params.shortTitle }} {{ else }} {{ .Title }} {{ end }}</h4></a>
+                      <a class="nav-link nav-link--plus--orange" href="../{{ .Params.slug }}">{{ i18n "Title" }}</a>
+                    </div>
+                  </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </aside>
+      {{ end }}
+      {{ partial "related-posts.html" . }}
+
+      {{ if .Params.callToAction }}
+        {{ partial "call-to-action.html" . }}
+      {{ end }}
+
+      </main>
+      {{ partial "footer.html" . }}
+
+  </div>
+</body>
+
+</html>

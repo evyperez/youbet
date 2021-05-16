@@ -1,0 +1,119 @@
+backend:
+  name: github
+  repo: evyperez/youbet # Path to your Github repository
+  branch: dev
+  accept_roles:
+    - admin
+    - editor
+media_folder: 'static/uploads'
+public_folder: '/uploads'
+collections:
+# Portuguese configs
+  - label: 'Blog'
+    name: 'blog_pt'
+    folder: 'content/portuguese/blog'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - label: 'Date'
+        name: 'date'
+        widget: 'datetime'
+        format: 'YYYY-MM-DDTHH:mm:ss[Z]' # date sample 2018-03-06T14:48:47-03:00
+      - label: 'Resumo do Título'
+        name: 'shortTitle'
+        widget: 'string'
+        tagname: 'h2'
+        required: false
+        pattern: ['.{0,15}', 'Must have between 0 and 15 characters']
+      - label: 'Título'
+        name: 'title'
+        widget: 'string'
+        tagname: 'h1'
+        pattern: ['.{3,40}', 'Must have between 3 and 40 characters']
+      - label: 'Slug (url)'
+        name: 'slug'
+        widget: 'string'
+      - label: 'Imagem de Destaque'
+        name: 'coverPhoto'
+        widget: 'image'
+        required: false
+      - label: 'Authors'
+        name: 'authors'
+        widget: 'list'
+        required: false
+        fields:
+          - label: 'Author'
+            name: 'author'
+            widget: 'relation'
+            collection: 'authors_pt'
+            searchFields: ['slug', 'title']
+            valueField: 'slug'
+      - label: 'Texto alt Imagem de Destaque'
+        name: 'coverPhotoAlt'
+      - label: 'Rascunho'
+        name: 'draft'
+        widget: 'boolean'
+        default: true
+      - label: 'Conteúdo'
+        name: 'body'
+        widget: 'markdown'
+  - label: 'Autores'
+    name: 'authors_pt'
+    folder: 'content/portuguese/authors'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - label: 'Name'
+        name: 'title'
+        widget: 'string'
+      - label: 'Date'
+        name: 'date'
+        widget: 'datetime'
+        required: false
+        format: 'YYYY-MM-DDTHH:mm:ss[Z]' # date sample 2018-03-06T14:48:47-03:00
+      - label: 'Draft'
+        name: 'draft'
+        widget: 'boolean'
+        default: true
+      - label: 'Slug'
+        name: 'slug'
+        widget: 'string'
+        pattern:
+          [
+            '^[a-z0-9]+(?:-[a-z0-9]+)*$',
+            'Letters, numbers and hyphens. No special characters.',
+          ]
+      - label: 'Medium'
+        name: 'medium'
+        widget: 'string'
+        required: false
+      - label: 'Linkedin'
+        name: 'linkedin'
+        widget: 'string'
+        required: false
+      - label: 'Facebook'
+        name: 'facebook'
+        widget: 'string'
+        required: false
+      - label: 'Twitter'
+        name: 'twitter'
+        widget: 'string'
+        required: false
+      - label: 'Avatar (350×350px)'
+        name: 'avatar'
+        widget: 'image'
+      - label: 'Image description'
+        name: 'alt'
+        widget: 'string'
+      - label: 'Order'
+        name: 'weight'
+        widget: 'number'
+      - label: 'Type'
+        name: 'type'
+        widget: 'hidden'
+      - label: 'Role'
+        name: 'role'
+        widget: 'hidden'
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'

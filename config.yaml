@@ -1,0 +1,63 @@
+baseURL: "/"
+defaultContentLanguage: pt
+languageCode:    "pt-br"
+disableKinds:
+  - "taxonomy"
+  - "taxonomyTerm"
+  - "RSS"
+  - "sitemap"
+enableRobotsTXT: false
+metaDataFormat:  "yaml"
+enableMissingTranslationPlaceholders: true
+disableFastRender: true
+ignoreFiles: [ "\\.tmp$", "\\.tmp\\-browserify" ]
+stepAnalysis: true
+templateMetrics: true
+pluralizeListTitles: false
+googleAnalytics: ""
+buildFuture: true
+FootnoteReturnLinkContents: "↩"
+disableHugoGeneratorInject: true
+taxonomies:
+  role: "role"
+
+languages:
+  pt:
+    contentDir: content/portuguese
+    languageName: Português
+    languageCode: "pt-br"
+    title: "YouBet! Uma transformação de vida"
+    weight: 1
+    params:
+      subtitle: "Quer se tornar um Cidadão Global?"
+      description: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+      mailchimpList: "#"
+    menu:
+      main:
+          - Name: "Sobre"
+            Pre: ""
+            Weight: 1
+            Identifier: "sobre"
+            URL: "/sobre"
+          - Name: "Blog"
+            Pre: ""
+            Weight: 2
+            Identifier: "blog"
+            URL: "/blog"
+          - Name: "Contato"
+            Pre: ""
+            Weight: 3
+            Identifier: "contato"
+            URL: "/contato"
+
+params:
+  authors:
+  - Name: "Evelyn Perez"
+    Weight: 1
+  - Name: "Stephanie Castro"
+    Weight: 2
+
+  # shareImages:
+  #   default: "assets/images/compartilhamento.jpg"
+  #   twitter: "assets/images/twitter-compartilhamento.jpg"
+  #   facebook: "assets/images/facebook-compartilhamento.jpg"

@@ -1,5 +1,13 @@
-# Created by https://www.gitignore.io/api/linux,macos,node,sublimetext,windows
+# Created by https://www.gitignore.io/api/vim,node,hugo,sass,linux,macos,windows,sublimetext,visualstudiocode
 
+### Hugo ###
+# Hugo binary
+hugo*
+
+# Generated files at default location
+/public/
+/assets/
+/resources/_gen
 ### Linux ###
 *~
 
@@ -15,7 +23,6 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-
 ### macOS ###
 *.DS_Store
 .AppleDouble
@@ -23,8 +30,10 @@
 
 # Icon must end with two \r
 Icon
+
 # Thumbnails
 ._*
+
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
@@ -33,6 +42,7 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
@@ -40,12 +50,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 ### Node ###
 # Logs
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Runtime data
 pids
@@ -65,6 +76,13 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# package json
+yarn.lock
+package.lock
+
 # node-waf configuration
 .lock-wscript
 
@@ -72,8 +90,11 @@ coverage
 build/Release
 
 # Dependency directories
-node_modules
-jspm_packages
+node_modules/
+jspm_packages/
+
+# Typescript v1 declaration files
+typings/
 
 # Optional npm cache directory
 .npm
@@ -90,7 +111,13 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# dotenv environment variables file
+.env
 
+
+### Sass ###
+.sass-cache/
+*.css.map
 
 ### SublimeText ###
 # cache files for sublime text
@@ -115,12 +142,22 @@ Package Control.ca-bundle
 Package Control.system-ca-bundle
 Package Control.cache/
 Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
 bh_unicode_properties.cache
 
 # Sublime-github package stores a github token in this file
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -143,10 +180,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/linux,macos,node,sublimetext,windows
-
-sassdoc/
-prepros-6.config
-build/
-
-*.map
+# End of https://www.gitignore.io/api/vim,node,hugo,sass,linux,macos,windows,sublimetext,visualstudiocode

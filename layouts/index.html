@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
+{{ partial "head.html" . }}
+
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+    <main role="main" id="conteudo" class="main">
+      {{ partial "contact.html" . }}
+    </main>
+
+    {{ partial "footer.html" . }}
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head.html" . }}
+
+<body>
+  <div class="main-container internal-pages blog">
+
+      {{ partial "header.html" . }}
+
+    <main role="main" id="conteudo" class="main">
+      <section class="blog__list">
+        <div class="container">
+          <h2 class="title">{{ i18n "lastPosts" | title }}</h2>
+          <div class="boxes">
+            {{ range .Data.Pages.ByDate.Reverse }}
+                <div class="box">
+                  <a href="{{ .Params.slug }}">
+                    <div class="box__image">
+                      <img src="{{ .Params.coverPhoto }}" alt="{{ .Params.coverPhotoAlt }}">
+                    </div>
+                    <div class="box__content">
+                      <h2>
+                        {{ if .Params.shortTitle }} {{ .Params.shortTitle }} {{ else }} {{ .Title }} {{ end }}
+                      </h2>
+                    </div>
+                  </a>
+              </div>
+              {{ end }}
+            </div>
+        </div>
+
+      </section>
+
+      {{ partial "whatsapp.html" . }}
+
+    </main>
+
+
+    {{ partial "footer.html" . }}
+</div>
+
+</body>
+</html>

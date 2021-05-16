@@ -1,0 +1,51 @@
+<div class="narrow-container">
+  {{ if ne .Kind "404" }}
+  <nav class="skip-links">
+    <ul>
+      <li class="to-content"><a href="#conteudo">conteúdo</a></li>
+      <li class="to-menu"><a href="#menu">menu</a></li>
+    </ul>
+  </nav>
+  {{ end }}
+
+  <div class="main-navigation">
+    <label for="menu-controller"
+           onclick></label>
+
+    <div class="logo logo-{{ .Site.LanguageCode  | lower }}">
+      <a href="/{{ .Site.LanguagePrefix }}">
+        {{ .Site.Title }}
+      </a>
+    </div>
+
+    {{ if .Site.Menus.main }}
+    <nav class="main-menu"
+         id="menu">
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li>
+          <a class="sidebar-nav-item"
+             href="{{ .URL }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}
+  </div>
+
+  <!--
+    {{ if .IsTranslated }}
+    <nav class="languages-nav">
+      <ul class="languages-navlinks">
+        {{ range .Translations }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }} {{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
+        </li>
+        {{ end}}
+      </ul>
+    </nav>
+    {{ end }}
+  -->
+</div>
