@@ -5,18 +5,11 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta charset="utf-8" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap"
+    rel="stylesheet" />
 
-  {{ $style := resources.Get "/styles/index.css" | resources.Minify |
-  resources.Fingerprint "sha512" }}
-  <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-  />
+  {{ $style := resources.Get "/styles/index.css" | resources.Minify | resources.Fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
   <!-- Schema.org for Google -->
   <meta itemprop="name" content="{{ .Site.Title }}" />
@@ -31,11 +24,7 @@
   <meta name="twitter:title" property="og:title" content="{{ .Site.Title }}" />
 
   {{ with $.Site.Params.siteDescription }}
-  <meta
-    name="twitter:description"
-    property="og:description"
-    content="{{ . | slicestr 0 200 }}"
-  />
+  <meta name="twitter:description" property="og:description" content="{{ . | slicestr 0 200 }}" />
   <!-- max of 200 characters for Twitter & Facebook -->
   {{ end }}
 
@@ -75,48 +64,37 @@
   {{ if eq (getenv "NODE_ENV") "production" }} {{ with $.Site.GoogleAnalytics }}
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
-    src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
-    async
-  ></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id={{ . }}" async></script>
   <script>
     window.dataLayer = window.dataLayer || [];
+
     function gtag() {
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
 
     gtag('config', '{{ . }}');
+
   </script>
-  {{ end }} {{ end }} {{ $vendorJS := resources.Get "/scripts/vendor.js" }} {{
-  $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint
-  "sha512" }} {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
+  {{ end }} {{ end }} {{ $vendorJS := resources.Get "/scripts/vendor.js" }}
+  {{$secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
+  {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
 
-  <link
-    rel="preload"
-    type="text/javascript"
-    as="script"
-    href="{{ $secureVendorJS.RelPermalink }}"
-    integrity="{{ $secureVendorJS.Data.Integrity }}"
-  />
+  <link rel="preload" type="text/javascript" as="script" href="{{ $secureVendorJS.RelPermalink }}"
+    integrity="{{ $secureVendorJS.Data.Integrity }}" />
 
-  {{ $js := resources.Get "/scripts/index.js" }} {{ $secureJS := $js |
-  resources.Minify | resources.Fingerprint "sha512" }} {{ .Scratch.Set
-  "secureJS" $secureJS }}
+  {{ $js := resources.Get "/scripts/index.js" }}
+  {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }} {{ .Scratch.Set "secureJS" $secureJS }}
 
-  <link
-    rel="preload"
-    type="text/javascript"
-    as="script"
-    href="{{ $secureJS.RelPermalink }}"
-    integrity="{{ $secureJS.Data.Integrity }}"
-  />
+  <link rel="preload" type="text/javascript" as="script" href="{{ $secureJS.RelPermalink }}"
+    integrity="{{ $secureJS.Data.Integrity }}" />
 
   <script type="text/javascript">
     document.documentElement.className = document.documentElement.className.replace(
       /\bno-js\b/,
       ''
     );
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script>
@@ -135,5 +113,6 @@
         glide.mount();
       }
     }, 1000);
+
   </script>
 </head>
