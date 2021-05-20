@@ -15,7 +15,7 @@
  * Basic typography style for copy text
  */
 body {
-  font-weight: $font-weight('text');
+  font-weight: $font-weights('text');
   font-size: $body-font-size;
 
   line-height: $leading;
