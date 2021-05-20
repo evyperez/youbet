@@ -1,5 +1,6 @@
 /* FORMS
 ============================================================================ */
+
 /**
  * Property compatibility table for form widgets
  * @see https://developer.mozilla.org/en-US/docs/Property_compatibility_table_for_form_widgets
@@ -10,17 +11,16 @@ form {
 }
 
 fieldset {
-
-  border: 0;
-  margin: 0;
   max-width: none;
   min-width: 0;
 
   padding: 0;
+  margin: 0;
+  border: 0;
 }
 
-fieldset fieldset {
-}
+// fieldset fieldset {
+// }
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -31,32 +31,30 @@ fieldset fieldset {
  */
 fieldset > legend, /* 4 */
 legend {
-
-  box-sizing: border-box; /* 1 */
-
-  color: inherit; /* 2 */
   display: table; /* 1 */
-
-  font-weight: bolder;
 
   max-width: 100%; /* 1 */
 
   padding: 0; /* 3 */
 
+  font-weight: $font-weight('bolder');
+
   white-space: normal; /* 1 */
+
+  color: inherit; /* 2 */
+  box-sizing: border-box; /* 1 */
 }
 
 label {
+  padding: 0;
+  margin: 0;
+  font-size: small;
 
+  line-height: inherit;
   cursor: pointer;
 
-  font-size: small;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-
-  &:focus-within {
-  }
+  // &:focus-within {
+  // }
 }
 
 label * {
@@ -65,8 +63,8 @@ label * {
 
 /* pragraphs inside forms
 ---------------------------------------------------------------------------- */
-form p {
-}
+// form p {
+// }
 
 form br {
   clear: both;
@@ -85,37 +83,37 @@ form br {
  * 6. Set the focus outline to be just around the field border.
  */
 %os-element-reset {
-  border-color: palette('border');
-  border-radius: $rounded-corner;
-  border-style: solid;
-
-  border-width: $stroke;
-
-  box-sizing: border-box; /* 4 */
-
-  color: inherit;
   display: inline-block;
-  font-family: inherit; /* 1 */
-
-  font-size: inherit; /* 1 */
-  -webkit-font-smoothing: inherit; // sass-lint:disable-line no-vendor-prefixes
-  letter-spacing: inherit;
-  line-height: inherit; /* 1 */
+  padding: 1px; /* 2 */ // stylelint-disable-next-line property-units
   margin: 0;
-
-  outline: 0;
 
   overflow: visible;
 
-  padding: 1px; /* 2 */ // sass-lint:disable-line property-units
-
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  font-family: inherit; /* 1 */
+  -webkit-font-smoothing: inherit; // stylelint-disable-next-line no-vendor-prefixes
+  letter-spacing: inherit;
   text-align: inherit;
   text-transform: inherit; /* 3 */
-  vertical-align: top;
+
   white-space: normal;
 
-  &:hover {
-  }
+  vertical-align: top;
+  color: inherit;
+
+  border-width: $stroke;
+
+  border-style: solid;
+
+  border-color: palette('border');
+  border-radius: $rounded-corner;
+
+  outline: 0;
+  box-sizing: border-box; /* 4 */
+
+  // &:hover {
+  // }
 
   &:focus {
     outline: 1px dotted palette('black'); /* 5 */
@@ -123,11 +121,11 @@ form br {
   }
 }
 
+/* stylelint-disable selector-pseudo-class-no-unknown */
 :disabled,
 :readonly {
-
-  background: palette('disabled', 'background');
   color: palette('disabled', 'foreground');
+  background: palette('disabled', 'background');
 }
 
 :disabled {
@@ -135,14 +133,16 @@ form br {
 }
 
 :readonly {
+  /* stylelint-disable-line */
   cursor: default;
 }
+/* stylelint-enable selector-pseudo-class-no-unknown */
 
-:enabled {
-}
+// :enabled {
+// }
 
-:optional {
-}
+// :optional {
+// }
 
 /**
  * Correct the text style of placeholders
@@ -158,38 +158,6 @@ form br {
   color: palette('placeholder', 'focus');
 }
 
-:placeholder {
-  @include placeholder;
-}
-
-:focus:placeholder {
-  @include placeholder--focus;
-}
-
-::placeholder {
-  @include placeholder;
-}
-
-:focus::placeholder {
-  @include placeholder--focus;
-}
-
-::input-placeholder {
-  @include placeholder;
-}
-
-:focus::input-placeholder {
-  @include placeholder--focus;
-}
-
-:input-placeholder {
-  @include placeholder;
-}
-
-:focus:input-placeholder {
-  @include placeholder--focus;
-}
-
 ::placeholder {
   @include placeholder;
 }
@@ -200,20 +168,20 @@ form br {
 
 /* complex inputs
 ============================================================================ */
-[type='date'] {
-}
+// [type='date'] {
+// }
 
-[type='month'] {
-}
+// [type='month'] {
+// }
 
-[type='week'] {
-}
+// [type='week'] {
+// }
 
-[type='time'] {
-}
+// [type='time'] {
+// }
 
-[type='datetime-local'] {
-}
+// [type='datetime-local'] {
+// }
 
 /* impossible inputs
 ============================================================================ */
@@ -221,13 +189,12 @@ form br {
 [type='file'],
 [type='color'],
 [type='image'] {
-
-  border: 0;
-
-  cursor: pointer;
   padding: 0;
 
   vertical-align: middle;
+
+  cursor: pointer;
+  border: 0;
 }
 
 /**
@@ -278,61 +245,58 @@ form br {
  * 2. override Opera margin and padding
  */
 [type='file'] {
+  height: 2em;
 
-  appearance: none; //sass-lint:disable-line no-vendor-prefixes
-  appearance: none; //sass-lint:disable-line no-vendor-prefixes indentation
-  appearance: normal; //sass-lint:disable-line indentation
+  min-width: 250px;
+  padding: 0 !important; /* 2 */ /* stylelint-disable-line */
 
-  background-color: transparent; /* 1 */
+  margin: 0; /* 2 */
 
-  -moz-binding: none; //sass-lint:disable-line no-vendor-prefixes
+  font-family: inherit;
+  text-align: start !important; /* stylelint-disable-line */
 
-  border-style: none !important; // sass-lint:disable-line no-important
-
-  box-align: baseline; //sass-lint:disable-line no-vendor-prefixes
+  white-space: nowrap;
 
   cursor: default;
 
-  font-family: inherit;
-  height: 2em;
-  margin: 0; /* 2 */
-  min-width: 250px;
+  background-color: transparent; /* 1 */
+  border-style: none !important; /* stylelint-disable-line */
+  box-align: baseline; /* stylelint-disable-line */
+  appearance: none; /* stylelint-disable-line */
 
-  padding: 0 !important; /* 2 */ // sass-lint:disable-line no-important
+  appearance: none; /* stylelint-disable-line */
 
-  text-align: start !important; // sass-lint:disable-line no-important
-  white-space: nowrap;
+  appearance: normal; //stylelint-disable-next-line indentation
+  -moz-binding: none; /* stylelint-disable-line */
 }
 
-[type='file'][multiple] {
-}
+// [type='file'][multiple] {
+// }
 
 [type='file'] > [type='text'] {
+  height: inherit;
 
+  font-size: inherit;
+
+  letter-spacing: inherit;
+  color: inherit;
   background-color: inherit;
 
   border-color: inherit;
-
-  color: inherit;
-
-  font-size: inherit;
-  height: inherit;
-  letter-spacing: inherit;
 }
 
 [type='file'] > [type='button'] {
-
-  appearance: button;
-
-  box-align: center; // sass-lint:disable-line no-vendor-prefixes
-  box-sizing: content-box;
-
-  font-size: inherit;
   height: inherit;
-
   padding: 0;
 
+  font-size: inherit;
+
   white-space: normal;
+  box-align: center; /* stylelint-disable-line */
+
+  box-sizing: content-box;
+
+  appearance: button;
 }
 
 /**
@@ -343,17 +307,16 @@ form br {
  */
 
 ::-webkit-file-upload-button {
-
-  appearance: button; /* 1 */ // sass-lint:disable-line no-vendor-prefixes
+  font: inherit; /* 4 */
+  cursor: pointer;
 
   background-color: palette('button'); /* 2 */
-  border-color: palette('border'); /* 3 */
-  border-style: solid; /* 3 */
-
   border-width: 1px; /* 3 */
 
-  cursor: pointer;
-  font: inherit; /* 4 */
+  border-style: solid; /* 3 */
+
+  border-color: palette('border'); /* 3 */
+  appearance: button; /* 1 */ // stylelint-disable-next-line no-vendor-prefixes
 
   &:hover {
     background-color: palette('button', 'focus');
@@ -374,9 +337,9 @@ form br {
  */
 
 ::-ms-browse {
-  border-color: palette('border'); /* 1 */
-  border-style: solid; /* 1 */
   border-width: 1px; /* 1 */
+  border-style: solid; /* 1 */
+  border-color: palette('border'); /* 1 */
 
   &:hover {
     background-color: palette('button', 'focus');
@@ -391,38 +354,38 @@ form br {
   outline: 1px dotted palette('black');
 }
 
-/* ALERTS and FORMS */
-.success {
-}
+// /* ALERTS and FORMS */
+// .success {
+// }
 
-:valid {
-}
+// :valid {
+// }
 
-:in-range {
-}
+// :in-range {
+// }
 
-:required:valid {
-}
+// :required:valid {
+// }
 
-.warning {
-}
+// .warning {
+// }
 
 [required],
 :required {
   box-shadow: none;
 }
 
-.alert {
-}
+// .alert {
+// }
 
-:out-of-range {
-}
+// :out-of-range {
+// }
 
-[type='submit']:-moz-submit-invalid {
-}
+// [type='submit']:-moz-submit-invalid {
+// }
 
-x-moz-errormessage {
-}
+// x-moz-errormessage {
+// }
 
 /**
  * Remove the focus outline in Firefox to only keep the original effect.

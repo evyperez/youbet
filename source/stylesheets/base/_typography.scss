@@ -15,12 +15,12 @@
  * Basic typography style for copy text
  */
 body {
-
-  color: palette('text', 'dark');
-  font-family: $text-font-stack;
+  font-weight: $font-weight('text');
   font-size: $body-font-size;
-  font-weight: font-weight('text');
+
   line-height: $leading;
+  font-family: $text-font-stack;
+  color: palette('text', 'dark');
 }
 
 /* HEADINGS AND TITLES */
@@ -39,12 +39,10 @@ h6,
 legend,
 caption,
 details > summary {
-
-  break-after: avoid;
+  font-weight: $font-weights('heading');
   font-family: $title-font-stack;
-  font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1,
-    'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
-  font-weight: font-weight('heading');
+  font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
+  break-after: avoid;
   page-break-after: avoid;
 }
 
@@ -57,25 +55,24 @@ h6 a,
 legend a,
 caption a,
 dt a {
-
-  color: inherit;
   text-decoration: inherit;
+  color: inherit;
 
   &:link {
-
-    color: inherit;
     text-decoration: inherit;
+    color: inherit;
   }
 }
 
 p {
-  margin-bottom: $leading * 1em;
+  padding: 0;
+
   /*  -moz-font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 		-ms-font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 		-webkit-font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
-		font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;*/
+		font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1; */
   margin-top: 0;
-  padding: 0;
+  margin-bottom: $leading * 1em;
 }
 
 /**
@@ -88,8 +85,8 @@ article p {
   widows: 3;
 }
 
-article p + p {
-}
+// article p + p {
+// }
 
 article h1 + p,
 article h2 + p,
@@ -118,16 +115,14 @@ article fieldset > p:first-child {
 
 %abbr-title {
   &[title] {
-
-    border-bottom: 1px dotted;
-
-    cursor: help; /* 1 */
     text-decoration: none;
 
-    @supports (text-decoration: dotted underline) {
+    cursor: help; /* 1 */
+    border-bottom: 1px dotted;
 
-      border-bottom: inherit;
+    @supports (text-decoration: dotted underline) {
       text-decoration: dotted underline; /* 2 */
+      border-bottom: inherit;
     }
   }
 }
@@ -143,9 +138,9 @@ abbr {
  */
 dfn {
   @extend %abbr-title;
-  font-size: 1em;
-
   font-style: italic; /* 1 */
+
+  font-size: 1em;
 }
 
 /**
@@ -157,38 +152,38 @@ dfn {
  * @see https://github.com/necolas/normalize.css/pull/342#issuecomment-173801037
  */
 
-// sass-lint:disable no-mergeable-selectors
+/* stylelint-disable no-duplicate-selectors */
+
 b,
 strong {
-  // sass-lint:disable-block no-duplicate-properties
-  font-weight: bold;
+  // stylelint:disable-block no-duplicate-properties
+  font-weight: $font-weights('bold');
   font-weight: inherit; /* 1 */
 }
-
 b,
 strong {
-  font-weight: font-weight('bold'); /* 2 */
-}
-// sass-lint:enable no-mergeable-selectors
-
-em,
-i {
+  font-weight: $font-weights('bold'); /* 2 */
 }
 
-i[lang] {
-}
+/* stylelint-enable no-duplicate-selectors */
+
+// em,
+// i {
+// }
+
+// i[lang] {
+// }
 
 /**
  * Address styling not present in IE 8/9.
  */
 mark {
-
-  background: palette('mark', 'background');
   color: palette('mark', 'foreground');
+  background: palette('mark', 'background');
 }
 
-meter {
-}
+// meter {
+// }
 
 /**
  * Address inconsistent and variable font size in all browsers.
@@ -205,10 +200,10 @@ small {
  */
 sub,
 sup {
-
-  font-size: 83.3333%; /* 1 */
-  line-height: 0;
   position: relative;
+  font-size: 83.3333%; /* 1 */
+
+  line-height: 0;
 
   vertical-align: baseline;
 }
@@ -231,6 +226,7 @@ time {
 
 /* codes
 ============================================================================ */
+
 /**
  * 1. Address odd `em`-unit font size rendering in all browsers.
  * @see https://github.com/necolas/normalize.css/pull/295#issuecomment-34787724
@@ -242,15 +238,15 @@ kbd,
 pre,
 samp,
 var {
-  font-family: $code-font-stack, monospace, monospace; /* 2 */
   font-size: 1em; /* 1 */
+  font-family: $code-font-stack, monospace; /* 2 */
 }
 
-code {
-}
+// code {
+// }
 
-kbd {
-}
+// kbd {
+// }
 
 /**
  * Formatting quoted code in blog posts: CSS2.1 white-space: pre-wrap
@@ -258,11 +254,11 @@ kbd {
  * Contain overflow in all browsers.
  */
 pre {
+  word-wrap: break-word; /* IE */
+  // sass-lint:disable-block no-duplicate-properties
   white-space: pre; /* CSS2 */
   white-space: pre-wrap; /* CSS 2.1 */
   white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-  // sass-lint:disable-block no-duplicate-properties
-  word-wrap: break-word; /* IE */
 }
 
 samp {
@@ -286,11 +282,10 @@ s {
 
 %updated {
   &::before {
-
-    content: '[update] ';
-    font-weight: bold;
+    font-weight: $font-weights('bold');
 
     text-decoration: none;
+    content: '[update] ';
   }
 
   &[datetime]::before {
@@ -298,9 +293,8 @@ s {
   }
 
   &::after {
-
-    content: ' [/update] ';
     text-decoration: none;
+    content: ' [/update] ';
   }
 }
 
@@ -359,27 +353,26 @@ del {
 /// </blockquote>
 ///
 
-blockquote {
-}
+// blockquote {
+// }
 
-blockquote > p {
-  &::before {
-  }
+// blockquote > p {
+//   &::before {
+//   }
 
-  &:last-of-type::after {
-  }
-}
+//   &:last-of-type::after {
+//   }
+// }
 
 q,
 blockquote {
-
-  color: palette('quotes');
   font-style: italic;
+  color: palette('quotes');
 }
 
 cite {
-  font-size: 1em;
   font-style: italic;
+  font-size: 1em;
 }
 
 blockquote footer {
@@ -392,8 +385,8 @@ blockquote footer cite {
   font-style: italic;
 }
 
-q {
-}
+// q {
+// }
 
 blockquote p,
 blockquote pre,
@@ -402,18 +395,18 @@ blockquote li {
 }
 
 blockquote.verse {
-  // sass-lint:disable-line no-qualifying-elements
+  // stylelint-disable-next-line no-qualifying-elements
   text-align: center;
 }
 
 blockquote.verse p {
-  // sass-lint:disable-line no-qualifying-elements
+  // stylelint-disable-next-line no-qualifying-elements
   display: inline-block;
-  margin-left: auto;
+
+  width: auto;
 
   margin-right: auto;
 
+  margin-left: auto;
   text-align: left;
-
-  width: auto;
 }

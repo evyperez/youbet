@@ -17,13 +17,13 @@
     @if type-of($thumb-height) != 'number' or unitless($thumb-height) {
       @error '`$thumb-height` argument is required to be a not unitless number due MS Edge and IE necessary hacks.';
     }
+
+    width: 100%;
+    color: transparent;
+
     background: transparent;
 
     border-color: transparent;
-
-    color: transparent;
-
-    width: 100%;
 
     @if unit($height) != unit($thumb-height) {
       border-width: calc((#{$thumb-height} - #{$height}) / 2) 0;
@@ -77,46 +77,39 @@
   }
 
   &::-ms-thumb {
-
-    appearance: none;
     margin-top: 0; // reset value used for webkit. Weird, right?
+    appearance: none;
 
     @content;
   }
 }
 
 @mixin vertical-input-range {
-
-  appearance: slider-vertical; // sass-lint:disable-line no-vendor-prefixes
   writing-mode: bt-lr;
+  appearance: slider-vertical; // stylelint-disable-next-line no-vendor-prefixes
 }
 
 /**
  * 1. required for proper track sizing in FF
  */
 [type='range'] {
-
-  appearance: none;
-
-  background: transparent;
-
-  border: 0; /* 1 */
-
-  cursor: pointer;
   display: block;
+
+  width: 100%; /* 1 */
 
   padding: 0;
 
   vertical-align: middle;
 
-  width: 100%; /* 1 */
+  cursor: pointer;
 
-  @include range-track(
-    $height: 0.125rem,
-    $thumb-height: 1.5rem,
-    $bg-fallback: null
-  ) {
-    // sass-lint:disable-line mixins-before-declarations
+  background: transparent;
+
+  border: 0; /* 1 */
+  appearance: none;
+
+  @include range-track($height: 0.125rem, $thumb-height: 1.5rem, $bg-fallback: null) {
+    // stylelint-disable-next-line mixins-before-declarations
     background-color: palette('button');
 
     &:focus {
@@ -125,7 +118,7 @@
   }
 
   @include range-thumb($height: 1.5rem, $track-height: 0.125rem) {
-    // sass-lint:disable-line mixins-before-declarations
+    // stylelint-disable-next-line mixins-before-declarations
     background-color: palette('button', 'slider');
 
     border: 0;

@@ -1,23 +1,22 @@
 /* navigation
 ---------------------------------------------------------------------------- */
-menu,
-nav {
-}
+// menu,
+// nav {
+// }
 
 menu ul,
 menu ol,
 nav ul,
 nav ol {
-
-  list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 menu li,
 nav li {
-  margin: 0;
   padding: 0;
+  margin: 0;
 
   &::before {
     content: none;
@@ -41,28 +40,28 @@ nav a {
   pointer-events: none;
 }
 
-/* access
----------------------------------------------------------------------------- */
-.skip-links {
-}
+// /* access
+// ---------------------------------------------------------------------------- */
+// .skip-links {
+// }
 
 .skip-links a {
   @include visually-hidden--focusable;
 }
 
-/* pagination
----------------------------------------------------------------------------- */
-.pagination {
-}
+// /* pagination
+// ---------------------------------------------------------------------------- */
+// .pagination {
+// }
 
-.pagination__current {
-}
+// .pagination__current {
+// }
 
-.pagination__previous {
-}
+// .pagination__previous {
+// }
 
-.pagination__next {
-}
+// .pagination__next {
+// }
 
 /// .menu-controller styles
 ///
@@ -74,13 +73,13 @@ nav a {
 
 [for='menu-controller'] {
   &::before {
-
-    content: '\20\2261\20';
-    font-family: sans-serif;
     font-size: 2em;
+
     line-height: 0.75;
+    font-family: sans-serif;
 
     vertical-align: middle;
+    content: '\20\2261\20';
   }
 
   @media screen and (min-width: breakpoint('toggle-menu')) {

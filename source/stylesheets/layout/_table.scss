@@ -7,16 +7,15 @@ tfoot,
 tr,
 th,
 td {
+  width: auto;
 
-  background-color: transparent;
-
-  border: 0;
-
-  font-size: 1em;
   height: auto;
 
+  font-size: 1em;
+
   vertical-align: top;
-  width: auto;
+  background-color: transparent;
+  border: 0;
 
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
     display: block;
@@ -24,21 +23,20 @@ td {
 }
 
 table {
+  margin-top: 0;
+  margin-right: 0;
 
-  border-collapse: separate;
+  margin-bottom: #{$leading * 1em};
 
+  margin-left: 0;
+  font-size: 100%;
+
+  font-family: inherit;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 0, 'tnum' 1, 'onum' 0, 'lnum' 1, 'dlig' 0;
   border-radius: $rounded-corner;
+  border-collapse: separate;
   border-spacing: 0;
   empty-cells: show;
-  font-family: inherit;
-  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 0, 'tnum' 1,
-    'onum' 0, 'lnum' 1, 'dlig' 0;
-
-  font-size: 100%;
-  margin-bottom: #{$leading * 1em};
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
 }
 
 thead,
@@ -53,8 +51,8 @@ table li {
   font-size: 1em;
 }
 
-caption {
-}
+// caption {
+// }
 
 tr {
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
@@ -67,7 +65,7 @@ tr {
 }
 
 th {
-  font-weight: bold;
+  font-weight: $font-weights('bold');
 }
 
 td {
@@ -90,9 +88,9 @@ tfoot th:first-child {
   text-align: left;
 }
 
-thead > tr:nth-last-of-type(odd) > th,
-thead > tr:nth-last-of-type(odd) > td {
-}
+// thead > tr:nth-last-of-type(odd) > th,
+// thead > tr:nth-last-of-type(odd) > td {
+// }
 
 tbody {
   font-family: mono-space, monospace;
@@ -103,8 +101,8 @@ tbody th {
 }
 
 tbody td {
-
   font-variant-numeric: lining-nums oldstyle-nums;
+
   text-align: right;
 
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
@@ -114,11 +112,10 @@ tbody td {
       text-align: right;
 
       &::before {
-
-        content: attr(aria-label) ': ';
         float: left;
 
         font-style: italic;
+        content: attr(aria-label) ': ';
       }
     }
   }

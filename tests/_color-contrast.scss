@@ -11,13 +11,13 @@
     color: text-contrast($b, $f);
 
     &::before {
-
-      content: '\25a0\a0'+ quote(#{text-contrast($b, $f)});
       display: block;
 
       margin-bottom: 1.5rem;
 
       text-align: left;
+
+      content: '\25a0\a0'+ quote(#{text-contrast($b, $f)});
     }
   }
 }
@@ -35,19 +35,19 @@
 
   flex-grow: 1;
   flex-shrink: 0;
-  font-size: small;
 
-  font-weight: bold;
-  line-height: 1;
-
-  list-style-type: none;
-  margin: 0;
+  width: 25%;
 
   padding: 0.75rem;
+  margin: 0;
+
+  font-weight: $font-weights('bold');
+  font-size: small;
+  line-height: 1;
 
   text-align: center;
 
-  width: 25%;
+  list-style-type: none;
 
   &::before,
   &::after {

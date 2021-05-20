@@ -5,27 +5,27 @@
 /* CLASSES
 ============================================================================ */
 %loading-bg {
-  background-color: palette('loading', 'background');
   background-image: image('loading.svg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  background-color: palette('loading', 'background');
 }
 
 %loading-el {
-
-  cursor: wait;
   overflow: hidden;
 
-  &::after {
-    bottom: 0;
+  cursor: wait;
 
-    content: '';
-    left: 0;
+  &::after {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     z-index: layer('modal');
+
+    content: '';
   }
 }
 
@@ -102,37 +102,34 @@ textarea {
 
   &::after,
   &:root::before {
+    position: fixed;
+    top: 0;
+    right: 0;
 
-    content: 'breakpoint: phone';
+    z-index: layer('modal');
 
     font-size: 1rem;
 
     pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
 
-    z-index: layer('modal');
+    content: 'breakpoint: phone';
   }
 
   &::after {
-
     background-image: grid-image($n);
     background-position: center top;
-    bottom: 0;
 
     content: '';
-    left: 0;
   }
 
   &:root::before {
+    padding: $gutter;
 
     background-color: palette('debug');
 
     content: 'breakpoint: #{$n}col';
 
     opacity: 0.75;
-    padding: $gutter;
   }
 
   @each $key, $value in $breakpoints {
@@ -159,12 +156,12 @@ textarea {
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
   max-width: $max-width;
-  padding-bottom: $leading * 4rem;
-  padding-left: $gutter;
-  padding-right: $gutter;
 
   padding-top: $leading * 4rem;
+  padding-right: $gutter;
+  padding-bottom: $leading * 4rem;
+  padding-left: $gutter;
+  margin-right: auto;
+  margin-left: auto;
 }

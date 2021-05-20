@@ -65,7 +65,7 @@
 /// @param {Number} $number
 /// @param {Number} $exponent
 /// @access private
-/// @author Hugo Giraudel
+/// @author Kitty Giraudel
 /// @return {Number}
 /// @link https://css-tricks.com/snippets/sass/power-function/
 @function _pow($number, $exponent) {
@@ -85,7 +85,7 @@
 }
 
 /// toFixed() function in Sass
-/// @author Hugo Giraudel
+/// @author Kitty Giraudel
 /// @param {Number} $float - Number to format
 /// @param {Number} $digits [2] - Number of digits to leave
 /// @access private
@@ -131,8 +131,7 @@
   $red-magic-number: 241;
   $green-magic-number: 691;
   $blue-magic-number: 68;
-  $brightness-divisor: $red-magic-number + $green-magic-number +
-    $blue-magic-number;
+  $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;
 
   // Extract color components
   $red-component: red($color);
@@ -140,11 +139,11 @@
   $blue-component: blue($color);
 
   // Calculate a brightness value in 3d color space between 0 and 255
-  $number: _sqrt((
-    ($red-component * $red-component * $red-magic-number) +
-    ($green-component * $green-component * $green-magic-number) +
-    ($blue-component * $blue-component * $blue-magic-number)
-  ) / $brightness-divisor);
+  $number: _sqrt(
+    (
+      ($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) +
+      ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor
+    );
 
   // Convert to percentage and return
   @return 100% * $number / 255;
@@ -211,9 +210,7 @@
   $g: -1;
   $b: -1;
 
-  @while $alpha <
-    1 and
-    ($r < 0 or $g < 0 or $b < 0 or $r > 255 or $g > 255 or $b > 255) {
+  @while $alpha < 1 and ($r < 0 or $g < 0 or $b < 0 or $r > 255 or $g > 255 or $b > 255) {
     $alpha: $alpha + 1/256;
     $inv: 1 / $alpha;
     $r: $r2 * $inv + $r1 * (1 - $inv);
@@ -301,12 +298,8 @@ $_default-text-color--light: palette('text', 'light');
   }
 
   @for $i from 1 through 10 {
-    $lighter: scale-color($light-fg,
-    $lightness: $i * 10%,
-    $saturation: $i * 10%);
-    $darker: scale-color($dark-fg,
-    $lightness: $i * -10%,
-    $saturation: $i * 10%);
+    $lighter: scale-color($light-fg, $lightness: $i * 10%, $saturation: $i * 10%);
+    $darker: scale-color($dark-fg, $lightness: $i * -10%, $saturation: $i * 10%);
 
     $darker-ratio: _contrast($bg-color, $darker);
     $lighter-ratio: _contrast($bg-color, $lighter);
@@ -339,7 +332,7 @@ $_default-text-color--light: palette('text', 'light');
 }
 
 /// Replace `$search` with `$replace` in `$string`
-/// @author Hugo Giraudel
+/// @author Kitty Giraudel
 /// @group helpers
 /// @param {String} $string - Initial string
 /// @param {String} $search - Substring to replace
@@ -349,12 +342,7 @@ $_default-text-color--light: palette('text', 'light');
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(
-        str-slice($string, $index + str-length($search)),
-        $search,
-        $replace
-      );
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
 
   @return $string;
@@ -566,11 +554,7 @@ $_default-text-color--light: palette('text', 'light');
 /// @return {String} - String without spaces
 ///
 @function trim($string) {
-  @return str-slice(
-    $string,
-    _first-index($string, 'left'),
-    _first-index($string, 'right')
-  );
+  @return str-slice($string, _first-index($string, 'left'), _first-index($string, 'right'));
 }
 
 /// Find first char which is not a space
@@ -642,26 +626,20 @@ $_default-text-color--light: palette('text', 'light');
 
   @for $i from 1 to $columns {
     $multiplier: $i / $columns;
-    $grid-image: append($grid-image,
-    (
-      transparent calc(#{100% * $multiplier} - #{$gutter * $multiplier}),
-      $color calc(#{100% * $multiplier} - #{$gutter * $multiplier}),
-      $color calc(#{100% * $multiplier} + #{$gutter * (1 - $multiplier)}),
-      transparent calc(#{100% * $multiplier} + #{$gutter * (1 - $multiplier)})
-    ),
-    comma);
+    $grid-image: append(
+      $grid-image,
+      (
+        transparent calc(#{100% * $multiplier} - #{$gutter * $multiplier}),
+        $color calc(#{100% * $multiplier} - #{$gutter * $multiplier}),
+        $color calc(#{100% * $multiplier} + #{$gutter * (1 - $multiplier)}),
+        transparent calc(#{100% * $multiplier} + #{$gutter * (1 - $multiplier)})
+      ),
+      comma
+    );
   }
 
   @return linear-gradient(
     to right,
-    #{append(
-      $grid-image,
-        (
-          transparent calc(100% - #{$gutter}),
-          $color calc(100% - #{$gutter}),
-          $color 100%
-        ),
-        comma
-      )}
+    #{append($grid-image, (transparent calc(100% - #{$gutter}), $color calc(100% - #{$gutter}), $color 100%), comma)}
   );
 }

@@ -7,7 +7,7 @@
 /// @link https://github.com/Heydon/REVENGE.CSS
 ////
 
-// sass-lint:disable no-important
+/* stylelint-disable declaration-no-important */
 
 %error {
   outline: 5px solid palette('debug') !important;
@@ -19,17 +19,22 @@
 
 @mixin alert {
   &::before {
-    background-color: palette('debug');
-    color: palette('white');
-    display: block;
-    font-weight: font-weight('heavy');
-    left: 0;
-    padding: 1em;
     position: absolute;
-    right: 0;
-    text-align: center;
+
     top: 0;
+
+    right: 0;
+
+    left: 0;
+    display: block;
+
     z-index: layer('modal');
+    padding: 1em;
+    font-weight: $font-weights('heavy');
+
+    text-align: center;
+    color: palette('white');
+    background-color: palette('debug');
 
     @content;
   }
@@ -39,11 +44,9 @@
 acronym,
 applet,
 basefont,
-bgsound,
 big,
 blink,
 center,
-comment,
 dir,
 embed,
 font,
@@ -52,8 +55,6 @@ frameset,
 isindex,
 listing,
 marquee,
-multicol,
-nobr,
 noembed,
 plaintext,
 spacer,
@@ -72,7 +73,7 @@ xmp {
   @extend %warning;
 
   @include alert {
-    content: '`style` attribute shouldn\'t be used, despite being added by some scripts.' !important;
+    content: "`style` attribute shouldn't be used, despite being added by some scripts." !important;
   }
 }
 
@@ -108,11 +109,12 @@ table table {
   display: block !important;
 
   @include alert {
-    content: 'Tables shouldn\'t be nested.' !important;
+    content: "Tables shouldn't be nested." !important;
   }
 }
 
 /* Unaccessible Images */
+
 /*
 *	@see	http://www.userfocus.co.uk/articles/alt_text.html
 */
@@ -191,7 +193,7 @@ form[action=''] {
   @extend %error;
 
   @include alert {
-    content: '`action` attribute isn\'t required on `form`, but it shouldn\'t be empty.' !important;
+    content: "`action` attribute isn't required on `form`, but it shouldn't be empty." !important;
   }
 }
 
@@ -199,7 +201,7 @@ label:not([for]) {
   @extend %error;
 
   @include alert {
-    content: 'Isn\'t the `for` attribute missing?' !important;
+    content: "Isn't the `for` attribute missing?" !important;
   }
 }
 
@@ -273,7 +275,7 @@ button:not([type]) {
   @extend %warning;
 
   @include alert {
-    content: 'The default `type` of a button is `submit`, but this isn\'t clear to all developers. To avoid confusion, declare it.' !important;
+    content: "The default `type` of a button is `submit`, but this isn't clear to all developers. To avoid confusion, declare it." !important;
   }
 }
 
@@ -326,6 +328,7 @@ link[rel='stylesheet'][type='text/css'] {
     // @see https://mathiasbynens.be/notes/css-hidden-elements
     head {
       display: block !important;
+
       overflow: visible !important;
     }
 
@@ -343,6 +346,7 @@ link[rel='stylesheet'][type='text/css'] {
   }
 }
 
+/* stylelint-disable selector-type-no-unknown */
 /// Empty element not used for scripting
 *:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(param):not(script):not(source):not(th):not(td):not(track):not(wbr):not([id]):not([class*='js-']) {
   @extend %error;
@@ -351,6 +355,7 @@ link[rel='stylesheet'][type='text/css'] {
     content: 'Empty element should only be used for scripting.' !important;
   }
 }
+/* stylelint-enable selector-type-no-unknown */
 
 /// Misuse of sectioning elements
 article > article,
@@ -438,18 +443,21 @@ a :not([role='text']) {
 */
 
 .menu-controller:not([hidden]) {
-  content: '`.menu-controller` should be hidden by default, not using CSS.';
-  display: block;
   position: fixed;
+
+  display: block;
+  content: '`.menu-controller` should be hidden by default, not using CSS.';
 }
 
 * + .menu-controller,
 body * .menu-controller {
   @extend %error;
 
-  content: '`.menu-controller`, if present, should the first child of `<body>`.';
-  display: block;
   position: fixed;
+
+  display: block;
+
+  content: '`.menu-controller`, if present, should the first child of `<body>`.';
 }
 
 [class*='toggle']:not([aria-pressed]) {
@@ -468,7 +476,7 @@ textarea {
     @extend %error;
 
     @include alert {
-      content: 'A field shouldn\'t be disabled in appearance only.' !important;
+      content: "A field shouldn't be disabled in appearance only." !important;
     }
   }
 }
@@ -504,7 +512,7 @@ dl > *:not(dt):not(dd):not(div):not(script):not(template) {
 }
 
 /* Boot Crap (specific to Twitter BootStrap class misuse)
------------------------------------------------------------------------------*/
+----------------------------------------------------------------------------- */
 ///
 /// Icons used for pure decoration or visual styling If you're using an icon
 /// to add some extra decoration or branding, it does not need to be announced
@@ -567,3 +575,5 @@ li {
     content: 'Element impossibly focusable used for as "button".' !important;
   }
 }
+
+/* stylelint-enable declaration-no-important */

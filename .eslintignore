@@ -14,3 +14,4 @@ test.ts
 !.eslintrc.js
 *.spec.ts
 *.e2e-spec.ts
+node_modules/

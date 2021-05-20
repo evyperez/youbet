@@ -1,24 +1,25 @@
 /* checkboxes and radio buttons
 ---------------------------------------------------------------------------- */
+
 /**
  * All checkboxes and readio buttons as list-items
  * <li><label for="id">label</label> <input type="checkbox" id="id" /></li>
  */
 fieldset ol,
 fieldset ul {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 fieldset li {
   display: block;
 
-  list-style-type: none;
+  padding: 0;
   margin: 0;
 
-  padding: 0;
-
   white-space: nowrap;
+
+  list-style-type: none;
 
   &::before {
     content: none;
@@ -42,37 +43,36 @@ li label {
  */
 [type='checkbox'],
 [type='radio'] {
+  width: auto;
 
-  box-sizing: border-box; /* 1 */
-
-  cursor: pointer;
   height: auto; /* 3 */
 
   padding: 0; /* 2 */
 
   vertical-align: middle;
-  width: auto;
+  cursor: pointer;
+  box-sizing: border-box; /* 1 */
 
-  &:hover {
-  }
+  // &:hover {
+  // }
 
   &:focus {
     outline-style: auto; /* 4 */
   }
 }
 
-[type='radio'] {
-  &:indeterminate {
-  }
+// [type='radio'] {
+//   &:indeterminate {
+//   }
 
-  &:checked {
-  }
-}
+//   &:checked {
+//   }
+// }
 
-[type='checkbox'] {
-  &:checked {
-  }
-}
+// [type='checkbox'] {
+//   &:checked {
+//   }
+// }
 
 li:hover {
   > input,
@@ -82,12 +82,11 @@ li:hover {
 }
 
 li :checked + label {
-  font-weight: bold;
+  font-weight: $font-weights('bold');
 }
 
 [disabled] + label,
 :disabled + label {
-
-  color: palette('disabled', 'foreground');
   cursor: default;
+  color: palette('disabled', 'foreground');
 }

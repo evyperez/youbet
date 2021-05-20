@@ -1,5 +1,6 @@
 /* selects
 ---------------------------------------------------------------------------- */
+
 /**
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set.
@@ -7,10 +8,9 @@
 
 select,
 option {
-
-  cursor: pointer;
-  min-width: 1.5em;
   width: auto;
+  min-width: 1.5em;
+  cursor: pointer;
 }
 
 /**
@@ -18,15 +18,12 @@ option {
  */
 select {
   @extend %text-field-reset;
-
-  appearance: none; // sass-lint:disable-line no-vendor-prefixes
-  appearance: none; // sass-lint:disable-line no-vendor-prefixes
-  appearance: none;
+  text-indent: 0.01px; // stylelint-disable-next-line property-units
+  text-overflow: '';
 
   box-sizing: content-box;
 
-  text-indent: 0.01px; // sass-lint:disable-line property-units
-  text-overflow: '';
+  appearance: none; // stylelint-disable-next-line no-vendor-prefixes
 
   &::-ms-expand {
     display: none;
@@ -35,10 +32,10 @@ select {
 
 select,
 .ie6-9:invalid {
-
-  background-image: url('data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==');
-  background-position: 95% 50%;
   padding-right: 1.5em;
+  background-image: url('data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==');
+
+  background-position: 95% 50%;
 }
 
 /**
@@ -48,12 +45,12 @@ select,
 optgroup {
   @extend %os-element-reset;
 
-  font-weight: bold;
+  font-weight: $font-weights('bold');
 }
 
 option {
-  margin: 0;
   padding: 0 0.4em 0 0.1em;
+  margin: 0;
 
   &:hover,
   &:focus {
@@ -62,13 +59,13 @@ option {
 }
 
 select[multiple] {
-  // sass-lint:disable-line no-qualifying-elements
+  // stylelint-disable-next-line no-qualifying-elements
 }
 
 select[multiple] option {
-  // sass-lint:disable-line no-qualifying-elements
+  // stylelint-disable-next-line no-qualifying-elements
 
   &:checked {
-    font-weight: bold;
+    font-weight: $font-weights('bold');
   }
 }

@@ -19,11 +19,11 @@
 /* User interaction (https://www.w3.org/TR/html5/editing.html)
 ========================================================================== */
 ::selection {
-
-  background-color: palette('selection', 'background');
+  text-shadow: none;
 
   color: palette('selection', 'foreground');
-  text-shadow: none;
+
+  background-color: palette('selection', 'background');
 }
 
 /**
@@ -94,22 +94,22 @@ textarea,
  * www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 html {
+  height: 100%; /* 2 */
+
+  padding: 0;
+  margin: 0;
+
+  overflow-y: scroll; /* 3 */
+
+  font-size: 100.01%; /* 1 */
+
+  text-size-adjust: 100%; /* 4 */
 
   background: palette('white');
 
   box-sizing: border-box;
 
-  font-size: 100.01%; /* 1 */
-  height: 100%; /* 2 */
-  margin: 0;
-
-  overflow-y: scroll; /* 3 */
-
-  padding: 0;
-
   tab-size: 4;
-
-  text-size-adjust: 100%; /* 4 */
 }
 
 /**
@@ -118,18 +118,18 @@ html {
  * https: //github.com/philipwalton/flexbugs#flexbug-3
  */
 body {
-
-  background-color: transparent;
-
-  color: palette('black');
   display: flex; /* 1 */
 
   flex-direction: column; /* 1 */
 
   height: 100vh; /* 2 */
+  min-height: 100%;
 
   margin: 0;
-  min-height: 100%;
+
+  color: palette('black');
+
+  background-color: transparent;
 
   > * {
     flex-shrink: 0; /* 1 */
@@ -146,6 +146,7 @@ main,
 
 /* section items HTML5
 ============================================================================ */
+
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
  * Correct `block` display not defined for `details` or `summary` in IE 10/11
@@ -170,11 +171,11 @@ section {
  * Add the correct display in all browsers.
  */
 summary {
-
-  cursor: pointer;
   display: list-item;
 
   list-style-type: none;
+
+  cursor: pointer;
 
   &::-webkit-details-marker {
     display: none;
@@ -185,9 +186,9 @@ summary {
   }
 
   &::before {
+    padding-right: 0.5em;
 
     content: '\25B6';
-    padding-right: 0.5em;
   }
 
   details[open] > &::before {
@@ -201,18 +202,18 @@ summary {
  */
 [hidden],
 template {
-  display: none !important; // sass-lint:disable-line no-important
+  display: none !important; /* stylelint-disable-line */
 }
 
 /**
  * Visually hidden content should remain accessible
  */
 [hidden][aria-hidden='false'] {
-
-  clip: rect(0, 0, 0, 0);
+  position: absolute;
 
   display: inherit;
-  position: absolute;
+
+  clip: rect(0, 0, 0, 0);
 
   &:focus {
     clip: auto;
@@ -228,36 +229,34 @@ template {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
+
 /**
  */
 hr {
   /* line-height */
-  @include fallback(
-    'margin',
-    calc(#{$leading * 1em} - 1px) 0 #{$leading * 1em},
-    #{$leading * 1em} 0
-  );
-
-  border: 0;
-  border-top: 1px solid palette('gray');
-
-  box-sizing: content-box; /* 1 */
+  @include fallback('margin', calc(#{$leading * 1em} - 1px) 0 #{$leading * 1em}, #{$leading * 1em} 0);
 
   clear: both;
-
-  color: palette('gray');
 
   display: block;
 
   height: 0; /* 1 */
 
+  padding: 0;
+
   overflow: visible; /* 2 */
 
-  padding: 0;
+  color: palette('gray');
+
+  border: 0;
+  border-top: 1px solid palette('gray');
+
+  box-sizing: content-box; /* 1 */
 }
 
 /* MEDIA ELEMENTS
 ============================================================================ */
+
 /**
  * Corrects overflow displayed oddly in IE9
  */
@@ -305,22 +304,22 @@ audio:not([controls]) {
 
 meter,
 progress {
+  background-size: auto;
 
   appearance: none;
-  background-size: auto;
 }
 
-audio {
-}
+// audio {
+// }
 
 iframe,
 img,
 object {
-
-  border-style: none;
+  font-size: 83.3333%;
 
   color: currentColor;
-  font-size: 83.3333%;
+
+  border-style: none;
 }
 
 img,
@@ -330,23 +329,23 @@ video {
   max-width: 100%;
 }
 
-video {
-}
+// video {
+// }
 
 video > source {
-  height: auto;
   width: 100%;
+  height: auto;
 }
 
 .ie:not(.ie6-8),
 object > img {
+  position: relative;
+
+  z-index: layer('below');
 
   font-size: 1em;
 
   pointer-events: none;
-  position: relative;
-
-  z-index: layer('below');
 }
 
 /// Stylize broken images
@@ -360,21 +359,21 @@ object > img {
   text-align: center;
 
   &::before {
-
-    content: '\f127'' Broken Image of ' attr(alt);
     display: block;
 
     margin-bottom: $leading * 1em;
+
+    content: '\f127'' Broken Image of ' attr(alt);
   }
 
   &::after {
+    display: block;
+
+    font-size: small;
 
     color: palette('gray');
 
     content: '(url: ' attr(src) ')';
-    display: block;
-
-    font-size: small;
   }
 }
 
@@ -387,23 +386,23 @@ img {
   @extend %broken-image;
 
   height: auto;
+  max-width: 100%;
 
   image-rendering: auto; /* 1 */
-  max-width: 100%;
 }
 
 [usemap] {
   color: palette('anchor');
 }
 
-map {
-}
+// map {
+// }
 
-area {
-}
+// area {
+// }
 
-object {
-}
+// object {
+// }
 
 li img,
 p img {
@@ -418,27 +417,27 @@ a > picture {
 /* links
 ============================================================================ */
 a {
-
-  color: palette('anchor', 'base');
+  padding: 0;
+  margin: 0;
 
   font-size: 100%;
-  margin: 0;
-  // sass-lint:disable-block property-sort-order
-  padding: 0;
 
   vertical-align: baseline;
+  // sass-lint:disable-block property-sort-order
+
+  color: palette('anchor', 'base');
 
   @include on-event {
     text-decoration: underline;
   }
 
   &:link {
-
-    color: palette('anchor', 'link');
+    text-decoration: underline;
 
     cursor: pointer;
-    -webkit-tap-highlight-color: palette('tap-highlight'); // sass-lint:disable-line no-vendor-prefixes
-    text-decoration: underline;
+    -webkit-tap-highlight-color: palette('tap-highlight'); // stylelint-disable-next-line no-vendor-prefixes
+
+    color: palette('anchor', 'link');
   }
 
   &:visited {
@@ -449,9 +448,9 @@ a {
     }
   }
 
-  &:hover,
-  &:focus {
-  }
+  // &:hover,
+  // &:focus {
+  // }
 
   &:hover {
     color: palette('anchor', 'hover');
@@ -477,36 +476,36 @@ a {
 	* @see https://github.com/necolas/normalize.css/issues/473
 	*/
   &:active {
+    color: palette('anchor', 'active');
 
     background-color: transparent;
-    color: palette('anchor', 'active');
   }
 
-  &[target='_blank'],
-  &[rel='external'] {
-  }
+  // &[target='_blank'],
+  // &[rel='external'] {
+  // }
 }
 
 /* Contact info and addresses
 ---------------------------------------------------------------------------- */
 address {
+  padding: 0;
+  margin: 0;
 
   font-style: italic;
-  margin: 0;
-  padding: 0;
 }
 
 /* Coode blocks
 ---------------------------------------------------------------------------- */
 pre {
-
-  background-color: palette('text', 'dark');
-
-  color: palette('text', 'light');
-
-  font-size: ms(-1);
+  padding: $leading * 0.5rem $gutter * 0.5;
   margin: 0 0 $leading * 1rem;
 
   overflow: auto;
-  padding: $leading * 0.5rem $gutter * 0.5;
+
+  font-size: ms(-1);
+
+  color: palette('text', 'light');
+
+  background-color: palette('text', 'dark');
 }

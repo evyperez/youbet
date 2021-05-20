@@ -18,57 +18,51 @@
   > div {
     @include hide-text;
 
-    border-radius: 0;
-
-    display: block;
-
     float: left;
 
+    display: block;
     height: 100%;
 
-    line-height: inherit;
     max-width: 100%;
+
+    line-height: inherit;
+
+    border-radius: 0;
 
     @content;
 
     &:first-child {
-      border-bottom-left-radius: $rounded-corner;
       border-top-left-radius: $rounded-corner;
+      border-bottom-left-radius: $rounded-corner;
     }
 
     &:last-child {
-      border-bottom-right-radius: $rounded-corner;
       border-top-right-radius: $rounded-corner;
+      border-bottom-right-radius: $rounded-corner;
     }
   }
 }
 
 progress,
 [role='progressbar'] {
+  @include progress-bar-fg {
+    background: linear-gradient(90deg, transparent 50%, palette('button', 'submit') 50%) center/50px 50px transparent;
+  }
+  @include progress-bar-bg {
+    background: linear-gradient(90deg, transparent 50%, palette('button', 'base') 50%) center/50px 50px transparent;
+  }
 
-  appearance: none;
+  display: block;
 
-  background-color: palette('disabled', 'background');
+  width: 100%;
   // Get rid of default border in Firefox.
 
-  border: 0;
+  height: $leading * 1em;
 
   color: palette('button', 'submit');
 
-  display: block;
-  height: $leading * 1em;
+  background-color: palette('disabled', 'background');
+  border: 0;
 
-  width: 100%;
-  @include progress-bar-fg {
-    background: linear-gradient(90deg,
-    transparent 50%,
-    palette('button', 'submit') 50%)
-      center/50px 50px transparent;
-  }
-  @include progress-bar-bg {
-    background: linear-gradient(90deg,
-    transparent 50%,
-    palette('button', 'base') 50%)
-      center/50px 50px transparent;
-  }
+  appearance: none;
 }

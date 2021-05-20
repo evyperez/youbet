@@ -1,5 +1,6 @@
 /* buttons
 ---------------------------------------------------------------------------- */
+
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Improve usability and consistency of cursor style between image-type `input` and others.
@@ -15,30 +16,30 @@
 %button-reset {
   @extend %os-element-reset;
 
+  display: flex;
+
   align-items: center;
 
-  appearance: button; /* 1 */
+  width: auto; /* 3 */
+
+  padding: 1px 6px; /* 6 */ // stylelint-disable-next-line property-units
+  overflow: visible; /* 3 */
+
+  text-indent: 0;
+
+  white-space: inherit;
+
+  cursor: pointer; /* 2 */
 
   background-color: palette('button'); /* 5 */
 
   box-sizing: inherit;
 
-  cursor: pointer; /* 2 */
-
-  display: flex;
-
-  overflow: visible; /* 3 */
-
-  padding: 1px 6px; /* 6 */ // sass-lint:disable-line property-units
-
-  white-space: inherit;
-
-  width: auto; /* 3 */
+  appearance: button; /* 1 */
 
   &::-moz-focus-inner {
-
-    border: 0;
     padding: 0; /* 4 */
+    border: 0;
   }
 
   &:hover,
@@ -48,8 +49,8 @@
     }
   }
 
-  &:active {
-  }
+  // &:active {
+  // }
 }
 
 /**
@@ -73,9 +74,9 @@ button,
 [type='reset'] {
   @extend %button-reset;
 
-  background-color: palette('button', 'reset');
-
   color: palette('button', 'submit');
+
+  background-color: palette('button', 'reset');
 }
 
 [type='submit'] {
