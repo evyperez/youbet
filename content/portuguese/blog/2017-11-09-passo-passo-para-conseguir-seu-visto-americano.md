@@ -4,7 +4,7 @@ date: 2017-11-09 13:00:06+00:00
 draft: false
 title: Passo a passo para conseguir seu visto americano
 type: post
-url: /passo-passo-para-conseguir-seu-visto-americano/
+slug: /passo-passo-para-conseguir-seu-visto-americano/
 categories:
 - Blog
 - Notícias

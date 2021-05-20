@@ -4,7 +4,7 @@ date: 2017-08-15 19:00:25+00:00
 draft: false
 title: There is a cat in the basket
 type: post
-url: /there-is-a-cat/
+slug: /there-is-a-cat/
 categories:
 - Blog
 tags:
@@ -55,7 +55,7 @@ _Dér is sãmfing in de ér_
 _Dér ar ei lót ov songs on mai compiurer_
 
 
-### 
+###
 
 
 
@@ -79,7 +79,7 @@ _Dér uós ei tiócolat ét roume_
 _Dér uãr ei lót ov quéts birraind mai ráuze_
 
 
-### 
+###
 
 
 
@@ -102,7 +102,7 @@ Dér uiu bi sâmfin nu
 Dér uiu bi ei nu óportíuniri
 
 
-### 
+###
 
 
 

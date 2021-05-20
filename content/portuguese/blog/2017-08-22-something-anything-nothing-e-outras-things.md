@@ -4,7 +4,7 @@ date: 2017-08-22 00:15:15+00:00
 draft: false
 title: Something, Anything, Nothing e outras ‘’things’’
 type: post
-url: /something-anything-nothing-e-outras-things/
+slug: /something-anything-nothing-e-outras-things/
 categories:
 - Blog
 post_format:
@@ -26,7 +26,7 @@ O assunto dialoga bastante com as estruturas sintáticas de negação da nossa l
 Agora vamos direto ao assunto...
 
 
-### 
+###
 
 
 
@@ -60,7 +60,7 @@ Além destes exemplos em frases afirmativas, ‘’something’’ também é us
 Repare que no caso de frases interrogativas, o ‘’something’’ só é colocado a partir do momento em que se deseja que a resposta à interrogação seja positiva ou respondida com ‘’Sim’’ ou ‘’Não’’ simplesmente.
 
 
-### 
+###
 
 
 
@@ -87,7 +87,7 @@ Em busca por uma resposta imediata às maneiras como o ‘’anything’’ pode
 Ao compreender o uso dessas três palavras, em especial o uso do ‘’anything’’, percebemos que, diferente do português, o inglês não admite a dupla negação, como já mencionei no começo. Isso significa que não se pode traduzir algo como ‘’Ele não faz nada’’ de forma literal. Entenderemos melhor com a explicação do uso do ‘’nothing’’.
 
 
-### 
+###
 
 
 

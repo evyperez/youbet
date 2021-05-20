@@ -4,7 +4,7 @@ date: 2017-08-17 22:02:51+00:00
 draft: false
 title: Quanto custa viajar para o EUA?
 type: post
-url: /quanto-custa-viajar-para-o-eua/
+slug: /quanto-custa-viajar-para-o-eua/
 categories:
 - Blog
 tags:

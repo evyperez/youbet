@@ -4,7 +4,7 @@ date: 2017-08-07 15:39:00+00:00
 draft: false
 title: Ser e não ser, essa é a questão!
 type: post
-url: /ser-e-nao-ser-essa-e-questao/
+slug: /ser-e-nao-ser-essa-e-questao/
 categories:
 - Blog
 tags:

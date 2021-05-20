@@ -4,7 +4,7 @@ date: 2017-11-23 13:00:23+00:00
 draft: false
 title: Técnicas para fixar o aprendizado em inglês
 type: post
-url: /tecnicas-para-fixar-o-aprendizado-em-ingles/
+slug: /tecnicas-para-fixar-o-aprendizado-em-ingles/
 categories:
 - Blog
 tags:

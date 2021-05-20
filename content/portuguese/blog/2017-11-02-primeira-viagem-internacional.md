@@ -4,7 +4,7 @@ date: 2017-11-02 13:00:46+00:00
 draft: false
 title: 'Primeira viagem internacional: dicas úteis'
 type: post
-url: /primeira-viagem-internacional/
+slug: /primeira-viagem-internacional/
 categories:
 - Blog
 tags:

@@ -4,7 +4,7 @@ date: 2017-11-16 13:55:49+00:00
 draft: false
 title: Dicas de como planejar seu intercâmbio
 type: post
-url: /dicas-de-como-planejar-seu-intercambio/
+slug: /dicas-de-como-planejar-seu-intercambio/
 categories:
 - Blog
 ---

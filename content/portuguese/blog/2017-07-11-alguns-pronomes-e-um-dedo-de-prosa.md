@@ -4,7 +4,7 @@ date: 2017-07-11 16:37:55+00:00
 draft: false
 title: Alguns pronomes e um dedo de prosa.
 type: post
-url: /alguns-pronomes-e-um-dedo-de-prosa/
+slug: /alguns-pronomes-e-um-dedo-de-prosa/
 categories:
 - Blog
 tags:
