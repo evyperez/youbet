@@ -6,11 +6,16 @@
   <div class="main-container">
     {{ partial "header.html" . }}
 
-    <main role="main" id="conteudo">
+    <main role="main" id="conteudo" class="main">
+      {{ partial "contact.html" . }}
+      {{ partial "blog.html" . }}
     </main>
     {{ partial "footer.html" . }}
 
   </div>
+
+  {{ partial "scripts.html" . }}
+
 
 </body>
 </html>
