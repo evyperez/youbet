@@ -643,3 +643,13 @@ $_default-text-color--light: palette('text', 'light');
     #{append($grid-image, (transparent calc(100% - #{$gutter}), $color calc(100% - #{$gutter}), $color 100%), comma)}
   );
 }
+
+@function to-em($size) {
+  $emSize: $size / 16px;
+  @return #{$emSize}em;
+}
+
+@function to-rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
