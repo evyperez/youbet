@@ -119,13 +119,12 @@ html {
  */
 body {
   display: flex; /* 1 */
-
   flex-direction: column; /* 1 */
-
   height: 100vh; /* 2 */
   min-height: 100%;
-
   margin: 0;
+  font-size: 100%;
+  line-height: 1.75;
 
   color: palette('black');
 

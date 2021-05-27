@@ -60,19 +60,19 @@
   }
 }
 
-img:not([src$='.png']):not([src$='.gif']),
-embed {
-  @extend %loading-bg;
+// img:not([src$='.png']):not([src$='.gif']),
+// embed {
+//   @extend %loading-bg;
 
-  background-size: auto;
+//   background-size: auto;
 
-  &::after {
-    /*
-		 *	Future proof reset
-		 */
-    content: none;
-  }
-}
+//   &::after {
+//     /*
+// 		 *	Future proof reset
+// 		 */
+//     content: none;
+//   }
+// }
 
 input,
 output,
@@ -155,13 +155,3 @@ textarea {
   }
 }
 
-.container {
-  max-width: $max-width;
-
-  padding-top: $leading * 4rem;
-  padding-right: $gutter;
-  padding-bottom: $leading * 4rem;
-  padding-left: $gutter;
-  margin-right: auto;
-  margin-left: auto;
-}

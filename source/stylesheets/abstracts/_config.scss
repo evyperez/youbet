@@ -94,10 +94,16 @@ $modularscale: (
 /// @require {function} palette
 /// @todo Customize the colors or add new ones to match your design needs.
 $palette: (
+  'blue': (
+    'base': rgb(35, 82, 124),
+  ),
+  'orange': (
+    'base': rgb(247, 168, 0),
+  ),
   'gray': (
+    'base': rgb(62, 58, 59),
     'x-light': tint(rgb(229, 231, 234), 10%),
     'light': rgb(229, 231, 234),
-    'base': rgb(151, 153, 156),
     'dark': rgb(64, 68, 71),
     'x-dark': shade(rgb(64, 68, 71), 10%),
   ),
@@ -155,9 +161,20 @@ $palette: (
   ),
   'tap-highlight': rgb(255, 94, 153),
   'target-highlight': rgb(255, 255, 102),
+  'background': (
+    'dark': rgb(35, 82, 124),
+    'light': rgb(117, 170, 248),
+  ),
   'text': (
     'dark': hsl(0, 0%, 13%),
     'light': rgb(229, 231, 234),
+  ),
+  'menu': (
+    'shadow': rgba(0, 0, 0, 0.74),
+  ),
+  'shadow': (
+    'inverse': rgba(255, 255, 255, 0.25),
+    'base': rgba(0, 0, 0, 0.2),
   ),
 );
 
@@ -220,6 +237,9 @@ $toggle-breakpoints: (
   'toggle-table-layout': 48em,
   'toggle-menu': 64em,
 );
+
+$off-canvas-menu-width: 15em;
+
 
 $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 

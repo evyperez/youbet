@@ -7,6 +7,32 @@
  *
  * An `article` element can have the `[role='main']`
  */
-// main,
-// [role='main'] {
-// }
+
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+main,
+[role='main'] {
+  display: flex;
+  flex: 1;
+}
+
+
+.container {
+  max-width: $max-width;
+
+  padding-top: to-rem(16px);
+  padding-right: $gutter;
+  padding-bottom: to-rem(16px);
+  padding-left: $gutter;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header .container,
+footer .container {
+  padding: to-rem(16px);
+}
