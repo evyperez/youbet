@@ -1,0 +1,27 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://www.googletagmanager.com/gtag/js?id={{ . }}" async></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', '{{ . }}');
+
+</script>
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(
+    /\bno-js\b/,
+    ''
+  );
+</script>
+
+{{ $js := resources.Get "/scripts/index.js" }}
+{{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }} {{ .Scratch.Set "secureJS" $secureJS }}
+
+
+<link rel="preload" type="text/javascript" as="script" href="{{ $secureJS.RelPermalink }}"
+  integrity="{{ $secureJS.Data.Integrity }}" />

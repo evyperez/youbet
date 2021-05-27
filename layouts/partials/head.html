@@ -63,19 +63,7 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {{ if eq (getenv "NODE_ENV") "production" }} {{ with $.Site.GoogleAnalytics }}
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script src="https://www.googletagmanager.com/gtag/js?id={{ . }}" async></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', '{{ . }}');
-
-  </script>
   {{ end }} {{ end }} {{ $vendorJS := resources.Get "/scripts/vendor.js" }}
   {{$secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
   {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
@@ -83,36 +71,8 @@
   <link rel="preload" type="text/javascript" as="script" href="{{ $secureVendorJS.RelPermalink }}"
     integrity="{{ $secureVendorJS.Data.Integrity }}" />
 
-  {{ $js := resources.Get "/scripts/index.js" }}
-  {{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }} {{ .Scratch.Set "secureJS" $secureJS }}
-
-  <link rel="preload" type="text/javascript" as="script" href="{{ $secureJS.RelPermalink }}"
-    integrity="{{ $secureJS.Data.Integrity }}" />
-
-  <script type="text/javascript">
-    document.documentElement.className = document.documentElement.className.replace(
-      /\bno-js\b/,
-      ''
-    );
-
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-  <script>
-    setTimeout(() => {
-      var slider = document.querySelector('.glide');
-
-      if (slider) {
-        var glide = new Glide(slider, {
-          type: 'carousel',
-          startAt: 0,
-          perView: 1,
-          autoplay: 3000,
-          hoverpause: false,
-        });
-
-        glide.mount();
-      }
-    }, 1000);
-
-  </script>
+  {{ "<!-- plugins -->" | safeHTML }}
+  {{ range .Site.Params.plugins.css }}
+  <link rel="stylesheet" href="{{ .link | absURL }}">
+  {{ end }}
 </head>
