@@ -19,9 +19,8 @@
   );
 </script>
 
-{{ $js := resources.Get "/scripts/index.js" }}
-{{ $secureJS := $js | resources.Minify | resources.Fingerprint "sha512" }} {{ .Scratch.Set "secureJS" $secureJS }}
 
+  {{ $js := resources.Get "scripts/index.js" }}
 
-<link rel="preload" type="text/javascript" as="script" href="{{ $secureJS.RelPermalink }}"
-  integrity="{{ $secureJS.Data.Integrity }}" />
+  {{ $secureJS := $js | js.Build | resources.Minify | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>

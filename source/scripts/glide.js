@@ -1,13 +1,22 @@
 import Glide from '@glidejs/glide';
 
-console.log('entrou no js do glide');
+function mountGlide() {
 
-var glide = new Glide('.glide', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 1,
-  autoplay: 3000,
-  hoverpause: false,
+	const doc = document.querySelector('.glide')
+
+	if (doc) {
+		const glide = new Glide(doc, {
+			type: 'carousel',
+			startAt: 0,
+			perView: 1,
+			autoplay: 3000,
+			hoverpause: false,
+		});
+		glide.mount();
+	}
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+	mountGlide();
 });
 
-glide.mount();

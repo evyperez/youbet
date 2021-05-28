@@ -49,25 +49,7 @@ languages:
           Weight: 3
           Identifier: 'contato'
           URL: '/contato'
-module:
-  mounts:
-    - source: static
-      target: static
-    - source: node_modules/@glidejs/glide/dist/glide.min.js
-      target: static/plugins/glide/glide.min.js
-    - source: static
-      target: static
-    - source: node_modules/@glidejs/glide/dist/css/glide.core.min.css
-      target: static/css/glide/glide.core.min.css
-    - source: node_modules/@glidejs/glide/dist/css/glide.theme.min.css
-      target: static/css/glide/glide.theme.min.css
 params:
- plugins:
-    css:
-    - link: css/glide/glide.core.min.css
-    - link: css/glide/glide.theme.min.css
-    js:
-      - link: plugins/glide/glide.min.js
     authors:
     - Name: 'Evelyn Perez'
       Weight: 1

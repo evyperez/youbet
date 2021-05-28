@@ -71,8 +71,4 @@
   <link rel="preload" type="text/javascript" as="script" href="{{ $secureVendorJS.RelPermalink }}"
     integrity="{{ $secureVendorJS.Data.Integrity }}" />
 
-  {{ "<!-- plugins -->" | safeHTML }}
-  {{ range .Site.Params.plugins.css }}
-  <link rel="stylesheet" href="{{ .link | absURL }}">
-  {{ end }}
 </head>
