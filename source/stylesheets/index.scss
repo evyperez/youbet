@@ -20,10 +20,13 @@
 
 // 5. Components
 @import 'components/h-entry', 'components/figure', 'components/button', 'components/checkbox-and-radio', 'components/output',
-  'components/progress', 'components/select', 'components/slider', 'components/text-field';
+  'components/progress', 'components/select', 'components/slider', 'components/text-field', 'components/carousel';
 
 // 6. Page-specific styles
 @import 'pages/home';
 
-// 7. Themes
+// 7. Partials-specific styles
+@import 'partials/blog';
+
+// 8. Themes
 @import 'themes/default', 'themes/print';
