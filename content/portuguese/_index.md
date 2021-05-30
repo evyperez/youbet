@@ -6,7 +6,7 @@ title: HomePage
 type: page
 slug: /
 ---
-
+<!--
 [vc_row full_width="stretch_row_content_no_spaces"][vc_column][vc_column_text][rev_slider alias="Home-slider"][/vc_column_text][/vc_column][/vc_row][vc_row css=".vc_custom_1566354821325{margin-top: -20px !important;margin-bottom: -20px !important;}"][vc_column 0=""][vc_column_text 0=""]
 
 
@@ -96,4 +96,4 @@ nos Estados Unidos
 [/vc_column_text][vc_column_text]Com a YouBet! você tem maiores chances de estudar em um colégio tradicional americano, tendo um ótimo custo benefício com forma de pagamento diferenciadas. São colégios que proporcionam uma típica vida americana e dão a melhor estrutura acadêmica com dormitórios, alimentação e excelência na educação. Com o programa você obtém certificados de licenciatura junto com o ensino médio, isto é, além de uma formação internacional você garante capacitação profissional e experiência cultural.[/vc_column_text][thim-button title="Saiba Mais!" url="http://youbetschool.web7641.kinghost.net/intercambio-inverno" new_window="" custom_style="custom_style" border_width="1px" color="#ffb606" border_color="#ffb606" bg_color="#ffffff" hover_color="#f7f7f7" hover_border_color="#ffb606" hover_bg_color="#ffb606"][/vc_column][vc_column width="1/2"][vc_single_image image="8749" img_size="large" alignment="center" onclick="custom_link" link="http://youbetschool.web7641.kinghost.net/intercambio-inverno"][/vc_column][/vc_row][vc_row full_width="stretch_row" css=".vc_custom_1566435118059{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 10px !important;padding-bottom: 10px !important;background-color: #ffb606 !important;}"][vc_column][vc_row_inner][vc_column_inner][thim-heading title="UMA TRANSFORMAÇÃO DE VIDA" title_uppercase="" textcolor="#ffffff" sub_heading_color="#ffffff" clone_title="" line="" bg_line="#ffffff" text_align="text-center"][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row][vc_row full_width="stretch_row" css=".vc_custom_1567480745010{margin-top: 0px !important;margin-bottom: 0px !important;padding-top: 15px !important;padding-bottom: 30px !important;background-image: url(http://youbetschool.com/wp-content/uploads/2015/10/bg_lastest_new.jpg?id=5854) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}"][vc_column][vc_row_inner][vc_column_inner][thim-heading title="Blog" title_uppercase="" textcolor="#ffffff" title_custom="custom" font_weight="" sub_heading_color="#ffffff" clone_title="" line="" bg_line="#ffffff"][/vc_column_inner][/vc_row_inner][thim-carousel-posts cat_id="9" number_posts="4"][/vc_column][/vc_row]
 
 
-
+ -->
