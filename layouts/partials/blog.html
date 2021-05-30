@@ -1,21 +1,42 @@
 <section class="blog">
-	<div class="container">
-	
-	</div>
+  <div class="container">
+    <div class="glide">
+      <div class="glide__arrows" data-glide-el="controls">
+        <div>
+          <h3>Blog</h3>
+        </div>
+        <div class="glide__arrows--actions">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          </button>
+        </div>
+      </div>
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {{ range ( where .Site.RegularPages "Type" "post").ByDate.Reverse | first 4  }}
+          <li class="glide__slide">
+            <div class="glide__slide--images">
+              <a href="{{ .Permalink }}">
+                <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+              </a>
+              <div class="glide__slide--info">
+                <div>
+                  <p class="glide__slide--author">{{.Params.Author}}</p>
+                  <p class="glide__slide--date"> {{ .Params.Date.Format "01/02/2006" }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="glide__slide--title">
+              <a href="{{ .Permalink }}">
+                <h4> {{ .Title }} </h4>
+              </a>
+            </div>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </section>
-
-<div class="glide">
-	<div class="glide__track" data-glide-el="track">
-		<ul class="glide__slides">
-			<li class="glide__slide">0</li>
-			<li class="glide__slide">1</li>
-			<li class="glide__slide">2</li>
-		  </ul>
-	</div>
-  
-	<div class="glide__arrows" data-glide-el="controls">
-	  <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-	  <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-	</div>
-  </div>
