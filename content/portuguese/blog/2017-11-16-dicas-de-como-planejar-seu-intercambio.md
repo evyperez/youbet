@@ -3,6 +3,7 @@ author: jessica.severo
 date: 2017-11-16 13:55:49+00:00
 draft: false
 title: Dicas de como planejar seu intercâmbio
+image: uploads/images/pexels-photo-373892.jpg
 type: post
 slug: /dicas-de-como-planejar-seu-intercambio/
 categories:
