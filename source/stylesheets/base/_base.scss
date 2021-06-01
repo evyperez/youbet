@@ -120,8 +120,10 @@ html {
 body {
   display: flex; /* 1 */
   flex-direction: column; /* 1 */
+  width: 100%;
   height: 100vh; /* 2 */
   min-height: 100%;
+
   margin: 0;
   font-size: 100%;
   line-height: 1.75;
@@ -182,7 +184,7 @@ summary {
   }
 
   &:focus {
-    outline: -webkit-focus-ring-color auto 5px;
+    outline: none;
   }
 
   &::before {
@@ -422,18 +424,15 @@ a {
 
   font-size: 100%;
 
+  text-decoration: none;
+
   vertical-align: baseline;
   // sass-lint:disable-block property-sort-order
 
   color: palette('anchor', 'base');
 
-  @include on-event {
-    text-decoration: underline;
-  }
 
   &:link {
-    text-decoration: underline;
-
     cursor: pointer;
     -webkit-tap-highlight-color: palette('tap-highlight'); // stylelint-disable-next-line no-vendor-prefixes
 
@@ -457,10 +456,8 @@ a {
   }
 
   &:focus {
-    color: palette('anchor', 'focus');
-
+    outline: unset;
     outline: 1px dotted;
-    outline-offset: 2px;
   }
 
   /**
@@ -468,6 +465,7 @@ a {
 	*/
   &:hover,
   &:active {
+    outline: unset;
     outline-width: 0;
   }
 
