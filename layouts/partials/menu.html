@@ -12,16 +12,44 @@
     <label for="menu-controller" onclick></label>
 
     <div class="logo logo-{{ .Site.LanguageCode  | lower }}">
-      <a href="/{{ .Site.LanguagePrefix }}"> {{ .Site.Title }} </a>
+      <a href="/{{ .Site.LanguagePrefix }}"><img src="/uploads/images/youbet.svg" alt="YouBet!"></a>
     </div>
 
     {{ if .Site.Menus.main }}
     <nav class="main-menu" id="menu">
+
       <ul>
+        {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <li>
-          <a class="sidebar-nav-item" href="{{ .URL }}"> {{ .Name }} </a>
+        {{ if .HasChildren }}
+        <input type="checkbox" id="{{.Identifier}}-controler" class="controller" hidden>
+
+        <li class="has-sub-menu {{ if $currentPage.HasMenuCurrent "main" . }}is-active{{ end }}">
+          <label for="{{.Identifier}}-controler" onclick class="controller-label">
+
+            <a href="#">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+        </label>
+
+          <ul class="sub-menu">
+            {{ range .Children }}
+            <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+          </ul>
         </li>
+
+        {{ else }}
+        <li>
+          <a href="{{ .URL }}">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+        </li>
+        {{ end }}
         {{ end }}
       </ul>
     </nav>

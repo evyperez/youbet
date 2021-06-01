@@ -95,17 +95,41 @@ $modularscale: (
 /// @todo Customize the colors or add new ones to match your design needs.
 $palette: (
   'blue': (
-    'base': rgb(35, 82, 124),
+    '110': #0038da,
+    'base': #004ff7,
+    '80%': #3171f7,
+    '60%': #6392f7,
+    '30%': #c6d5f7,
+    '10%': #dee6f7,
   ),
-  'orange': (
-    'base': rgb(247, 168, 0),
+  'yellow': (
+    '110%': #d88e00,
+    'base': #f7a800,
+    '80%': #f7b831,
+    '60%': #f7c863,
+    '30%': #f7e7c6,
+    '10%': #f7efde,
   ),
   'gray': (
-    'base': rgb(62, 58, 59),
-    'x-light': tint(rgb(229, 231, 234), 10%),
-    'light': rgb(229, 231, 234),
-    'dark': rgb(64, 68, 71),
-    'x-dark': shade(rgb(64, 68, 71), 10%),
+    '110%': #141414,
+    'base': #333333,
+    '80%': #616161,
+    '60%': #949494,
+    '30%': #cacaca,
+    '10%': #e6e6e6,
+  ),
+  'menu-dark': (
+    'base': #141414,
+    'border': #cacaca,
+    'sub-menu': #1d1d1d,
+    'sub-menu-text': #cacaca,
+    'sub-menu-hover': #333333,
+    'anchor': #f7a800,
+  ),
+  'menu-light': (
+    'base': #e6e6e6,
+    'anchor': #f7a800,
+    'border': #e6e6e6,
   ),
   'white': rgb(255, 255, 255),
   'black': rgb(0, 0, 0),
@@ -169,6 +193,12 @@ $palette: (
     'dark': hsl(0, 0%, 13%),
     'light': rgb(229, 231, 234),
   ),
+  'text-dark': (
+    'base': rgb(229, 231, 234),
+  ),
+  'text-light': (
+    'base': hsl(0, 0%, 13%),
+  ),
   'menu': (
     'shadow': rgba(0, 0, 0, 0.74),
   ),
@@ -229,6 +259,9 @@ $breakpoints: _im-to-em(
     'tablet__portrait__portrait': 768px,
     'tablet__portrait__landscape': 1024px,
     'tablet__landscape': 1280px,
+    'max-desktop': 1023px,
+    'desktop': 1024px,
+    'max-wide': 1599px,
     'wide': 1600px,
   )
 ) !default;
@@ -239,7 +272,6 @@ $toggle-breakpoints: (
 );
 
 $off-canvas-menu-width: 15em;
-
 
 $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 

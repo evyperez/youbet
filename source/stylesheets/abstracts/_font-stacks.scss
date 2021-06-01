@@ -13,7 +13,7 @@
 // Android: 'Roboto',
 // Basic web fallback: 'Helvetica Neue', Arial, sans-serif !default;
 
-$native-font-stack: -apple-system, system-ui, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Helvetica Neue', arial, sans-serif !default;
+$native-font-stack:  'Roboto', sans-serif, -apple-system, system-ui, blinkmacsystemfont, 'Segoe UI', 'Helvetica Neue', arial, sans-serif !default;
 
 ///
 /// Default font stack for code samples, considering the platform.
@@ -31,7 +31,7 @@ $native-font-stack: -apple-system, system-ui, blinkmacsystemfont, 'Segoe UI', 'R
 ///
 $basic-code-font-stack: consolas, 'Liberation Mono', menlo, courier, monospace !default;
 
-$basic-title-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$basic-title-font-stack: 'Arvo', sans-serif,  'Lato', sans-serif, 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Font stack for conjunctions or prepositions
 ///
