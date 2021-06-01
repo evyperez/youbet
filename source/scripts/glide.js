@@ -1,7 +1,6 @@
 import Glide from '@glidejs/glide';
 
 function mountGlide() {
-
   const doc = document.querySelector('.glide');
 
   if (doc) {
@@ -19,7 +18,7 @@ function mountGlide() {
         },
         670: {
           perView: 1,
-        }
+        },
       },
     });
     glide.mount();
@@ -29,4 +28,3 @@ function mountGlide() {
 document.addEventListener('DOMContentLoaded', function (event) {
   mountGlide();
 });
-

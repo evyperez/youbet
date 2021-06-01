@@ -7,21 +7,16 @@ image: uploads/images/Captura-de-Tela-2017-08-11.png
 type: post
 slug: /como-e-o-ensino-medio-nos-estados-unidos-parte-2
 categories:
-- Blog
-- vídeo
+  - Blog
+  - vídeo
 post_format:
-- Vídeo
+  - Vídeo
 tags:
-- dicas
-- Ensino Médio
-- estados unidos
-- Vídeos
+  - dicas
+  - Ensino Médio
+  - estados unidos
+  - Vídeos
 ---
 
-
-
-
-O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas escolas americanas.
-
-
-
+O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas
+escolas americanas.
