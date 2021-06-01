@@ -17,7 +17,7 @@
     "clean:testResults": "rimraf ./testResults/**/*.xml",
     "compile:sass": "node-sass ./source/stylesheets --output-style compressed --output ./assets/styles --source-map \"static/assets/styles\"",
     "compress:css": "postcss --use autoprefixer cssnano --safe -r ./assets/styles/**/*.css",
-    "compress:img": "imagemin \"./source/images/**/*.{gif,jpg,png,svg}\" --out-dir=./static/uploads/images",
+    "compress:img": "imagemin \"./source/images/**/*.{gif,jpg,png,svg}\" --out-dir=./static/assets/img",
     "compile:js": "npm-run-all compile:js:*",
     "compile:js:app": "browserify ./source/scripts/index.js -o ./assets/scripts/index.js -t [ babelify ]",
     "compile:js:vendor": "browserify ./source/scripts/vendor.js -o ./assets/scripts/vendor.js -t",

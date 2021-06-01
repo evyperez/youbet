@@ -143,6 +143,7 @@ body {
 main,
 [role='main'] {
   flex-grow: 1; /* 1 */
+  flex-direction: column;
 }
 
 /* section items HTML5

@@ -1,22 +1,30 @@
 import Glide from '@glidejs/glide';
 
 function mountGlide() {
+  const doc = document.querySelector('.glide');
 
-	const doc = document.querySelector('.glide')
-
-	if (doc) {
-		const glide = new Glide(doc, {
-			type: 'carousel',
-			startAt: 0,
-			perView: 1,
-			autoplay: 3000,
-			hoverpause: false,
-		});
-		glide.mount();
-	}
+  if (doc) {
+    const glide = new Glide(doc, {
+      type: 'slider',
+      startAt: 0,
+      perView: 3,
+      hoverpause: false,
+      breakpoints: {
+        1280: {
+          perView: 3,
+        },
+        1000: {
+          perView: 2,
+        },
+        670: {
+          perView: 1,
+        },
+      },
+    });
+    glide.mount();
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-	mountGlide();
+document.addEventListener('DOMContentLoaded', function (event) {
+  mountGlide();
 });
-
