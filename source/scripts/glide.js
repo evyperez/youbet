@@ -5,19 +5,19 @@ function mountGlide() {
 
   if (doc) {
     const glide = new Glide(doc, {
-      type : 'slider',
-      startAt : 0,
-      perView : 3,
-      hoverpause : false,
-      breakpoints : {
-        1280 : {
-          perView : 3,
+      type: 'slider',
+      startAt: 0,
+      perView: 3,
+      hoverpause: false,
+      breakpoints: {
+        1280: {
+          perView: 3,
         },
-        1000 : {
-          perView : 2,
+        1000: {
+          perView: 2,
         },
-        670 : {
-          perView : 1,
+        670: {
+          perView: 1,
         },
       },
     });
@@ -25,5 +25,6 @@ function mountGlide() {
   }
 }
 
-document.addEventListener('DOMContentLoaded',
-                          function(event) { mountGlide(); });
+document.addEventListener('DOMContentLoaded', function (event) {
+  mountGlide();
+});
