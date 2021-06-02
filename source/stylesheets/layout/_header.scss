@@ -13,8 +13,16 @@
 // }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: layer('dropdown');
+  background: palette('menu-light');
+  border-bottom: 2px solid  palette('menu-light', 'border');
+}
+
+.theme--dark header {
   background: palette('menu-dark');
-  border-bottom: 1px solid palette('white');
+  border-bottom: 2px solid  palette('menu-dark', 'border');
 }
 
 .header-container {

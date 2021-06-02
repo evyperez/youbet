@@ -2,11 +2,12 @@
 @import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
 // 2. Vendors
-// @import
-// '../../node_modules/modularscale-sass/stylesheets/modularscale',
-// '../../node_modules/susy/sass/susy',
-// '../../node_modules/susy/sass/plugins/svg-grid',
-// '../../node_modules/include-media/dist/include-media';
+// @import '~modularscale-sass/stylesheets/modularscale',
+//   '../../node_modules/susy/sass/susy',
+//   '../../node_modules/susy/sass/plugins/svg-grid',
+//   '../../node_modules/include-media/dist/include-media';
+
+@import '../../node_modules/modularscale-sass/stylesheets/modularscale';
 
 // 1. Configuration and helpers
 @import 'abstracts/constants', 'abstracts/font-stacks', 'abstracts/functions',

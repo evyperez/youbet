@@ -83,7 +83,7 @@ $line-lengths: (
 /// @link http://www.modularscale.com/?1&rem&1.25
 $modularscale: (
   base: 1rem,
-  ratio: 1.25,
+  ratio: 1.2,
 );
 
 /// List all available colors and tones.
@@ -120,16 +120,21 @@ $palette: (
   ),
   'menu-dark': (
     'base': #141414,
-    'border': #cacaca,
+    'text': #cacaca,
+    'border': #333333,
     'sub-menu': #1d1d1d,
     'sub-menu-text': #cacaca,
     'sub-menu-hover': #333333,
     'anchor': #f7a800,
   ),
   'menu-light': (
-    'base': #e6e6e6,
-    'anchor': #f7a800,
+    'base': #ffffff,
+    'text': #141414,
     'border': #e6e6e6,
+    'sub-menu': #f1f1f1,
+    'sub-menu-text': #1d1d1d,
+    'sub-menu-hover': #333333,
+    'anchor': #f7a800,
   ),
   'white': rgb(255, 255, 255),
   'black': rgb(0, 0, 0),
@@ -186,8 +191,8 @@ $palette: (
   'tap-highlight': rgb(255, 94, 153),
   'target-highlight': rgb(255, 255, 102),
   'background': (
-    'dark': rgb(35, 82, 124),
-    'light': rgb(117, 170, 248),
+    'dark': rgb(20, 20, 20),
+    'light': rgb(252, 252, 252),
   ),
   'text': (
     'dark': hsl(0, 0%, 13%),
@@ -206,9 +211,9 @@ $palette: (
     'inverse': rgba(255, 255, 255, 0.25),
     'base': rgba(0, 0, 0, 0.2),
   ),
-  'carousel':(
-  'tag-background':rgba(0,0,0,0.6)
-  )
+  'carousel': (
+    'tag-background': rgba(0, 0, 0, 0.6),
+  ),
 );
 
 /// Default border-radius
@@ -259,8 +264,7 @@ $breakpoints: _im-to-em(
   (
     'phone__portrait': 320px,
     'phone__landscape': 480px,
-    'tablet__portrait__portrait': 768px,
-    'tablet__portrait__landscape': 1024px,
+    'tablet__portrait': 768px,
     'tablet__landscape': 1280px,
     'max-desktop': 1023px,
     'desktop': 1024px,

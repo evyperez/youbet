@@ -15,12 +15,18 @@
  * Basic typography style for copy text
  */
 body {
-  font-weight: font-weights('normal');
+  font-weight: font-weight('normal');
   font-size: $body-font-size;
-
-  line-height: $leading;
+  line-height: 1.5;
   font-family: $text-font-stack;
+
   color: palette('text', 'dark');
+  background: palette('background', 'light');
+}
+
+body.theme--dark {
+  color: palette('text', 'light');
+  background: palette('background', 'dark');
 }
 
 /* HEADINGS AND TITLES */
@@ -39,11 +45,57 @@ h6,
 legend,
 caption,
 details > summary {
-  font-weight: font-weights('extrabold');
+  margin: 0;
+  font-weight: 700;
   font-family: $title-font-stack;
-  font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
+  font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1,
+    'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
+
   break-after: avoid;
   page-break-after: avoid;
+}
+
+h1 {
+  margin-bottom: to-rem(16px);
+  font-size: ms(4);
+
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    font-size: ms(5);
+  }
+}
+
+h2 {
+  margin-bottom: to-rem(12px);
+
+  font-size: ms(3);
+
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    font-size: ms(4);
+  }
+}
+
+h3 {
+  margin-bottom: to-rem(12px);
+
+  font-size: ms(2);
+
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    font-size: ms(3);
+  }
+}
+
+h4 {
+  margin-bottom: to-rem(8px);
+
+  font-size: ms(2);
+  line-height: to-rem(32px);
+}
+
+h5 {
+  margin-bottom: to-rem(8px);
+
+  font-size: ms(2);
+  line-height: to-rem(32px);
 }
 
 h1 a,
@@ -56,23 +108,21 @@ legend a,
 caption a,
 dt a {
   text-decoration: inherit;
+
   color: inherit;
 
   &:link {
     text-decoration: inherit;
+
     color: inherit;
   }
 }
 
 p {
   padding: 0;
-
-  /*  -moz-font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
-		-ms-font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
-		-webkit-font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
-		font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1; */
   margin-top: 0;
-  margin-bottom: $leading * 1em;
+  margin-bottom: to-rem(16px);
+  font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 }
 
 /**
@@ -118,10 +168,12 @@ article fieldset > p:first-child {
     text-decoration: none;
 
     cursor: help; /* 1 */
+
     border-bottom: 1px dotted;
 
     @supports (text-decoration: dotted underline) {
       text-decoration: dotted underline; /* 2 */
+
       border-bottom: inherit;
     }
   }
@@ -138,8 +190,8 @@ abbr {
  */
 dfn {
   @extend %abbr-title;
-  font-style: italic; /* 1 */
 
+  font-style: italic; /* 1 */
   font-size: 1em;
 }
 
@@ -179,6 +231,7 @@ strong {
  */
 mark {
   color: palette('mark', 'foreground');
+
   background: palette('mark', 'background');
 }
 
@@ -189,7 +242,7 @@ mark {
  * Address inconsistent and variable font size in all browsers.
  */
 small {
-  font-size: 83.3333%;
+  font-size: to-rem(13px);
   line-height: inherit;
 }
 
@@ -201,8 +254,8 @@ small {
 sub,
 sup {
   position: relative;
-  font-size: 83.3333%; /* 1 */
 
+  font-size: 83.3333%; /* 1 */
   line-height: 0;
 
   vertical-align: baseline;
@@ -285,6 +338,7 @@ s {
     font-weight: font-weights('bold');
 
     text-decoration: none;
+
     content: '[update] ';
   }
 
@@ -294,6 +348,7 @@ s {
 
   &::after {
     text-decoration: none;
+
     content: ' [/update] ';
   }
 }
@@ -367,6 +422,7 @@ del {
 q,
 blockquote {
   font-style: italic;
+
   color: palette('quotes');
 }
 
@@ -406,7 +462,7 @@ blockquote.verse p {
   width: auto;
 
   margin-right: auto;
-
   margin-left: auto;
+
   text-align: left;
 }
