@@ -13,6 +13,22 @@
 // }
 
 .footer {
-  color: palette('text-light');
+  color: palette('menu-light', 'text');
+  background: palette('menu-light');
+
+
+}
+
+.theme--dark .footer {
+  color: palette('menu-dark', 'text');
   background: palette('menu-dark');
+}
+
+.footer__copyright {
+  text-align: center;
+}
+
+.footer__copyright p {
+  margin: 0;
+  font-size: to-rem(14px);
 }
