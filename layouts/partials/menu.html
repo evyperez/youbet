@@ -12,7 +12,7 @@
     <label for="menu-controller" onclick></label>
 
     <div class="logo logo-{{ .Site.LanguageCode  | lower }}">
-      <a href="/{{ .Site.LanguagePrefix }}"><img src="/assets/images/youbet.svg" alt="YouBet!"></a>
+      <a href="/{{ .Site.LanguagePrefix }}"><img src="/assets/img/youbet.svg" alt="YouBet!"></a>
     </div>
 
     {{ if .Site.Menus.main }}
@@ -56,8 +56,8 @@
     {{ end }}
   </div>
 
-  <!--
-    {{ if .IsTranslated }}
+
+    <!-- {{ if .IsTranslated }}
     <nav class="languages-nav">
       <ul class="languages-navlinks">
         {{ range .Translations }}
@@ -67,6 +67,6 @@
         {{ end}}
       </ul>
     </nav>
-    {{ end }}
-  -->
+    {{ end }} -->
+
 </div>

@@ -1,0 +1,26 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.testimonials }}
+
+<section class="testimonials">
+  <div class="container">
+    {{ if .title }}
+    <h2 class="title-section">{{ .title }} </h2>
+    {{ end }}
+    <div class="testimonials-wrap">
+      {{ range .list }}
+      <div>
+        {{ if .name }}
+        <h2>{{ .name }}</h2>
+        {{ end }}
+
+        {{ if .text }}
+        <p>{{ .text }}</p>
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+
+  </div>
+</section>
+{{ end }}

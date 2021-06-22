@@ -14,7 +14,7 @@ ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
 stepAnalysis: true
 templateMetrics: true
 pluralizeListTitles: false
-googleAnalytics: ""
+googleAnalytics: "UA-90457577-1"
 buildFuture: true
 FootnoteReturnLinkContents: "↩"
 disableHugoGeneratorInject: true
@@ -23,7 +23,7 @@ taxonomies:
 
 languages:
   pt:
-    contentDir: content/portuguese
+    contentDir: content/pt
     languageName: Português
     languageCode: "pt-br"
     title: "YouBet! Uma transformação de vida"
@@ -39,6 +39,45 @@ languages:
           Weight: 1
           Identifier: "about"
           URL: "/sobre"
+        - Name: "Blog"
+          Pre: ""
+          Weight: 2
+          Identifier: "blog"
+          URL: "/blog"
+        - Name: "Colégios"
+          Pre: ""
+          Weight: 3
+          Identifier: "colleges"
+          URL: "/colegios"
+        - Name: "Campion"
+          Pre: ""
+          Weight: 1
+          Identifier: "campion"
+          URL: "/campion"
+          parent: "colleges"
+        - Name: "Bma"
+          Pre: ""
+          Weight: 2
+          Identifier: "bma"
+          URL: "/bma"
+          parent: "colleges"
+  en:
+    contentDir: content/en
+    languageName: English
+    languageCode: "en"
+    title: "YouBet! Real English"
+    weight: 2
+    params:
+      subtitle: "cultural immersion"
+      description: "We want to create a bilingual country with a global mind, promoting exchange"
+      mailchimpList: "#"
+    menu:
+      main:
+        - Name: "About"
+          Pre: ""
+          Weight: 1
+          Identifier: "about"
+          URL: "/about"
         - Name: "Blog"
           Pre: ""
           Weight: 2

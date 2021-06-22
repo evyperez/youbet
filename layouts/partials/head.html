@@ -63,10 +63,26 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {{ if eq (getenv "NODE_ENV") "production" }} {{ with $.Site.GoogleAnalytics }}
+
+  <!-- Google Analytics -->
+
+  {{ if hugo.IsProduction }}
+  {{ with $.Site.GoogleAnalytics }}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://www.googletagmanager.com/gtag/js?id={{ . }}" async></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }}
+  {{ end }}
 
 
-  {{ end }} {{ end }} {{ $vendorJS := resources.Get "/scripts/vendor.js" }}
+
+  {{ $vendorJS := resources.Get "/scripts/vendor.js" }}
   {{$secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
   {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
 

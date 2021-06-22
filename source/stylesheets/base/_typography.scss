@@ -125,6 +125,15 @@ p {
   font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 }
 
+.title-section {
+  margin-bottom: to-rem(24px);
+  text-align: center;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-bottom: to-rem(32px);
+  }
+}
+
 /**
  * @see: http://demosthenes.info/blog/946/Controlling-Widows--Orphans
  */
