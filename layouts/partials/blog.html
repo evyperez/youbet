@@ -1,10 +1,12 @@
 <section class="blog">
   <div class="container">
+    <h2 class="title">
+      {{ i18n "blog" }}
+    </h2>
+
     <div class="glide">
+
       <div class="glide__arrows" data-glide-el="controls">
-        <div>
-          <h3>Blog</h3>
-        </div>
         <div class="glide__arrows--actions">
           <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
           </button>
@@ -12,26 +14,30 @@
           </button>
         </div>
       </div>
+
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          {{ range ( where .Site.RegularPages "Type" "post").ByDate.Reverse | first 4  }}
+          {{ range ( where .Site.RegularPages "Type" "post").ByDate.Reverse | first 4 }}
           <li class="glide__slide">
-            <div class="glide__slide--images">
-              <a href="{{ .Permalink }}">
-                <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
-              </a>
-              <div class="glide__slide--info">
-                <div>
-                  <p class="glide__slide--author">{{.Params.Author}}</p>
-                  <p class="glide__slide--date"> {{ .Params.Date.Format "01/02/2006" }}</p>
-                </div>
+            <div class="post">
+              <div class="post__image">
+                <a href="{{ .Permalink }}">
+                  <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+                  <div class="img-subtitle">
+                    <p class="author">{{.Params.Author}}</p>
+                    <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
+                  </div>
+                </a>
               </div>
+
+              <div class="post__title">
+                <a href="{{ .Permalink }}">
+                  <h2 class="heading-4"> {{ .Title }} </h2>
+                </a>
+              </div>
+
             </div>
-            <div class="glide__slide--title">
-              <a href="{{ .Permalink }}">
-                <h4> {{ .Title }} </h4>
-              </a>
-            </div>
+
           </li>
           {{end}}
         </ul>

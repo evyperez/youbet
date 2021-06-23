@@ -9,13 +9,7 @@
  */
 
 .main > section {
-  padding-top: to-rem(24px);
-  padding-bottom: to-rem(24px);
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    padding-top: to-rem(80px);
-    padding-bottom: to-rem(80px);
-  }
 
   &:nth-of-type(odd) {
     background-color: #ffcbcb;
@@ -39,16 +33,19 @@ main,
 .container {
   max-width: $max-width;
 
-  padding-top: to-rem(24px);
   padding-right: $gutter;
-  padding-bottom: to-rem(24px);
   padding-left: $gutter;
   margin-right: auto;
   margin-left: auto;
+}
+
+section > .container {
+  padding-top: to-em(32px);
+  padding-bottom: to-em(32px);
 
   @media screen and (min-width: breakpoint('desktop')) {
-    padding-top: to-rem(60px);
-    padding-bottom: to-rem(60px);
+    padding-top: to-em(80px);
+    padding-bottom: to-em(80px);
   }
 }
 
