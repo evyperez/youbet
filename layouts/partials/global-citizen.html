@@ -1,0 +1,34 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.globalCitizen }}
+
+<section class="image-with-text">
+  <div class="container">
+    {{ if .title }}
+    <h2 class="title-section">{{ .title }} </h2>
+    {{ end }}
+
+    <div class="two-columns">
+      <div>
+        {{ if .content }}
+        <div class="rich-text">
+          <p>{{ .content | markdownify }}</p>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+        {{ end }}
+        {{ if .buttonUrl }}
+          <a href="{{.buttonUrl}}" class="btn">{{ .buttonText }}</a>
+        {{ end }}
+      </div>
+      {{ if .image }}
+
+      <div class="image">
+        <img src="{{ .image }}" alt="{{ .alt }}">
+
+      </div>
+      {{ end }}
+
+    </div>
+
+  </div>
+</section>
+{{ end }}

@@ -17,7 +17,7 @@
 body {
   font-weight: font-weight('normal');
   font-size: $body-font-size;
-  line-height: 1.5;
+  line-height: to-em(24px);
   font-family: $text-font-stack;
 
   color: palette('text', 'dark');
@@ -48,51 +48,54 @@ details > summary {
   margin: 0;
   font-weight: 700;
   font-family: Asap, sans-serif;
-  font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1,
-    'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
+  font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
 
   break-after: avoid;
   page-break-after: avoid;
 }
 
 %h1 {
-  margin-bottom: to-rem(16px);
+  // TODO: margin-bottom: to-rem(16px);
   font-size: ms(4);
-
+  line-height: to-rem(47px);
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     font-size: ms(5);
+    line-height: to-rem(56px);
   }
 }
 
 %h2 {
-  margin-bottom: to-rem(12px);
+  // TODO: margin-bottom: to-rem(12px);
 
   font-size: ms(3);
+  line-height: to-rem(39px);
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     font-size: ms(4);
+    line-height: to-rem(47px);
   }
 }
 
 %h3 {
-  margin-bottom: to-rem(12px);
+  // TODO: margin-bottom: to-rem(12px);
 
   font-size: ms(2);
+  line-height: to-rem(33px);
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     font-size: ms(3);
+    line-height: to-rem(39px);
   }
 }
 
 %h4 {
-  margin-bottom: to-rem(8px);
-
+  // TODO: margin-bottom: to-rem(8px);
   font-size: ms(2);
-  line-height: to-rem(32px);
+  line-height: to-rem(33px);
 }
 
 %h5 {
-  margin-bottom: to-rem(8px);
+  // TODO: margin-bottom: to-rem(8px);
 
   font-size: ms(2);
   line-height: to-rem(32px);
@@ -145,10 +148,36 @@ dt a {
 
 p {
   padding: 0;
-  margin-top: 0;
-  margin-bottom: to-rem(16px);
+  margin: 0;
   font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 }
+
+.rich-text p {
+  margin-bottom: 16px;
+}
+
+.rich-text:last-child {
+  margin-bottom: 0;
+}
+
+// TODO: for group of p: margin-bottom: to-rem(16px);
+
+.pre-title {
+  font-size: to-rem(12px);
+  line-height: to-rem(20px);
+  letter-spacing: 0.4rem;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    font-size: to-rem(14px);
+    line-height: to-rem(22px);
+  }
+}
+
+.small {
+  font-size: to-rem(12px);
+  line-height: to-rem(20px);
+}
+
 
 .title-section {
   margin-bottom: to-rem(24px);
@@ -240,12 +269,6 @@ dfn {
 
 /* stylelint-disable no-duplicate-selectors */
 
-b,
-strong {
-  // stylelint:disable-block no-duplicate-properties
-  font-weight: font-weights('bold');
-  font-weight: inherit; /* 1 */
-}
 b,
 strong {
   font-weight: font-weights('bold'); /* 2 */

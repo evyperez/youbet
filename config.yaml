@@ -29,9 +29,18 @@ languages:
     title: "YouBet! Uma transformação de vida"
     weight: 1
     params:
-      subtitle: "Quer se tornar um Cidadão Global?"
-      description: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+      tagline: "Quer se tornar um Cidadão Global?"
+      email: "contato@youbetschool.com"
       mailchimpList: "#"
+      description:
+        default: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+        twitter: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+        facebook: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+      shareImages:
+        default: "assets/images/compartilhamento.jpg"
+        twitter: "assets/images/twitter-compartilhamento.jpg"
+        facebook: "assets/images/facebook-compartilhamento.jpg"
+
     menu:
       main:
         - Name: "Sobre"
@@ -68,9 +77,17 @@ languages:
     title: "YouBet! Real English"
     weight: 2
     params:
-      subtitle: "cultural immersion"
-      description: "We want to create a bilingual country with a global mind, promoting exchange"
+      tagline: "cultural immersion"
+      email: "contato@youbetschool.com"
       mailchimpList: "#"
+      description:
+        default: "We want to create a bilingual country with a global mind, promoting exchange"
+        twitter: "We want to create a bilingual country with a global mind, promoting exchange"
+        facebook: "We want to create a bilingual country with a global mind, promoting exchange"
+      shareImages:
+        default: "assets/images/compartilhamento.jpg"
+        twitter: "assets/images/twitter-compartilhamento.jpg"
+
     menu:
       main:
         - Name: "About"
@@ -78,28 +95,6 @@ languages:
           Weight: 1
           Identifier: "about"
           URL: "/about"
-        - Name: "Blog"
-          Pre: ""
-          Weight: 2
-          Identifier: "blog"
-          URL: "/blog"
-        - Name: "Colégios"
-          Pre: ""
-          Weight: 3
-          Identifier: "colleges"
-          URL: "/colegios"
-        - Name: "Campion"
-          Pre: ""
-          Weight: 1
-          Identifier: "campion"
-          URL: "/campion"
-          parent: "colleges"
-        - Name: "Bma"
-          Pre: ""
-          Weight: 2
-          Identifier: "bma"
-          URL: "/bma"
-          parent: "colleges"
 
 params:
   authors:
@@ -107,7 +102,3 @@ params:
       Weight: 1
     - Name: "Stephanie Castro"
       Weight: 2
-  # shareImages:
-  #   default: "assets/images/compartilhamento.jpg"
-  #   twitter: "assets/images/twitter-compartilhamento.jpg"
-  #   facebook: "assets/images/facebook-compartilhamento.jpg"

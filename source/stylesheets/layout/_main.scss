@@ -9,10 +9,14 @@
  */
 
 .main > section {
-
-
   &:nth-of-type(odd) {
-    background-color: #ffcbcb;
+    background-color: palette('gray', '5%');
+  }
+}
+
+.theme--dark .main > section {
+  &:nth-of-type(odd) {
+    background-color: palette('gray', '100%');
   }
 }
 

@@ -81,6 +81,7 @@ $line-lengths: (
 
 ///
 /// @link http://www.modularscale.com/?1&rem&1.25
+
 $modularscale: (
   base: 1rem,
   ratio: 1.25,
@@ -95,28 +96,31 @@ $modularscale: (
 /// @todo Customize the colors or add new ones to match your design needs.
 $palette: (
   'blue': (
-    '110': #0038da,
+    '110': #0047de,
     'base': #004ff7,
-    '80%': #3171f7,
-    '60%': #6392f7,
-    '30%': #c6d5f7,
-    '10%': #dee6f7,
+    '80%': #3372f9,
+    '60%': #6695fa,
+    '30%': #b2cafd,
+    '10%': #e5edfe,
+    '5%': #f2f6ff,
   ),
-  'yellow': (
-    '110%': #d88e00,
+  'orange': (
+    '110%': #de9700,
     'base': #f7a800,
-    '80%': #f7b831,
-    '60%': #f7c863,
-    '30%': #f7e7c6,
-    '10%': #f7efde,
+    '80%': #f9b933,
+    '60%': #facb66,
+    '30%': #fde5b2,
+    '10%': #fef6e5,
+    '5%': #fffbf2,
   ),
   'gray': (
-    '110%': #141414,
+    '110%': #2e2e2e,
     'base': #333333,
-    '80%': #616161,
-    '60%': #949494,
-    '30%': #cacaca,
-    '10%': #e6e6e6,
+    '80%': #5c5c5c,
+    '60%': #858585,
+    '30%': #c2c2c2,
+    '10%': #ebebeb,
+    '5%': #f5f5f5,
   ),
   'menu-dark': (
     'base': #141414,
@@ -281,7 +285,7 @@ $breakpoints: _im-to-em(
     'max-desktop': 1023px,
     'desktop': 1024px,
     'max-wide': 1599px,
-    'wide': 1600px,
+    'wide': 1440px,
   )
 ) !default;
 
@@ -303,7 +307,7 @@ $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 /// Container's maximum width
 /// @type number
-$max-width: 80em !default; // 1180px
+$max-width: 67.5em !default; // 1032px + gutter
 $max-width--narrow: 40.75em; // 668 px
 
 $breakpoints: map-merge(

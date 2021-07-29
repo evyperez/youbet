@@ -10,19 +10,3 @@
   background: linear-gradient(to top, #0047b9);
 }
 
-.benefits-wrap {
-  display: grid;
-
-  align-items: center;
-  justify-content: center;
-
-  grid-template-columns: 1fr;
-
-  row-gap: to-rem(24px);
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: to-rem(24px);
-    row-gap: 0;
-  }
-}

@@ -1,6 +1,7 @@
 ---
 title: ''
 shortTitle: ''
+description: ''
 coverPhoto: ''
 coverPhotoAlt: ''
 slug: ''
