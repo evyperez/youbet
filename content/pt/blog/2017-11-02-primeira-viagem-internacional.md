@@ -3,7 +3,6 @@ author: jessica.severo
 date: 2017-11-02 13:00:46+00:00
 draft: false
 title: 'Primeira viagem internacional: dicas úteis'
-type: post
 slug: /primeira-viagem-internacional/
 categories:
 - Blog

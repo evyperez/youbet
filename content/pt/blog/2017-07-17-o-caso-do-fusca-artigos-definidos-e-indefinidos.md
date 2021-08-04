@@ -3,7 +3,6 @@ author: joabecardoso
 date: 2017-07-17 10:15:39+00:00
 draft: false
 title: O caso do Fusca que subia a parede - Artigos definidos e Indefinidos
-type: post
 slug: /o-caso-do-fusca-artigos-definidos-e-indefinidos/
 categories:
 - Blog

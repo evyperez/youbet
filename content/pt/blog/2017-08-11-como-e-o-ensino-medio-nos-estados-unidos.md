@@ -3,7 +3,6 @@ author: autor convidado
 date: 2017-08-11 13:35:58+00:00
 draft: false
 title: Como é o Ensino Médio nos Estados Unidos?
-type: post
 slug: /como-e-o-ensino-medio-nos-estados-unidos/
 categories:
 - Blog

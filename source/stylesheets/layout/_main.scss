@@ -9,14 +9,14 @@
  */
 
 .main > section {
-  &:nth-of-type(odd) {
+  &:nth-of-type(even) {
     background-color: palette('gray', '5%');
   }
 }
 
 .theme--dark .main > section {
-  &:nth-of-type(odd) {
-    background-color: palette('gray', '100%');
+  &:nth-of-type(even) {
+    background-color: palette('gray');
   }
 }
 
@@ -35,6 +35,7 @@ main,
 }
 
 .container {
+  width: 100%;
   max-width: $max-width;
 
   padding-right: $gutter;

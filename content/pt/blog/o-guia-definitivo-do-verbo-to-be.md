@@ -3,8 +3,7 @@ author: joabecardoso
 date: 2017-05-23 15:39:27+00:00
 draft: false
 title: O Guia Definitivo do Verbo To Be
-type: post
-slug: /o-guia-definitivo-do-verbo-to-be/
+slug: /o-guia-definitivo-do-verbo-to-be
 categories:
 - Blog
 tags:

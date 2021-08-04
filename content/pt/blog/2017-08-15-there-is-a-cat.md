@@ -3,7 +3,6 @@ author: joabecardoso
 date: 2017-08-15 19:00:25+00:00
 draft: false
 title: There is a cat in the basket
-type: post
 slug: /there-is-a-cat/
 categories:
 - Blog

@@ -3,7 +3,6 @@ author: youbet
 date: 2017-08-22 00:15:15+00:00
 draft: false
 title: Something, Anything, Nothing e outras ‘’things’’
-type: post
 slug: /something-anything-nothing-e-outras-things/
 categories:
 - Blog

@@ -3,7 +3,6 @@ author: joabecardoso
 date: 2017-08-02 14:18:27+00:00
 draft: false
 title: What?! Como perguntar algo em inglês.
-type: post
 slug: /what-como-perguntar-algo-em-ingles/
 categories:
 - Blog

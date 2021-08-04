@@ -15,7 +15,7 @@
           <div class="boxes">
             {{ range .Data.Pages.ByDate.Reverse }}
                 <div class="box">
-                  <a href="{{ .Params.slug }}">
+                  <a href="/blog/{{ .Params.slug }}">
                     <div class="box__image">
                       <img src="{{ .Params.coverPhoto }}" alt="{{ .Params.coverPhotoAlt }}">
                     </div>
