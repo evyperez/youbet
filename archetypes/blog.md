@@ -4,6 +4,7 @@ slug: ''
 date: {{ .Date }}
 image: ''
 imageAlt: ''
+video: ''
 authors:
   - list: ''
 categories:
