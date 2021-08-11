@@ -7,7 +7,7 @@
 
 
 <body>
-  <div class="main-container internal-pages blog__list">
+  <div class="main-container internal-pages blog-list">
 
     {{ partial "header.html" . }}
 
@@ -28,15 +28,9 @@
               <div class=" rich-text">
                 <h2>{{ .Title }}</h2>
 
-                {{ if .Params.subtitle }}
-                <div class="project-subtitle">
-                  <p>{{ .Params.subtitle }}</p>
-                </div>
-                {{ end }}
+                {{ if .Params.image }}
 
-                {{ if .Params.imageBeforeText }}
-
-                <img src="{{ .Params.imageBeforeText }}" alt="{{ .Title }}">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}">
 
                 {{ end }}
 
@@ -49,9 +43,7 @@
 
               <div class="authors">
                 <div class="content smaller-width">
-                  <div class="authors__title">
-                    <p>{{ i18n "authors" | title }}</p>
-                  </div>
+
                   {{ range .Params.authors }}
                   {{ range where $.Site.Pages "Params.slug" .author }}
                   <div class="authors__wrap">
@@ -86,7 +78,7 @@
       </section>
 
       {{ if .Params.relatedProjects }}
-      <aside class="blog__list">
+      <aside class="blog-list">
         <div class="container">
           <h2 class="title">{{ i18n "seeAlso" | title }}</h2>
           <ul class="posts">
