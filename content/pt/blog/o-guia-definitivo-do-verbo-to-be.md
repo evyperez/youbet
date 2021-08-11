@@ -1,16 +1,19 @@
 ---
-authors:
-  - author: joabe-cardoso
-date: 2017-05-23 15:39:27+00:00
-draft: false
 title: O Guia Definitivo do Verbo To Be
 slug: /o-guia-definitivo-do-verbo-to-be
+date: 2017-05-23 15:39:27+00:00
+image: /uploads/images/menina-no-notebook.jpg
+imageAlt: "Menina No Notebook"
+authors:
+  - author: joabe-cardoso
 categories:
   - Blog
 tags:
   - Aulas
   - Inglês
   - Verbos
+description: 'O Guia Definitivo do Verbo To Be'
+draft: false
 ---
 
 Você já parou para pensar a diferença entre “ser” e “estar”?
