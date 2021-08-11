@@ -1,15 +1,19 @@
 ---
-author: joabecardoso
-date: 2017-08-15 19:00:25+00:00
-draft: false
 title: There is a cat in the basket
 slug: /there-is-a-cat/
+date: 2017-08-15 19:00:25+00:00
+image: /uploads/images/cat-in-the-basket.jpeg
+imageAlt: Gato dentro da cesta
+authors:
+    - author: joabecardoso
 categories:
-- Blog
+    - Blog
 tags:
-- Aulas
-- Inglês
-- There
+    - Aulas
+    - Inglês
+    - There
+description: 'There is a cat in the basket'
+draft: false
 ---
 
 <blockquote>**“There are a lot of things to learn”**</blockquote>

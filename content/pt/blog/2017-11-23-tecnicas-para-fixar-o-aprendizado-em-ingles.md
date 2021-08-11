@@ -1,16 +1,20 @@
 ---
-author: jessica.severo
-date: 2017-11-23 13:00:23+00:00
-draft: false
 title: Técnicas para fixar o aprendizado em inglês
-image: uploads/images/woman-hand-desk-office.jpg
 slug: /tecnicas-para-fixar-o-aprendizado-em-ingles/
+date: 2017-11-23 13:00:23+00:00
+image: /uploads/images/woman-hand-desk-office.jpg
+imageAlt: Mulher com caneta na mão planejando estudo
+authors:
+   - author: jessica-severo
 categories:
   - Blog
 tags:
   - dicas úteis
   - Inglês
+description: Técnicas para fixar o aprendizado em inglês
+draft: false
 ---
+
 
 Começou a aprender uma novo idioma, mas ainda tem dificuldades em fixar o novo
 vocabulário em inglês? Calma! Conseguir organizá-las e memorizá-las é uma tarefa

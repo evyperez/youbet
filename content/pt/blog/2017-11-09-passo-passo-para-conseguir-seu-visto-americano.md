@@ -1,10 +1,11 @@
 ---
-author: jessica.severo
-date: 2017-11-09 13:00:06+00:00
-draft: false
 title: Passo a passo para conseguir seu visto americano
-image: uploads/images/pexels-photo-346798.jpg
 slug: /passo-passo-para-conseguir-seu-visto-americano/
+date: 2017-11-09 13:00:06+00:00
+image: /uploads/images/pexels-photo-346798.jpg
+imageAlt: Passaporte
+authors:
+  - author: jessica-severo
 categories:
   - Blog
   - Notícias
@@ -13,6 +14,8 @@ tags:
   - passaporte
   - viagem internacional
   - visto americano
+description: 'Passo a passo para conseguir seu visto americano'
+draft: false
 ---
 
 Fechou seu intercâmbio com a **YouBet!** e agora precisa do visto americano para

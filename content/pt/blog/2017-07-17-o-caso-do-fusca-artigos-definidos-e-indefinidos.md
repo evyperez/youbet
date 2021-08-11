@@ -1,16 +1,21 @@
 ---
-author: joabecardoso
-date: 2017-07-17 10:15:39+00:00
-draft: false
 title: O caso do Fusca que subia a parede - Artigos definidos e Indefinidos
 slug: /o-caso-do-fusca-artigos-definidos-e-indefinidos/
+date: 2017-07-17 10:15:39+00:00
+image: /uploads/images/fusca-na-neve.jpeg
+imageAlt: Fusca na neve
+authors:
+    - author: joabecardoso
 categories:
-- Blog
+    - Blog
 tags:
-- Artigo
-- Aulas
-- Inglês
+    - Artigo
+    - Aulas
+    - Inglês
+description: 'O caso do Fusca que subia a parede - Artigos definidos e Indefinidos'
+draft: false
 ---
+
 
 Lembro que quando era criança vi na televisão um comercial de um carro de brinquedo bem diferente.
 
@@ -62,7 +67,7 @@ O “H” na palavra _hour _não tem som, é mudo, como em português. Sendo ass
 
 See ya!
 
-[Youbet Blog!](http://youbetschool.web7641.kinghost.net/blog)
+[Youbet Blog!](/blog)
 
 
 

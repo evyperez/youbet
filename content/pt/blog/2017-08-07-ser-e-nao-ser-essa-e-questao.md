@@ -1,15 +1,20 @@
 ---
-author: joabecardoso
-date: 2017-08-07 15:39:00+00:00
-draft: false
 title: Ser e não ser, essa é a questão!
 slug: /ser-e-nao-ser-essa-e-questao/
+date: 2017-08-07 15:39:00+00:00
+image: /uploads/images/eis.jpeg
+imageAlt: Ser ou não ser
+authors:
+    - author: joabecardoso
 categories:
-- Blog
+    - Blog
 tags:
-- Aulas
-- Inglês
+    - Aulas
+    - Inglês
+description: 'Ser e não ser, essa é a questão!'
+draft: false
 ---
+
 
 **Os Amigos da Onça – as palavras que nos enganam**
 
@@ -263,4 +268,4 @@ E antes que eu me esqueça da história do ‘’PUSH’’, jamais conseguiría
 
 Até logo, e cuidado com as portas de restaurante!
 
-[Youbet Blog!](http://youbetschool.web7641.kinghost.net/blog/)
+[Youbet Blog!](/blog)

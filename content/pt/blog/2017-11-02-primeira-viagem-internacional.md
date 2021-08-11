@@ -1,14 +1,18 @@
 ---
-author: jessica.severo
-date: 2017-11-02 13:00:46+00:00
-draft: false
 title: 'Primeira viagem internacional: dicas úteis'
 slug: /primeira-viagem-internacional/
+date: 2017-11-02 13:00:46+00:00
+image: /uploads/images/mapamundi.jpeg
+imageAlt: Mapa mundi
+authors:
+- author: jessica-severo
 categories:
 - Blog
 tags:
 - dicas úteis
 - viagem internacional
+description: 'Primeira viagem internacional: dicas úteis'
+draft: false
 ---
 
 Viajar é sempre uma experiência enriquecedora, não importa o destino, mas viajar para fora do seu país de origem tem um gostinho mais especial.

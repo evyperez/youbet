@@ -1,15 +1,20 @@
 ---
-author: pauloaugustopn
-date: 2017-08-17 22:02:51+00:00
-draft: false
 title: Quanto custa viajar para o EUA?
 slug: /quanto-custa-viajar-para-o-eua/
+date: 2017-08-17 22:02:51+00:00
+image: /uploads/images/patrick-tomasso.jpeg
+imageAlt: Patrick Tomassoßß
+authors:
+    - author: pauloaugustopn
 categories:
-- Blog
+    - Blog
 tags:
-- Curiosidades
-- Finanças
+    - Curiosidades
+    - Finanças
+description: 'Quanto custa viajar para o EUA?'
+draft: false
 ---
+
 
 Sempre ao planejar uma viagem, independentemente do motivo, é importante planejar o custo diário levando em consideração os gastos com hospedagem, alimentação, transporte público e a entrada nas principais atrações turísticas.
 
@@ -27,7 +32,7 @@ Faça comigo e veja:
 
 
 
-## ![Washington DC](http://youbetschool.com/wp-content/uploads/2017/08/washington-1.jpg)
+## ![Washington DC](/uploads/images/washington.jpeg)
 
 
 
@@ -39,7 +44,7 @@ De acordo com o site o valor médio de gastos com hospedagem, alimentação, tra
 ## **Nova Iorque**
 
 
-![New York](http://youbetschool.com/wp-content/uploads/2017/08/2-1.jpg)
+![New York](/uploads/images/new-york.jpeg)
 
 
 A cidade atrai e agrada turistas de todas as idades e com gostos totalmente diferentes.
@@ -52,15 +57,15 @@ O valor médio de gastos com hospedagem, alimentação, transporte público e a 
 ## **Filadélfia**
 
 
-![](http://youbetschool.com/wp-content/uploads/2017/08/philadelphia-1.png)
+![Filadélfia](/uploads/images/philadelphia.png)
 É a cidade mais populosa do estado norte-americano da Pensilvânia, difícil sair de lá sem aprender sobre a história dos EUA. Philly (como é chamada carinhosamente por seus cidadãos) respira história, e sem contar o famoso sanduíche, quer dizer, não é simplesmente um sanduíche, e sim o famoso Philly Cheese Steak
 
 “_Se você estiver buscando a verdadeira essência da cidade, aquilo que é realmente típico da Philadelphia e que não existe igual em nenhum outro lugar do mundo, então, quando você visitar a cidade não pode deixar de experimentar algumas de suas especialidades gastronômicas. Entre elas um sanduíche. Espere: Não é apenas um sanduíche qualquer, é o Philly Cheese Steak_” - MauOscar
 
 E o valor médio de gastos com hospedagem, alimentação, transporte público e a entrada nas principais atrações turísticas de Philly por dia é de **R$213,00**
 
-[caption id="attachment_8453" align="alignnone" width="1700"]![](http://youbetschool.com/wp-content/uploads/2017/08/sanfrancisco-1.jpg)
-São Francisco[/caption]
+![](/uploads/images/sanfrancisco.jpeg)
+São Francisco
 
 Ou seja, em média para visitar cidades turísticas nestes três importantes lugares dos EUA o gasto diário seria na média de **R$210,00** por dia, o que fica longe da lista dos lugares mais baratos para se viajar no mundo.
 

@@ -1,16 +1,20 @@
 ---
-author: joabecardoso
-date: 2017-08-02 14:18:27+00:00
-draft: false
 title: What?! Como perguntar algo em inglês.
 slug: /what-como-perguntar-algo-em-ingles/
+date: 2017-08-02 14:18:27+00:00
+image: /uploads/images/what.jpeg
+imageAlt: Pontuação de interrogação
+authors:
+    - author: joabecardoso
 categories:
-- Blog
+    - Blog
 tags:
-- Aulas
-- Inglês
-- Perguntas
-- Verbos
+    - Aulas
+    - Inglês
+    - Perguntas
+    - Verbos
+description: 'What?! Como perguntar algo em inglês.'
+draft: false
 ---
 
 ## **“How are yow?”**
@@ -94,6 +98,6 @@ Essas palavras são utilizadas da mesma forma que em português, porém, admitem
 
 Why sempre deve ser respondido com **_because _**(_bicãzi_) – Porque, por causa, etc. Lembrando, a entonação também é característica no inglês, mas a frase não depende exclusivamente dela.
 
-Já conferiu nosso intercâmbio de inverno? [Clique aqui](http://youbetschool.web7641.kinghost.net/intercambio-inverno/) e confira tudinho o que temos para te oferecer.
+Já conferiu nosso intercâmbio de inverno? [Clique aqui](/intercambio-inverno) e confira tudinho o que temos para te oferecer.
 
 **See ya!**

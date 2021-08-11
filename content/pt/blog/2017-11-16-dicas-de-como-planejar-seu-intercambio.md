@@ -1,13 +1,17 @@
 ---
-author: jessica.severo
-date: 2017-11-16 13:55:49+00:00
-draft: false
 title: Dicas de como planejar seu intercâmbio
-image: uploads/images/pexels-photo-373892.jpg
 slug: /dicas-de-como-planejar-seu-intercambio/
+image: /uploads/images/pexels-photo-373892.jpg
+imageAlt: Mesa de escritório
+date: 2017-11-16 13:55:49+00:00
+authors:
+  - author: jessica-severo
 categories:
   - Blog
+description: Dicas de como planejar seu intercâmbio
+draft: false
 ---
+
 
 Fazer um intercâmbio está na sua lista de desejos para realizar nos próximos
 anos? Se sim, é necessário seguir alguns passos para que essa experiência seja
@@ -89,9 +93,9 @@ Porém, muito mais importante do que o conhecimento prévio é a vontade de
 aprender quando estiver lá.
 
 Quer saber como planejar a sua primeira viagem internacional? Leia
-[aqui](http://youbetschool.web7641.kinghost.net/primeira-viagem-internacional/).
+[aqui](/primeira-viagem-internacional/).
 
 E como tirar o seu visto americano sem passar perrengue? Leia
-[aqui](http://youbetschool.web7641.kinghost.net/passo-passo-para-conseguir-seu-visto-americano/).
+[aqui](/passo-passo-para-conseguir-seu-visto-americano/).
 
 Agora é só se planejar e viajar!
