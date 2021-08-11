@@ -6,22 +6,25 @@
 {{ partial "head.html" . }}
 
 <body>
-  <div class="main-container internal-pages blog-list">
+  <div class="main-container">
 
     {{ partial "header.html" . }}
 
-    <main role="main" id="conteudo" class="main">
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
+    <main role="main" id="conteudo" class="internal-page">
+
       <div class="container">
-        {{ partial "breadcrumbs.html" . }}
-      </div>
-      <section class="blog-list">
-        <div class="container">
-          <h2 class="title">{{ i18n "lastPosts" | title }}</h2>
-          <div class="boxes">
+        <div class="blog-wrap">
+
+          <div class="post-list">
+
             {{ range .Data.Pages.ByDate.Reverse }}
 
             <div class="post">
               {{ if .Params.video }}
+
               <div class="embed-container">
                 <iframe width="560" height="315" src="{{ .Params.video }}?controls=0?rel=0" title="YouTube video player"
                   frameborder="0"
@@ -29,24 +32,49 @@
                   allowfullscreen>
                 </iframe>
               </div>
+
               {{ else }}
+
               <a href="/blog/{{ .Params.slug }}">
                 <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}">
               </a>
-              {{ end }}
-              <a href="/blog/{{ .Params.slug }}">
 
-                <h2>
-                  {{ if .Params.shortTitle }} {{ .Params.shortTitle }} {{ else }} {{ .Title }} {{ end }}
-                </h2>
-              </a>
-              {{ .Content }}
+              {{ end }}
+
+              <div class="rich-text">
+                <a href="/blog/{{ .Params.slug }}">
+                  <h2>
+                    {{ .Title }}
+                  </h2>
+                </a>
+                <p>Postado por:</p>
+                {{ range .Params.authors }}
+                {{ range where $.Site.Pages "Params.slug" .author }}
+                <p>{{ .Title }}</p>
+                {{ end }}
+                {{ end }}
+
+                {{ .Content }}
+              </div>
+
             </div>
             {{ end }}
           </div>
+
+          <div class="sidebar">
+            <div class="sidebar-item">
+              <h2 class="sidebar-title">Pesquisar</h2>
+              <input type="search">
+            </div>
+            <div class="sidebar-item">
+              <h2 class="sidebar-title">Categorias</h2>
+            </div>
+          </div>
         </div>
 
-      </section>
+
+      </div>
+
 
 
     </main>

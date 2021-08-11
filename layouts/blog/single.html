@@ -7,24 +7,22 @@
 
 
 <body>
-  <div class="main-container internal-pages blog-list">
+  <div class="main-container">
 
     {{ partial "header.html" . }}
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
 
-
-    <main role="main" id="conteudo" class="main">
+    <main role="main" id="conteudo" class="internal-page">
       {{/* <header class="title-highlight">
         <h1>Lala</h1>
       </header> */}}
-      <div class="container">
-        {{ partial "breadcrumbs.html" . }}
-      </div>
-
 
       <section class="section">
         <div class="container">
           <div class="blog-wrap">
-            <div class="lala">
+            <div class="blog-content">
               <div class=" rich-text">
                 <h2>{{ .Title }}</h2>
 

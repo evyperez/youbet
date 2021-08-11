@@ -7,6 +7,7 @@ facebook:
 twitter:
 avatar:
 draft: false
+weight: 5
 ---
 
-Autor convidade
+Autor convidado

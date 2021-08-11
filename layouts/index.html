@@ -3,17 +3,20 @@
 {{ partial "head.html" . }}
 
 <body class="theme-dark">
+
   <input type="checkbox" id="menu-controller" class="menu-controller" hidden>
+
   <div class="main-container">
     {{ partial "header.html" . }}
 
-    <main role="main" id="conteudo" class="main">
+    <main role="main" id="conteudo" class="page">
       {{ partial "global-citizen.html" . }}
       {{ partial "benefits.html" . }}
       {{ partial "testimonials.html" . }}
       {{ partial "high-school.html" . }}
       {{ partial "blog.html" . }}
     </main>
+
     {{ partial "footer.html" . }}
 
   </div>

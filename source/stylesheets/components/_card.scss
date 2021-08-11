@@ -1,0 +1,23 @@
+.card {
+  border: 1px solid palette('gray', '30%');
+}
+
+.card__image {
+  display: block;
+
+  > img {
+    width: 100%;
+  }
+}
+
+.card__header {
+  padding: to-rem(16px);
+}
+
+.card__body {
+  padding: to-rem(16px);
+}
+
+.card__footer {
+  padding: to-rem(16px);
+}

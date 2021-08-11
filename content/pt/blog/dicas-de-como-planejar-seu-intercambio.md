@@ -93,9 +93,9 @@ Porém, muito mais importante do que o conhecimento prévio é a vontade de
 aprender quando estiver lá.
 
 Quer saber como planejar a sua primeira viagem internacional? Leia
-[aqui](/primeira-viagem-internacional/).
+[aqui](/blog/primeira-viagem-internacional/).
 
 E como tirar o seu visto americano sem passar perrengue? Leia
-[aqui](/passo-passo-para-conseguir-seu-visto-americano/).
+[aqui](/blog/passo-passo-para-conseguir-seu-visto-americano/).
 
 Agora é só se planejar e viajar!

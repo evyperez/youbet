@@ -109,9 +109,10 @@ Your house – Sua casa
 
 Logo, os pronomes adjetivos sempre devem estar acompanhados de um substantivo (nome).
 
-Já a ideia por trás dos pronomes possessivos substantivos é exatamente de evitar a repetição dos nomes já mencionados. Eles **substituem **os nomes.
+Já a ideia por trás dos pronomes possessivos substantivos é exatamente de evitar a repetição dos nomes já mencionados. Eles **substituem** os nomes.
 
-This is **my **house and that is **yours. **(Dis is mai ráuze én dét is iórs)
+This is **my** house and that is **yours.**
+*Dis is mai ráuze én dét is iórs*
 
 Esta é a minha casa e aquela é a sua.
 
@@ -121,7 +122,8 @@ São utilizados geralmente ao fim das frases, e não há diferença entre plural
 
 Exemplos:
 
-This car is **yours**. (Dis car is iórs)
+This car is **yours**
+*Dis car is iórs*
 
 Esse carro é seu.
 

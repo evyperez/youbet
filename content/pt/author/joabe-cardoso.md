@@ -5,8 +5,9 @@ medium:
 linkedin:
 facebook:
 twitter:
-avatar:
+avatar: '/uploads/images/joabe-cardoso.jpg'
 draft: false
+weight: 4
 ---
 
 blablabla

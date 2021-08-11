@@ -5,29 +5,31 @@
 
 {{ partial "head.html" . }}
 
+
 <body>
   <div class="main-container">
 
     {{ partial "header.html" . }}
 
+
     <main role="main" id="conteudo" class="internal-page">
-      <section class="section">
-        <div class="container">
-          <div class="two-column">
-            <div>
-              <h2 class="title">Sobre YouBet!</h2>
+      <section class="internal-pages">
+        <div class=" rich-text">
+          <h2>{{ .Title }}</h2>
 
-            </div>
-            <div class="rich-text">
-              {{ .Content }}
+          {{ if .Params.image }}
 
-            </div>
-          </div>
+          <img src="{{ .Params.image }}" alt="{{ .Title }}">
+
+          {{ end }}
+
+          {{ .Content }}
+
         </div>
       </section>
     </main>
+    {{ partial "footer.html" . }}
 
-      {{ partial "footer.html" . }}
   </div>
 </body>
 

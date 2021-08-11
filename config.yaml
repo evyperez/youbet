@@ -2,7 +2,6 @@ baseURL: "/"
 defaultContentLanguage: pt
 languageCode: "pt-br"
 disableKinds:
-  - "taxonomy"
   - "taxonomyTerm"
   - "RSS"
   - "sitemap"
