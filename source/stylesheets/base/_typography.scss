@@ -55,50 +55,43 @@ details > summary {
 }
 
 %h1 {
-  // TODO: margin-bottom: to-rem(16px);
   font-size: ms(4);
-  line-height: to-rem(47px);
+  line-height: to-rem(41px);
+
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     font-size: ms(5);
-    line-height: to-rem(56px);
-  }
-}
-
-%h2 {
-  // TODO: margin-bottom: to-rem(12px);
-
-  font-size: ms(3);
-  line-height: to-rem(39px);
-
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
-    font-size: ms(4);
     line-height: to-rem(47px);
   }
 }
 
-%h3 {
-  // TODO: margin-bottom: to-rem(12px);
+%h2 {
+  font-size: ms(3);
+  line-height: to-rem(35px);
 
-  font-size: ms(2);
-  line-height: to-rem(33px);
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    font-size: ms(4);
+    line-height: to-rem(41px);
+  }
+}
+
+%h3 {
+  font-size: ms(1);
+  line-height: to-rem(27px);
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     font-size: ms(3);
-    line-height: to-rem(39px);
+    line-height: to-rem(35px);
   }
 }
 
 %h4 {
-  // TODO: margin-bottom: to-rem(8px);
-  font-size: ms(2);
-  line-height: to-rem(33px);
+  font-size: ms(1);
+  line-height: to-rem(27px);
 }
 
 %h5 {
-  // TODO: margin-bottom: to-rem(8px);
-
-  font-size: ms(2);
-  line-height: to-rem(32px);
+  font-size: ms(1);
+  line-height: to-rem(27px);
 }
 
 h1,
