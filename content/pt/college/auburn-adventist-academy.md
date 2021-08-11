@@ -4,7 +4,7 @@ date: 2017-01-16 14:53:44+00:00
 draft: false
 title: Auburn Adventist Academy
 type: page
-slug: /auburn-adventist-academy/
+slug: auburn-adventist-academy/
 ---
 
 [vc_row][vc_column][thim-heading title="Ensino Médio na Auburn Academy" line="true" bg_line="#0c0c0c" text_align="text-center"][/vc_column][/vc_row][vc_row][vc_column width="1/2"][vc_video link="https://www.youtube.com/watch?v=m8BbIypl9KM"][/vc_column][vc_column width="1/2"][vc_column_text]Bem vindo a Auburn Adventist Academy

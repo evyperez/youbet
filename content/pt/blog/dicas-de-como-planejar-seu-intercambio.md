@@ -1,6 +1,6 @@
 ---
 title: Dicas de como planejar seu intercâmbio
-slug: /dicas-de-como-planejar-seu-intercambio/
+slug: dicas-de-como-planejar-seu-intercambio/
 image: /uploads/images/pexels-photo-373892.jpg
 imageAlt: Mesa de escritório
 date: 2017-11-16 13:55:49+00:00

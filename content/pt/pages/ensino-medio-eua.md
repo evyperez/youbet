@@ -4,7 +4,7 @@ date: 2017-06-30 18:11:59+00:00
 draft: false
 title: High School
 type: page
-slug: /ensino-medio-eua/
+slug: ensino-medio-eua/
 ---
 
 [vc_row full_width="stretch_row_content_no_spaces" css=".vc_custom_1498832486801{padding-left: 55px !important;}"][vc_column width="1/2"][vc_column_text 0=""]

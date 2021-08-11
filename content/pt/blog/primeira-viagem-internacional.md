@@ -1,6 +1,6 @@
 ---
 title: 'Primeira viagem internacional: dicas úteis'
-slug: /primeira-viagem-internacional/
+slug: primeira-viagem-internacional/
 date: 2017-11-02 13:00:46+00:00
 image: /uploads/images/mapamundi.jpeg
 imageAlt: Mapa mundi

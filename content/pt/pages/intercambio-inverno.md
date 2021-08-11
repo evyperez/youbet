@@ -4,7 +4,7 @@ date: 2017-06-29 23:36:36+00:00
 draft: false
 title: Winter Experience
 type: page
-slug: /intercambio-inverno/
+slug: intercambio-inverno/
 ---
 
 [vc_row full_width="stretch_row_content_no_spaces" css=".vc_custom_1498832486801{padding-left: 55px !important;}"][vc_column width="1/2"][vc_column_text 0=""]

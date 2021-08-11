@@ -1,6 +1,6 @@
 ---
 title: Como é o Ensino Médio nos Estados Unidos? Parte 2
-slug: /como-e-ensino-medio-nos-eua-parte-2
+slug: como-e-ensino-medio-nos-eua-parte-2
 date: 2019-09-03 10:50:04+00:00
 image: /uploads/images/como-e-high-school-parte-2.jpg
 imageAlt: "Capa do Vídeo do Amigo Gringo"

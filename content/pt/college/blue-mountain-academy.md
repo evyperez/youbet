@@ -4,7 +4,7 @@ date: 2017-01-11 14:38:10+00:00
 draft: false
 title: Blue Mountain Academy
 type: page
-slug: /blue-mountain-academy/
+slug: blue-mountain-academy/
 ---
 
 # Sobre

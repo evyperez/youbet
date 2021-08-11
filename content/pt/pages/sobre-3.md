@@ -4,7 +4,7 @@ date: 2016-11-03 18:19:28+00:00
 draft: false
 title: Sobre YouBet!
 type: page
-slug: /sobre-3/
+slug: sobre-3/
 ---
 
 [vc_row css=".vc_custom_1496245594846{margin-top: -20px !important;}"][vc_column][vc_raw_html]JTNDZGl2JTIwY2xhc3MlM0QlMjJ0aGltLWFib3V0LXVzLXF1b3RlJTIyJTNFJTBBJTNDcCUzRSVFMiU4MCU5Q1VtYSUyMGV4cGVyaSVDMyVBQW5jaWElMjBkZSUyMHZpZGElMjBlJTIwbiVDMyVBM28lMjBkZSUyMGlkaW9tYS4lRTIlODAlOUQlM0MlMkZwJTNFJTBBJTNDZGl2JTIwY2xhc3MlM0QlMjJhZ2VuY3klMjIlM0UlM0MlMkZkaXYlM0UlMEElM0NociUzRSUwQSUzQyUyRmRpdiUzRQ==[/vc_raw_html][vc_column_text]

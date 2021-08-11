@@ -1,6 +1,6 @@
 ---
 title: Something, Anything, Nothing e outras ‘’things’’
-slug: /something-anything-nothing-e-outras-things
+slug: something-anything-nothing-e-outras-things
 date: 2017-08-22 00:15:15+00:00
 image: /uploads/images/mulher-escrevendo.jpg
 imageAlt: 'Mulher Escrevendo'

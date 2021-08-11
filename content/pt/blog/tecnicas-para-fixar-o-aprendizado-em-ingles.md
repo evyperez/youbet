@@ -1,6 +1,6 @@
 ---
 title: Técnicas para fixar o aprendizado em inglês
-slug: /tecnicas-para-fixar-o-aprendizado-em-ingles
+slug: tecnicas-para-fixar-o-aprendizado-em-ingles
 date: 2017-11-23 13:00:23+00:00
 image: /uploads/images/mulher-escrevendo.jpg
 imageAlt: 'Mulher Escrevendo'

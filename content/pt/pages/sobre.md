@@ -4,7 +4,7 @@ date: 2016-11-03 18:19:28+00:00
 draft: false
 title: YOUBET!
 type: page
-slug: /sobre/
+slug: sobre/
 ---
 
 [vc_row css=".vc_custom_1496245594846{margin-top: -20px !important;}"][vc_column][vc_raw_html]JTNDZGl2JTIwY2xhc3MlM0QlMjJ0aGltLWFib3V0LXVzLXF1b3RlJTIyJTNFJTBBJTNDcCUzRSVFMiU4MCU5Q1VtYSUyMHRyYW5zZm9ybWElQzMlQTclQzMlQTNvJTIwZGUlMjB2aWRhLiVFMiU4MCU5RCUzQyUyRnAlM0UlMEElM0NkaXYlMjBjbGFzcyUzRCUyMmFnZW5jeSUyMiUzRSUzQyUyRmRpdiUzRSUwQSUzQ2hyJTNFJTBBJTNDJTJGZGl2JTNF[/vc_raw_html][vc_column_text]No ano de 2016 a YouBet! foi criada com o ideia principal de fornecer um curso de idiomas com  uma imersão cultural de vivência com a língua aprendida. Com o passar dos anos e com parcerias bem estruturadas, se qualificou no intercâmbio de High School, ou seja, alunos que desejam cursar o ensino médio em escolas de alto padrão e qualificação nos Estados Unidos, com isso aderiu o nome de YouBet! School pois potencializou junto a instituições internacionais o ramo estudantil e cada vez mais se viu preocupada quanto a internacionalização e globalização.

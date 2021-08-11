@@ -1,6 +1,6 @@
 ---
 title: O Guia Definitivo do Verbo To Be
-slug: /o-guia-definitivo-do-verbo-to-be
+slug: o-guia-definitivo-do-verbo-to-be
 date: 2017-05-23 15:39:27+00:00
 image: /uploads/images/menina-no-notebook.jpg
 imageAlt: "Menina No Notebook"

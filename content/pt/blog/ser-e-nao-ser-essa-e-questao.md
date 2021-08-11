@@ -1,6 +1,6 @@
 ---
 title: Ser e não ser, essa é a questão!
-slug: /ser-e-nao-ser-essa-e-questao/
+slug: ser-e-nao-ser-essa-e-questao/
 date: 2017-08-07 15:39:00+00:00
 image: /uploads/images/eis.jpeg
 imageAlt: Ser ou não ser

@@ -4,7 +4,7 @@ date: 2019-08-21 02:21:03+00:00
 draft: false
 title: Home
 type: page
-slug: /
+slug:
 ---
 
 <!--

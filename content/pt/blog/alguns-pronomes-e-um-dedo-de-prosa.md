@@ -1,6 +1,6 @@
 ---
 title: Alguns pronomes e um dedo de prosa.
-slug: /alguns-pronomes-e-um-dedo-de-prosa/
+slug: alguns-pronomes-e-um-dedo-de-prosa/
 date: 2017-07-11 16:37:55+00:00
 image: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
 imageAlt: Monument Rushmore
