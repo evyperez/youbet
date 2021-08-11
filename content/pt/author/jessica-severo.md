@@ -5,7 +5,7 @@ medium:
 linkedin:
 facebook:
 twitter:
-avatar:
+avatar: '/uploads/images/jessica-severo.jpg'
 draft: false
 ---
 
