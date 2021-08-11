@@ -19,13 +19,22 @@
           <h2 class="title">{{ i18n "lastPosts" | title }}</h2>
           <div class="boxes">
             {{ range .Data.Pages.ByDate.Reverse }}
+
             <div class="box">
+              {{ if .Params.video }}
+              <div class="embed-container">
+                <iframe width="560" height="315" src="{{ .Params.video }}?controls=0?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+              </div>
+              {{ else }}
               <a href="/blog/{{ .Params.slug }}">
                 <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}">
-                <h2>
-                  {{ if .Params.shortTitle }} {{ .Params.shortTitle }} {{ else }} {{ .Title }} {{ end }}
-                </h2>
               </a>
+              {{ end }}
+              <h2>
+                {{ if .Params.shortTitle }} {{ .Params.shortTitle }} {{ else }} {{ .Title }} {{ end }}
+              </h2>
+              {{ .Content }}
             </div>
             {{ end }}
           </div>
