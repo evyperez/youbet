@@ -87,3 +87,15 @@
     }
   }
 }
+
+.blog-wrap {
+  display: grid;
+
+  grid-template-columns: auto to-rem(170px);
+
+  column-gap: to-rem(16px);
+}
+
+.sidebar {
+  width: 100%;
+}

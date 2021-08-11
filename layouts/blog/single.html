@@ -13,9 +13,9 @@
 
 
     <main role="main" id="conteudo" class="main">
-      {{/*  <header class="title-highlight">
+      {{/* <header class="title-highlight">
         <h1>Lala</h1>
-      </header>  */}}
+      </header> */}}
       <div class="container">
         {{ partial "breadcrumbs.html" . }}
       </div>
@@ -23,23 +23,63 @@
 
       <section class="section">
         <div class="container">
-          <div class="row flex-content--center">
-            <div class="col col-mobile--4 col-desktop--8">
-              <h2 class="title">{{ .Title }}</h2>
+          <div class="blog-wrap">
+            <div class="lala">
+              <div class=" rich-text">
+                <h2>{{ .Title }}</h2>
 
-              {{ if .Params.subtitle }}
-              <div class="project-subtitle">
-                <p>{{ .Params.subtitle }}</p>
+                {{ if .Params.subtitle }}
+                <div class="project-subtitle">
+                  <p>{{ .Params.subtitle }}</p>
+                </div>
+                {{ end }}
+
+                {{ if .Params.imageBeforeText }}
+                <img src="{{ .Params.imageBeforeText }}" alt="{{ .Title }}">
+                {{ end }}
+
+                {{ .Content }}
+
+              </div>
+
+
+              {{ if .Params.authors }}
+
+              <div class="authors">
+                <div class="content smaller-width">
+                  <div class="authors__title">
+                    <p>{{ i18n "authors" | title }}</p>
+                  </div>
+                  {{ range .Params.authors }}
+                  {{ range where $.Site.Pages "Params.slug" .author }}
+                  <div class="authors__wrap">
+                    <div class="authors-image">
+                      <img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}">
+                    </div>
+                    <div class="authors-about">
+                      <h2>{{ .Title }}</h2>
+                      {{ .Content }}
+                    </div>
+                  </div>
+                  {{ end }}
+                  {{ end }}
+                </div>
               </div>
               {{ end }}
 
-              {{ if .Params.imageBeforeText }}
-              <img src="{{ .Params.imageBeforeText }}" alt="{{ .Title }}">
-              {{ end }}
+            </div>
+            <div class="sidebar">
+              <div>
+                <h2>Pesquisar</h2>
+                <input type="search">
+              </div>
+              <div>
+                <h2>Categorias</h2>
 
-              {{ .Content }}
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 

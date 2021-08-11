@@ -1,6 +1,6 @@
 <section class="blog">
   <div class="container">
-    <h2 class="title">
+    <h2 class="title color-white">
       {{ i18n "blog" }}
     </h2>
 
@@ -16,7 +16,7 @@
 
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          {{ range ( where .Site.RegularPages "Type" "post").ByDate.Reverse | first 4 }}
+          {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse | first 4 }}
           <li class="glide__slide">
             <div class="post">
               <div class="post__image">

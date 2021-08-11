@@ -210,3 +210,7 @@ textarea {
     row-gap: to-rem(32px);
   }
 }
+
+.color-white {
+  color: palette('white');
+}

@@ -152,15 +152,35 @@ p {
   font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 }
 
+.rich-text {
+  h1 {
+    margin-bottom: to-rem(16px);
+  }
+
+  h2 {
+    margin-bottom: to-rem(12px);
+  }
+
+  h3 {
+    margin-bottom: to-rem(12px);
+  }
+
+  h4 {
+    margin-bottom: to-rem(8px);
+  }
+
+  h5 {
+    margin-bottom: to-rem(8px);
+  }
+}
+
 .rich-text p {
-  margin-bottom: 16px;
+  margin-bottom: to-rem(20px);
 }
 
 .rich-text:last-child {
   margin-bottom: 0;
 }
-
-// TODO: for group of p: margin-bottom: to-rem(16px);
 
 .pre-title {
   font-size: to-rem(12px);
@@ -177,7 +197,6 @@ p {
   font-size: to-rem(12px);
   line-height: to-rem(20px);
 }
-
 
 .title-section {
   margin-bottom: to-rem(24px);
