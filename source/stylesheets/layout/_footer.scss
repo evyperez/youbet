@@ -13,15 +13,9 @@
 // }
 
 .footer {
-  color: palette('menu-light', 'text');
-  background: palette('menu-light');
+  color: palette('menu', 'text');
+  background: palette('menu');
   border-top: 2px solid palette('gray', '10%');
-
-}
-
-.theme--dark .footer {
-  color: palette('menu-dark', 'text');
-  background: palette('menu-dark');
 }
 
 .footer__copyright {

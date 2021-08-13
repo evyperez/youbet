@@ -36,10 +36,6 @@ exercícios de gramática e conecte-se com pessoas do mundo toda. Já a versão
 grátis do **Busuu** é mais focado em exercícios (são cerca de 150 deles) em
 que há bastante apelo visual e de jogos. Outra opção é o **Memrise**.
 
-   - **Livemocha:**[http://livemocha.abreduc.com.br/livemocha/home/](http://livemocha.abreduc.com.br/livemocha/home/)
-   - **Busuu:**[https://www.busuu.com/pt](https://www.busuu.com/pt)
-   - **Memrise:**[https://www.memrise.com/](https://www.memrise.com/)
-
 3. **Liste palavras:** criar uma lista ajuda no aprendizado. A cada palavra
 nova que escutar ou ler, anote. Ao lado, escreve a sua definição para ela e
 uma frase em que ela faça sentido;
@@ -49,20 +45,18 @@ lições que são divididas em categorias (roupas, comidas, profissões etc.) e
 para liberar uma é necessário completar a anterior. Outros interessantes são
 os aplicativos **Voxy** e o **Babbel**.
 
-   - **Duolingo:** [https://pt.duolingo.com/](https://pt.duolingo.com/)
-   - **Voxy:** [http://www.unifilead.com.br/voxy/](http://www.unifilead.com.br/voxy/)
-   - **Babbel:** [https://lp.babbel.com/d/POR_index.html?l1=POR&l2=ENG&ch=ORG](https://lp.babbel.com/d/POR_index.html?l1=POR&l2=ENG&ch=ORG)
+- **Duolingo:** [https://pt.duolingo.com/](https://pt.duolingo.com/)
+- **Voxy:** [http://www.unifilead.com.br/voxy/](http://www.unifilead.com.br/voxy/)
+- **Babbel:** [https://lp.babbel.com/d/POR_index.html?l1=POR&l2=ENG&ch=ORG](https://lp.babbel.com/d/POR_index.html?l1=POR&l2=ENG&ch=ORG)
 
-5. **Cartões de memória:** o aplicatio Anki ajuda a memorizar qualquer coisa
+5. **Cartões de memória:** O aplicativo Anki ajuda a memorizar qualquer coisa
 mais facilmente. Ele implementa um conceito chamado SRS (Spaced Repetition
 System) que combate a curva do esquecimento, aumentando, assim, a nossa
 eficiência nos estudos.
 
-   - **Anki:** [https://apps.ankiweb.net/](https://apps.ankiweb.net/)
+- **Anki:** [https://apps.ankiweb.net/](https://apps.ankiweb.net/)
 
 6. **Mude a língua do seu celular/computador:** você passa grande parte do seu
 tempo conectado ao seu smartphone ou computador, certo? Trocar a língua
 padrão deles para o inglês garante que o seu contato com o idioma seja
-permanente.
-
-Com um pouco de dedicação, você logo estará fluente no inglês. Bora estudar!
+permanente. Com um pouco de dedicação, você logo estará fluente no inglês. **Bora estudar!**

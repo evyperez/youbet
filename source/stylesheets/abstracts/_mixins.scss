@@ -837,3 +837,8 @@ $no-viewport: false !default;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}

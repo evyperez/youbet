@@ -47,7 +47,7 @@ nav a {
 
     white-space: nowrap;
 
-    background: palette('menu-light', 'sub-menu');
+    background: palette('menu', 'sub-menu');
 
     box-shadow: -7px 1px 20px palette('shadow');
 
@@ -152,7 +152,7 @@ nav a {
 
   @media screen and (min-width: breakpoint('desktop')) {
     &:hover {
-      color: palette('menu-light', 'anchor');
+      color: palette('menu', 'anchor');
     }
   }
 }
@@ -166,7 +166,7 @@ nav a {
 
   list-style: none;
 
-  color: palette('menu-light', 'sub-menu-text');
+  color: palette('menu', 'sub-menu-text');
 
   @media screen and (min-width: breakpoint('desktop')) {
     position: absolute;
@@ -176,9 +176,9 @@ nav a {
     width: auto;
     min-width: 170px;
 
-    color: palette('menu-light', 'sub-menu');
+    color: palette('menu', 'sub-menu');
 
-    background: palette('menu-light', 'sub-menu');
+    background: palette('menu', 'sub-menu');
   }
 
   li > a {
@@ -196,7 +196,7 @@ nav a {
     font-size: to-rem(12px);
     line-height: to-rem(16px);
 
-    color: palette('menu-light', 'sub-menu-text');
+    color: palette('menu', 'sub-menu-text');
   }
 
   .controller:checked ~ * & {
@@ -208,9 +208,9 @@ nav a {
   li > a {
     @media screen and (min-width: breakpoint('desktop')) {
       &:hover {
-        color: palette('menu-light', 'anchor');
+        color: palette('menu', 'anchor');
 
-        background-color: palette('menu-light', 'sub-menu-hover');
+        background-color: palette('menu', 'sub-menu-hover');
       }
     }
   }
@@ -255,7 +255,7 @@ nav a {
     mask-size: 16px auto;
 
     &:hover {
-      background-color: palette('menu-light', 'anchor');
+      background-color: palette('menu', 'anchor');
     }
   }
 
@@ -282,7 +282,7 @@ nav a {
   font-weight: bold;
   font-size: to-rem(14px);
 
-  color: palette('menu-light', 'text');
+  color: palette('menu', 'text');
 
   @media screen and (min-width: breakpoint('desktop')) {
     padding: to-rem(12px) to-rem(14px);
@@ -294,7 +294,7 @@ nav a {
     border: 0;
 
     &:hover {
-      color: palette('menu-light', 'anchor');
+      color: palette('menu', 'anchor');
     }
   }
 }
@@ -309,7 +309,7 @@ nav a {
 
   font-size: 1em;
 
-  color: palette('menu-light', 'text');
+  color: palette('menu', 'text');
 
   label {
     font-size: 0;
@@ -326,7 +326,7 @@ nav a {
     font-size: 2em;
     line-height: 3.1rem;
 
-    color: palette('menu-light', 'text');
+    color: palette('menu', 'text');
 
     content: '\20\2261\20';
 
@@ -384,80 +384,4 @@ nav a {
   justify-content: center;
 
   width: auto;
-}
-
-// Theme
-
-.theme--dark {
-  .main-menu {
-    @media (max-width: breakpoint('max-desktop')) {
-      background: palette('menu-dark', 'sub-menu');
-    }
-  }
-
-  .has-sub-menu {
-    color: palette('text', 'light');
-
-    @media screen and (min-width: breakpoint('desktop')) {
-      &:hover {
-        color: palette('menu-dark', 'anchor');
-      }
-    }
-  }
-
-  .sub-menu {
-    color: palette('menu-dark', 'sub-menu-text');
-
-    @media screen and (min-width: breakpoint('desktop')) {
-      color: palette('menu-dark', 'sub-menu');
-
-      background: palette('menu-dark', 'sub-menu');
-    }
-
-    li > a {
-      color: palette('menu-dark', 'sub-menu-text');
-    }
-  }
-
-  .sub-menu.active {
-    li > a {
-      @media screen and (min-width: breakpoint('desktop')) {
-        &:hover {
-          color: palette('menu-dark', 'anchor');
-
-          background-color: palette('menu-dark', 'sub-menu-hover');
-        }
-      }
-    }
-  }
-
-  .controller-label {
-    color: palette('text', 'light');
-
-    &::after {
-      background-color: palette('text', 'light');
-
-      &:hover {
-        background-color: palette('menu-dark', 'anchor');
-      }
-    }
-  }
-
-  .main-menu a {
-    color: palette('menu-dark', 'text');
-
-    @media screen and (min-width: breakpoint('desktop')) {
-      &:hover {
-        color: palette('menu-dark', 'anchor');
-      }
-    }
-  }
-
-  [for='menu-controller'] {
-    color: palette('menu-dark', 'text');
-
-    &::after {
-      color: palette('menu-dark', 'text');
-    }
-  }
 }

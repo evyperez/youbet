@@ -16,14 +16,10 @@
   position: sticky;
   top: 0;
   z-index: layer('dropdown');
-  background: palette('menu-light');
-  border-bottom: 2px solid  palette('menu-light', 'border');
+  background: palette('menu');
+  border-bottom: 2px solid  palette('menu', 'border');
 }
 
-.theme--dark header {
-  background: palette('menu-dark');
-  border-bottom: 2px solid  palette('menu-dark', 'border');
-}
 
 .header-container {
   max-width: $max-width;

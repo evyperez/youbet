@@ -21,9 +21,10 @@ ol {
  */
 article li {
   position: relative;
-  padding-left: 0;
 
+  padding-left: 0;
   margin: 0;
+
   list-style: none;
 
   &::before {
@@ -31,6 +32,7 @@ article li {
     left: -0.5em;
 
     z-index: layer('default'); // required to prevent Blink clipping issues on columns
+
     font-weight: font-weights('bold');
   }
 
@@ -45,8 +47,8 @@ article ul > li::before {
 
 article ol > li::before {
   left: 1em;
-  content: counter(li) '.\00a0';
 
+  content: counter(li) '.\00a0';
   counter-increment: li;
 }
 
@@ -77,5 +79,28 @@ dd {
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+.rich-text ol li,
+.rich-text ul li {
+  &::marker {
+    padding-right: to-rem(8px);
+
+    font-weight: 900;
+    font-size: to-rem(18px);
+    font-family: Asap, sans-serif;
+
+    color: palette('orange');
+
+    background-color: unset;
+
+    border-radius: 50%;
+  }
+}
+
+.rich-text ol li {
+  &::marker {
+    font-size: to-rem(16px);
   }
 }

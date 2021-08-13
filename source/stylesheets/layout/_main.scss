@@ -14,12 +14,6 @@
   }
 }
 
-.theme--dark .page > section {
-  &:nth-of-type(even) {
-    background-color: palette('gray');
-  }
-}
-
 .main-container {
   display: flex;
 

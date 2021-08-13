@@ -8,10 +8,8 @@
     {{ end }}
 
     <div class="two-columns">
-      <div>
-        {{ if .content }}
+      <div class="rich-text">
         <p>{{ .content }}</p>
-        {{ end }}
         {{ if .buttonUrl }}
           <a href="{{.buttonUrl}}" class="btn">{{ .buttonText }}</a>
         {{ end }}

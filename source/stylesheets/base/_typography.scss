@@ -24,10 +24,6 @@ body {
   background: palette('background', 'light');
 }
 
-body.theme--dark {
-  color: palette('text', 'light');
-  background: palette('background', 'dark');
-}
 
 /* HEADINGS AND TITLES */
 
@@ -167,6 +163,8 @@ p {
   }
 }
 
+.rich-text ol,
+.rich-text ul,
 .rich-text p {
   margin-bottom: to-rem(20px);
 }

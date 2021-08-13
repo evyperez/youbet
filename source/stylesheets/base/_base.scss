@@ -429,18 +429,18 @@ a {
   font-size: 100%;
 
   text-decoration: none;
+  text-decoration: underline;
   vertical-align: baseline;
   // sass-lint:disable-block property-sort-order
 
   color: palette('anchor', 'base');
 
 
-  &:link {
-    cursor: pointer;
-    -webkit-tap-highlight-color: palette('tap-highlight'); // stylelint-disable-next-line no-vendor-prefixes
+  // &:link {
+  //   cursor: pointer;
 
-    color: palette('anchor', 'link');
-  }
+  //   color: palette('anchor', 'link');
+  // }
 
   &:visited {
     color: palette('anchor', 'visited');
@@ -485,6 +485,8 @@ a {
   // &[target='_blank'],
   // &[rel='external'] {
   // }
+
+
 }
 
 
