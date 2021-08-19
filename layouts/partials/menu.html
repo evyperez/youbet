@@ -27,7 +27,7 @@
         <li class="has-sub-menu {{ if $currentPage.HasMenuCurrent "main" . }}is-active{{ end }}">
           <label for="{{.Identifier}}-controler" onclick class="controller-label">
 
-            <a href="#">
+            <a href="{{ .URL }}">
               {{ .Pre }}
               <span>{{ .Name }}</span>
             </a>

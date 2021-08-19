@@ -35,6 +35,9 @@ que você consiga agregar e fixar o novo vocabulário em inglês. O
 exercícios de gramática e conecte-se com pessoas do mundo toda. Já a versão
 grátis do **Busuu** é mais focado em exercícios (são cerca de 150 deles) em
 que há bastante apelo visual e de jogos. Outra opção é o **Memrise**.
+- **Livemocha:**[http://livemocha.abreduc.com.br/livemocha/home/](http://livemocha.abreduc.com.br/livemocha/home/)
+- **Busuu:**[https://www.busuu.com/pt](https://www.busuu.com/pt)
+- **Memrise:**[https://www.memrise.com/](https://www.memrise.com/)
 
 3. **Liste palavras:** criar uma lista ajuda no aprendizado. A cada palavra
 nova que escutar ou ler, anote. Ao lado, escreve a sua definição para ela e

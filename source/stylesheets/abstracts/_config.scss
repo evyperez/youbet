@@ -335,7 +335,7 @@ $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 /// Container's maximum width
 /// @type number
-$max-width: 67.5em !default; // 1032px + gutter
+$max-width: 85em !default; // 1032px + gutter
 $max-width--narrow: 40.75em; // 668 px
 
 $breakpoints: map-merge(

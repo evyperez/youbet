@@ -19,7 +19,8 @@ FootnoteReturnLinkContents: "↩"
 disableHugoGeneratorInject: true
 taxonomies:
   role: "role"
-
+permalinks:
+  pages: /:slug/
 languages:
   pt:
     contentDir: content/pt
@@ -56,7 +57,7 @@ languages:
           Pre: ""
           Weight: 3
           Identifier: "colleges"
-          URL: "/colegios"
+          URL: "/college"
         - Name: "Campion"
           Pre: ""
           Weight: 1

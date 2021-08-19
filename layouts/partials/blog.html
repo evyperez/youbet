@@ -23,14 +23,14 @@
                 <a href="{{ .Permalink }}">
                   <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
                   <div class="img-subtitle">
-                    <p class="author">{{.Params.Author}}</p>
-                    <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
+                    <p class="author text-decor--none">{{.Params.Author}}</p>
+                    <p class="date text-decor--none"> {{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
                 </a>
               </div>
 
-              <div class="post__title">
-                <a href="{{ .Permalink }}">
+              <div class="post__title text-decor--none">
+                <a href="{{ .Permalink }}" class="text-decor--none">
                   <h2 class="heading-4"> {{ .Title }} </h2>
                 </a>
               </div>

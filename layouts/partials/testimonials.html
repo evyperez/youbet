@@ -8,14 +8,20 @@
     {{ end }}
     <div class="testimonials-wrap">
       {{ range .list }}
-      <div>
-        {{ if .name }}
-        <h2>{{ .name }}</h2>
-        {{ end }}
-
-        {{ if .text }}
-        <p>{{ .text }}</p>
-        {{ end }}
+      <div class="two-columns align-items--center">
+        <div>
+          {{ if .text }}
+          <h3>{{ .text }}</h3>
+          {{ end }}
+          {{ if .name }}
+          <p>{{ .name }}</p>
+          {{ end }}
+        </div>
+        <div>
+          {{ if .image }}
+          <img src="{{ .image }}" alt="{{ .alt }}">
+          {{ end }}
+        </div>
       </div>
       {{ end }}
 
