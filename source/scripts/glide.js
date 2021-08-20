@@ -9,6 +9,7 @@ function mountGlide() {
       startAt: 0,
       perView: 3,
       hoverpause: false,
+      gap: 24,
       breakpoints: {
         1280: {
           perView: 3,

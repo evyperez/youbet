@@ -1,6 +1,6 @@
 <section class="blog">
   <div class="container">
-    <h2 class="title color-white">
+    <h2 class="title">
       {{ i18n "blog" }}
     </h2>
 
@@ -23,8 +23,10 @@
                 <a href="{{ .Permalink }}">
                   <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
                   <div class="img-subtitle">
-                    <p class="author text-decor--none">{{.Params.Author}}</p>
-                    <p class="date text-decor--none"> {{ .Params.Date.Format "01/02/2006" }}</p>
+                    {{ range .Params.authors | first 1 }}
+                    <p class="author">{{ .author}}</p>
+                    {{end}}
+                    <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
                 </a>
               </div>
