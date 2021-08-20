@@ -61,7 +61,6 @@ rules:
   no-confusing-arrow: 2
   prefer-const: 2
 
-
   # Import
   import/no-unresolved: [1, { 'commonjs': true, 'amd': true }]
   import/export: 2

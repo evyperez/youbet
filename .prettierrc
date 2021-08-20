@@ -8,9 +8,7 @@
   "useTabs": false,
   "overrides": [
     {
-      "files": [
-        "*.html"
-      ],
+      "files": ["*.html"],
       "options": {
         "parser": "go-template"
       }
