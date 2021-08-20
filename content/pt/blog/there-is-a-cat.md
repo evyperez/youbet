@@ -5,7 +5,7 @@ date: 2017-08-15 19:00:25+00:00
 image: /uploads/images/cat-in-the-basket.jpeg
 imageAlt: Gato dentro da cesta
 authors:
-    - author: joabecardoso
+    - author: joabe-cardoso
 categories:
     - Blog
 tags:

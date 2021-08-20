@@ -6,3 +6,5 @@
   translation: "Autores"
 - id: author
   translation: "Autor"
+- id: about
+  translation: "Sobre"

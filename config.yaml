@@ -53,23 +53,23 @@ languages:
           Weight: 2
           Identifier: "blog"
           URL: "/blog"
-        - Name: "Colégios"
-          Pre: ""
-          Weight: 3
-          Identifier: "colleges"
-          URL: "/college"
-        - Name: "Campion"
-          Pre: ""
-          Weight: 1
-          Identifier: "campion"
-          URL: "/campion"
-          parent: "colleges"
-        - Name: "Bma"
-          Pre: ""
-          Weight: 2
-          Identifier: "bma"
-          URL: "/bma"
-          parent: "colleges"
+        # - Name: "Colégios"
+        #   Pre: ""
+        #   Weight: 3
+        #   Identifier: "colleges"
+        #   URL: "/college"
+        # - Name: "Campion"
+        #   Pre: ""
+        #   Weight: 1
+        #   Identifier: "campion"
+        #   URL: "/campion"
+        #   parent: "colleges"
+        # - Name: "Bma"
+        #   Pre: ""
+        #   Weight: 2
+        #   Identifier: "bma"
+        #   URL: "/bma"
+        #   parent: "colleges"
   en:
     contentDir: content/en
     languageName: English
