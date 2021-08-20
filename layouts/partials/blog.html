@@ -16,24 +16,20 @@
 
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse | first 4 }}
+          {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
           <li class="glide__slide">
             <a href="{{ .Permalink }}" class="text-decor--none">
               <div class="post">
                 <div class="post__image">
                   <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
                   <div class="img-subtitle">
-                    {{ range .Params.authors | first 1 }}
+                    {{ range .Params.authors }}
                     <p class="author">{{ .author}}</p>
                     {{end}}
                     <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
                 </div>
-
-                <div class="post__title ">
-                  <h2 class="heading-5"> {{ .Title }} </h2>
-                </div>
-
+                <h2 class="heading-5"> {{ .Title }} </h2>
               </div>
             </a>
           </li>

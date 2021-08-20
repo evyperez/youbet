@@ -10,6 +10,7 @@ function mountGlide() {
       perView: 3,
       hoverpause: false,
       gap: 24,
+      bound: true,
       breakpoints: {
         1280: {
           perView: 3,
@@ -26,6 +27,6 @@ function mountGlide() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function(event) {
   mountGlide();
 });
