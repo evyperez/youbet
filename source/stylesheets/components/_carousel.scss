@@ -8,7 +8,6 @@
   left: 0;
 
   display: block;
-  z-index: 1;
 
   width: 100%;
   height: 100%;
@@ -44,11 +43,15 @@
     &.glide__arrow--left {
       position: absolute;
       left: -20px;
+
+      z-index: 1;
     }
 
     &.glide__arrow--right {
       position: absolute;
       right: -20px;
+
+      z-index: 1;
     }
 
     &.glide__arrow--left::after {
