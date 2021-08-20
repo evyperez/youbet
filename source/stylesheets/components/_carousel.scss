@@ -19,20 +19,23 @@
     color: palette('white');
   }
 
-
   button {
-    top: 110px; 
+    top: 110px;
 
     min-width: unset;
 
-    padding: 0 16px ;
+    padding: 0 16px;
+
+    color: palette('white');
 
     background-color: palette('gray');
-    color: palette('white');
-    border:unset;
-  
-    &.hover {
+
+    border: unset;
+
+    &:hover {
       background-color: palette('gray', '110%');
+
+      border: unset;
     }
     &::after {
       color: palette('white');
@@ -41,7 +44,6 @@
     &.glide__arrow--left {
       position: absolute;
       left: -20px;
-
     }
 
     &.glide__arrow--right {
