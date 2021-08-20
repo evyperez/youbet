@@ -162,7 +162,7 @@ textarea {
 
   width: 100%;
 
-  row-gap: to-rem(24px);
+  row-gap: $gutter;
 }
 
 .two-columns {
@@ -173,7 +173,7 @@ textarea {
 
   width: 100%;
 
-  row-gap: to-rem(24px);
+  row-gap: $gutter;
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     grid-template-columns: 1fr 1fr;
@@ -192,7 +192,7 @@ textarea {
 
   width: 100%;
 
-  row-gap: to-rem(24px);
+  row-gap: $gutter;
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     grid-template-columns: 1fr 1fr;
@@ -219,7 +219,7 @@ textarea {
 
   width: 100%;
 
-  row-gap: to-rem(24px);
+  row-gap: $gutter;
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
     grid-template-columns: 1fr 1fr;

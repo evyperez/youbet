@@ -3,19 +3,19 @@
 
 <section class="image-with-text">
   <div class="container">
-    {{ if .title }}
-    <h2 class="title-section">{{ .title }} </h2>
-    {{ end }}
+
 
     <div class="two-columns align-items--center">
       {{ if .image }}
 
       <div class="image">
         <img src="{{ .image }}" alt="{{ .alt }}">
-
       </div>
       {{ end }}
       <div class="rich-text">
+        {{ if .title }}
+        <h2>{{ .title }} </h2>
+        {{ end }}
         <p>{{ .content }}</p>
         {{ if .buttonUrl }}
         <a href="{{.buttonUrl}}" class="btn">{{ .buttonText }}</a>

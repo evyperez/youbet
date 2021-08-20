@@ -59,6 +59,8 @@ $body-font-size: 1em !default;
 /// @type number
 $leading: 1.5 !default;
 
+$spacement: 0.5rem !default;
+
 /// flexible line heights map
 /// @access private
 /// @type Map
@@ -273,14 +275,15 @@ $stroke: 1px !default;
 /// gutter default width
 /// @todo Customize it to match your design.
 /// @type number
-$gutter: $leading * $body-font-size / 1em * 1rem;
+$small-gutter: 1rem; // 16px
+$gutter: 1.5rem; // 24px
 
 /// column basis width
 /// @todo Customize it to match your design.
 /// @type number
 $column-basis: 17rem;
 
-$_mobile-columns: 2;
+$_mobile-columns: 6;
 $_new-width: 0;
 $_device-width: 20em;
 $_i: $_mobile-columns;
@@ -306,14 +309,14 @@ $_i: $_mobile-columns;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: _im-to-em(
   (
-    'phone__portrait': 320px,
-    'phone__landscape': 480px,
-    'tablet__portrait': 768px,
-    'tablet__landscape': 1280px,
-    'max-desktop': 1023px,
-    'desktop': 1024px,
-    'max-wide': 1599px,
-    'wide': 1440px,
+    'small-phone': 320px,
+    'phone': 414px,
+    'tablet': 768px,
+    'laptop': 1024px,
+    'desktop': 1440px,
+    'max-tablet': 768px,
+    'max-laptop': 1023px,
+    'max-desktop': 1439px,
   )
 ) !default;
 
@@ -335,7 +338,8 @@ $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 /// Container's maximum width
 /// @type number
-$max-width: 85em !default; // 1032px + gutter
+$max-width: 60.125em !default; // 1128px + gutter
+$max-width--desktop: 70.5em !default; // 1128 + gutter
 $max-width--narrow: 40.75em; // 668 px
 
 $breakpoints: map-merge(

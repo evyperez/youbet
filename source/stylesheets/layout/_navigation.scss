@@ -7,7 +7,7 @@ nav a {
 
   text-decoration: none;
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     padding-right: 0;
   }
 }
@@ -25,13 +25,13 @@ nav a {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media (min-width: breakpoint('desktop')) {
+  @media (min-width: breakpoint('laptop')) {
     flex-direction: row;
   }
 }
 
 .main-menu {
-  @media (max-width: breakpoint('max-desktop')) {
+  @media (max-width: breakpoint('max-laptop')) {
     position: fixed;
     top: 60px;
     bottom: 0;
@@ -66,7 +66,7 @@ nav a {
     }
   }
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     position: unset;
     top: 1em;
     right: 1em;
@@ -104,7 +104,7 @@ nav a {
 
   justify-items: center;
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     flex-direction: row;
   }
 }
@@ -122,7 +122,7 @@ nav a {
 
   text-align: center;
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     flex-direction: row;
 
     width: auto;
@@ -150,7 +150,7 @@ nav a {
 
   color: palette('text', 'dark');
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     &:hover {
       color: palette('menu', 'anchor');
     }
@@ -168,7 +168,7 @@ nav a {
 
   color: palette('menu', 'sub-menu-text');
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     position: absolute;
     top: 54px;
     right: 0;
@@ -206,7 +206,7 @@ nav a {
 
 .sub-menu.active {
   li > a {
-    @media screen and (min-width: breakpoint('desktop')) {
+    @media screen and (min-width: breakpoint('laptop')) {
       &:hover {
         color: palette('menu', 'anchor');
 
@@ -259,7 +259,7 @@ nav a {
     }
   }
 
-  @media (max-width: breakpoint('max-desktop')) {
+  @media (max-width: breakpoint('max-laptop')) {
     justify-content: space-between;
   }
 
@@ -284,7 +284,7 @@ nav a {
 
   color: palette('menu', 'text');
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     padding: to-rem(12px) to-rem(14px);
 
     font-size: to-rem(13px);
@@ -314,7 +314,7 @@ nav a {
   label {
     font-size: 0;
   }
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     display: none;
   }
 
@@ -361,6 +361,10 @@ nav a {
   @include table-layout-wrapper;
 
   max-width: $max-width;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    max-width: $max-width--desktop;
+  }
 }
 
 .skip-links ul {

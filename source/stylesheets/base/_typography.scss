@@ -178,7 +178,7 @@ p {
   line-height: to-rem(20px);
   letter-spacing: 0.4rem;
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     font-size: to-rem(14px);
     line-height: to-rem(22px);
   }
@@ -198,7 +198,7 @@ p {
   margin-bottom: to-rem(24px);
   text-align: center;
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     margin-bottom: to-rem(32px);
   }
 }

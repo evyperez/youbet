@@ -3,14 +3,15 @@
 
 <section class="image-with-text">
   <div class="container">
-    {{ if .title }}
-    <h2 class="title-section">{{ .title }} </h2>
-    {{ end }}
+
 
     <div class="two-columns align-items--center">
       <div>
         {{ if .content }}
         <div class="rich-text">
+          {{ if .title }}
+          <h2>{{ .title }} </h2>
+          {{ end }}
           <p>{{ .content | markdownify }}</p>
         </div>
         {{ end }}

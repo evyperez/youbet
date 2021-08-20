@@ -20,7 +20,7 @@ body.theme--dark {
 
 .theme--dark {
   .main-menu {
-    @media (max-width: breakpoint('max-desktop')) {
+    @media (max-width: breakpoint('max-laptop')) {
       background: palette('menu-dark', 'sub-menu');
     }
   }
@@ -28,7 +28,7 @@ body.theme--dark {
   .has-sub-menu {
     color: palette('text', 'light');
 
-    @media screen and (min-width: breakpoint('desktop')) {
+    @media screen and (min-width: breakpoint('laptop')) {
       &:hover {
         color: palette('menu-dark', 'anchor');
       }
@@ -38,7 +38,7 @@ body.theme--dark {
   .sub-menu {
     color: palette('menu-dark', 'sub-menu-text');
 
-    @media screen and (min-width: breakpoint('desktop')) {
+    @media screen and (min-width: breakpoint('laptop')) {
       color: palette('menu-dark', 'sub-menu');
 
       background: palette('menu-dark', 'sub-menu');
@@ -51,7 +51,7 @@ body.theme--dark {
 
   .sub-menu.active {
     li > a {
-      @media screen and (min-width: breakpoint('desktop')) {
+      @media screen and (min-width: breakpoint('laptop')) {
         &:hover {
           color: palette('menu-dark', 'anchor');
 
@@ -76,7 +76,7 @@ body.theme--dark {
   .main-menu a {
     color: palette('menu-dark', 'text');
 
-    @media screen and (min-width: breakpoint('desktop')) {
+    @media screen and (min-width: breakpoint('laptop')) {
       &:hover {
         color: palette('menu-dark', 'anchor');
       }
