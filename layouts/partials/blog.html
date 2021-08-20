@@ -24,7 +24,9 @@
                   <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
                   <div class="img-subtitle">
                     {{ range .Params.authors | first 1 }}
-                    <p class="author">{{ .author}}</p>
+                      {{ range where $.Site.Pages "Params.slug" .author }}
+                        <p class="author">{{ .Title}}</p>
+                      {{end}}
                     {{end}}
                     <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
