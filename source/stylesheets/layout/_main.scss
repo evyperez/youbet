@@ -32,10 +32,19 @@ main,
   width: 100%;
   max-width: $max-width;
 
-  padding-right: $gutter;
-  padding-left: $gutter;
+  padding-right: $small-gutter;
+  padding-left: $small-gutter;
   margin-right: auto;
   margin-left: auto;
+
+  @media screen and (min-width: breakpoint('phone')) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    max-width: $max-width--desktop;
+  }
 }
 
 
@@ -43,7 +52,7 @@ main,
   padding-top: to-em(32px);
   padding-bottom: to-em(32px);
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     padding-top: to-em(80px);
     padding-bottom: to-em(80px);
   }

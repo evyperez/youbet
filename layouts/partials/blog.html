@@ -1,4 +1,4 @@
-<section class="blog">
+<section class="blog-list">
   <div class="container">
     <h2 class="title">
       {{ i18n "blog" }}
@@ -16,31 +16,24 @@
 
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse | first 4 }}
+          {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
           <li class="glide__slide">
-            <div class="post">
-              <div class="post__image">
-                <a href="{{ .Permalink }}">
+            <a href="{{ .Permalink }}" class="text-decor--none">
+              <div class="post">
+                <div class="post__image">
                   <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
                   <div class="img-subtitle">
-                    {{ range .Params.authors | first 1 }}
+                    {{ range .Params.authors }}
                       {{ range where $.Site.Pages "Params.slug" .author }}
                         <p class="author">{{ .Title}}</p>
                       {{end}}
                     {{end}}
                     <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
-                </a>
+                </div>
+                <h2 class="heading-5"> {{ .Title }} </h2>
               </div>
-
-              <div class="post__title text-decor--none">
-                <a href="{{ .Permalink }}" class="text-decor--none">
-                  <h2 class="heading-4"> {{ .Title }} </h2>
-                </a>
-              </div>
-
-            </div>
-
+            </a>
           </li>
           {{end}}
         </ul>

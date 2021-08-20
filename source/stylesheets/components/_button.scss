@@ -67,7 +67,7 @@
     line-height: to-rem(48px);
   }
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     padding: 0 to-rem(32px);
   }
 
