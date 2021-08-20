@@ -1,0 +1,152 @@
+/* buttons
+---------------------------------------------------------------------------- */
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Improve usability and consistency of cursor style between image-type `input` and others.
+ * 3. Address `overflow` set to `hidden` in IE 8/9/10. Corrects inner spacing displayed oddly in IE6/7
+ * 4. Remove inner padding and border in Firefox 4+.
+ * 5. Consistent buttons background color for all browsers (opinionated).
+ * 6. Consistent paddings.
+ * @see  http://archivist.incutio.com/viewlist/css-discuss/98999
+ * @see  http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ * @see  http://christophzillgens.com/en/articles/equal-height-input-and-button-elements-in-firefox-and-safari
+ * @see  http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
+ */
+%button-reset {
+  @extend %os-element-reset;
+
+  display: inline-block;
+
+  align-items: center;
+
+  width: auto; /* 3 */
+  height: to-rem(40px);
+  min-width: 88px;
+
+  padding: 0 to-rem(16px);
+
+  overflow: visible; /* 3 */
+
+  font-weight: bold;
+  font-size: to-rem(12px);
+  line-height: to-rem(40px);
+  font-family: Asap, sans-serif;
+  letter-spacing: 0.04em;
+
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: uppercase;
+  white-space: inherit;
+
+  cursor: pointer; /* 2 */
+
+  color: palette('white'); /* 5 */
+
+  background: palette('button'); /* 5 */
+
+  border: 2px solid palette('button');
+
+  box-sizing: inherit;
+
+  appearance: button; /* 1 */
+
+  &::-moz-focus-inner {
+    padding: 0; /* 4 */
+
+    border: 0;
+  }
+
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    height: to-rem(48px);
+
+    padding: 0 to-rem(16px);
+
+    font-size: to-rem(14px);
+    line-height: to-rem(48px);
+  }
+
+  @media screen and (min-width: breakpoint('laptop')) {
+    padding: 0 to-rem(32px);
+  }
+
+  &:hover,
+  &:focus {
+    &:not([type='reset']) {
+      color: palette('white');
+
+      background-color: palette('button', 'focus');
+
+      border: 2px solid palette('button', 'focus');
+
+      outline: none;
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+
+    background-color: palette('button', 'disabled');
+
+    border: 2px solid palette('button', 'disabled');
+  }
+
+  // &:active {
+  // }
+}
+
+/**
+ * Avoid the WebKit bug in Android 4.0.* where (1) destroys native `audio`
+ * and `video` controls.
+ * Please note that this fix DOES NOT work for buttons contained inside table elements.
+ * @see https://github.com/necolas/normalize.css/commit/79b3d21b697e94675d748cd9d42409b83318d2b5
+ * @see https://github.com/necolas/normalize.css/issues/20
+ */
+
+html [type='button'] {
+  appearance: button;
+}
+
+.btn,
+button,
+[role='button'],
+[type='button'] {
+  @extend %button-reset;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn--full-mobile {
+  @media screen and (max-width: breakpoint('tablet__portrait')) {
+    width: 100%;
+  }
+}
+
+.btn--disabled {
+  cursor: not-allowed;
+
+  background-color: palette('button', 'disabled');
+
+  border: 2px solid palette('button', 'disabled');
+
+  &:hover,
+  &:focus {
+    &:not([type='reset']) {
+      background-color: palette('button', 'disabled');
+
+      border: 2px solid palette('button', 'disabled');
+
+      outline: none;
+    }
+  }
+}
+
+/**
+* Replace focus style removed in the border reset above
+*/
+button:-moz-focusring,
+input:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}

@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+/**
+ * A large perceivable region that contains information about the parent document.
+ *
+ * Examples of information included in this region of the page are copyrights and links to privacy statements.
+ *
+ * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `contentinfo` role.
+ */
+// [role='contentinfo'] {
+// }
+
+.footer {
+  color: palette('menu', 'text');
+  background: palette('menu');
+  border-top: 2px solid palette('gray', '10%');
+}
+
+.footer__copyright {
+  text-align: center;
+}
+
+.footer__copyright p {
+  margin: 0;
+  font-size: to-rem(14px);
+}

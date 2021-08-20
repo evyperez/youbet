@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head.html" . }}
+
+<body>
+  <div class="main-container">
+
+    {{ partial "header.html" . }}
+
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
+    <main role="main" id="conteudo" class="internal-page">
+
+      <div class="container">
+        <div class="author">
+
+          <div class="three-columns">
+
+            {{ range .Data.Pages.ByDate.Reverse }}
+
+            <div class="card">
+              <div class="card__body">
+                <div class="rich-text">
+                  <a href="/author/{{ .Params.slug }}">
+                    <p><strong>
+                        {{ .Title }}
+
+                      </strong>
+                    </p>
+                  </a>
+
+                  {{ .Content }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+  </div>
+
+</body>
+
+</html>

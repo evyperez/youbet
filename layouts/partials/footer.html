@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__copyright">
+      <p> YouBet! School - Todos os direitos reservados - 2021</p>
+    </div>
+
+
+
+{{/*
+    {{ if .Site.Menus.footer }}
+    <nav class="footer-menu" id="menu">
+
+      <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+          <a href="#">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+        </li>
+        <ul class="sub-menu">
+          {{ range .Children }}
+          <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ else }}
+        <li>
+          <a href="{{ .URL }}">
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}  */}}
+  </div>
+
+
+  <!-- {{ if .IsTranslated }}
+    <nav class="languages-nav">
+      <ul class="languages-navlinks">
+        {{ range .Translations }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }} {{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
+        </li>
+        {{ end}}
+      </ul>
+    </nav>
+    {{ end }} -->
+
+</footer>

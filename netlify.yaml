@@ -1,0 +1,11 @@
+build:
+  publish: public
+  environment:
+    HUGO_VERSION: 0.81.0
+context:
+  production:
+    command: npm run build
+  deploy-preview:
+    command: npm run build
+  branch-deploy:
+    command: npm run build

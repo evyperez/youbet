@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+/* Arvo */
+@font-face {
+  src: local('Arvo'), url('~uploads/fonts/arvo/Arvo-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-family: Arvo, serif;
+}
+
+@font-face {
+  src: local('Arvo Italic'), url('~uploads/fonts/arvo/Arvo-Italic.ttf') format('ttf');
+  font-style: italic;
+  font-weight: 400;
+  font-family: Arvo, serif;
+}
+
+@font-face {
+  src: local('Arvo Bold'), url('~uploads/fonts/arvo/Arvo-Bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 700;
+  font-family: Arvo, serif;
+}
+
+@font-face {
+  src: local('Arvo BoldItalic'), url('~uploads/fonts/arvo/Arvo-BoldItalic.ttf') format('ttf');
+  font-style: italic;
+  font-weight: 700;
+  font-family: Arvo, serif;
+}
+
+/* Roboto */
+@font-face {
+  src: local('Roboto'), url('~uploads/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-family: Roboto;
+}
+
+@font-face {
+  src: local('Roboto Italic'), url('~uploads/fonts/Roboto/Roboto-Italic.ttf') format('ttf');
+  font-style: italic;
+  font-weight: 400;
+  font-family: Roboto;
+}
+
+@font-face {
+  src: local('Roboto Bold'), url('~uploads/fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 700;
+  font-family: Roboto;
+}
+
+@font-face {
+  src: local('Roboto BoldItalic'), url('~uploads/fonts/Roboto/Roboto-BoldItalic.ttf') format('ttf');
+  font-style: italic;
+  font-weight: 700;
+  font-family: Roboto;
+}
+
+@font-face {
+  src: local('Roboto Black'), url('~uploads/fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 900;
+  font-family: Roboto;
+}

@@ -1,0 +1,71 @@
+/* selects
+---------------------------------------------------------------------------- */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+select,
+option {
+  width: auto;
+  min-width: 1.5em;
+  cursor: pointer;
+}
+
+/**
+ * @see https://github.com/necolas/normalize.css/issues/579#issue-148022816
+ */
+select {
+  @extend %text-field-reset;
+  text-indent: 0.01px; // stylelint-disable-next-line property-units
+  text-overflow: '';
+
+  box-sizing: content-box;
+
+  appearance: none; // stylelint-disable-next-line no-vendor-prefixes
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+select,
+.ie6-9:invalid {
+  padding-right: 1.5em;
+  background-image: url('data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==');
+
+  background-position: 95% 50%;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  @extend %os-element-reset;
+
+  font-weight: font-weights('bold');
+}
+
+option {
+  padding: 0 0.4em 0 0.1em;
+  margin: 0;
+
+  &:hover,
+  &:focus {
+    color: palette('black');
+  }
+}
+
+select[multiple] {
+  // stylelint-disable-next-line no-qualifying-elements
+}
+
+select[multiple] option {
+  // stylelint-disable-next-line no-qualifying-elements
+
+  &:checked {
+    font-weight: font-weights('bold');
+  }
+}

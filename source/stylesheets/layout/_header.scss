@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+/**
+ * A region that contains mostly site-oriented content, rather than page-specific content.
+ *
+ * Site-oriented content typically includes things such as the logo or identity of the site sponsor, and site-specific search tool. A banner usually appears at the top of the page and typically spans the full width.
+ *
+ * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
+ */
+// [role='banner'] {
+// }
+
+.main-header {
+  position: sticky;
+  top: 0;
+
+  z-index: layer('dropdown');
+
+  background: palette('menu');
+
+  border-bottom: 2px solid palette('menu', 'border');
+}
+
+.header-container {
+  max-width: $max-width;
+
+  padding: to-rem(12px) to-rem(16px);
+  margin: auto;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    max-width: $max-width--desktop;
+  }
+}
