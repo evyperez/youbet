@@ -1,5 +1,3 @@
-
-
 .glide__arrows {
   display: flex;
 
@@ -10,9 +8,6 @@
     color: palette('white');
   }
 
-  .glide__arrows--actions {
-    display: flex;
-  }
 
   button {
     background-color: transparent;
@@ -78,7 +73,6 @@
     margin: 0;
 
     color: palette('white');
-
   }
 
   p.glide__slide--author {
@@ -87,32 +81,14 @@
     text-transform: uppercase;
   }
 
-  p.glide__slide--date::before {
-    display: inline-block;
-
-    width: to-rem(4px);
-    height: to-rem(4px);
-
-    margin-right: to-rem(5px);
-
-    vertical-align: middle;
-
-    background: #ffffff;
-
-    border-radius: 50%;
-
-    content: '';
-  }
-
 }
 
 .glide__slide--title {
   text-align: center;
-  a{
+  a {
     text-decoration: unset;
   }
-  h4{
+  h4 {
     color: palette('white');
-
   }
 }

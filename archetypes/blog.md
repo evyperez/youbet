@@ -1,15 +1,17 @@
 ---
-title: ''
-shortTitle: ''
-coverPhoto: ''
-coverPhotoAlt: ''
+title: '{{ replace .Name '-' ' ' | title }}'
 slug: ''
-subtitle: ''
+date: {{ .Date }}
 image: ''
-date: { { .Date } }
-draft: true
-relatedProjects:
-  - project: ''
+imageAlt: ''
+video: ''
 authors:
   - list: ''
+categories:
+  - list: ''
+tags:
+  - list: ''
+description: ''
+draft: true
 ---
+

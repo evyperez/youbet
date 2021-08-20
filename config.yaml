@@ -2,7 +2,6 @@ baseURL: "/"
 defaultContentLanguage: pt
 languageCode: "pt-br"
 disableKinds:
-  - "taxonomy"
   - "taxonomyTerm"
   - "RSS"
   - "sitemap"
@@ -14,24 +13,34 @@ ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
 stepAnalysis: true
 templateMetrics: true
 pluralizeListTitles: false
-googleAnalytics: ""
+googleAnalytics: "UA-90457577-1"
 buildFuture: true
 FootnoteReturnLinkContents: "↩"
 disableHugoGeneratorInject: true
 taxonomies:
   role: "role"
-
+permalinks:
+  pages: /:slug/
 languages:
   pt:
-    contentDir: content/portuguese
+    contentDir: content/pt
     languageName: Português
     languageCode: "pt-br"
     title: "YouBet! Uma transformação de vida"
     weight: 1
     params:
-      subtitle: "Quer se tornar um Cidadão Global?"
-      description: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+      tagline: "Quer se tornar um Cidadão Global?"
+      email: "contato@youbetschool.com"
       mailchimpList: "#"
+      description:
+        default: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+        twitter: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+        facebook: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+      shareImages:
+        default: "assets/images/compartilhamento.jpg"
+        twitter: "assets/images/twitter-compartilhamento.jpg"
+        facebook: "assets/images/facebook-compartilhamento.jpg"
+
     menu:
       main:
         - Name: "Sobre"
@@ -48,7 +57,7 @@ languages:
           Pre: ""
           Weight: 3
           Identifier: "colleges"
-          URL: "/colegios"
+          URL: "/college"
         - Name: "Campion"
           Pre: ""
           Weight: 1
@@ -61,6 +70,31 @@ languages:
           Identifier: "bma"
           URL: "/bma"
           parent: "colleges"
+  en:
+    contentDir: content/en
+    languageName: English
+    languageCode: "en"
+    title: "YouBet! Real English"
+    weight: 2
+    params:
+      tagline: "cultural immersion"
+      email: "contato@youbetschool.com"
+      mailchimpList: "#"
+      description:
+        default: "We want to create a bilingual country with a global mind, promoting exchange"
+        twitter: "We want to create a bilingual country with a global mind, promoting exchange"
+        facebook: "We want to create a bilingual country with a global mind, promoting exchange"
+      shareImages:
+        default: "assets/images/compartilhamento.jpg"
+        twitter: "assets/images/twitter-compartilhamento.jpg"
+
+    menu:
+      main:
+        - Name: "About"
+          Pre: ""
+          Weight: 1
+          Identifier: "about"
+          URL: "/about"
 
 params:
   authors:
@@ -68,7 +102,3 @@ params:
       Weight: 1
     - Name: "Stephanie Castro"
       Weight: 2
-  # shareImages:
-  #   default: "assets/images/compartilhamento.jpg"
-  #   twitter: "assets/images/twitter-compartilhamento.jpg"
-  #   facebook: "assets/images/facebook-compartilhamento.jpg"

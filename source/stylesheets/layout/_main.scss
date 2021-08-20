@@ -8,8 +8,15 @@
  * An `article` element can have the `[role='main']`
  */
 
+.page > section {
+  &:nth-of-type(even) {
+    background-color: palette('gray', '5%');
+  }
+}
+
 .main-container {
   display: flex;
+
   flex: 1;
   flex-direction: column;
 }
@@ -17,18 +24,46 @@
 main,
 [role='main'] {
   display: flex;
+
   flex: 1;
 }
 
 .container {
+  width: 100%;
   max-width: $max-width;
 
-  padding-top: to-rem(16px);
-  padding-right: $gutter;
-  padding-bottom: to-rem(16px);
-  padding-left: $gutter;
+  padding-right: $small-gutter;
+  padding-left: $small-gutter;
   margin-right: auto;
   margin-left: auto;
+
+  @media screen and (min-width: breakpoint('phone')) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    max-width: $max-width--desktop;
+  }
+}
+
+
+.page > section > .container {
+  padding-top: to-em(32px);
+  padding-bottom: to-em(32px);
+
+  @media screen and (min-width: breakpoint('laptop')) {
+    padding-top: to-em(80px);
+    padding-bottom: to-em(80px);
+  }
+}
+
+.internal-page {
+  padding: 32px 0;
+
+  @media screen and (min-width: breakpoint('tablet__landscape')) {
+    padding: 80px 0;
+  }
 }
 
 footer .container {

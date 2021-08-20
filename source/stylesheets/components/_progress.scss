@@ -46,7 +46,7 @@
 progress,
 [role='progressbar'] {
   @include progress-bar-fg {
-    background: linear-gradient(90deg, transparent 50%, palette('button', 'submit') 50%) center/50px 50px transparent;
+    background: linear-gradient(90deg, transparent 50%, palette('button', 'focus') 50%) center/50px 50px transparent;
   }
   @include progress-bar-bg {
     background: linear-gradient(90deg, transparent 50%, palette('button', 'base') 50%) center/50px 50px transparent;
@@ -59,7 +59,7 @@ progress,
 
   height: $leading * 1em;
 
-  color: palette('button', 'submit');
+  color: palette('button', 'focus');
 
   background-color: palette('disabled', 'background');
   border: 0;

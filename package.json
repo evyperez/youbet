@@ -17,7 +17,7 @@
     "clean:testResults": "rimraf ./testResults/**/*.xml",
     "compile:sass": "node-sass ./source/stylesheets --output-style compressed --output ./assets/styles --source-map \"static/assets/styles\"",
     "compress:css": "postcss --use autoprefixer cssnano --safe -r ./assets/styles/**/*.css",
-    "compress:img": "imagemin \"./source/images/**/*.{gif,jpg,png,svg}\" --out-dir=./static/assets/img",
+    "compress:img": "imagemin \"./source/img/**/*.{gif,jpg,png,svg}\" --out-dir=./static/assets/img",
     "compile:js": "npm-run-all compile:js:*",
     "compile:js:app": "browserify ./source/scripts/index.js -o ./assets/scripts/index.js -t [ babelify ]",
     "compile:js:vendor": "browserify ./source/scripts/vendor.js -o ./assets/scripts/vendor.js -t",
@@ -37,7 +37,7 @@
     "postversion": "git checkout dev && git merge master",
     "watch": "npm-run-all --parallel watch:*",
     "watch:sass": "onchange \"./source/stylesheets/**/*.scss\" -- npm run build:css",
-    "watch:img": "onchange \"./source/images/**/*.{gif,jpg,png,svg}\" -- npm run build:img",
+    "watch:img": "onchange \"./source/img/**/*.{gif,jpg,png,svg}\" -- npm run build:img",
     "watch:es6": "onchange \"./source/scripts/**/*.{es,js,json}\" -- npm run build:js"
   },
   "repository": {
@@ -88,7 +88,8 @@
     "npm-run-all": "^4.1.5",
     "onchange": "^6.1.1",
     "postcss-cli": "^7.1.2",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
+    "prettier-plugin-go-template": "0.0.10",
     "rimraf": "^3.0.2",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended": "^5.0.0",

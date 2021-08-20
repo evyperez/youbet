@@ -12,13 +12,24 @@
 // [role='banner'] {
 // }
 
-header {
-  background: palette('menu-dark');
-  border-bottom: 1px solid palette('white');
+.main-header {
+  position: sticky;
+  top: 0;
+
+  z-index: layer('dropdown');
+
+  background: palette('menu');
+
+  border-bottom: 2px solid palette('menu', 'border');
 }
 
 .header-container {
   max-width: $max-width;
+
   padding: to-rem(12px) to-rem(16px);
   margin: auto;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    max-width: $max-width--desktop;
+  }
 }

@@ -16,22 +16,37 @@
 %button-reset {
   @extend %os-element-reset;
 
-  display: flex;
+  display: inline-block;
 
   align-items: center;
 
   width: auto; /* 3 */
+  height: to-rem(40px);
+  min-width: 88px;
 
-  padding: 1px 6px; /* 6 */ // stylelint-disable-next-line property-units
+  padding: 0 to-rem(16px);
+
   overflow: visible; /* 3 */
 
-  text-indent: 0;
+  font-weight: bold;
+  font-size: to-rem(12px);
+  line-height: to-rem(40px);
+  font-family: Asap, sans-serif;
+  letter-spacing: 0.04em;
 
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: uppercase;
   white-space: inherit;
 
   cursor: pointer; /* 2 */
 
-  background-color: palette('button'); /* 5 */
+  color: palette('white'); /* 5 */
+
+  background: palette('button'); /* 5 */
+
+  border: 2px solid palette('button');
 
   box-sizing: inherit;
 
@@ -39,14 +54,41 @@
 
   &::-moz-focus-inner {
     padding: 0; /* 4 */
+
     border: 0;
+  }
+
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    height: to-rem(48px);
+
+    padding: 0 to-rem(16px);
+
+    font-size: to-rem(14px);
+    line-height: to-rem(48px);
+  }
+
+  @media screen and (min-width: breakpoint('laptop')) {
+    padding: 0 to-rem(32px);
   }
 
   &:hover,
   &:focus {
     &:not([type='reset']) {
+      color: palette('white');
+
       background-color: palette('button', 'focus');
+
+      border: 2px solid palette('button', 'focus');
+
+      outline: none;
     }
+  }
+  &:disabled {
+    cursor: not-allowed;
+
+    background-color: palette('button', 'disabled');
+
+    border: 2px solid palette('button', 'disabled');
   }
 
   // &:active {
@@ -65,24 +107,40 @@ html [type='button'] {
   appearance: button;
 }
 
+.btn,
 button,
 [role='button'],
 [type='button'] {
   @extend %button-reset;
 }
 
-[type='reset'] {
-  @extend %button-reset;
-
-  color: palette('button', 'submit');
-
-  background-color: palette('button', 'reset');
+.btn--full {
+  width: 100%;
 }
 
-[type='submit'] {
-  @extend %button-reset;
+.btn--full-mobile {
+  @media screen and (max-width: breakpoint('tablet__portrait')) {
+    width: 100%;
+  }
+}
 
-  background-color: palette('button', 'submit');
+.btn--disabled {
+  cursor: not-allowed;
+
+  background-color: palette('button', 'disabled');
+
+  border: 2px solid palette('button', 'disabled');
+
+  &:hover,
+  &:focus {
+    &:not([type='reset']) {
+      background-color: palette('button', 'disabled');
+
+      border: 2px solid palette('button', 'disabled');
+
+      outline: none;
+    }
+  }
 }
 
 /**

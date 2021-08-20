@@ -1,0 +1,8 @@
+- id: blog
+  translation: "Blog"
+- id: lastPosts
+  translation: "Últimos Posts"
+- id: authors
+  translation: "Autores"
+- id: author
+  translation: "Autor"

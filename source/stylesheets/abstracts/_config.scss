@@ -59,6 +59,8 @@ $body-font-size: 1em !default;
 /// @type number
 $leading: 1.5 !default;
 
+$spacement: 0.5rem !default;
+
 /// flexible line heights map
 /// @access private
 /// @type Map
@@ -81,9 +83,10 @@ $line-lengths: (
 
 ///
 /// @link http://www.modularscale.com/?1&rem&1.25
+
 $modularscale: (
   base: 1rem,
-  ratio: 1.25,
+  ratio: 1.2,
 );
 
 /// List all available colors and tones.
@@ -94,65 +97,119 @@ $modularscale: (
 /// @require {function} palette
 /// @todo Customize the colors or add new ones to match your design needs.
 $palette: (
-  'blue': (
-    '110': #0038da,
-    'base': #004ff7,
-    '80%': #3171f7,
-    '60%': #6392f7,
-    '30%': #c6d5f7,
-    '10%': #dee6f7,
+  'orange': (
+    '110%': rgb(222, 151, 0),
+    'base': rgb(247, 168, 0),
+    '80%': rgb(249, 185, 51),
+    '60%': rgb(250, 203, 102),
+    '30%': rgb(253, 229, 178),
+    '10%': rgb(254, 246, 229),
+    '5%': rgb(255, 251, 242),
   ),
-  'yellow': (
-    '110%': #d88e00,
-    'base': #f7a800,
-    '80%': #f7b831,
-    '60%': #f7c863,
-    '30%': #f7e7c6,
-    '10%': #f7efde,
+  'blue': (
+    '110': rgb(0, 71, 222),
+    'base': rgb(0, 79, 247),
+    '80%': rgb(51, 114, 249),
+    '60%': rgb(102, 149, 250),
+    '30%': rgb(178, 202, 253),
+    '10%': rgb(229, 237, 254),
+    '5%': rgb(242, 246, 255),
   ),
   'gray': (
-    '110%': #141414,
-    'base': #333333,
-    '80%': #616161,
-    '60%': #949494,
-    '30%': #cacaca,
-    '10%': #e6e6e6,
+    '110%': rgb(46, 46, 46),
+    'base': rgb(51, 51, 51),
+    '80%': rgb(92, 92, 92),
+    '60%': rgb(133, 133, 133),
+    '30%': rgb(194, 194, 194),
+    '10%': rgb(235, 235, 235),
+    '5%': rgb(245, 245, 245),
+  ),
+  'white': (
+    'base': rgb(255, 255, 255),
+  ),
+  'black': rgb(0, 0, 0),
+  'anchor': (
+    'base': rgb(51, 51, 51),
+    'link': rgb(51, 51, 51),
+    'visited': rgb(51, 51, 51),
+    'hover': rgb(222, 151, 0),
+    'focus': rgb(249, 185, 51),
+    'active': rgb(222, 151, 0),
+  ),
+  'anchor-dark': (
+    'base': rgb(253, 229, 178),
+    'link': rgb(253, 229, 178),
+    'visited': rgb(253, 229, 178),
+    'hover': rgb(253, 229, 178),
+    'focus': rgb(253, 229, 178),
+    'active': rgb(253, 229, 178),
+  ),
+  'menu': (
+    'base': rgb(255, 255, 255),
+    'text': rgb(20, 20, 20),
+    'border': rgb(230, 230, 230),
+    'sub-menu': rgb(241, 241, 241),
+    'sub-menu-text': rgb(29, 29, 29),
+    'sub-menu-hover': rgb(51, 51, 51),
+    'anchor': rgb(247, 168, 0),
+    'shadow': rgba(0, 0, 0, 0.74),
   ),
   'menu-dark': (
-    'base': #141414,
-    'border': #cacaca,
-    'sub-menu': #1d1d1d,
-    'sub-menu-text': #cacaca,
-    'sub-menu-hover': #333333,
-    'anchor': #f7a800,
+    'base': rgb(20, 20, 20),
+    'text': rgb(202, 202, 202),
+    'border': rgb(51, 51, 51),
+    'sub-menu': rgb(29, 29, 29),
+    'sub-menu-text': rgb(202, 202, 202),
+    'sub-menu-hover': rgb(51, 51, 51),
+    'anchor': rgb(247, 168, 0),
   ),
-  'menu-light': (
-    'base': #e6e6e6,
-    'anchor': #f7a800,
-    'border': #e6e6e6,
+  'footer': (
+    'base': rgb(255, 255, 255),
+    'text': rgb(20, 20, 20),
+    'border': rgb(230, 230, 230),
+    'anchor': rgb(247, 168, 0),
   ),
-  'white': rgb(255, 255, 255),
-  'black': rgb(0, 0, 0),
+  'footer-dark': (
+    'base': rgb(20, 20, 20),
+    'text': rgb(202, 202, 202),
+    'border': rgb(51, 51, 51),
+    'anchor': rgb(247, 168, 0),
+  ),
   'debug': rgb(255, 0, 0),
   'warning': rgb(255, 190, 0),
-  'anchor': (
-    'base': rgb(0, 102, 204),
-    'link': rgb(0, 102, 204),
-    'visited': rgb(128, 0, 128),
-    'hover': rgb(50, 152, 255),
-    'focus': rgb(50, 152, 255),
-    'active': rgb(229, 0, 80),
-  ),
   'border': (
     'base': rgb(192, 192, 192),
     'focus': rgb(0, 0, 0),
   ),
   'button': (
-    'base': rgb(225, 225, 225),
-    'focus': rgb(229, 241, 251),
-    'slider': hsl(0, 0%, 40%),
-    'submit': rgb(217, 83, 79),
-    'reset': transparent,
+    'base': rgb(247, 168, 0),
+    'focus': rgb(222, 151, 0),
+    'disabled': rgb(250, 203, 102),
+  ),
+  'button-inverted': (
+    'base': rgb(253, 229, 178),
+    'focus': rgb(250, 203, 102),
+    'disabled': rgb(254, 246, 229),
+  ),
+  'button-secondary': (
+    'base': rgb(0, 79, 247),
+    'focus': rgb(0, 71, 222),
+    'disabled': rgb(102, 149, 250),
+  ),
+  'button-secondary-inverted': (
+    'base': rgb(178, 202, 253),
+    'focus': rgb(102, 149, 250),
+    'disabled': rgb(229, 237, 254),
+  ),
+  'button-neutral': (
+    'base': rgb(51, 51, 51),
+    'focus': rgb(46, 46, 46),
+    'disabled': rgb(133, 133, 133),
+  ),
+  'button-neutral-inverted': (
+    'base': rgb(255, 254, 252),
+    'focus': rgb(255, 254, 252),
+    'disabled': rgb(194, 194, 194),
   ),
   'disabled': (
     'foreground': hsl(0, 0%, 42%),
@@ -186,8 +243,8 @@ $palette: (
   'tap-highlight': rgb(255, 94, 153),
   'target-highlight': rgb(255, 255, 102),
   'background': (
-    'dark': rgb(35, 82, 124),
-    'light': rgb(117, 170, 248),
+    'dark': rgb(20, 20, 20),
+    'light': rgb(252, 252, 252),
   ),
   'text': (
     'dark': hsl(0, 0%, 13%),
@@ -196,19 +253,13 @@ $palette: (
   'text-dark': (
     'base': rgb(229, 231, 234),
   ),
-  'text-light': (
-    'base': hsl(0, 0%, 13%),
-  ),
-  'menu': (
-    'shadow': rgba(0, 0, 0, 0.74),
-  ),
   'shadow': (
     'inverse': rgba(255, 255, 255, 0.25),
     'base': rgba(0, 0, 0, 0.2),
   ),
-  'carousel':(
-  'tag-background':rgba(0,0,0,0.6)
-  )
+  'carousel': (
+    'tag-background': rgba(0, 0, 0, 0.6),
+  ),
 );
 
 /// Default border-radius
@@ -224,14 +275,15 @@ $stroke: 1px !default;
 /// gutter default width
 /// @todo Customize it to match your design.
 /// @type number
-$gutter: $leading * $body-font-size / 1em * 1rem;
+$small-gutter: 1rem; // 16px
+$gutter: 1.5rem; // 24px
 
 /// column basis width
 /// @todo Customize it to match your design.
 /// @type number
 $column-basis: 17rem;
 
-$_mobile-columns: 2;
+$_mobile-columns: 6;
 $_new-width: 0;
 $_device-width: 20em;
 $_i: $_mobile-columns;
@@ -257,15 +309,14 @@ $_i: $_mobile-columns;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: _im-to-em(
   (
-    'phone__portrait': 320px,
-    'phone__landscape': 480px,
-    'tablet__portrait__portrait': 768px,
-    'tablet__portrait__landscape': 1024px,
-    'tablet__landscape': 1280px,
-    'max-desktop': 1023px,
-    'desktop': 1024px,
-    'max-wide': 1599px,
-    'wide': 1600px,
+    'small-phone': 320px,
+    'phone': 414px,
+    'tablet': 768px,
+    'laptop': 1024px,
+    'desktop': 1440px,
+    'max-tablet': 768px,
+    'max-laptop': 1023px,
+    'max-desktop': 1439px,
   )
 ) !default;
 
@@ -287,7 +338,8 @@ $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 /// Container's maximum width
 /// @type number
-$max-width: 80em !default; // 1180px
+$max-width: 60.125em !default; // 1128px + gutter
+$max-width--desktop: 70.5em !default; // 1128 + gutter
 $max-width--narrow: 40.75em; // 668 px
 
 $breakpoints: map-merge(
