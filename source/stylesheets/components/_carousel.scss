@@ -19,11 +19,15 @@
   }
 
   button {
-    top: 110px;
+    top: 90px;
 
+    width: to-rem(30px);
+    height: to-rem(30px);
     min-width: unset;
 
-    padding: 0 16px;
+    padding: 0;
+
+    font-size: 0;
 
     color: palette('white');
 
@@ -31,10 +35,14 @@
 
     border: unset;
 
+    &:focus,
+    &:active,
     &:hover {
       background-color: palette('gray', '110%');
 
       border: unset;
+
+      outline: none;
     }
     &::after {
       color: palette('white');

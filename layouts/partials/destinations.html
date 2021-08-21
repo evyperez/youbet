@@ -1,40 +1,36 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.destinations }}
 
-<section class="destinations">
-  <div class="container">
-    {{ if .title }}
-    <h2 class="title-section">{{ .title }} </h2>
-    {{ end }}
-    <div class="four-columns">
-      {{ range .list }}
-      <div>
-        {{ if .image }}
-
-        <img src="{{ .image }}" class="border-radius" alt="{{ .title }}">
-
-        {{ end }}
-        {{ if .title }}
-        <p>{{ .title }}</p>
-        {{ end }}
-      </div>
-
+  <section class="destinations">
+    <div class="container">
+      {{ if .title }}
+        <h2 class="title-section">{{ .title }}</h2>
       {{ end }}
-      {{ range .list }}
-      <div>
-        {{ if .image }}
+      <div class="four-columns">
+        {{ range .list }}
+          <div>
+            {{ if .image }}
 
-        <img src="{{ .image }}" class="border-radius" alt="{{ .title }}">
+              <img src="{{ .image }}" class="border-radius" alt="{{ .title }}" />
+            {{ end }}
+            {{ if .title }}
+              <p>{{ .title }}</p>
+            {{ end }}
+          </div>
+        {{ end }}
+        {{ range .list }}
+          <div>
+            {{ if .image }}
 
+              <img src="{{ .image }}" class="border-radius" alt="{{ .title }}" />
+            {{ end }}
+            {{ if .title }}
+              <p>{{ .title }}</p>
+            {{ end }}
+          </div>
         {{ end }}
-        {{ if .title }}
-        <p>{{ .title }}</p>
-        {{ end }}
+
       </div>
-      {{ end }}
-
     </div>
-
-  </div>
-</section>
+  </section>
 {{ end }}

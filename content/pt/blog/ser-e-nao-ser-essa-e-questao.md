@@ -4,20 +4,20 @@ slug: ser-e-nao-ser-essa-e-questao/
 date: 2017-08-07 15:39:00+00:00
 image: /uploads/images/eis.jpeg
 imageAlt: Ser ou não ser
+thumbnail: /uploads/images/eis.jpeg
+thumbnailAlt: Ser ou não ser
 authors:
-    - author: joabecardoso
+  - author: joabecardoso
 categories:
-    - Blog
+  - Blog
 tags:
-    - Aulas
-    - Inglês
+  - Aulas
+  - Inglês
 description: 'Ser e não ser, essa é a questão!'
 draft: false
 ---
 
-
 **Os Amigos da Onça – as palavras que nos enganam**
-
 
 ‘’As aparências enganam’’. Esta pequena frase que desde pequenos ouvimos por aí guarda muita verdade, não é mesmo? Claro! É sempre natural que se escolha pela aparência. E esse perigo de sermos enganados por algo que parece ser o que não é está bem presente até no inglês!
 
@@ -28,6 +28,7 @@ O que aconteceu com nosso suposto grupo turista que esperava simplesmente abrir 
 Os Falsos Cognatos podem parecer inimigos tanto dos estrangeiros que lutam contra as mínimas regrinhas do nosso rico idioma quanto para nós, os brasileiros estudantes da língua inglesa. Porém, após uma rápida olhada nos principais Falsos Cognatos, a fase de se confundir com as palavrinhas parecidas com as nossas passa a ser só mais uma etapa vencida na corrida pela compreensão dos nossos filmes, livros e séries em inglês.Outra dica importante é que se examine sempre o contexto onde a palavra está inserida.
 
 Agora vamos direto aos exemplos:
+
 <table width="581" >
 <tbody >
 <tr >
@@ -260,7 +261,6 @@ Agora vamos direto aos exemplos:
 </tr>
 </tbody>
 </table>
-
 
 Por diversas vezes, isso ocorre pela interpretação de uma palavra que possui a mesma raíz – quase sempre latina. A língua inglesa, antes de ser o que temos hoje, foi radicalmente influenciada pelo latim, seja diretamente (a igreja medieval em terras britânicas) ou indiretamente (pelo francês arcaico). Por exemplo: se para nós é normal dizer que algum ser do sexo feminino está prenha, e jamais utilizar tal termo para uma mulher, o qual, no caso, é substituído por ‘’grávida’’, temos ‘’Pregnant’’, no francês (com pronúncia bem próxima ao português ‘’prenha’’) e no inglês para falar de uma gravidez humana.
 

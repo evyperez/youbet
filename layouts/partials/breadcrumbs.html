@@ -1,4 +1,19 @@
-<ul  class="breadcrumbs">
+<ul class="breadcrumbs">
+  {{ template "breadcrumb" (dict "p1" . "p2" .) }}
+</ul>
+{{ define "breadcrumb" }}
+
+  {{ if .p1.Parent }}
+    {{ template "breadcrumb" (dict "p1" .p1.Parent "p2" .p2 ) }}
+  {{ else if not .p1.IsHome }}
+    {{ template "breadcrumb" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
+  {{ end }}
+
+
+  <li {{ if eq .p1 .p2 }}class="active"{{ end }}>
+    {{ if ne .p1 .p2 }}
+      <a href="{{ .p1.Permalink }}"></a>
+    {{ end }}{{ .p1.Title }}<ul  class="breadcrumbs">
   {{ template "breadcrumb" (dict "p1" . "p2" .) }}
 </ul>
 {{ define "breadcrumb" }}
@@ -12,4 +27,7 @@
 <li {{ if eq .p1 .p2 }} class="active"{{ end }}>
   {{ if ne .p1 .p2 }}<a href="{{ .p1.Permalink }}">{{ end }}{{ .p1.Title }}{{ if ne .p1 .p2 }}</a>{{end}}
 </li>
+{{ end }}
+
+  </li>
 {{ end }}

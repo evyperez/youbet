@@ -194,15 +194,7 @@ textarea {
 
   row-gap: $gutter;
 
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
-    grid-template-columns: 1fr 1fr;
-
-    column-gap: to-rem(24px);
-
-    row-gap: to-rem(32px);
-  }
-
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     grid-template-columns: 1fr 1fr 1fr;
 
     column-gap: to-rem(24px);
@@ -229,7 +221,7 @@ textarea {
     row-gap: to-rem(32px);
   }
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: breakpoint('laptop')) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     column-gap: to-rem(24px);
@@ -248,4 +240,18 @@ textarea {
 
 .text-decoration--none {
   text-decoration: none;
+}
+
+.reverse-content--even:nth-of-type(even) > div:nth-of-type(even) {
+  @media screen and (min-width: breakpoint('tablet')) {
+    order: -1;
+  }
+}
+
+.reverse-content--odd:nth-of-type(odd) {
+  > div:nth-of-type(even) {
+    @media screen and (min-width: breakpoint('tablet')) {
+      order: -1;
+    }
+  }
 }

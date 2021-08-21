@@ -1,32 +1,31 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.testimonials }}
 
-<section class="testimonials">
-  <div class="container">
-    {{ if .title }}
-    <h2 class="title-section">{{ .title }} </h2>
-    {{ end }}
-    <div class="testimonials-wrap">
-      {{ range .list }}
-      <div class="two-columns align-items--center">
-        <div>
-          {{ if .text }}
-          <h3>{{ .text }}</h3>
-          {{ end }}
-          {{ if .name }}
-          <p>{{ .name }}</p>
-          {{ end }}
-        </div>
-        <div>
-          {{ if .image }}
-          <img src="{{ .image }}" alt="{{ .alt }}">
-          {{ end }}
-        </div>
-      </div>
+  <section class="testimonials">
+    <div class="container">
+      {{ if .title }}
+        <h2 class="title-section">{{ .title }}</h2>
       {{ end }}
+      <div class="testimonials-wrap">
+        {{ range .list }}
+          <div class="two-columns align-items--center">
+            <div>
+              {{ if .text }}
+                <h3>{{ .text }}</h3>
+              {{ end }}
+              {{ if .name }}
+                <p>{{ .name }}</p>
+              {{ end }}
+            </div>
+            <div>
+              {{ if .image }}
+                <img src="{{ .image }}" alt="{{ .alt }}" />
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
 
+      </div>
     </div>
-
-  </div>
-</section>
+  </section>
 {{ end }}

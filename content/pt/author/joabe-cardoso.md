@@ -1,6 +1,6 @@
 ---
-title: "Joabe Cardoso"
-slug: "joabe-cardoso"
+title: 'Joabe Cardoso'
+slug: 'joabe-cardoso'
 medium:
 linkedin:
 facebook:

@@ -141,9 +141,11 @@
   // Calculate a brightness value in 3d color space between 0 and 255
   $number: _sqrt(
     (
-      ($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) +
-      ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor
-    );
+        ($red-component * $red-component * $red-magic-number) +
+          ($green-component * $green-component * $green-magic-number) +
+          ($blue-component * $blue-component * $blue-magic-number)
+      ) / $brightness-divisor
+  );
 
   // Convert to percentage and return
   @return 100% * $number / 255;
@@ -342,7 +344,8 @@ $_default-text-color--light: palette('text', 'light');
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
 
   @return $string;

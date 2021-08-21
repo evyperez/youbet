@@ -8,13 +8,11 @@ body.theme--dark {
   background: palette('background', 'dark');
 }
 
-
 .theme--dark .page > section {
   &:nth-of-type(even) {
     background-color: palette('gray');
   }
 }
-
 
 // Theme
 
@@ -92,10 +90,9 @@ body.theme--dark {
   }
 }
 
-
 .theme--dark header {
   background: palette('menu-dark');
-  border-bottom: 2px solid  palette('menu-dark', 'border');
+  border-bottom: 2px solid palette('menu-dark', 'border');
 }
 
 .theme--dark .footer {

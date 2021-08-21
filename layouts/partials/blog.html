@@ -1,4 +1,4 @@
-<section class="blog-list">
+<section class="blog-partial">
   <div class="container">
     <h2 class="title-section">
       {{ i18n "lastPosts" }}
@@ -6,37 +6,34 @@
 
     <div class="glide">
       <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-        </button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-        </button>
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
       </div>
 
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-          <li class="glide__slide">
-            <a href="{{ .Permalink }}" class="text-decor--none">
-              <div class="post">
-                <div class="post__image">
-                  <img class="" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
-                  <div class="img-subtitle">
-                    {{ range .Params.authors }}
-                      {{ range where $.Site.Pages "Params.slug" .author }}
-                        <p class="author">{{ .Title}}</p>
-                      {{end}}
-                    {{end}}
-                    <p class="date"> {{ .Params.Date.Format "01/02/2006" }}</p>
+            <li class="glide__slide">
+              <a href="{{ .Permalink }}" class="text-decor--none">
+                <div class="post">
+                  <div class="post__image">
+                    <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
+                    <div class="img-subtitle">
+                      {{ range .Params.authors }}
+                        {{ range where $.Site.Pages "Params.slug" .author }}
+                          <p class="author">{{ .Title }}</p>
+                        {{ end }}
+                      {{ end }}
+                      <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
+                    </div>
                   </div>
+                  <h2 class="heading-5">{{ .Title }}</h2>
                 </div>
-                <h2 class="heading-5"> {{ .Title }} </h2>
-              </div>
-            </a>
-          </li>
-          {{end}}
+              </a>
+            </li>
+          {{ end }}
         </ul>
       </div>
     </div>
   </div>
-
 </section>

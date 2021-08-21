@@ -1,10 +1,10 @@
 - id: blog
-  translation: "Blog"
+  translation: 'Blog'
 - id: lastPosts
-  translation: "Últimos Posts"
+  translation: 'Últimos Posts'
 - id: authors
-  translation: "Autores"
+  translation: 'Autores'
 - id: author
-  translation: "Autor"
+  translation: 'Autor'
 - id: about
-  translation: "Sobre"
+  translation: 'Sobre'

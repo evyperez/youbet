@@ -1,22 +1,22 @@
 auburn:
-  - question: "Quem pode ir?"
-    answer: "Estudantes com idade entre 14 e 18 anos, que esteja cursando o Ensino Médio no Brasil, será necessário o Histórico Escolar, não é preciso ter fluência em inglês, será aplicado testes de inglês para saber o nível, caso necessário o programa ESL."
-  - question: "Como se inscrever?"
-    answer: "Para se inscrever, a principio só será necessário o preenchimento dos dados (LINK), um consultor YouBet! entrará em contato para orientá-lo, ou ir até a YouBet! School com o responsável."
-  - question: "O que inclui?"
-    answer: "Além de todo o suporte. Hospedagem e alimentação estão inclusos, o colégio fica próximo a centros comerciais, o transporte também está incluso, e o aluno sempre terá o auxilio necessário."
-  - question: "O que não está incluso?"
-    answer: "Passagem aérea de ida e volta. Custos com passaporte, taxas e visto Porém a YouBet! School dispõe de parcerias para assessorar o aluno a todo instante."
-  - question: "Qual o prazo para inscrição?"
-    answer: "Os estudantes internacionais devem solicitar a admissão através da YouBet! School até dia 10 de junho para o primeiro semestre e 10 de outubro para o segundo semestre."
+  - question: 'Quem pode ir?'
+    answer: 'Estudantes com idade entre 14 e 18 anos, que esteja cursando o Ensino Médio no Brasil, será necessário o Histórico Escolar, não é preciso ter fluência em inglês, será aplicado testes de inglês para saber o nível, caso necessário o programa ESL.'
+  - question: 'Como se inscrever?'
+    answer: 'Para se inscrever, a principio só será necessário o preenchimento dos dados (LINK), um consultor YouBet! entrará em contato para orientá-lo, ou ir até a YouBet! School com o responsável.'
+  - question: 'O que inclui?'
+    answer: 'Além de todo o suporte. Hospedagem e alimentação estão inclusos, o colégio fica próximo a centros comerciais, o transporte também está incluso, e o aluno sempre terá o auxilio necessário.'
+  - question: 'O que não está incluso?'
+    answer: 'Passagem aérea de ida e volta. Custos com passaporte, taxas e visto Porém a YouBet! School dispõe de parcerias para assessorar o aluno a todo instante.'
+  - question: 'Qual o prazo para inscrição?'
+    answer: 'Os estudantes internacionais devem solicitar a admissão através da YouBet! School até dia 10 de junho para o primeiro semestre e 10 de outubro para o segundo semestre.'
 campion:
-  - question: "Quem pode ir?"
-    answer: "Estudantes com idade entre 14 e 18 anos, que esteja cursando o Ensino Médio no Brasil, será necessário o Histórico Escolar, não é preciso ter fluência em inglês, será aplicado testes de inglês para saber o nível, caso necessário o programa ESL."
-  - question: "Como se inscrever?"
-    answer: "Para se inscrever, a principio só será necessário o preenchimento dos dados (LINK), um consultor YouBet! entrará em contato para orientá-lo, ou ir até a YouBet! School com o responsável."
-  - question: "O que inclui?"
-    answer: "Além de todo o suporte. Hospedagem e alimentação estão inclusos, o colégio fica próximo a centros comerciais, o transporte também está incluso, e o aluno sempre terá o auxilio necessário."
-  - question: "O que não está incluso?"
-    answer: "Passagem aérea de ida e volta. Custos com passaporte, taxas e visto Porém a YouBet! School dispõe de parcerias para assessorar o aluno a todo instante."
-  - question: "Qual o prazo para inscrição?"
-    answer: "Os estudantes internacionais devem solicitar a admissão através da YouBet! School até dia 10 de junho para o primeiro semestre e 10 de outubro para o segundo semestre."
+  - question: 'Quem pode ir?'
+    answer: 'Estudantes com idade entre 14 e 18 anos, que esteja cursando o Ensino Médio no Brasil, será necessário o Histórico Escolar, não é preciso ter fluência em inglês, será aplicado testes de inglês para saber o nível, caso necessário o programa ESL.'
+  - question: 'Como se inscrever?'
+    answer: 'Para se inscrever, a principio só será necessário o preenchimento dos dados (LINK), um consultor YouBet! entrará em contato para orientá-lo, ou ir até a YouBet! School com o responsável.'
+  - question: 'O que inclui?'
+    answer: 'Além de todo o suporte. Hospedagem e alimentação estão inclusos, o colégio fica próximo a centros comerciais, o transporte também está incluso, e o aluno sempre terá o auxilio necessário.'
+  - question: 'O que não está incluso?'
+    answer: 'Passagem aérea de ida e volta. Custos com passaporte, taxas e visto Porém a YouBet! School dispõe de parcerias para assessorar o aluno a todo instante.'
+  - question: 'Qual o prazo para inscrição?'
+    answer: 'Os estudantes internacionais devem solicitar a admissão através da YouBet! School até dia 10 de junho para o primeiro semestre e 10 de outubro para o segundo semestre.'

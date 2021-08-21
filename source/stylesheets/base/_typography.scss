@@ -24,7 +24,6 @@ body {
   background: palette('background', 'light');
 }
 
-
 /* HEADINGS AND TITLES */
 
 /**
@@ -147,11 +146,11 @@ p {
   }
 
   h2 {
-    margin-bottom: to-rem(12px);
+    margin-bottom: to-rem(16px);
   }
 
   h3 {
-    margin-bottom: to-rem(12px);
+    margin-bottom: to-rem(16px);
   }
 
   h4 {
@@ -163,10 +162,13 @@ p {
   }
 }
 
-.rich-text ol,
-.rich-text ul,
 .rich-text p {
-  margin-bottom: to-rem(20px);
+  margin-bottom: to-rem(16px);
+}
+
+.rich-text ol,
+.rich-text ul {
+  margin-bottom: to-rem(16px);
 }
 
 .rich-text:last-child {

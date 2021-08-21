@@ -1,6 +1,6 @@
 ---
-title: "Fabio Rodrigues"
-slug: "fabio-rodrigues"
+title: 'Fabio Rodrigues'
+slug: 'fabio-rodrigues'
 medium:
 linkedin:
 facebook:

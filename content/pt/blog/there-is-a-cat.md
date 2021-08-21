@@ -4,20 +4,21 @@ slug: there-is-a-cat/
 date: 2017-08-15 19:00:25+00:00
 image: /uploads/images/cat-in-the-basket.jpeg
 imageAlt: Gato dentro da cesta
+thumbnail: /uploads/images/cat-in-the-basket.jpeg
+thumbnailAlt: Gato dentro da cesta
 authors:
-    - author: joabe-cardoso
+  - author: joabe-cardoso
 categories:
-    - Blog
+  - Blog
 tags:
-    - Aulas
-    - Inglês
-    - There
+  - Aulas
+  - Inglês
+  - There
 description: 'There is a cat in the basket'
 draft: false
 ---
 
 <blockquote>**“There are a lot of things to learn”**</blockquote>
-
 
 Quando eu era criança tinha muita coisa que eu não entendia ao começar a estudar.
 
@@ -25,17 +26,15 @@ Quando eu era criança tinha muita coisa que eu não entendia ao começar a estu
 
 Em inglês existe uma expressão para definir “tem, há, existe”, **there is. **Antes de continuarmos gostaria de destacar o termo _expressão_.
 
-
 <blockquote>"Expressão é tudo aquilo que carrega uma ideia muito mais profundo do que as palavras ditas querem dizer."</blockquote>
-
 
 Voltando ao** There is**, essas duas palavras querem dizer exatamente isso e devem ser sempre utilizadas juntas.
 
-_Mas Joabe, is não é o singular do verbo to be?
-_Ótima observação! Sim, por isso que ao falarmos de plural devemos alterar o Is por Are.
+*Mas Joabe, is não é o singular do verbo to be?
+*Ótima observação! Sim, por isso que ao falarmos de plural devemos alterar o Is por Are.
 
 **Singular:
-**_There Is_  – Tem, existe, há
+***There Is*  – Tem, existe, há
 _Dér is
 _
 **Plural:
@@ -57,19 +56,14 @@ _Dér is sãmfing in de ér_
 **There are a lot of songs on my computer** – Têm várias músicas no meu computador.
 _Dér ar ei lót ov songs on mai compiurer_
 
-
 ###
-
-
-
 
 ## **Past**
 
-
-Para falarmos que existia / havia / tinha algo é exatamente a mesma lógica, só com uma leve alteração. Como vimos ao estudarmos o verbo To Be** devemos substituir_ Is por Was_ sempre no singular e Are por Were sempre no plural**
+Para falarmos que existia / havia / tinha algo é exatamente a mesma lógica, só com uma leve alteração. Como vimos ao estudarmos o verbo To Be** devemos substituir* Is por Was* sempre no singular e Are por Were sempre no plural**
 
 **Exemplos:
-****There was a boy here** – Tinha um menino aqui.
+\*\***There was a boy here\*\* – Tinha um menino aqui.
 _Dér uós ei bói rir_
 
 **There were soldiers on the street** – Havia soldados na rua.
@@ -81,14 +75,9 @@ _Dér uós ei tiócolat ét roume_
 **There were a lot of cats behind my house** – Tinha várias gatos atrás da minha casa.
 _Dér uãr ei lót ov quéts birraind mai ráuze_
 
-
 ###
 
-
-
-
 ## Future
-
 
 Mesma regra do verbo To Be
 **There + Will Be**
@@ -104,14 +93,9 @@ Dér uiu bi sâmfin nu
 **There will be a new opportunity** – Haverá uma nova oportunidade.
 Dér uiu bi ei nu óportíuniri
 
-
 ###
 
-
-
-
 ## **Forma Negativa**
-
 
 **There + Is/Are + Not**
 Não há / existe (m) / tem (têm)
@@ -126,9 +110,7 @@ _Dér a nót gãrls in rir_
 **There are not bills to pay** – Não existem contas para pagar.
 Dér ar nót bills tu pei
 
-
 ## **Forma Interrogativa**
-
 
 **Is / Are - Was/Were – There**
 Tem? Existe? Há? – Teve? Existiu? Houve?

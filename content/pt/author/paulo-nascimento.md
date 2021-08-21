@@ -1,6 +1,6 @@
 ---
-title: "Paulo Augusto Nascimento"
-slug: "paulo-augusto.jpg"
+title: 'Paulo Augusto Nascimento'
+slug: 'paulo-augusto.jpg'
 medium:
 linkedin:
 facebook:
