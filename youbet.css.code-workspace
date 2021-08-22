@@ -4,9 +4,4 @@
 			"path": "."
 		}
 	],
-	"settings": {
-		"files.exclude": {
-			"**/assets": true
-		}
-	}
 }

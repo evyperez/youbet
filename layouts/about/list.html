@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
 
-  {{ partial "head.html" . }}
+  {{ partial "head/head.html" . }}
 
 
   <body>
