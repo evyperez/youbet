@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+{{ partial "head.html" . }}
+
+
+<body class="theme-dark">
+  <input type="checkbox" id="menu-controller" class="menu-controller" hidden />
+
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+
+    <main role="main" id="conteudo" class="404">
+      <section class="image-with-text">
+        <div class="container">
+
+          <div class="section-image">
+            <img src="/uploads/images/404.png" alt="{{ i18n "title404" }}" />
+          </div>
+          <div class="rich-text text-align--center">
+            <h2>{{ i18n "title404" | title }}</h2>
+            <p>{{ i18n "content404"  }}</p>
+            <a href="/" class="btn">{{ i18n "home" | title }}</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+</body>
+
+</html>
