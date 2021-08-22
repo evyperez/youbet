@@ -2,7 +2,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.81.0"
+  HUGO_VERSION = "0.87.0"
 
 [context.production]
   command = "npm run build"
@@ -15,5 +15,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/404/"
+  to = "/404"
   status = 404
