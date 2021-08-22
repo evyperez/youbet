@@ -14,6 +14,7 @@
   }
 }
 
+
 .main-container {
   display: flex;
 
@@ -55,6 +56,12 @@ main,
     padding-top: to-em(80px);
     padding-bottom: to-em(80px);
   }
+}
+
+.404 > section > .container {
+  padding-top: to-em(32px);
+  padding-bottom: to-em(32px);
+
 }
 
 .internal-page {
