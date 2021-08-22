@@ -569,8 +569,7 @@ $no-viewport: false !default;
     (index($fallback-units, 'calc') != null and $no-calc != false) or
     (index($fallback-units, 'gradient') != null and $no-gradient != false) or
     (index($fallback-units, 'rem') != null and $no-rem != false) or
-    (index($fallback-units, 'viewport') != null and $no-viewport != false)
-  {
+    (index($fallback-units, 'viewport') != null and $no-viewport != false) {
     #{$property}: #{$fallback-values};
   }
 
@@ -578,8 +577,7 @@ $no-viewport: false !default;
     (index($fallback-units, 'calc') != null and $no-calc != true) or
     (index($fallback-units, 'gradient') != null and $no-gradient != true) or
     (index($fallback-units, 'rem') != null and $no-rem != true) or
-    (index($fallback-units, 'viewport') != null and $no-viewport != true)
-  {
+    (index($fallback-units, 'viewport') != null and $no-viewport != true) {
     #{$property}: #{$values};
   }
 }
@@ -825,7 +823,7 @@ $no-viewport: false !default;
   @media screen and (min-width: #{$line-length-lower-gate * $font-size}) {
     line-height: calc(
       #{$min-line-height * 1em} + (#{$max-line-height} - #{$min-line-height}) * ((100vw - #{$line-length-lower-gate}) /
-            (#{$line-length-upper-gate / 1em} - #{$line-length-lower-gate / 1em}))
+      (#{$line-length-upper-gate / 1em} - #{$line-length-lower-gate / 1em}))
     );
   }
 
