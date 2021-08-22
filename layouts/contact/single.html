@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head/head.html" . }}
+
+
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+
+    <main role="main" id="conteudo" class="info-page">
+      <section class="section">
+        <div class="container">
+
+          <div class="section-image">
+            <img src="/uploads/images/ilustracao-mensagem.png" alt="{{ i18n " title404" }}" />
+          </div>
+          <div class="rich-text text-align--center">
+            <h2>{{.Title}}</h2>
+            <p>{{.Content}}</p>
+            <a href="/" class="btn">{{ i18n "home" | title }}</a>
+          </div>
+        </div>>
+  </div>
+  </section>
+  </main>
+
+  {{ partial "footer.html" . }}
+  </div>
+</body>
+
+</html>

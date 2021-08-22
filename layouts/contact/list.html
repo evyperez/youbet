@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head/head.html" . }}
+
+
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+
+    <main role="main" id="conteudo" class="internal-page">
+      <section class="section">
+        <div class="container container--narrow ">
+          <div>
+            <div class="rich-text">
+              <h2 class="title">{{.Title}}</h2>
+              </p>
+
+              {{ .Content }}
+              <form name="contact" action="/contato/sucesso/" method="POST" data-netlify="true">
+                <div class="form-wrap">
+                  <div class="two-columns">
+                    <div class="form-group ">
+                      <label for="firstName">
+                        {{ i18n "firstName" | title }} <span class="required">*</span>
+                      </label>
+                      <input type="text" id="firstName" name="firstName" required />
+                    </div>
+                    <div class="form-group ">
+                      <label for="lastName">
+                        {{ i18n "lastName" | title }} <span class="required">*</span>
+                      </label>
+                      <input type="text" id="lastName" name="lastName" required />
+                    </div>
+                  </div>
+                  <div class="two-columns">
+                    <div class="form-group">
+                      <label for="phone">
+                        {{ i18n "phone" | title }}
+                      </label>
+                      <input type="text" id="phone" name="phone" />
+                    </div>
+                    <div class="form-group">
+                      <label for="whatsapp">
+                        {{ i18n "whatsApp" | title }}
+                      </label>
+                      <input type="text" id="whatsapp" name="whatsapp" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">
+                      {{ i18n "email" | title }} <span class="required">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">
+                      {{ i18n "message" | title }} <span class="required">*</span>
+                    </label>
+                    <textarea id="message" name="message" required></textarea>
+                  </div>
+                  <div class="button-wrap">
+                    <button type="submit">{{ i18n "send" }}</button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+
+</html>

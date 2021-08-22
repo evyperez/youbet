@@ -16,3 +16,17 @@
   translation: 'Ops! Página não encontrada'
 - id: content404
   translation: 'Não encontramos o que você está procurando, volte para home'
+- id: firstName
+  translation: 'Nome'
+- id: lastName
+  translation: 'Sobrenome'
+- id: phone
+  translation: 'Telefone'
+- id: email
+  translation: 'E-mail'
+- id: message
+  translation: 'Mensagem'
+- id: send
+  translation: 'Enviar'
+- id: whatsApp
+  translation: 'WhatsApp'

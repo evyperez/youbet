@@ -48,17 +48,28 @@ main,
   }
 }
 
+.container--narrow {
+  @media screen and (min-width: breakpoint('laptop')) {
+    max-width: $max-width--narrow;
+  }
+}
+
 .page > section > .container {
   padding-top: to-em(32px);
   padding-bottom: to-em(32px);
 
   @media screen and (min-width: breakpoint('laptop')) {
+    padding-top: to-em(68px);
+    padding-bottom: to-em(68px);
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
     padding-top: to-em(80px);
     padding-bottom: to-em(80px);
   }
 }
 
-.404 > section > .container {
+.info-page > section > .container {
   padding-top: to-em(32px);
   padding-bottom: to-em(32px);
 

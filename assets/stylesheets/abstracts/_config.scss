@@ -221,12 +221,19 @@ $palette: (
     'background': hsla(0, 0%, 7%, 0.8),
   ),
   'label': (
-    'default': rgb(119, 119, 119),
-    'primary': rgb(51, 122, 183),
-    'success': rgb(66, 133, 66),
+    'default': rgb(57, 59, 65),
+    'selected': rgb(80, 159, 239),
     'info': rgb(60, 127, 145),
-    'warning': rgb(240, 173, 78),
-    'danger': rgb(217, 83, 79),
+    'success': rgb(10, 200, 180),
+    'warning': rgb(255, 176, 40),
+    'danger': rgb(255, 75, 99),
+  ),
+  'form': (
+    'background': rgb(255, 255, 255),
+    'border': rgb(215, 216, 217),
+    'disabled': rgb(235, 235, 236),
+    'text': rgb(57, 59, 65),
+    'placefolder': rgb(136, 137, 141),
   ),
   'mark': (
     'foreground': rgb(51, 51, 51),
@@ -266,7 +273,8 @@ $palette: (
 /// Default border-radius
 /// @todo Customize it to match your design.
 /// @type number
-$rounded-corner: 0 !default;
+$rounded-corner: 8px !default;
+$rounded-corner-form: 4px !default;
 
 /// border default width
 /// @todo Customize it to match your design.
