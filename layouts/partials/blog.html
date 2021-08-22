@@ -18,14 +18,14 @@
                 <div class="post">
                   <div class="post__image">
                     <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
-                    <div class="img-subtitle">
-                      {{ range .Params.authors }}
-                        {{ range where $.Site.Pages "Params.slug" .author }}
-                          <p class="author">{{ .Title }}</p>
-                        {{ end }}
+                  </div>
+                  <div class="img-subtitle">
+                    {{ range .Params.authors }}
+                      {{ range where $.Site.Pages "Params.slug" .author }}
+                        <p class="author">{{ .Title }}</p>
                       {{ end }}
-                      <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
-                    </div>
+                    {{ end }}
+                    <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
                   <h2 class="heading-5">{{ .Title }}</h2>
                 </div>

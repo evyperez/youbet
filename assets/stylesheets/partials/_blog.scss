@@ -30,13 +30,18 @@
   display: block;
 
   width: 100%;
-  height: 180px;
+  height: 250px;
 
-  margin-bottom: to-rem(32px);
+  @media screen and (min-width: breakpoint('tablet')) {
+    height: 250px;
+  }
 
   @media screen and (min-width: breakpoint('laptop')) {
-    width: 100%;
-    height: 250px;
+    height: 169px;
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    height: 200px;
   }
 
   img {
@@ -49,51 +54,61 @@
 
     object-fit: cover;
   }
-  .img-subtitle {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
+}
 
-    display: flex;
+.img-subtitle {
+  display: flex;
+  z-index: 1;
 
-    justify-content: center;
+  justify-content: center;
 
-    width: 80%;
-    max-width: 300px;
+  width: 80%;
+  max-width: to-rem(300px);
 
-    padding: 4px;
+  padding: to-rem(4px);
+  margin: auto;
+  margin-top: to-rem(-16px);
+  margin-bottom: to-rem(16px);
 
-    text-decoration: none;
+  text-decoration: none;
 
-    background: palette('orange', '60%');
+  background: palette('orange', '60%');
 
-    border-radius: 5px;
+  border-radius: $rounded-corner-s;
 
-    transform: translateX(-50%);
+  .author {
+    @include truncate;
+  }
 
-    p {
-      margin-bottom: 0;
+  p {
+    margin-bottom: 0;
+    font-size: to-rem(12px);
+    line-height: to-rem(20px);
 
-      &::after {
-        display: inline-block;
+    &::after {
+      display: inline-block;
 
-        width: to-rem(4px);
-        height: to-rem(4px);
+      width: to-rem(4px);
+      height: to-rem(4px);
 
-        margin-right: to-rem(8px);
-        margin-left: to-rem(8px);
+      margin-right: to-rem(8px);
+      margin-left: to-rem(8px);
 
-        vertical-align: middle;
+      vertical-align: middle;
 
-        background: palette('text', 'dark');
+      background: palette('text', 'dark');
 
-        border-radius: 50%;
+      border-radius: 50%;
 
-        content: '';
-      }
-      &:last-of-type::after {
-        content: none;
-      }
+      content: '';
+    }
+    &:last-of-type::after {
+      content: none;
+    }
+
+    @media screen and (min-width: breakpoint('tablet__landscape')) {
+      font-size: to-rem(14px);
+      line-height: to-rem(22px);
     }
   }
 }

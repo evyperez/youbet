@@ -2,10 +2,10 @@
 title: There is a cat in the basket
 slug: there-is-a-cat/
 date: 2017-08-15 19:00:25+00:00
-image: /uploads/images/cat-in-the-basket.jpeg
-imageAlt: Gato dentro da cesta
-thumbnail: /uploads/images/cat-in-the-basket.jpeg
-thumbnailAlt: Gato dentro da cesta
+image: /uploads/images/cat-in-the-basket.jpg
+imageAlt: "Gato dentro da cesta"
+thumbnail: /uploads/images/thumb-cat-in-the-basket.jpg
+thumbnailAlt: "Gato dentro da cesta"
 authors:
   - author: joabe-cardoso
 categories:

@@ -2,10 +2,10 @@
 title: Passo a passo para conseguir seu visto americano
 slug: passo-passo-para-conseguir-seu-visto-americano/
 date: 2017-11-09 13:00:06+00:00
-image: /uploads/images/pexels-photo-346798.jpg
-imageAlt: Passaporte
-thumbnail: /uploads/images/pexels-photo-346798.jpg
-thumbnailAlt: Passaporte
+image: /uploads/images/passaporte.jpg
+imageAlt: "Foto do Passaporte"
+thumbnail: /uploads/images/thumb-passaporte.jpg
+thumbnailAlt: "Foto do Passaporte"
 authors:
   - author: jessica-severo
 categories:

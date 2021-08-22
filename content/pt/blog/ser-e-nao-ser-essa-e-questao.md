@@ -2,12 +2,12 @@
 title: Ser e não ser, essa é a questão!
 slug: ser-e-nao-ser-essa-e-questao/
 date: 2017-08-07 15:39:00+00:00
-image: /uploads/images/eis.jpeg
+image: /uploads/images/homem-interrogacao.jpg
 imageAlt: Ser ou não ser
-thumbnail: /uploads/images/eis.jpeg
-thumbnailAlt: Ser ou não ser
+thumbnail: /uploads/images/thumb-eis-a-questao.jpg
+thumbnailAlt: "homem com um monte de ponto de interrogação"
 authors:
-  - author: joabecardoso
+  - author: joabe-cardoso
 categories:
   - Blog
 tags:

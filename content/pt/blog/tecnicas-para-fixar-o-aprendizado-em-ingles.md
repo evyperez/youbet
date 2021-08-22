@@ -3,9 +3,9 @@ title: Técnicas para fixar o aprendizado em inglês
 slug: tecnicas-para-fixar-o-aprendizado-em-ingles
 date: 2017-11-23 13:00:23+00:00
 image: /uploads/images/mulher-escrevendo.jpg
-imageAlt: 'Mulher Escrevendo'
-thumbnail: /uploads/images/mulher-escrevendo.jpg
-thumbnailAlt: /uploads/images/mulher-escrevendo.jpg
+imageAlt: "Mulher Escrevendo"
+thumbnail: /uploads/images/thumb-mulher-escrevendo.jpg
+thumbnailAlt: "mulher escrevendo"
 authors:
   - author: jessica-severo
 categories:
@@ -13,7 +13,7 @@ categories:
 tags:
   - dicas
   - Inglês
-description: 'Existem técnicas que ajudam os estudantes a fixar o novo vocabulário'
+description: "Existem técnicas que ajudam os estudantes a fixar o novo vocabulário"
 draft: false
 ---
 

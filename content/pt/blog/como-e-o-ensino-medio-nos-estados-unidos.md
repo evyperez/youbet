@@ -2,9 +2,9 @@
 title: Como é o Ensino Médio nos Estados Unidos?
 date: 2017-08-11 13:35:58+00:00
 draft: false
-image: /uploads/images/como-e-high-school-parte-2.jpg
+image: /uploads/images/ensino-medio-eua-parte-1.jpg
 imageAlt: "Capa do Vídeo do Amigo Gringo"
-thumbnail: /uploads/images/como-e-high-school-parte-2.jpg
+thumbnail: /uploads/images/thumb-ensino-medio-eua.jpg
 thumbnailAlt: "Capa do Vídeo do Amigo Gringo"
 video: https://www.youtube.com/embed/HyFbuneF3EI
 authors:

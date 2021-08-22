@@ -2,12 +2,12 @@
 title: What?! Como perguntar algo em inglês.
 slug: what-como-perguntar-algo-em-ingles/
 date: 2017-08-02 14:18:27+00:00
-image: /uploads/images/what.jpeg
-imageAlt: Pontuação de interrogação
-thumbnail: /uploads/images/what.jpeg
-thumbnailAlt: Pontuação de interrogação
+image: /uploads/images/interrogacao.jpg
+imageAlt: Ponto de interrogação
+thumbnail: /uploads/images/thumb-interrogacao.jpg
+thumbnailAlt: Ponto de interrogação
 authors:
-  - author: joabecardoso
+  - author: joabe-cardoso
 categories:
   - Blog
 tags:

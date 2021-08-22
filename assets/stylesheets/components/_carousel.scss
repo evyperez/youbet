@@ -21,7 +21,7 @@
   $button-size: to-rem(30px);
 
   .glide__arrow {
-    top: 82px;
+    top: 115px;
 
     width: $button-size;
     height: $button-size;
@@ -37,8 +37,16 @@
 
     border: unset;
 
+    @media screen and (min-width: breakpoint('tablet')) {
+      top: 112px;
+    }
+
     @media screen and (min-width: breakpoint('laptop')) {
-      top: 115px;
+      top: 77px;
+    }
+
+    @media screen and (min-width: breakpoint('desktop')) {
+      top: 90px;
     }
 
     &:focus,

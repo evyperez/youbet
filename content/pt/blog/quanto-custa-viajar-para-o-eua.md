@@ -2,12 +2,12 @@
 title: Quanto custa viajar para o EUA?
 slug: quanto-custa-viajar-para-o-eua/
 date: 2017-08-17 22:02:51+00:00
-image: /uploads/images/patrick-tomasso.jpeg
-imageAlt: Patrick Tomassoßß
-thumbnail: /uploads/images/patrick-tomasso.jpeg
-thumbnailAlt: Patrick Tomassoßß
+image: /uploads/images/estados-unidos.jpeg
+imageAlt: "Foto do EUA"
+thumbnail: /uploads/images/thumb-united-states.jpg
+thumbnailAlt: "Foto do EUA"
 authors:
-  - author: pauloaugustopn
+  - author: paulo-augusto
 categories:
   - Blog
 tags:
