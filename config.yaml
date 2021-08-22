@@ -53,6 +53,11 @@ languages:
           Weight: 2
           Identifier: 'blog'
           URL: '/blog'
+        - Name: 'Contato'
+          Pre: ''
+          Weight: 3
+          Identifier: 'contact'
+          URL: '/contato'
         # - Name: "Colégios"
         #   Pre: ""
         #   Weight: 3

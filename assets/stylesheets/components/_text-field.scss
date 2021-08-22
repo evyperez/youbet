@@ -2,62 +2,58 @@
 ---------------------------------------------------------------------------- */
 
 /**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. add some space before text
- */
+* 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+* 2. add some space before text
+*/
 %text-field-reset {
   @extend %os-element-reset;
 
   width: 100%;
+  height: to-rem(40px);
 
-  padding: 0.1em 0.2em 0;
+  padding: 0 to-rem(12px);
+
+  font-size: 16px;
+  line-height: to-rem(40px);
 
   cursor: text;
 
-  color: palette('text', 'dark');
+  color: palette('gray');
 
-  background-color: palette('white');
+  background-color: palette('form', 'background');
+
+  border-color: palette('form', 'border');
+
+  outline: none;
 
   box-sizing: inherit;
 
-  appearance: textfield; /* 1 */
-
-  &:invalid {
-    border-radius: $rounded-corner;
-
-    box-shadow: 0 0 5px palette('label', 'danger');
-  }
+  appearance: textfield;
 
   &:-moz-ui-invalid {
-    border-radius: $rounded-corner;
-
-    box-shadow: 0 0 5px palette('label', 'danger');
+    border-color: palette('label', 'danger');
   }
 
   &:focus {
-    outline: 1px solid;
-  }
+    border-color: palette('label', 'selected');
 
-  // &:focus:required:invalid {
-  // }
+    outline: 0;
+  }
 }
 
 [type='email'] {
   @extend %text-field-reset;
 }
 
-// [type='email'][multiple] {
-// }
-
 [type='number'] {
   @extend %text-field-reset;
 }
 
 /**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
+* Fix the cursor style for Chrome's increment/decrement buttons. For certain
+* `font-size` values of the `input`, it causes the cursor style of the
+* decrement button to change from `default` to `text`.
+*/
 
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
@@ -69,28 +65,29 @@
 }
 
 /**
- * Jakob Nielsen survey suggests that 27 characters could be good for search fields. They said that around 9 in 10 queries will fit in that space.
- *
- * 1. Correct the outline style in Safari.
- * 2. iPhone bug displaying search input with rounded angles before entering into the field
- */
+* Jakob Nielsen survey suggests that 27 characters could be good for search fields. They said that around 9 in 10 queries will fit in that space.
+*
+* 1. Correct the outline style in Safari.
+* 2. iPhone bug displaying search input with rounded angles before entering into the field
+*/
 [type='search'] {
   @extend %text-field-reset;
 
-  outline-offset: -2px; /* 1 */
+  padding-left: 3rem;
 
-  appearance: none; /* 2 */ // stylelint-disable-next-line no-vendor-prefixes
+  background-image: url('~src/assets/icons/magnifying-glass.svg');
+  background-position: left 0.5rem center;
+  background-repeat: no-repeat;
+  background-color: palette('gray', '10%');
+
+  outline-offset: -2px;
 }
 
 /**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-[type='search']::-webkit-search-cancel-button,
-[type='search']::-webkit-search-decoration {
-  appearance: none; // stylelint-disable-next-line no-vendor-prefixes
-}
+* Remove inner padding and search cancel button in Safari and Chrome on OS X.
+* Safari (but not Chrome) clips the cancel button when the search input has
+* padding (and `textfield` appearance).
+*/
 
 [type='tel'] {
   @extend %text-field-reset;
@@ -104,18 +101,12 @@
   @extend %text-field-reset;
 }
 
-/* textareas
----------------------------------------------------------------------------- */
-
-/*
- * 1. Removes default vertical scrollbar in IE6/7/8/9
- * 2. Improves readability and alignment in all browsers
- * sobral, veja o 2!
- */
 textarea {
   @extend %text-field-reset;
 
-  overflow: auto; /* 1 */
+  min-height: to-rem(90px);
+  padding: to-rem(12px) to-rem(12px);
+  overflow: auto;
 
   line-height: inherit;
 

@@ -1,7 +1,6 @@
 ---
 title: 'Sobre YouBet!'
 date: 2016-11-03 18:19:28+00:00
-title: Blog
 url: sobre
 draft: false
 ---

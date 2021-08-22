@@ -230,6 +230,42 @@ textarea {
   }
 }
 
+.form-wrap {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
+  row-gap: to-rem(12px);
+
+  .one-column {
+    row-gap: to-rem(12px);
+  }
+
+  .two-columns {
+    row-gap: to-rem(12px);
+
+    @media screen and (min-width: breakpoint('tablet__portrait')) {
+
+      column-gap: to-rem(12px);
+
+      row-gap: to-rem(12px);
+    }
+  }
+
+  .three-columns {
+    row-gap: to-rem(12px);
+
+    @media screen and (min-width: breakpoint('laptop')) {
+
+      column-gap: to-rem(12px);
+
+      row-gap: to-rem(12px);
+    }
+  }
+}
+
 .color-white {
   color: palette('white');
 }
