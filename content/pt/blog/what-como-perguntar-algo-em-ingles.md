@@ -4,21 +4,22 @@ slug: what-como-perguntar-algo-em-ingles/
 date: 2017-08-02 14:18:27+00:00
 image: /uploads/images/what.jpeg
 imageAlt: Pontuação de interrogação
+thumbnail: /uploads/images/what.jpeg
+thumbnailAlt: Pontuação de interrogação
 authors:
-    - author: joabecardoso
+  - author: joabecardoso
 categories:
-    - Blog
+  - Blog
 tags:
-    - Aulas
-    - Inglês
-    - Perguntas
-    - Verbos
+  - Aulas
+  - Inglês
+  - Perguntas
+  - Verbos
 description: 'What?! Como perguntar algo em inglês.'
 draft: false
 ---
 
 ## **“How are yow?”**
-
 
 Perguntas nada mais são do que busca por uma resposta.
 
@@ -28,17 +29,13 @@ Nós já aprendemos os pronomes e o verbo to be, de maneira simples e sem rodeio
 
 Existem dois segredos com relação às perguntas, o primeiro deles é o que chamo de troca de lugares. O que vai criar a pergunta nada mais é do que a presença do verbo **antes** do pronome ou nome do sujeito da frase, lembrando que sujeito é sempre aquele à quem se refere a frase.
 
-
 ### **Frase afirmativa:**
-
 
 You **are** my friend. (Iú ar mái frênd)
 
 Você é meu amigo
 
-
 ### Frase interrogativa:
-
 
 **Are** you my friend? (Ar iú mái frênd)
 
@@ -56,17 +53,13 @@ _Ai ém rir_
 
 Para respondê-las basta apenas trazer o pronome para o seu lugar original. Esta é a resposta ou **_answer _**(_énsãr_).
 
-
-
 **Exemplo:**
 
 **Q:** Are you my friend?
 
 Yes,** I am.**
 
-
-
-**               **A segunda etapa é a utilização de algumas palavras chave na construção das _questions_:
+\*\*               \*\*A segunda etapa é a utilização de algumas palavras chave na construção das _questions_:
 
 **Exemplos:**
 

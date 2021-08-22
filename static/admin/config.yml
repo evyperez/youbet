@@ -78,11 +78,7 @@ collections:
       - label: 'Slug'
         name: 'slug'
         widget: 'string'
-        pattern:
-          [
-            '^[a-z0-9]+(?:-[a-z0-9]+)*$',
-            'Letters, numbers and hyphens. No special characters.',
-          ]
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Letters, numbers and hyphens. No special characters.']
       - label: 'Medium'
         name: 'medium'
         widget: 'string'

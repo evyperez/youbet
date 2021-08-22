@@ -4,18 +4,19 @@ slug: o-caso-do-fusca-artigos-definidos-e-indefinidos/
 date: 2017-07-17 10:15:39+00:00
 image: /uploads/images/fusca-na-neve.jpeg
 imageAlt: Fusca na neve
+thumbnail: /uploads/images/fusca-na-neve.jpeg
+thumbnailAlt: Fusca na neve
 authors:
-    - author: joabecardoso
+  - author: joabecardoso
 categories:
-    - Blog
+  - Blog
 tags:
-    - Artigo
-    - Aulas
-    - Inglês
+  - Artigo
+  - Aulas
+  - Inglês
 description: 'O caso do Fusca que subia a parede - Artigos definidos e Indefinidos'
 draft: false
 ---
-
 
 Lembro que quando era criança vi na televisão um comercial de um carro de brinquedo bem diferente.
 
@@ -63,14 +64,8 @@ O “U” na palavra _unique_ tem o som de “Y”, uma consoante, logo deve ser
 
 **I see you in an hour** ( I sí iú in ên auâr)
 
-O “H” na palavra _hour _não tem som, é mudo, como em português. Sendo assim deve ser precedido de “An”. O mesmo não se aplica à _hospital_ (róspitau), _hotel _(rotéu), já que nesses casos o “H” tem o som de “R”, ou seja, uma consoante.
+O “H” na palavra _hour_ não tem som, é mudo, como em português. Sendo assim deve ser precedido de “An”. O mesmo não se aplica à _hospital_ (róspitau), _hotel_ (rotéu), já que nesses casos o “H” tem o som de “R”, ou seja, uma consoante.
 
 See ya!
 
 [Youbet Blog!](/blog)
-
-
-
-
-
-

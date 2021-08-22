@@ -18,12 +18,18 @@
     color: palette('white');
   }
 
-  button {
-    top: 110px;
+  $button-size: to-rem(30px);
 
+  .glide__arrow {
+    top: 82px;
+
+    width: $button-size;
+    height: $button-size;
     min-width: unset;
 
-    padding: 0 16px;
+    padding: 0;
+
+    font-size: 0;
 
     color: palette('white');
 
@@ -31,35 +37,63 @@
 
     border: unset;
 
+    @media screen and (min-width: breakpoint('laptop')) {
+      top: 115px;
+    }
+
+    &:focus,
+    &:active,
     &:hover {
       background-color: palette('gray', '110%');
 
       border: unset;
+
+      outline: none;
     }
+
     &::after {
-      color: palette('white');
+      display: block;
+
+      width: $button-size;
+      height: $button-size;
+
+      background: palette('white');
+
+      mask-image: url('/uploads/images/arrow.svg');
+      mask-position: center;
+      mask-size: 10px auto;
+      mask-repeat: no-repeat;
     }
 
     &.glide__arrow--left {
       position: absolute;
-      left: -20px;
+      left: -10px;
 
       z-index: 1;
+
+      @media screen and (min-width: breakpoint('laptop')) {
+        left: -20px;
+      }
     }
 
     &.glide__arrow--right {
       position: absolute;
-      right: -20px;
+      right: -10px;
 
       z-index: 1;
+
+      @media screen and (min-width: breakpoint('laptop')) {
+        right: -20px;
+      }
     }
 
     &.glide__arrow--left::after {
-      content: '<';
+      content: '';
+      transform: rotate(180deg);
     }
 
     &.glide__arrow--right::after {
-      content: '>';
+      content: '';
     }
   }
 }

@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
+<html
+  lang="{{ with .Site.Language.Params.locale }}
+    {{ . }}
+  {{ else }}
+    {{ .Site.LanguageCode }}
+  {{ end }}
+  "
+  class="{{ if .IsHome }}home-page{{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }}
+   {{ if eq (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js"
+>
+  {{ partial "head.html" . }}
 
-{{ partial "head.html" . }}
 
-<body>
-  <div class="main-container">
+  <body>
+    <div class="main-container">
+      {{ partial "header.html" . }}
 
-    {{ partial "header.html" . }}
 
-    <main role="main" id="conteudo" class="internal-page">
-      <section class="section">
-        <div class="container">
-          <div class="two-column">
+      <main role="main" id="conteudo" class="internal-page">
+        <section class="section">
+          <div class="container">
+            <div class="two-column">
+              <div class="rich-text">
+                <h2 class="title">{{ i18n "about" | title }}</h2>
 
-            <div class="rich-text">
-              <h2 class="title">{{ i18n "about" | title }}</h2>
+                {{ .Content }}
 
-              {{ .Content }}
-
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
 
       {{ partial "footer.html" . }}
-  </div>
-</body>
-
+    </div>
+  </body>
 </html>

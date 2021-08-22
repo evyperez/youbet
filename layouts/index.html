@@ -1,29 +1,40 @@
 <!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
-{{ partial "head.html" . }}
-
-<body class="theme-dark">
-
-  <input type="checkbox" id="menu-controller" class="menu-controller" hidden>
-
-  <div class="main-container">
-    {{ partial "header.html" . }}
-
-    <main role="main" id="conteudo" class="page">
-      {{ partial "global-citizen.html" . }}
-      {{ partial "benefits.html" . }}
-      <!-- {{ partial "destinations.html" . }} -->
-      <!-- {{ partial "testimonials.html" . }} -->
-      {{ partial "high-school.html" . }}
-      {{ partial "blog.html" . }}
-    </main>
-
-    {{ partial "footer.html" . }}
-
-  </div>
-
-  {{ partial "scripts.html" . }}
+<html
+  lang=" {{ with .Site.Language.Params.locale }}
+    {{ . }}
+  {{ else }}
+    {{ .Site.LanguageCode }}
+  {{ end }}"
+  class="{{ if .IsHome }}
+    home-page
+  {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}
+    grid-debug
+  {{ end }} no-js"
+>
+  {{ partial "head.html" . }}
 
 
-</body>
+  <body class="theme-dark">
+    <input type="checkbox" id="menu-controller" class="menu-controller" hidden />
+
+    <div class="main-container">
+      {{ partial "header.html" . }}
+
+
+      <main role="main" id="conteudo" class="page">
+        {{ partial "global-citizen.html" . }}
+        {{ partial "benefits.html" . }}
+        <!-- {{ partial "destinations.html" . }} -->
+        <!-- {{ partial "testimonials.html" . }} -->
+        {{ partial "high-school.html" . }}
+        {{ partial "blog.html" . }}
+      </main>
+
+      {{ partial "footer.html" . }}
+
+    </div>
+
+    {{ partial "scripts.html" . }}
+
+  </body>
 </html>

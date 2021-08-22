@@ -29,11 +29,13 @@ draft: false
 ---
 
 ## Sobre
-Fundada no coração do estado da Pensilvânia, a Blue Mountain Academy é um colégio cristão,  iniciou suas atividades em 1955 e é conhecida carinhosamente como BMA.
+
+Fundada no coração do estado da Pensilvânia, a Blue Mountain Academy é um colégio cristão, iniciou suas atividades em 1955 e é conhecida carinhosamente como BMA.
 Sendo construída próxima à Filadélfia, Nova York e Washington D.C., o seu propósito principal sempre foi formar cidadãos, sendo assim, a BMA oferece de maneira integrada além do currículo regular, diversas atividades extra-curriculares e formações profissionais.
 A BMA é um colégio internacional, conta com mais sete nacionalidades diferentes de alunos, incluindo asiáticos e africanos. O aluno Youbet! será um cidadão global completo ao estudar na BMA.
 
 ## Atividades
+
 Laboratórios de química, biologia e tecnologia são algumas das ferramentas que fazem parte do dia-a-dia dos alunos. Estúdio de música, aulas de piano, violão, canto e seu magnifício coral Bel Canto, conhecido internacionalmente, são capítulos mais que presentes na vida acadêmica.
 Um capitulo a parte são as aulas de pilotagem e seu aeroporto privativo. O aluno da BMA pode ter aulas de vôo durante seu High School e ao se formar ser um piloto com licença americana.
 A BMA também é o lar do nosso Intercâmbio de Verão, um dos nossos intercâmbios de curta duração nos EUA.

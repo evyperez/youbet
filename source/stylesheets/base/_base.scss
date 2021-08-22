@@ -138,7 +138,6 @@ body {
   > * {
     flex-shrink: 0; /* 1 */
   }
-
 }
 
 /**
@@ -397,6 +396,11 @@ img {
   image-rendering: auto; /* 1 */
 }
 
+.section-image {
+  margin: auto;
+  text-align: center;
+}
+
 [usemap] {
   color: palette('anchor');
 }
@@ -434,7 +438,6 @@ a {
   // sass-lint:disable-block property-sort-order
 
   color: palette('anchor', 'base');
-
 
   // &:link {
   //   cursor: pointer;
@@ -485,14 +488,11 @@ a {
   // &[target='_blank'],
   // &[rel='external'] {
   // }
-
-
 }
 
 .text-decor--none {
   text-decoration: none;
 }
-
 
 /* Contact info and addresses
 ---------------------------------------------------------------------------- */

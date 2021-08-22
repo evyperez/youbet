@@ -2,8 +2,10 @@
 title: Something, Anything, Nothing e outras ‘’things’’
 slug: something-anything-nothing-e-outras-things
 date: 2017-08-22 00:15:15+00:00
-image: /uploads/images/mulher-escrevendo.jpg
+image: /uploads/images/something.jpg
 imageAlt: 'Mulher Escrevendo'
+thumbnail: /uploads/images/something.jpg
+thumbnailAlt: 'Mulher Escrevendo'
 video: https://www.youtube.com/embed/UelDrZ1aFeY
 authors:
   - author: fabio-rodrigues
@@ -35,10 +37,10 @@ Dentre as três palavras que nos propomos a discutir hoje, ‘’something’’
 **Exemplos:**
 
 **I want to drink something**
-*Eu quero beber alguma coisa*
+_Eu quero beber alguma coisa_
 
 **You always have something to say**
-*Você sempre tem alguma coisa a dizer*
+_Você sempre tem alguma coisa a dizer_
 
 Além destes exemplos em frases afirmativas, ‘’something’’ também é usado em frases interrogativas para significar ‘’alguma coisa’’:
 
@@ -63,13 +65,13 @@ Em busca por uma resposta imediata às maneiras como o ‘’anything’’ pode
 **Exemplos:**
 
 **You are not going to do anything**
-*Você não fará nada*
+_Você não fará nada_
 
 **Can you hear anything?**
-*Você pode ouvir algo?*
+_Você pode ouvir algo?_
 
 **If you need anything, I’ll be awake**
-*Se você precisar de qualquer coisa, estarei acordado*
+_Se você precisar de qualquer coisa, estarei acordado_
 
 Ao compreender o uso dessas três palavras, em especial o uso do ‘’anything’’, percebemos que, diferente do português, o inglês não admite a dupla negação, como já mencionei no começo. Isso significa que não se pode traduzir algo como ‘’Ele não faz nada’’ de forma literal. Entenderemos melhor com a explicação do uso do ‘’nothing’’.
 
@@ -82,20 +84,20 @@ Em primeiro caso, será esta a palavra para ‘’Nada’’. Qualquer tentativa
 **Exemplos:**
 
 **I need nothing**
-*Eu não preciso de nada*
+_Eu não preciso de nada_
 
 **There is nothing like a beautiful day**
-*Não há nada como um belo dia*
+_Não há nada como um belo dia_
 
 Estas são frases afirmativas tornadas negativas pela presença do ‘’nothing’’. Poderíamos, enfim, construir as mesmas frases com o ‘’anything’’, certo? Claro!
 
 **Exemplos:**
 
 **I don’t need anything**
-*Eu não preciso de nada*
+_Eu não preciso de nada_
 
 **There isn’t anything like a beautiful day**
-*Não há nada como um belo dia.*
+_Não há nada como um belo dia._
 
 A regra é: se você usou o auxiliar negativo no começo da frase, tem de terminar com o ‘’anything’’.
 

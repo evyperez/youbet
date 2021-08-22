@@ -3,7 +3,9 @@ title: O Guia Definitivo do Verbo To Be
 slug: o-guia-definitivo-do-verbo-to-be
 date: 2017-05-23 15:39:27+00:00
 image: /uploads/images/menina-no-notebook.jpg
-imageAlt: "Menina No Notebook"
+imageAlt: 'Menina No Notebook'
+thumbnail: /uploads/images/menina-no-notebook.jpg
+thumbnailAlt: 'Menina No Notebook'
 authors:
   - author: joabe-cardoso
 categories:
@@ -64,7 +66,7 @@ Tradução: Juliana está feliz
 Inglês: Noah and Cindy **are** brother and sister.
 Tradução: Noah e Cindy são irmão e irmã.
 
-Existe uma famosa canção da Beyoncé que se chama *“If I were a boy”*.
+Existe uma famosa canção da Beyoncé que se chama _“If I were a boy”_.
 Isso está correto? É licença poética?
 A resposta é sim e não. Está correta e não é uma licença poética.
 Sempre que o substantivo ou o pronome for precedido de “If” o verbo a se utilizado posteriormente é “were”.

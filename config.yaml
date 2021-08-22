@@ -1,58 +1,58 @@
-baseURL: "/"
+baseURL: '/'
 defaultContentLanguage: pt
-languageCode: "pt-br"
+languageCode: 'pt-br'
 disableKinds:
-  - "taxonomyTerm"
-  - "RSS"
-  - "sitemap"
+  - 'taxonomyTerm'
+  - 'RSS'
+  - 'sitemap'
 enableRobotsTXT: false
-metaDataFormat: "yaml"
+metaDataFormat: 'yaml'
 enableMissingTranslationPlaceholders: true
 disableFastRender: true
 ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
 stepAnalysis: true
 templateMetrics: true
 pluralizeListTitles: false
-googleAnalytics: "UA-90457577-1"
+googleAnalytics: 'UA-90457577-1'
 buildFuture: true
-FootnoteReturnLinkContents: "↩"
+FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
 taxonomies:
-  role: "role"
+  role: 'role'
 permalinks:
   pages: /:slug/
 languages:
   pt:
     contentDir: content/pt
     languageName: Português
-    languageCode: "pt-br"
-    title: "YouBet! Uma transformação de vida"
+    languageCode: 'pt-br'
+    title: 'YouBet! Uma transformação de vida'
     weight: 1
     params:
-      tagline: "Quer se tornar um Cidadão Global?"
-      email: "contato@youbetschool.com"
-      mailchimpList: "#"
+      tagline: 'Quer se tornar um Cidadão Global?'
+      email: 'contato@youbetschool.com'
+      mailchimpList: '#'
       description:
-        default: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
-        twitter: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
-        facebook: "Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio"
+        default: 'Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio'
+        twitter: 'Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio'
+        facebook: 'Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio'
       shareImages:
-        default: "assets/images/compartilhamento.jpg"
-        twitter: "assets/images/twitter-compartilhamento.jpg"
-        facebook: "assets/images/facebook-compartilhamento.jpg"
+        default: 'assets/images/compartilhamento.jpg'
+        twitter: 'assets/images/twitter-compartilhamento.jpg'
+        facebook: 'assets/images/facebook-compartilhamento.jpg'
 
     menu:
       main:
-        - Name: "Sobre"
-          Pre: ""
+        - Name: 'Sobre'
+          Pre: ''
           Weight: 1
-          Identifier: "about"
-          URL: "/sobre"
-        - Name: "Blog"
-          Pre: ""
+          Identifier: 'about'
+          URL: '/sobre'
+        - Name: 'Blog'
+          Pre: ''
           Weight: 2
-          Identifier: "blog"
-          URL: "/blog"
+          Identifier: 'blog'
+          URL: '/blog'
         # - Name: "Colégios"
         #   Pre: ""
         #   Weight: 3
@@ -73,32 +73,32 @@ languages:
   en:
     contentDir: content/en
     languageName: English
-    languageCode: "en"
-    title: "YouBet! Real English"
+    languageCode: 'en'
+    title: 'YouBet! Real English'
     weight: 2
     params:
-      tagline: "cultural immersion"
-      email: "contato@youbetschool.com"
-      mailchimpList: "#"
+      tagline: 'cultural immersion'
+      email: 'contato@youbetschool.com'
+      mailchimpList: '#'
       description:
-        default: "We want to create a bilingual country with a global mind, promoting exchange"
-        twitter: "We want to create a bilingual country with a global mind, promoting exchange"
-        facebook: "We want to create a bilingual country with a global mind, promoting exchange"
+        default: 'We want to create a bilingual country with a global mind, promoting exchange'
+        twitter: 'We want to create a bilingual country with a global mind, promoting exchange'
+        facebook: 'We want to create a bilingual country with a global mind, promoting exchange'
       shareImages:
-        default: "assets/images/compartilhamento.jpg"
-        twitter: "assets/images/twitter-compartilhamento.jpg"
+        default: 'assets/images/compartilhamento.jpg'
+        twitter: 'assets/images/twitter-compartilhamento.jpg'
 
     menu:
       main:
-        - Name: "About"
-          Pre: ""
+        - Name: 'About'
+          Pre: ''
           Weight: 1
-          Identifier: "about"
-          URL: "/about"
+          Identifier: 'about'
+          URL: '/about'
 
 params:
   authors:
-    - Name: "Evelyn Perez"
+    - Name: 'Evelyn Perez'
       Weight: 1
-    - Name: "Stephanie Castro"
+    - Name: 'Stephanie Castro'
       Weight: 2

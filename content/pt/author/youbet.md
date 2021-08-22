@@ -1,6 +1,6 @@
 ---
-title: "Equipe YouBet"
-slug: "youbet"
+title: 'Equipe YouBet'
+slug: 'youbet'
 medium:
 linkedin:
 facebook:

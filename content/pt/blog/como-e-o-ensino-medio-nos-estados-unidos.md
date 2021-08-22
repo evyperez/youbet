@@ -4,6 +4,8 @@ date: 2017-08-11 13:35:58+00:00
 draft: false
 image: /uploads/images/como-e-high-school-parte-2.jpg
 imageAlt: "Capa do Vídeo do Amigo Gringo"
+thumbnail: /uploads/images/como-e-high-school-parte-2.jpg
+thumbnailAlt: "Capa do Vídeo do Amigo Gringo"
 video: https://www.youtube.com/embed/HyFbuneF3EI
 authors:
   - author: youbet

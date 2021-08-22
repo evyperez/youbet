@@ -4,6 +4,8 @@ slug: passo-passo-para-conseguir-seu-visto-americano/
 date: 2017-11-09 13:00:06+00:00
 image: /uploads/images/pexels-photo-346798.jpg
 imageAlt: Passaporte
+thumbnail: /uploads/images/pexels-photo-346798.jpg
+thumbnailAlt: Passaporte
 authors:
   - author: jessica-severo
 categories:
@@ -22,7 +24,7 @@ Fechou seu intercâmbio com a **YouBet!** e agora precisa do visto americano par
 poder embarcar para o seu destino dos sonhos? Fizemos um guia para você não
 passar perrengue nesse momento crucial para a sua tão desejada viagem.
 
-Mas se prefere ter alguém para te auxiliar, na **YouBet! **você conta com uma
+Mas se prefere ter alguém para te auxiliar, na **YouBet!** você conta com uma
 assessoria exclusiva para a emissão do visto americano. Nós te ajudamos em todo
 o processo, desde o preenchimento do formulário até o seu recebimento. O valor é
 de R$ 250.
@@ -35,8 +37,6 @@ _Obs.: As taxas ficam por conta do cliente._
 Veja o passo a passo para solicitar o visto americano:
 
 1. **Preencher o formulário DS-160:**
-
-<iframe src="https://giphy.com/embed/JIX9t2j0ZTN9S" height="480" width="480" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>
 
 [via GIPHY](https://giphy.com/gifs/JIX9t2j0ZTN9S)
 

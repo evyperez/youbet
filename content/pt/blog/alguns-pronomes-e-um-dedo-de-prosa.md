@@ -4,20 +4,21 @@ slug: alguns-pronomes-e-um-dedo-de-prosa/
 date: 2017-07-11 16:37:55+00:00
 image: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
 imageAlt: Monument Rushmore
+thumbnail: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
+thumbnailAlt: Monument Rushmore
 authors:
-    - author: joabecardoso
+  - author: joabecardoso
 categories:
-    - Blog
+  - Blog
 tags:
-    - Aulas
-    - Inglês
-    - Pronomes
+  - Aulas
+  - Inglês
+  - Pronomes
 description: 'Alguns pronomes e um dedo de prosa.'
 draft: false
 ---
 
 **“I am mine”**
-
 
 **Pronomes Pessoais**
 
@@ -112,7 +113,7 @@ Logo, os pronomes adjetivos sempre devem estar acompanhados de um substantivo (n
 Já a ideia por trás dos pronomes possessivos substantivos é exatamente de evitar a repetição dos nomes já mencionados. Eles **substituem** os nomes.
 
 This is **my** house and that is **yours.**
-*Dis is mai ráuze én dét is iórs*
+_Dis is mai ráuze én dét is iórs_
 
 Esta é a minha casa e aquela é a sua.
 
@@ -123,7 +124,7 @@ São utilizados geralmente ao fim das frases, e não há diferença entre plural
 Exemplos:
 
 This car is **yours**
-*Dis car is iórs*
+_Dis car is iórs_
 
 Esse carro é seu.
 
@@ -168,16 +169,14 @@ He **gives** (ação) **_me_** money.
 I don’t **give** (ação)** _him_** money.
 
 **                                  Tabela Rápida**
+
 <table width="391" style="height: 489px;" >
 <tbody >
 <tr >
 
 <td width="77" >
 
-
 Personal Pronouns
-
-
 
 </td>
 
@@ -189,10 +188,7 @@ Personal Pronouns
 
 <td width="66" >
 
-
 Object Pronouns
-
-
 
 </td>
 </tr>
@@ -200,10 +196,7 @@ Object Pronouns
 
 <td width="77" >
 
-
 I
-
-
 
 </td>
 
@@ -215,10 +208,7 @@ I
 
 <td width="66" >
 
-
 Me
-
-
 
 </td>
 </tr>
@@ -235,10 +225,7 @@ Me
 
 <td width="66" >
 
-
 You
-
-
 
 </td>
 </tr>
@@ -246,10 +233,7 @@ You
 
 <td width="77" >
 
-
 He
-
-
 
 </td>
 
@@ -261,10 +245,7 @@ He
 
 <td width="66" >
 
-
 Him
-
-
 
 </td>
 </tr>
@@ -272,10 +253,7 @@ Him
 
 <td width="77" >
 
-
 She
-
-
 
 </td>
 
@@ -287,10 +265,7 @@ She
 
 <td width="66" >
 
-
 Her
-
-
 
 </td>
 </tr>
@@ -298,10 +273,7 @@ Her
 
 <td width="77" >
 
-
 It
-
-
 
 </td>
 
@@ -313,10 +285,7 @@ It
 
 <td width="66" >
 
-
 It
-
-
 
 </td>
 </tr>
@@ -324,10 +293,7 @@ It
 
 <td width="77" >
 
-
 We
-
-
 
 </td>
 
@@ -339,10 +305,7 @@ We
 
 <td width="66" >
 
-
 Us
-
-
 
 </td>
 </tr>
@@ -359,10 +322,7 @@ Us
 
 <td width="66" >
 
-
 Them
-
-
 
 </td>
 </tr>

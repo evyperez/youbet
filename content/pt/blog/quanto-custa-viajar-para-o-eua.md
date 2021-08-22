@@ -4,17 +4,18 @@ slug: quanto-custa-viajar-para-o-eua/
 date: 2017-08-17 22:02:51+00:00
 image: /uploads/images/patrick-tomasso.jpeg
 imageAlt: Patrick Tomassoßß
+thumbnail: /uploads/images/patrick-tomasso.jpeg
+thumbnailAlt: Patrick Tomassoßß
 authors:
-    - author: pauloaugustopn
+  - author: pauloaugustopn
 categories:
-    - Blog
+  - Blog
 tags:
-    - Curiosidades
-    - Finanças
+  - Curiosidades
+  - Finanças
 description: 'Quanto custa viajar para o EUA?'
 draft: false
 ---
-
 
 Sempre ao planejar uma viagem, independentemente do motivo, é importante planejar o custo diário levando em consideração os gastos com hospedagem, alimentação, transporte público e a entrada nas principais atrações turísticas.
 
@@ -26,26 +27,17 @@ Percebi a falta de cidades norte-americanas e pensei, quanto em média seria o g
 
 Faça comigo e veja:
 
-
 ## Washington DC
 
-
-
-
 ## ![Washington DC](/uploads/images/washington.jpeg)
-
-
 
 O valor da diária dos hotéis na capital norte-americana não é barato, mas com certeza você será privilegiado com a grande variedade de atividades culturais gratuitas que a cidade te proporciona. Em Washington D.C. você entende o patriotismo e muito da história, com lugares incríveis como National Mall, Casa Branca (Para dar um oi pro Trump), Capitólio e NASA, além de seus diversos museus com entradas livres e gratuitas como o Smithsonian, Museu Nacional do Ar e Espaço, Museu da História Nacional.
 
 De acordo com o site o valor médio de gastos com hospedagem, alimentação, transporte público e a entrada nas principais atrações turísticas é de **R$165,00** por dia em Washington DC
 
-
 ## **Nova Iorque**
 
-
 ![New York](/uploads/images/new-york.jpeg)
-
 
 A cidade atrai e agrada turistas de todas as idades e com gostos totalmente diferentes.
 
@@ -53,9 +45,7 @@ Repleta de programas culturais, musicais, atividades ao ar livre, paisagens urba
 
 O valor médio de gastos com hospedagem, alimentação, transporte público e a entrada nas principais atrações turísticas por dia é de **R$252,00**
 
-
 ## **Filadélfia**
-
 
 ![Filadélfia](/uploads/images/philadelphia.png)
 É a cidade mais populosa do estado norte-americano da Pensilvânia, difícil sair de lá sem aprender sobre a história dos EUA. Philly (como é chamada carinhosamente por seus cidadãos) respira história, e sem contar o famoso sanduíche, quer dizer, não é simplesmente um sanduíche, e sim o famoso Philly Cheese Steak
