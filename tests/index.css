@@ -771,7 +771,7 @@ input[aria-busy='true'],
 output[aria-busy='true'],
 keygen[aria-busy='true'],
 textarea[aria-busy='true'] {
-  background-image: url('/assets/image/loading.svg');
+  background-image: url('/assets/images/loading.svg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-color: rgba(18, 18, 18, 0.8);

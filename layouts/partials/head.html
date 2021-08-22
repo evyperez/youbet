@@ -22,7 +22,7 @@
     rel="stylesheet"
   />
 
-  {{ $style := resources.Get "/styles/index.css" | resources.Minify | resources.Fingerprint "sha512" }}
+  {{ $style := resources.Get "/stylesheets/index.css" | resources.Minify | resources.Fingerprint "sha512" }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
   <!-- Title Tags -->

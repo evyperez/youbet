@@ -13,7 +13,7 @@
     "clean": "npm-run-all --parallel clean:*",
     "clean:dist": "rimraf ./public/**/*.*",
     "clean:testResults": "rimraf ./testResults/**/*.xml",
-    "compress:css": "postcss --use autoprefixer cssnano --safe -r ./assets/assets/styles/**/*.css",
+    "compress:css": "postcss --use autoprefixer cssnano --safe -r ./assets/stylesheets/**/*.css",
     "compress:img": "imagemin \"./source/images/**/*.{gif,jpg,png,svg}\" --out-dir=./static/assets/images",
     "prelint": "rimraf ./testResults/**/*.xml",
     "lint": "npm-run-all --parallel lint:*",
