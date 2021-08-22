@@ -1,4 +1,7 @@
-<!-- Global site tag (gtag.js) - Google Analytics --><script src="https://www.googletagmanager.com/gtag/js?id={{ . }}" async></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
 
@@ -19,7 +22,7 @@
 </script>
 
 
-  {{ $js := resources.Get "scripts/index.js" }}
+{{ $js := resources.Get "scripts/index.js" }}
+{{ $secureJS := $js | js.Build | resources.Minify | resources.Fingerprint "sha512" }}
 
-  {{ $secureJS := $js | js.Build | resources.Minify | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>

@@ -128,22 +128,4 @@
   {{ end }}
 
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Google Analytics -->
-
-  {{ $vendorJS := resources.Get "/scripts/vendor.js" }}
-  {{ $secureVendorJS := $vendorJS | resources.Minify | resources.Fingerprint "sha512" }}
-  {{ .Scratch.Set "secureVendorJS" $secureVendorJS }}
-
-
-  <link
-    rel="preload"
-    type="text/javascript"
-    as="script"
-    href="{{ $secureVendorJS.RelPermalink }}"
-    integrity="{{ $secureVendorJS.Data.Integrity }}"
-  />
 </head>
