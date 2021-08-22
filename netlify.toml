@@ -1,0 +1,19 @@
+[build]
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.81.0"
+
+[context.production]
+  command = "npm run build"
+
+[context.deploy-preview]
+  command = "npm run build"
+
+[context.branch-deploy]
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/404/"
+  status = 404
