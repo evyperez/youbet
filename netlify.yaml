@@ -2,6 +2,7 @@ build:
   publish: public
   environment:
     HUGO_VERSION: 0.83.1
+    NODE_VERSION: "14.17.0"
 context:
   production:
     command: npm run build
