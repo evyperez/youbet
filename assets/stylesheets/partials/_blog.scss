@@ -76,7 +76,7 @@
 
   border-radius: $rounded-corner-s;
 
-  .author {
+  .img-subtitle__author {
     @include truncate;
   }
 

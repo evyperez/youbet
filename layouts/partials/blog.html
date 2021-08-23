@@ -1,7 +1,7 @@
 <section class="blog-partial">
   <div class="container">
     <h2 class="title-section">
-      {{ i18n "lastPosts" }}
+      {{ i18n "blog" }}
     </h2>
 
     <div class="glide">
@@ -22,7 +22,7 @@
                   <div class="img-subtitle">
                     {{ range .Params.authors }}
                       {{ range where $.Site.Pages "Params.slug" .author }}
-                        <p class="author">{{ .Title }}</p>
+                        <p class="img-subtitle__author">{{ .Title }}</p>
                       {{ end }}
                     {{ end }}
                     <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
