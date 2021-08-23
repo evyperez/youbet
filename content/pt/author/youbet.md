@@ -1,6 +1,7 @@
 ---
 title: 'Equipe YouBet'
 slug: 'youbet'
+url: "autor/youbet"
 medium:
 linkedin:
 facebook:

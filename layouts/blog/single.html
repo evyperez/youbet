@@ -1,99 +1,128 @@
 <!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
 
-  {{ partial "head/head.html" . }}
-
-
-  <body>
-    <div class="main-container">
-      {{ partial "header.html" . }}
-      <div class="container">
-        {{ partial "breadcrumbs.html" . }}
-      </div>
-
-      <main role="main" id="conteudo" class="internal-page">
-        {{/* <header class="title-highlight">
-          <h1>Lala</h1>
-          </header>
-        */}}
+{{ partial "head/head.html" . }}
 
 
-        <section class="section">
-          <div class="container">
-            <div blog-wrap>
-              <div class="blog-content">
-                <div class=" rich-text">
-                  <h2>{{ .Title }}</h2>
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
 
-                  {{ if .Params.image }}
+    <main role="main" id="conteudo" class="internal-page">
+      {{/* <header class="title-highlight">
+        <h1>Lala</h1>
+      </header>
+      */}}
 
-                    <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-                  {{ end }}
 
-                  {{ .Content }}
-
-                </div>
-
-                {{ if .Params.authors }}
-
-                  <div class="authors">
-                    <div class="content smaller-width">
-                      {{ range .Params.authors }}
-                        {{ range where $.Site.Pages "Params.slug" .author }}
-                          <div class="authors__wrap">
-                            <div class="authors-image">
-                              <img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" />
-                            </div>
-                            <div class="authors-about">
-                              <h2>{{ .Title }}</h2>
-                              {{ .Content }}
-                            </div>
-                          </div>
-                        {{ end }}
+      <section class="section">
+        <div class="container">
+          <div blog-wrap>
+            <div class="blog-content">
+              <div class="blog-content__info">
+                <h2>{{ .Title }}</h2>
+                {{if .Params.subtitle }}
+                <p class="subtitle">
+                  {{.Params.subtitle}}
+                </p>
+                {{ end }}
+                <div>
+                  {{ range .Params.authors }}
+                  {{ range where $.Site.Pages "Params.slug" .author }}
+                  <div class="author author--small">
+                    <div>
+                      <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+                    </div>
+                    <div class="author__info">
+                      {{if .Title}}
+                        <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
+                      {{ end }}
+                      {{if .Data }}
                       {{ end }}
                     </div>
                   </div>
-                {{ end }}
-
+                  {{ end }}
+                  {{ end }}
+                </div>
               </div>
-              <div class="sidebar">
-                <div>
+              <div>
+                {{ if .Params.image }}
+
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+                {{ end }}
+              </div>
+
+              <div class=" rich-text">
+
+
+                {{ .Content }}
+              </div>
+
+              {{ if .Params.authors }}
+
+              <div>
+                {{ range .Params.authors }}
+                {{ range where $.Site.Pages "Params.slug" .author }}
+                <div class="author">
+                  <div>
+                    <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+                  </div>
+                  <div class="author__about">
+                    <p class="category-title">{{ i18n "writtenBy" | title }}:</p>
+                    <h2 class="heading-4"><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></h2>
+                    {{ .Content }}
+                  </div>
+                </div>
+                {{ end }}
+                {{ end }}
+              </div>
+              {{ end }}
+
+            </div>
+            <div class="sidebar">
+              <!-- <div>
                   <h2>Pesquisar</h2>
                   <input type="search" />
                 </div>
                 <div>
                   <h2>Categorias</h2>
-                </div>
-              </div>
+                </div> -->
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {{ if .Params.relatedProjects }}
-          <aside>
-            <div class="container">
-              <h2 class="title">{{ i18n "seeAlso" | title }}</h2>
-              <ul class="posts">
-                {{ range .Params.relatedProjects }}
-                  {{ range where $.Site.Pages "Params.slug" .project }}
-                    <li class="post">
-                      <div class="post__content">
-                        <a href="../{{ .Params.slug }}">
-                          <h4>{{ if .Params.shortTitle }}{{ .Params.shortTitle }}{{ else }}{{ .Title }}{{ end }}</h4>
-                        </a>
-                        <a class="nav-link nav-link--plus--orange" href="../{{ .Params.slug }}">{{ i18n "Title" }}</a>
-                      </div>
-                    </li>
-                  {{ end }}
-                {{ end }}
-              </ul>
-            </div>
-          </aside>
-        {{ end }}
+      {{ if .Params.relatedProjects }}
+      <aside>
+        <div class="container">
+          <h2 class="title">{{ i18n "seeAlso" | title }}</h2>
+          <ul class="posts">
+            {{ range .Params.relatedProjects }}
+            {{ range where $.Site.Pages "Params.slug" .project }}
+            <li class="post">
+              <div class="post__content">
+                <a href="../{{ .Params.slug }}">
+                  <h4>{{ if .Params.shortTitle }}{{ .Params.shortTitle }}{{ else }}{{ .Title }}{{ end }}</h4>
+                </a>
+                <a class="nav-link nav-link--plus--orange" href="../{{ .Params.slug }}">{{ i18n "Title" }}</a>
+              </div>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </aside>
+      {{ end }}
 
-      </main>
-      {{ partial "footer.html" . }}
+    </main>
+    {{ partial "footer.html" . }}
 
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>

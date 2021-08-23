@@ -171,3 +171,40 @@
     content: '';
   }
 }
+
+.blog-list .post-list {
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+  row-gap: to-rem(24px);
+}
+
+.blog-list .post {
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+  row-gap: to-rem(24px);
+
+  @media screen and (min-width: breakpoint('tablet__landscape')) {
+    row-gap: to-rem(32px);
+  }
+}
+
+.blog-content {
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+  row-gap: to-rem(18px);
+
+  @media screen and (min-width: breakpoint('tablet__landscape')) {
+    row-gap: to-rem(24px);
+  }
+}
+
+.blog-content__info {
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+  row-gap: to-rem(8px);
+
+}

@@ -30,3 +30,5 @@
   translation: 'Enviar'
 - id: whatsApp
   translation: 'WhatsApp'
+- id: writtenBy
+  translation: 'Escrito por'

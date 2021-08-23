@@ -33,43 +33,47 @@
                       </iframe>
                     </div>
                   {{ else }}
-                    {{ if .Params.image }}
-                      <div class="post__image">
-                        <a href="/blog/{{ .Params.slug }}">
-                          <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}" />
-                        </a>
-                      </div>
-                    {{ end }}
+                  {{ if .Params.image }}
+                    <div class="post__image">
+                      <a href="/blog/{{ .Params.slug }}">
+                        <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}" />
+                      </a>
+                    </div>
                   {{ end }}
+                {{ end }}
 
-
-                  <div class="rich-text">
-                    <a href="/blog/{{ .Params.slug }}" class="text-decor--none">
-                      <h2>
-                        {{ .Title }}
-                      </h2>
-                    </a>
-                    <p>Postado por:</p>
-                    {{ range .Params.authors }}
-                      {{ range where $.Site.Pages "Params.slug" .author }}
-                        <p>{{ .Title }}</p>
+                  <div class="post__info">
+                    {{ .Date.Format "2" }}
+                    {{ .Date.Format "January" }}
+                    <div class="rich-text">
+                      <a href="/blog/{{ .Params.slug }}" class="text-decor--none">
+                        <h2>
+                          {{ .Title }}
+                        </h2>
+                      </a>
+                      <p>Postado por:</p>
+                      {{ range .Params.authors }}
+                        {{ range where $.Site.Pages "Params.slug" .author }}
+                          <p>{{ .Title }}</p>
+                        {{ end }}
                       {{ end }}
-                    {{ end }}
 
-                    {{ .Content }}
+                      {{ .Content }}
+                    </div>
                   </div>
+
                 </div>
               {{ end }}
             </div>
 
             <div class="sidebar">
-              <div class="sidebar-item">
+              <!-- <div class="sidebar-item">
                 <h2 class="sidebar-title">Pesquisar</h2>
                 <input type="search" />
               </div>
               <div class="sidebar-item">
                 <h2 class="sidebar-title">Categorias</h2>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

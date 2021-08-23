@@ -1,6 +1,7 @@
 ---
 title: 'Paulo Augusto'
 slug: 'paulo-augusto'
+url: "autor/paulo-augusto"
 medium:
 linkedin:
 facebook:

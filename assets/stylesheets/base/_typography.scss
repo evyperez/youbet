@@ -21,6 +21,7 @@ body {
   font-family: $text-font-stack;
 
   color: palette('text', 'dark');
+
   background: palette('background', 'light');
 }
 
@@ -41,6 +42,7 @@ legend,
 caption,
 details > summary {
   margin: 0;
+
   font-weight: 700;
   font-family: Asap, sans-serif;
   font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
@@ -137,6 +139,7 @@ dt a {
 p {
   padding: 0;
   margin: 0;
+
   font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 }
 
@@ -178,11 +181,23 @@ p {
 .pre-title {
   font-size: to-rem(12px);
   line-height: to-rem(20px);
-  letter-spacing: 0.4rem;
 
   @media screen and (min-width: breakpoint('laptop')) {
     font-size: to-rem(14px);
     line-height: to-rem(22px);
+  }
+}
+.category-title {
+  margin-bottom: 0;
+
+  font-weight: light;
+  font-size: to-rem(11px);
+  line-height: to-rem(19px);
+
+  text-transform: uppercase;
+  @media screen and (min-width: breakpoint('laptop')) {
+    font-size: to-rem(12px);
+    line-height: to-rem(20px);
   }
 }
 
@@ -198,11 +213,16 @@ p {
 
 .title-section {
   margin-bottom: to-rem(24px);
+
   text-align: center;
 
   @media screen and (min-width: breakpoint('laptop')) {
     margin-bottom: to-rem(32px);
   }
+}
+
+.subtitle {
+  color: palette('gray', '80%');
 }
 
 /**

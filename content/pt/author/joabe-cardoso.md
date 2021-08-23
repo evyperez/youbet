@@ -1,6 +1,7 @@
 ---
 title: 'Joabe Cardoso'
 slug: 'joabe-cardoso'
+url: "autor/joabe-cardoso"
 medium:
 linkedin:
 facebook:

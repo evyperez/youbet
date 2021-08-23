@@ -6,6 +6,7 @@ linkedin:
 facebook:
 twitter:
 avatar:
+url: "autor/fabio-rodrigues"
 draft: false
 weight: 5
 ---
