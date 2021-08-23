@@ -144,39 +144,19 @@ p {
 }
 
 .rich-text {
-  h1 {
-    margin-bottom: to-rem(16px);
-  }
+  display: grid;
 
-  h2 {
-    margin-bottom: to-rem(16px);
-  }
+  grid-template-rows: auto;
 
-  h3 {
-    margin-bottom: to-rem(16px);
-  }
+  width: 100%;
 
-  h4 {
-    margin-bottom: to-rem(8px);
-  }
+  row-gap: to-rem(16px);
 
-  h5 {
-    margin-bottom: to-rem(8px);
+  @media screen and (min-width: breakpoint('laptop')) {
+    row-gap: to-rem(24px);
   }
 }
 
-.rich-text p {
-  margin-bottom: to-rem(16px);
-}
-
-.rich-text ol,
-.rich-text ul {
-  margin-bottom: to-rem(16px);
-}
-
-.rich-text:last-child {
-  margin-bottom: 0;
-}
 
 .pre-title {
   font-size: to-rem(12px);

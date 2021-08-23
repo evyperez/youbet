@@ -32,3 +32,7 @@
   translation: 'WhatsApp'
 - id: writtenBy
   translation: 'Escrito por'
+- id: by
+  translation: 'Por'
+- id: readMore
+  translation: 'Ler Mais'

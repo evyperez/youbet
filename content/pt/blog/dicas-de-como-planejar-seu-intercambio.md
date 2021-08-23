@@ -10,6 +10,10 @@ authors:
   - author: jessica-severo
 categories:
   - Blog
+tags:
+  - dicas
+  - planejamento
+  - intercâmbio
 description: Dicas de como planejar seu intercâmbio
 draft: false
 ---

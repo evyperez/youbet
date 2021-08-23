@@ -12,10 +12,10 @@ authors:
 categories:
   - Blog
 tags:
-  - Dicas
-  - Ensino Médio
-  - Estados Unidos
-  - Vídeos
+  - dicas
+  - ensino Médio
+  - estados Unidos
+  - vídeo
 description: 'O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas escolas americanas.'
 draft: false
 ---

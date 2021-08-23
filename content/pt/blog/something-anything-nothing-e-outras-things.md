@@ -12,9 +12,9 @@ authors:
 categories:
   - Blog
 tags:
-  - Dicas
-  - Inglês
-  - Aulas
+  - dicas
+  - inglês
+  - aulas
 description: "Existem técnicas que ajudam os estudantes a fixar o novo vocabulário"
 draft: false
 ---

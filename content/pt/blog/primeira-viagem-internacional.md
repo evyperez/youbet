@@ -12,7 +12,7 @@ authors:
 categories:
   - Blog
 tags:
-  - dicas úteis
+  - dicas
   - viagem internacional
 description: 'Primeira viagem internacional: dicas úteis'
 draft: false

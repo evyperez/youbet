@@ -11,9 +11,9 @@ authors:
 categories:
   - Blog
 tags:
-  - Aulas
-  - Inglês
-  - There
+  - aulas
+  - inglês
+  - there
 description: 'There is a cat in the basket'
 draft: false
 ---

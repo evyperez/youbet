@@ -6,9 +6,9 @@ medium:
 linkedin:
 facebook:
 twitter:
-avatar:
+avatar: '/uploads/images/avatar-youbet.png'
 draft: false
 weight: 1
 ---
 
-Equipe YouBet
+

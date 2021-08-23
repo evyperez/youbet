@@ -11,8 +11,8 @@ authors:
 categories:
   - Blog
 tags:
-  - Curiosidades
-  - Finanças
+  - curiosidades
+  - finanças
 description: 'Quanto custa viajar para o EUA?'
 draft: false
 ---

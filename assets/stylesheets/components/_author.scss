@@ -14,7 +14,8 @@
   }
 }
 
-.author--small {
+.author--small,
+.author--medium {
   padding: 0;
 
   column-gap: to-rem(8px);
@@ -22,20 +23,28 @@
   border: unset;
 }
 
-
 .author img {
-  width: to-rem(90px);
-  height: to-rem(90px);
+  width: to-rem(85px);
+  height: to-rem(85px);
 
   border-radius: 50%;
 }
 
-.author--small img {
+.author--medium img {
   width: to-rem(48px);
   height: to-rem(48px);
 
   border-radius: 50%;
 }
+
+
+.author--small img {
+  width: to-rem(30px);
+  height: to-rem(30px);
+
+  border-radius: 50%;
+}
+
 
 .author__about h2 {
   margin-bottom: to-rem(16px);

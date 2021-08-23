@@ -6,7 +6,7 @@ medium:
 linkedin:
 facebook:
 twitter:
-avatar: '/uploads/images/paulo-nascimento.jpg'
+avatar: '/uploads/images/paulo-augusto.jpg'
 draft: false
 weight: 2
 ---

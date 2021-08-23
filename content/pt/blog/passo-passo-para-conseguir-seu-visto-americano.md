@@ -12,7 +12,6 @@ categories:
   - Blog
   - Notícias
 tags:
-  - intercâmbio
   - passaporte
   - viagem internacional
   - visto americano

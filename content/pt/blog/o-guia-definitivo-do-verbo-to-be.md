@@ -11,9 +11,9 @@ authors:
 categories:
   - Blog
 tags:
-  - Aulas
-  - Inglês
-  - Verbos
+  - aulas
+  - inglês
+  - verbos
 description: 'O Guia Definitivo do Verbo To Be'
 draft: false
 ---

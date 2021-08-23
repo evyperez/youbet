@@ -24,23 +24,31 @@
         <div class="container">
           <div blog-wrap>
             <div class="blog-content">
-              <div class="blog-content__info">
-                <h2>{{ .Title }}</h2>
-                {{if .Params.subtitle }}
-                <p class="subtitle">
-                  {{.Params.subtitle}}
-                </p>
-                {{ end }}
+
+              <div class="post__header">
+                <div class="post-title">
+                    <h2>
+                      {{ .Title }}
+                    </h2>
+
+                  {{if .Params.subtitle }}
+                  <p class="subtitle">
+                    {{.Params.subtitle}}
+                  </p>
+                  {{ end }}
+                </div>
+
                 <div>
                   {{ range .Params.authors }}
                   {{ range where $.Site.Pages "Params.slug" .author }}
-                  <div class="author author--small">
+                  <div class="author author--medium">
                     <div>
                       <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
                     </div>
                     <div class="author__info">
                       {{if .Title}}
-                        <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
+                      <p>{{i18n "by" }}:</p>
+                      <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
                       {{ end }}
                       {{if .Data }}
                       {{ end }}
@@ -62,6 +70,17 @@
 
                 {{ .Content }}
               </div>
+              {{ if .Params.tags }}
+              <div class="tags-wrap">
+                <h2 class="heading-4">Tags:</h2>
+                <ul class="tags">
+                  {{ range .Params.tags }}
+                  <li>{{ . }}</li>
+                  {{ end}}
+                </ul>
+              </div>
+              {{ end }}
+
 
               {{ if .Params.authors }}
 
@@ -73,7 +92,7 @@
                     <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
                   </div>
                   <div class="author__about">
-                    <p class="category-title">{{ i18n "writtenBy" | title }}:</p>
+                    <p class="category-title">{{ i18n "by" | title }}:</p>
                     <h2 class="heading-4"><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></h2>
                     {{ .Content }}
                   </div>
@@ -84,15 +103,16 @@
               {{ end }}
 
             </div>
-            <div class="sidebar">
-              <!-- <div>
+            <!-- <div class="sidebar">
+              <div>
                   <h2>Pesquisar</h2>
                   <input type="search" />
                 </div>
                 <div>
-                  <h2>Categorias</h2>
-                </div> -->
-            </div>
+
+
+                </div>
+            </div> -->
           </div>
         </div>
       </section>
