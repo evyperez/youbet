@@ -167,7 +167,7 @@ He **gives** (ação) **_me_** money.
 
 I don’t **give** (ação)** _him_** money.
 
-**                                  Tabela Rápida**
+**Tabela Rápida**
 
 <table width="391" style="height: 489px;" >
 <tbody >

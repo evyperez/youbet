@@ -267,5 +267,3 @@ Por diversas vezes, isso ocorre pela interpretação de uma palavra que possui a
 E antes que eu me esqueça da história do ‘’PUSH’’, jamais conseguiríamos abrir a bendita porta já que ‘’PUSH’’, em inglês, significa ‘’empurrar’’ e não ‘’puxar’’.
 
 Até logo, e cuidado com as portas de restaurante!
-
-[Youbet Blog!](/blog)

@@ -1,7 +1,7 @@
 .tags-wrap {
   display: grid;
 
-  align-items: center;
+  align-items: flex-start;
 
   grid-template-columns: auto 1fr;
 
@@ -24,6 +24,7 @@
   width: auto;
 
   padding: to-rem(4px) to-rem(8px);
+  margin: 4px;
 
   font-size: to-rem(12px);
 

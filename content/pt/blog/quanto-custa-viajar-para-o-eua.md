@@ -48,6 +48,7 @@ O valor médio de gastos com hospedagem, alimentação, transporte público e a 
 ## **Filadélfia**
 
 ![Filadélfia](/uploads/images/philadelphia.png)
+
 É a cidade mais populosa do estado norte-americano da Pensilvânia, difícil sair de lá sem aprender sobre a história dos EUA. Philly (como é chamada carinhosamente por seus cidadãos) respira história, e sem contar o famoso sanduíche, quer dizer, não é simplesmente um sanduíche, e sim o famoso Philly Cheese Steak
 
 “_Se você estiver buscando a verdadeira essência da cidade, aquilo que é realmente típico da Philadelphia e que não existe igual em nenhum outro lugar do mundo, então, quando você visitar a cidade não pode deixar de experimentar algumas de suas especialidades gastronômicas. Entre elas um sanduíche. Espere: Não é apenas um sanduíche qualquer, é o Philly Cheese Steak_” - MauOscar

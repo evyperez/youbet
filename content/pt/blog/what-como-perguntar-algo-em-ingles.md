@@ -59,7 +59,7 @@ Para respondê-las basta apenas trazer o pronome para o seu lugar original. Esta
 
 Yes,** I am.**
 
-\*\*               \*\*A segunda etapa é a utilização de algumas palavras chave na construção das _questions_:
+A segunda etapa é a utilização de algumas palavras chave na construção das _questions_:
 
 **Exemplos:**
 

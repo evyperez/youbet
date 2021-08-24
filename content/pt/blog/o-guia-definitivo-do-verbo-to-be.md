@@ -54,7 +54,7 @@ Vamos conhecê-lo já!
 
 **To Be**
 
-![](http://youbetschool.com/wp-content/uploads/2017/05/To-be-1-1-300x156.png)
+![tabela to be](/uploads/images/to-be.jpg)
 
 **ATENÇÃO**
 

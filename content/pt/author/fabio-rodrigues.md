@@ -5,7 +5,7 @@ medium:
 linkedin:
 facebook:
 twitter:
-avatar:
+avatar: '/uploads/images/fabio-rodrigues.jpg'
 url: "autor/fabio-rodrigues"
 draft: false
 weight: 5

@@ -157,6 +157,24 @@ p {
   }
 }
 
+.rich-text > ul,
+.rich-text > ol {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
+  row-gap: to-rem(16px);
+
+  li > * {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
 
 .pre-title {
   font-size: to-rem(12px);

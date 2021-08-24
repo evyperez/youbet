@@ -37,7 +37,8 @@ Veja o passo a passo para solicitar o visto americano:
 
 1. **Preencher o formulário DS-160:**
 
-[via GIPHY](https://giphy.com/gifs/JIX9t2j0ZTN9S)
+![Gato Digitando](/uploads/images/gato-digitando.gif)
+
 
 Disponível no site [https://goo.gl/9Z7b](https://goo.gl/9Z7b), o formulário deve
 ser preenchido em inglês e com informações precisas e atualizadas (coloque o
@@ -46,11 +47,11 @@ etapa para evitar que a página expire e você tenha que fazer o preenchimento
 desde o início novamente. Ao terminar o processo, imprima a página de
 confirmação.
 
-2. **Agendar a entrevista:**
+1. **Agendar a entrevista:**
 
 <iframe src="https://giphy.com/embed/9zHYb8ovK6NXy" height="480" width="424" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>09
 
-[via GIPHY](https://giphy.com/gifs/microphone-9zHYb8ovK6NXy)
+![Jornalista](/uploads/images/jornalista.gif)
 
 Crie uma conta de usuário no site
 [https://goo.gl/BKQzhx](https://goo.gl/BKQzhx), insira o número de confirmação
@@ -77,9 +78,7 @@ c) Solicitantes que possuíam um visto na mesma categoria e que expirou menos de
 
 3. **Ida ao Centro de Atendimento ao Solicitante de Visto (CASV):**
 
-<iframe src="https://giphy.com/embed/l2JebkcmWeZrAOcpO" height="274" width="480" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>
-
-[via GIPHY](https://giphy.com/gifs/thehills-l2JebkcmWeZrAOcpO)
+![mulher andando](/uploads/images/mulher-andando.gif)
 
 No dia agendado, é só comparecer a um dos Centros de Atendimento ao Solicitante
 de Visto (CASV) para coleta dos dados biométricos (impressões digitais e foto).
@@ -97,9 +96,7 @@ carro, ou em guarda-volumes privados, que costumam cobrar caro pelo serviço.
 
 4. **Ida ao Consulado:**
 
-<iframe src="https://giphy.com/embed/l2Je8vBzKf0uPtHhK" height="274" width="480" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>
-
-[via GIPHY](https://giphy.com/gifs/thehills-the-hills-1x05-105-l2Je8vBzKf0uPtHhK)
+![mulher entrando predio](/uploads/images/mulher-entrando-predio.gif)
 
 É preciso ir ao Consulado ou à Embaixada no dia da entrevista. Leve o passaporte
 e a página de confirmação do formulário DS-160.
@@ -124,9 +121,7 @@ Essa não é uma lista oficial, mas que pode ajudar na hora de comprovar o
 
 5. **Aguardar o visto:**
 
-<iframe src="https://giphy.com/embed/24RWVQlg1oRri" height="264" width="480" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>
-
-[via GIPHY](https://giphy.com/gifs/ideias-esperana-esperar-24RWVQlg1oRri)
+![muppets](/uploads/images/muppets.gif)
 
 Depois desses passos, o solicitante receberá o visto em até dez dias úteis após
 a entrevista. Você pode checar o status nesse link:
@@ -143,6 +138,6 @@ Boa sorte e boa viagem!
 
 <iframe src="https://giphy.com/embed/3og0ICmyySyzbmnxqE" height="270" width="480" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>
 
-[via GIPHY](https://giphy.com/gifs/victoriajustice-victoria-justice-3og0ICmyySyzbmnxqE)
+![muppets](/uploads/images/menina-feliz.gif)
 
 Fonte: Melhores Destinos
