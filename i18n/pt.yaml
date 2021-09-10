@@ -1,38 +1,40 @@
-- id: blog
-  translation: 'Blog'
-- id: lastPosts
-  translation: 'Últimos posts'
-- id: authors
-  translation: 'Autores'
-- id: author
-  translation: 'Autor'
 - id: about
   translation: 'Sobre'
-- id: notFound
-  translation: 'Não encontrado'
-- id: home
-  translation: 'Home'
-- id: title404
-  translation: 'Ops! Página não encontrada'
+- id: author
+  translation: 'Autor'
+- id: authors
+  translation: 'Autores'
+- id: blog
+  translation: 'Blog'
+- id: by
+  translation: 'Por'
 - id: content404
   translation: 'Não encontramos o que você está procurando, volte para home'
-- id: firstName
-  translation: 'Nome'
-- id: lastName
-  translation: 'Sobrenome'
-- id: phone
-  translation: 'Telefone'
 - id: email
   translation: 'E-mail'
+- id: firstName
+  translation: 'Nome'
+- id: home
+  translation: 'Home'
+- id: lastName
+  translation: 'Sobrenome'
+- id: lastPosts
+  translation: 'Últimos posts'
 - id: message
   translation: 'Mensagem'
+- id: notFound
+  translation: 'Não encontrado'
+- id: phone
+  translation: 'Telefone'
+- id: readMore
+  translation: 'Ler Mais'
 - id: send
   translation: 'Enviar'
+- id: tags
+  translation: 'Tags'
+- id: title404
+  translation: 'Ops! Página não encontrada'
 - id: whatsApp
   translation: 'WhatsApp'
 - id: writtenBy
   translation: 'Escrito por'
-- id: by
-  translation: 'Por'
-- id: readMore
-  translation: 'Ler Mais'
