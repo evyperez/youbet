@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head/head.html" . }}
+
+
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
+    <main role="main" id="conteudo" class="internal-page blog-list">
+      <div class="container">
+        <div class="four-columns">
+          {{ range .Data.Pages.ByDate.Reverse }}
+
+          <div class="card">
+            <div class="card__image">
+              {{ if .Params.thumbnail }}
+                <a href="/blog/{{ .Params.slug }}">
+                  <img src="{{ .Params.thumbnail }}" alt="{{ .Params.thumbnailAlt }}" />
+                </a>
+              {{ end }}
+            </div>
+            <div class="card__body">
+
+              {{ range .Params.authors }}
+              {{ range where $.Site.Pages "Params.slug" .author }}
+
+              <div class="author author--medium">
+                <div>
+                  <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+                </div>
+                <div class="author__info">
+                  {{if .Title}}
+                  <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
+                  {{ end }}
+                  {{if .Data }}
+                  {{ end }}
+                </div>
+              </div>
+
+              {{ end }}
+              {{ end }}
+
+
+              <a href="{{if .Params.slug}} /blog/{{.Params.slug}} {{else}} {{.Title | urlize }} {{ end }}" class="text-decor--none text-align--center">
+                <h2 class="heading-4">
+                  {{ .Title }}
+                </h2>
+              </a>
+
+
+            </div>
+
+          </div>
+          {{ end }}
+        </div>
+
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+
+</html>

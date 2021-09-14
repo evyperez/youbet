@@ -38,25 +38,8 @@
                   {{ end }}
                 </div>
 
-                <div>
-                  {{ range .Params.authors }}
-                  {{ range where $.Site.Pages "Params.slug" .author }}
-                  <div class="author author--medium">
-                    <div>
-                      <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
-                    </div>
-                    <div class="author__info">
-                      {{if .Title}}
-                      <p>{{i18n "by" }}:</p>
-                      <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
-                      {{ end }}
-                      {{if .Data }}
-                      {{ end }}
-                    </div>
-                  </div>
-                  {{ end }}
-                  {{ end }}
-                </div>
+                {{ partial "blog/info.html" . }}
+
               </div>
               <div>
                 {{ if .Params.image }}
@@ -70,14 +53,18 @@
 
                 {{ .Content }}
               </div>
+
+
               {{ if .Params.tags }}
-              <div class="tags-wrap">
-                <h2 class="heading-4">Tags:</h2>
-                <ul class="tags">
+              <div class="tags">
+                <h2 class="heading-5">Tags</h2>
+                <div class="tag">
                   {{ range .Params.tags }}
-                  <li>{{ . }}</li>
+                  <a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">
+                    {{ . }}
+                  </a>
                   {{ end}}
-                </ul>
+                </div>
               </div>
               {{ end }}
 
@@ -92,7 +79,7 @@
                     <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
                   </div>
                   <div class="author__about">
-                    <p class="category-title">{{ i18n "by" | title }}:</p>
+                    <p class="category-title">{{ i18n "postBy" | title }}:</p>
                     <h2 class="heading-4"><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></h2>
                     {{ .Content }}
                   </div>
@@ -103,16 +90,6 @@
               {{ end }}
 
             </div>
-            <!-- <div class="sidebar">
-              <div>
-                  <h2>Pesquisar</h2>
-                  <input type="search" />
-                </div>
-                <div>
-
-
-                </div>
-            </div> -->
           </div>
         </div>
       </section>

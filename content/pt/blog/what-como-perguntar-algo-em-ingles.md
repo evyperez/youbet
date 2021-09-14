@@ -11,10 +11,7 @@ authors:
 categories:
   - Blog
 tags:
-  - aulas
   - inglês
-  - perguntas
-  - verbos
 description: 'What?! Como perguntar algo em inglês.'
 draft: false
 ---

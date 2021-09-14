@@ -8,6 +8,8 @@
   translation: 'Blog'
 - id: by
   translation: 'Por'
+- id: postBy
+  translation: 'Post por'
 - id: content404
   translation: 'Não encontramos o que você está procurando, volte para home'
 - id: email
@@ -38,3 +40,27 @@
   translation: 'WhatsApp'
 - id: writtenBy
   translation: 'Escrito por'
+- id: January
+  translation: 'Janeiro'
+- id: February
+  translation: 'Fevereiro'
+- id: March
+  translation: 'Março'
+- id: April
+  translation: 'Abril'
+- id: May
+  translation: 'Maio'
+- id: June
+  translation: 'Junho'
+- id: July
+  translation: 'Julho'
+- id: August
+  translation: 'Agosto'
+- id: September
+  translation: 'Setembro'
+- id: October
+  translation: 'Outubro'
+- id: November
+  translation: 'Novembro'
+- id: December
+  translation: 'Dezembro'

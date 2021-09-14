@@ -1,0 +1,7 @@
+<div class="tags">
+  <div class="tag">
+    {{- range $name, $items := .Site.Taxonomies.tags }}
+    <a href="{{ `tags/` | relLangURL }}{{ $name | urlize }}">{{ $name | humanize }}</a>
+    {{ end}}
+  </div>
+</div>

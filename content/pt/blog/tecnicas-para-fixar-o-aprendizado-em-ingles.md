@@ -6,6 +6,7 @@ image: /uploads/images/mulher-escrevendo.jpg
 imageAlt: "Mulher Escrevendo"
 thumbnail: /uploads/images/thumb-mulher-escrevendo.jpg
 thumbnailAlt: "mulher escrevendo"
+readingTime: "3 minutos"
 authors:
   - author: jessica-severo
 categories:

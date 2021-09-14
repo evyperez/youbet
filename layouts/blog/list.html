@@ -1,130 +1,95 @@
 <!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
 
-  {{ partial "head/head.html" . }}
-
-
-  <body>
-    <div class="main-container">
-      {{ partial "header.html" . }}
+{{ partial "head/head.html" . }}
 
 
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
+    <main role="main" id="conteudo" class="internal-page blog-list">
       <div class="container">
-        {{ partial "breadcrumbs.html" . }}
-      </div>
-      <main role="main" id="conteudo" class="internal-page blog-list">
-        <div class="container">
-          <div class="blog-wrap">
-            <div class="post-list">
-              {{ range .Data.Pages.ByDate.Reverse }}
+        <div class="blog-wrap">
+          <div class="post-list">
+            {{ range .Data.Pages.ByDate.Reverse }}
 
-                <div class="post">
-                  {{ if .Params.video }}
-                    <div class="embed-container">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src="{{ .Params.video }}?controls=0?rel=0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      >
-                      </iframe>
-                    </div>
-                  {{ else }}
-                  {{ if .Params.image }}
-                    <div class="post__image">
-                      <a href="/blog/{{ .Params.slug }}">
-                        <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}" />
-                      </a>
-                    </div>
+            <div class="post">
+              {{ if .Params.video }}
+              <div class="embed-container">
+                <iframe width="560" height="315" src="{{ .Params.video }}?controls=0?rel=0" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              {{ else }}
+              {{ if .Params.image }}
+              <div class="post__image">
+                <a href="/blog/{{ .Params.slug }}">
+                  <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}" />
+                </a>
+              </div>
+              {{ end }}
+              {{ end }}
+
+              <div class="post__header">
+                <div class="post-title">
+                  <a href="/blog/{{ .Params.slug }}" class="text-decor--none">
+                    <h2>
+                      {{ .Title }}
+                    </h2>
+                  </a>
+
+                  {{if .Params.subtitle }}
+                  <p class="subtitle">
+                    {{.Params.subtitle}}
+                  </p>
                   {{ end }}
+                </div>
+
+                {{ partial "blog/info.html" . }}
+
+              </div>
+
+              <div class="post__body">
+
+                {{ if .Params.summary }}
+
+                <div class="rich-text">
+                  {{ .Params.summary }}
+
+                  <button>{{ i18n "readMore" }}</button>
+
+                </div>
+
+                {{ else }}
+                <div class="rich-text">
+                  {{.Content }}
+                </div>
                 {{ end }}
 
-                <div class="post__header">
-                  <div class="post-title">
-                    <a href="/blog/{{ .Params.slug }}" class="text-decor--none">
-                      <h2>
-                        {{ .Title }}
-                      </h2>
-                    </a>
 
-                    {{if .Params.subtitle }}
-                    <p class="subtitle">
-                      {{.Params.subtitle}}
-                    </p>
-                    {{ end }}
-                  </div>
-
-                  <div>
-                    {{ range .Params.authors }}
-                    {{ range where $.Site.Pages "Params.slug" .author }}
-                    <div class="author author--medium">
-                      <div>
-                        <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
-                      </div>
-                      <div class="author__info">
-                        {{if .Title}}
-                        <p>{{i18n "by" }}:</p>
-                        <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
-                        {{ end }}
-                        {{if .Data }}
-                        {{ end }}
-                      </div>
-                    </div>
-                    {{ end }}
-                    {{ end }}
-                  </div>
-                </div>
-
-                <div class="post__body">
-
-                  {{ if .Params.summary }}
-
-                  <div class="rich-text">
-                    {{ .Params.summary }}
-
-                    <button>{{ i18n "readMore" }}</button>
-
-                  </div>
-
-                  {{ else }}
-                    <div class="rich-text">
-                      {{.Content }}
-                    </div>
-                  {{ end }}
-
-                  {{ if .Params.tags }}
-                  <div class="tags-wrap">
-                    <h2 class="heading-4">Tags:</h2>
-                    <ul class="tags">
-                      {{ range .Params.tags }}
-                      <li>{{ . }}</li>
-                      {{ end}}
-                    </ul>
-                  </div>
-                  {{ end }}
-                </div>
-
-                </div>
-              {{ end }}
-            </div>
-
-            <div class="sidebar">
-              <!-- <div class="sidebar-item">
-                <h2 class="sidebar-title">Pesquisar</h2>
-                <input type="search" />
               </div>
-              <div class="sidebar-item">
-                <h2 class="sidebar-title">Categorias</h2>
-              </div> -->
-            </div>
-          </div>
-        </div>
-      </main>
 
-      {{ partial "footer.html" . }}
-    </div>
-  </body>
+            </div>
+            {{ end }}
+          </div>
+
+          {{ partial "sidebar.html" . }}
+
+        </div>
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+
 </html>

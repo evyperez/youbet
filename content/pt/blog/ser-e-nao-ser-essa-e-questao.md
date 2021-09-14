@@ -11,7 +11,6 @@ authors:
 categories:
   - Blog
 tags:
-  - aula
   - inglês
 description: 'Ser e não ser, essa é a questão!'
 draft: false

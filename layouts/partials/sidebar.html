@@ -1,0 +1,15 @@
+<div class="sidebar">
+  {{/*  <div class="sidebar-item">
+    <h2 class="sidebar-title">Pesquisar</h2>
+    <input type="search" />
+  </div>  */}}
+  <div class="sidebar-item">
+    <h2 class="sidebar-title">{{ i18n "tags" }}</h2>
+
+      {{- if isset .Site.Taxonomies "tags" }}
+      {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+        {{partial "tags" . }}
+        {{- end }}
+      {{- end }}
+  </div>
+</div>

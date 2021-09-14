@@ -112,10 +112,34 @@
   @media screen and (min-width: breakpoint('tablet__landscape')) {
     display: grid;
 
-    grid-template-columns: auto to-rem(170px);
+    grid-template-columns: auto to-rem(380px);
 
     column-gap: to-rem(24px);
   }
+}
+
+.blog-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  p {
+    font-size: to-rem(13px);
+    line-height: to-rem(21px);
+    color: palette('gray', '80%');
+  }
+
+  .dot {
+    margin: 0 to-rem(8px);
+  }
+}
+
+.dot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: palette('gray', '60%');
+  border-radius: 50%;
 }
 
 .sidebar {

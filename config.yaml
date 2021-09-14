@@ -2,7 +2,6 @@ baseURL: '/'
 defaultContentLanguage: pt
 languageCode: 'pt-br'
 disableKinds:
-  - 'taxonomyTerm'
   - 'RSS'
   - 'sitemap'
 enableRobotsTXT: false
@@ -17,8 +16,12 @@ googleAnalytics: 'UA-90457577-1'
 buildFuture: true
 FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
+removePathAccents: true
 taxonomies:
   role: 'role'
+  author: 'authors'
+  tag: 'tags'
+  category: 'categories'
 permalinks:
   pages: /:slug/
 languages:

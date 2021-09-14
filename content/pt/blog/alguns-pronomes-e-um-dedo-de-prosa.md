@@ -11,8 +11,7 @@ authors:
 categories:
   - Blog
 tags:
-  - aulas
-  - ingles
+  - inglês
 description: 'Alguns pronomes e um dedo de prosa.'
 draft: false
 ---

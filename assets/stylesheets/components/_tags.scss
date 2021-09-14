@@ -1,14 +1,9 @@
-.tags-wrap {
-  display: grid;
-
-  align-items: flex-start;
-
-  grid-template-columns: auto 1fr;
-
-  column-gap: to-rem(16px);
+.tags h2 {
+  margin-bottom: to-rem(8px);
 }
-.tags {
-  display: inline-block;
+
+.tag {
+  display: block;
 
   padding: 0;
   margin: 0;
@@ -18,17 +13,26 @@
   list-style: none;
 }
 
-.tags li {
+.tag a {
   display: inline-block;
 
   width: auto;
 
-  padding: to-rem(4px) to-rem(8px);
-  margin: 4px;
+  padding: to-rem(4px) to-rem(10px);
+  margin: 2px;
 
   font-size: to-rem(12px);
 
+  text-decoration: none;
+  text-transform: capitalize;
+
+  color: palette('gray');
+
   background: palette('gray', '10%');
 
-  border-radius: $rounded-corner-s;
+  border-radius: 100px;
+
+  &:hover {
+    background: palette('gray', '30%');
+  }
 }

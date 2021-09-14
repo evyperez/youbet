@@ -11,9 +11,9 @@ authors:
 categories:
   - Blog
 tags:
-  - dicas
   - planejamento
   - intercâmbio
+subtitle: Faça um planejamento para sua viagem
 description: Dicas de como planejar seu intercâmbio
 draft: false
 ---

@@ -16,6 +16,8 @@
 
 .author--small,
 .author--medium {
+  align-items: center;
+
   padding: 0;
 
   column-gap: to-rem(8px);
@@ -29,6 +31,9 @@
 
   border-radius: 50%;
 }
+.author > a {
+  display: flex;
+}
 
 .author--medium img {
   width: to-rem(48px);
@@ -39,8 +44,8 @@
 
 
 .author--small img {
-  width: to-rem(30px);
-  height: to-rem(30px);
+  width: to-rem(28px);
+  height: to-rem(28px);
 
   border-radius: 50%;
 }

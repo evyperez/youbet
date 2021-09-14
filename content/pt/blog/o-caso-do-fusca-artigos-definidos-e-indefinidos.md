@@ -11,7 +11,6 @@ authors:
 categories:
   - Blog
 tags:
-  - aula
   - inglês
 description: 'O caso do Fusca que subia a parede - Artigos definidos e Indefinidos'
 draft: false
