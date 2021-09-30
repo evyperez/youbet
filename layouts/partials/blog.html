@@ -1,7 +1,7 @@
 <section class="blog-partial">
   <div class="container">
     <h2 class="title-section">
-      {{ i18n "lastPosts" }}
+      {{ i18n "blog" }}
     </h2>
 
     <div class="glide">
@@ -18,14 +18,14 @@
                 <div class="post">
                   <div class="post__image">
                     <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
-                    <div class="img-subtitle">
-                      {{ range .Params.authors }}
-                        {{ range where $.Site.Pages "Params.slug" .author }}
-                          <p class="author">{{ .Title }}</p>
-                        {{ end }}
+                  </div>
+                  <div class="img-subtitle">
+                    {{/*  {{ range .Params.authors }}
+                      {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                        <p class="img-subtitle__author">{{ .Title }}</p>
                       {{ end }}
-                      <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
-                    </div>
+                    {{ end }}  */}}
+                    <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
                   <h2 class="heading-5">{{ .Title }}</h2>
                 </div>

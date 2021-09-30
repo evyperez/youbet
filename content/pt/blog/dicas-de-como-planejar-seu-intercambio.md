@@ -1,15 +1,19 @@
 ---
 title: Dicas de como planejar seu intercâmbio
 slug: dicas-de-como-planejar-seu-intercambio/
-image: /uploads/images/pexels-photo-373892.jpg
+image: /uploads/images/planejar-seu-intercambio.jpg
 imageAlt: Mesa de escritório
-thumbnail: /uploads/images/pexels-photo-373892.jpg
+thumbnail: /uploads/images/thumb-planejar-intercambio.jpg
 thumbnailAlt: Mesa de escritório
 date: 2017-11-16 13:55:49+00:00
 authors:
-  - author: jessica-severo
+  - jessica-severo
 categories:
-  - Blog
+  - intercâmbio
+tags:
+  - planejamento
+  - intercâmbio
+subtitle: Faça um planejamento para sua viagem
 description: Dicas de como planejar seu intercâmbio
 draft: false
 ---

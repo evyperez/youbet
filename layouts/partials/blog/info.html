@@ -1,0 +1,23 @@
+<div class="blog-info">
+  {{ partial "author-miniature.html" . }}
+
+  {{if .Date }}
+  <div>
+    <i class="dot"></i>
+  </div>
+  <div class="post-data">
+    <p>
+      {{.Date.Day}} de {{i18n .Date.Month}} de {{.Date.Year}}
+    </p>
+  </div>
+  {{ end }}
+
+  {{if .Params.readingTime }}
+  <div>
+    <i class="dot"></i>
+  </div>
+  <div class="reading-time">
+    <p>{{ .Params.readingTime }}</p>
+  </div>
+  {{ end }}
+</div>

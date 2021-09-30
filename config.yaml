@@ -2,7 +2,6 @@ baseURL: '/'
 defaultContentLanguage: pt
 languageCode: 'pt-br'
 disableKinds:
-  - 'taxonomyTerm'
   - 'RSS'
   - 'sitemap'
 enableRobotsTXT: false
@@ -12,13 +11,18 @@ disableFastRender: true
 ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
 stepAnalysis: true
 templateMetrics: true
-pluralizeListTitles: false
+pluralizeListTitles: true
+preserveTaxonomyNames: true
 googleAnalytics: 'UA-90457577-1'
 buildFuture: true
 FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
+removePathAccents: true
 taxonomies:
   role: 'role'
+  tag: 'tags'
+  category: 'categories'
+  author: 'authors'
 permalinks:
   pages: /:slug/
 languages:

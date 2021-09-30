@@ -1,0 +1,17 @@
+{{- range .Params.authors }}
+
+{{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+
+<div class="author">
+  <div class="avatar avatar--small">
+    <a href="/autores/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+  </div>
+  <div>
+    {{if .Params.Name}}
+    <p class="small"><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></p>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

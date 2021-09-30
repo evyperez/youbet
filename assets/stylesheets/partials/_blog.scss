@@ -13,12 +13,6 @@
 
   flex-direction: column;
 
-  margin-bottom: to-rem(32px);
-
-  @media screen and (min-width: breakpoint('laptop')) {
-    margin-bottom: to-rem(80px);
-  }
-
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -30,13 +24,18 @@
   display: block;
 
   width: 100%;
-  height: 180px;
+  height: 250px;
 
-  margin-bottom: to-rem(32px);
+  @media screen and (min-width: breakpoint('tablet')) {
+    height: 250px;
+  }
 
   @media screen and (min-width: breakpoint('laptop')) {
-    width: 100%;
-    height: 250px;
+    height: 169px;
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    height: 200px;
   }
 
   img {
@@ -49,63 +48,98 @@
 
     object-fit: cover;
   }
-  .img-subtitle {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
+}
 
-    display: flex;
+.img-subtitle {
+  display: flex;
+  z-index: 1;
 
-    justify-content: center;
+  justify-content: center;
 
-    width: 80%;
-    max-width: 300px;
+  width: 80%;
+  max-width: to-rem(300px);
 
-    padding: 4px;
+  padding: to-rem(4px);
+  margin: auto;
+  margin-top: to-rem(-16px);
+  margin-bottom: to-rem(16px);
 
-    text-decoration: none;
+  text-decoration: none;
 
-    background: palette('orange', '60%');
+  background: palette('orange', '60%');
 
-    border-radius: 5px;
+  border-radius: $rounded-corner-s;
 
-    transform: translateX(-50%);
+  .img-subtitle__author {
+    @include truncate;
+  }
 
-    p {
-      margin-bottom: 0;
+  p {
+    margin-bottom: 0;
 
-      &::after {
-        display: inline-block;
+    font-size: to-rem(12px);
+    line-height: to-rem(20px);
 
-        width: to-rem(4px);
-        height: to-rem(4px);
+    &::after {
+      display: inline-block;
 
-        margin-right: to-rem(8px);
-        margin-left: to-rem(8px);
+      width: to-rem(4px);
+      height: to-rem(4px);
 
-        vertical-align: middle;
+      margin-right: to-rem(8px);
+      margin-left: to-rem(8px);
 
-        background: palette('text', 'dark');
+      vertical-align: middle;
 
-        border-radius: 50%;
+      background: palette('text', 'dark');
 
-        content: '';
-      }
-      &:last-of-type::after {
-        content: none;
-      }
+      border-radius: 50%;
+
+      content: '';
+    }
+    &:last-of-type::after {
+      content: none;
+    }
+
+    @media screen and (min-width: breakpoint('tablet__landscape')) {
+      font-size: to-rem(14px);
+      line-height: to-rem(22px);
     }
   }
 }
 
-.blog-wrap {
+.blog-wrap--sidebar {
   @media screen and (min-width: breakpoint('tablet__landscape')) {
     display: grid;
 
-    grid-template-columns: auto to-rem(170px);
+    grid-template-columns: auto to-rem(320px);
 
-    column-gap: to-rem(24px);
+    column-gap: to-rem(32px);
   }
+}
+
+.blog-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  p {
+    font-size: to-rem(13px);
+    line-height: to-rem(21px);
+    color: palette('gray', '80%');
+  }
+
+  .dot {
+    margin: 0 to-rem(8px);
+  }
+}
+
+.dot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: palette('gray', '60%');
+  border-radius: 50%;
 }
 
 .sidebar {
@@ -115,14 +149,14 @@
 }
 
 .sidebar-title {
-  margin-bottom: 18px;
+  margin-bottom: to-rem(18px);
 }
 
 .sidebar-item {
   position: relative;
 
   padding: 0 to-rem(16px);
-  margin-bottom: 24px;
+  margin-bottom: to-rem(38px);
 
   &:last-of-type {
     margin-bottom: 0;
@@ -155,4 +189,56 @@
 
     content: '';
   }
+}
+
+.blog-list .post {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
+  padding-bottom: to-rem(48px);
+
+  border-bottom: 2px solid palette('gray', '10%');
+
+  row-gap: to-rem(24px);
+  @media screen and (min-width: breakpoint('tablet__landscape')) {
+    row-gap: to-rem(16px);
+  }
+}
+
+.blog-content {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
+  row-gap: to-rem(18px);
+  max-width: to-rem(900px);
+
+  @media screen and (min-width: breakpoint('tablet__landscape')) {
+    row-gap: to-rem(24px);
+  }
+}
+
+.post-title {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  row-gap: to-rem(4px);
+}
+
+.post__footer,
+.post__header,
+.post__body {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
+  row-gap: to-rem(16px);
 }

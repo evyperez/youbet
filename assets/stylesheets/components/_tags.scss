@@ -1,0 +1,38 @@
+.tags h2 {
+  margin-bottom: to-rem(8px);
+}
+
+.tag {
+  display: block;
+
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+
+  list-style: none;
+}
+
+.tag a {
+  display: inline-block;
+
+  width: auto;
+
+  padding: to-rem(4px) to-rem(10px);
+  margin: 2px;
+
+  font-size: to-rem(12px);
+
+  text-decoration: none;
+  text-transform: capitalize;
+
+  color: palette('gray');
+
+  background: palette('gray', '10%');
+
+  border-radius: 100px;
+
+  &:hover {
+    background: palette('gray', '30%');
+  }
+}

@@ -1,0 +1,70 @@
+.author-list {
+  display: grid;
+  row-gap: 10px;
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.author {
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  column-gap: to-rem(12px);
+
+  align-items: center;
+
+  padding: 0;
+
+  border: unset;
+
+}
+
+.author--center {
+  align-items: center;
+}
+
+
+.avatar {
+  width: to-rem(38px);
+  height: to-rem(38px);
+}
+
+.avatar--big {
+  width: to-rem(90px);
+  height: to-rem(90px);
+}
+
+.avatar--medium {
+  width: to-rem(48px);
+  height: to-rem(48px);
+}
+
+.author a {
+  display: flex;
+  border-radius: 50%;
+  text-decoration: unset;
+}
+
+.author img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.author__about h2 {
+  margin-bottom: to-rem(16px);
+
+  @media screen and (min-width: breakpoint('laptop')) {
+    margin-bottom: to-rem(18px);
+  }
+}
+
+.author__about p {
+  color: palette('gray', '80%');
+}

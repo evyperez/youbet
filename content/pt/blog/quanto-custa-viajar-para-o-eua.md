@@ -2,17 +2,17 @@
 title: Quanto custa viajar para o EUA?
 slug: quanto-custa-viajar-para-o-eua/
 date: 2017-08-17 22:02:51+00:00
-image: /uploads/images/patrick-tomasso.jpeg
-imageAlt: Patrick Tomassoßß
-thumbnail: /uploads/images/patrick-tomasso.jpeg
-thumbnailAlt: Patrick Tomassoßß
+image: /uploads/images/estados-unidos.jpeg
+imageAlt: "Foto do EUA"
+thumbnail: /uploads/images/thumb-united-states.jpg
+thumbnailAlt: "Foto do EUA"
 authors:
-  - author: pauloaugustopn
+  - paulo-augusto
 categories:
-  - Blog
+  - Planejamento
 tags:
-  - Curiosidades
-  - Finanças
+  - curiosidades
+  - custo
 description: 'Quanto custa viajar para o EUA?'
 draft: false
 ---
@@ -48,6 +48,7 @@ O valor médio de gastos com hospedagem, alimentação, transporte público e a 
 ## **Filadélfia**
 
 ![Filadélfia](/uploads/images/philadelphia.png)
+
 É a cidade mais populosa do estado norte-americano da Pensilvânia, difícil sair de lá sem aprender sobre a história dos EUA. Philly (como é chamada carinhosamente por seus cidadãos) respira história, e sem contar o famoso sanduíche, quer dizer, não é simplesmente um sanduíche, e sim o famoso Philly Cheese Steak
 
 “_Se você estiver buscando a verdadeira essência da cidade, aquilo que é realmente típico da Philadelphia e que não existe igual em nenhum outro lugar do mundo, então, quando você visitar a cidade não pode deixar de experimentar algumas de suas especialidades gastronômicas. Entre elas um sanduíche. Espere: Não é apenas um sanduíche qualquer, é o Philly Cheese Steak_” - MauOscar
@@ -59,7 +60,7 @@ São Francisco
 
 Ou seja, em média para visitar cidades turísticas nestes três importantes lugares dos EUA o gasto diário seria na média de **R$210,00** por dia, o que fica longe da lista dos lugares mais baratos para se viajar no mundo.
 
-Mas eu pensei no plano que a YouBet! School oferece de intercâmbio por um mês, na cidade de Hamburg próxima à estes três lugares, em menos de duas horas (pra um paulistano feito eu, isto não é nada!), você contemplaria estas cidades com um gasto diário menor que **R$150,00. **O que sobraria muito para usar como quiser, até mesmo na própria viagem!
+Mas eu pensei no plano que a YouBet! School oferece de intercâmbio por um mês, na cidade de Hamburg próxima à estes três lugares, em menos de duas horas (pra um paulistano feito eu, isto não é nada!), você contemplaria estas cidades com um gasto diário menor que **R$150,00.** O que sobraria muito para usar como quiser, até mesmo na própria viagem!
 
 Imagine-se agora, conhecendo os lugares mais famosos do mundo, aproveitando a viagem e fazendo um curso internacional, gastando pouco.
 

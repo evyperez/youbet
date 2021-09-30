@@ -1,23 +1,38 @@
 .card {
-  border: 1px solid palette('gray', '30%');
+  width: 100%;
+
+  border: 1px solid palette('gray', '10%');
+  border-radius: 8px;
+
 }
 
 .card__image {
   display: block;
+  position: relative;
 
-  > img {
+  img {
     width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 }
 
-.card__header {
-  padding: to-rem(16px);
-}
 
-.card__body {
-  padding: to-rem(16px);
-}
-
+.card__header,
+.card__body,
 .card__footer {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
   padding: to-rem(16px);
+
+  row-gap: to-rem(16px);
+}
+
+.card__body--fixed {
+  height: 180px;
+  align-content: space-between;
 }

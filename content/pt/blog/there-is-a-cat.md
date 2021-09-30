@@ -2,18 +2,16 @@
 title: There is a cat in the basket
 slug: there-is-a-cat/
 date: 2017-08-15 19:00:25+00:00
-image: /uploads/images/cat-in-the-basket.jpeg
-imageAlt: Gato dentro da cesta
-thumbnail: /uploads/images/cat-in-the-basket.jpeg
-thumbnailAlt: Gato dentro da cesta
+image: /uploads/images/cat-in-the-basket.jpg
+imageAlt: "Gato dentro da cesta"
+thumbnail: /uploads/images/thumb-cat-in-the-basket.jpg
+thumbnailAlt: "Gato dentro da cesta"
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
+  - inglês
 tags:
-  - Aulas
-  - Inglês
-  - There
+  - there
 description: 'There is a cat in the basket'
 draft: false
 ---
@@ -22,29 +20,30 @@ draft: false
 
 Quando eu era criança tinha muita coisa que eu não entendia ao começar a estudar.
 
-**_“Eu tenho raiva!”_ **Como eu posso ter raiva se eu nunca comprei ou se não é um objeto para se “ter”, até que aos poucos fui entendendo que esse “ter raiva” nada mais era do que dizer que estava bravo, que **_existia_** esse sentimento dentro de mim, que **_havia_** algo diferente.
+**_“Eu tenho raiva!”_** Como eu posso ter raiva se eu nunca comprei ou se não é um objeto para se “ter”, até que aos poucos fui entendendo que esse “ter raiva” nada mais era do que dizer que estava bravo, que **_existia_** esse sentimento dentro de mim, que **_havia_** algo diferente.
 
-Em inglês existe uma expressão para definir “tem, há, existe”, **there is. **Antes de continuarmos gostaria de destacar o termo _expressão_.
+Em inglês existe uma expressão para definir “tem, há, existe”, **there is.** Antes de continuarmos gostaria de destacar o termo _expressão_.
 
 <blockquote>"Expressão é tudo aquilo que carrega uma ideia muito mais profundo do que as palavras ditas querem dizer."</blockquote>
 
-Voltando ao** There is**, essas duas palavras querem dizer exatamente isso e devem ser sempre utilizadas juntas.
+Voltando ao **There is**, essas duas palavras querem dizer exatamente isso e devem ser sempre utilizadas juntas.
 
-*Mas Joabe, is não é o singular do verbo to be?
-*Ótima observação! Sim, por isso que ao falarmos de plural devemos alterar o Is por Are.
+*Mas Joabe, is não é o singular do verbo to be?*
+Ótima observação! Sim, por isso que ao falarmos de plural devemos alterar o Is por Are.
 
-**Singular:
-***There Is*  – Tem, existe, há
-_Dér is
-_
-**Plural:
-**There Are– Têm, existem, há
-_Dér ár_
+### Singular:
+
+There Is*  – Tem, existe, há
+
+### Plural:
+
+**There Are – Têm, existem, há
 
 Ou seja, nossa fórmula deve ser sempre **There + To be.**
 
 **Exemplos:**
-**There is a dog behind you - **Tem um cachorro atrás de mim.
+
+**There is a dog behind you -** Tem um cachorro atrás de mim.
 _Dér is a dóg birráind iú_
 
 **There are many people here –** Têm muitas pessoas aqui.
@@ -56,14 +55,13 @@ _Dér is sãmfing in de ér_
 **There are a lot of songs on my computer** – Têm várias músicas no meu computador.
 _Dér ar ei lót ov songs on mai compiurer_
 
-###
+## Past
 
-## **Past**
+Para falarmos que existia / havia / tinha algo é exatamente a mesma lógica, só com uma leve alteração. Como vimos ao estudarmos o verbo To Be **devemos substituir* Is por Was* sempre no singular e Are por Were sempre no plural**
 
-Para falarmos que existia / havia / tinha algo é exatamente a mesma lógica, só com uma leve alteração. Como vimos ao estudarmos o verbo To Be** devemos substituir* Is por Was* sempre no singular e Are por Were sempre no plural**
+**Exemplos:**
 
-**Exemplos:
-\*\***There was a boy here\*\* – Tinha um menino aqui.
+**There was a boy here** – Tinha um menino aqui.
 _Dér uós ei bói rir_
 
 **There were soldiers on the street** – Havia soldados na rua.

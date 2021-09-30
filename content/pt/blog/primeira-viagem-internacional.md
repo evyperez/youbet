@@ -1,17 +1,17 @@
 ---
 title: 'Primeira viagem internacional: dicas úteis'
+subtitle: 'Criamos um guia detalhado para você não passar perrengue e desfrutar'
 slug: primeira-viagem-internacional/
 date: 2017-11-02 13:00:46+00:00
 image: /uploads/images/mapamundi.jpeg
-imageAlt: Mapa mundi
-thumbnail: /uploads/images/mapamundi.jpeg
-thumbnailAlt: Mapa mundi
+imageAlt: "mapa mundi"
+thumbnail: /uploads/images/thumb-mapa.jpg
+thumbnailAlt: "mapa mundi"
 authors:
-  - author: jessica-severo
+  - jessica-severo
 categories:
-  - Blog
+  - intercâmbio
 tags:
-  - dicas úteis
   - viagem internacional
 description: 'Primeira viagem internacional: dicas úteis'
 draft: false

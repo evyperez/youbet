@@ -1,19 +1,17 @@
 ---
-title: Alguns pronomes e um dedo de prosa.
+title: Alguns pronomes e um dedo de prosa
 slug: alguns-pronomes-e-um-dedo-de-prosa/
 date: 2017-07-11 16:37:55+00:00
-image: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
+image: /uploads/images/mount-rushmore.jpg
 imageAlt: Monument Rushmore
-thumbnail: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
+thumbnail: /uploads/images/thumb-mount-rushmore.jpg
 thumbnailAlt: Monument Rushmore
 authors:
-  - author: joabecardoso
+  - joabe-cardoso
 categories:
-  - Blog
+  - inglês
 tags:
-  - Aulas
-  - Inglês
-  - Pronomes
+  - pronomes
 description: 'Alguns pronomes e um dedo de prosa.'
 draft: false
 ---
@@ -168,7 +166,7 @@ He **gives** (ação) **_me_** money.
 
 I don’t **give** (ação)** _him_** money.
 
-**                                  Tabela Rápida**
+**Tabela Rápida**
 
 <table width="391" style="height: 489px;" >
 <tbody >

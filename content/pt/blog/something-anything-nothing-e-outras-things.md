@@ -1,27 +1,27 @@
 ---
-title: Something, Anything, Nothing e outras ‘’things’’
+title: Something, Anything, Nothing e outras "things"
 slug: something-anything-nothing-e-outras-things
 date: 2017-08-22 00:15:15+00:00
 image: /uploads/images/something.jpg
-imageAlt: 'Mulher Escrevendo'
-thumbnail: /uploads/images/something.jpg
-thumbnailAlt: 'Mulher Escrevendo'
+imageAlt: "Mulher Escrevendo"
+thumbnail: "/uploads/images/thumb-anything.jpg"
+thumbnailAlt: "Frase: If you don't stand for something you will fall for anything"
 video: https://www.youtube.com/embed/UelDrZ1aFeY
 authors:
-  - author: fabio-rodrigues
+  - fabio-rodrigues
 categories:
-  - Blog
+  - inglês
 tags:
-  - Dicas
-  - Inglês
-  - Aulas
-description: 'Existem técnicas que ajudam os estudantes a fixar o novo vocabulário'
+  - something
+  - anything
+  - nothing
+description: "Existem técnicas que ajudam os estudantes a fixar o novo vocabulário"
 draft: false
 ---
 
 Ah, o inglês e suas formas de falar das coisas…
 
-Muito provavelmente você já se deparou com alguma dessas três palavrinhas em algum texto em inglês – seja ele oral ou escrito. Se houve dúvidas em como usá-las e expressar frases em inglês que nos parecem boas no português, como ‘’Eu não tenho nada’’ ou ‘’Eu quero alguma coisa’’, seus problemas acabaram!
+Muito provavelmente você já se deparou com alguma dessas três palavrinhas em algum texto em inglês – seja ele oral ou escrito. Se houve dúvidas em como usá-las e expressar frases em inglês que nos parecem boas no português, como "Eu não"enho nada’’ ou ‘’Eu quero alguma coisa’’, seus problemas acabaram!
 
 O assunto dialoga bastante com as estruturas sintáticas de negação da nossa língua, o português. Ao ler um pouquinho mais sobre essas três palavrinhas e outras com formação parecida (Somebody, Anywhere etc.), é fácil perceber alguns outros fundamentos estruturais das sentenças no inglês.
 

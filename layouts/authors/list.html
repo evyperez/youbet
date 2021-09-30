@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
+  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
+
+{{ partial "head/head.html" . }}
+
+
+<body>
+  <div class="main-container">
+    {{ partial "header.html" . }}
+
+    <main role="main" id="conteudo" class="internal-page">
+      <div class="container">
+        <div class="three-columns">
+
+          {{ range .Data.Pages.ByDate.Reverse }}
+          <div class="card">
+            {{ if .Params.thumbnail }}
+            <div class="card__image">
+                  <img src="{{ .Params.thumbnail }}" alt="{{ .Params.Name }}" />
+
+                {{ partial "float-avatar.html" . }}
+
+              </div>
+            {{ end }}
+
+            <div class="card__body">
+
+              {{/*  {{ range .Params.authors }}
+              {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+
+              {{if .Params.Name }}
+              <p><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></p>
+              {{ end }}
+
+              {{ end }}
+              {{ end }}  */}}
+
+
+              <a href="{{if .Params.slug}} /autores/{{.Params.slug}} {{else}} {{.Params.Name | urlize }} {{ end }}" class="text-decor--none text-align--center">
+                <h2 class="heading-4">
+                  {{ .Params.Name }}
+                </h2>
+              </a>
+
+
+            </div>
+
+          </div>
+          {{ end }}
+        </div>
+
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+
+</html>

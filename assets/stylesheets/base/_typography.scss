@@ -21,6 +21,7 @@ body {
   font-family: $text-font-stack;
 
   color: palette('text', 'dark');
+
   background: palette('background', 'light');
 }
 
@@ -41,6 +42,7 @@ legend,
 caption,
 details > summary {
   margin: 0;
+
   font-weight: 700;
   font-family: Asap, sans-serif;
   font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
@@ -137,52 +139,64 @@ dt a {
 p {
   padding: 0;
   margin: 0;
+
   font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
 }
 
 .rich-text {
-  h1 {
-    margin-bottom: to-rem(16px);
-  }
+  display: grid;
 
-  h2 {
-    margin-bottom: to-rem(16px);
-  }
+  grid-template-rows: auto;
 
-  h3 {
-    margin-bottom: to-rem(16px);
-  }
+  width: 100%;
 
-  h4 {
-    margin-bottom: to-rem(8px);
-  }
+  row-gap: to-rem(16px);
 
-  h5 {
-    margin-bottom: to-rem(8px);
+  @media screen and (min-width: breakpoint('laptop')) {
+    row-gap: to-rem(24px);
   }
 }
 
-.rich-text p {
-  margin-bottom: to-rem(16px);
-}
+.rich-text > ul,
+.rich-text > ol {
+  display: grid;
 
-.rich-text ol,
-.rich-text ul {
-  margin-bottom: to-rem(16px);
-}
+  grid-template-rows: auto;
 
-.rich-text:last-child {
-  margin-bottom: 0;
+  width: 100%;
+
+  row-gap: to-rem(16px);
+
+  li > * {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .pre-title {
   font-size: to-rem(12px);
   line-height: to-rem(20px);
-  letter-spacing: 0.4rem;
 
   @media screen and (min-width: breakpoint('laptop')) {
     font-size: to-rem(14px);
     line-height: to-rem(22px);
+  }
+}
+
+.category-title {
+  margin-bottom: 0;
+
+  font-weight: light;
+  font-size: to-rem(11px);
+  line-height: to-rem(19px);
+
+  text-transform: uppercase;
+  @media screen and (min-width: breakpoint('laptop')) {
+    font-size: to-rem(12px);
+    line-height: to-rem(20px);
   }
 }
 
@@ -191,13 +205,9 @@ p {
   line-height: to-rem(26px);
 }
 
-.small {
-  font-size: to-rem(12px);
-  line-height: to-rem(20px);
-}
-
 .title-section {
   margin-bottom: to-rem(24px);
+
   text-align: center;
 
   @media screen and (min-width: breakpoint('laptop')) {
@@ -205,12 +215,16 @@ p {
   }
 }
 
+.subtitle {
+  color: palette('gray', '80%');
+  font-size: to-rem(18px);
+  line-height: to-rem(26px);
+}
+
 /**
  * @see: http://demosthenes.info/blog/946/Controlling-Widows--Orphans
  */
 article p {
-  max-width: map-get($line-lengths, 'max');
-
   orphans: 3;
   widows: 3;
 }
@@ -315,9 +329,11 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
+
+.small,
 small {
-  font-size: to-rem(13px);
-  line-height: inherit;
+  font-size: to-rem(14px);
+  line-height: to-rem(22px);
 }
 
 /**

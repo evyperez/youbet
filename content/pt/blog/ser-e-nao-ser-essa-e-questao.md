@@ -2,17 +2,16 @@
 title: Ser e não ser, essa é a questão!
 slug: ser-e-nao-ser-essa-e-questao/
 date: 2017-08-07 15:39:00+00:00
-image: /uploads/images/eis.jpeg
+image: /uploads/images/homem-interrogacao.jpg
 imageAlt: Ser ou não ser
-thumbnail: /uploads/images/eis.jpeg
-thumbnailAlt: Ser ou não ser
+thumbnail: /uploads/images/thumb-eis-a-questao.jpg
+thumbnailAlt: "homem com um monte de ponto de interrogação"
 authors:
-  - author: joabecardoso
+  - joabe-cardoso
 categories:
-  - Blog
+  - inglês
 tags:
-  - Aulas
-  - Inglês
+  - falsos cognatos
 description: 'Ser e não ser, essa é a questão!'
 draft: false
 ---
@@ -267,5 +266,3 @@ Por diversas vezes, isso ocorre pela interpretação de uma palavra que possui a
 E antes que eu me esqueça da história do ‘’PUSH’’, jamais conseguiríamos abrir a bendita porta já que ‘’PUSH’’, em inglês, significa ‘’empurrar’’ e não ‘’puxar’’.
 
 Até logo, e cuidado com as portas de restaurante!
-
-[Youbet Blog!](/blog)

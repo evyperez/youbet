@@ -1,19 +1,17 @@
 ---
-title: O caso do Fusca que subia a parede - Artigos definidos e Indefinidos
+title: "O caso do Fusca que subia a parede"
 slug: o-caso-do-fusca-artigos-definidos-e-indefinidos/
 date: 2017-07-17 10:15:39+00:00
-image: /uploads/images/fusca-na-neve.jpeg
-imageAlt: Fusca na neve
-thumbnail: /uploads/images/fusca-na-neve.jpeg
-thumbnailAlt: Fusca na neve
+image: "/uploads/images/fusca-na-neve.jpg"
+imageAlt: "Fusca na neve"
+thumbnail: "/uploads/images/thumb-fusca-na-neve.jpg"
+thumbnailAlt: "Fusca na neve"
 authors:
-  - author: joabecardoso
+  - joabe-cardoso
 categories:
-  - Blog
-tags:
-  - Artigo
-  - Aulas
   - Inglês
+tags:
+  - artigos
 description: 'O caso do Fusca que subia a parede - Artigos definidos e Indefinidos'
 draft: false
 ---
