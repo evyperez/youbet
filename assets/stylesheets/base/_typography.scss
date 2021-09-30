@@ -217,6 +217,8 @@ p {
 
 .subtitle {
   color: palette('gray', '80%');
+  font-size: to-rem(18px);
+  line-height: to-rem(26px);
 }
 
 /**

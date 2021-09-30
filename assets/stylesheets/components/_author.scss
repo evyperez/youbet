@@ -8,13 +8,18 @@
   }
 }
 
-
 .author {
   display: grid;
 
   grid-template-columns: auto 1fr;
 
   column-gap: to-rem(12px);
+
+  align-items: center;
+
+  padding: 0;
+
+  border: unset;
 
   @media screen and (min-width: breakpoint('laptop')) {
     column-gap: to-rem(24px);
@@ -23,20 +28,6 @@
 
 .author--center {
   align-items: center;
-}
-
-.author a {
-  text-decoration: unset;
-}
-
-.author {
-  align-items: center;
-
-  padding: 0;
-
-  column-gap: to-rem(8px);
-
-  border: unset;
 }
 
 .author--gap-big {
@@ -58,10 +49,10 @@
   height: to-rem(48px);
 }
 
-
 .author a {
   display: flex;
   border-radius: 50%;
+  text-decoration: unset;
 }
 
 .author img {
@@ -71,7 +62,6 @@
   border-radius: 50%;
   object-fit: contain;
 }
-
 
 .author__about h2 {
   margin-bottom: to-rem(16px);
