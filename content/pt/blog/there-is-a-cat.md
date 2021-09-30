@@ -7,11 +7,11 @@ imageAlt: "Gato dentro da cesta"
 thumbnail: /uploads/images/thumb-cat-in-the-basket.jpg
 thumbnailAlt: "Gato dentro da cesta"
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
-tags:
   - inglês
+tags:
+  - there
 description: 'There is a cat in the basket'
 draft: false
 ---

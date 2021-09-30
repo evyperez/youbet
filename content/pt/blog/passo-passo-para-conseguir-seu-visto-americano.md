@@ -7,10 +7,9 @@ imageAlt: "Foto do Passaporte"
 thumbnail: /uploads/images/thumb-passaporte.jpg
 thumbnailAlt: "Foto do Passaporte"
 authors:
-  - author: jessica-severo
+  - jessica-severo
 categories:
-  - Blog
-  - Notícias
+  - estados unidos
 tags:
   - passaporte
   - viagem internacional

@@ -7,11 +7,11 @@ imageAlt: Ser ou não ser
 thumbnail: /uploads/images/thumb-eis-a-questao.jpg
 thumbnailAlt: "homem com um monte de ponto de interrogação"
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
-tags:
   - inglês
+tags:
+  - falsos cognatos
 description: 'Ser e não ser, essa é a questão!'
 draft: false
 ---

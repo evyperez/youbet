@@ -7,12 +7,12 @@ imageAlt: "Foto do EUA"
 thumbnail: /uploads/images/thumb-united-states.jpg
 thumbnailAlt: "Foto do EUA"
 authors:
-  - author: paulo-augusto
+  - paulo-augusto
 categories:
-  - Blog
+  - Planejamento
 tags:
   - curiosidades
-  - finanças
+  - custo
 description: 'Quanto custa viajar para o EUA?'
 draft: false
 ---
@@ -60,7 +60,7 @@ São Francisco
 
 Ou seja, em média para visitar cidades turísticas nestes três importantes lugares dos EUA o gasto diário seria na média de **R$210,00** por dia, o que fica longe da lista dos lugares mais baratos para se viajar no mundo.
 
-Mas eu pensei no plano que a YouBet! School oferece de intercâmbio por um mês, na cidade de Hamburg próxima à estes três lugares, em menos de duas horas (pra um paulistano feito eu, isto não é nada!), você contemplaria estas cidades com um gasto diário menor que **R$150,00. **O que sobraria muito para usar como quiser, até mesmo na própria viagem!
+Mas eu pensei no plano que a YouBet! School oferece de intercâmbio por um mês, na cidade de Hamburg próxima à estes três lugares, em menos de duas horas (pra um paulistano feito eu, isto não é nada!), você contemplaria estas cidades com um gasto diário menor que **R$150,00.** O que sobraria muito para usar como quiser, até mesmo na própria viagem!
 
 Imagine-se agora, conhecendo os lugares mais famosos do mundo, aproveitando a viagem e fazendo um curso internacional, gastando pouco.
 

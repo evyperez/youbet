@@ -8,13 +8,13 @@ thumbnail: "/uploads/images/thumb-anything.jpg"
 thumbnailAlt: "Frase: If you don't stand for something you will fall for anything"
 video: https://www.youtube.com/embed/UelDrZ1aFeY
 authors:
-  - author: fabio-rodrigues
+  - fabio-rodrigues
 categories:
-  - Blog
-tags:
-  - dicas
   - inglês
-  - aulas
+tags:
+  - something
+  - anything
+  - nothing
 description: "Existem técnicas que ajudam os estudantes a fixar o novo vocabulário"
 draft: false
 ---

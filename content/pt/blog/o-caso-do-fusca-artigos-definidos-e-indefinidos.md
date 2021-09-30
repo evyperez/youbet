@@ -7,11 +7,11 @@ imageAlt: "Fusca na neve"
 thumbnail: "/uploads/images/thumb-fusca-na-neve.jpg"
 thumbnailAlt: "Fusca na neve"
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
+  - Inglês
 tags:
-  - inglês
+  - artigos
 description: 'O caso do Fusca que subia a parede - Artigos definidos e Indefinidos'
 draft: false
 ---

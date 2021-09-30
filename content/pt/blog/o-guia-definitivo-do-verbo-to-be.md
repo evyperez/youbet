@@ -7,12 +7,10 @@ imageAlt: 'Menina Estudando'
 thumbnail: /uploads/images/thumb-menina-study.jpg
 thumbnailAlt: 'Menina Estudando'
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
+  - Inglês
 tags:
-  - aulas
-  - inglês
   - verbos
 description: 'O Guia Definitivo do Verbo To Be'
 draft: false

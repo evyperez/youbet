@@ -14,15 +14,10 @@
     </div>
 
     <main role="main" id="conteudo" class="internal-page">
-      {{/* <header class="title-highlight">
-        <h1>Lala</h1>
-      </header>
-      */}}
 
-
-      <section class="section">
+      <article class="article">
         <div class="container">
-          <div blog-wrap>
+          <div blog-wrap--sidebar>
             <div class="blog-content">
 
               <div class="post__header">
@@ -71,28 +66,32 @@
 
               {{ if .Params.authors }}
 
-              <div>
-                {{ range .Params.authors }}
-                {{ range where $.Site.Pages "Params.slug" .author }}
+
+                {{- range .Params.authors }}
+                {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+
                 <div class="author">
                   <div>
-                    <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+                    <a href="/autores/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
                   </div>
+
                   <div class="author__about">
                     <p class="category-title">{{ i18n "postBy" | title }}:</p>
-                    <h2 class="heading-4"><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></h2>
+                    <h2 class="heading-4"><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></h2>
                     {{ .Content }}
                   </div>
                 </div>
+
                 {{ end }}
                 {{ end }}
-              </div>
+
+
               {{ end }}
 
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       {{ if .Params.relatedProjects }}
       <aside>

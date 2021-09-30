@@ -1,0 +1,26 @@
+.float-avatar {
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -13px;
+  z-index: 1;
+}
+
+.avatar--round {
+  width: to-rem(55px);
+  height: to-rem(55px);
+  background-color: palette('white');
+  position: relative;
+  border-radius: 50%;
+
+  > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: to-rem(50px);
+    height: to-rem(50px);
+  }
+}

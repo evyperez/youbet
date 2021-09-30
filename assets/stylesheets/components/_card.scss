@@ -8,6 +8,7 @@
 
 .card__image {
   display: block;
+  position: relative;
 
   img {
     width: 100%;
@@ -15,6 +16,7 @@
     border-top-right-radius: 8px;
   }
 }
+
 
 .card__header,
 .card__body,
@@ -28,4 +30,9 @@
   padding: to-rem(16px);
 
   row-gap: to-rem(16px);
+}
+
+.card__body--fixed {
+  height: 180px;
+  align-content: space-between;
 }

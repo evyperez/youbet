@@ -16,11 +16,11 @@
     </div>
     <main role="main" id="conteudo" class="internal-page blog-list">
       <div class="container">
-        <div class="blog-wrap">
-          <div class="post-list">
-            {{ range .Data.Pages.ByDate.Reverse }}
+        <div class="blog-wrap--sidebar">
+          <div class="wrap-gap">
 
-            <div class="post">
+            {{ range (.Paginate ( first 50 .Pages.ByDate.Reverse )).Pages }}
+            <article class="post">
               {{ if .Params.video }}
               <div class="embed-container">
                 <iframe width="560" height="315" src="{{ .Params.video }}?controls=0?rel=0" title="YouTube video player"
@@ -78,7 +78,8 @@
 
               </div>
 
-            </div>
+            </article>
+
             {{ end }}
           </div>
 

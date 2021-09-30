@@ -7,9 +7,9 @@ thumbnail: /uploads/images/thumb-planejar-intercambio.jpg
 thumbnailAlt: Mesa de escritório
 date: 2017-11-16 13:55:49+00:00
 authors:
-  - author: jessica-severo
+  - jessica-severo
 categories:
-  - Blog
+  - intercâmbio
 tags:
   - planejamento
   - intercâmbio

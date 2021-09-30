@@ -1,5 +1,7 @@
 - id: about
   translation: 'Sobre'
+- id: article
+  translation: 'Artigo'
 - id: author
   translation: 'Autor'
 - id: authors
@@ -8,6 +10,8 @@
   translation: 'Blog'
 - id: by
   translation: 'Por'
+- id: categories
+  translation: 'Categorias'
 - id: postBy
   translation: 'Post por'
 - id: content404

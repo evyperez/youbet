@@ -8,11 +8,10 @@ imageAlt: "mapa mundi"
 thumbnail: /uploads/images/thumb-mapa.jpg
 thumbnailAlt: "mapa mundi"
 authors:
-  - author: jessica-severo
+  - jessica-severo
 categories:
-  - Blog
+  - intercâmbio
 tags:
-  - dicas
   - viagem internacional
 description: 'Primeira viagem internacional: dicas úteis'
 draft: false

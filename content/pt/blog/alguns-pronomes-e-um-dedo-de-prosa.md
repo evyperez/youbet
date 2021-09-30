@@ -1,5 +1,5 @@
 ---
-title: Alguns pronomes e um dedo de prosa.
+title: Alguns pronomes e um dedo de prosa
 slug: alguns-pronomes-e-um-dedo-de-prosa/
 date: 2017-07-11 16:37:55+00:00
 image: /uploads/images/mount-rushmore.jpg
@@ -7,11 +7,11 @@ imageAlt: Monument Rushmore
 thumbnail: /uploads/images/thumb-mount-rushmore.jpg
 thumbnailAlt: Monument Rushmore
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
-tags:
   - inglês
+tags:
+  - pronomes
 description: 'Alguns pronomes e um dedo de prosa.'
 draft: false
 ---

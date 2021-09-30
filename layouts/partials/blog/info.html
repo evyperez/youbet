@@ -1,17 +1,5 @@
 <div class="blog-info">
-  {{ range .Params.authors }}
-    {{ range where $.Site.Pages "Params.slug" .author }}
-    <div class="author author--small">
-      <a href="/autor/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
-      <div class="author__info">
-        {{if .Title}}
-        <p><a href="/autor/{{ .Params.slug}}">{{ .Title }}</a></p>
-        {{ end }}
-      </div>
-    </div>
-
-    {{ end }}
-  {{ end }}
+  {{ partial "author-miniature.html" . }}
 
   {{if .Date }}
   <div>

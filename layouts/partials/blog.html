@@ -20,11 +20,11 @@
                     <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
                   </div>
                   <div class="img-subtitle">
-                    {{ range .Params.authors }}
-                      {{ range where $.Site.Pages "Params.slug" .author }}
+                    {{/*  {{ range .Params.authors }}
+                      {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
                         <p class="img-subtitle__author">{{ .Title }}</p>
                       {{ end }}
-                    {{ end }}
+                    {{ end }}  */}}
                     <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
                   </div>
                   <h2 class="heading-5">{{ .Title }}</h2>

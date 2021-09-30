@@ -185,6 +185,7 @@ p {
     line-height: to-rem(22px);
   }
 }
+
 .category-title {
   margin-bottom: 0;
 
@@ -202,11 +203,6 @@ p {
 .sidebar-title {
   font-size: to-rem(18px);
   line-height: to-rem(26px);
-}
-
-.small {
-  font-size: to-rem(12px);
-  line-height: to-rem(20px);
 }
 
 .title-section {
@@ -227,8 +223,6 @@ p {
  * @see: http://demosthenes.info/blog/946/Controlling-Widows--Orphans
  */
 article p {
-  max-width: map-get($line-lengths, 'max');
-
   orphans: 3;
   widows: 3;
 }
@@ -333,9 +327,11 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
+
+.small,
 small {
-  font-size: to-rem(13px);
-  line-height: inherit;
+  font-size: to-rem(14px);
+  line-height: to-rem(22px);
 }
 
 /**

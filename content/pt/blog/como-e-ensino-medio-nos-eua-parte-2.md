@@ -8,13 +8,11 @@ thumbnail: '/uploads/images/thumb-ensino-medio-eua-2.jpg'
 thumbnailAlt: 'Capa do Vídeo do Amigo Gringo'
 video: https://www.youtube.com/embed/8UUdDl4-VzY
 authors:
-  - author: youbet
+  - youbet
 categories:
-  - Blog
-tags:
-  - dicas
-  - ensino médio
   - estados unidos
+tags:
+  - ensino médio
   - vídeo
 description: 'O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas escolas americanas.'
 draft: false

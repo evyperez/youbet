@@ -7,11 +7,11 @@ imageAlt: Ponto de interrogação
 thumbnail: /uploads/images/thumb-interrogacao.jpg
 thumbnailAlt: Ponto de interrogação
 authors:
-  - author: joabe-cardoso
+  - joabe-cardoso
 categories:
-  - Blog
-tags:
   - inglês
+tags:
+  - what
 description: 'What?! Como perguntar algo em inglês.'
 draft: false
 ---

@@ -8,12 +8,11 @@ thumbnail: /uploads/images/thumb-mulher-escrevendo.jpg
 thumbnailAlt: "mulher escrevendo"
 readingTime: "3 minutos"
 authors:
-  - author: jessica-severo
+  - jessica-severo
 categories:
-  - Blog
+  - inglês
 tags:
   - dicas
-  - inglês
 description: "Existem técnicas que ajudam os estudantes a fixar o novo vocabulário"
 draft: false
 ---
