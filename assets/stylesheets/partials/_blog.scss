@@ -216,6 +216,7 @@
   width: 100%;
 
   row-gap: to-rem(18px);
+  max-width: to-rem(900px);
 
   @media screen and (min-width: breakpoint('tablet__landscape')) {
     row-gap: to-rem(24px);

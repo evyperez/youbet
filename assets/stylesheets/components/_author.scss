@@ -21,18 +21,12 @@
 
   border: unset;
 
-  @media screen and (min-width: breakpoint('laptop')) {
-    column-gap: to-rem(24px);
-  }
 }
 
 .author--center {
   align-items: center;
 }
 
-.author--gap-big {
-  column-gap: to-rem(18px);
-}
 
 .avatar {
   width: to-rem(38px);

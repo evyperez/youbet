@@ -15,7 +15,7 @@
 
     <main role="main" id="conteudo" class="internal-page">
 
-      <article class="article">
+      <article class="blog-post">
         <div class="container">
           <div blog-wrap--sidebar>
             <div class="blog-content">
@@ -71,7 +71,7 @@
                 {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
 
                 <div class="author">
-                  <div>
+                  <div class="avatar avatar--big">
                     <a href="/autores/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
                   </div>
 
