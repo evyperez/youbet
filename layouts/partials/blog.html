@@ -25,7 +25,14 @@
                         <p class="img-subtitle__author">{{ .Title }}</p>
                       {{ end }}
                     {{ end }}  */}}
-                    <p class="date">{{ .Params.Date.Format "01/02/2006" }}</p>
+
+                    {{ if .Params.authors }}
+                    {{- range .Params.authors }}
+                    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                       <strong> <p class="heading-4"><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></p></strong>
+                    {{ end }}
+                    {{ end }}
+                  {{ end }}
                   </div>
                   <h2 class="heading-5">{{ .Title }}</h2>
                 </div>

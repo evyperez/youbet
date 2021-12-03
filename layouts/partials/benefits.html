@@ -8,9 +8,12 @@
       {{ end }}
       <div class="three-columns">
         {{ range .list }}
-          <div>
+          <div class="rich-text">
+            {{ if .image }}
+              <img src="{{ .image }}" alt="{{ .alt }}" class="image-topics">
+            {{ end }}
             {{ if .title }}
-              <h3>{{ .title }}</h3>
+              <h2 class="heading-4">{{ .title }}</h2>
             {{ end }}
 
             {{ if .text }}
