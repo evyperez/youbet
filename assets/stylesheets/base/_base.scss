@@ -338,6 +338,14 @@ video {
   max-width: 100%;
 }
 
+.image-topics {
+  max-width: 300px;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin: 0;
+  }
+}
+
 // video {
 // }
 
