@@ -1,0 +1,16 @@
+.whatsapp {
+  position: fixed;
+  right: to-em(8px);
+  bottom: to-em(64px);
+
+  display: flex;
+  z-index: 2;
+
+  align-items: center;
+
+  width: to-em(72px);
+
+  img {
+    width: 100%;
+  }
+}
