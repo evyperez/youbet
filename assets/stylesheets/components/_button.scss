@@ -13,6 +13,9 @@
  * @see  http://christophzillgens.com/en/articles/equal-height-input-and-button-elements-in-firefox-and-safari
  * @see  http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
  */
+
+$colors: 'button', 'button-secondary', 'button-neutral';
+
 %button-reset {
   @extend %os-element-reset;
 
@@ -42,11 +45,9 @@
 
   cursor: pointer; /* 2 */
 
-  color: palette('white'); /* 5 */
+  background: unset;
 
-  background: palette('button'); /* 5 */
-
-  border: 2px solid palette('button');
+  border: unset;
 
   box-sizing: inherit;
 
@@ -74,25 +75,188 @@
   &:hover,
   &:focus {
     &:not([type='reset']) {
-      color: palette('white');
-
-      background-color: palette('button', 'focus');
-
-      border: 2px solid palette('button', 'focus');
-
       outline: none;
     }
   }
   &:disabled {
     cursor: not-allowed;
+  }
+}
 
-    background-color: palette('button', 'disabled');
+button,
+[role='button'],
+[type='button'] {
+  @extend %button-reset;
+}
 
-    border: 2px solid palette('button', 'disabled');
+.dark {
+  padding: 10px;
+
+  background: #383838;
+}
+
+@mixin button($color) {
+  .#{$color} {
+    @extend %button-reset;
   }
 
-  // &:active {
-  // }
+  // $styles: 'solid', 'solid-inverted', 'inverted', 'ghost', 'ghost-inverted', 'bordeless', 'bordeless-inverted';
+
+  .#{$color}[class*='solid'] {
+    color: palette('white');
+
+    background: palette(#{$color}); /* 5 */
+
+    border: 2px solid palette(#{$color});
+
+    &:hover,
+    &:focus {
+      &:not([type='reset']) {
+        color: palette('white');
+
+        background-color: palette(#{$color}, 'dark');
+
+        border: 2px solid palette(#{$color}, 'dark');
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      color: palette('white');
+
+      background-color: palette(#{$color}, 'light');
+
+      border: 2px solid palette(#{$color}, 'light');
+    }
+  }
+
+  .#{$color}[class*='inverted'],
+  .#{$color}[class*='solid-inverted'] {
+    color: palette(#{$color}); /* 5 */
+
+    background: palette('white');
+
+    border: 2px solid palette('white');
+
+    &:hover,
+    &:focus {
+      &:not([type='reset']) {
+        color: palette(#{$color}, 'dark');
+
+        background: palette('white');
+
+        border: 2px solid palette('white');
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      color: palette(#{$color}, 'light');
+
+      background: palette('white');
+
+      border: 2px solid palette('white');
+    }
+  }
+
+  .#{$color}[class*='ghost'] {
+    color: palette(#{$color}); /* 5 */
+
+    background: palette('transparent');
+
+    border: 2px solid palette(#{$color});
+
+    &:hover,
+    &:focus {
+      &:not([type='reset']) {
+        color: palette(#{$color}, 'dark');
+
+        background: palette('transparent', 'white');
+
+        border: 2px solid palette(#{$color}, 'dark');
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      color: palette(#{$color}, 'light');
+
+      background: palette('transparent');
+
+      border: 2px solid palette(#{$color}, 'light');
+    }
+  }
+
+  .#{$color}[class*='ghost-inverted'] {
+    color: palette(#{$color}, 'light'); /* 5 */
+
+    border: 2px solid palette(#{$color}, 'light');
+
+    &:hover,
+    &:focus {
+      &:not([type='reset']) {
+        color: palette(#{$color}, 'light');
+
+        background: palette('transparent', 'white');
+
+        border: 2px solid palette(#{$color}, 'light');
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      color: palette(#{$color}, 'light');
+
+      border: 2px solid palette(#{$color}, 'light');
+    }
+  }
+
+  .#{$color}[class*='bordeless'] {
+    color: palette(#{$color}); /* 5 */
+
+    background: palette('transparent');
+
+    border: unset;
+
+    &:hover,
+    &:focus {
+      &:not([type='reset']) {
+        color: palette(#{$color}, 'dark');
+
+        background: palette('transparent');
+
+        border: unset;
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      color: palette(#{$color}, 'light');
+
+      background: palette('transparent');
+
+      border: unset;
+    }
+  }
+  .#{$color}[class*='bordeless-inverted'] {
+    color: palette(#{$color}, 'light');
+
+    &:hover,
+    &:focus {
+      &:not([type='reset']) {
+        color: palette(#{$color}, 'light');
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      color: palette(#{$color}, 'disabled');
+    }
+  }
+}
+
+@each $color in $colors {
+  @include button(#{$color});
 }
 
 /**
@@ -107,41 +271,34 @@ html [type='button'] {
   appearance: button;
 }
 
-.btn,
-button,
-[role='button'],
-[type='button'] {
-  @extend %button-reset;
-}
-
-.btn--full {
+.button--full {
   width: 100%;
 }
 
-.btn--full-mobile {
+.button--full-mobile {
   @media screen and (max-width: breakpoint('tablet__portrait')) {
     width: 100%;
   }
 }
 
-.btn--disabled {
-  cursor: not-allowed;
+// .button--disabled {
+//   cursor: not-allowed;
 
-  background-color: palette('button', 'disabled');
+//   background-color: palette('button', 'disabled');
 
-  border: 2px solid palette('button', 'disabled');
+//   border: 2px solid palette('button', 'disabled');
 
-  &:hover,
-  &:focus {
-    &:not([type='reset']) {
-      background-color: palette('button', 'disabled');
+//   &:hover,
+//   &:focus {
+//     &:not([type='reset']) {
+//       background-color: palette('button', 'disabled');
 
-      border: 2px solid palette('button', 'disabled');
+//       border: 2px solid palette('button', 'disabled');
 
-      outline: none;
-    }
-  }
-}
+//       outline: none;
+//     }
+//   }
+// }
 
 /**
 * Replace focus style removed in the border reset above

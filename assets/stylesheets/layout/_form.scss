@@ -310,7 +310,7 @@ form br {
   border-color: palette('border');
 
   &:hover {
-    background-color: palette('button', 'focus');
+    background-color: palette('button', 'dark');
   }
 }
 
@@ -333,7 +333,7 @@ form br {
   border-color: palette('border');
 
   &:hover {
-    background-color: palette('button', 'focus');
+    background-color: palette('button', 'dark');
   }
 }
 

@@ -14,11 +14,16 @@
           <h2>{{ .title }}</h2>
           {{ end }}
           <p>{{ .content | markdownify }}</p>
+
+          {{ if .buttonUrl }}
+          <div>
+            <a href="{{ .buttonUrl }}" class="button-secondary button-secondary--solid">{{ .buttonText }}</a>
+          </div>
+
+          {{ end }}
         </div>
         {{ end }}
-        {{ if .buttonUrl }}
-        <a href="{{ .buttonUrl }}" class="btn">{{ .buttonText }}</a>
-        {{ end }}
+
       </div>
       {{ if .image }}
 
