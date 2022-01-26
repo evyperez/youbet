@@ -5,6 +5,8 @@ url: sobre
 draft: false
 ---
 
+# História da YouBet!
+
 No ano de 2016 a YouBet foi criada com o ideia principal de fornecer um curso de idiomas com  uma imersão cultural de vivência com a língua aprendida. Com o passar dos anos e com parcerias bem estruturadas, se qualificou no intercâmbio de High School, ou seja, alunos que desejam cursar o ensino médio em escolas de alto padrão e qualificação nos Estados Unidos, com isso aderiu o nome de YouBet! School pois potencializou junto a instituições internacionais o ramo estudantil e cada vez mais se viu preocupada quanto a internacionalização e globalização.
 
 No ano de 2019, a YouBet! criou o programa de Ensino médio americano nas escolas Brasileiras, com o diferencial de imersão cultural, permitindo além dos estudos, um intercâmbio de no minimo 20 dias em uma escola americana.
