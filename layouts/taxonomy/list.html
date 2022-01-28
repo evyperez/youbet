@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
-  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
-  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
-
-{{ partial "head/head.html" . }}
-
-
-<body>
+{{ define "main" }}
   <div class="main-container">
     {{ partial "header.html" . }}
 
@@ -47,8 +39,4 @@
       </div>
     </main>
 
-    {{ partial "footer.html" . }}
-  </div>
-</body>
-
-</html>
+{{ end }}

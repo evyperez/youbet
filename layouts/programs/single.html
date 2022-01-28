@@ -1,0 +1,155 @@
+{{ define "main" }}
+
+  <style>
+    .page-title {
+      {{ if .Params.backgroundColor }} background-color:  {{ .Params.backgroundColor }}; {{ end }}
+    }
+
+    .page-title::before {
+      {{ if .Params.backgroundRepeat }} background-repeat:  {{ .Params.backgroundRepeat }}; {{ end }}
+      {{ if .Params.backgroundImage}} background-image: url('{{.Params.backgroundImage}}'); {{ end }}
+      {{ if .Params.backgroundCover}} max-width: unset; {{ end }}
+      {{ if .Params.backgroundSize }} background-size: {{ .Params.backgroundSize }}; {{ end }}
+      {{ if .Params.backgroundPosition}} background-position: {{ .Params.backgroundPosition}}; {{ end }}
+    }
+
+    {{ if .Params.backgroundImageDesktop}}
+      @media (min-width: 1024px) {
+        .page-title::before {
+          background-image: url('{{.Params.backgroundImageDesktop}}');
+        }
+      }
+    {{ end }}
+  </style>
+
+    <div class='page-title {{ if .Params.Dark }} page-title--dark {{ end }}'>
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
+
+  <main role="main" id="conteudo" class="internal-page">
+
+    <section class="section">
+      <div class="container">
+        <img src="/uploads/images/grupo-estudantes.jpeg" alt="{{ i18n " title404" }}" class="image-top"/>
+
+        <div class="two-columns">
+          <div class="rich-text">
+
+            {{ .Content }}
+
+            <div>
+              <a href="/contato" class="button-secondary button-secondary--solid">Fale com nossos especialistas</a>
+            </div>
+
+          </div>
+
+          <div class="rich-text">
+            <table>
+              <tbody>
+                <tr>
+                  <th>
+                    {{ i18n "minimumTime" }}
+                  </th>
+                  <td>
+                    {{.Params.minimumTime}}
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    {{ i18n "age" }}:
+                  </th>
+                  <td>
+                    {{.Params.age}}
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    {{ i18n "accommodations" }}:
+                  </th>
+                  <td>
+                    {{.Params.accommodations}}
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    {{ i18n "feeding" }}:
+                  </th>
+                  <td>
+                    {{.Params.feeding}}
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    {{ i18n "languageLevel" }}:
+                  </th>
+                  <td>
+                    {{.Params.languageLevel}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <form name="summer" action="/contato/sucesso/" method="POST" data-netlify="true">
+          <div class="form-wrap">
+            <div class="two-columns">
+              <div class="form-group ">
+                <label for="firstName">
+                  {{ i18n "firstName" | title }} <span class="required">*</span>
+                </label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group ">
+                <label for="lastName">
+                  {{ i18n "lastName" | title }} <span class="required">*</span>
+                </label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            <div class="two-columns">
+              <div class="form-group">
+                <label for="phone">
+                  {{ i18n "phone" | title }}
+                </label>
+                <input type="text" id="phone" name="phone" />
+              </div>
+              <div class="form-group">
+                <label for="whatsapp">
+                  {{ i18n "whatsApp" | title }}
+                </label>
+                <input type="text" id="whatsapp" name="whatsapp" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                {{ i18n "email" | title }} <span class="required">*</span>
+              </label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">
+                {{ i18n "message" | title }} <span class="required">*</span>
+              </label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="button-wrap">
+              <button type="submit" class="button-secondary button-secondary--solid">{{ i18n "send" }}</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  {{ end }}
