@@ -77,28 +77,23 @@ languages:
           Weight: 2
           Identifier: 'blog'
           URL: '/blog'
-        - Name: 'Contato'
+        - Name: 'Programas'
           Pre: ''
           Weight: 3
+          Identifier: 'programs'
+          URL: '/programas'
+        - Name: 'Verão'
+          Pre: ''
+          Weight: 1
+          Identifier: 'summer'
+          URL: '/programas/intercambio-de-verao'
+          parent: 'programs'
+        - Name: 'Contato'
+          Pre: ''
+          Weight: 4
           Identifier: 'contact'
           URL: '/contato'
-        # - Name: 'Colégios'
-        #   Pre: ''
-        #   Weight: 3
-        #   Identifier: 'colleges'
-        #   URL: '/college'
-        # - Name: 'Campion'
-        #   Pre: ''
-        #   Weight: 1
-        #   Identifier: 'campion'
-        #   URL: '/campion'
-        #   parent: 'colleges'
-        # - Name: 'Bma'
-        #   Pre: ''
-        #   Weight: 2
-        #   Identifier: 'bma'
-        #   URL: '/bma'
-        #   parent: 'colleges'
+
   en:
     contentDir: content/en
     languageName: English
