@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
-
-{{ partial "head/head.html" . }}
-
-
-<body class="theme-dark">
-  <input type="checkbox" id="menu-controller" class="menu-controller" hidden />
-
-  <div class="main-container">
-    {{ partial "header.html" . }}
-
-
+{{ define "main" }}
     <main role="main" id="conteudo" class="info-page">
       <section class="image-with-text">
         <div class="container">
@@ -26,9 +14,5 @@
         </div>
       </section>
     </main>
-  </div>
 
-
-</body>
-
-</html>
+{{ end }}

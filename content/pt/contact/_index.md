@@ -5,4 +5,4 @@ url: "contato"
 draft: false
 ---
 
-Faça um orçamento agora e realize seu sonho e fazer um intercâmbio!
+Faça um orçamento agora e realize seu sonho de fazer um intercâmbio!

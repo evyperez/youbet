@@ -1,5 +1,14 @@
 /* TABLES
 ============================================================================ */
+
+.table--wide {
+  width: 100%;
+}
+
+.table--details {
+  // background: palette('gray', '5%');
+}
+
 table,
 thead,
 tbody,
@@ -8,13 +17,15 @@ tr,
 th,
 td {
   width: auto;
-
   height: auto;
 
   font-size: 1em;
+  font-family: $text-font-stack;
 
   vertical-align: top;
+
   background-color: transparent;
+
   border: 0;
 
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
@@ -25,15 +36,13 @@ td {
 table {
   margin-top: 0;
   margin-right: 0;
-
   margin-bottom: #{$leading * 1em};
-
   margin-left: 0;
-  font-size: 100%;
 
+  font-size: 100%;
   font-family: inherit;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 0, 'tnum' 1, 'onum' 0, 'lnum' 1, 'dlig' 0;
-  border-radius: $rounded-corner;
+
   border-collapse: separate;
   border-spacing: 0;
   empty-cells: show;
@@ -41,9 +50,15 @@ table {
 
 thead,
 tfoot {
-  @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
-    display: none;
-  }
+  font-family: $title-font-stack;
+
+  text-transform: uppercase;
+}
+
+.table--details thead th {
+  text-align: center;
+  background: palette('orange', 'base');
+  padding: 1rem;
 }
 
 table p,
@@ -56,16 +71,38 @@ table li {
 
 tr {
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
-    @include fallback('margin', 0 0 1.5rem);
-
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
 
+tbody {
+  & th,
+  & td {
+    padding: to-rem(8px) to-rem(4px);
+
+    @media screen and (min-width: breakpoint('desktop')) {
+      border-bottom: 1px solid palette('gray', '10%');
+      padding: 1rem;
+    }
+  }
+  & td {
+
+
+    @media screen and (min-width: breakpoint('desktop')) {
+      border-right: 1px solid palette('gray', '10%');
+    }
+  }
+  & th {
+    @media screen and (min-width: breakpoint('desktop')) {
+      border-left: 1px solid palette('gray', '10%');
+    }
+  }
+}
+
 th {
-  font-weight: font-weights('bold');
+  font-weight: bold;
 }
 
 td {
@@ -83,10 +120,10 @@ thead td {
   vertical-align: bottom;
 }
 
-thead th:first-child,
-tfoot th:first-child {
-  text-align: left;
-}
+// thead th:first-child,
+// tfoot th:first-child {
+//   text-align: left;
+// }
 
 // thead > tr:nth-last-of-type(odd) > th,
 // thead > tr:nth-last-of-type(odd) > td {
@@ -101,9 +138,9 @@ tbody th {
 }
 
 tbody td {
-  font-variant-numeric: lining-nums oldstyle-nums;
-
   text-align: right;
+
+  font-variant-numeric: lining-nums oldstyle-nums;
 
   @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
     text-align: left;
@@ -115,6 +152,7 @@ tbody td {
         float: left;
 
         font-style: italic;
+
         content: attr(aria-label) ': ';
       }
     }
@@ -127,9 +165,8 @@ td img {
 
 tbody tr:nth-of-type(odd) > th,
 tbody tr:nth-of-type(odd) > td {
-  @media screen and (max-width: #{map-get($breakpoints, 'toggle-table-layout') - 0.01}) {
-    background-color: transparent;
-  }
+  background-color: palette('orange', '10%');
+
 }
 
 tfoot th,

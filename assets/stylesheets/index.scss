@@ -10,7 +10,7 @@
 @import '../../node_modules/modularscale-sass/stylesheets/modularscale';
 
 // 1. Configuration and helpers
-@import 'abstracts/constants', 'abstracts/font-stacks', 'abstracts/functions', 'abstracts/config', 'abstracts/mixins';
+@import 'abstracts/constants', 'abstracts/font-stacks', 'abstracts/functions', 'abstracts/config', 'abstracts/mixins', 'abstracts/textures-mixin';
 
 // 3. Base stuff
 @import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
@@ -22,7 +22,7 @@
 // 5. Components
 @import 'components/h-entry', 'components/figure', 'components/button', 'components/checkbox-and-radio',
   'components/output', 'components/progress', 'components/select', 'components/slider', 'components/text-field',
-  'components/carousel', 'components/logo', 'components/embed-container', 'components/card', 'components/tags', 'components/author', 'components/breadcrumbs', 'components/categories', 'components/avatar', 'components/whatsapp';
+  'components/carousel', 'components/logo', 'components/embed-container', 'components/card', 'components/tags', 'components/author', 'components/breadcrumbs', 'components/categories', 'components/avatar', 'components/whatsapp', 'components/page-title',  'components/faq';
 
 // 6. Page-specific styles
 @import 'pages/home';

@@ -180,6 +180,8 @@ summary {
 
   list-style-type: none;
 
+  position: relative;
+
   cursor: pointer;
 
   &::-webkit-details-marker {
@@ -190,14 +192,20 @@ summary {
     outline: none;
   }
 
-  &::before {
+  &::after {
     padding-right: 0.5em;
+    position: absolute;
 
+    right: 0;
     content: '\25B6';
   }
 
-  details[open] > &::before {
+  details[open] > &::after {
     content: '\25BC';
+    padding-right: 0.5em;
+    position: absolute;
+
+    right: 0;
   }
 }
 
@@ -336,6 +344,15 @@ embed,
 object,
 video {
   max-width: 100%;
+}
+
+.main-img {
+  margin-bottom: to-rem(24px);
+  width: 100%;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-bottom: to-rem(38px);
+  }
 }
 
 .image-topics {

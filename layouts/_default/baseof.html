@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+  lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  class="
+    {{ if .IsHome }}home-page {{ end }}
+    {{ $.Scratch.Get "rootClass" }}{{ .Params.rootClass }}
+    {{ if eq (getenv "HUGO_ENVIRONMENT") "development" }}grid{{ end }}
+    no-js
+  "
+  data-run="buildTicketPage registerDevice"
+>
+<head>
+{{ partial "head/head.html" . }}
+
+{{ block "headInsert" . }}
+  <!-- The part of the page that begins to differ between templates -->
+{{ end }}
+
+</head>
+
+<body class="theme-dark">
+  <input type="checkbox" id="menu-controller" class="menu-controller" hidden />
+
+  {{ partial "header.html" . }}
+
+  {{ block "main" . }}
+    <!-- The part of the page that begins to differ between templates -->
+  {{ end }}
+
+  {{ block "footer" . }}
+    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+  {{ end }}
+
+  {{ partial "footer.html" . }}
+
+  {{ partial "scripts.html" . }}
+</body>
+</html>
