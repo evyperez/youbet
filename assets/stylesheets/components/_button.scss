@@ -83,6 +83,11 @@ $colors: 'button', 'button-secondary', 'button-neutral';
   }
 }
 
+.button-wrap--center {
+  display: flex;
+  justify-content: center;
+}
+
 button,
 [role='button'],
 [type='button'] {

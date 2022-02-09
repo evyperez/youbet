@@ -155,6 +155,32 @@ textarea {
   }
 }
 
+.internal-page {
+  & article {
+    padding-top: to-rem(32px);
+    padding-bottom: to-rem(32px);
+
+    @media screen and (min-width: breakpoint('desktop')) {
+      padding-top: to-rem(80px);
+      padding-bottom: to-rem(80px);
+    }
+  }
+
+  & section {
+    padding-top: to-rem(32px);
+    padding-bottom: to-rem(32px);
+
+    @media screen and (min-width: breakpoint('desktop')) {
+      padding-top: to-rem(80px);
+      padding-bottom: to-rem(80px);
+    }
+  }
+
+  &--programs article:nth-of-type(even) {
+    background-color: palette('orange', '5%');
+  }
+}
+
 .one-column {
   display: grid;
 
@@ -181,6 +207,18 @@ textarea {
     column-gap: to-rem(24px);
 
     row-gap: to-rem(32px);
+  }
+}
+
+.two-columns--sidebar {
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    grid-template-columns: 1.5fr 1fr;
+
+    column-gap: to-rem(32px);
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    column-gap: to-rem(64px);
   }
 }
 
@@ -247,7 +285,6 @@ textarea {
     row-gap: to-rem(12px);
 
     @media screen and (min-width: breakpoint('tablet__portrait')) {
-
       column-gap: to-rem(12px);
 
       row-gap: to-rem(12px);
@@ -258,11 +295,14 @@ textarea {
     row-gap: to-rem(12px);
 
     @media screen and (min-width: breakpoint('laptop')) {
-
       column-gap: to-rem(12px);
 
       row-gap: to-rem(12px);
     }
+  }
+
+  .button-wrap {
+    margin-top: to-rem(16px);
   }
 }
 

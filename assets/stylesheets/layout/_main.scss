@@ -84,14 +84,7 @@ main,
   row-gap: to-rem(32px);
 }
 
-.internal-page {
-  padding: to-rem(16px) 0;
-
-  @media screen and (min-width: breakpoint('tablet__landscape')) {
-    padding: to-rem(48px) 0;
-  }
-}
-
 footer .container {
   padding: to-rem(16px);
 }
+

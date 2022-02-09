@@ -8,7 +8,7 @@ enableRobotsTXT: false
 metaDataFormat: 'yaml'
 enableMissingTranslationPlaceholders: true
 disableFastRender: true
-ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
+ignoreFiles: ['\\.tmp$', '\\.tmp\\-browserify']
 stepAnalysis: true
 templateMetrics: true
 pluralizeListTitles: true
@@ -23,6 +23,26 @@ taxonomies:
   tag: 'tags'
   category: 'categories'
   author: 'authors'
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: false
+      xhtml: false
 permalinks:
   pages: /:slug/
 languages:
@@ -30,7 +50,7 @@ languages:
     contentDir: content/pt
     languageName: Português
     languageCode: 'pt-br'
-    title: 'YouBet! Uma transformação de vida'
+    title: 'YouBet!'
     weight: 1
     params:
       tagline: 'Quer se tornar um Cidadão Global?'
@@ -62,23 +82,23 @@ languages:
           Weight: 3
           Identifier: 'contact'
           URL: '/contato'
-        # - Name: "Colégios"
-        #   Pre: ""
+        # - Name: 'Colégios'
+        #   Pre: ''
         #   Weight: 3
-        #   Identifier: "colleges"
-        #   URL: "/college"
-        # - Name: "Campion"
-        #   Pre: ""
+        #   Identifier: 'colleges'
+        #   URL: '/college'
+        # - Name: 'Campion'
+        #   Pre: ''
         #   Weight: 1
-        #   Identifier: "campion"
-        #   URL: "/campion"
-        #   parent: "colleges"
-        # - Name: "Bma"
-        #   Pre: ""
+        #   Identifier: 'campion'
+        #   URL: '/campion'
+        #   parent: 'colleges'
+        # - Name: 'Bma'
+        #   Pre: ''
         #   Weight: 2
-        #   Identifier: "bma"
-        #   URL: "/bma"
-        #   parent: "colleges"
+        #   Identifier: 'bma'
+        #   URL: '/bma'
+        #   parent: 'colleges'
   en:
     contentDir: content/en
     languageName: English
