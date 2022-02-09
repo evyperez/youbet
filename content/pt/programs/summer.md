@@ -15,7 +15,7 @@ backgroundSize: 'unset'
 backgroundPosition: 'center'
 date: 2017-01-16 14:53:44+00:00
 image: '/uploads/images/mount-rushmore-monument-landmark-scenic.jpeg'
-url: 'programas/verao'
+url: 'programas/intercambio-de-verao'
 imageAlt: 'Foto do Colegio Auburn'
 thumbnail: '/uploads/images/mount-rushmore-monument-landmark-scenic.jpeg'
 term: '16 dias'
