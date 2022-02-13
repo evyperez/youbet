@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}" class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get "rootClass" }} {{ .Params.rootClass }} {{ if eq (getenv "NODE_ENV") "development" }}grid-debug{{ end }} no-js">
+{{ define "main" }}
 
-  {{ partial "head/head.html" . }}
+<main role="main" id="conteudo" class="internal-page">
+  <section class="section">
+    <div class="container">
+      <div class="two-column">
+        <div class="rich-text">
 
+          {{ .Content }}
 
-  <body>
-    <div class="main-container">
-      {{ partial "header.html" . }}
-      <main role="main" id="conteudo" class="internal-page">
-        <section class="section">
-          <div class="container">
-            <div class="two-column">
-              <div class="rich-text">
-
-                {{ .Content }}
-
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {{ partial "footer.html" . }}
+        </div>
+      </div>
     </div>
-  </body>
-</html>
+  </section>
+</main>
+
+{{ end }}

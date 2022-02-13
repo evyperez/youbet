@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang=" {{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
-  class="{{ if .IsHome }}home-page {{ end }}{{ $.Scratch.Get " rootClass" }} {{ .Params.rootClass }} {{ if eq
-  (getenv "NODE_ENV" ) "development" }}grid-debug{{ end }} no-js">
-
-{{ partial "head/head.html" . }}
-
-
-<body>
-  <div class="main-container">
-    {{ partial "header.html" . }}
-
+{{ define "main" }}
     <main role="main" id="conteudo" class="internal-page">
       <section class="container wrap-gap">
         <div class="rich-text">
@@ -65,9 +54,4 @@
         {{ end }}
       </section>
     </main>
-    {{ partial "footer.html" . }}
-
-  </div>
-</body>
-
-</html>
+{{ end }}
