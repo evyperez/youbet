@@ -1,27 +1,40 @@
+
+<meta charset="utf-8" />
+<meta content="width=device-width,initial-scale=1.0" name="viewport" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+
 <!-- Title Tags -->
+
 <title itemprop="name">
   {{ if not .IsHome }}{{ .Title }} &middot;{{ end }} {{ .Title }} |
   {{ .Site.Title }}
 </title>
-<meta itemprop="name" content="{{ .Site.Title }}" />
+
+{{ if .Params.Title }}
+
+<title itemprop="name">{{ .Title }} | {{ .Site.Title }}</title>
 <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
 
-<!-- Description tags -->
-{{ with $.Site.Params.siteDescription }}
-<meta name="description" content="{{ . }}" />
-<meta itemprop="description" content="{{ . }}" />
-<meta property="og:description" content="{{ . }}" />
-<meta name="twitter:description" content="{{ . | slicestr 0 200 }}" />
-<!-- max of 200 characters for Twitter & Facebook -->
 {{ end }}
 
+<!-- Description tags -->
+
+{{ if .Params.description }}
+
+<meta name="description" content="{{ .Params.description }}" />
+<meta itemprop="description" content="{{ .Params.description }}" />
+<meta property="og:description" content="{{ .Params.description }}" />
+<meta name="twitter:description" content="{{ .Params.description }}" />
+
+{{ end }}
 
 <!-- Link tags -->
-<base href="{{ .Permalink }}" />
+<base href="{{ .Permalink }}">
 <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
 <meta name="url" content="{{ .Permalink }}" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
@@ -29,68 +42,96 @@
 
 <!-- Languages tags -->
 
-<meta property="og:locale" content="{{ .Language.Lang }}" />
-<meta name="language" content="{{ .Language.LanguageName }}" />
+<meta property="og:locale" content="{{ .Language.Lang }}">
+<meta name="language" content="{{ .Language.LanguageName }}">
 {{ range .AllTranslations }}
-<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" />
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
 {{ end }}
 
+<!-- Image tags -->
+{{ with .Params.imageSeo }}
+  <meta itemprop="imageSeo" content="{{ . | absURL }}" />
+  <meta property="og:imageSeo" content="{{ . | absURL }}" />
+  <meta name="twitter:imageSeo" content="{{ . | absURL }}" />
+  <meta name="twitter:imageSeo:src" content="{{ . | absURL }}" />
+{{ else }}
+  <meta itemprop="image" content="{{ .Site.Params.ogimage | absURL }}" />
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL }}" />
+  <meta name="twitter:image" content="{{ .Site.Params.ogimage | absURL }}" />
+  <meta name="twitter:image:src" content="{{ .Site.Params.ogimage | absURL }}" />
+{{ end }}
 
 <!-- Data tags -->
 
-<meta property="og:updated_time" content="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" | safeHTML }}" />
+<meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml" />
 
 {{ with .OutputFormats.Get "RSS" }}
-<link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-<link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
 {{ end }}
 
+{{ if eq .Section "blog" }}
 
-<!-- Image tags -->
-{{ with $.Site.Params.shareImages.default }}
-<meta itemprop="image" content="{{ . | absURL }}" />
-{{ end }}
+  <!-- Pagination meta tags for list pages only -->
+  {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
+  {{ if $paginator }}
+    <link rel="first" href="{{ $paginator.First.URL }}">
+    <link rel="last" href="{{ $paginator.Last.URL }}">
+    {{ if $paginator.HasPrev }}
+      <link rel="prev" href="{{ $paginator.Prev.URL }}">
+    {{end }}
+    {{ if $paginator.HasNext }}
+      <link rel="next" href="{{ $paginator.Next.URL }}">
+    {{end }}
+  {{end }}
 
-{{ with .Params.image }}
-<meta itemprop="image" content="{{ . | absURL }}" />
-<meta property="og:image" content="{{ . | absURL }}" />
-<meta name="twitter:image" content="{{ . | absURL }}" />
-<meta name="twitter:image:src" content="{{ . | absURL }}" />
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="{{ .Site.Params.facebook }}" />
+  <meta property="og:article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+  <meta property="article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+
+  {{ with.Params.author }}
+    <meta property="og:article:author" content="{{humanize . }}" />
+    <meta property="article:author" content="{{humanize . }}" />
+    <meta name="author" content="{{humanize . }}" />
+  {{ end }}
+
+  {{ with.Params.category }}
+    <meta name="news_keywords" content="{{ index . 0 }}" />
+    <meta property="article:section" content="{{ index . 0 }}" />
+  {{ end }}
+
 {{ else }}
-<meta itemprop="image" content="{{ .Site.Params.shareImages.default | absURL }}" />
-<meta property="og:image" content="{{ .Site.Params.shareImages.default | absURL }}" />
-<meta name="twitter:image" content="{{ .Site.Params.shareImages.twitter | absURL }}" />
-<meta name="twitter:image:src" content="{{ .Site.Params.shareImages.twitter | absURL }}" />
+
+<meta property="og:type" content="website" />
+<meta name="author" content="{{ .Site.Params.author }}" />
+<script defer type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "{{ .Permalink }}",
+    "sameAs": [
+      "{{ .Site.Params.facebook }}",
+      "{{ .Site.Params.github }}"
+    ],
+    "name": "{{ .Title }}",
+    "logo": "https://www.example.com/images/brand/favicon.png"
+  }
+</script>
+
 {{ end }}
 
 
-<meta name="twitter:url" property="og:url" content="{{ .Permalink }}" />
+<!-- Search Engine Crawler Tags -->
 
-<!-- Twitter -->
-{{ with $.Site.Params.twitterUsername }}
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
 
-<meta name="twitter:site" content="@{{ . }}" />
-<meta name="twitter:creator" content="@{{ . }}" />
-{{ end }}
-{{ with $.Site.Params.shareImages.twitter }}
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image:src" content="{{ . | absURL }}" />
-{{ end }}
+{{ if .Site.Params.twitter }}
 
-
-<!-- Maximum dimension: 1024px x 512px; minimum dimension: 440px x 220px -->
-
-<!-- Open Graph general (Facebook, Pinterest & Google+) -->
-
-{{ with $.Site.Params.shareImages.facebook }}
-<meta property="og:image" content="{{ . | absURL }}" />
-<!-- Recommended dimension: 1200px x 630px; minimum dimension: 600px x 315px -->
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-{{ end }}
-
-{{ with $.Site.Params.siteDescription }}
-<meta name="description" content="{{ . }}" />
+<meta name="twitter:site" content="{{ .Site.Params.twitter }}">
+<meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+<meta property="fb:app_id" content="538089519640705" />
+<meta property="fb:admins" content="100000686899395" />
 {{ end }}
