@@ -21,8 +21,8 @@ nav a {
 
   align-content: center;
   align-items: center;
+  flex-flow: row wrap;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-between;
 
   @media (min-width: breakpoint('laptop')) {
@@ -148,8 +148,6 @@ nav a {
 
   cursor: pointer;
 
-  color: palette('text', 'dark');
-
   @media screen and (min-width: breakpoint('laptop')) {
     &:hover {
       color: palette('menu', 'anchor');
@@ -170,7 +168,7 @@ nav a {
 
   @media screen and (min-width: breakpoint('laptop')) {
     position: absolute;
-    top: 54px;
+    top: 60px;
     right: 0;
 
     width: auto;

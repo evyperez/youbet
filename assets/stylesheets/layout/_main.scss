@@ -29,6 +29,32 @@ main,
   flex: 1;
 }
 
+.internal-page {
+  article {
+    padding-top: to-rem(48px);
+    padding-bottom: to-rem(48px);
+
+    @media screen and (min-width: breakpoint('tablet')) {
+      padding-top: to-rem(80px);
+      padding-bottom: to-rem(80px);
+    }
+  }
+
+  & section {
+    padding-top: to-rem(32px);
+    padding-bottom: to-rem(32px);
+
+    @media screen and (min-width: breakpoint('desktop')) {
+      padding-top: to-rem(80px);
+      padding-bottom: to-rem(80px);
+    }
+  }
+
+  &--programs article:nth-of-type(even) {
+    background-color: palette('orange', '5%');
+  }
+}
+
 .container {
   width: 100%;
   max-width: $max-width;
@@ -84,14 +110,7 @@ main,
   row-gap: to-rem(32px);
 }
 
-.internal-page {
-  padding: to-rem(16px) 0;
-
-  @media screen and (min-width: breakpoint('tablet__landscape')) {
-    padding: to-rem(48px) 0;
-  }
-}
-
 footer .container {
   padding: to-rem(16px);
 }
+

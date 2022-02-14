@@ -180,6 +180,8 @@ summary {
 
   list-style-type: none;
 
+  position: relative;
+
   cursor: pointer;
 
   &::-webkit-details-marker {
@@ -190,14 +192,20 @@ summary {
     outline: none;
   }
 
-  &::before {
+  &::after {
     padding-right: 0.5em;
+    position: absolute;
 
+    right: 0;
     content: '\25B6';
   }
 
-  details[open] > &::before {
+  details[open] > &::after {
     content: '\25BC';
+    padding-right: 0.5em;
+    position: absolute;
+
+    right: 0;
   }
 }
 
@@ -239,8 +247,6 @@ template {
  */
 hr {
   /* line-height */
-  @include fallback('margin', calc(#{$leading * 0.5em} - 0.5px) 0 #{$leading * 0.5em}, #{$leading * 0.5em} 0);
-
   clear: both;
 
   display: block;
@@ -258,9 +264,6 @@ hr {
 
   box-sizing: content-box; /* 1 */
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    @include fallback('margin', calc(#{$leading * 1em} - 1px) 0 #{$leading * 1em}, #{$leading * 1em} 0);
-  }
 }
 
 /* MEDIA ELEMENTS
@@ -277,7 +280,7 @@ svg:not(:root) {
  * SVGs should fallback to their surrounding text color
  */
 svg {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 a > svg {
@@ -326,7 +329,7 @@ img,
 object {
   font-size: 83.3333%;
 
-  color: currentColor;
+  color: currentcolor;
 
   border-style: none;
 }
@@ -336,6 +339,15 @@ embed,
 object,
 video {
   max-width: 100%;
+}
+
+.main-img {
+  margin-bottom: to-rem(24px);
+  width: 100%;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-bottom: to-rem(38px);
+  }
 }
 
 .image-topics {

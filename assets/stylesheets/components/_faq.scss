@@ -1,0 +1,26 @@
+.faq {
+
+  & .questions {
+    display: grid;
+    grid-template-rows: auto;
+    width: 100%;
+    row-gap: to-rem(24px);
+  }
+
+  & summary {
+    color: palette('gray');
+
+    &::before {
+      color: palette('orange');
+    }
+  }
+
+  & details {
+    padding: to-rem(16px);
+    border: 1px solid palette('gray');
+  }
+
+  & p {
+    margin-top: to-rem(16px);
+  }
+}

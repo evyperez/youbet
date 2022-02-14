@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+/* stylelint-disable-next-line scss/at-import-partial-extension */
 @import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
 // 2. Vendors
@@ -22,7 +23,7 @@
 // 5. Components
 @import 'components/h-entry', 'components/figure', 'components/button', 'components/checkbox-and-radio',
   'components/output', 'components/progress', 'components/select', 'components/slider', 'components/text-field',
-  'components/carousel', 'components/logo', 'components/embed-container', 'components/card', 'components/tags', 'components/author', 'components/breadcrumbs', 'components/categories', 'components/avatar', 'components/whatsapp';
+  'components/carousel', 'components/logo', 'components/embed-container', 'components/card', 'components/tags', 'components/author', 'components/breadcrumbs', 'components/categories', 'components/avatar', 'components/whatsapp', 'components/page-title',  'components/faq';
 
 // 6. Page-specific styles
 @import 'pages/home';

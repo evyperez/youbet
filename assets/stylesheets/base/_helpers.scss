@@ -155,6 +155,7 @@ textarea {
   }
 }
 
+
 .one-column {
   display: grid;
 
@@ -181,6 +182,18 @@ textarea {
     column-gap: to-rem(24px);
 
     row-gap: to-rem(32px);
+  }
+}
+
+.two-columns--sidebar {
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
+    grid-template-columns: 1.5fr 1fr;
+
+    column-gap: to-rem(32px);
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    column-gap: to-rem(64px);
   }
 }
 
