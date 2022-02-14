@@ -280,7 +280,7 @@ svg:not(:root) {
  * SVGs should fallback to their surrounding text color
  */
 svg {
-  fill: currentcolor;
+  fill: currentColor;
 }
 
 a > svg {
@@ -329,7 +329,7 @@ img,
 object {
   font-size: 83.3333%;
 
-  color: currentcolor;
+  color: currentColor;
 
   border-style: none;
 }
