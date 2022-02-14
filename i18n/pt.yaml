@@ -44,6 +44,35 @@
   translation: 'WhatsApp'
 - id: writtenBy
   translation: 'Escrito por'
+- id: term
+  translation: 'Período'
+- id: age
+  translation: 'Idade'
+- id: accommodations
+  translation: 'Acomodações'
+- id: feeding
+  translation: 'Alimentação'
+- id: languageLevel
+  translation: 'Nível do idioma'
+- id: details
+  translation: 'Detalhes'
+- id: whatIsIncluded
+  translation: 'O que está incluso?'
+- id: allYouNeed
+  translation: 'Tudo o que você precisa'
+- id: scholarship
+  translation: 'Bolsa de estudos'
+- id: commonQuestions
+  translation: 'Perguntas frequentes'
+- id: getAQuote
+  translation: 'Faça um orçamento'
+
+
+
+
+
+
+
 - id: January
   translation: 'Janeiro'
 - id: February
@@ -66,5 +95,7 @@
   translation: 'Outubro'
 - id: November
   translation: 'Novembro'
+- id: December
+  translation: 'Dezembro'
 - id: December
   translation: 'Dezembro'
