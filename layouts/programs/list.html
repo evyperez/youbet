@@ -1,0 +1,54 @@
+{{ define "main" }}
+<style>
+  .page-title {
+    {{ if .Params.backgroundColor }} background-color:  {{ .Params.backgroundColor }}; {{ end }}
+  }
+
+  .page-title::before {
+    {{ if .Params.backgroundRepeat }} background-repeat:  {{ .Params.backgroundRepeat }}; {{ end }}
+    {{ if .Params.backgroundImage}} background-image: url('{{.Params.backgroundImage}}'); {{ end }}
+    {{ if .Params.backgroundCover}} max-width: unset; {{ end }}
+    {{ if .Params.backgroundSize }} background-size: {{ .Params.backgroundSize }}; {{ end }}
+    {{ if .Params.backgroundPosition}} background-position: {{ .Params.backgroundPosition}}; {{ end }}
+  }
+
+  {{ if .Params.backgroundImageDesktop}}
+    @media (min-width: 1024px) {
+      .page-title::before {
+        background-image: url('{{.Params.backgroundImageDesktop}}');
+      }
+    }
+  {{ end }}
+</style>
+
+  <div class='page-title {{ if .Params.Dark }} page-title--dark {{ end }}'>
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+  </div>
+      <main role="main" id="conteudo" class="internal-page image-list">
+        <article>
+            <div class="container">
+              <div class="two-columns two-columns--list">
+                {{ range .Data.Pages.ByDate.Reverse }}
+                      <div>
+                          <a href="/programas/{{ .Params.slug }}" class="box-link">
+                            <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
+                          </a>
+                          <a href="/programas/{{ .Params.slug }}">
+                            <h2 class="heading-3">
+                              {{ .Title }}
+                            </h2>
+                          </a>
+                          {{ .Params.Summary }}
+                      </div>
+                {{ end }}
+              </div>
+          </div>
+        </article>
+      </main>
+{{ end }}
