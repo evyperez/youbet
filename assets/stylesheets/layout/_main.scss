@@ -31,12 +31,12 @@ main,
 
 .internal-page {
   article {
-    padding-top: to-rem(48px);
-    padding-bottom: to-rem(48px);
+    padding-top: to-rem(32px);
+    padding-bottom: to-rem(32px);
 
     @media screen and (min-width: breakpoint('tablet')) {
-      padding-top: to-rem(80px);
-      padding-bottom: to-rem(80px);
+      padding-top: to-rem(42px);
+      padding-bottom: to-rem(42px);
     }
   }
 
