@@ -1,7 +1,7 @@
 ---
 title: 'Intercâmbio de Inverno'
 description: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
-imageSeo:
+imageSeo: '/uploads/images/program-winter.png'
 mainImage: 'garota-neve'
 mainImageAlt: 'adolescente brincando com a neve'
 titleColor: '#fff'
