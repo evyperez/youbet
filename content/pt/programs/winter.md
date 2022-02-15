@@ -1,6 +1,6 @@
 ---
-title: "Intercâmbio de Inverno"
-description:
+title: 'Intercâmbio de Inverno'
+description: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
 imageSeo:
 mainImage: 'garota-neve'
 mainImageAlt: 'adolescente brincando com a neve'
@@ -24,7 +24,7 @@ accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
 partners :
   - partner:
-summary: 'O intercâmbio de inverno é um programa de curta duração que visa ensinar uma nova língua com certificação internacional e imersão cultural.'
+summary: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
 whatIsIncludedImage: 'girls-snow'
 whatIsIncludedImageAlt: 'garotas na neve'
 formId: 'intercambio-inverno'

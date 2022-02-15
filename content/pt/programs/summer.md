@@ -1,6 +1,6 @@
 ---
 title: Intercâmbio de Verão
-description: "O intercâmbio é de verão é pra quem está procurando um curso de curta direção e aproveite o sol de verão"
+description: "O intercâmbio é de verão é pra quem está procurando um curso de curta direção e quer aproveitar o verão"
 imageSeo: '/uploads/images/mount-rushmore-monument-landmark-scenic.jpeg'
 mainImage: 'grupo-estudantes'
 mainImageAlt: 'Grupo de estudantes no Gramado do Colégio'
@@ -37,8 +37,6 @@ included :
   - 8h de inglês por semana
   - Programa ESL. English as a Second Language
   - Certificado de conclusão de curso em inglês
-
-
 draft: false
 ---
 
