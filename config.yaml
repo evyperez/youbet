@@ -82,9 +82,15 @@ languages:
           Weight: 3
           Identifier: 'programs'
           URL: '/programas'
-        - Name: 'Verão'
+        - Name: 'Intercâmbio de Inverno'
           Pre: ''
           Weight: 1
+          Identifier: 'winter'
+          URL: '/programas/intercambio-de-inverno'
+          parent: 'programs'
+        - Name: 'Intercâmbio de Verão'
+          Pre: ''
+          Weight: 2
           Identifier: 'summer'
           URL: '/programas/intercambio-de-verao'
           parent: 'programs'
