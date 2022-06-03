@@ -34,7 +34,7 @@
         <article>
             <div class="container">
               <div class="two-columns two-columns--list">
-                {{ range .Data.Pages.ByDate.Reverse }}
+                {{ range .Data.Pages.ByWeight }}
                       <div>
                           <a href="/programas/{{ .Params.slug }}" class="box-link">
                             <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">

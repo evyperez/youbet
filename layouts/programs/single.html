@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
-{{ $faq := .Params.faq }}
+
   <style>
     .page-title {
       {{ if .Params.backgroundColor }} background-color:  {{ .Params.backgroundColor }}; {{ end }}
@@ -165,9 +165,27 @@
         </div>
       </div>
     </div>
-
-
   </article>
+
+
+
+
+	{{ range $.Site.Data.faq.groups }}
+		<ul id="{{.id}}" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>{{.name}}</h2></li>
+		{{ range .items }}
+			<li>
+				<a class="cd-faq-trigger" href="#0">{{.question}}</a>
+				<div class="cd-faq-content">
+					<p>{{.answer}}</p>
+				</div>
+			</li>
+			{{ end }}
+		</ul>
+		{{ end }}
+
+
+
 
   {{ if .Params.formId }}
   <article class="contact-form">

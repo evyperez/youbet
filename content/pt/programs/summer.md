@@ -30,6 +30,7 @@ whatIsIncludedImage: 'friends-reading'
 whatIsIncludedImageAlt: 'amigos estudando juntos'
 formId: 'intercambio-verao'
 faqId: 'summer'
+weight: 5
 included :
   - Acomodação
   - Alimentação
