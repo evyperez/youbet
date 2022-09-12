@@ -1,35 +1,57 @@
 @charset 'UTF-8';
-/* stylelint-disable-next-line scss/at-import-partial-extension */
-@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
-// 2. Vendors
-// @import '~modularscale-sass/stylesheets/modularscale',
-//   '../../node_modules/susy/sass/susy',
-//   '../../node_modules/susy/sass/plugins/svg-grid',
-//   '../../node_modules/include-media/dist/include-media';
+// 2. External
+@use '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
-@import '../../node_modules/modularscale-sass/stylesheets/modularscale';
-
-// 1. Configuration and helpers
-@import 'abstracts/constants', 'abstracts/font-stacks', 'abstracts/functions', 'abstracts/config', 'abstracts/mixins', 'abstracts/textures-mixin';
 
 // 3. Base stuff
-@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
+@use 'base/variables';
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/typography';
+@use 'base/helpers';
 
 // 4. Layout-related sections
-@import 'layout/lists', 'layout/navigation', 'layout/table', 'layout/form', 'layout/gallery', 'layout/main',
-  'layout/header', 'layout/footer', 'layout/h-feed';
+@use 'layout/lists';
+@use 'layout/navigation';
+@use 'layout/table';
+@use 'layout/form';
+@use 'layout/gallery';
+@use 'layout/main';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/h-feed';
 
 // 5. Components
-@import 'components/h-entry', 'components/figure', 'components/button', 'components/checkbox-and-radio',
-  'components/output', 'components/progress', 'components/select', 'components/slider', 'components/text-field',
-  'components/carousel', 'components/logo', 'components/embed-container', 'components/card', 'components/tags', 'components/author', 'components/breadcrumbs', 'components/categories', 'components/avatar', 'components/whatsapp', 'components/page-title',  'components/faq';
+@use 'components/h-entry';
+@use 'components/figure';
+@use 'components/text-field';
+@use 'components/button';
+@use 'components/checkbox-and-radio';
+@use 'components/output';
+@use 'components/progress';
+@use 'components/select';
+@use 'components/slider';
+@use 'components/author';
+@use 'components/avatar';
+@use 'components/breadcrumbs';
+@use 'components/card';
+@use 'components/categories';
+@use 'components/embed-container';
+@use 'components/faq';
+@use 'components/logo';
+@use 'components/whatsapp';
+@use 'components/page-title';
+@use 'components/tags';
+@use 'components/carousel';
 
 // 6. Page-specific styles
-@import 'pages/home';
+@use 'pages/home';
 
-// 7. Partials-specific styles
-@import 'partials/blog';
+// 7. Patials styles
+@use 'partials/blog';
 
 // 8. Themes
-@import 'themes/dark', 'themes/print';
+@use 'themes/default';
+@use 'themes/print';
+

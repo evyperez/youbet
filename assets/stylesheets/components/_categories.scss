@@ -1,6 +1,10 @@
+@use '../abstracts/index' as my;
+
 .categories {
   display: grid;
+
   row-gap: 10px;
+
   font-weight: bold;
 
   a {

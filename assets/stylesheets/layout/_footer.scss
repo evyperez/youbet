@@ -1,3 +1,6 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
@@ -9,13 +12,14 @@
  *
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `contentinfo` role.
  */
-// [role='contentinfo'] {
-// }
+[role='contentinfo'] {
+}
 
 .footer {
-  color: palette('menu', 'text');
-  background: palette('menu');
-  border-top: 2px solid palette('gray', '10%');
+  color: my.palette('menu', 'text');
+
+  background: my.palette('menu');
+  border-top: 2px solid my.palette('gray', '10%');
 }
 
 .footer__copyright {
@@ -24,5 +28,6 @@
 
 .footer__copyright p {
   margin: 0;
-  font-size: to-rem(14px);
+
+  font-size: f.to-rem(14px);
 }

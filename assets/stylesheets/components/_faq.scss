@@ -1,26 +1,32 @@
-.faq {
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
 
-  & .questions {
+.faq {
+  .questions {
     display: grid;
+
     grid-template-rows: auto;
+
+    row-gap: f.to-rem(24px);
+
     width: 100%;
-    row-gap: to-rem(24px);
   }
 
-  & summary {
-    color: palette('gray');
+  summary {
+    color: my.palette('gray');
 
     &::before {
-      color: palette('orange');
+      color: my.palette('orange');
     }
   }
 
-  & details {
-    padding: to-rem(16px);
-    border: 1px solid palette('gray');
+  details {
+    padding: f.to-rem(16px);
+
+    border: 1px solid my.palette('gray');
   }
 
-  & p {
-    margin-top: to-rem(16px);
+  p {
+    margin-top: f.to-rem(16px);
   }
 }

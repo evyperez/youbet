@@ -1,6 +1,13 @@
+@use 'sass:map';
+
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 .author-list {
   display: grid;
+
   row-gap: 10px;
+
   font-weight: bold;
 
   a {
@@ -13,7 +20,7 @@
 
   grid-template-columns: auto 1fr;
 
-  column-gap: to-rem(12px);
+  column-gap: f.to-rem(12px);
 
   align-items: center;
 
@@ -29,24 +36,26 @@
 
 
 .avatar {
-  width: to-rem(38px);
-  height: to-rem(38px);
+  width: f.to-rem(38px);
+  height: f.to-rem(38px);
 }
 
 .avatar--big {
-  width: to-rem(90px);
-  height: to-rem(90px);
+  width: f.to-rem(90px);
+  height: f.to-rem(90px);
 }
 
 .avatar--medium {
-  width: to-rem(48px);
-  height: to-rem(48px);
+  width: f.to-rem(48px);
+  height: f.to-rem(48px);
 }
 
 .author a {
   display: flex;
-  border-radius: 50%;
+
   text-decoration: unset;
+
+  border-radius: 50%;
 }
 
 .author img {
@@ -58,13 +67,13 @@
 }
 
 .author__about h2 {
-  margin-bottom: to-rem(16px);
+  margin-bottom: f.to-rem(16px);
 
-  @media screen and (min-width: breakpoint('laptop')) {
-    margin-bottom: to-rem(18px);
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    margin-bottom: f.to-rem(18px);
   }
 }
 
 .author__about p {
-  color: palette('gray', '80%');
+  color: my.palette('gray', '80%');
 }

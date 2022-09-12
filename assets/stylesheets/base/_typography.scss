@@ -1,3 +1,10 @@
+@use 'sass:map';
+
+@use 'abstracts/index' as my;
+@use 'abstracts/functions' as f;
+@use 'abstracts/constants/font-stacks' as fs;
+@use '../../node_modules/modularscale-sass/stylesheets/modularscale' as ms;
+
 /**
  * 1. Add text decoration inheritance in all browsers (opinionated).
  * 2. Add vertical alignment inheritence in all browsers (opinionated).
@@ -6,7 +13,6 @@
 ::before,
 ::after {
   line-height: inherit;
-
   text-decoration: inherit; /* 1 */
   vertical-align: inherit; /* 2 */
 }
@@ -15,14 +21,11 @@
  * Basic typography style for copy text
  */
 body {
-  font-weight: font-weight('normal');
-  font-size: $body-font-size;
-  line-height: to-em(24px);
-  font-family: $text-font-stack;
-
-  color: palette('text', 'dark');
-
-  background: palette('background', 'light');
+  font-family: my.$text-font-stack;
+  font-size: my.$body-font-size;
+  font-weight: my.font-weight('text');
+  line-height: my.$leading;
+  color: my.palette('text', 'dark');
 }
 
 /* HEADINGS AND TITLES */
@@ -41,80 +44,108 @@ h6,
 legend,
 caption,
 details > summary {
+  padding: 0;
   margin: 0;
 
-  font-weight: 700;
-  font-family: Asap, sans-serif;
+  font-family: fs.$ASAP-FONT-STACK;
+  font-weight: my.font-weight('bold');
   font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
 
   break-after: avoid;
   page-break-after: avoid;
-}
 
-%h1 {
-  font-size: ms(4);
-  line-height: to-rem(41px);
-
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
-    font-size: ms(5);
-    line-height: to-rem(47px);
+  &:first-child {
+    margin-top: 0;
   }
 }
 
-%h2 {
-  font-size: ms(3);
-  line-height: to-rem(35px);
+ms.$modularscale: (
+  base: 1rem,
+  ratio: 1.2,
+);
 
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
-    font-size: ms(4);
-    line-height: to-rem(41px);
+%heading-h1 {
+  font-size: ms.ms(4);
+  line-height: f.to-rem(41px);
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    font-size: ms.ms(5);
+    line-height: f.to-rem(47px);
   }
 }
 
-%h3 {
-  font-size: ms(1);
-  line-height: to-rem(27px);
+%heading-h2 {
+  font-size: ms.ms(3);
+  line-height: f.to-rem(35px);
 
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
-    font-size: ms(3);
-    line-height: to-rem(35px);
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    font-size: ms.ms(4);
+    line-height: f.to-rem(41px);
   }
 }
 
-%h4 {
-  font-size: ms(1);
-  line-height: to-rem(27px);
+%heading-h3 {
+  font-size: ms.ms(1);
+  line-height: f.to-rem(27px);
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    font-size: ms.ms(3);
+    line-height: f.to-rem(35px);
+  }
 }
 
-%h5 {
-  font-size: ms(0);
-  line-height: to-rem(27px);
+%heading-h4 {
+  font-size: ms.ms(1);
+  line-height: f.to-rem(27px);
+}
+
+%heading-h5 {
+  font-size: ms.ms(0);
+  line-height: f.to-rem(27px);
 }
 
 h1,
 .heading-1 {
-  @extend %h1;
+  @extend %heading-h1;
 }
 
 h2,
 .heading-2 {
-  @extend %h2;
+  @extend %heading-h2;
 }
 
 h3,
 .heading-3 {
-  @extend %h3;
+  @extend %heading-h3;
 }
 
 h4,
 .heading-4 {
-  @extend %h4;
+  @extend %heading-h4;
 }
 
 h5,
 .heading-5 {
-  @extend %h5;
+  @extend %heading-h5;
 }
+
+summary {
+  color: my.palette('neutral', 'dark');
+  text-decoration: none;
+
+  details > & {
+    margin-bottom: 0;
+
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+    transition-property: margin-bottom;
+  }
+
+  [open] > & {
+    margin-bottom: my.$gutter;
+  }
+}
+
 
 h1 a,
 h2 a,
@@ -125,126 +156,34 @@ h6 a,
 legend a,
 caption a,
 dt a {
+  color: inherit;
   text-decoration: inherit;
 
-  color: inherit;
-
   &:link {
-    text-decoration: inherit;
-
     color: inherit;
+    text-decoration: inherit;
+  }
+}
+
+details {
+  margin-bottom: my.$gutter * 2;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
 p {
   padding: 0;
   margin: 0;
-
-  font-feature-settings: 'onum' 1, 'pnum' 1, 'zero' 1;
-}
-
-.rich-text {
-  width: 100%;
-
-  img {
-    display: block;
-
-    margin: auto;
-
-  }
-
-  .image-topics {
-    max-width: 214px;
-
-    margin: 0 auto to-rem(16px) auto;
-
-    @media screen and (min-width: breakpoint('laptop')) {
-      margin: 0 0 to-rem(24px) 0;
-    }
-
-  }
-
-  > * {
-    margin-bottom: to-rem(16px);
-
-    @media screen and (min-width: breakpoint('laptop')) {
-      margin-bottom: to-rem(16px);
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-}
-
-.rich-text > ul,
-.rich-text > ol {
-  display: grid;
-
-  grid-template-rows: auto;
-
-  width: 100%;
-
-  row-gap: to-rem(16px);
-
-  li > * {
-    margin-bottom: 16px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.pre-title {
-  font-size: to-rem(12px);
-  line-height: to-rem(20px);
-
-  @media screen and (min-width: breakpoint('laptop')) {
-    font-size: to-rem(14px);
-    line-height: to-rem(22px);
-  }
-}
-
-.category-title {
-  margin-bottom: 0;
-
-  font-weight: light;
-  font-weight: bold;
-  font-size: to-rem(12px);
-  line-height: to-rem(19px);
-
-  text-transform: uppercase;
-  @media screen and (min-width: breakpoint('laptop')) {
-    font-size: to-rem(14px);
-    line-height: to-rem(20px);
-  }
-}
-
-.sidebar-title {
-  font-size: to-rem(18px);
-  line-height: to-rem(26px);
-}
-
-.title-section {
-  margin-bottom: to-rem(32px);
-
-  text-align: center;
-
-
-}
-
-.subtitle {
-  font-size: to-rem(18px);
-  line-height: to-rem(26px);
-
-  color: palette('gray', '80%');
 }
 
 /**
  * @see: http://demosthenes.info/blog/946/Controlling-Widows--Orphans
  */
 article p {
+  max-width: map.get(my.$line-lengths, 'max');
+
   orphans: 3;
   widows: 3;
 }
@@ -304,9 +243,8 @@ abbr {
  */
 dfn {
   @extend %abbr-title;
-
-  font-style: italic; /* 1 */
   font-size: 1em;
+  font-style: italic; /* 1 */
 }
 
 /**
@@ -318,14 +256,21 @@ dfn {
  * @see https://github.com/necolas/normalize.css/pull/342#issuecomment-173801037
  */
 
-/* stylelint-disable no-duplicate-selectors */
+// stylelint-disable no-duplicate-selectors
 
 b,
 strong {
-  font-weight: font-weights('bold'); /* 2 */
+  font-weight: my.font-weight('bold');
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
+  font-weight: inherit; /* 1 */
 }
 
-/* stylelint-enable no-duplicate-selectors */
+b,
+strong {
+  font-weight: my.font-weight('bold'); /* 2 */
+}
+
+// stylelint-enable no-duplicate-selectors
 
 // em,
 // i {
@@ -338,9 +283,9 @@ strong {
  * Address styling not present in IE 8/9.
  */
 mark {
-  color: palette('mark', 'foreground');
+  color: my.palette('mark', 'foreground');
 
-  background: palette('mark', 'background');
+  background: my.palette('mark', 'background');
 }
 
 // meter {
@@ -349,11 +294,9 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-
-.small,
 small {
-  font-size: to-rem(14px);
-  line-height: to-rem(22px);
+  font-size: 83.3333%;
+  line-height: inherit;
 }
 
 /**
@@ -367,7 +310,6 @@ sup {
 
   font-size: 83.3333%; /* 1 */
   line-height: 0;
-
   vertical-align: baseline;
 }
 
@@ -401,8 +343,8 @@ kbd,
 pre,
 samp,
 var {
+  font-family: my.$code-font-stack, monospace; /* 2 */
   font-size: 1em; /* 1 */
-  font-family: $code-font-stack, monospace; /* 2 */
 }
 
 // code {
@@ -418,9 +360,10 @@ var {
  */
 pre {
   word-wrap: break-word; /* IE */
-  // sass-lint:disable-block no-duplicate-properties
   white-space: pre; /* CSS2 */
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
   white-space: pre-wrap; /* CSS 2.1 */
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
   white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
 }
 
@@ -445,8 +388,7 @@ s {
 
 %updated {
   &::before {
-    font-weight: font-weights('bold');
-
+    font-weight: my.font-weight('bold');
     text-decoration: none;
 
     content: '[update] ';
@@ -503,7 +445,6 @@ del {
 /// Blockquote problems and solutions
 ///
 /// @group components
-/// @see palette
 /// @source http://oli.jp/2011/blockquote/
 ///
 /// @example html
@@ -517,28 +458,26 @@ del {
 /// 	</footer>
 /// </blockquote>
 ///
+blockquote {
+}
 
-// blockquote {
-// }
+blockquote > p {
+  &::before {
+  }
 
-// blockquote > p {
-//   &::before {
-//   }
-
-//   &:last-of-type::after {
-//   }
-// }
+  &:last-of-type::after {
+  }
+}
 
 q,
 blockquote {
   font-style: italic;
-
-  color: palette('quotes');
+  color: my.palette('quotes');
 }
 
 cite {
-  font-style: italic;
   font-size: 1em;
+  font-style: italic;
 }
 
 blockquote footer {
@@ -560,19 +499,116 @@ blockquote li {
   font-size: 1em;
 }
 
+// stylelint-disable-next-line selector-no-qualifying-type
 blockquote.verse {
-  // stylelint-disable-next-line no-qualifying-elements
   text-align: center;
 }
 
+// stylelint-disable-next-line selector-no-qualifying-type
 blockquote.verse p {
-  // stylelint-disable-next-line no-qualifying-elements
   display: inline-block;
 
   width: auto;
-
   margin-right: auto;
   margin-left: auto;
 
   text-align: left;
+}
+
+
+/* rich-text
+============================================================================ */
+
+.rich-text {
+  width: 100%;
+
+  img {
+    display: block;
+
+    margin: auto;
+  }
+
+  .image-topics {
+    max-width: 214px;
+    margin: 0 auto f.to-rem(16px) auto;
+
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+      margin: 0 0 f.to-rem(24px) 0;
+    }
+
+  }
+
+  > * {
+    margin-bottom: f.to-rem(16px);
+
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+      margin-bottom: f.to-rem(16px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.rich-text > ul,
+.rich-text > ol {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  row-gap: f.to-rem(16px);
+
+  width: 100%;
+
+  li > * {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.pre-title {
+  font-size: f.to-rem(12px);
+  line-height: f.to-rem(20px);
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    font-size: f.to-rem(14px);
+    line-height: f.to-rem(22px);
+  }
+}
+
+.category-title {
+  margin-bottom: 0;
+
+  font-size: f.to-rem(12px);
+  font-weight: my.font-weight('bold');
+  line-height: f.to-rem(19px);
+  text-transform: uppercase;
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    font-size: f.to-rem(14px);
+    line-height: f.to-rem(20px);
+  }
+}
+
+.sidebar-title {
+  font-size: f.to-rem(18px);
+  line-height: f.to-rem(26px);
+}
+
+.title-section {
+  margin-bottom: f.to-rem(32px);
+
+  text-align: center;
+}
+
+.subtitle {
+  font-size: f.to-rem(18px);
+  line-height: f.to-rem(26px);
+  color: my.palette('gray', '80%');
 }

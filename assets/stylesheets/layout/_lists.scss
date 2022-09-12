@@ -1,10 +1,12 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 /* LISTS
 ============================================================================ */
 
 /**
  * @see http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
  */
-
 ul,
 ol {
   padding-left: 1em;
@@ -15,11 +17,13 @@ ol {
   counter-reset: li;
 }
 
+li ol,
+li ul {
+}
+
 /* definition
 ---------------------------------------------------------------------------- */
 dl {
-  @include fallback('margin', 0 0 1.5rem);
-
   padding: 0;
 }
 
@@ -30,12 +34,10 @@ dd {
 }
 
 dt {
-  font-weight: font-weights('bold');
+  font-weight: my.font-weight('bold');
 }
 
 dd {
-  @include fallback('margin', 0 0 1.5rem);
-
   &:last-child {
     margin-bottom: 0;
   }
@@ -44,22 +46,19 @@ dd {
 .rich-text ol li,
 .rich-text ul li {
   &::marker {
-    padding-right: to-rem(8px);
+    padding-right: f.to-rem(8px);
 
+    font-size: f.to-rem(18px);
     font-weight: 900;
-    font-size: to-rem(18px);
-    font-family: Asap, sans-serif;
-
-    color: palette('orange');
+    color: my.palette('orange');
 
     background-color: unset;
-
     border-radius: 50%;
   }
 }
 
 .rich-text ol li {
   &::marker {
-    font-size: to-rem(16px);
+    font-size: f.to-rem(16px);
   }
 }

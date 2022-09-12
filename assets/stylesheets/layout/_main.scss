@@ -1,3 +1,7 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 /**
  * The main content of a document.
  *
@@ -10,10 +14,9 @@
 
 .page > section {
   &:nth-of-type(even) {
-    background-color: palette('gray', '5%');
+    background-color: my.palette('gray', '5%');
   }
 }
-
 
 .main-container {
   display: flex;
@@ -27,77 +30,79 @@ main,
   display: flex;
 
   flex: 1;
+  flex-grow: 1;
+
+  width: 100%;
 }
 
 .internal-page {
   article {
-    padding-top: to-rem(32px);
-    padding-bottom: to-rem(32px);
+    padding-top: f.to-rem(32px);
+    padding-bottom: f.to-rem(32px);
 
-    @media screen and (min-width: breakpoint('tablet')) {
-      padding-top: to-rem(42px);
-      padding-bottom: to-rem(42px);
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+      padding-top: f.to-rem(42px);
+      padding-bottom: f.to-rem(42px);
     }
   }
 
-  & section {
-    padding-top: to-rem(32px);
-    padding-bottom: to-rem(32px);
+  section {
+    padding-top: f.to-rem(32px);
+    padding-bottom: f.to-rem(32px);
 
-    @media screen and (min-width: breakpoint('desktop')) {
-      padding-top: to-rem(80px);
-      padding-bottom: to-rem(80px);
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+      padding-top: f.to-rem(80px);
+      padding-bottom: f.to-rem(80px);
     }
   }
 
   &--programs article:nth-of-type(even) {
-    background-color: palette('orange', '5%');
+    background-color: my.palette('orange', '5%');
   }
 }
 
 .container {
   width: 100%;
-  max-width: $max-width;
-
-  padding-right: $small-gutter;
-  padding-left: $small-gutter;
+  max-width: my.$max-width;
+  padding-right: my.$small-gutter;
+  padding-left: my.$small-gutter;
   margin-right: auto;
   margin-left: auto;
 
   @media screen and (min-width: breakpoint('phone')) {
-    padding-right: $gutter;
-    padding-left: $gutter;
+    padding-right: my.$gutter;
+    padding-left: my.$gutter;
   }
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    max-width: $max-width--desktop;
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    max-width: my.$max-width--desktop;
   }
 }
 
 .container--narrow {
   @media screen and (min-width: breakpoint('laptop')) {
-    max-width: $max-width--narrow;
+    max-width: my.$max-width--narrow;
   }
 }
 
 .page > section > .container {
-  padding-top: to-em(32px);
-  padding-bottom: to-em(32px);
+  padding-top: f.to-em(32px);
+  padding-bottom: f.to-em(32px);
 
   @media screen and (min-width: breakpoint('laptop')) {
-    padding-top: to-em(68px);
-    padding-bottom: to-em(68px);
+    padding-top: f.to-em(68px);
+    padding-bottom: f.to-em(68px);
   }
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    padding-top: to-em(80px);
-    padding-bottom: to-em(80px);
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    padding-top: f.to-em(80px);
+    padding-bottom: f.to-em(80px);
   }
 }
 
 .info-page > section > .container {
-  padding-top: to-em(32px);
-  padding-bottom: to-em(32px);
+  padding-top: f.to-em(32px);
+  padding-bottom: f.to-em(32px);
 }
 
 .wrap-gap {
@@ -105,12 +110,12 @@ main,
 
   grid-template-rows: auto;
 
-  width: 100%;
+  row-gap: f.to-rem(32px);
 
-  row-gap: to-rem(32px);
+  width: 100%;
 }
 
 footer .container {
-  padding: to-rem(16px);
+  padding: f.to-rem(16px);
 }
 

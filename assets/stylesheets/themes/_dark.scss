@@ -3,99 +3,95 @@
 // default one.
 // -----------------------------------------------------------------------------
 
-body.theme--dark {
-  color: palette('text', 'light');
-  background: palette('background', 'dark');
-}
-
 .theme--dark .page > section {
   &:nth-of-type(even) {
-    background-color: palette('gray');
+    background-color: my.palette('gray');
   }
 }
 
 // Theme
 
 .theme--dark {
+  color: my.palette('text', 'light');
+
+  background: my.palette('background', 'dark');
+
   .main-menu {
     @media (max-width: breakpoint('max-laptop')) {
-      background: palette('menu-dark', 'sub-menu');
+      background: my.palette('menu-dark', 'sub-menu');
     }
   }
 
   .has-sub-menu {
-    color: palette('text', 'light');
+    color: my.palette('text', 'light');
 
-    @media screen and (min-width: breakpoint('laptop')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       &:hover {
-        color: palette('menu-dark', 'anchor');
+        color: my.palette('menu-dark', 'anchor');
       }
     }
   }
 
   .sub-menu {
-    color: palette('menu-dark', 'sub-menu-text');
+    color: my.palette('menu-dark', 'sub-menu-text');
 
-    @media screen and (min-width: breakpoint('laptop')) {
-      color: palette('menu-dark', 'sub-menu');
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+      color: my.palette('menu-dark', 'sub-menu');
 
-      background: palette('menu-dark', 'sub-menu');
+      background: my.palette('menu-dark', 'sub-menu');
     }
 
     li > a {
-      color: palette('menu-dark', 'sub-menu-text');
+      color: my.palette('menu-dark', 'sub-menu-text');
     }
   }
 
-  .sub-menu.active {
-    li > a {
-      @media screen and (min-width: breakpoint('laptop')) {
-        &:hover {
-          color: palette('menu-dark', 'anchor');
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    .sub-menu.active a:hover {
+      color: my.palette('menu-dark', 'anchor');
 
-          background-color: palette('menu-dark', 'sub-menu-hover');
-        }
-      }
+      background-color: my.palette('menu-dark', 'sub-menu-hover');
     }
   }
 
   .controller-label {
-    color: palette('text', 'light');
+    color: my.palette('text', 'light');
 
     &::after {
-      background-color: palette('text', 'light');
+      background-color: my.palette('text', 'light');
 
       &:hover {
-        background-color: palette('menu-dark', 'anchor');
+        background-color: my.palette('menu-dark', 'anchor');
       }
     }
   }
 
   .main-menu a {
-    color: palette('menu-dark', 'text');
+    color: my.palette('menu-dark', 'text');
 
-    @media screen and (min-width: breakpoint('laptop')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       &:hover {
-        color: palette('menu-dark', 'anchor');
+        color: my.palette('menu-dark', 'anchor');
       }
     }
   }
 
   [for='menu-controller'] {
-    color: palette('menu-dark', 'text');
+    color: my.palette('menu-dark', 'text');
 
     &::after {
-      color: palette('menu-dark', 'text');
+      color: my.palette('menu-dark', 'text');
     }
   }
 }
 
 .theme--dark header {
-  background: palette('menu-dark');
-  border-bottom: 2px solid palette('menu-dark', 'border');
+  background: my.palette('menu-dark');
+  border-bottom: 2px solid my.palette('menu-dark', 'border');
 }
 
 .theme--dark .footer {
-  color: palette('menu-dark', 'text');
-  background: palette('menu-dark');
+  color: my.palette('menu-dark', 'text');
+
+  background: my.palette('menu-dark');
 }

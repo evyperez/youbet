@@ -80,8 +80,8 @@ languages:
         - Name: 'Programas'
           Pre: ''
           Weight: 3
-          Identifier: 'programs'
           URL: '/programas'
+          Identifier: 'programs'
         - Name: 'Intercâmbio de Inverno'
           Pre: ''
           Weight: 1
@@ -92,7 +92,13 @@ languages:
           Pre: ''
           Weight: 2
           Identifier: 'summer'
-          URL: '/programas/intercambio-de-verao'
+          URL: '/programas'
+          parent: 'programs'
+        - Name: 'Todos'
+          Pre: ''
+          Weight: 2
+          Identifier: 'allPrograms'
+          URL: '/programas'
           parent: 'programs'
         - Name: 'Contato'
           Pre: ''

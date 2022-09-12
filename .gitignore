@@ -1,4 +1,13 @@
-# Created by https://www.gitignore.io/api/vim,node,hugo,sass,linux,macos,windows,sublimetext,visualstudiocode
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+.hugo_build.lock
 
 ### Hugo ###
 # Hugo binary

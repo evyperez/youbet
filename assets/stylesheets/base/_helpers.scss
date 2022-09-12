@@ -1,3 +1,8 @@
+@use 'sass:map';
+
+@use 'abstracts' as my;
+@use 'abstracts/functions' as f;
+
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
@@ -5,10 +10,11 @@
 /* CLASSES
 ============================================================================ */
 %loading-bg {
-  background-image: image('loading.svg');
-  background-position: 50% 50%;
+  background-color: my.palette('loading', 'background');
+  background-image: my.image('loading.svg');
   background-repeat: no-repeat;
-  background-color: palette('loading', 'background');
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
 
 %loading-el {
@@ -22,8 +28,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-
-    z-index: layer('modal');
+    z-index: my.layer('modal');
 
     content: '';
   }
@@ -54,25 +59,36 @@
 ///
 [aria-busy='true'] {
   > body,
-  &:not(html) {
-    @extend %loading-bg;
+  &:not(html):not(.skeleton) {
     @extend %loading-el;
+
+    position: relative;
+
+    &::after {
+      @extend %loading-bg;
+    }
   }
 }
 
-// img:not([src$='.png']):not([src$='.gif']),
-// embed {
-//   @extend %loading-bg;
+img,
+embed {
+  &::before {
+    @extend %loading-bg;
 
-//   background-size: auto;
+    display: block;
 
-//   &::after {
-//     /*
-// 		 *	Future proof reset
-// 		 */
-//     content: none;
-//   }
-// }
+    content: '';
+
+    background-size: auto;
+  }
+
+  &::after {
+    /*
+     *	Future proof reset
+     */
+    content: none;
+  }
+}
 
 input,
 output,
@@ -85,8 +101,100 @@ textarea {
   }
 }
 
+.skeleton {
+  pointer-events: none;
+
+  background-color: transparent;
+
+  &.skeleton__bone--vertebra,
+  &.skeleton__bone,
+  .skeleton__bone--vertebra,
+  .skeleton__bone {
+    @include my.on-event(true) {
+      text-decoration: none;
+
+      border: 0;
+      border-radius: my.$rounded-corner;
+
+      &::before,
+      &::after {
+        all: unset;
+
+        position: static;
+
+        display: block;
+
+        height: 0;
+
+        content: '';
+
+        border: 0;
+      }
+
+      &::before {
+        height: 1em;
+      }
+    }
+  }
+
+  .skeleton__bone {
+    @include my.on-event(true) {
+      display: block;
+
+      background-color: #d9d9d9;
+      background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0, 0, 0, 0.05) 20%, #d9d9d9 40%, #d9d9d9 100%);
+      background-repeat: no-repeat;
+      background-size: 450px 400px;
+
+      animation: shimmer 1s linear infinite;
+    }
+  }
+
+  .skeleton__bone--vertebra {
+    @include my.on-event(true) {
+      &::before,
+      &::after {
+        display: inline-block;
+
+        height: 1em;
+
+        background-color: #d9d9d9;
+        background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0, 0, 0, 0.05) 20%, #d9d9d9 40%, #d9d9d9 100%);
+        background-repeat: no-repeat;
+        background-size: 450px 400px;
+
+        animation: shimmer 1s linear infinite;
+        box-decoration-break: clone;
+      }
+
+      &::before {
+        width: 100%;
+        max-width: 37.5em;
+
+        content: '\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0';
+      }
+
+      &::after {
+        width: 66%;
+        max-width: 22.5em;
+
+        content: '\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0';
+      }
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+
+  100% {
+    background-position: 450px 0;
+  }
+}
+
 /// Load grid image background under the class `grid`
-///
 /// @author Sobral
 /// @group helpers
 ///
@@ -98,49 +206,49 @@ textarea {
 /// </html>
 ///
 .grid {
-  $n: $_mobile-columns - 1;
+  $n: my.$mobile-columns - 1;
 
   &::after,
   &:root::before {
     position: fixed;
     top: 0;
     right: 0;
-
-    z-index: layer('modal');
+    z-index: my.layer('modal');
 
     font-size: 1rem;
 
     pointer-events: none;
-
     content: 'breakpoint: phone';
   }
 
   &::after {
-    background-image: grid-image($n);
-    background-position: center top;
+    @include my.grid-image($n);
 
     content: '';
+
+    background-position: center top;
   }
 
   &:root::before {
-    padding: $gutter;
-
-    background-color: palette('debug');
+    padding: my.$gutter;
 
     content: 'breakpoint: #{$n}col';
 
+    background-color: my.palette('feedback', 'danger');
     opacity: 0.75;
   }
 
-  @each $key, $value in $breakpoints {
+  @each $key, $value in my.$breakpoints {
     $n: $n + 1;
 
-    @if map-get($toggle-breakpoints, $key) ==null {
-      @media screen and (min-width: breakpoint($key)) {
+    @if map.get(my.$toggle-breakpoints, $key) == null {
+      @media screen and (min-width: my.breakpoint($key)) {
+        // stylelint-disable-next-line max-nesting-depth
         &::after {
-          background-image: grid-image($n);
+          @include my.grid-image($n);
         }
 
+        // stylelint-disable-next-line max-nesting-depth
         &:root::before {
           content: 'breakpoint: #{$key}';
         }
@@ -148,22 +256,29 @@ textarea {
     }
   }
 
-  @media screen and (min-width: $max-width) {
+  @media screen and (min-width: my.$max-width) {
     &::after {
-      background-size: $max-width 100%;
+      background-size: my.$max-width 100%;
     }
   }
 }
 
+.container {
+  @include my.container;
+}
+
+.full-width {
+  @include my.full-width;
+}
 
 .one-column {
   display: grid;
 
   grid-template-rows: auto;
 
-  width: 100%;
+  row-gap: my.$gutter;
 
-  row-gap: $gutter;
+  width: 100%;
 }
 
 .two-columns {
@@ -172,16 +287,15 @@ textarea {
 
   grid-template-rows: auto;
 
+  row-gap: my.$gutter;
+
   width: 100%;
 
-  row-gap: $gutter;
-
-  @media screen and (min-width: breakpoint('tablet')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     grid-template-columns: 1fr 1fr;
 
-    column-gap: to-rem(24px);
-
-    row-gap: to-rem(32px);
+    row-gap: f.to-rem(32px);
+    column-gap: f.to-rem(24px);
   }
 }
 
@@ -189,25 +303,24 @@ textarea {
   @media screen and (min-width: breakpoint('phone__landscape')) {
     grid-template-columns: 1fr 1fr;
 
-    column-gap: to-rem(24px);
-
-    row-gap: to-rem(32px);
+    row-gap: f.to-rem(32px);
+    column-gap: f.to-rem(24px);
   }
 
-  @media screen and (min-width: breakpoint('tablet')) {
-    column-gap: to-rem(32px);
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    column-gap: f.to-rem(32px);
   }
 }
 
 .two-columns--sidebar {
-  @media screen and (min-width: breakpoint('tablet')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     grid-template-columns: 1.5fr 1fr;
 
-    column-gap: to-rem(32px);
+    column-gap: f.to-rem(32px);
   }
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    column-gap: to-rem(64px);
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    column-gap: f.to-rem(64px);
   }
 }
 
@@ -217,16 +330,15 @@ textarea {
 
   grid-template-rows: auto;
 
+  row-gap: my.$gutter;
+
   width: 100%;
 
-  row-gap: $gutter;
-
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     grid-template-columns: 1fr 1fr 1fr;
 
-    column-gap: to-rem(24px);
-
-    row-gap: to-rem(32px);
+    row-gap: f.to-rem(32px);
+    column-gap: f.to-rem(24px);
   }
 }
 
@@ -236,24 +348,22 @@ textarea {
 
   grid-template-rows: auto;
 
+  row-gap: my.$gutter;
+
   width: 100%;
 
-  row-gap: $gutter;
-
-  @media screen and (min-width: breakpoint('tablet')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     grid-template-columns: 1fr 1fr;
 
-    column-gap: to-rem(24px);
-
-    row-gap: to-rem(32px);
+    row-gap: f.to-rem(32px);
+    column-gap: f.to-rem(24px);
   }
 
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    column-gap: to-rem(24px);
-
-    row-gap: to-rem(32px);
+    row-gap: f.to-rem(32px);
+    column-gap: f.to-rem(24px);
   }
 }
 
@@ -262,39 +372,35 @@ textarea {
 
   grid-template-rows: auto;
 
+  row-gap: f.to-rem(12px);
+
   width: 100%;
 
-  row-gap: to-rem(12px);
-
   .one-column {
-    row-gap: to-rem(12px);
+    row-gap: f.to-rem(12px);
   }
 
   .two-columns {
-    row-gap: to-rem(12px);
+    row-gap: f.to-rem(12px);
 
-    @media screen and (min-width: breakpoint('tablet')) {
-
-      column-gap: to-rem(12px);
-
-      row-gap: to-rem(12px);
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+      row-gap: f.to-rem(12px);
+      column-gap: f.to-rem(12px);
     }
   }
 
   .three-columns {
-    row-gap: to-rem(12px);
+    row-gap: f.to-rem(12px);
 
-    @media screen and (min-width: breakpoint('laptop')) {
-
-      column-gap: to-rem(12px);
-
-      row-gap: to-rem(12px);
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+      row-gap: f.to-rem(12px);
+      column-gap: f.to-rem(12px);
     }
   }
 }
 
 .color-white {
-  color: palette('white');
+  color: my.palette('white');
 }
 
 .align-items--center {
@@ -310,19 +416,19 @@ textarea {
 }
 
 .reverse-content--even:nth-of-type(even) > div:nth-of-type(even) {
-  @media screen and (min-width: breakpoint('tablet')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     order: -1;
   }
 }
 
 .reverse-content--odd:nth-of-type(odd) {
   > div:nth-of-type(even) {
-    @media screen and (min-width: breakpoint('tablet')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       order: -1;
     }
   }
 }
 
 .column-gap--18 {
-  column-gap: to-rem(18px);
+  column-gap: f.to-rem(18px);
 }

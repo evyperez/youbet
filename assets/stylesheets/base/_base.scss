@@ -1,3 +1,8 @@
+@use 'sass:map';
+
+@use 'abstracts' as my;
+@use 'abstracts/functions' as f;
+
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
@@ -9,21 +14,33 @@
 *,
 ::before,
 ::after {
-  background-repeat: no-repeat;
-
   box-sizing: inherit;
 
   tab-size: inherit;
+
+  background-repeat: no-repeat;
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    // stylelint-disable declaration-no-important
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+    // stylelint-enable declaration-no-important
+  }
 }
+
 
 /* User interaction (https://www.w3.org/TR/html5/editing.html)
 ========================================================================== */
 ::selection {
+  color: my.palette('selection', 'foreground');
   text-shadow: none;
 
-  color: palette('selection', 'foreground');
-
-  background-color: palette('selection', 'background');
+  background-color: my.palette('selection', 'background');
 }
 
 /**
@@ -94,23 +111,30 @@ textarea,
  * www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 html {
-  height: 100%; /* 2 */
+  box-sizing: border-box;
 
+  height: 100%; /* 2 */
   padding: 0;
   margin: 0;
-
-  overflow-y: scroll; /* 3 */
+  overflow: auto;
+  overflow-x: hidden;
 
   font-size: 100.01%; /* 1 */
+  tab-size: 4;
+
+  background: my.palette('white');
 
   text-size-adjust: 100%; /* 4 */
 
-  background: palette('white');
+  scroll-padding: calc(3em + 1vh) 0;
 
-  box-sizing: border-box;
-
-  tab-size: 4;
+  &:focus-within {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
 }
+
 
 /**
  * 1. Set sticky footer
@@ -123,17 +147,11 @@ body {
   flex-direction: column; /* 1 */
 
   width: 100%;
-  // height: 100vh; /* 2 */
+  height: 100vh; /* 2 */
   min-height: 100%;
-
   margin: 0;
 
-  font-size: 100%;
-  line-height: 1.75;
-
-  color: palette('black');
-
-  background-color: transparent;
+  color: my.palette('black');
 
   > * {
     flex-shrink: 0; /* 1 */
@@ -176,11 +194,11 @@ section {
  * Add the correct display in all browsers.
  */
 summary {
-  display: list-item;
+  position: relative;
+
+  display: block;
 
   list-style-type: none;
-
-  position: relative;
 
   cursor: pointer;
 
@@ -189,23 +207,80 @@ summary {
   }
 
   &:focus {
-    outline: none;
+    position: relative;
+
+    outline: 0;
+
+    &::after {
+      @include my.focused;
+
+      position: absolute;
+      top: my.$gutter * -0.5;
+      right: my.$gutter * -0.5;
+      bottom: my.$gutter * -0.5;
+      left: my.$gutter * -0.5;
+
+      width: auto;
+      height: auto;
+
+      pointer-events: none;
+      content: '';
+    }
   }
 
-  &::after {
-    padding-right: 0.5em;
-    position: absolute;
-
-    right: 0;
-    content: '\25B6';
+  &:hover,
+  &:focus {
+    &::before {
+      @include my.triangle('bottom', my.palette('black'), 0.25em);
+    }
   }
 
-  details[open] > &::after {
-    content: '\25BC';
-    padding-right: 0.5em;
-    position: absolute;
+  &::before {
+    @include my.triangle('left', my.palette('neutral', 'base'), 0.25em);
 
+    position: absolute;
+    top: my.$leading * 0.5em;
     right: 0;
+
+    content: '';
+  }
+
+  details[open] > &::before {
+    @include my.triangle('bottom', my.palette('neutral', 'base'), 0.25em);
+
+    content: '';
+  }
+
+  details[open] > &:hover,
+  details[open] > &:focus {
+    &::before {
+      @include my.triangle('left', my.palette('black'), 0.25em);
+    }
+  }
+
+  details > & ~ * {
+    overflow: hidden;
+
+    animation-name: slideDown;
+    animation-duration: 300ms;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      animation-name: none;
+    }
+
+    @keyframes slideDown {
+      0% {
+        max-height: 0;
+
+        opacity: 0;
+      }
+
+      100% {
+        max-height: 999em;
+
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -215,7 +290,8 @@ summary {
  */
 [hidden],
 template {
-  display: none !important; /* stylelint-disable-line */
+  // stylelint-disable-next-line declaration-no-important
+  display: none !important;
 }
 
 /**
@@ -246,24 +322,18 @@ template {
 /**
  */
 hr {
-  /* line-height */
-  clear: both;
-
+  box-sizing: content-box; /* 1 */
   display: block;
 
   height: 0; /* 1 */
-
   padding: 0;
-
   overflow: visible; /* 2 */
+  clear: both;
 
-  color: palette('gray', '30%');
+  color: my.palette('neutral');
 
   border: 0;
-  border-top: 2px solid palette('gray', '30%');
-
-  box-sizing: content-box; /* 1 */
-
+  border-top: 1px solid my.palette('neutral');
 }
 
 /* MEDIA ELEMENTS
@@ -280,7 +350,7 @@ svg:not(:root) {
  * SVGs should fallback to their surrounding text color
  */
 svg {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 a > svg {
@@ -321,15 +391,14 @@ progress {
   appearance: none;
 }
 
-// audio {
-// }
+audio {
+}
 
 iframe,
 img,
 object {
   font-size: 83.3333%;
-
-  color: currentColor;
+  color: currentcolor;
 
   border-style: none;
 }
@@ -341,19 +410,8 @@ video {
   max-width: 100%;
 }
 
-.main-img {
-  margin-bottom: to-rem(24px);
-  width: 100%;
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    margin-bottom: to-rem(38px);
-  }
+video {
 }
-
-
-
-// video {
-// }
 
 video > source {
   width: 100%;
@@ -363,8 +421,7 @@ video > source {
 .ie:not(.ie6-8),
 object > img {
   position: relative;
-
-  z-index: layer('below');
+  z-index: my.layer('below');
 
   font-size: 1em;
 
@@ -372,19 +429,20 @@ object > img {
 }
 
 /// Stylize broken images
+///
 /// @author [Ire Aderinokun](https://ireaderinokun.com/)
 /// @author Sobral
 /// @group helpers
 /// @link https://bitsofco.de/styling-broken-images/
+///
 %broken-image {
   font-style: normal;
-
   text-align: center;
 
   &::before {
     display: block;
 
-    margin-bottom: $leading * 1em;
+    margin-bottom: my.$gutter;
 
     content: '\f127'' Broken Image of ' attr(alt);
   }
@@ -393,8 +451,7 @@ object > img {
     display: block;
 
     font-size: small;
-
-    color: palette('gray');
+    color: my.palette('neutral');
 
     content: '(url: ' attr(src) ')';
   }
@@ -408,29 +465,24 @@ object > img {
 img {
   @extend %broken-image;
 
-  height: auto;
   max-width: 100%;
+  height: auto;
 
   image-rendering: auto; /* 1 */
 }
 
-.section-image {
-  margin: auto;
-  text-align: center;
-}
-
 [usemap] {
-  color: palette('anchor');
+  color: my.palette('anchor');
 }
 
-// map {
-// }
+map {
+}
 
-// area {
-// }
+area {
+}
 
-// object {
-// }
+object {
+}
 
 li img,
 p img {
@@ -449,56 +501,62 @@ a {
   margin: 0;
 
   font-size: 100%;
-
-  text-decoration: none;
-  text-decoration: underline;
+  color: my.palette('anchor', 'base');
   vertical-align: baseline;
-  // sass-lint:disable-block property-sort-order
 
-  color: palette('anchor', 'base');
+  @include my.on-event {
+    text-decoration: none;
+  }
 
-  // &:link {
-  //   cursor: pointer;
+  &:link {
+    color: my.palette('anchor', 'link');
+    text-decoration: none;
 
-  //   color: palette('anchor', 'link');
-  // }
+    cursor: pointer;
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-tap-highlight-color: my.palette('tap-highlight');
+
+  }
 
   &:visited {
-    color: palette('anchor', 'visited');
+    color: my.palette('anchor', 'visited');
 
-    @include on-event {
+    @include my.on-event {
       text-decoration: underline;
     }
   }
 
-  // &:hover,
-  // &:focus {
-  // }
-
-  &:hover {
-    color: palette('anchor', 'hover');
+  &:hover,
+  &:focus {
+    @supports (text-decoration-color: my.palette('neutral', 'dark')) {
+      text-decoration-color: my.palette('neutral', 'dark');
+    }
   }
 
-  &:focus {
-    outline: unset;
-    outline: 1px dotted;
+  &:hover {
+    color: my.palette('anchor', 'hover');
+  }
+
+  &:focus:not(:link) {
+    @include my.focused;
+
+    color: my.palette('anchor', 'focus');
   }
 
   /**
-	* Improve readability when focused and also mouse hovered in all browsers.
-	*/
+  * Improve readability when focused and also mouse hovered in all browsers.
+  */
   &:hover,
   &:active {
-    outline: unset;
     outline-width: 0;
   }
 
   /**
-	* Remove the gray background color from active links in IE 10.
-	* @see https://github.com/necolas/normalize.css/issues/473
-	*/
+  * Remove the gray background color from active links in IE 10.
+  * @see https://github.com/necolas/normalize.css/issues/473
+  */
   &:active {
-    color: palette('anchor', 'active');
+    color: my.palette('anchor', 'active');
 
     background-color: transparent;
   }
@@ -508,8 +566,32 @@ a {
   // }
 }
 
-.text-decor--none {
-  text-decoration: none;
+.rich-text > a:not([class*='button']) {
+  @include my.on-event {
+    text-decoration: underline;
+  }
+
+  &:link {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    @include my.on-event {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @supports (text-decoration-color: my.palette('neutral', 'dark')) {
+      text-decoration-color: my.palette('neutral', 'dark');
+    }
+  }
+
+
+  &:focus {
+    @include my.focused;
+  }
 }
 
 /* Contact info and addresses
@@ -521,17 +603,31 @@ address {
   font-style: italic;
 }
 
-/* Coode blocks
+/* Code blocks
 ---------------------------------------------------------------------------- */
 pre {
-  padding: $leading * 0.5rem $gutter * 0.5;
-  margin: 0 0 $leading * 1rem;
-
+  padding: my.$leading * 0.5rem my.$gutter * 0.5;
+  margin: 0 0 my.$leading * 1rem;
   overflow: auto;
 
-  font-size: ms(-1);
+  font-size: smaller;
+  color: my.palette('text', 'light');
 
-  color: palette('text', 'light');
+  background-color: my.palette('text', 'dark');
+}
 
-  background-color: palette('text', 'dark');
+
+.section-image {
+  margin: auto;
+
+  text-align: center;
+}
+
+.main-img {
+  width: 100%;
+  margin-bottom: f.to-rem(24px);
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'desktop')}) {
+    margin-bottom: f.to-rem(38px);
+  }
 }
