@@ -2,7 +2,7 @@
 title: 'Ensino Médio'
 description: 'O que acha de fazer seu ensino médio nos Estados Unidos, encontrar pessoas do mundo inteiro e conhecer uma nova cultura?'
 imageSeo: '/uploads/images/program-high-school.png'
-mainImage: 'high-school'
+mainImage: 'high-school-students'
 mainImageAlt: 'adolescente brincando com a neve'
 titleColor: '#FFF'
 backgroundColor:
@@ -25,8 +25,8 @@ feeding: 'Três refeições por dia'
 summary: 'O que acha de fazer seu ensino médio nos Estados Unidos, encontrar pessoas do mundo inteiro e conhecer uma nova
 cultura?'
 weight: 1
-whatIsIncludedImage: 'garota-ciencias'
-whatIsIncludedImageAlt: 'garotas estudando ciências'
+whatIsIncludedImage: 'students'
+whatIsIncludedImageAlt: 'estudantes conversando'
 formId: 'ensino-medio'
 faqId: 'steam'
 included :

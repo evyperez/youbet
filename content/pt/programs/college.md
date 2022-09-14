@@ -4,11 +4,11 @@ description: 'O que acha de fazer seu ensino médio nos Estados Unidos, encontra
 imageSeo: '/uploads/images/program-college.png'
 mainImage: 'college-students'
 mainImageAlt: 'adolescente brincando com a neve'
-titleColor: '#fff'
+titleColor: '#000'
 backgroundColor:
-backgroundImage: '/uploads/images/textures/school--mobile.png'
-backgroundImageDesktop: '/uploads/images/textures/school.png'
-backgroundRepeat: repeat
+backgroundImage: '/uploads/images/textures/graduation.png'
+backgroundImageDesktop: '/uploads/images/textures/graduation.png'
+backgroundRepeat: no-repeat
 backgroundMaxWidth: false
 backgroundSize: 'cover'
 backgroundPosition: 'center'
@@ -24,8 +24,8 @@ accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
 summary: 'Quer fazer a faculdade no exterior?'
 weight: 2
-whatIsIncludedImage: 'garota-ciencias'
-whatIsIncludedImageAlt: 'garotas estudando ciências'
+whatIsIncludedImage: 'studing'
+whatIsIncludedImageAlt: 'garotas estudando na biblioteca'
 formId: 'faculdade'
 faq: 'steam'
 included :
@@ -33,7 +33,7 @@ included :
   - Hospedagem nas acomodações dos colégios
   - 3 refeições diárias
   - Atividades e excursões
-draft: false
+draft: true
 ---
 
 ## Ensino Médio

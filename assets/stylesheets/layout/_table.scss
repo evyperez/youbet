@@ -1,6 +1,12 @@
 @use 'sass:map';
 
 @use '../abstracts/index' as my;
+@use 'abstracts/constants/font-stacks' as fs;
+@use 'abstracts/functions' as f;
+
+.table--wide {
+  width: 100%;
+}
 
 /* TABLES
 ============================================================================ */
@@ -14,8 +20,10 @@ td {
   width: auto;
   height: auto;
 
+  font-family: my.$text-font-stack;
   font-size: 1em;
-  vertical-align: inherit;
+  vertical-align: top;
+
 
   background-color: transparent;
   border: 0;
@@ -45,6 +53,9 @@ table {
 
 thead,
 tfoot {
+  font-family: fs.$ASAP-FONT-STACK;
+  text-transform: uppercase;
+
   @media screen and (max-width: #{map.get(my.$breakpoints, 'toggle-table-layout') - 0.01}) {
     display: none;
   }
@@ -54,6 +65,14 @@ thead {
   vertical-align: bottom;
 }
 
+.table--details thead th {
+  padding: f.to-rem(12px) f.to-rem(8px);
+
+  text-align: center;
+
+  background: my.palette('orange', 'base');
+}
+
 tfoot {
   vertical-align: top;
 }
@@ -61,10 +80,6 @@ tfoot {
 table p,
 table li {
   font-size: 1em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 caption {
@@ -79,7 +94,9 @@ tr {
 }
 
 th,
-td {}
+td {
+  padding: f.to-rem(8px) f.to-rem(4px);
+}
 
 th {
   font-weight: my.font-weight('bold');
@@ -103,14 +120,6 @@ thead td {
 thead th:first-child,
 tfoot th:first-child {
   text-align: left;
-}
-
-thead > tr:nth-last-of-type(odd) > th,
-thead > tr:nth-last-of-type(odd) > td {
-}
-
-tbody {
-  font-family: mono-space, monospace;
 }
 
 tbody th {
@@ -144,9 +153,7 @@ td img {
 
 tbody tr:nth-of-type(odd) > th,
 tbody tr:nth-of-type(odd) > td {
-  @media screen and (max-width: #{map.get(my.$breakpoints, 'toggle-table-layout') - 0.01}) {
-    background-color: transparent;
-  }
+  background-color: my.palette('orange', '10%');
 }
 
 tfoot th,

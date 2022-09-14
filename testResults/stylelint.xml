@@ -1,0 +1,9 @@
+
+assets/stylesheets/components/_card.scss
+  99:3   ✖  Expected an empty line before property "background-color"  order/properties-order
+  99:21  ✖  Unexpected named color "gold"                              color-named           
+ 100:3   ✖  Expected "width" to come before "background-color"         order/properties-order
+ 100:3   ✖  Expected an empty line before property "width"             order/properties-order
+
+4 problems (4 errors, 0 warnings)
+

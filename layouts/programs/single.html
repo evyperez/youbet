@@ -141,6 +141,9 @@
       </div>
     </div>
   </article>
+
+  {{ if .Params.included }}
+
   <article>
     <div class="container">
       <div class="two-columns align-items--center">
@@ -153,6 +156,8 @@
           {{ end }}
 
         </div>
+
+
         <div class="rich-text">
           <h2>{{ i18n "whatIsIncluded" | title }}</h2>
           {{ range ( .Params.included ) }}
@@ -163,10 +168,11 @@
           </ul>
           {{ end }}
         </div>
+
       </div>
     </div>
   </article>
-
+  {{ end }}
 
 
 

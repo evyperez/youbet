@@ -8,11 +8,11 @@ mainImage: 'teens-playing-futebol'
 mainImageAlt: 'adolescente felizes com uniforme de futebol'
 titleColor: '#fff'
 backgroundColor:
-backgroundImage: '/uploads/images/textures/mountains--mobile.png'
-backgroundImageDesktop: '/uploads/images/textures/mountains.png'
+backgroundImage: '/uploads/images/textures/grama.jpg'
+backgroundImageDesktop: '/uploads/images/textures/grama.jpg'
 backgroundRepeat: repeat
 backgroundMaxWidth: false
-backgroundSize: 'cover'
+backgroundSize: 'unset'
 backgroundPosition: 'center'
 date: 2022-02-13T22:23:07-03:00
 url: /programas/high-school

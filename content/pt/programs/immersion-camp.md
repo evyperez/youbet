@@ -1,20 +1,20 @@
 ---
-title: 'Steam Camp'
-description: 'Steam Camp é um acampamento de férias, um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
+title: 'Immersion Camp'
+description: 'Immersion Camp é um acampamento de férias, um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
 imageSeo: '/uploads/images/program-steam.png'
 mainImage: 'criancas-experimentos'
 mainImageAlt: 'adolescente brincando com a neve'
 titleColor: '#fff'
 backgroundColor:
-backgroundImage: '/uploads/images/textures/mountains--mobile.png'
-backgroundImageDesktop: '/uploads/images/textures/mountains.png'
+backgroundImage: '/uploads/images/textures/science--mobile.png'
+backgroundImageDesktop: '/uploads/images/textures/science.png'
 backgroundRepeat: repeat
 backgroundMaxWidth: false
 backgroundSize: 'cover'
 backgroundPosition: 'center'
 date: 2022-02-13T22:23:07-03:00
-url: /programas/steam-camp
-slug: steam-camp
+url: /programas/immersion-camp
+slug: immersion-camp
 thumbnail: '/uploads/images/program-steam.png'
 thumbnailAlt: 'casal de adolescentes na neve'
 term: 'Mínimo de 16 dias'
@@ -25,22 +25,22 @@ feeding: 'Três refeições por dia'
 weight: 3
 partners :
   - partner:
-summary: 'Steam Camp é um acampamento de férias, é um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
+summary: 'Immersion Camp é um acampamento de férias, é um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
 whatIsIncludedImage: 'garota-ciencias'
 whatIsIncludedImageAlt: 'garotas estudando ciências'
-formId: 'steam-camp'
-faqId: 'steam'
+formId: 'immersion-camp'
+faqId: 'immersion'
 included :
   - 60 horas de aulas
   - Hospedagem nas acomodações dos colégios
   - 3 refeições diárias
   - Atividades e excursões
-draft: false
+draft: true
 ---
 
 ## Acampamento de Verão
 
-O Steam Camp é um acampamento de férias. Um programa de atividades educativas, em ciências, tecnologia, engenharia, arte, matemática e aviação.
+Immersion Camp é um acampamento de férias. Um programa de atividades educativas, em ciências, tecnologia, engenharia, arte, matemática e aviação.
 
 O programa também inclui passeios e excursões em parques, centros e outlets.
 
