@@ -4,7 +4,7 @@ echo "Install Dart Sass Embedded..."
 
 # This is in Netlify's PATH.
 BIN_DIR=/opt/build/repo/node_modules/.bin
-DARTSASS_VERSION=1.49.9
+DARTSASS_VERSION=1.54.9
 
 mkdir -p $BIN_DIR
 
