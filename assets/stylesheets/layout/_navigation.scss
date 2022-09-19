@@ -1,131 +1,152 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 /* navigation
-  ---------------------------------------------------------------------------- */
+---------------------------------------------------------------------------- */
+menu,
+nav {
+}
+
+.main-navigation {
+  display: grid;
+
+  grid-template-columns: auto;
+
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    grid-template-columns: auto auto;
+
+    row-gap: my.$gutter;
+    column-gap: my.$gutter;
+
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
+    padding: f.to-rem(12px);
+  }
+}
 
 menu a,
 nav a {
   display: block;
 
-  text-decoration: none;
+  overflow: hidden;
 
-  @media screen and (min-width: breakpoint('laptop')) {
-    padding-right: 0;
+  &:link {
+    text-decoration: none;
   }
+}
+
+.main-menu button,
+.main-menu label,
+.main-menu a,
+.main-menu span {
+  font-size: f.to-rem(14px);
+  font-weight: bold;
+  color: my.palette('menu', 'text');
+
+  box-shadow: unset;
+
+  &:hover {
+    color: my.palette('menu', 'anchor');
+  }
+
+  &:hover,
+  &:focus {
+    color: my.palette('menu', 'anchor');
+
+    box-shadow: unset;
+  }
+
+  &:focus {
+    outline: dashed my.palette('menu', 'anchor');
+  }
+}
+
+.main-menu .sub-menu a {
+  color: my.palette('menu', 'sub-menu-text');
 }
 
 .current > a {
   pointer-events: none;
 }
 
-.main-navigation {
-  display: flex;
-
-  align-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media (min-width: breakpoint('laptop')) {
-    flex-direction: row;
-  }
-}
-
 .main-menu {
-  @media (max-width: breakpoint('max-laptop')) {
+  @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
     position: fixed;
-    top: 60px;
+    top: 52px;
     bottom: 0;
     left: 0;
 
-    display: block;
+    display: none;
+
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
+
+    row-gap: f.to-rem(16px);
+
+    align-items: center;
 
     width: 0;
-
+    padding: f.to-rem(16px) 0;
     margin: 0;
-
     overflow: hidden;
 
     white-space: nowrap;
 
-    background: palette('menu', 'sub-menu');
-
-    box-shadow: -7px 1px 20px palette('shadow');
+    background: my.palette('menu', 'background');
 
     transition-duration: 0.5s, 0.7s;
     transition-property: width, padding;
     /* stylelint-disable-next-line */
 
     .menu-controller:checked + * & {
-      display: block;
       z-index: 6000;
 
-      width: $off-canvas-menu-width;
+      display: grid;
 
+      width: 90vw;
+      max-width: #{map.get(my.$toggle-breakpoints, 'toggle-menu')};
       overflow: visible;
       overflow-y: auto;
     }
   }
 
-  @media screen and (min-width: breakpoint('laptop')) {
-    position: unset;
-    top: 1em;
-    right: 1em;
-    left: unset;
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    display: grid;
 
-    z-index: layer('default');
+    grid-template-columns: auto;
+    grid-auto-flow: column;
 
-    flex: 1;
+    column-gap: f.to-rem(32px);
 
-    width: calc(100% - 200px);
-
-    padding: 0;
-    margin: 0;
-
-    background-color: transparent;
+    align-items: center;
   }
 }
 
-.main-menu > ul {
-  @include clearfix;
-
+.main-menu > div {
   display: flex;
 
-  align-content: center;
+  flex-direction: column;
+
   align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  width: auto;
-  max-width: none;
-
-  padding: 0 to-rem(16px);
-
-  list-style: none;
-
-  justify-items: center;
-
-  @media screen and (min-width: breakpoint('laptop')) {
-    flex-direction: row;
-  }
-}
-
-.main-menu > ul > li {
-  display: flex;
-
-  flex-direction: column;
   justify-content: center;
 
-  width: 100%;
   height: auto;
-
   padding: 0;
 
   text-align: center;
 
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     flex-direction: row;
 
     width: auto;
+    padding-top: f.to-rem(16px);
+    padding-bottom: f.to-rem(16px);
 
     text-align: center;
   }
@@ -141,16 +162,25 @@ nav a {
   padding: 0;
 
   font-weight: bold;
-  font-size: to-rem(14px);
-  line-height: to-rem(16px);
-
-  list-style: none;
+  line-height: f.to-rem(16px);
 
   cursor: pointer;
 
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     &:hover {
-      color: palette('menu', 'anchor');
+      color: my.palette('menu', 'anchor');
+
+      label > a {
+        color: my.palette('menu', 'anchor');
+
+        box-shadow: unset;
+      }
+
+      label::after {
+        background-color: my.palette('menu', 'anchor');
+
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -160,23 +190,29 @@ nav a {
 
   flex-direction: column;
 
-  padding: 0;
+  row-gap: f.to-rem(12px);
 
-  list-style: none;
+  width: 100%;
+  padding: f.to-rem(16px) 0;
+  margin-top: f.to-rem(12px);
 
-  color: palette('menu', 'sub-menu-text');
+  color: my.palette('menu', 'sub-menu-text');
 
-  @media screen and (min-width: breakpoint('laptop')) {
+  background: my.palette('menu', 'sub-menu');
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     position: absolute;
-    top: 60px;
+    top: f.to-rem(52px);
     right: 0;
 
     width: auto;
-    min-width: 170px;
+    min-width: 200px;
+    padding: f.to-rem(16px);
+    margin-top: 0;
 
-    color: palette('menu', 'sub-menu');
+    color: my.palette('menu', 'sub-menu');
 
-    background: palette('menu', 'sub-menu');
+    background: my.palette('menu', 'sub-menu');
   }
 
   li > a {
@@ -187,28 +223,32 @@ nav a {
     align-items: center;
     justify-content: center;
 
-    width: 100%;
+    padding: f.to-rem(10px) f.to-rem(12px);
 
-    padding: to-rem(10px) to-rem(12px);
-
-    font-size: to-rem(12px);
-    line-height: to-rem(16px);
-
-    color: palette('menu', 'sub-menu-text');
+    line-height: f.to-rem(16px);
+    color: my.palette('menu', 'sub-menu-text');
   }
 
-  .controller:checked ~ * & {
-    display: flex;
+  @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
+    .controller:checked ~ * & {
+      display: grid;
+    }
+  }
+}
+
+.has-sub-menu:hover .sub-menu {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    display: grid;
   }
 }
 
 .sub-menu.active {
   li > a {
-    @media screen and (min-width: breakpoint('laptop')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       &:hover {
-        color: palette('menu', 'anchor');
+        color: my.palette('menu', 'anchor');
 
-        background-color: palette('menu', 'sub-menu-hover');
+        background-color: my.palette('menu', 'sub-menu-hover');
       }
     }
   }
@@ -219,31 +259,32 @@ nav a {
 .controller-label {
   position: relative;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns: auto 16px;
+
+  column-gap: f.to-rem(8px);
 
   align-items: center;
+  justify-content: center;
 
   padding: 0;
+  margin: 0;
 
   cursor: pointer;
 
-  color: palette('text', 'dark');
-
   background: unset;
-
   outline: none;
 
   &::after {
     display: inline-block;
 
-    width: 16px;
-    height: 16px;
-
-    margin-left: 8px;
-
-    background-color: palette('text', 'dark');
+    width: f.to-rem(16px);
+    height: f.to-rem(16px);
 
     content: '';
+
+    background-color: my.palette('text', 'dark');
 
     transition-duration: 0.2s;
     transition-property: transform;
@@ -253,17 +294,17 @@ nav a {
     mask-size: 16px auto;
 
     &:hover {
-      background-color: palette('menu', 'anchor');
+      background-color: my.palette('menu', 'anchor');
     }
   }
 
-  @media (max-width: breakpoint('max-laptop')) {
+  @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
     justify-content: space-between;
-  }
 
-  .controller:checked ~ * & {
-    &::after {
-      transform: rotate(180deg);
+    .controller:checked ~ * & {
+      &::after {
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -272,47 +313,33 @@ nav a {
   position: relative;
 
   width: 100%;
-
-  padding: to-rem(12px);
-
   overflow: visible;
 
   font-weight: bold;
-  font-size: to-rem(14px);
+  color: my.palette('menu', 'text');
 
-  color: palette('menu', 'text');
-
-  @media screen and (min-width: breakpoint('laptop')) {
-    padding: to-rem(12px) to-rem(14px);
-
-    font-size: to-rem(13px);
-
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     background: transparent;
-
     border: 0;
 
     &:hover {
-      color: palette('menu', 'anchor');
+      color: my.palette('menu', 'anchor');
     }
   }
 }
 
 [for='menu-controller'] {
   position: absolute;
-  top: 8px;
+  top: 14px;
   left: 20px;
-
-  display: block;
   z-index: layer('dropdown');
 
-  font-size: 1em;
+  display: block;
 
-  color: palette('menu', 'text');
+  font-size: f.to-rem(35px);
+  color: my.palette('menu', 'text');
 
-  label {
-    font-size: 0;
-  }
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     display: none;
   }
 
@@ -321,10 +348,7 @@ nav a {
     height: 3.1em;
 
     font-weight: bold;
-    font-size: 2em;
-    line-height: 3.1rem;
-
-    color: palette('menu', 'text');
+    color: my.palette('menu', 'text');
 
     content: '\20\2261\20';
 
@@ -335,15 +359,16 @@ nav a {
   }
 
   &::before {
-    top: 60px;
+    top: 52px;
     left: 0;
 
     width: 100%;
     height: 100%;
 
-    background: palette('menu', 'shadow');
-
     content: '';
+
+    background: my.palette('menu', 'shadow');
+
     /* stylelint-disable-next-line */
     .menu-controller:checked ~ * & {
       position: fixed;
@@ -353,37 +378,58 @@ nav a {
   }
 }
 
-/* access
-    ---------------------------------------------------------------------------- */
-.skip-links {
-  @include table-layout-wrapper;
-
-  max-width: $max-width;
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    max-width: $max-width--desktop;
-  }
-}
-
-.skip-links ul {
-  display: table-row;
-}
-
-.skip-links li {
-  @include table-layout-item;
-}
+// /* access
+// ---------------------------------------------------------------------------- */
+// .skip-links {
+// }
 
 .skip-links a {
-  @include visually-hidden--focusable;
+  @include my.visually-hidden--focusable;
 }
 
-/* pagination
-    ---------------------------------------------------------------------------- */
-.buttons {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: auto;
+// /* pagination
+// ---------------------------------------------------------------------------- */
+.pagination {
 }
+
+.pagination__current {
+}
+
+.pagination__previous {
+}
+
+.pagination__next {
+}
+
+// [for='menu-controller'] {
+//   position: fixed;
+//   top: my.$gutter * 0.25;
+//   left: my.$gutter * 0.25;
+//   z-index: my.layer('default');
+
+//   background-color: my.palette('white');
+
+//   > svg {
+//     display: block;
+
+//     width: my.$gutter * 1.5;
+//     height: my.$gutter * 1.5;
+//   }
+
+//   [id='menu-controller']:checked ~ &::after {
+//     position: fixed;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+
+//     content: '';
+
+//     background-color: my.palette('white');
+//     opacity: 0.75;
+//   }
+
+//   @media screen and (min-width: my.breakpoint('toggle-menu')) {
+//     display: none;
+//   }
+// }

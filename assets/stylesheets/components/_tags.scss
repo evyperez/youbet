@@ -1,5 +1,8 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 .tags h2 {
-  margin-bottom: to-rem(8px);
+  margin-bottom: f.to-rem(8px);
 }
 
 .tag {
@@ -7,7 +10,6 @@
 
   padding: 0;
   margin: 0;
-
   overflow: hidden;
 
   list-style: none;
@@ -17,22 +19,18 @@
   display: inline-block;
 
   width: auto;
-
-  padding: to-rem(4px) to-rem(10px);
+  padding: f.to-rem(4px) f.to-rem(10px);
   margin: 2px;
 
-  font-size: to-rem(12px);
-
+  font-size: f.to-rem(12px);
+  color: my.palette('gray');
   text-decoration: none;
   text-transform: capitalize;
 
-  color: palette('gray');
-
-  background: palette('gray', '10%');
-
+  background: my.palette('gray', '10%');
   border-radius: 100px;
 
   &:hover {
-    background: palette('gray', '30%');
+    background: my.palette('gray', '30%');
   }
 }

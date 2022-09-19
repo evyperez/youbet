@@ -6,7 +6,7 @@ image: '/uploads/images/ensino-medio-eua-parte-2.jpg'
 imageAlt: 'Capa do Vídeo do Amigo Gringo'
 thumbnail: '/uploads/images/thumb-ensino-medio-eua-2.jpg'
 thumbnailAlt: 'Capa do Vídeo do Amigo Gringo'
-video: https://www.youtube.com/embed/8UUdDl4-VzY
+video: 'https://youtube.com/embed/8UUdDl4-VzY'
 authors:
   - youbet
 categories:

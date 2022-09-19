@@ -1,4 +1,8 @@
 {
   "editor.wordWrap": "on",
-  "cSpell.ignoreWords": ["allowfullscreen", "getenv", "pexels"]
+  "cSpell.ignoreWords": [
+    "allowfullscreen",
+    "getenv",
+    "pexels"
+  ],
 }

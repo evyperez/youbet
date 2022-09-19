@@ -23,8 +23,8 @@ Ser uma referência nacional no desenvolvimento de cidadãos globais, desenvolve
 
 ### Valores
 
-1. Comprometimento com a Educação
-2. Compromisso
-3. Respeito ao próximo
-4. Dedicação Colaborativa
-5. Empenho no Sucesso
+1. Comprometimento com cliente: estamos comprometidos no desenvolvimento dos nossos estudantes
+2. Cidadania Global: somos bons cidadãos e parte de uma comunidade global
+3. Respeito: valorizamos a diversidade e as culturas
+4. Colaboração: valoriamos trabalho em equipe
+5. Educação: estamos sempre ensinando e aprendendo

@@ -1,3 +1,6 @@
+// stylelint-disable declaration-no-important
+@use '../abstracts/index' as my;
+
 ////
 /// This file contains rules intended to prevent mistakes
 ///
@@ -7,34 +10,31 @@
 /// @link https://github.com/Heydon/REVENGE.CSS
 ////
 
-/* stylelint-disable declaration-no-important */
-
 %error {
-  outline: 5px solid palette('debug') !important;
+  outline: 5px solid my.palette('feedback', 'danger') !important;
 }
 
 %warning {
-  outline: 5px solid palette('warning') !important;
+  outline: 5px solid my.palette('feedback', 'warning') !important;
 }
 
 @mixin alert {
   &::before {
     position: absolute;
-
     top: 0;
-
     right: 0;
-
     left: 0;
+    z-index: my.layer('modal');
+
     display: block;
 
-    z-index: layer('modal');
     padding: 1em;
-    font-weight: font-weights('heavy');
 
+    font-weight: my.font-weight('heavy');
+    color: my.palette('white');
     text-align: center;
-    color: palette('white');
-    background-color: palette('debug');
+
+    background-color: my.palette('feedback', 'danger');
 
     @content;
   }
@@ -55,6 +55,7 @@ frameset,
 isindex,
 listing,
 marquee,
+nobr,
 noembed,
 plaintext,
 spacer,
@@ -73,7 +74,7 @@ xmp {
   @extend %warning;
 
   @include alert {
-    content: "`style` attribute shouldn't be used, despite being added by some scripts." !important;
+    content: '`style` attribute shouldn\'t be used, despite being added by some scripts.' !important;
   }
 }
 
@@ -109,7 +110,7 @@ table table {
   display: block !important;
 
   @include alert {
-    content: "Tables shouldn't be nested." !important;
+    content: 'Tables shouldn\'t be nested.' !important;
   }
 }
 
@@ -167,7 +168,7 @@ html[lang=''] {
 
 // Incorrect Character Set
 meta[charset='UTF-8']:not(:first-child) {
-  & + body {
+  + body {
     @extend %error;
 
     @include alert {
@@ -180,7 +181,7 @@ meta[charset='UTF-8']:not(:first-child) {
 meta[name='viewport'][content*='user-scalable=no'],
 meta[name='viewport'][content*='maximum-scale'],
 meta[name='viewport'][content*='minimum-scale'] {
-  & + body {
+  + body {
     @extend %error;
 
     @include alert {
@@ -193,7 +194,7 @@ form[action=''] {
   @extend %error;
 
   @include alert {
-    content: "`action` attribute isn't required on `form`, but it shouldn't be empty." !important;
+    content: '`action` attribute isn\'t required on `form`, but it shouldn\'t be empty.' !important;
   }
 }
 
@@ -201,7 +202,7 @@ label:not([for]) {
   @extend %error;
 
   @include alert {
-    content: "Isn't the `for` attribute missing?" !important;
+    content: 'Isn\'t the `for` attribute missing?' !important;
   }
 }
 
@@ -275,7 +276,7 @@ button:not([type]) {
   @extend %warning;
 
   @include alert {
-    content: "The default `type` of a button is `submit`, but this isn't clear to all developers. To avoid confusion, declare it." !important;
+    content: 'The default `type` of a button is `submit`, but this isn\'t clear to all developers. To avoid confusion, declare it.' !important;
   }
 }
 
@@ -346,7 +347,7 @@ link[rel='stylesheet'][type='text/css'] {
   }
 }
 
-/* stylelint-disable selector-type-no-unknown */
+// stylelint-disable selector-type-no-unknown
 /// Empty element not used for scripting
 *:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(param):not(script):not(source):not(th):not(td):not(track):not(wbr):not([id]):not([class*='js-']) {
   @extend %error;
@@ -355,7 +356,7 @@ link[rel='stylesheet'][type='text/css'] {
     content: 'Empty element should only be used for scripting.' !important;
   }
 }
-/* stylelint-enable selector-type-no-unknown */
+// stylelint-enable selector-type-no-unknown
 
 /// Misuse of sectioning elements
 article > article,
@@ -446,6 +447,7 @@ a :not([role='text']) {
   position: fixed;
 
   display: block;
+
   content: '`.menu-controller` should be hidden by default, not using CSS.';
 }
 
@@ -472,11 +474,12 @@ button,
 input,
 select,
 textarea {
-  &.disabled:not([disabled]):not([readonly]) {
+  // stylelint-disable-next-line selector-no-qualifying-type
+  &.disabled:not([disabled]):not([read-only]) {
     @extend %error;
 
     @include alert {
-      content: "A field shouldn't be disabled in appearance only." !important;
+      content: 'A field shouldn\'t be disabled in appearance only.' !important;
     }
   }
 }
@@ -526,6 +529,7 @@ dl > *:not(dt):not(dd):not(div):not(script):not(template) {
 /// @link http://fontawesome.io/accessibility/
 i,
 span {
+  // stylelint-disable-next-line selector-no-qualifying-type
   &.fa:not([aria-hidden='true']) {
     @include alert {
       content: 'Use `aria-hidden="true"` on empty elements used as icons wrappers.' !important;
@@ -534,6 +538,7 @@ span {
 }
 
 li {
+  // stylelint-disable-next-line selector-no-qualifying-type
   &.divider:not([role='separator']),
   &:empty:not([role='separator']) {
     @include alert {
@@ -541,6 +546,7 @@ li {
     }
   }
 
+  // stylelint-disable-next-line selector-no-qualifying-type
   &.dropdown-header {
     @include alert {
       content: 'Do not use list items as headers for lists, obvs.' !important;
@@ -575,5 +581,3 @@ li {
     content: 'Element impossibly focusable used for as "button".' !important;
   }
 }
-
-/* stylelint-enable declaration-no-important */

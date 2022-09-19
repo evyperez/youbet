@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
-{{ $faq := .Params.faq }}
+
   <style>
     .page-title {
       {{ if .Params.backgroundColor }} background-color:  {{ .Params.backgroundColor }}; {{ end }}
@@ -141,6 +141,9 @@
       </div>
     </div>
   </article>
+
+  {{ if .Params.included }}
+
   <article>
     <div class="container">
       <div class="two-columns align-items--center">
@@ -153,6 +156,8 @@
           {{ end }}
 
         </div>
+
+
         <div class="rich-text">
           <h2>{{ i18n "whatIsIncluded" | title }}</h2>
           {{ range ( .Params.included ) }}
@@ -163,11 +168,30 @@
           </ul>
           {{ end }}
         </div>
+
       </div>
     </div>
-
-
   </article>
+  {{ end }}
+
+
+
+	{{ range $.Site.Data.faq.groups }}
+		<ul id="{{.id}}" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>{{.name}}</h2></li>
+		{{ range .items }}
+			<li>
+				<a class="cd-faq-trigger" href="#0">{{.question}}</a>
+				<div class="cd-faq-content">
+					<p>{{.answer}}</p>
+				</div>
+			</li>
+			{{ end }}
+		</ul>
+		{{ end }}
+
+
+
 
   {{ if .Params.formId }}
   <article class="contact-form">

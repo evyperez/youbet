@@ -22,6 +22,7 @@ age: '13 anos a 18 anos'
 languageLevel: 'Inglês básico'
 accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
+weight: 6
 partners :
   - partner:
 summary: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'

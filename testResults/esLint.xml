@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/macbook/Documents/Evelyn/git/youbet/assets/scripts/glide.js">
+<testcase time="0" name="/Users/macbook/Documents/Evelyn/git/youbet/assets/scripts/glide.js" classname="/Users/macbook/Documents/Evelyn/git/youbet/assets/scripts/glide" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/macbook/Documents/Evelyn/git/youbet/assets/scripts/index.js">
+<testcase time="0" name="/Users/macbook/Documents/Evelyn/git/youbet/assets/scripts/index.js" classname="/Users/macbook/Documents/Evelyn/git/youbet/assets/scripts/index" />
+</testsuite>
+</testsuites>

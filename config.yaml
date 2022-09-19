@@ -47,6 +47,7 @@ permalinks:
   pages: /:slug/
 languages:
   pt:
+    baseURL: https://youbetschool.com.br
     contentDir: content/pt
     languageName: Português
     languageCode: 'pt-br'
@@ -80,8 +81,8 @@ languages:
         - Name: 'Programas'
           Pre: ''
           Weight: 3
-          Identifier: 'programs'
           URL: '/programas'
+          Identifier: 'programs'
         - Name: 'Intercâmbio de Inverno'
           Pre: ''
           Weight: 1
@@ -92,7 +93,13 @@ languages:
           Pre: ''
           Weight: 2
           Identifier: 'summer'
-          URL: '/programas/intercambio-de-verao'
+          URL: '/programas'
+          parent: 'programs'
+        - Name: 'Todos'
+          Pre: ''
+          Weight: 2
+          Identifier: 'allPrograms'
+          URL: '/programas'
           parent: 'programs'
         - Name: 'Contato'
           Pre: ''
@@ -102,6 +109,7 @@ languages:
 
   en:
     contentDir: content/en
+    baseURL: https://youbetschool.com
     languageName: English
     languageCode: 'en'
     title: 'YouBet! Real English'

@@ -2,7 +2,6 @@ import Glide from '@glidejs/glide';
 
 function mountGlide() {
   const doc = document.querySelector('.glide');
-
   if (doc) {
     const glide = new Glide(doc, {
       type: 'slider',

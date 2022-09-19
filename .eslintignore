@@ -12,6 +12,8 @@
 test.js
 test.ts
 !.eslintrc.js
+*.html
+*.md
 *.spec.ts
 *.e2e-spec.ts
 node_modules/

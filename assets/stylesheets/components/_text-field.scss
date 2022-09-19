@@ -1,42 +1,35 @@
-/* text inputs
----------------------------------------------------------------------------- */
+@use 'sass:color';
 
-/**
-* 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-* 2. add some space before text
-*/
+@use '../layout/form';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 %text-field-reset {
   @extend %os-element-reset;
+  box-sizing: inherit;
 
   width: 100%;
-  height: to-rem(40px);
-
-  padding: 0 to-rem(12px);
+  height: f.to-rem(40px);
+  padding: 0 f.to-rem(12px);
 
   font-size: 16px;
-  line-height: to-rem(40px);
+  line-height: f.to-rem(40px);
+  color: palette('gray');
 
   cursor: text;
 
-  color: palette('gray');
-
   background-color: palette('form', 'background');
-
   border-color: palette('form', 'border');
-
   outline: none;
-
-  box-sizing: inherit;
 
   appearance: textfield;
 
   &:-moz-ui-invalid {
-    border-color: palette('label', 'danger');
+    border-color: palette('feeback', 'default');
   }
 
   &:focus {
-    border-color: palette('label', 'selected');
-
+    border-color: palette('feeback', 'selected');
     outline: 0;
   }
 }
@@ -75,11 +68,10 @@
 
   padding-left: 3rem;
 
-  background-image: url('~src/assets/icons/magnifying-glass.svg');
-  background-position: left 0.5rem center;
-  background-repeat: no-repeat;
   background-color: palette('gray', '10%');
-
+  background-image: url('~src/assets/icons/magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-position: left 0.5rem center;
   outline-offset: -2px;
 }
 
@@ -104,15 +96,13 @@
 textarea {
   @extend %text-field-reset;
 
-  min-height: to-rem(90px);
-  padding: to-rem(12px) to-rem(12px);
+  min-height: f.to-rem(90px);
+  padding: f.to-rem(12px) f.to-rem(12px);
   overflow: auto;
 
   line-height: inherit;
-
   vertical-align: top;
 
   cursor: text;
-
   resize: vertical;
 }

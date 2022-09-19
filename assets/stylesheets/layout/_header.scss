@@ -1,3 +1,5 @@
+@use '../abstracts/index' as my;
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
@@ -9,27 +11,32 @@
  *
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
  */
-// [role='banner'] {
-// }
 
 .main-header {
   position: sticky;
   top: 0;
+  z-index: my.layer('dropdown');
 
-  z-index: layer('dropdown');
-
-  background: palette('menu');
-
-  border-bottom: 2px solid palette('menu', 'border');
+  background: my.palette('menu');
+  border-bottom: 2px solid my.palette('menu', 'border');
 }
 
 .header-container {
-  max-width: $max-width;
-
+  max-width: my.$max-width;
   padding: to-rem(12px) to-rem(16px);
   margin: auto;
 
   @media screen and (min-width: breakpoint('desktop')) {
-    max-width: $max-width--desktop;
+    max-width: my.$max-width--desktop;
   }
 }
+
+[role='banner'] {
+}
+/// .menu-controller styles
+///
+/// @group helpers
+///
+/// @example html
+/// <label for="menu-controller" onclick>menu</label>
+///

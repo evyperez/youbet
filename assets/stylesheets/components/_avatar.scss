@@ -1,26 +1,36 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 .float-avatar {
   position: absolute;
-  border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%);
   bottom: -13px;
+  left: 50%;
   z-index: 1;
+
+  border-radius: 50%;
+
+  transform: translateX(-50%);
 }
 
 .avatar--round {
-  width: to-rem(55px);
-  height: to-rem(55px);
-  background-color: palette('white');
   position: relative;
+
+  width: f.to-rem(55px);
+  height: f.to-rem(55px);
+
+  background-color: my.palette('white');
   border-radius: 50%;
 
   > img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
+    width: f.to-rem(50px);
+    height: f.to-rem(50px);
+
     border-radius: 50%;
-    width: to-rem(50px);
-    height: to-rem(50px);
+
+    transform: translate(-50%, -50%);
   }
 }

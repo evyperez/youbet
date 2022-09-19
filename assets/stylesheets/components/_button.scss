@@ -1,3 +1,7 @@
+@use '../layout/form';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 /* buttons
 ---------------------------------------------------------------------------- */
 
@@ -16,40 +20,37 @@
 
 $colors: 'button', 'button-secondary', 'button-neutral';
 
+$colors: 'button', 'button-secondary', 'button-neutral';
+
 %button-reset {
   @extend %os-element-reset;
 
+  box-sizing: inherit;
   display: inline-block;
 
   align-items: center;
 
   width: auto; /* 3 */
-  height: to-rem(40px);
   min-width: 88px;
-
-  padding: 0 to-rem(16px);
-
+  height: f.to-rem(40px);
+  padding: 0 f.to-rem(16px);
   overflow: visible; /* 3 */
 
-  font-weight: bold;
-  font-size: to-rem(12px);
-  line-height: to-rem(40px);
   font-family: Asap, sans-serif;
-  letter-spacing: 0.04em;
-
+  font-size: f.to-rem(12px);
+  font-weight: bold;
+  line-height: f.to-rem(40px);
   text-align: center;
   text-decoration: none;
   text-indent: 0;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   white-space: inherit;
 
   cursor: pointer; /* 2 */
 
   background: unset;
-
   border: unset;
-
-  box-sizing: inherit;
 
   appearance: button; /* 1 */
 
@@ -60,24 +61,17 @@ $colors: 'button', 'button-secondary', 'button-neutral';
   }
 
   @media screen and (min-width: breakpoint('tablet__portrait')) {
-    height: to-rem(48px);
+    height: f.to-rem(48px);
+    padding: 0 f.to-rem(16px);
 
-    padding: 0 to-rem(16px);
-
-    font-size: to-rem(14px);
-    line-height: to-rem(48px);
+    font-size: f.to-rem(14px);
+    line-height: f.to-rem(48px);
   }
 
   @media screen and (min-width: breakpoint('laptop')) {
-    padding: 0 to-rem(32px);
+    padding: 0 f.to-rem(32px);
   }
 
-  &:hover,
-  &:focus {
-    &:not([type='reset']) {
-      outline: none;
-    }
-  }
   &:disabled {
     cursor: not-allowed;
   }
@@ -85,6 +79,7 @@ $colors: 'button', 'button-secondary', 'button-neutral';
 
 .button-wrap--center {
   display: flex;
+
   justify-content: center;
 }
 
@@ -108,148 +103,135 @@ button,
   // $styles: 'solid', 'solid-inverted', 'inverted', 'ghost', 'ghost-inverted', 'bordeless', 'bordeless-inverted';
 
   .#{$color}[class*='solid'] {
-    color: palette('white');
+    color: my.palette('white');
 
-    background: palette(#{$color}); /* 5 */
-
-    border: 2px solid palette(#{$color});
+    background: my.palette(#{$color}); /* 5 */
+    border: 2px solid my.palette(#{$color});
 
     &:hover,
     &:focus {
       &:not([type='reset']) {
-        color: palette('white');
+        color: my.palette('white');
 
-        background-color: palette(#{$color}, 'dark');
-
-        border: 2px solid palette(#{$color}, 'dark');
+        background-color: my.palette(#{$color}, 'dark');
+        border: 2px solid my.palette(#{$color}, 'dark');
       }
     }
 
     &:disabled {
-      color: palette('white');
+      color: my.palette('white');
 
-      background-color: palette(#{$color}, 'light');
-
-      border: 2px solid palette(#{$color}, 'light');
+      background-color: my.palette(#{$color}, 'light');
+      border: 2px solid my.palette(#{$color}, 'light');
     }
   }
 
   .#{$color}[class*='inverted'],
   .#{$color}[class*='solid-inverted'] {
-    color: palette(#{$color}); /* 5 */
+    color: my.palette(#{$color}); /* 5 */
 
-    background: palette('white');
-
-    border: 2px solid palette('white');
+    background: my.palette('white');
+    border: 2px solid my.palette('white');
 
     &:hover,
     &:focus {
       &:not([type='reset']) {
-        color: palette(#{$color}, 'dark');
+        color: my.palette(#{$color}, 'dark');
 
-        background: palette('white');
-
-        border: 2px solid palette('white');
+        background: my.palette('white');
+        border: 2px solid my.palette('white');
       }
     }
 
     &:disabled {
-      color: palette(#{$color}, 'light');
+      color: my.palette(#{$color}, 'light');
 
-      background: palette('white');
-
-      border: 2px solid palette('white');
+      background: my.palette('white');
+      border: 2px solid my.palette('white');
     }
   }
 
   .#{$color}[class*='ghost'] {
-    color: palette(#{$color}); /* 5 */
+    color: my.palette(#{$color}); /* 5 */
 
-    background: palette('transparent');
-
-    border: 2px solid palette(#{$color});
+    background: my.palette('button', 'reset');
+    border: 2px solid my.palette(#{$color});
 
     &:hover,
     &:focus {
       &:not([type='reset']) {
-        color: palette(#{$color}, 'dark');
+        color: my.palette(#{$color}, 'dark');
 
-        background: palette('transparent', 'white');
-
-        border: 2px solid palette(#{$color}, 'dark');
+        background: my.palette('button', 'reset');
+        border: 2px solid my.palette(#{$color}, 'dark');
       }
     }
 
     &:disabled {
-      color: palette(#{$color}, 'light');
+      color: my.palette(#{$color}, 'light');
 
-      background: palette('transparent');
-
-      border: 2px solid palette(#{$color}, 'light');
+      background: my.palette('button', 'reset');
+      border: 2px solid my.palette(#{$color}, 'light');
     }
   }
 
   .#{$color}[class*='ghost-inverted'] {
-    color: palette(#{$color}, 'light'); /* 5 */
+    color: my.palette(#{$color}, 'light'); /* 5 */
 
-    border: 2px solid palette(#{$color}, 'light');
+    border: 2px solid my.palette(#{$color}, 'light');
 
     &:hover,
     &:focus {
       &:not([type='reset']) {
-        color: palette(#{$color}, 'light');
+        color: my.palette(#{$color}, 'light');
 
-        background: palette('transparent', 'white');
-
-        border: 2px solid palette(#{$color}, 'light');
+        background: my.palette('button', 'reset');
+        border: 2px solid my.palette(#{$color}, 'light');
       }
     }
 
     &:disabled {
-      color: palette(#{$color}, 'light');
+      color: my.palette(#{$color}, 'light');
 
-      border: 2px solid palette(#{$color}, 'light');
+      border: 2px solid my.palette(#{$color}, 'light');
     }
   }
 
   .#{$color}[class*='bordeless'] {
-    color: palette(#{$color}); /* 5 */
+    color: my.palette(#{$color}); /* 5 */
 
-    background: palette('transparent');
-
+    background: my.palette('button', 'reset');
     border: unset;
 
     &:hover,
     &:focus {
       &:not([type='reset']) {
-        color: palette(#{$color}, 'dark');
+        color: my.palette(#{$color}, 'dark');
 
-        background: palette('transparent');
-
+        background: my.palette('button', 'reset');
         border: unset;
       }
     }
 
     &:disabled {
-      color: palette(#{$color}, 'light');
+      color: my.palette(#{$color}, 'light');
 
-      background: palette('transparent');
-
+      background: my.palette('button', 'reset');
       border: unset;
     }
   }
   .#{$color}[class*='bordeless-inverted'] {
-    color: palette(#{$color}, 'light');
+    color: my.palette(#{$color}, 'light');
 
     &:hover,
     &:focus {
       &:not([type='reset']) {
-        color: palette(#{$color}, 'light');
+        color: my.palette(#{$color}, 'light');
       }
     }
 
     &:disabled {
-      color: palette(#{$color}, 'disabled');
+      color: my.palette(#{$color}, 'disabled');
     }
   }
 }
@@ -283,16 +265,16 @@ html [type='button'] {
 // .button--disabled {
 //   cursor: not-allowed;
 
-//   background-color: palette('button', 'disabled');
+//   background-color: my.palette('button', 'disabled');
 
-//   border: 2px solid palette('button', 'disabled');
+//   border: 2px solid my.palette('button', 'disabled');
 
 //   &:hover,
 //   &:focus {
 //     &:not([type='reset']) {
-//       background-color: palette('button', 'disabled');
+//       background-color: my.palette('button', 'disabled');
 
-//       border: 2px solid palette('button', 'disabled');
+//       border: 2px solid my.palette('button', 'disabled');
 
 //       outline: none;
 //     }
@@ -305,4 +287,22 @@ html [type='button'] {
 button:-moz-focusring,
 input:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+
+.button--reset {
+  width: unset;
+  min-width: unset;
+  height: unset;
+  padding: unset;
+
+  font-family: my.$text-font-stack;
+  font-size: unset;
+  font-weight: unset;
+  line-height: unset;
+  color: unset;
+  text-transform: unset;
+  letter-spacing: unset;
+
+  background-color: unset;
+  border-radius: unset;
 }

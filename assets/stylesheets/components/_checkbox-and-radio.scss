@@ -1,3 +1,5 @@
+@use '../abstracts/index' as my;
+
 /* checkboxes and radio buttons
 ---------------------------------------------------------------------------- */
 
@@ -11,14 +13,14 @@ fieldset ul {
   margin: 0;
 }
 
-fieldset li {
+fieldset ol li,
+fieldset ul li {
   display: block;
 
   padding: 0;
   margin: 0;
 
   white-space: nowrap;
-
   list-style-type: none;
 
   &::before {
@@ -30,6 +32,8 @@ li label {
   display: inline;
 
   padding: 0 0.5em;
+
+  white-space: normal;
 }
 
 /**
@@ -43,50 +47,55 @@ li label {
  */
 [type='checkbox'],
 [type='radio'] {
+  box-sizing: border-box; /* 1 */
+
   width: auto;
-
   height: auto; /* 3 */
-
   padding: 0; /* 2 */
 
   vertical-align: middle;
-  cursor: pointer;
-  box-sizing: border-box; /* 1 */
 
-  // &:hover {
-  // }
+  cursor: pointer;
+
+  &:hover {
+  }
 
   &:focus {
+    @include my.focused;
+
     outline-style: auto; /* 4 */
   }
 }
 
-// [type='radio'] {
-//   &:indeterminate {
-//   }
+[type='radio'] {
+  &:indeterminate {
+  }
 
-//   &:checked {
-//   }
-// }
+  &:checked {
+  }
+}
 
-// [type='checkbox'] {
-//   &:checked {
-//   }
-// }
+[type='checkbox'] {
+  border-radius: my.$rounded-corner;
+
+  &:checked {
+  }
+}
 
 li:hover {
   > input,
   > label {
-    color: palette('black');
+    color: my.palette('black');
   }
 }
 
 li :checked + label {
-  font-weight: font-weights('bold');
+  font-weight: bold;
 }
 
 [disabled] + label,
 :disabled + label {
+  color: my.palette('disabled', 'foreground');
+
   cursor: default;
-  color: palette('disabled', 'foreground');
 }

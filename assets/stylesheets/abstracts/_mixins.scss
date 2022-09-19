@@ -1,3 +1,104 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
+
+@use 'config' as c;
+@use 'constants/font-stacks' as fs;
+@use 'functions' as f;
+
+////
+/// This file contains all application-wide Sass mixins.
+/// @group helpers
+////
+
+
+/// Gray placeholder image
+///
+///
+/// @example scss
+/// image[src=""] {
+///   @include placeholder-bg;
+/// }
+///
+/// @output css
+/// image[src=""] {
+///   background:
+///     linear-gradient(
+///       to top left,
+///       transparent 0%,
+///       transparent calc(50% - 1px),
+///       black 50%,
+///       transparent calc(50% + 1px),
+///       transparent 100%
+///     ),
+///     linear-gradient(
+///       to top right,
+///       transparent 0%,
+///       transparent calc(50% - 1px),
+///       black 50%,
+///       transparent calc(50% + 1px),
+///       transparent 100%
+///     ),
+///     silver;
+/// }
+///
+@mixin placeholder-bg {
+  $_placeholder-bg__diagonal: rgb(0, 0, 0);
+  $_placeholder-bg__color: rgb(220, 220, 220);
+
+  background: linear-gradient(
+    to top left,
+    transparent 0%,
+    transparent calc(50% - 1px),
+    $_placeholder-bg__diagonal 50%,
+    transparent calc(50% + 1px),
+    transparent 100%
+  ) linear-gradient(
+    to top right,
+    transparent 0%,
+    transparent calc(50% - 1px),
+    $_placeholder-bg__diagonal 50%,
+    transparent calc(50% + 1px),
+    transparent 100%
+  ) linear-gradient(
+    to right,
+    $_placeholder-bg__color,
+    $_placeholder-bg__color
+  );
+}
+
+/// Grid background image
+///
+/// @access public
+///
+@mixin grid-image($columns: 1, $gutter: c.$gutter) {
+  $color: rgba(f.palette('feedback', 'danger'), 0.35);
+  $grid-image: $color 0, $color $gutter, transparent $gutter;
+
+  @for $i from 1 to $columns {
+    $multiplier: math.div($i, $columns);
+    $grid-image: list.append(
+      $grid-image,
+      (
+        transparent calc(#{100% * $multiplier} - #{$gutter * $multiplier}),
+        $color calc(#{100% * $multiplier} - #{$gutter * $multiplier}),
+        $color calc(#{100% * $multiplier} + #{$gutter * (1 - $multiplier)}),
+        transparent calc(#{100% * $multiplier} + #{$gutter * (1 - $multiplier)})
+      ),
+      'comma'
+    );
+  }
+
+  background-image: linear-gradient(
+    to right,
+    #{list.append($grid-image, (transparent calc(100% - #{c.$gutter}), $color calc(100% - #{c.$gutter}), $color 100%), 'comma')}
+  );
+}
+
+
 /// Special style for the _&_ used as a conjunction.
 ///
 /// @access private
@@ -10,9 +111,8 @@
 
 /// Special style for the _&_ used as a conjunction.
 ///
-/// @group helpers
 /// @link http://simplebits.com/notebook/2008/08/14/ampersands-2/
-/// @require {variable} $ampersand-font-stack
+/// @require {variable} fs.$AMPERSAND-FONT-STACK
 ///
 /// @example scss
 /// h1 {
@@ -34,13 +134,10 @@
 ///
 @mixin alt-ampersand {
   .amp {
-    // stylelint-disable-next-line no-qualifying-elements
     @include _italic-overflow;
-
+    font-family: fs.$AMPERSAND-FONT-STACK;
     font-size: 2em;
     line-height: 0.25;
-    font-family: $ampersand-font-stack;
-
     vertical-align: middle;
 
     @content;
@@ -49,8 +146,7 @@
 
 /// Special style for conjunctions or prepositions.
 ///
-/// @group helpers
-/// @require {variable} $alt-font-stack
+/// @require {variable} fs.$ALT-FONT-STACK
 ///
 /// @example html
 /// <h1>The Elements <span class="alt">of</span> Typographic Style</h1>
@@ -69,10 +165,9 @@
 ///
 @mixin alt-preposition {
   .alt {
-    // stylelint-disable-next-line no-qualifying-elements
     @include _italic-overflow;
 
-    font-family: $alt-font-stack;
+    font-family: fs.$ALT-FONT-STACK;
 
     @content;
   }
@@ -92,7 +187,6 @@
 /// - `Droid Sans`: Ships with all versions of Android;
 /// - `Helvetica, Arial, sans-serif`: Common font stack on OS X and Windows.
 ///
-/// @group helpers
 /// @link http://blog.purecss.io/post/60789414532/how-we-improved-grids-in-pure-030
 /// @parameter {int} $ie [9] - minimum Internet Explorer version
 ///
@@ -120,24 +214,24 @@
 /// }
 ///
 @mixin inline-block-wrapper {
-  font-size: 0;
+  $_inline-block-font-stack: 'FreeSans', 'Arimo', 'Droid Sans', 'Helvetica', 'Arial', sans-serif;
   font-family: $_inline-block-font-stack;
+  font-size: 0;
   letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
   letter-spacing: normal\9; /* reset IE < 8 */
+
   word-spacing: -0.43em\9; /* IE < 8: collapse white-space between units */
 
-  text-rendering: optimizeSpeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-  // sass-lint:disable-block no-duplicate-properties
-
-  $_inline-block-font-stack: 'FreeSans', 'Arimo', 'Droid Sans', 'Helvetica', 'Arial', sans-serif;
+  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
 }
 
 /// Helper for an inline-block grid.
 ///
 /// To be used together with [`inline-block-wrapper`](#helpers-mixin-inline-block-wrapper).
 ///
-/// @group helpers
-/// @parameter {string} $align ['top'] - valid keyword `vertical-aligment` for
+/// @require {variable} c.$text-font-stack
+/// @parameter {string} $align ['top'] - valid keyword `vertical-alignment` for
 /// the grid cells: `baseline`, `sub`, `super`, `text-top`, `text-bottom`,
 /// `middle`, `top`, `bottom`.
 ///
@@ -167,22 +261,22 @@
 @mixin inline-block-item($align: 'top', $font-size: 1rem) {
   display: inline-block;
 
+  font-family: c.$text-font-stack;
   font-size: $font-size;
-  font-family: $text-font-stack;
   letter-spacing: normal;
+  vertical-align: string.unquote($align);
+
+  zoom: 1;
+
   word-spacing: normal;
 
   text-rendering: auto;
-  vertical-align: unquote($align);
-
-  zoom: 1;
 }
 
 /// Helper for an table grid layout.
 ///
 /// To be used together with [`table-layout-item`](#helpers-mixin-table-layout-item).
 ///
-/// @group helpers
 ///
 /// @example scss
 /// .h-feed {
@@ -211,7 +305,6 @@
 ///
 /// To be used together with [`table-layout-wrapper`](#helpers-mixin-table-layout-wrapper).
 ///
-/// @group helpers
 ///
 /// @example scss
 /// .h-feed {
@@ -241,7 +334,6 @@
 /// @access private
 ///
 @mixin _font-smoothing($value: true) {
-  // sass-lint:disable-block no-vendor-prefixes
   @if ($value == true) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -254,8 +346,6 @@
 /// Helper for icon font.
 ///
 /// It can be used with Font Awesome
-///
-/// @group helpers
 ///
 /// @example scss
 /// .icon {
@@ -278,12 +368,12 @@
 @mixin icon-font {
   @include _font-smoothing(true);
 
+  // stylelint-disable-next-line property-units
+  font-size: 14px; /* font-awesome pixel perfection is at 14px and multiples of 14 */
   font-style: normal;
+  font-weight: font-weight('normal');
   font-variant: normal;
-  font-weight: font-weights('normal');
-  font-size: 14px; /* font-awesome pixel perfection is at 14px and multiples of 14 */ // stylelint-disable-next-line property-units
   line-height: 1;
-
   text-transform: none;
 
   speak: none;
@@ -304,9 +394,8 @@
   &::after {
     display: table; /* 2 */
 
-    content: ''; /* 1 */
-
     border-collapse: collapse; /* 3 */
+    content: ''; /* 1 */
   }
 
   &::after {
@@ -318,14 +407,13 @@
   }
 }
 
-/// @content the rules to be applied
 @mixin link-undercover {
   &,
   &:link,
   &:visited {
+    color: inherit;
     text-decoration: inherit;
 
-    color: inherit;
 
     @content;
   }
@@ -361,13 +449,12 @@
   }
 }
 
-/* stylelint-disable declaration-no-important */
+// stylelint-disable declaration-no-important
 
 ///
 /// Hide element while making it readable for screen readers
 /// Shamelessly borrowed from HTML5Boilerplate
 ///
-/// @group helpers
 /// @link https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
 ///
 @mixin visually-hidden {
@@ -375,12 +462,11 @@
 
   width: 1px !important;
   height: 1px !important;
-
   padding: 0 !important;
   margin: -1px;
-
   overflow: hidden !important;
   clip: rect(1px 1px 1px 1px) !important;
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
   clip: rect(1px, 1px, 1px, 1px) !important;
   clip-path: inset(50%) !important;
 
@@ -398,9 +484,7 @@
 
     width: auto !important;
     height: auto !important;
-
     margin: auto;
-
     overflow: visible !important;
     clip: auto !important;
     clip-path: none !important;
@@ -409,11 +493,12 @@
   }
 }
 
-/* stylelint-enable declaration-no-important */
+// stylelint-enable declaration-no-important
 
 /// Truncate and add ellipsis to a string too long for it to fit on a single
 /// line.
 ///
+/// @link https://dev.to/coderchamp/truncate-text-with-css-the-possible-ways-1p4o
 /// @group helpers
 ///
 /// @example scss
@@ -428,11 +513,52 @@
 /// 	white-space: nowrap;
 /// }
 ///
-@mixin truncate {
+/// @example scss
+/// .excerpt {
+/// 	@include truncate(5);
+/// }
+///
+/// @output css
+/// .excerpt {
+///   display: block;
+///   overflow: hidden;
+///   display: -webkit-box;
+///   -webkit-box-orient: vertical;
+///   max-height: 7.5rem;
+///   overflow:hidden;
+///   overflow: hidden !important;
+///   line-height: 1.5;
+///   text-overflow: ellipsis;
+///   -webkit-line-clamp: 5;
+/// }
+///
+@mixin truncate ($lines: 1, $leading: c.$leading) {
+  display: block;
+
   overflow: hidden;
 
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @if $lines > 1 {
+    @if math.is-unitless($leading) {
+      $leading: $leading * 1em;
+    }
+
+    // stylelint-disable-next-line value-no-vendor-prefix
+    display: -webkit-box;
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-box-orient: vertical;
+
+    max-height: $leading * $lines;
+    // stylelint-disable-next-line declaration-colon-space-after
+    overflow:hidden;
+    // stylelint-disable-next-line declaration-no-important, declaration-block-no-duplicate-properties
+    overflow: hidden !important;
+
+    line-height: $leading;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+  } @else {
+    white-space: nowrap;
+  }
 }
 
 ///
@@ -492,7 +618,6 @@
 	 *    See: https://code.google.com/p/chromium/issues/detail?id=457146
 	 */
   padding: 0; /* 1 */
-
   overflow: hidden;
 
   text-indent: 101%;
@@ -511,74 +636,10 @@
     direction: ltr;
   } @else {
     font: 0/0;
-
+    color: transparent;
     text-shadow: none;
 
-    color: transparent;
-
     border: 0;
-  }
-}
-
-$no-alpha: false !default;
-$no-calc: false !default;
-$no-gradient: false !default;
-$no-rem: false !default;
-$no-viewport: false !default;
-
-/// Helper to conditionally output css values
-/// @author Robson Sobral
-/// @group helpers
-/// @param {String} $property - Property name
-/// @param {List} $values - Default values
-/// @param {List} $fallbacks - Non required fallback values
-@mixin fallback($property, $values, $fallbacks: null) {
-  $fallback-values: if($fallbacks == null, (), $fallbacks);
-  $fallback-units: ();
-
-  @each $value in $values {
-    @if type-of($value) == number {
-      @if str-index(unit($value), 'v') != null {
-        @if $fallbacks == null {
-          @error 'fallback values, the 3rd parameter, are required for viewport units';
-        } @else {
-          $fallback-units: join($fallback-units, 'viewport');
-        }
-      } @else {
-        $fallback-units: join($fallback-units, unit($value));
-      }
-    } @else if $fallbacks == null {
-      @error 'fallback values, the 3rd parameter, are required for everything except `rem` numbers';
-    } @else if str-index($value, 'calc') {
-      $fallback-units: join($fallback-units, 'calc');
-    } @else if str-index($value, 'gradient') {
-      $fallback-units: join($fallback-units, 'gradient');
-    }
-
-    @if $fallbacks == null {
-      @if type-of($value) == number and unit($value) == 'rem' {
-        $fallback-values: join($fallback-values, $value / 1rem * 16px);
-      } @else {
-        $fallback-values: join($fallback-values, $value);
-      }
-    }
-  }
-
-  // sass-lint:disable-block indentation brace-style
-  @if (index($fallback-units, 'alpha') != null and $no-alpha != false) or
-    (index($fallback-units, 'calc') != null and $no-calc != false) or
-    (index($fallback-units, 'gradient') != null and $no-gradient != false) or
-    (index($fallback-units, 'rem') != null and $no-rem != false) or
-    (index($fallback-units, 'viewport') != null and $no-viewport != false) {
-    #{$property}: #{$fallback-values};
-  }
-
-  @if (index($fallback-units, 'alpha') != null and $no-alpha != true) or
-    (index($fallback-units, 'calc') != null and $no-calc != true) or
-    (index($fallback-units, 'gradient') != null and $no-gradient != true) or
-    (index($fallback-units, 'rem') != null and $no-rem != true) or
-    (index($fallback-units, 'viewport') != null and $no-viewport != true) {
-    #{$property}: #{$values};
   }
 }
 
@@ -598,22 +659,22 @@ $no-viewport: false !default;
 /// }
 ///
 @mixin viewport-unit($property, $value) {
-  // sass-lint:disable-block indentation
-  #{$property}: $value;
-  $unit: unit($value);
+  $unit: math.unit($value);
 
-  @if (index((vw, vh, vmin, vmax), $unit) != null) {
+  #{$property}: $value;
+
+  @if (list.index((vw, vh, vmin, vmax), $unit) != null) {
     $devices: ((768px, 1024px), (320px, 480px), (320px, 568px));
 
     @each $device in $devices {
-      $device-width: nth($device, 1);
-      $device-height: nth($device, 2);
+      $device-width: list.nth($device, 1);
+      $device-height: list.nth($device, 2);
       $device-query: 'only screen and (-webkit-min-device-pixel-ratio: 1)';
       $device-query: '#{$device-query} and (device-width: #{$device-width})';
       $device-query: '#{$device-query} and (device-height: #{$device-height})';
-      $percent: $value / ($value * 0 + 1); // see https://github.com/sass/sass/issues/533
-      $percent-width: $device-width * $percent / 100;
-      $percent-height: $device-height * $percent / 100;
+      $percent: math.div($value, $value * 0 + 1); // see https://github.com/sass/sass/issues/533
+      $percent-width: math.div($device-width * $percent, 100);
+      $percent-height: math.div($device-height * $percent, 100);
 
       @if ($unit == vmin or $unit == vmax) {
         @media #{$device-query} {
@@ -650,10 +711,14 @@ $no-viewport: false !default;
   );
 
   @each $direction in $directions {
-    $direction: to-lower-case($direction);
+    $direction: string.to-lower-case($direction);
 
-    @if map-has-key($direction-map, $direction) {
-      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    @if not index(top right bottom left, $direction) {
+      @error 'Direction must be either `top`, `right`, `bottom` or `left`.';
+    }
+
+    @if map.has-key($direction-map, $direction) {
+      $opposite-directions: list.append($opposite-directions, string.unquote(map.get($direction-map, $direction)));
     } @else {
       @warn 'No opposite direction can be found for `#{$direction}`. Direction omitted.';
     }
@@ -667,14 +732,21 @@ $no-viewport: false !default;
 /// @param {Color} $color [currentcolor] - Triangle color
 /// @param {number} $size [1em] - Triangle size
 @mixin triangle($direction, $color: currentcolor, $size: 1em) {
+  $perpendicular-borders: $size solid transparent;
+
+  @if not index(top right bottom left, $direction) {
+    @error 'Direction must be either `top`, `right`, `bottom` or `left`.';
+  }
+
   z-index: 2;
 
   width: 0;
   height: 0;
 
-  border-#{_opposite-direction($direction)}: ($size * 1.5) solid $color; // stylelint-disable-next-line property-sort-order
-  $perpendicular-borders: $size solid transparent;
-  @if not index(top right bottom left, $direction) {
+  // stylelint-disable-nex-line property-sort-order
+  border-#{_opposite-direction($direction)}: ($size * 1.5) solid $color;
+
+  @if not list.index(top right bottom left, $direction) {
     @error 'Direction must be either `top`, `right`, `bottom` or `left`.';
   }
 
@@ -694,34 +766,13 @@ $no-viewport: false !default;
   $level: 1;
 
   @each $key, $value in $map {
-    @if type-of($value) == 'map' {
-      $level: max(depth($value) + 1, $level);
+    @if meta.type-of($value) == 'map' {
+      $level: math.max(depth($value) + 1, $level);
     }
   }
 
   @return $level;
 }
-
-/* stylelint-disable property-no-unknown, scss/at-rule-no-unknown, selector-type-no-unknown */
-
-@mixin debug-map($map) {
-  @at-root {
-    @debug-map {
-      // these properties are for debug only. They do not exist
-      __tostring__: inspect($map);
-      __length__: length($map);
-      __depth__: depth($map);
-      __keys__: map-keys($map);
-
-      __properties__ {
-        @each $key, $value in $map {
-          #{'(' + type-of($value) + ') ' + $key}: inspect($value);
-        }
-      }
-    }
-  }
-}
-/* stylelint-enable property-no-unknown, scss/at-rule-no-unknown, selector-type-no-unknown */
 
 /// Helper to set a two dimensional proportion to an element.
 ///
@@ -754,42 +805,49 @@ $no-viewport: false !default;
 /// }
 ///
 @mixin aspect-ratio($ratio) {
-  position: relative;
+  $w: null;
+  $h: null;
 
-  $w: nth($ratio, 1);
-  $h: if(length($ratio) == 3, nth($ratio, 3), nth($ratio, 2));
-  @if type-of($ratio) != list {
-    @error '`aspect-ratio` function expecting a list for `$ratio`; `#{type-of($ratio)}` given.';
-  } @else if length($ratio) == 3 and nth($ratio, 2) != 'x' {
-    @error 'when using 3 values length list, `aspect-ratio` function expects the second to be `x`; #{nth($ratio, 2)} given.';
-  } @else if length($ratio) < 2 and length($ratio) > 3 {
-    @error '`aspect-ratio` function expecting a list with 2 or 3 items for `$ratio`; `#{length($ratio)}` given.';
+  @if meta.type-of($ratio) == string {
+    $ratio: f.aspect-ratio($ratio);
   }
 
-  @if type-of($w) != 'number' {
+  @if meta.type-of($ratio) != list {
+    @error '`aspect-ratio` function expecting a list for `$ratio`; `#{meta.type-of($ratio)}` given.';
+  } @else if list.length($ratio) == 3 and list.nth($ratio, 2) != 'x' and list.nth($ratio, 2) != '/' {
+    @error 'when using 3 values length list, `aspect-ratio` function expects the second to be `x` or `/`; #{list.nth($ratio, 2)} given.';
+  } @else if list.length($ratio) < 2 and list.length($ratio) > 3 {
+    @error '`aspect-ratio` function expecting a list with 2 or 3 items for `$ratio`; `#{list.length($ratio)}` given.';
+  } @else {
+    $w: list.nth($ratio, 1);
+    $h: if(length($ratio) == 3, list.nth($ratio, 3), list.nth($ratio, 2));
+  }
+
+  @if meta.type-of($w) != 'number' {
     @error 'the value sent to `width` isn\'t a `number`.';
-  } @else if not unitless($w) {
+  } @else if not math.is-unitless($w) {
     @error 'the value sent to `width` **must** be unitless.';
   }
 
-  @if type-of($h) != 'number' {
+  @if meta.type-of($h) != 'number' {
     @error 'the value sent to `height` isn\'t a `number`.';
-  } @else if not unitless($h) {
+  } @else if not math.is-unitless($h) {
     @error 'the value sent to `height` **must** be unitless.';
   }
 
+  position: relative;
+
   &::before {
     float: left;
-
-    padding-top: ($h / $w * 100%);
+    padding-top: (math.div($h, $w) * 100%);
 
     content: '';
   }
 
   &::after {
-    clear: both;
-
     display: table;
+
+    clear: both;
 
     content: '';
   }
@@ -800,30 +858,31 @@ $no-viewport: false !default;
 /// @link http://codepen.io/timbrown/full/akXvRw/
 @mixin fluid-line-height(
   $font-size: null,
-  $min-line-height: map-get($leadings, 'min'),
-  $max-line-height: map-get($leadings, 'max'),
-  $line-length-lower-gate: map-get($line-lengths, 'min'),
-  $line-length-upper-gate: map-get($line-lengths, 'max')
+  $min-line-height: map.get(c.$leadings, 'min'),
+  $max-line-height: map.get(c.$leadings, 'max'),
+  $line-length-lower-gate: map.get(c.$line-lengths, 'min'),
+  $line-length-upper-gate: map.get(c.$line-lengths, 'max')
 ) {
   line-height: $min-line-height;
+
   @if $font-size == null {
     @error 'the `font-size` of the element **must** be provided to calculate the media query limits.';
-  } @else if unit($font-size) == '%' {
-    $font-size: $font-size / 100%;
-  } @else if unit($font-size) == 'em' {
-    $font-size: $font-size / 1em;
-  } @else if unit($font-size) == 'rem' {
-    $font-size: $font-size / 1rem;
-  } @else if unitless($font-size) {
+  } @else if math.unit($font-size) == '%' {
+    $font-size: math.div($font-size, 100%);
+  } @else if math.unit($font-size) == 'em' {
+    $font-size: math.div($font-size, 1em);
+  } @else if math.unit($font-size) == 'rem' {
+    $font-size: math.div($font-size, 1rem);
+  } @else if math.is-unitless($font-size) {
     @error 'the unit of the parameter sent should be `%`, `em`, `rem`. Unitless value given.';
   } @else {
-    @error 'the unit of the parameter sent should be `%`, `em`, `rem`. `#{unit($font-size)}` given.';
+    @error 'the unit of the parameter sent should be `%`, `em`, `rem`. `#{math.unit($font-size)}` given.';
   }
 
   @media screen and (min-width: #{$line-length-lower-gate * $font-size}) {
     line-height: calc(
       #{$min-line-height * 1em} + (#{$max-line-height} - #{$min-line-height}) * ((100vw - #{$line-length-lower-gate}) /
-      (#{$line-length-upper-gate / 1em} - #{$line-length-lower-gate / 1em}))
+      (#{math.div($line-length-upper-gate, 1em)} - #{math.div($line-length-lower-gate, 1em)}))
     );
   }
 
@@ -836,6 +895,162 @@ $no-viewport: false !default;
   hyphens: auto;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+@mixin focused {
+  outline: 0;
+  outline-style: dashed;
+  box-shadow: 0 0 0 0.05rem color.scale(f.palette('neutral', 'black'), $alpha: 20%);
+}
+
+
+@mixin columns($width: map-get(c.$line-lengths, 'column'), $gap: c.$gutter) {
+  @include hyphens;
+
+  column-fill: balance;
+
+  column-gap: $gap;
+  column-width: $width;
+
+  max-width: 100%;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: c.$max-width;
+  padding-right: c.$gutter;
+  padding-left: c.$gutter;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin full-width {
+  position: relative;
+  right: 50%;
+  left: 50%;
+
+  width: 100vw;
+  margin-right: -50vw;
+  margin-left: -50vw;
+}
+
+@mixin headings {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  legend,
+  caption,
+  summary {
+    @content;
+  }
+}
+
+@mixin inner-border ($width: c.$stroke__thin, $style: solid, $color: currentColor) {
+  th,
+  td {
+    + th,
+    + td {
+      border-left: $width $style $color;
+    }
+  }
+
+  tr + tr {
+    th,
+    td {
+      border-top: $width $style $color;
+    }
+  }
+}
+
+
+/// @link https://alistapart.com/article/quantity-queries-for-css/
+@mixin at-least($n) {
+  @if $n == 2 {
+    &:not(:only-of-type) {
+      @content;
+    }
+  } @else {
+    $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+    &:nth-last-child(n + #{$n}),
+    &:nth-last-child(n + #{$n}) ~ #{$last-item} {
+      @content;
+    }
+  }
+}
+
+@mixin at-most($n) {
+  $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+  &:nth-last-child(-n + #{$n}):first-child,
+  &:nth-last-child(-n + #{$n}):first-child ~ #{$last-item} {
+    @content;
+  }
+}
+
+@mixin between($n1, $n2) {
+  $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+  &:nth-last-child(n + #{$n1}):nth-last-child(-n + #{$n2}):first-child,
+  &:nth-last-child(n + #{$n1}):nth-last-child(-n + #{$n2}):first-child ~ #{$last-item} {
+    @content;
+  }
+}
+
+@mixin exactly($n) {
+  @if $n == 1 {
+    &:only-of-type {
+      @content;
+    }
+  } @else {
+    $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+    &:nth-last-child(#{$n}):first-child,
+    &:nth-last-child(#{$n}):first-child ~ #{$last-item} {
+      @content;
+    }
+  }
+}
+
+@mixin odd {
+  $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+  &:nth-last-child(2n+1):first-child,
+  &:nth-last-child(2n+1):first-child ~ #{$last-item} {
+    @content;
+  }
+}
+
+@mixin even {
+  $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+  &:nth-last-child(2n):first-child,
+  &:nth-last-child(2n):first-child ~ #{$last-item} {
+    @content;
+  }
+}
+
+/// Targets the last row in a grid of constant column count
+/// @link https://keithclark.co.uk/articles/targeting-first-and-last-rows-in-css-grid-layouts/
+/// @link https://github.com/danielguillan/quantity-queries/issues/9#issue-177355092
+/// @param {number} $n - The number of columns within the context
+///
+@mixin last-row($n, $balanced-grid: false) {
+  $last-item: nth(nth(&, 1), length(nth(&, 1)));
+
+  @if $balanced-grid {
+    &:nth-last-child(-n + #{$n}) {
+      @content;
+    }
+  } @else {
+    &:nth-child(#{$n}n + 1):nth-last-child(-n + #{$n}),
+    &:nth-child(#{$n}n + 1):nth-last-child(-n + #{$n}) ~ #{$last-item} {
+      @content;
+    }
+  }
 }
 
 @mixin size($size) {

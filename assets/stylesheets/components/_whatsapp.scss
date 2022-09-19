@@ -1,14 +1,17 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 .whatsapp {
   position: fixed;
-  right: to-em(8px);
-  bottom: to-em(64px);
+  right: f.to-em(8px);
+  bottom: f.to-em(64px);
+  z-index: 2;
 
   display: flex;
-  z-index: 2;
 
   align-items: center;
 
-  width: to-em(72px);
+  width: f.to-em(72px);
 
   img {
     width: 100%;

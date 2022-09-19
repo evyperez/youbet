@@ -1,4 +1,6 @@
-<a class="whatsapp" href="https://api.whatsapp.com/send?phone=551141718901&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida" target="_blank" rel="noopener">
+<a class="whatsapp"
+  href="https://api.whatsapp.com/send?phone=551141718901&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida"
+  target="_blank" rel="noopener">
   <img src="/uploads/images/logo-whatsapp.svg" alt="Entre em contato através do Whatsapp" />
 </a>
 <footer class="footer">
@@ -8,9 +10,23 @@
       <p> YouBet! School - Todos os direitos reservados - 2021</p>
     </div>
 
+    {{/*  <div>
+
+      <a href="#p1"><strong>{{ .Language.LanguageName }}</strong></a>
+
+      <nav class="languages-nav">
+        <p><strong>{{ i18n "languages"}}</strong></p>
+        {{ range $.Site.Home.AllTranslations }}
+          <option><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></option>
+        {{ end}}
+      </nav>
+    </div>
+  */}}
 
 
-{{/*
+
+
+    {{/*
     {{ if .Site.Menus.footer }}
     <nav class="footer-menu" id="menu">
 
@@ -18,7 +34,7 @@
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+        <li class="{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
           <a href="#">
             {{ .Pre }}
             <span>{{ .Name }}</span>
@@ -26,7 +42,7 @@
         </li>
         <ul class="sub-menu">
           {{ range .Children }}
-          <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+          <li class="{{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}">
             <a href="{{ .URL }}">{{ .Name }}</a>
           </li>
           {{ end }}
@@ -42,20 +58,9 @@
         {{ end }}
       </ul>
     </nav>
-    {{ end }}  */}}
+    {{ end }} */}}
   </div>
 
 
-  <!-- {{ if .IsTranslated }}
-    <nav class="languages-nav">
-      <ul class="languages-navlinks">
-        {{ range .Translations }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }} {{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
-        </li>
-        {{ end}}
-      </ul>
-    </nav>
-    {{ end }} -->
 
 </footer>

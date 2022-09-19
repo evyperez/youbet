@@ -1,5 +1,16 @@
+@use 'sass:map';
+
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+$button-size: f.to-rem(30px);
+
 .glide {
   position: relative;
+}
+
+.glide ul {
+  list-style: none;
 }
 
 .glide__arrows {
@@ -15,47 +26,40 @@
   font-size: 20px;
 
   h3 {
-    color: palette('white');
+    color: my.palette('white');
   }
-
-  $button-size: to-rem(30px);
 
   .glide__arrow {
     top: 115px;
 
     width: $button-size;
-    height: $button-size;
     min-width: unset;
-
+    height: $button-size;
     padding: 0;
 
     font-size: 0;
+    color: my.palette('white');
 
-    color: palette('white');
-
-    background-color: palette('gray');
-
+    background-color: my.palette('gray');
     border: unset;
 
-    @media screen and (min-width: breakpoint('tablet')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       top: 112px;
     }
 
-    @media screen and (min-width: breakpoint('laptop')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       top: 77px;
     }
 
-    @media screen and (min-width: breakpoint('desktop')) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'desktop')}) {
       top: 90px;
     }
 
     &:focus,
     &:active,
     &:hover {
-      background-color: palette('gray', '110%');
-
+      background-color: my.palette('gray', '110%');
       border: unset;
-
       outline: none;
     }
 
@@ -65,7 +69,7 @@
       width: $button-size;
       height: $button-size;
 
-      background: palette('white');
+      background: my.palette('white');
 
       mask-image: url('/uploads/images/arrow.svg');
       mask-position: center;
@@ -76,10 +80,9 @@
     &.glide__arrow--left {
       position: absolute;
       left: -10px;
-
       z-index: 1;
 
-      @media screen and (min-width: breakpoint('laptop')) {
+      @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
         left: -20px;
       }
     }
@@ -87,16 +90,16 @@
     &.glide__arrow--right {
       position: absolute;
       right: -10px;
-
       z-index: 1;
 
-      @media screen and (min-width: breakpoint('laptop')) {
+      @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
         right: -20px;
       }
     }
 
     &.glide__arrow--left::after {
       content: '';
+
       transform: rotate(180deg);
     }
 

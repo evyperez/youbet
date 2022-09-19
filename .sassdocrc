@@ -1,0 +1,55 @@
+autofill:
+  - throw
+  - content
+  - require
+dest: './build'
+exclude:
+  - ./css/*
+  - ./stylesheets/vendor/*
+groups:
+  undefined: General
+  normalizer: Normalization
+  config: Configuration variables and maps
+  components: CSS components
+  helpers: Helpers
+  hacks: Dirty Hacks & Fixes
+  qa: Quality assurance
+
+  Design guide:
+    config-grid-and-graphics: General
+    config-palettes: Color Palettes
+    config-typography: Typography
+
+  Constants:
+    math: Mathematics
+    font-stacks: Font stacks
+
+package: "./package.json"
+
+display:
+  access:
+    - private
+    - public
+  alias: true
+  watermark: true
+  descriptionPath: "README.md"
+
+herman:
+  displayColors:
+    - "hex"
+    - "hsl"
+  sass:
+    includePaths:
+      - ./abstracts
+    jsonFile: ./testResults/json.css
+    use:
+      - file: config/typography
+        namespace: "*"
+      - file: constants/font-stacks
+        namespace: "*"
+      - file: mixins
+        namespace: "*"
+
+strict: true
+theme: herman
+verbose: true

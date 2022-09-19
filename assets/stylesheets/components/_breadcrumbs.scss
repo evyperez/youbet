@@ -1,46 +1,46 @@
+@use 'sass:map';
+
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
 .breadcrumbs {
   display: flex;
 
-  align-items: center;
   flex: 1;
   flex-wrap: wrap;
 
-  padding: to-rem(4px) 0;
+  align-items: center;
 
-  font-size: to-rem(11px);
-  line-height: to-rem(20px);
+  padding: f.to-rem(4px) 0;
 
+  font-size: f.to-rem(11px);
+  line-height: f.to-rem(20px);
   word-wrap: break-word;
   overflow-wrap: break-word;
-
   list-style: none;
 
-  border-bottom: 1px solid palette('gray', '10%');
+  border-bottom: 1px solid my.palette('gray', '10%');
 
-  @media screen and (min-width: breakpoint('laptop')) {
-    padding: to-rem(12px) 0;
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    padding: f.to-rem(12px) 0;
 
-    font-size: to-rem(12px);
+    font-size: f.to-rem(12px);
   }
 
   a {
-    @include truncate;
+    @include my.truncate;
 
     max-width: 100%;
+    margin-right: f.to-rem(4px);
 
-    margin-right: to-rem(4px);
-
+    color: my.palette('gray');
     text-decoration: unset;
     word-wrap: break-word;
     overflow-wrap: break-word;
 
-    color: palette('gray');
-
-    &.focus,
     &:hover {
+      color: my.palette('orange', '110%');
       text-decoration: unset;
-
-      color: palette('orange', '110%');
     }
 
     &:last-of-type {
@@ -51,8 +51,8 @@
       }
     }
 
-    @media screen and (min-width: breakpoint('laptop')) {
-      margin-right: to-rem(12px);
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+      margin-right: f.to-rem(12px);
     }
 
     &::after {
@@ -60,25 +60,23 @@
 
       width: 5px;
       height: 5px;
+      margin-left: f.to-rem(4px);
 
-      margin-left: to-rem(4px);
-
-      line-height: to-rem(20px);
-
-      background: palette('gray', '30%');
-
-      border-radius: 50%;
+      line-height: f.to-rem(20px);
 
       content: '';
 
-      @media screen and (min-width: breakpoint('laptop')) {
-        margin-left: to-rem(12px);
+      background: my.palette('gray', '30%');
+      border-radius: 50%;
+
+      @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+        margin-left: f.to-rem(12px);
       }
     }
 
   }
 
-  a.active {
+  .active {
     font-weight: 500;
   }
 }

@@ -1,0 +1,94 @@
+- id: about
+  translation: 'About'
+- id: article
+  translation: 'article'
+- id: author
+  translation: 'Author'
+- id: authors
+  translation: 'Authors'
+- id: blog
+  translation: 'Blog'
+- id: by
+  translation: 'By'
+- id: categories
+  translation: 'Categories'
+- id: postBy
+  translation: 'Post by'
+- id: content404
+  translation: 'We did not find what you are looking for'
+- id: email
+  translation: 'Email'
+- id: firstName
+  translation: 'First name'
+- id: home
+  translation: 'Home'
+- id: lastName
+  translation: 'Last name'
+- id: lastPosts
+  translation: 'Last posts'
+- id: message
+  translation: 'Message'
+- id: notFound
+  translation: 'Not found'
+- id: phone
+  translation: 'phone'
+- id: readMore
+  translation: 'Read more'
+- id: send
+  translation: 'Send'
+- id: tags
+  translation: 'Tags'
+- id: title404
+  translation: 'Ops! Page not found'
+- id: whatsApp
+  translation: 'WhatsApp'
+- id: writtenBy
+  translation: 'Written by'
+- id: term
+  translation: 'Term'
+- id: age
+  translation: 'Age'
+- id: accommodations
+  translation: 'Accommodations'
+- id: feeding
+  translation: 'Feeding'
+- id: languageLevel
+  translation: 'Language Level'
+- id: details
+  translation: 'Details'
+- id: whatIsIncluded
+  translation: 'Included'
+- id: allYouNeed
+  translation: 'All you need'
+- id: scholarship
+  translation: 'Scholarship'
+- id: commonQuestions
+  translation: 'Common questions'
+- id: getAQuote
+  translation: 'get a quote'
+- id: January
+  translation: 'January'
+- id: February
+  translation: 'February'
+- id: March
+  translation: 'March'
+- id: April
+  translation: 'April'
+- id: May
+  translation: 'May'
+- id: June
+  translation: 'June'
+- id: July
+  translation: 'July'
+- id: August
+  translation: 'August'
+- id: September
+  translation: 'September'
+- id: October
+  translation: 'October'
+- id: November
+  translation: 'November'
+- id: December
+  translation: 'December'
+- id: languages
+  translation: 'Languages'
