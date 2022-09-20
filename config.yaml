@@ -14,6 +14,7 @@ templateMetrics: true
 pluralizeListTitles: true
 preserveTaxonomyNames: true
 googleAnalytics: 'UA-90457577-1'
+googleTag: 'GTM-PXT9Q4L'
 buildFuture: true
 FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
@@ -82,21 +83,33 @@ languages:
           Weight: 3
           URL: '/programas'
           Identifier: 'programs'
-        - Name: 'Intercâmbio de Inverno'
+        - Name: 'Ensino Médio'
           Pre: ''
           Weight: 1
+          Identifier: 'high-school'
+          URL: '/programas/ensino-medio'
+          parent: 'programs'
+        - Name: 'Futebol'
+          Pre: ''
+          Weight: 2
+          Identifier: 'futebol'
+          URL: '/programas/futebol'
+          parent: 'programs'
+        - Name: 'Intercâmbio de Inverno'
+          Pre: ''
+          Weight: 3
           Identifier: 'winter'
           URL: '/programas/intercambio-de-inverno'
           parent: 'programs'
         - Name: 'Intercâmbio de Verão'
           Pre: ''
-          Weight: 2
+          Weight: 4
           Identifier: 'summer'
-          URL: '/programas'
+          URL: '/programas/intercambio-de-verao'
           parent: 'programs'
         - Name: 'Todos'
           Pre: ''
-          Weight: 2
+          Weight: 5
           Identifier: 'allPrograms'
           URL: '/programas'
           parent: 'programs'
