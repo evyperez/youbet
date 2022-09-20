@@ -14,7 +14,6 @@ templateMetrics: true
 pluralizeListTitles: true
 preserveTaxonomyNames: true
 googleAnalytics: 'UA-90457577-1'
-googleTag: 'GTM-PXT9Q4L'
 buildFuture: true
 FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
@@ -146,6 +145,7 @@ languages:
           URL: '/about'
 
 params:
+  googleTag: 'GTM-PXT9Q4L'
   authors:
     - Name: 'Evelyn Perez'
       Weight: 1
