@@ -31,9 +31,10 @@ formId: 'ensino-medio'
 faqId: 'steam'
 included :
   - 60 horas de aulas
-  - Hospedagem nas acomodações dos colégios
   - 3 refeições diárias
   - Atividades e excursões
+  - Consultoria de Visto Completa
+  - Hospedagem nas acomodações dos colégios
 draft: false
 ---
 
