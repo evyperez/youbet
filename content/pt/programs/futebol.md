@@ -15,8 +15,8 @@ backgroundMaxWidth: false
 backgroundSize: 'unset'
 backgroundPosition: 'center'
 date: 2022-02-13T22:23:07-03:00
-url: /programas/high-school
-slug: high-school
+url: /programas/futebol
+slug: futebol
 thumbnail: '/uploads/images/program-futebol.png'
 thumbnailAlt: 'casal de adolescentes na neve'
 term: 'Mínimo 2 semanas'
