@@ -33,7 +33,7 @@ jobs:
           tar -xvf sass_embedded-${{ env.DART_SASS_VERSION }}-linux-x64.tar.gz
           sass_embedded/dart-sass-embedded --version
       - name: Add to the PATH
-        run: echo '$GITHUB_WORKSPACE/sass_embedded' >> $GITHUB_PATH
+        run: echo "$GITHUB_WORKSPACE/sass_embedded" >> $GITHUB_PATH
       - name: Install dependencies
         run: npm i
       - name: Build site with Hugo
@@ -44,7 +44,7 @@ jobs:
           publish-dir: './public'
           production-branch: 'dev'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions'
+          deploy-message: "Deploy from GitHub Actions"
           netlify-config-path: './netlify.toml'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
