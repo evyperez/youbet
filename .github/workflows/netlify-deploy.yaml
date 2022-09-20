@@ -34,15 +34,18 @@ jobs:
           sass_embedded/dart-sass-embedded --version
       - name: Add to the PATH
         run: echo "$GITHUB_WORKSPACE/sass_embedded" >> $GITHUB_PATH
+      - name: Install dependencies
+        run: npm i
       - name: Build site with Hugo
         run: npm run build
       - name: Publish to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
           publish-dir: './public'
-          production-branch: 'main'
+          production-branch: 'dev'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
+          netlify-config-path: './netlify.toml'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
