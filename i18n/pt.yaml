@@ -29,7 +29,7 @@
 - id: postBy
   translation: 'Post por'
 - id: pricingSubtitle
-  translation: 'Atenção: preços para o ano de 2023, esses valores podem alterar sem aviso prévio.'
+  translation: 'Atenção: preços para o ano de 2023, esses valores podem alterar sem aviso prévio. Alguns valores já estão com o valor da bolsa para brasileiros imbutido, qualquer dúvida entre em contato'
 - id: pricing
   translation: 'Preços'
 - id: content404
