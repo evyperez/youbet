@@ -36,9 +36,9 @@ included :
   - Consultoria de Visto Completa
   - Hospedagem nas acomodações dos colégios
 partners :
-  - auburn
+  - auburn-academy
   - blue-mountain-academy
-  - campion
+  - campion-academy
 draft: false
 ---
 

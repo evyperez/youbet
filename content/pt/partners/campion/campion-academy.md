@@ -1,8 +1,8 @@
 ---
 title: Campion Academy
 date: 2017-01-16 14:53:44+00:00
-slug: "campion"
-id: "campion"
+slug: "campion-academy"
+id: "campion-academy"
 url: /parceiros/campion-academy
 metaDescription: "Amplie sua mente além das montanhas, Campion Academy é perfeito para quem gosta de esportes, pois eles participam de campeonatos estudantis e querem jogadores brasileiros em seus times. Próximo a Denver, Loveland e Rocky Mountains, com um parque nacional e belas paisagens. Uma área tranquila com a estrutura de primeiro mundo."
 thumbnail: '/uploads/images/partner-campion.png'

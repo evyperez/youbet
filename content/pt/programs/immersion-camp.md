@@ -36,7 +36,7 @@ included :
   - 3 refeições diárias
   - Atividades e excursões
 partners :
-  - campion
+  - campion-academy
 draft: true
 ---
 

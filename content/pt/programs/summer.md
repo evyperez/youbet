@@ -39,9 +39,9 @@ included :
   - Programa ESL. English as a Second Language
   - Certificado de conclusão de curso em inglês
 partners :
-  - auburn
-  - bma
-  - campion
+  - auburn-academy
+  - blue-mountain-academy
+  - campion-academy
 draft: false
 ---
 

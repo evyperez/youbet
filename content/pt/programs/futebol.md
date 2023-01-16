@@ -39,9 +39,9 @@ included :
   - Participação em competições de futebol
   - Matérias diferenciadas para ajudar na futura profissão
 partners :
-  - auburn
-  - bma
-  - campion
+  - auburn-academy
+  - blue-mountain-academy
+  - campion-academy
 draft: false
 ---
 
