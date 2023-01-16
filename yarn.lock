@@ -10111,6 +10111,11 @@
   "resolved" "https://registry.npmjs.org/value-or-function/-/value-or-function-3.0.0.tgz"
   "version" "3.0.0"
 
+"vanilla-lazyload@^17.8.3":
+  "integrity" "sha512-0eYjhkSkfP/JCDIzVpmgnh9I3XKAA8/i/6FpRrH8qjcC+nHv5mYZ6DQZUIGU16TqJei23hHl0J/Zuv/zmCC2Zw=="
+  "resolved" "https://registry.npmjs.org/vanilla-lazyload/-/vanilla-lazyload-17.8.3.tgz"
+  "version" "17.8.3"
+
 "vendors@^1.0.3":
   "integrity" "sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w=="
   "resolved" "https://registry.npmjs.org/vendors/-/vendors-1.0.4.tgz"
