@@ -55,10 +55,6 @@ main,
       padding-bottom: f.to-rem(80px);
     }
   }
-
-  &--programs article:nth-of-type(even) {
-    background-color: my.palette('orange', '5%');
-  }
 }
 
 .container {
@@ -80,7 +76,7 @@ main,
 }
 
 .container--narrow {
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
     max-width: my.$max-width--narrow;
   }
 }
@@ -89,7 +85,7 @@ main,
   padding-top: f.to-em(32px);
   padding-bottom: f.to-em(32px);
 
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: breakpoint('tablet__portrait')) {
     padding-top: f.to-em(68px);
     padding-bottom: f.to-em(68px);
   }
@@ -113,6 +109,16 @@ main,
   row-gap: f.to-rem(32px);
 
   width: 100%;
+}
+
+.container--left {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.container--right {
+  padding-right: 0;
+  margin-right: 0;
 }
 
 footer .container {

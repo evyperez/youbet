@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.about section {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    padding-top: f.to-rem(120px);
+    padding-bottom: f.to-rem(120px);
+  }
+}
+

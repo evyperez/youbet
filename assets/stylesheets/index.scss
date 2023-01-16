@@ -38,7 +38,6 @@
 @use 'components/card';
 @use 'components/categories';
 @use 'components/embed-container';
-@use 'components/faq';
 @use 'components/logo';
 @use 'components/whatsapp';
 @use 'components/page-title';
@@ -47,9 +46,16 @@
 
 // 6. Page-specific styles
 @use 'pages/home';
+@use 'pages/programs';
+@use 'pages/about';
 
 // 7. Patials styles
 @use 'partials/blog';
+@use 'partials/contact';
+@use 'partials/pricing-partial';
+@use 'partials/activities';
+@use 'partials/programs-partial';
+@use 'partials/faq';
 
 // 8. Themes
 @use 'themes/default';

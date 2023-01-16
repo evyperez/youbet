@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+.activities {
+  background-color: my.palette('orange', '10%');
+
+}
+

@@ -3,10 +3,12 @@
 @use '../abstracts/index' as my;
 @use 'abstracts/functions' as f;
 
+
+
 .card {
   width: 100%;
 
-  border: 1px solid my.palette('gray', '10%');
+  border: 1px solid my.palette('gray', '60%');
   border-radius: 8px;
 }
 
@@ -21,6 +23,13 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
+}
+
+.card__header {
+  border-bottom: 1px solid my.palette('gray', '60%');
+  border-top-left-radius: my.$rounded-corner;
+  border-top-right-radius: my.$rounded-corner;
+
 }
 
 .card__header,

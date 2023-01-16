@@ -291,11 +291,71 @@ textarea {
 
   width: 100%;
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     grid-template-columns: 1fr 1fr;
 
     row-gap: f.to-rem(32px);
     column-gap: f.to-rem(24px);
+  }
+}
+
+.two-columns--image {
+  $image-size: calc(my.$gutter * 2);
+
+  grid-template-columns: unset;
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 0;
+    column-gap: 0;
+  }
+
+  .image-wrap {
+    width: calc(100% + $image-size);
+    margin-right: calc(my.$gutter * -1);
+    margin-left: calc(my.$gutter * -1);
+  }
+
+  .image-wrap picture {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    > div {
+      padding-right: f.to-rem(60px);
+    }
+
+    .image-wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 50%;
+      height: 100%;
+      margin: unset;
+    }
+
+    .image-wrap img {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.two-columns--image-left {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    .rich-text {
+      padding-left: f.to-rem(60px);
+    }
+
+    .image-wrap {
+      left: 0;
+    }
   }
 }
 
@@ -307,19 +367,19 @@ textarea {
     column-gap: f.to-rem(24px);
   }
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     column-gap: f.to-rem(32px);
   }
 }
 
 .two-columns--sidebar {
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     grid-template-columns: 1.5fr 1fr;
 
     column-gap: f.to-rem(32px);
   }
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     column-gap: f.to-rem(64px);
   }
 }
@@ -334,7 +394,7 @@ textarea {
 
   width: 100%;
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     grid-template-columns: 1fr 1fr 1fr;
 
     row-gap: f.to-rem(32px);
@@ -352,14 +412,14 @@ textarea {
 
   width: 100%;
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     grid-template-columns: 1fr 1fr;
 
     row-gap: f.to-rem(32px);
     column-gap: f.to-rem(24px);
   }
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     row-gap: f.to-rem(32px);
@@ -383,7 +443,7 @@ textarea {
   .two-columns {
     row-gap: f.to-rem(12px);
 
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       row-gap: f.to-rem(12px);
       column-gap: f.to-rem(12px);
     }
@@ -392,7 +452,7 @@ textarea {
   .three-columns {
     row-gap: f.to-rem(12px);
 
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       row-gap: f.to-rem(12px);
       column-gap: f.to-rem(12px);
     }
@@ -416,14 +476,14 @@ textarea {
 }
 
 .reverse-content--even:nth-of-type(even) > div:nth-of-type(even) {
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     order: -1;
   }
 }
 
 .reverse-content--odd:nth-of-type(odd) {
   > div:nth-of-type(even) {
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       order: -1;
     }
   }
@@ -431,4 +491,8 @@ textarea {
 
 .column-gap--18 {
   column-gap: f.to-rem(18px);
+}
+
+.position--relative {
+  position: relative;
 }

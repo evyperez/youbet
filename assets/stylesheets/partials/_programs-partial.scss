@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+.programs-partial {
+  @include my.texture(my.palette('orange', '5%'), 16, 0);
+}

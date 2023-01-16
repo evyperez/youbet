@@ -1,0 +1,31 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+.faq-partial {
+  @include my.texture(my.palette('blue', '30%'), 14, 0);
+}
+
+.faq {
+  display: grid;
+
+  grid-template-rows: auto;
+
+  row-gap: f.to-rem(24px);
+
+  width: 100%;
+
+  a:not([class]) {
+    text-decoration: underline;
+
+    &:hover {
+      color: my.palette('blue');
+    }
+  }
+
+  details {
+    padding: f.to-rem(16px);
+
+    border: 1px solid my.palette('gray');
+    border-radius: my.$rounded-corner;
+  }
+}

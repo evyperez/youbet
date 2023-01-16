@@ -1,0 +1,6 @@
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+.contact-form {
+  @include my.texture(my.palette('blue', '5%'), 37, 0);
+}

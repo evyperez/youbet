@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+@use 'abstracts/functions' as f;
+
+.pricing-partial {
+  @include my.texture(my.palette('blue', '10%'), 8, 1);
+
+  .card {
+    background: my.palette('blue', '10%');
+  }
+
+  .card__header {
+    background: my.palette('blue', '5%');
+  }
+
+  .price {
+    font-size: f.to-rem(18px);
+  }
+}
+

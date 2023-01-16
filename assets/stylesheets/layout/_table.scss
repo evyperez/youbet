@@ -119,7 +119,11 @@ thead td {
 
 thead th:first-child,
 tfoot th:first-child {
-  text-align: left;
+  font-weight: my.font-weight('bold');
+  text-align: center;
+
+  border-top-left-radius: my.$rounded-corner;
+  border-top-right-radius: my.$rounded-corner;
 }
 
 tbody th {
