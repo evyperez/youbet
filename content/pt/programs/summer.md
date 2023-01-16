@@ -15,6 +15,7 @@ backgroundPosition: 'center'
 date: 2017-01-16 14:53:44+00:00
 url: 'programas/intercambio-de-verao'
 slug: 'intercambio-de-verao'
+id: 'summer-program'
 imageAlt: 'Foto do Colegio Auburn'
 thumbnail: '/uploads/images/program-summer.png'
 thumbnailAlt: 'garota estudando no verão'
@@ -28,8 +29,7 @@ partners :
 summary: 'O intercâmbio de verão é um programa de curta duração que visa ensinar uma nova língua com certificação internacional e imersão cultural.'
 whatIsIncludedImage: 'friends-reading'
 whatIsIncludedImageAlt: 'amigos estudando juntos'
-formId: 'intercambio-verao'
-faqId: 'summer'
+form: 'Intercâmbio de Verão'
 weight: 5
 included :
   - Acomodação
@@ -38,6 +38,10 @@ included :
   - 8h de inglês por semana
   - Programa ESL. English as a Second Language
   - Certificado de conclusão de curso em inglês
+partners :
+  - auburn
+  - bma
+  - campion
 draft: false
 ---
 

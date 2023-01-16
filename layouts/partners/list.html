@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-  {{partial "page-title.html" .}}
+ {{partial "page-title.html" .}}
+
 
   <div class="container">
     {{ partial "breadcrumbs.html" . }}
@@ -8,13 +9,13 @@
       <main role="main" id="conteudo" class="internal-page image-list">
         <article>
             <div class="container">
-              <div class="two-columns two-columns--list">
+              <div class="three-columns three-columns--list">
                 {{ range .Data.Pages.ByWeight }}
                       <div>
-                          <a href="/programas/{{ .Params.slug }}" class="box-link">
+                          <a href="{{ .Params.url }}" class="box-link">
                             <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
                           </a>
-                          <a href="/programas/{{ .Params.slug }}">
+                          <a href="{{ .Params.url }}">
                             <h2 class="heading-3">
                               {{ .Title }}
                             </h2>
@@ -25,5 +26,6 @@
               </div>
           </div>
         </article>
+
       </main>
 {{ end }}

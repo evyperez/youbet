@@ -1,0 +1,42 @@
+{{/*
+
+<form class="filterable__form js-only">
+  <fieldset>
+
+    <label>{{ i18n "search" }}
+      <input type="text" id="js-filterable__field" class="filterable__field" name="filter-by"
+        data-filter-by="data-normalized-content" />
+    </label>w
+
+    {{ if eq . "completeForm" }}
+    <label>{{ i18n "filterByTopic" }}
+      <select name="" class="js-filterable__input filterable__field" data-filter-by="data-topic">
+        <option value="null" selected disabled>{{ i18n "selectTopic" }}</option>
+        {{ range $topics.topics }}
+        <option value="{{lower .name }}">{{ .name }}</option>
+        {{ end }}
+      </select>
+    </label>
+
+    <label>{{ i18n "filterBySecretary" }}
+      <select name="" class="js-filterable__input filterable__field" data-filter-by="data-secretariat">
+        <option value="null" selected disabled>{{ i18n "selectSecretary" }}</option>
+        {{ range $secretariat.secretariats }}
+        <option value="{{lower .name }}">{{ .name }}</option>
+        {{ end }}
+      </select>
+    </label>
+
+    <label>{{ i18n "filterByBadge" }}
+      <select name="" class="js-filterable__input filterable__field" data-filter-by="data-badge">
+        <option value="null" selected disabled>{{ i18n "selectBadge" }}</option>
+        {{ range $badges.badges }}
+        <option value="{{lower .name }}">{{ .name }}</option>
+        {{ end }}
+      </select>
+    </label>
+
+    <input id="js-reset-button" type="reset" value="{{ i18n " clearFilters" }}" name="reset">
+    {{ end }}
+  </fieldset>
+</form>  */}}

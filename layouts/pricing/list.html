@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+ {{partial "page-title.html" .}}
+
+
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+  </div>
+      <main role="main" id="conteudo" class="internal-page image-list">
+        <section class="pricing-partial">
+          <div class="container container--narrow">
+            <div class="price">
+
+              <div class="form-group ">
+                <label for="firstName">
+                  {{ i18n "que tipo de curso quer fazer" | title }} <span class="required">*</span>
+                </label>
+                <select>
+                  <option>
+                    Ensino Médio
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group ">
+                <label for="country">
+                  {{ i18n "country" | title }} <span class="required">*</span>
+                </label>
+                <select>
+                  <option>
+                    {{ i18n "select" | title }}
+                  </option>
+                  <option value="us">
+                    {{ i18n "unitedStates" | title }}
+                  </option>
+                  <option value="ca">
+                    {{ i18n "canada" | title }}
+                  </option>
+                </select>
+              </div>
+
+              {{ partial "pricing.html" . }}
+
+            </div>
+          </div>
+        </section>
+
+      </main>
+{{ end }}

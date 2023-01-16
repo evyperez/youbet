@@ -1,0 +1,21 @@
+{{ if .Params.faqId }}
+<section class="faq-partial">
+  <div class="container container--narrow">
+    <h2 class="title-section">{{ i18n "faq" | title }}</h2>
+    <div class="faq">
+      {{range (index .Site.Data .Site.Language.Lang "faq" .Params.faqId) }}
+        <details>
+          {{ if .question }}
+          <summary>
+            {{ .question }}
+          </summary>
+          {{ end }}
+          {{ if .answer }}
+          {{ .answer | markdownify }}
+          {{ end }}
+        </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

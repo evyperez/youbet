@@ -26,8 +26,7 @@ summary: 'Quer fazer a faculdade no exterior?'
 weight: 2
 whatIsIncludedImage: 'studing'
 whatIsIncludedImageAlt: 'garotas estudando na biblioteca'
-formId: 'faculdade'
-faq: 'steam'
+form: 'Faculdade'
 included :
   - 60 horas de aulas
   - Hospedagem nas acomodações dos colégios

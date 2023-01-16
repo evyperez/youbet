@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<main role="main" id="conteudo" class="internal-page about">
+  <section class="section position--relative ">
+    <div class="container">
+      <div class="two-columns two-columns--image align-items--center">
+
+        <div class="rich-text">
+          {{ .Content }}
+        </div>
+
+        {{ if .Params.imageDesktop }}
+
+        <div class="image-wrap">
+          <picture>
+            <source media="(min-width: 1024px)" srcset="/uploads/images/{{.Params.imageDesktop}}--1131X0.webp">
+            <source media="(min-width: 800px)" srcset="/uploads/images/{{.Params.image}}--900X0.webp">
+            <source media="(min-width: 500px)" srcset="/uploads/images/{{.Params.image}}--900X0.webp">
+            <img src="/uploads/images/{{.Params.image}}.jpeg" class="img-fluid" width="1131" height="518"
+              alt="{{.Params.imageAlt}}">
+          </picture>
+        </div>
+        {{ end }}
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+{{/*
+  <section class="section section--blockquote position--relative">
+    <div class="container">
+      <div class="lala">
+        <div class="rich-text">
+          {{ range where .Site.Pages ".File.TranslationBaseName" "mission" }}
+            <h2>{{ .Title }}</h2>
+            {{ .Content }}
+          {{ end }}
+          {{ range where .Site.Pages ".File.TranslationBaseName" "vision" }}
+            <h2>{{ .Title }}</h2>
+            {{ .Content }}
+          {{ end }}
+          {{ range where .Site.Pages ".File.TranslationBaseName" "values" }}
+            <h2>{{ .Title }}</h2>
+            {{ .Content }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>  */}}
+
+
+
+</main>
+
+{{ end }}

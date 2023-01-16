@@ -112,9 +112,14 @@ languages:
           Identifier: 'allPrograms'
           URL: '/programas'
           parent: 'programs'
-        - Name: 'Contato'
+        - Name: 'Parceiros'
           Pre: ''
           Weight: 4
+          URL: '/parceiros'
+          Identifier: 'partners'
+        - Name: 'Contato'
+          Pre: ''
+          Weight: 5
           Identifier: 'contact'
           URL: '/contato'
 

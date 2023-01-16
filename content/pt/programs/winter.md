@@ -15,6 +15,7 @@ backgroundPosition: 'center'
 date: 2022-02-13T22:23:07-03:00
 url: /programas/intercambio-de-inverno
 slug: intercambio-de-inverno
+id: 'winter-program'
 thumbnail: '/uploads/images/program-winter.png'
 thumbnailAlt: 'casal de adolescentes na neve'
 term: 'Mínimo de 16 dias'
@@ -28,7 +29,7 @@ partners :
 summary: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
 whatIsIncludedImage: 'girls-snow'
 whatIsIncludedImageAlt: 'garotas na neve'
-formId: 'intercambio-inverno'
+form: 'Intercâmbio de Inverno'
 included :
   - Acomodação
   - Alimentação
@@ -36,6 +37,10 @@ included :
   - 8h de inglês por semana
   - Programa ESL. English as a Second Language
   - Certificado de conclusão de curso em inglês
+partners :
+  - auburn
+  - bma
+  - campion
 draft: false
 ---
 

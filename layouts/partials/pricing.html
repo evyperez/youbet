@@ -1,0 +1,76 @@
+{{ if .Params.pricing }}
+
+<section class="pricing-partial">
+  <div class="container container--narrow">
+    <h2 class="title-section">{{ i18n "pricing" | title }}</h2>
+    <div class="price">
+      <div class="rich-text">
+        <div class="four-columns">
+          {{ range where (index .Site.Data .Site.Language.Lang "pricing" ) ".partnerID" "==" .Params.id }}
+          <div class="card">
+
+            {{ if .title }}
+            <div class="card__header">
+              <h2 class="heading-4">{{ i18n (.title) | title }}</h2>
+            </div>
+            {{ end }}
+
+            <div class="card__body">
+              {{ if .description }}
+
+              <p>{{ .description }}</p>
+
+              {{ end }}
+
+
+              {{ if .Params.partnerID }}
+
+              <p><strong>{{ i18n "partner" | title }}: </strong>{{ .partnerID | title }}</p>
+
+              {{ end }}
+
+              {{ if .age }}
+              <span>
+                <strong>{{ i18n "age" | title }}: </strong>
+                {{ .age }}
+              </span>
+              {{ end }}
+
+              {{ if .countryName }}
+              <span>
+                <strong>{{ i18n "country" | title }}: </strong>
+                {{ i18n .countryName }}
+              </span>
+              {{ end }}
+
+              {{ if .duration }}
+              <span>
+                <strong>{{ i18n "duration" | title }}: </strong>
+                {{ .duration }}
+              </span>
+              {{ end }}
+
+              {{ if .scholarship }}
+              <span>
+                <strong>{{ i18n "scholarship" | title }}: </strong>
+                {{ .scholarship }}
+              </span>
+              {{ end }}
+
+              {{ if .total }}
+              <span class="price"><strong>
+                  {{ .total | lang.FormatAccounting 2 "USD" }} </strong></span>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        <small><strong>{{ i18n "pricingSubtitle" }}</strong></small>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,26 @@
+{{ if .Params.partners }}
+
+<section class="partners-partial">
+  <div class="container">
+      <h2 class="title-section">{{ i18n "somePartners" | title }}</h2>
+      <div class="three-columns justify-content--center">
+        {{ range .Params.partners }}
+        {{ range where $.Site.Pages "Params.slug" . }}
+        <div>
+          <a href="{{ .Params.url }}" class="box-link">
+            <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
+          </a>
+          <a href="{{ .Params.url }}">
+            <h2 class="heading-4">
+              {{ .Title }}
+            </h2>
+          </a>
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+  </div>
+
+</section>
+
+{{ end }}

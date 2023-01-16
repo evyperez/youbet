@@ -15,6 +15,7 @@ backgroundPosition: 'center'
 date: 2022-02-13T22:23:07-03:00
 url: /programas/immersion-camp
 slug: immersion-camp
+id: immersion-camp
 thumbnail: '/uploads/images/program-steam.png'
 thumbnailAlt: 'casal de adolescentes na neve'
 term: 'Mínimo de 16 dias'
@@ -28,13 +29,14 @@ partners :
 summary: 'Immersion Camp é um acampamento de férias, é um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
 whatIsIncludedImage: 'garota-ciencias'
 whatIsIncludedImageAlt: 'garotas estudando ciências'
-formId: 'immersion-camp'
-faqId: 'immersion'
+form: 'Immersion Camp'
 included :
   - 60 horas de aulas
   - Hospedagem nas acomodações dos colégios
   - 3 refeições diárias
   - Atividades e excursões
+partners :
+  - campion
 draft: true
 ---
 
@@ -62,7 +64,7 @@ O que faz um edifício alto não cair, uma represa reter água ou como faz uma p
 
 ### Artes
 
-Os campistas podem explorar sua criatividade através da música, dança, desenho, pintura e expressão pessoal. 
+Os campistas podem explorar sua criatividade através da música, dança, desenho, pintura e expressão pessoal.
 
 ### Matemática
 

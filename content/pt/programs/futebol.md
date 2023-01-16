@@ -17,6 +17,7 @@ backgroundPosition: 'center'
 date: 2022-02-13T22:23:07-03:00
 url: /programas/futebol
 slug: futebol
+id: futebol
 thumbnail: '/uploads/images/program-futebol.png'
 thumbnailAlt: 'casal de adolescentes na neve'
 term: 'Mínimo 2 semanas'
@@ -30,14 +31,17 @@ summary: 'Esse programa é pra quem quer aprimorar seus conhecimento em inglês 
 nos Estados Unidos.'
 whatIsIncludedImage: 'girl-play-futebol'
 whatIsIncludedImageAlt: 'garotas estudando ciências'
-formId: 'jogue-futebol'
-faqId: 'futebol'
+form: 'Futebol'
 weight: 4
 included :
   - Quartos Compartilhados
   - 3 refeições diárias
   - Participação em competições de futebol
   - Matérias diferenciadas para ajudar na futura profissão
+partners :
+  - auburn
+  - bma
+  - campion
 draft: false
 ---
 

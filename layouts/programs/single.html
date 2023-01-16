@@ -1,44 +1,13 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-  <style>
-    .page-title {
-      {{ if .Params.backgroundColor }} background-color:  {{ .Params.backgroundColor }}; {{ end }}
-    }
-
-    .page-title::before {
-      {{ if .Params.backgroundRepeat }} background-repeat:  {{ .Params.backgroundRepeat }}; {{ end }}
-      {{ if .Params.backgroundImage}} background-image: url('{{.Params.backgroundImage}}'); {{ end }}
-      {{ if not .Params.backgroundMaxWidth }} max-width: unset; {{ end }}
-      {{ if .Params.backgroundSize }} background-size: {{ .Params.backgroundSize }}; {{ end }}
-      {{ if .Params.backgroundPosition}} background-position: {{ .Params.backgroundPosition}}; {{ end }}
-    }
-
-    {{ if .Params.backgroundImageDesktop}}
-      @media (min-width: 1024px) {
-        .page-title::before {
-          background-image: url('{{.Params.backgroundImageDesktop}}');
-        }
-      }
-    {{ end }}
-    {{ if .Params.titleColor}}
-        .page-title h1  {
-          color: {{.Params.titleColor}};
-        }
-    {{ end }}
-  </style>
-
-<div class='page-title'>
-  <div class="container">
-    <h1>{{ .Title }}</h1>
-  </div>
-</div>
+{{partial "page-title.html" .}}
 
 <div class="container">
   {{ partial "breadcrumbs.html" . }}
 </div>
 
-<main role="main" id="conteudo" class="internal-page internal-page--programs">
+<main role="main" id="conteudo" class="internal-page programs">
   <article>
     <div class="container">
       {{ if .Params.mainImage }}
@@ -148,11 +117,10 @@
     <div class="container">
       <div class="two-columns align-items--center">
         <div class="rich-text">
+
           {{ if .Params.mainImage }}
           <img src="/uploads/images/{{.Params.whatIsIncludedImage}}.png" class="img-fluid"
             alt="{{.Params.whatIsIncludedImageAlt}}">
-
-
           {{ end }}
 
         </div>
@@ -176,79 +144,11 @@
 
 
 
-	{{ range $.Site.Data.faq.groups }}
-		<ul id="{{.id}}" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>{{.name}}</h2></li>
-		{{ range .items }}
-			<li>
-				<a class="cd-faq-trigger" href="#0">{{.question}}</a>
-				<div class="cd-faq-content">
-					<p>{{.answer}}</p>
-				</div>
-			</li>
-			{{ end }}
-		</ul>
-		{{ end }}
+  {{ partial "partners.html" . }}
 
+  {{ partial "faq.html" . }}
 
-
-
-  {{ if .Params.formId }}
-  <article class="contact-form">
-    <div class="container container--narrow ">
-      <h2 class="title-section">{{ i18n "getAQuote" }}</h2>
-      <form id="contato" name="{{.Params.formId}}" action="/contato/sucesso/" method="POST" data-netlify="true">
-        <div class="form-wrap">
-          <div class="two-columns">
-            <div class="form-group ">
-              <label for="firstName">
-                {{ i18n "firstName" | title }} <span class="required">*</span>
-              </label>
-              <input type="text" id="firstName" name="firstName" required />
-            </div>
-            <div class="form-group ">
-              <label for="lastName">
-                {{ i18n "lastName" | title }} <span class="required">*</span>
-              </label>
-              <input type="text" id="lastName" name="lastName" required />
-            </div>
-          </div>
-          <div class="two-columns">
-            <div class="form-group">
-              <label for="phone">
-                {{ i18n "phone" | title }}
-              </label>
-              <input type="text" id="phone" name="phone" />
-            </div>
-            <div class="form-group">
-              <label for="whatsapp">
-                {{ i18n "whatsApp" | title }}
-              </label>
-              <input type="text" id="whatsapp" name="whatsapp" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">
-              {{ i18n "email" | title }} <span class="required">*</span>
-            </label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="message">
-              {{ i18n "message" | title }} <span class="required">*</span>
-            </label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <div class="button-wrap button-wrap--center">
-            <button type="submit" class="button-secondary button-secondary--solid">{{ i18n "send" }}</button>
-          </div>
-        </div>
-
-      </form>
-    </div>
-  </article>
-  {{end}}
+  {{ partial "contact-form.html" . }}
 
 </main>
 

@@ -28,7 +28,7 @@ partners :
 summary:
 whatIsIncludedImage:
 whatIsIncludedImageAlt:
-formId:
+form:
 faq:
 included :
   - Acomodação

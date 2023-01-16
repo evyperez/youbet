@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{partial "page-title.html" .}}
+
+<div class="container">
+  {{ partial "breadcrumbs.html" . }}
+</div>
+
+<main role="main" id="conteudo" class="internal-page">
+  <article>
+    <div class="container">
+
+      {{ partial "main-image.html" . }}
+
+        <div class="rich-text">
+          {{ .Content }}
+
+        </div>
+    </div>
+  </article>
+
+  {{  partial "image-gallery.html" . }}
+
+  {{ if .Params.included }}
+  <article>
+    <div class="container">
+      <div class="two-columns align-items--center">
+        <div class="rich-text">
+          {{ if .Params.mainImage }}
+          <img src="/uploads/images/{{.Params.whatIsIncludedImage}}.png" class="img-fluid"
+            alt="{{.Params.whatIsIncludedImageAlt}}">
+
+
+          {{ end }}
+
+        </div>
+
+
+        <div class="rich-text">
+          <h2>{{ i18n "whatIsIncluded" | title }}</h2>
+          {{ range ( .Params.included ) }}
+          <ul>
+            <li>
+              {{ . }}
+            </li>
+          </ul>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </article>
+  {{ end }}
+
+
+{{ partial "pricing.html" . "lala" }}
+
+{{ partial "programs.html" . }}
+
+{{ partial "faq.html" . }}
+
+{{ partial "contact-form.html" . }}
+
+</main>
+
+{{ end }}

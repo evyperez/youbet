@@ -1,0 +1,36 @@
+{{ if .Params.gallery}}
+
+
+
+<section class="image-gallery">
+<div class="container">
+  <div class="glide glide--gallery">
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+    </div>
+
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+
+        {{range .Params.gallery }}
+        {{.image}}
+        <img src="{{.image}}" alt="{{.imageAlt}}">
+
+          <li class="glide__slide">
+
+            <picture>
+              <source media="(min-width: 800px)" srcset="{{.imageDesktop}}">
+              <img src="{{.image}}" alt="{{.imageAlt}}">
+            </picture>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+{{ end }}

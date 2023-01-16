@@ -1,0 +1,10 @@
+{{ if .Params.mainImage }}
+<picture>
+  <source media="(min-width: 1000px)" srcset="/uploads/images/{{.Params.mainImage}}--1131X0.webp">
+  <source media="(min-width: 800px)" srcset="/uploads/images/{{.Params.mainImage}}--900X0.webp">
+  <source media="(min-width: 500px)" srcset="/uploads/images/{{.Params.mainImage}}--800X0.webp">
+  <source media="(min-width: 300px)" srcset="/uploads/images/{{.Params.mainImage}}--500X0.webp">
+  <img src="/uploads/images/{{.Params.mainImage}}.jpeg" class="img-fluid main-img" width="1131" height="518"
+    alt="{{.Params.mainImageAlt}}">
+</picture>
+{{ end }}

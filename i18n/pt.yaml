@@ -1,5 +1,7 @@
 - id: about
   translation: 'Sobre'
+- id: activities
+  translation: 'Atividades'
 - id: article
   translation: 'Artigo'
 - id: author
@@ -12,12 +14,30 @@
   translation: 'Por'
 - id: categories
   translation: 'Categorias'
+- id: country
+  translation: 'País'
+- id: highSchool
+  translation: 'Ensino médio'
+- id: summerProgram
+  translation: 'Intercâmbio de verão'
+- id: immersionCamp
+  translation: 'Acampamento de Férias'
+- id: winterProgram
+  translation: 'Programa de inverno'
+- id: duration
+  translation: 'Duração'
 - id: postBy
   translation: 'Post por'
+- id: pricingSubtitle
+  translation: 'Atenção: preços para o ano de 2023, esses valores podem alterar sem aviso prévio.'
+- id: pricing
+  translation: 'Preços'
 - id: content404
   translation: 'Não encontramos o que você está procurando, volte para home'
 - id: email
   translation: 'E-mail'
+- id: faq
+  translation: 'Perguntas Frequentes'
 - id: firstName
   translation: 'Nome'
 - id: home
@@ -32,10 +52,20 @@
   translation: 'Não encontrado'
 - id: phone
   translation: 'Telefone'
+- id: programs
+  translation: 'Programas'
+- id: partner
+  translation: 'Parceiro'
+- id: partners
+  translation: 'Parceiros'
+- id: somePartners
+  translation: 'Alguns parceiros'
 - id: readMore
   translation: 'Ler Mais'
 - id: send
   translation: 'Enviar'
+- id: subject
+  translation: 'Assunto'
 - id: tags
   translation: 'Tags'
 - id: title404
@@ -60,6 +90,8 @@
   translation: 'O que está incluso?'
 - id: allYouNeed
   translation: 'Tudo o que você precisa'
+- id: total
+  translation: 'Total'
 - id: scholarship
   translation: 'Bolsa de estudos'
 - id: commonQuestions
@@ -101,3 +133,8 @@
   translation: 'Dezembro'
 - id: languages
   translation: 'Idiomas'
+
+- id: unitedStates
+  translation: 'Estados Unidos'
+- id: canada
+  translation: 'Canadá'

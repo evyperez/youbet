@@ -2,35 +2,50 @@
 title: Blue Mountain Academy
 date: 2017-01-16 14:53:44+00:00
 slug: "blue-mountain-academy"
+id: "blue-mountain-academy"
+url: /parceiros/blue-mountain-academy
 metaDescription: "Um lugar onde seus relacionamentos podem crescer, o Colégio Blue Mountain Academy, ou simplesmente BMA, fica localizado na Pensilvânia ao norte do Reading, próximo a Filadélfia, Nova Iorque e Washington DC.
 Um colégio dinâmico, diversificado e multicultural, pois possui alunos internacionais da Ásia, América Latina e Africa."
-image: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
-imageAlt: Foto do Colegio Auburn
-thumbnail: /uploads/images/mount-rushmore-monument-landmark-scenic.jpeg
+thumbnail: '/uploads/images/partner-bma.png'
+thumbnailAlt: 'Foto Blue Mountain Academy'
+titleColor: '#FFF'
+backgroundColor:
+backgroundImage: '/uploads/images/textures/school--mobile.png'
+backgroundImageDesktop: '/uploads/images/textures/school.png'
+backgroundRepeat: repeat
+backgroundMaxWidth: false
+backgroundSize: 'cover'
+backgroundPosition: 'center'
 address: 2363 MOUNTAIN ROAD HAMBURG, PA 19526
 city: Hamburg, Pensilvânia
 phone: +1 (484) 662 7000
 minimumTime:  1 semestre letivo
 academicTerm : anual
+faqId: "blue-mountain-academy"
 price: R$170,00
 age: 13 anos a 18 anos
+category: 'Ensino Médio'
 languageLevel: Inglês Intermediário
 meals: Três refeições diárias
 accommodation: Dormitório do Campus
 nextClass: Abril de 2020
 typeCollege: "Particular"
-faq:
-  - faq: auburn
-scholarship:
-  - scholarship: auburn
+pricing: true
+activities:
 summary: "Um lugar onde seus relacionamentos podem crescer, o Colégio Blue Mountain Academy, ou simplesmente BMA, fica localizado na Pensilvânia ao norte do Reading, próximo a Filadélfia, Nova Iorque e Washington DC.
-Um colégio dinâmico, diversificado e multicultural, pois possui alunos internacionais da Ásia, América Latina e Africa."
+Um colégio dinâmico, diversificado e multicultural porque possui alunos internacionais da Ásia, América Latina e Africa."
 draft: false
+form: "bma"
+programs:
+  - futebol
+  - ensino-medio
+  - intercambio-de-verao
+  - intercambio-de-inverno
 ---
 
 ## Sobre
 
-Fundada no coração do estado da Pensilvânia, a Blue Mountain Academy é um colégio cristão, iniciou suas atividades em 1955 e é conhecida carinhosamente como BMA.
+Fundada no coração do estado da Pensilvânia, a [Blue Mountain Academy](https://bma.us) é um colégio cristão, iniciou suas atividades em 1955 e é conhecida carinhosamente como BMA.
 Sendo construída próxima à Filadélfia, Nova York e Washington D.C., o seu propósito principal sempre foi formar cidadãos, sendo assim, a BMA oferece de maneira integrada além do currículo regular, diversas atividades extra-curriculares e formações profissionais.
 A BMA é um colégio internacional, conta com mais sete nacionalidades diferentes de alunos, incluindo asiáticos e africanos. O aluno Youbet! será um cidadão global completo ao estudar na BMA.
 
