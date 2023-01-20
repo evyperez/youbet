@@ -27,7 +27,6 @@
   border-bottom: 1px solid my.palette('gray', '60%');
   border-top-left-radius: my.$rounded-corner;
   border-top-right-radius: my.$rounded-corner;
-
 }
 
 .card__header,
@@ -49,54 +48,52 @@
   height: 180px;
 }
 
-.image-list {
-  a {
-    @media (max-width: breakpoint('max-tablet')) {
-      color: my.palette('orange');
-    }
-
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
-      text-decoration: unset;
-    }
-  }
-
-  img {
-    width: 100%;
-  }
-
-  h2 {
-    margin-bottom: f.to-rem(8px);
-  }
-}
-
-.box-link {
+.img-description {
   position: relative;
 
   display: block;
 
   margin: 0;
-  margin-bottom: f.to-rem(16px);
 
-  line-height: 0;
+  a {
+    display: block;
+
+    text-decoration: none !important;
+  }
+
+  .category-title {
+    color: my.palette('orange');
+  }
 
   img {
     width: 100%;
   }
 
-  &:hover::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+  .img-description__img {
+    position: relative;
 
-    display: block;
-
-    width: 92%;
-    height: 90%;
-
-    content: '';
-
-    border: 3px solid my.palette('white');
-
-    transform: translate(-50%, -50%);
+    display: flex;
   }
+}
+
+.img-hover-border > div {
+  position: relative;
+
+  border: unset;
+}
+
+.img-hover-border:focus > div::before,
+.img-hover-border:hover > div::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 92%;
+  height: 90%;
+
+  content: '';
+
+  border: 3px solid my.palette('white');
+
+  transform: translate(-50%, -50%);
 }

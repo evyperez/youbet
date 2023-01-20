@@ -26,7 +26,7 @@ accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
 partners :
   - partner: 'auburn'
-summary: 'O intercâmbio de verão é um programa de curta duração que visa ensinar uma nova língua com certificação internacional e imersão cultural.'
+summary: 'O intercâmbio de verão é um programa de curta duração que visa ensinar uma nova língua com certificação internacional e imersão cultural. O programa também contém atividades específicas para o verão.'
 whatIsIncludedImage: 'friends-reading'
 whatIsIncludedImageAlt: 'amigos estudando juntos'
 form: 'Intercâmbio de Verão'

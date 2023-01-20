@@ -23,8 +23,7 @@ age: '14 anos a 18 anos'
 languageLevel: 'Inglês básico'
 accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
-summary: 'O que acha de fazer seu ensino médio nos Estados Unidos, encontrar pessoas do mundo inteiro e conhecer uma nova
-cultura?'
+summary: 'O programa de Ensino Médio é ideal para adolescentes que tem o sonho de estudar nos EUA. Os colégios são multiculturais, te preparam para universidades americanas e possuem ótimas aulas extracurriculares.'
 weight: 1
 whatIsIncludedImage: 'students'
 whatIsIncludedImageAlt: 'estudantes conversando'

@@ -60,8 +60,8 @@
   translation: 'Parceiros'
 - id: somePartners
   translation: 'Alguns parceiros'
-- id: readMore
-  translation: 'Ler Mais'
+- id: knowMore
+  translation: 'Saiba mais'
 - id: send
   translation: 'Enviar'
 - id: subject

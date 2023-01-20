@@ -6,22 +6,14 @@
   <div class="container">
     {{ partial "breadcrumbs.html" . }}
   </div>
-      <main role="main" id="conteudo" class="internal-page image-list">
+      <main role="main" id="conteudo" class="internal-page">
         <article>
             <div class="container">
               <div class="three-columns three-columns--list">
                 {{ range .Data.Pages.ByWeight }}
-                      <div>
-                          <a href="{{ .Params.url }}" class="box-link">
-                            <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
-                          </a>
-                          <a href="{{ .Params.url }}">
-                            <h2 class="heading-3">
-                              {{ .Title }}
-                            </h2>
-                          </a>
-                          {{ .Params.Summary }}
-                      </div>
+
+                {{ partial "img-description.html" . }}
+
                 {{ end }}
               </div>
           </div>

@@ -65,7 +65,9 @@ ms.$modularscale: (
 );
 
 %heading-h1 {
+  font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(4);
+  font-weight: my.font-weight('bold');
   line-height: f.to-rem(41px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
@@ -75,7 +77,9 @@ ms.$modularscale: (
 }
 
 %heading-h2 {
+  font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(3);
+  font-weight: my.font-weight('bold');
   line-height: f.to-rem(35px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
@@ -85,7 +89,9 @@ ms.$modularscale: (
 }
 
 %heading-h3 {
+  font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(1);
+  font-weight: my.font-weight('bold');
   line-height: f.to-rem(27px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
@@ -95,12 +101,16 @@ ms.$modularscale: (
 }
 
 %heading-h4 {
+  font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(1);
+  font-weight: my.font-weight('bold');
   line-height: f.to-rem(27px);
 }
 
 %heading-h5 {
+  font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(0);
+  font-weight: my.font-weight('bold');
   line-height: f.to-rem(27px);
 }
 
@@ -586,7 +596,7 @@ blockquote.verse p {
   margin-bottom: 0;
 
   font-size: f.to-rem(12px);
-  font-weight: my.font-weight('bold');
+  font-weight: my.font-weight('extrabold');
   line-height: f.to-rem(19px);
   text-transform: uppercase;
 

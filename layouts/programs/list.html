@@ -5,22 +5,12 @@
   <div class="container">
     {{ partial "breadcrumbs.html" . }}
   </div>
-      <main role="main" id="conteudo" class="internal-page image-list">
+      <main role="main" id="conteudo" class="internal-page">
         <article>
             <div class="container">
               <div class="two-columns two-columns--list">
                 {{ range .Data.Pages.ByWeight }}
-                      <div>
-                          <a href="/programas/{{ .Params.slug }}" class="box-link">
-                            <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
-                          </a>
-                          <a href="/programas/{{ .Params.slug }}">
-                            <h2 class="heading-3">
-                              {{ .Title }}
-                            </h2>
-                          </a>
-                          {{ .Params.Summary }}
-                      </div>
+                  {{ partial "img-description.html" . }}
                 {{ end }}
               </div>
           </div>

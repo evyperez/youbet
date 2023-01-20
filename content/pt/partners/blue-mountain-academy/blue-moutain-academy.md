@@ -43,7 +43,7 @@ programs:
   - intercambio-de-inverno
 ---
 
-## Sobre
+## Sobre a Blue Mountain Academy
 
 Fundada no coração do estado da Pensilvânia, a [Blue Mountain Academy](https://bma.us) é um colégio cristão, iniciou suas atividades em 1955 e é conhecida carinhosamente como BMA.
 Sendo construída próxima à Filadélfia, Nova York e Washington D.C., o seu propósito principal sempre foi formar cidadãos, sendo assim, a BMA oferece de maneira integrada além do currículo regular, diversas atividades extra-curriculares e formações profissionais.

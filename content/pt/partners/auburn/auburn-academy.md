@@ -32,7 +32,7 @@ programs:
   - intercambio-de-inverno
 ---
 
-## Sobre
+## Sobre a Auburn Acadademy
 
 Bem vindo a Auburn Adventist Academy. Uma escola que oferece aos estudantes uma experiência acadêmica diversificada com um ambiente seguro e uma atmosfera espiritual genuína. Este é um legado desde 1919. Além do aprendizado acadêmico você aprenderá lições de vida, responsabilidade e camaradagem com a vida de dormitório, crescendo e ampliando suas visões. Uma estrutura incomparável onde os estudantes se preparam para um futuro promissor.
 

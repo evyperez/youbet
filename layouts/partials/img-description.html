@@ -1,0 +1,22 @@
+<div class="img-description rich-text">
+
+  <a href="{{ .Params.url }}" class="img-hover-border">
+    <div>
+      <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
+    </div>
+  </a>
+
+  {{ if .Title }}
+
+  <a href="{{ .Params.url }}" class="heading-4">{{ .Title }}</a>
+
+  {{ end }}
+
+  {{ if .Params.Summary }}
+
+  <p>{{ .Params.Summary }}</p>
+
+  {{ end }}
+
+<a href="{{ .Params.url }}" class="category-title">{{ i18n "knowMore" }} + </a>
+</div>

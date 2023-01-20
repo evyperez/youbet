@@ -40,6 +40,8 @@ programs:
   - intercambio-de-inverno
 ---
 
+## Sobre a Campion Academy
+
 Fundada em 1907, a [Campion Academy](https://campion.net) é um internato cristão Adventista do Sétimo Dia localizado em Loveland, Colorado, que capacita os alunos a aumentar sua fé, expandir suas mentes e servir ao mundo. A Campion Academy promove a excelência na educação cristão com o propósito de fornecer um programa acadêmico que prepare os alunos para se destacarem na faculdade ou escola técnica para se tornarem cidadãos produtivos na sociedade.
 
 ## Atividades

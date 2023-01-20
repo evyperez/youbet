@@ -1,3 +1,4 @@
+
 {{ if .Params.partners }}
 
 <section class="partners-partial">
@@ -7,14 +8,7 @@
         {{ range .Params.partners }}
         {{ range where $.Site.Pages "Params.slug" . }}
         <div>
-          <a href="{{ .Params.url }}" class="box-link">
-            <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
-          </a>
-          <a href="{{ .Params.url }}">
-            <h2 class="heading-4">
-              {{ .Title }}
-            </h2>
-          </a>
+        {{ partial "img-description.html" . }}
         </div>
         {{ end }}
         {{ end }}
