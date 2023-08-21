@@ -539,7 +539,8 @@ blockquote.verse p {
   }
 
   .image-topics {
-    max-width: 214px;
+    max-width: 100%;
+    height: f.to-rem(200px);
     margin: 0 auto f.to-rem(16px) auto;
 
     @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
@@ -559,7 +560,6 @@ blockquote.verse p {
       margin-bottom: 0;
     }
   }
-
 }
 
 .rich-text > ul,
@@ -583,13 +583,13 @@ blockquote.verse p {
 
 
 .pre-title {
-  font-size: f.to-rem(12px);
-  line-height: f.to-rem(20px);
+  margin-bottom: f.to-rem(8px);
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-    font-size: f.to-rem(14px);
-    line-height: f.to-rem(22px);
-  }
+  font-family: fs.$ASAP-FONT-STACK;
+  font-size: f.to-rem(14px);
+  font-weight: 800;
+  line-height: f.to-rem(22px);
+  text-transform: uppercase;
 }
 
 .category-title {

@@ -1,28 +1,38 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
-{{ with $data.globalCitizen }}
+{{ with $data.section.globalCitizen }}
 
 <section class="image-with-text">
   <div class="container">
     <div class="two-columns align-items--center reverse-content--odd">
+
+      {{ if .content }}
+      <div class="rich-text">
+        {{ if .title }}
+        <h2>{{ .title }}</h2>
+        {{ end }}
+        <p>{{ .content | markdownify }}</p>
+
+        {{ if .buttonUrl }}
+        <div>
+          <a href="{{ .buttonUrl }}" class="button-secondary button-secondary--solid">{{ .buttonText }}</a>
+        </div>
+
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ if .image }}
       <div class="section-image">
         <img src="{{ .image }}" alt="{{ .alt }}" />
       </div>
-      <div>
-        {{ if .content }}
-        <div class="rich-text">
-          {{ if .title }}
-          <h2>{{ .title }}</h2>
-          {{ end }}
-          <p>{{ .content | markdownify }}</p>
+      {{ end }}
 
-          {{ if .buttonUrl }}
-          <div>
-            <a href="{{ .buttonUrl }}" class="button-secondary button-secondary--solid">{{ .buttonText }}</a>
-          </div>
+      {{ if .lottie }}
+      <div class="section-image">
+        <lottie-player src="{{.lottie}}" background="transparent"  speed="0.5"  style="max-width: 600px; width: 100%; height: auto;" loop  autoplay></lottie-player>
+      </div>
+      {{ end }}
 
-          {{ end }}
-        </div>
-        {{ end }}
 
       </div>
       {{ if .image }}

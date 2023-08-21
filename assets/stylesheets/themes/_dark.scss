@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+
 // -----------------------------------------------------------------------------
 // When having several themes, this file contains everything related to the
 // default one.
@@ -14,10 +17,10 @@
 .theme--dark {
   color: my.palette('text', 'light');
 
-  background: my.palette('background', 'dark');
+  background: my.palette('neutral', 'dark');
 
   .main-menu {
-    @media (max-width: breakpoint('max-laptop')) {
+    @media (max-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       background: my.palette('menu-dark', 'sub-menu');
     }
   }
@@ -25,7 +28,7 @@
   .has-sub-menu {
     color: my.palette('text', 'light');
 
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       &:hover {
         color: my.palette('menu-dark', 'anchor');
       }
@@ -35,7 +38,7 @@
   .sub-menu {
     color: my.palette('menu-dark', 'sub-menu-text');
 
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       color: my.palette('menu-dark', 'sub-menu');
 
       background: my.palette('menu-dark', 'sub-menu');
@@ -46,7 +49,7 @@
     }
   }
 
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     .sub-menu.active a:hover {
       color: my.palette('menu-dark', 'anchor');
 
@@ -69,7 +72,7 @@
   .main-menu a {
     color: my.palette('menu-dark', 'text');
 
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
+    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
       &:hover {
         color: my.palette('menu-dark', 'anchor');
       }

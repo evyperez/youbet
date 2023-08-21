@@ -1,0 +1,44 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.section.lifeTransformation }}
+
+<section class="image-with-text">
+  <div class="container">
+    <div class="two-columns align-items--center reverse-content--odd">
+      {{ if or (.lottie) (.image) }}
+      <div class="section-image">
+
+        {{ if .image }}
+        <img src="{{ .image }}" style="max-width: 550px; width: 100%; height: auto;" alt="{{ .alt }}" />
+        {{ end }}
+
+        {{ if .lottie }}
+          <lottie-player src="{{.lottie}}" background="transparent"  speed="0.5"  style="max-width: 600px; width: 100%; height: auto;" loop  autoplay></lottie-player>
+        {{ end }}
+
+      </div>
+      {{ end }}
+
+        {{ if .content }}
+        <div class="rich-text">
+          {{ if .prehead }}
+          <p class="pre-title color-orange">{{ .prehead }}</p>
+          {{ end }}
+          {{ if .title }}
+          <h1>{{ .title }}</h1>
+          {{ end }}
+          <p>{{ .content | markdownify }}</p>
+
+          {{ if .buttonUrl }}
+          <div>
+            <a href="{{ .buttonUrl }}" class="button-secondary button-secondary--solid">{{ .buttonText }}</a>
+          </div>
+
+          {{ end }}
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
