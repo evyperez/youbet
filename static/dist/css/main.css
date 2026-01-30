@@ -1087,7 +1087,7 @@ keygen[aria-busy=true],
 textarea[aria-busy=true], img::before,
 embed::before, [aria-busy=true] > body::after, [aria-busy=true]:not(html):not(.skeleton)::after {
   background-color: hsl(216, 2%, 60%);
-  background-image: url("/assets/images/loading.svg?v=unyb9m5");
+  background-image: url("/assets/images/loading.svg?v=ubtj0te");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
