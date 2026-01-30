@@ -1,0 +1,158 @@
+- id: about
+  translation: 'Sobre nosotros'
+- id: activities
+  translation: 'Actividades'
+- id: article
+  translation: 'artículo'
+- id: author
+  translation: 'Autor'
+- id: authors
+  translation: 'Autores'
+- id: blog
+  translation: 'Blog'
+- id: by
+  translation: 'Por'
+- id: categories
+  translation: 'Categorías'
+- id: country
+  translation: 'País'
+- id: highSchool
+  translation: 'Bachillerato'
+- id: summerProgram
+  translation: 'Intercambio de verano'
+- id: immersionCamp
+  translation: 'Campamento de verano'
+- id: winterProgram
+  translation: 'Programa de invierno'
+- id: duration
+  translation: 'Duración'
+- id: postBy
+  translation: 'Entrada por'
+- id: pricingSubtitle
+  translation: 'Atención: precios para 2023, estos valores pueden cambiar sin previo aviso. Algunos ya incluyen la beca para brasileños. Contacte con nosotros si tiene dudas.'
+- id: pricing
+  translation: 'Precios'
+- id: content404
+  translation: 'No hemos encontrado lo que busca. Vuelva al inicio.'
+- id: email
+  translation: 'Correo electrónico'
+- id: faq
+  translation: 'Preguntas frecuentes'
+- id: firstName
+  translation: 'Nombre'
+- id: home
+  translation: 'Inicio'
+- id: lastName
+  translation: 'Apellidos'
+- id: lastPosts
+  translation: 'Últimas entradas'
+- id: message
+  translation: 'Mensaje'
+- id: notFound
+  translation: 'No encontrado'
+- id: phone
+  translation: 'Teléfono'
+- id: programs
+  translation: 'Programas'
+- id: partner
+  translation: 'Socio'
+- id: partners
+  translation: 'Socios'
+- id: somePartners
+  translation: 'Algunos socios'
+- id: knowMore
+  translation: 'Saber más'
+- id: send
+  translation: 'Enviar'
+- id: subject
+  translation: 'Asunto'
+- id: tags
+  translation: 'Etiquetas'
+- id: title404
+  translation: '¡Vaya! Página no encontrada'
+- id: whatsApp
+  translation: 'WhatsApp'
+- id: writtenBy
+  translation: 'Escrito por'
+- id: term
+  translation: 'Período'
+- id: age
+  translation: 'Edad'
+- id: accommodations
+  translation: 'Alojamiento'
+- id: feeding
+  translation: 'Alimentación'
+- id: languageLevel
+  translation: 'Nivel de idioma'
+- id: details
+  translation: 'Detalles'
+- id: whatIsIncluded
+  translation: '¿Qué está incluido?'
+- id: allYouNeed
+  translation: 'Todo lo que necesitas'
+- id: total
+  translation: 'Total'
+- id: scholarship
+  translation: 'Beca'
+- id: commonQuestions
+  translation: 'Preguntas frecuentes'
+- id: getAQuote
+  translation: 'Solicitar presupuesto'
+- id: January
+  translation: 'Enero'
+- id: February
+  translation: 'Febrero'
+- id: March
+  translation: 'Marzo'
+- id: April
+  translation: 'Abril'
+- id: May
+  translation: 'Mayo'
+- id: June
+  translation: 'Junio'
+- id: July
+  translation: 'Julio'
+- id: August
+  translation: 'Agosto'
+- id: September
+  translation: 'Septiembre'
+- id: October
+  translation: 'Octubre'
+- id: November
+  translation: 'Noviembre'
+- id: December
+  translation: 'Diciembre'
+- id: languages
+  translation: 'Idiomas'
+- id: unitedStates
+  translation: 'Estados Unidos'
+- id: canada
+  translation: 'Canadá'
+- id: select
+  translation: 'Seleccionar'
+- id: "que tipo de curso quer fazer"
+  translation: '¿Qué tipo de curso desea?'
+- id: search
+  translation: 'Buscar'
+- id: filterByTopic
+  translation: 'Filtrar por tema'
+- id: selectTopic
+  translation: 'Seleccionar tema'
+- id: filterBySecretary
+  translation: 'Filtrar por secretaría'
+- id: selectSecretary
+  translation: 'Seleccionar secretaría'
+- id: filterByBadge
+  translation: 'Filtrar por sello'
+- id: selectBadge
+  translation: 'Seleccionar sello'
+- id: clearFilters
+  translation: 'Limpiar filtros'
+- id: page
+  translation: 'Página'
+- id: readMore
+  translation: 'Leer más'
+- id: seeAlso
+  translation: 'Ver también'
+- id: Title
+  translation: 'Título'

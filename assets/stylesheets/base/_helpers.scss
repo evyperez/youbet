@@ -271,6 +271,14 @@ textarea {
   @include my.full-width;
 }
 
+.max-height--vh {
+  height: 100vh;
+}
+
+.max-height {
+  height: 100%;
+}
+
 .one-column {
   display: grid;
 
