@@ -10,7 +10,7 @@ command = """\
 
 [build.environment]
   HUGO_VERSION = "0.124.1"
-  NODE_VERSION = "v20.12.11"
+  NODE_VERSION = "20"
   DART_SASS_VERSION = "1.72.0"
 
 [context.production]
