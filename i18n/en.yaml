@@ -1,5 +1,7 @@
 - id: about
   translation: 'About'
+- id: activities
+  translation: 'Activities'
 - id: article
   translation: 'article'
 - id: author
@@ -12,12 +14,30 @@
   translation: 'By'
 - id: categories
   translation: 'Categories'
+- id: country
+  translation: 'Country'
+- id: highSchool
+  translation: 'High school'
+- id: summerProgram
+  translation: 'Summer exchange'
+- id: immersionCamp
+  translation: 'Summer camp'
+- id: winterProgram
+  translation: 'Winter program'
+- id: duration
+  translation: 'Duration'
 - id: postBy
   translation: 'Post by'
+- id: pricingSubtitle
+  translation: 'Attention: prices for 2023, these values may change without notice. Some values already include the scholarship for Brazilians, contact us for any questions'
+- id: pricing
+  translation: 'Pricing'
 - id: content404
   translation: 'We did not find what you are looking for'
 - id: email
   translation: 'Email'
+- id: faq
+  translation: 'FAQ'
 - id: firstName
   translation: 'First name'
 - id: home
@@ -31,11 +51,21 @@
 - id: notFound
   translation: 'Not found'
 - id: phone
-  translation: 'phone'
-- id: readMore
-  translation: 'Read more'
+  translation: 'Phone'
+- id: programs
+  translation: 'Programs'
+- id: partner
+  translation: 'Partner'
+- id: partners
+  translation: 'Partners'
+- id: somePartners
+  translation: 'Some partners'
+- id: knowMore
+  translation: 'Know more'
 - id: send
   translation: 'Send'
+- id: subject
+  translation: 'Subject'
 - id: tags
   translation: 'Tags'
 - id: title404
@@ -60,12 +90,14 @@
   translation: 'Included'
 - id: allYouNeed
   translation: 'All you need'
+- id: total
+  translation: 'Total'
 - id: scholarship
   translation: 'Scholarship'
 - id: commonQuestions
   translation: 'Common questions'
 - id: getAQuote
-  translation: 'get a quote'
+  translation: 'Get a quote'
 - id: January
   translation: 'January'
 - id: February
@@ -92,3 +124,35 @@
   translation: 'December'
 - id: languages
   translation: 'Languages'
+- id: unitedStates
+  translation: 'United States'
+- id: canada
+  translation: 'Canada'
+- id: select
+  translation: 'Select'
+- id: "que tipo de curso quer fazer"
+  translation: 'What type of course do you want'
+- id: search
+  translation: 'Search'
+- id: filterByTopic
+  translation: 'Filter by topic'
+- id: selectTopic
+  translation: 'Select topic'
+- id: filterBySecretary
+  translation: 'Filter by secretary'
+- id: selectSecretary
+  translation: 'Select secretary'
+- id: filterByBadge
+  translation: 'Filter by badge'
+- id: selectBadge
+  translation: 'Select badge'
+- id: clearFilters
+  translation: 'Clear filters'
+- id: page
+  translation: 'Page'
+- id: readMore
+  translation: 'Read more'
+- id: seeAlso
+  translation: 'See also'
+- id: Title
+  translation: 'Title'

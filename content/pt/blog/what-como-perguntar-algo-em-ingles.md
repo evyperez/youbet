@@ -24,7 +24,7 @@ Diferente do português onde a entonação é extremamente importante, muito mai
 
 Nós já aprendemos os pronomes e o verbo to be, de maneira simples e sem rodeios e o mesmo será feito com as perguntas.
 
-Existem dois segredos com relação às perguntas, o primeiro deles é o que chamo de troca de lugares. O que vai criar a pergunta nada mais é do que a presença do verbo **antes** do pronome ou nome do sujeito da frase, lembrando que sujeito é sempre aquele à quem se refere a frase.
+Existem dois segredos com relação às perguntas, o primeiro deles é o que chamo de troca de lugares. O que vai criar a pergunta nada mais é do que a presença do verbo **antes** do pronome ou nome do sujeito da frase, lembrando que sujeito é sempre aquele a quem se refere a frase.
 
 ### **Frase afirmativa:**
 

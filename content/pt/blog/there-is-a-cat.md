@@ -24,7 +24,7 @@ Quando eu era criança tinha muita coisa que eu não entendia ao começar a estu
 
 Em inglês existe uma expressão para definir “tem, há, existe”, **there is.** Antes de continuarmos gostaria de destacar o termo _expressão_.
 
-<blockquote>"Expressão é tudo aquilo que carrega uma ideia muito mais profundo do que as palavras ditas querem dizer."</blockquote>
+<blockquote>"Expressão é tudo aquilo que carrega uma ideia muito mais profunda do que as palavras ditas querem dizer."</blockquote>
 
 Voltando ao **There is**, essas duas palavras querem dizer exatamente isso e devem ser sempre utilizadas juntas.
 

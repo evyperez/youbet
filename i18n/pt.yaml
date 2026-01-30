@@ -29,7 +29,7 @@
 - id: postBy
   translation: 'Post por'
 - id: pricingSubtitle
-  translation: 'Atenção: preços para o ano de 2023, esses valores podem alterar sem aviso prévio. Alguns valores já estão com o valor da bolsa para brasileiros imbutido, qualquer dúvida entre em contato'
+  translation: 'Atenção: preços para o ano de 2023, esses valores podem alterar sem aviso prévio. Alguns valores já estão com o valor da bolsa para brasileiros embutido, qualquer dúvida entre em contato'
 - id: pricing
   translation: 'Preços'
 - id: content404
@@ -98,13 +98,6 @@
   translation: 'Perguntas frequentes'
 - id: getAQuote
   translation: 'Solicite um orçamento'
-
-
-
-
-
-
-
 - id: January
   translation: 'Janeiro'
 - id: February
@@ -129,12 +122,37 @@
   translation: 'Novembro'
 - id: December
   translation: 'Dezembro'
-- id: December
-  translation: 'Dezembro'
 - id: languages
   translation: 'Idiomas'
-
 - id: unitedStates
   translation: 'Estados Unidos'
 - id: canada
   translation: 'Canadá'
+- id: select
+  translation: 'Selecionar'
+- id: "que tipo de curso quer fazer"
+  translation: 'Que tipo de curso quer fazer'
+- id: search
+  translation: 'Buscar'
+- id: filterByTopic
+  translation: 'Filtrar por tópico'
+- id: selectTopic
+  translation: 'Selecionar tópico'
+- id: filterBySecretary
+  translation: 'Filtrar por secretaria'
+- id: selectSecretary
+  translation: 'Selecionar secretaria'
+- id: filterByBadge
+  translation: 'Filtrar por selo'
+- id: selectBadge
+  translation: 'Selecionar selo'
+- id: clearFilters
+  translation: 'Limpar filtros'
+- id: page
+  translation: 'Página'
+- id: readMore
+  translation: 'Leia mais'
+- id: seeAlso
+  translation: 'Veja também'
+- id: Title
+  translation: 'Título'

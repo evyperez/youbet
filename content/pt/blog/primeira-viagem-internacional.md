@@ -35,7 +35,7 @@ Por isso, criamos um guia detalhado para você não passar perrengue e desfrutar
 
 6. **Seguro de viagem:** é essencial, pois com essa garantia você não vai passar aperto caso necessite de um médico no país em que estará. É importante verificar se o seu seguro cobre o que você vai precisar, exemplo: decidiu esquiar e se machucou. Seu seguro precisa ter uma cláusula que contemple "acidente por esportes radicais".
 
-7. **Dinheiro:** calcule quanto mais o menos você pretende gastar por dia na viagem. Um exercício legal é pensar que, se no Brasil você gasta R$15 no almoço + R$10 no transporte, leve isso na moeda local. Assim você equipara valores e fica mais fácil de se planejar para as atividades no dia a dia. É importante também verificar o câmbio e se vale a pena utilizar o cartão de crédito.
+7. **Dinheiro:** calcule quanto mais ou menos você pretende gastar por dia na viagem. Um exercício legal é pensar que, se no Brasil você gasta R$15 no almoço + R$10 no transporte, leve isso na moeda local. Assim você equipara valores e fica mais fácil de se planejar para as atividades no dia a dia. É importante também verificar o câmbio e se vale a pena utilizar o cartão de crédito.
 
 8. **Mala de mão:** última dica, mas não menos importante, leve tudo o que for eletrônico e objetos pessoais/ de valor, com você na cabine! Lembre-se também de colocar uma muda de roupa na mala de mão, já que o risco de extravio da mala despachada é alto, e caso isso ocorra, você terá mais uma roupa até esse problema ser resolvido.
 

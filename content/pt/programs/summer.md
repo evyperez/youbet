@@ -1,6 +1,6 @@
 ---
 title: Intercâmbio de Verão
-description: "O intercâmbio é de verão é pra quem está procurando um curso de curta direção e quer aproveitar o verão"
+description: "O intercâmbio é de verão é pra quem está procurando um curso de curta duração e quer aproveitar o verão"
 imageSeo: '/uploads/images/program-summer.png'
 mainImage: 'grupo-estudantes'
 mainImageAlt: 'Grupo de estudantes no Gramado do Colégio'
