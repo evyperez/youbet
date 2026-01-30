@@ -1,5 +1,5 @@
 <a class="whatsapp"
-  href="https://api.whatsapp.com/send?phone=551141718901&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida"
+  href="https://api.whatsapp.com/send?phone=5511987366608&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida"
   target="_blank" rel="noopener">
   <img src="/uploads/images/logo-whatsapp.svg" alt="Entre em contato através do Whatsapp" />
 </a>
@@ -7,7 +7,16 @@
   <div class="container">
 
     <div class="footer__copyright">
-      <p> YouBet! School - Todos os direitos reservados - 2021</p>
+      <p>YouBet! School - Todos os direitos reservados - 2021</p>
+      <p class="footer__legal">
+        {{ if eq .Language.Lang "pt" }}
+          <a href="/politica-de-privacidade/">Política de Privacidade</a>
+        {{ else if eq .Language.Lang "en" }}
+          <a href="/en/privacy-policy/">Privacy Policy</a>
+        {{ else if eq .Language.Lang "es" }}
+          <a href="/es/politica-de-privacidad/">Política de Privacidad</a>
+        {{ end }}
+      </p>
     </div>
 
     {{/*  <div>

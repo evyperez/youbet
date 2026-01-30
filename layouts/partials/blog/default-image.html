@@ -1,9 +1,14 @@
 {{ if .Params.video }}
+    {{/* Normaliza URL do YouTube: youtube.com -> www.youtube.com, http -> https */}}
+    {{ $videoURL := replace (replace .Params.video "youtube.com/embed" "www.youtube.com/embed") "http://" "https://" }}
     <div class="embed-container">
-      <iframe width="560" height="315" src="{{ .Params.video }}" title="YouTube video player"
+      <iframe width="560" height="315" src="{{ $videoURL }}" title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        loading="lazy"
+        data-cookieconsent="necessary">
       </iframe>
     </div>
   {{ else }}

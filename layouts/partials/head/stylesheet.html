@@ -1,7 +1,7 @@
-{{ $style := resources.Get "stylesheets/index.scss" | toCSS (dict "transpiler" "dartsass" "targetPath" "dist/css/main.css") | postCSS (dict "use" "autoprefixer") | minify | fingerprint "md5" }}
-
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-
+{{/*
+  CSS é pré-compilado com `npm run build:css`. Em desenvolvimento, ?v= evita cache do navegador.
+*/}}
+<link rel="stylesheet" href="{{ relURL "dist/css/main.css" }}{{ if hugo.IsDevelopment }}?v={{ now.Unix }}{{ end }}">
 
 
 <noscript><style>img.lazyload { display: none; }</style></noscript>

@@ -5,7 +5,7 @@ slug: "blue-mountain-academy"
 id: "blue-mountain-academy"
 url: /parceiros/blue-mountain-academy
 metaDescription: "Um lugar onde seus relacionamentos podem crescer, o Colégio Blue Mountain Academy, ou simplesmente BMA, fica localizado na Pensilvânia ao norte do Reading, próximo a Filadélfia, Nova Iorque e Washington DC.
-Um colégio dinâmico, diversificado e multicultural, pois possui alunos internacionais da Ásia, América Latina e Africa."
+Um colégio dinâmico, diversificado e multicultural, pois possui alunos internacionais da Ásia, América Latina e África."
 thumbnail: '/uploads/images/partner-bma.png'
 thumbnailAlt: 'Foto Blue Mountain Academy'
 titleColor: '#FFF'
@@ -33,7 +33,7 @@ typeCollege: "Particular"
 pricing: true
 activities:
 summary: "Um lugar onde seus relacionamentos podem crescer, o Colégio Blue Mountain Academy, ou simplesmente BMA, fica localizado na Pensilvânia ao norte do Reading, próximo a Filadélfia, Nova Iorque e Washington DC.
-Um colégio dinâmico, diversificado e multicultural porque possui alunos internacionais da Ásia, América Latina e Africa."
+Um colégio dinâmico, diversificado e multicultural porque possui alunos internacionais da Ásia, América Latina e África."
 draft: false
 form: "bma"
 programs:
@@ -51,7 +51,7 @@ A BMA é um colégio internacional, conta com mais sete nacionalidades diferente
 
 ## Atividades
 
-Laboratórios de química, biologia e tecnologia são algumas das ferramentas que fazem parte do dia-a-dia dos alunos. Estúdio de música, aulas de piano, violão, canto e seu magnifício coral Bel Canto, conhecido internacionalmente, são capítulos mais que presentes na vida acadêmica.
-Um capitulo a parte são as aulas de pilotagem e seu aeroporto privativo. O aluno da BMA pode ter aulas de vôo durante seu High School e ao se formar ser um piloto com licença americana.
+Laboratórios de química, biologia e tecnologia são algumas das ferramentas que fazem parte do dia-a-dia dos alunos. Estúdio de música, aulas de piano, violão, canto e seu magnífico coral Bel Canto, conhecido internacionalmente, são capítulos mais que presentes na vida acadêmica.
+Um capítulo à parte são as aulas de pilotagem e seu aeroporto privativo. O aluno da BMA pode ter aulas de voo durante seu High School e ao se formar ser um piloto com licença americana.
 A BMA também é o lar do nosso Intercâmbio de Verão, um dos nossos intercâmbios de curta duração nos EUA.
 Entre em contato conosco e realize o sonho de estudar nos Estados Unidos.

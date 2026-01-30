@@ -1,9 +1,14 @@
 {{ if .Params.faqId }}
+{{ $faqData := index .Site.Data .Site.Language.Lang "faq" .Params.faqId }}
+{{ if not $faqData }}
+  {{ $faqData = index .Site.Data "pt" "faq" .Params.faqId }}
+{{ end }}
+{{ if $faqData }}
 <section class="faq-partial">
   <div class="container container--narrow">
     <h2 class="title-section">{{ i18n "faq" | title }}</h2>
     <div class="faq">
-      {{range (index .Site.Data .Site.Language.Lang "faq" .Params.faqId) }}
+      {{ range $faqData }}
         <details>
           {{ if .question }}
           <summary>
@@ -18,4 +23,5 @@
     </div>
   </div>
 </section>
+{{ end }}
 {{ end }}

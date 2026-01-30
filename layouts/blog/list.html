@@ -5,12 +5,10 @@
     <main role="main" id="conteudo" class="internal-page blog-list">
       <div class="container">
         <div class="blog-wrap--sidebar">
-          <div class="wrap-gap">
+          <div class="posts">
 
             {{ range (.Paginate ( first 50 .Pages.ByDate.Reverse )).Pages }}
             <article class="post">
-              {{ partial "breadcrumbs.html" . }}
-
               {{ partial "blog/default-image.html" . }}
 
               <div class="post__header">

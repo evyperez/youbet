@@ -250,29 +250,16 @@ dfn {
 }
 
 /**
- * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
- * 1. Get font-weight value from parent element
- * 2. Set font-weight bolder than parent
+ * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome.
+ * b/strong must be bolder than parent; one rule avoids duplicate/contradictory declarations.
  *
  * @see https://github.com/necolas/normalize.css/pull/342
  * @see https://github.com/necolas/normalize.css/pull/342#issuecomment-173801037
  */
-
-// stylelint-disable no-duplicate-selectors
-
 b,
 strong {
   font-weight: my.font-weight('bold');
-  // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  font-weight: inherit; /* 1 */
 }
-
-b,
-strong {
-  font-weight: my.font-weight('bold'); /* 2 */
-}
-
-// stylelint-enable no-duplicate-selectors
 
 // em,
 // i {

@@ -27,7 +27,7 @@ accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
 partners :
   - partner:
-summary: 'Esse programa é pra quem quer aprimorar seus conhecimento em inglês e jogar muito futebol. Além de participar do programa de ESL, você poderá jogar futebol e participar de campeonatos
+summary: 'Esse programa é pra quem quer aprimorar seus conhecimentos em inglês e jogar muito futebol. Além de participar do programa de ESL, você poderá jogar futebol e participar de campeonatos
 nos Estados Unidos.'
 whatIsIncludedImage: 'girl-play-futebol'
 whatIsIncludedImageAlt: 'garotas estudando ciências'

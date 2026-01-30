@@ -73,7 +73,8 @@
 
 {{ if eq .Section "blog" }}
 
-  <!-- Pagination meta tags for list pages only -->
+  <!-- Pagination meta tags for list pages only (not single posts) -->
+  {{ if .IsNode }}
   {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
   {{ if $paginator }}
     <link rel="first" href="{{ $paginator.First.URL }}">
@@ -85,6 +86,7 @@
       <link rel="next" href="{{ $paginator.Next.URL }}">
     {{end }}
   {{end }}
+  {{ end }}
 
   <meta property="og:type" content="article" />
   <meta property="article:publisher" content="{{ .Site.Params.facebook }}" />

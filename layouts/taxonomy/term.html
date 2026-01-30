@@ -1,0 +1,62 @@
+{{ define "main" }}
+    <div class="container">
+      {{ partial "breadcrumbs.html" . }}
+    </div>
+    <main role="main" id="conteudo" class="internal-page blog-list">
+      <div class="container">
+        <div class="blog-wrap--sidebar">
+          <div class="posts">
+
+            {{ range (.Paginate ( first 50 .Data.Pages.ByDate.Reverse )).Pages }}
+            <article class="post">
+              {{ partial "blog/default-image.html" . }}
+
+              <div class="post__header">
+                <div class="post-title">
+                  <a href="/blog/{{ .Params.slug }}" class="text-decor--none">
+                    <h2>
+                      {{ .Title }}
+                    </h2>
+                  </a>
+
+                  {{if .Params.subtitle }}
+                  <p class="subtitle">
+                    {{.Params.subtitle}}
+                  </p>
+                  {{ end }}
+                </div>
+
+                {{ partial "blog/info.html" . }}
+
+              </div>
+
+              <div class="post__body">
+
+                {{ if .Params.summary }}
+
+                <div class="rich-text">
+                  {{ .Params.summary }}
+
+                  <a href="/blog/{{ .Params.slug }}" class="button">{{ i18n "readMore" }}</a>
+
+                </div>
+
+                {{ else }}
+                <div class="rich-text">
+                  {{.Content }}
+                </div>
+                {{ end }}
+
+              </div>
+
+            </article>
+
+            {{ end }}
+          </div>
+
+          {{ partial "sidebar.html" . }}
+
+        </div>
+      </div>
+    </main>
+{{ end }}

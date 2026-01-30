@@ -3,6 +3,12 @@ title: 'About YouBet!'
 date: 2016-11-03 18:19:28+00:00
 url: about
 draft: false
+description: 'YouBet! was created in 2016 to promote cultural immersion. We specialize in exchange programs and American High School in the US and Brazil.'
+imageSeo: '/uploads/images/program-high-school.png'
+imageDesktop: 'about-youbet'
+imageDesktopAlt: 'Young people talking and laughing'
+image: 'about-youbet'
+imageAlt: 'Young people talking and laughing'
 ---
 
 ## Our story

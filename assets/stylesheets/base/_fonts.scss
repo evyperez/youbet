@@ -1,5 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
+// Paths are relative to site root (static/ is served at /).
+// format('truetype') is required for .ttf; 'ttf' is invalid and breaks loading.
 // -----------------------------------------------------------------------------
 
 /* Roboto */
@@ -7,33 +9,33 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), url('~fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+  src: local('Roboto'), url('/fonts/roboto/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Roboto;
   font-style: italic;
   font-weight: 400;
-  src: local('Roboto Italic'), url('~fonts/Roboto/Roboto-Italic.ttf') format('ttf');
+  src: local('Roboto Italic'), url('/fonts/roboto/Roboto-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), url('~fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+  src: local('Roboto Bold'), url('/fonts/roboto/Roboto-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Roboto;
   font-style: italic;
   font-weight: 700;
-  src: local('Roboto BoldItalic'), url('~fonts/Roboto/Roboto-BoldItalic.ttf') format('ttf');
+  src: local('Roboto BoldItalic'), url('/fonts/roboto/Roboto-BoldItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
-  src: local('Roboto Black'), url('~fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+  src: local('Roboto Black'), url('/fonts/roboto/Roboto-Black.ttf') format('truetype');
 }

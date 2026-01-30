@@ -32,11 +32,11 @@ programs:
   - intercambio-de-inverno
 ---
 
-## Sobre a Auburn Acadademy
+## Sobre a Auburn Academy
 
-Bem vindo a Auburn Adventist Academy. Uma escola que oferece aos estudantes uma experiência acadêmica diversificada com um ambiente seguro e uma atmosfera espiritual genuína. Este é um legado desde 1919. Além do aprendizado acadêmico você aprenderá lições de vida, responsabilidade e camaradagem com a vida de dormitório, crescendo e ampliando suas visões. Uma estrutura incomparável onde os estudantes se preparam para um futuro promissor.
+Bem-vindo à Auburn Adventist Academy. Uma escola que oferece aos estudantes uma experiência acadêmica diversificada com um ambiente seguro e uma atmosfera espiritual genuína. Este é um legado desde 1919. Além do aprendizado acadêmico você aprenderá lições de vida, responsabilidade e camaradagem com a vida de dormitório, crescendo e ampliando suas visões. Uma estrutura incomparável onde os estudantes se preparam para um futuro promissor.
 
 ## Atividades
 
-Auburn Adventist Academy tem aulas de edições gráficas, audiovisuais, música, natação com foco em salva vidas, culinária e gastronomia, e atividades esportivas, onde os alunos participam de campeonatos regionais.
-Os laboratórios de química, biologia e tecnologia são algumas das ferramentas que fazem parte do dia-a-dia dos alunos. Estúdio de música, aulas de piano, violão, canto e seu magnifício coral Bel Canto, conhecido internacionalmente, são capítulos mais que presentes na vida acadêmica. Um capitulo a parte são as aulas de pilotagem e seu aeroporto privativo. O aluno da BMA pode ter aulas de vôo durante seu High School e ao se formar ser um piloto com licença americana. A BMA também é o lar do nosso Intercâmbio de Verão, um dos nossos intercâmbios de curta duração nos EUA. Entre em contato conosco e realize o sonho de estudar nos Estados Unidos.
+Auburn Adventist Academy tem aulas de edições gráficas, audiovisuais, música, natação com foco em salva-vidas, culinária e gastronomia, e atividades esportivas, onde os alunos participam de campeonatos regionais.
+Os laboratórios de química, biologia e tecnologia são algumas das ferramentas que fazem parte do dia-a-dia dos alunos. Estúdio de música, aulas de piano, violão, canto e seu magnífico coral Bel Canto, conhecido internacionalmente, são capítulos mais que presentes na vida acadêmica. Um capítulo à parte são as aulas de pilotagem e seu aeroporto privativo. O aluno da BMA pode ter aulas de voo durante seu High School e ao se formar ser um piloto com licença americana. A BMA também é o lar do nosso Intercâmbio de Verão, um dos nossos intercâmbios de curta duração nos EUA. Entre em contato conosco e realize o sonho de estudar nos Estados Unidos.

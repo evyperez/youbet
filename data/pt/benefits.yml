@@ -5,7 +5,7 @@ list:
     image: '/uploads/images/talking.svg'
     alt: 'pessoas conversando animadas'
   - title: 'Cidadania Global'
-    text: 'Ajudamos nossos alunos  a terem habilidades que os tornem cidadãos globais.'
+    text: 'Ajudamos nossos alunos a terem habilidades que os tornem cidadãos globais.'
     image: '/uploads/images/girl.svg'
     alt: 'ilustração de uma garota feliz'
   - title: 'Personalização'
