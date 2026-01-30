@@ -48,9 +48,9 @@ permalinks:
 languages:
   pt:
     contentDir: content/pt
-    languageName: Português
+    languageName: 'Português Brasil'
     languageCode: 'pt-br'
-    title: 'YouBet!'
+    title: 'YouBet! School'
     weight: 1
     params:
       tagline: 'Quer se tornar um Cidadão Global?'
@@ -125,7 +125,7 @@ languages:
 
   en:
     contentDir: content/en
-    languageName: English
+    languageName: 'English'
     languageCode: 'en'
     title: 'YouBet! Real English'
     weight: 2
@@ -147,7 +147,123 @@ languages:
           Pre: ''
           Weight: 1
           Identifier: 'about'
-          URL: '/about'
+          URL: '/en/about'
+        - Name: 'Programs'
+          Pre: ''
+          Weight: 3
+          URL: '/en/programs'
+          Identifier: 'programs'
+        - Name: 'High School'
+          Pre: ''
+          Weight: 1
+          Identifier: 'high-school'
+          URL: '/en/programs/ensino-medio'
+          parent: 'programs'
+        - Name: 'Soccer'
+          Pre: ''
+          Weight: 2
+          Identifier: 'futebol'
+          URL: '/en/programs/futebol'
+          parent: 'programs'
+        - Name: 'Winter Exchange'
+          Pre: ''
+          Weight: 3
+          Identifier: 'winter'
+          URL: '/en/programs/intercambio-de-inverno'
+          parent: 'programs'
+        - Name: 'Summer Exchange'
+          Pre: ''
+          Weight: 4
+          Identifier: 'summer'
+          URL: '/en/programs/intercambio-de-verao'
+          parent: 'programs'
+        - Name: 'All'
+          Pre: ''
+          Weight: 5
+          Identifier: 'allPrograms'
+          URL: '/en/programs'
+          parent: 'programs'
+        - Name: 'Partners'
+          Pre: ''
+          Weight: 4
+          Identifier: 'partners'
+          URL: '/en/partners'
+        - Name: 'Contact'
+          Pre: ''
+          Weight: 5
+          Identifier: 'contact'
+          URL: '/en/contact'
+
+  es:
+    contentDir: content/es
+    languageName: 'Español (España)'
+    languageCode: 'es-es'
+    title: 'YouBet! School'
+    weight: 3
+    params:
+      tagline: 'Inmersión cultural'
+      email: 'contato@youbetschool.com'
+      mailchimpList: '#'
+      description:
+        default: 'Queremos crear un país bilingüe con una mente global, impulsando el intercambio cultural'
+        twitter: 'Queremos crear un país bilingüe con una mente global, impulsando el intercambio cultural'
+        facebook: 'Queremos crear un país bilingüe con una mente global, impulsando el intercambio cultural'
+      shareImages:
+        default: 'assets/images/compartilhamento.jpg'
+        twitter: 'assets/images/twitter-compartilhamento.jpg'
+
+    menu:
+      main:
+        - Name: 'Sobre nosotros'
+          Pre: ''
+          Weight: 1
+          Identifier: 'about'
+          URL: '/es/sobre'
+        - Name: 'Programas'
+          Pre: ''
+          Weight: 3
+          URL: '/es/programas'
+          Identifier: 'programs'
+        - Name: 'Bachillerato'
+          Pre: ''
+          Weight: 1
+          Identifier: 'high-school'
+          URL: '/es/programas/ensino-medio'
+          parent: 'programs'
+        - Name: 'Fútbol'
+          Pre: ''
+          Weight: 2
+          Identifier: 'futebol'
+          URL: '/es/programas/futebol'
+          parent: 'programs'
+        - Name: 'Intercambio de invierno'
+          Pre: ''
+          Weight: 3
+          Identifier: 'winter'
+          URL: '/es/programas/intercambio-de-inverno'
+          parent: 'programs'
+        - Name: 'Intercambio de verano'
+          Pre: ''
+          Weight: 4
+          Identifier: 'summer'
+          URL: '/es/programas/intercambio-de-verao'
+          parent: 'programs'
+        - Name: 'Todos'
+          Pre: ''
+          Weight: 5
+          Identifier: 'allPrograms'
+          URL: '/es/programas'
+          parent: 'programs'
+        - Name: 'Socios'
+          Pre: ''
+          Weight: 4
+          Identifier: 'partners'
+          URL: '/es/socios'
+        - Name: 'Contacto'
+          Pre: ''
+          Weight: 5
+          Identifier: 'contact'
+          URL: '/es/contacto'
 
 params:
   googleTag: 'GTM-PXT9Q4L'

@@ -22,7 +22,7 @@
     "build:css": "mkdir -p static/dist/css && sass assets/stylesheets/index.scss static/dist/css/main.css --no-source-map --load-path=assets/stylesheets",
     "build:css:watch": "mkdir -p static/dist/css && sass assets/stylesheets/index.scss static/dist/css/main.css --no-source-map --load-path=assets/stylesheets --watch",
     "start": "npm run build:css && npm-run-all --parallel start:*",
-    "start:hugo": "cross-env NODE_ENV=development hugo server --noHTTPCache=true --ignoreCache --templateMetrics --disableFastRender",
+    "start:hugo": "cross-env NODE_ENV=development hugo server --noHTTPCache --ignoreCache --disableFastRender --poll 1s",
     "pretest": "npm run lint",
     "test": "jest",
     "preversion": "git checkout master && git merge dev",

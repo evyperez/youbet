@@ -1,4 +1,9 @@
 {{ if .Params.pricing }}
+{{ $pricingData := index .Site.Data .Site.Language.Lang "pricing" }}
+{{ if not $pricingData }}
+  {{ $pricingData = index .Site.Data "pt" "pricing" }}
+{{ end }}
+{{ if $pricingData }}
 
 <section class="pricing-partial">
   <div class="container container--narrow">
@@ -6,7 +11,7 @@
     <div class="price">
       <div class="rich-text">
         <div class="four-columns">
-          {{ range where (index .Site.Data .Site.Language.Lang "pricing" ) ".partnerID" "==" .Params.id }}
+          {{ range where $pricingData ".partnerID" "==" .Params.id }}
           <div class="card">
 
             {{ if .title }}
@@ -73,4 +78,5 @@
     </div>
   </div>
 </section>
+{{ end }}
 {{ end }}

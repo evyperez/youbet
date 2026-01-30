@@ -1,6 +1,6 @@
 <div class="img-description rich-text">
 
-  <a href="{{ .Params.url }}" class="img-hover-border">
+  <a href="{{ .Permalink }}" class="img-hover-border">
     <div>
       <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
     </div>
@@ -8,7 +8,7 @@
 
   {{ if .Title }}
 
-  <a href="{{ .Params.url }}" class="heading-4">{{ .Title }}</a>
+  <a href="{{ .Permalink }}" class="heading-4">{{ .Title }}</a>
 
   {{ end }}
 
@@ -18,5 +18,5 @@
 
   {{ end }}
 
-<a href="{{ .Params.url }}" class="category-title">{{ i18n "knowMore" }} + </a>
+<a href="{{ .Permalink }}" class="category-title">{{ i18n "knowMore" }} + </a>
 </div>

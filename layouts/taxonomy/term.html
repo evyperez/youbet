@@ -7,7 +7,7 @@
         <div class="blog-wrap--sidebar">
           <div class="posts">
 
-            {{ range (.Paginate ( first 50 .Pages.ByDate.Reverse )).Pages }}
+            {{ range (.Paginate ( first 50 .Data.Pages.ByDate.Reverse )).Pages }}
             <article class="post">
               {{ partial "blog/default-image.html" . }}
 
@@ -37,7 +37,7 @@
                 <div class="rich-text">
                   {{ .Params.summary }}
 
-                  <button>{{ i18n "readMore" }}</button>
+                  <a href="/blog/{{ .Params.slug }}" class="button">{{ i18n "readMore" }}</a>
 
                 </div>
 
@@ -46,7 +46,6 @@
                   {{.Content }}
                 </div>
                 {{ end }}
-
 
               </div>
 
