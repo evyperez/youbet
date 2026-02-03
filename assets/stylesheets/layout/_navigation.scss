@@ -4,9 +4,6 @@
 
 /* navigation
 ---------------------------------------------------------------------------- */
-menu,
-nav {
-}
 
 .main-navigation {
   display: grid;
@@ -62,8 +59,14 @@ nav a {
     box-shadow: unset;
   }
 
+  /* Outline só para foco por teclado (acessibilidade), não para mouse */
   &:focus {
-    outline: dashed my.palette('menu', 'anchor');
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px dashed my.palette('menu', 'anchor');
+    outline-offset: 2px;
   }
 }
 
@@ -194,9 +197,10 @@ nav a {
 
   width: 100%;
   padding: f.to-rem(16px) 0;
-  margin-top: f.to-rem(12px);
+  margin: f.to-rem(12px) 0 0;
 
   color: my.palette('menu', 'sub-menu-text');
+  list-style: none;
 
   background: my.palette('menu', 'sub-menu');
 
@@ -227,6 +231,13 @@ nav a {
 
     line-height: f.to-rem(16px);
     color: my.palette('menu', 'sub-menu-text');
+  }
+
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  li > a.active {
+    font-weight: bold;
+
+    pointer-events: none;
   }
 
   @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {

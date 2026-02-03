@@ -10,6 +10,7 @@
 
   padding: 0;
   margin: 0;
+
   overflow: hidden;
 
   list-style: none;
@@ -19,13 +20,17 @@
   display: inline-block;
 
   width: auto;
+
   padding: f.to-rem(4px) f.to-rem(10px);
   margin: 2px;
 
   font-size: f.to-rem(12px);
+
   color: my.palette('gray');
-  text-decoration: none;
+
   text-transform: capitalize;
+
+  text-decoration: none;
 
   background: my.palette('gray', '10%');
   border-radius: 100px;
@@ -33,4 +38,100 @@
   &:hover {
     background: my.palette('gray', '30%');
   }
+}
+
+/* Página de listagem de tags (taxonomy list) – nuvem de tags + paginação
+---------------------------------------------------------------------------- */
+
+.tags-list {
+  padding: 0.5em 0;
+}
+
+.tags-list__header {
+  margin-bottom: f.to-rem(24px);
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: f.to-rem(12px) f.to-rem(16px);
+  align-items: baseline;
+
+  margin: 0 0 f.to-rem(32px);
+  padding: 0;
+
+  list-style: none;
+}
+
+.tag-cloud__item {
+  display: inline-block;
+
+  padding: f.to-rem(6px) f.to-rem(14px);
+
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: my.palette('gray');
+  text-decoration: none;
+  text-transform: capitalize;
+
+  background: my.palette('gray', '10%');
+  border-radius: 100px;
+
+  white-space: nowrap;
+
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: my.palette('gray', '30%');
+    color: my.palette('text', 'dark');
+  }
+
+  &--s {
+    font-size: f.to-rem(13px);
+  }
+
+  &--m {
+    font-size: f.to-rem(15px);
+  }
+
+  &--l {
+    font-size: f.to-rem(17px);
+  }
+
+  &--xl {
+    font-size: f.to-rem(19px);
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: f.to-rem(16px);
+  align-items: center;
+  justify-content: center;
+
+  margin-top: f.to-rem(32px);
+  padding: f.to-rem(16px) 0;
+
+  font-size: f.to-rem(14px);
+}
+
+.pagination__prev,
+.pagination__next {
+  padding: f.to-rem(8px) f.to-rem(16px);
+
+  color: my.palette('anchor');
+  text-decoration: none;
+
+  background: my.palette('gray', '10%');
+  border-radius: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.pagination__info {
+  color: my.palette('gray');
 }

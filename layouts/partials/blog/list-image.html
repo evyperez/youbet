@@ -1,0 +1,10 @@
+{{/* Na lista do blog: mostra vídeo do YouTube se existir, senão a imagem */}}
+{{ if or .Params.video .Params.youtube }}
+  {{ partial "blog/single-media.html" . }}
+{{ else if .Params.image }}
+  <div class="post__image">
+    <a href="{{ .Permalink }}">
+      <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}" />
+    </a>
+  </div>
+{{ end }}

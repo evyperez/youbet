@@ -27,6 +27,7 @@
   @media (prefers-reduced-motion: reduce) {
     // stylelint-disable declaration-no-important
     transition: none !important;
+
     animation: none !important;
     scroll-behavior: auto !important;
     // stylelint-enable declaration-no-important
@@ -38,6 +39,7 @@
 ========================================================================== */
 ::selection {
   color: my.palette('selection', 'foreground');
+
   text-shadow: none;
 
   background-color: my.palette('selection', 'background');
@@ -114,19 +116,22 @@ html {
   box-sizing: border-box;
 
   height: 100%; /* 2 */
+
   padding: 0;
   margin: 0;
+
   overflow: auto;
   overflow-x: hidden;
 
   font-size: 100.01%; /* 1 */
+
   tab-size: 4;
+
+  scroll-padding: calc(3em + 1vh) 0;
 
   background: my.palette('white');
 
   text-size-adjust: 100%; /* 4 */
-
-  scroll-padding: calc(3em + 1vh) 0;
 
   &:focus-within {
     @media (prefers-reduced-motion: no-preference) {
@@ -149,6 +154,7 @@ body {
   width: 100%;
   height: 100vh; /* 2 */
   min-height: 100%;
+
   margin: 0;
 
   color: my.palette('black');
@@ -163,8 +169,8 @@ body {
  */
 main,
 [role='main'] {
-  flex-direction: column;
   flex-grow: 1; /* 1 */
+  flex-direction: column;
 }
 
 /* section items HTML5
@@ -200,9 +206,10 @@ summary {
   display: block;
 
   font-size: f.to-rem(18px);
-  list-style-type: none;
 
   cursor: pointer;
+
+  list-style-type: none;
 
   &::-webkit-details-marker {
     display: none;
@@ -308,13 +315,16 @@ template {
 /**
  */
 hr {
+  clear: both;
+
   box-sizing: content-box; /* 1 */
   display: block;
 
   height: 0; /* 1 */
+
   padding: 0;
+
   overflow: visible; /* 2 */
-  clear: both;
 
   color: my.palette('neutral');
 
@@ -372,9 +382,9 @@ audio:not([controls]) {
 
 meter,
 progress {
-  background-size: auto;
-
   appearance: none;
+
+  background-size: auto;
 }
 
 audio {
@@ -384,6 +394,7 @@ iframe,
 img,
 object {
   font-size: 83.3333%;
+
   color: currentcolor;
 
   border-style: none;
@@ -423,6 +434,7 @@ object > img {
 ///
 %broken-image {
   font-style: normal;
+
   text-align: center;
 
   &::before {
@@ -437,6 +449,7 @@ object > img {
     display: block;
 
     font-size: small;
+
     color: my.palette('neutral');
 
     content: '(url: ' attr(src) ')';
@@ -487,8 +500,10 @@ a {
   margin: 0;
 
   font-size: 100%;
-  color: my.palette('anchor', 'base');
+
   vertical-align: baseline;
+
+  color: my.palette('anchor', 'base');
 
   @include my.on-event {
     text-decoration: none;
@@ -496,6 +511,7 @@ a {
 
   &:link {
     color: my.palette('anchor', 'link');
+
     text-decoration: none;
 
     cursor: pointer;
@@ -523,7 +539,8 @@ a {
     color: my.palette('anchor', 'hover');
   }
 
-  &:focus:not(:link) {
+  /* Outline só para foco por teclado (acessibilidade), não para mouse */
+  &:focus-visible:not(:link) {
     @include my.focused;
 
     color: my.palette('anchor', 'focus');
@@ -575,7 +592,8 @@ a {
   }
 
 
-  &:focus {
+  /* Outline só para foco por teclado (acessibilidade), não para mouse */
+  &:focus-visible {
     @include my.focused;
   }
 }
@@ -594,9 +612,11 @@ address {
 pre {
   padding: my.$leading * 0.5rem my.$gutter * 0.5;
   margin: 0 0 my.$leading * 1rem;
+
   overflow: auto;
 
   font-size: smaller;
+
   color: my.palette('text', 'light');
 
   background-color: my.palette('text', 'dark');
@@ -611,6 +631,7 @@ pre {
 
 .main-img {
   width: 100%;
+
   margin-bottom: f.to-rem(24px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'desktop')}) {

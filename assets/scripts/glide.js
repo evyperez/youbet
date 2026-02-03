@@ -22,6 +22,12 @@ function mountGlide() {
         },
       },
     });
+    glide.on('mount.after', () => {
+      const wrap = doc.closest('.glide-wrap');
+      if (wrap) {
+        wrap.classList.remove('glide-wrap--loading');
+      }
+    });
     glide.mount();
   }
 }

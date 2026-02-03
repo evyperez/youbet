@@ -1,42 +1,42 @@
 {{ define "main" }}
-  <div class="main-container">
-    {{ partial "header.html" . }}
+  {{ partial "breadcrumbs.html" . }}
 
+  <main role="main" id="conteudo" class="internal-page tags-list">
+    <div class="container">
+      <header class="tags-list__header">
+        <h1 class="heading-2">{{ .Title }}</h1>
+      </header>
 
-    <main role="main" id="conteudo" class="internal-page blog-list">
-      <div class="container">
-        <div class="rich-text">
-          <div class="three-columns">
+      {{ $terms := .Data.Terms.ByCount }}
+      {{ if $terms }}
+        {{ $max := 1 }}
+        {{ range $terms }}
+          {{ if gt .Count $max }}{{ $max = .Count }}{{ end }}
+        {{ end }}
 
-            {{ range .Data.Pages.ByDate.Reverse }}
-
-            <div class="card">
-              <div class="card__image">
-                {{ if .Params.thumbnail }}
-                <a href="/blog/{{ .Params.slug }}">
-                  <img src="{{ .Params.thumbnail }}" alt="{{ .Params.thumbnailAlt }}" />
-                </a>
+        <div class="tag-cloud" role="list">
+          {{ range $terms }}
+            {{ $termPage := .Page }}
+            {{ $termCount := .Count }}
+            {{ with $termPage }}
+              {{ $size := "tag-cloud__item--m" }}
+              {{ if gt $max 1 }}
+                {{ $ratio := div (mul $termCount 100) $max }}
+                {{ if ge $ratio 75 }}{{ $size = "tag-cloud__item--xl" }}
+                {{ else if ge $ratio 50 }}{{ $size = "tag-cloud__item--l" }}
+                {{ else if ge $ratio 25 }}{{ $size = "tag-cloud__item--m" }}
+                {{ else }}{{ $size = "tag-cloud__item--s" }}
                 {{ end }}
-              </div>
-
-              <div class="card__body {{if .Params.authors }} card__body--fixed {{ end }}">
-                <a href="{{if .Params.slug}} /blog/{{.Params.slug}} {{else}} {{.Title | urlize }} {{ end }}"
-                  class="text-decor--none text-align--center">
-                  <h2 class="heading-4">
-                    {{ .Title }}
-                  </h2>
-                </a>
-
-                {{ partial "author-miniature.html" . }}
-
-              </div>
-
-            </div>
+              {{ end }}
+              <a href="{{ .RelPermalink }}" class="tag-cloud__item {{ $size }}" role="listitem">
+                {{ .LinkTitle }} ({{ $termCount }})
+              </a>
             {{ end }}
-          </div>
+          {{ end }}
         </div>
-
-      </div>
-    </main>
-
+      {{ else }}
+        <p class="rich-text">{{ i18n "noTags" | default "Nenhuma tag ainda." }}</p>
+      {{ end }}
+    </div>
+  </main>
 {{ end }}

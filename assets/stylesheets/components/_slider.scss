@@ -89,10 +89,11 @@
 }
 
 @mixin vertical-input-range {
-  writing-mode: bt-lr;
 
   // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-appearance: slider-vertical;
+
+  writing-mode: bt-lr;
 }
 
 /**
@@ -102,16 +103,16 @@
   display: block;
 
   width: 100%; /* 1 */
+
   padding: 0;
 
   vertical-align: middle;
 
+  appearance: none;
   cursor: pointer;
 
   background: transparent;
   border: 0; /* 1 */
-
-  appearance: none;
 
   // stylelint-disable-next-line mixins-before-declarations
   @include range-track($height: 0.125rem, $thumb-height: 1.5rem, $bg-fallback: null) {

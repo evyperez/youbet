@@ -31,7 +31,9 @@
     padding: 1em;
 
     font-weight: my.font-weight('heavy');
+
     color: my.palette('white');
+
     text-align: center;
 
     background-color: my.palette('feedback', 'danger');
@@ -219,7 +221,7 @@ textarea {
   }
 }
 
-form:not([name]):not([id]) {
+form:not([name], [id]) {
   @extend %warning;
 }
 
@@ -339,7 +341,7 @@ link[rel='stylesheet'][type='text/css'] {
   }
 }
 
-[tabindex]:not([tabindex='-1']):not([tabindex='0']) {
+[tabindex]:not([tabindex='-1'], [tabindex='0']) {
   @extend %error;
 
   @include alert {
@@ -349,7 +351,7 @@ link[rel='stylesheet'][type='text/css'] {
 
 // stylelint-disable selector-type-no-unknown
 /// Empty element not used for scripting
-*:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(param):not(script):not(source):not(th):not(td):not(track):not(wbr):not([id]):not([class*='js-']) {
+*:empty:not(area, base, br, col, command, embed, hr, img, input, keygen, link, param, script, source, th, td, track, wbr, [id], [class*='js-']) {
   @extend %error;
 
   @include alert {
@@ -475,7 +477,7 @@ input,
 select,
 textarea {
   // stylelint-disable-next-line selector-no-qualifying-type
-  &.disabled:not([disabled]):not([read-only]) {
+  &.disabled:not([disabled], [read-only]) {
     @extend %error;
 
     @include alert {
@@ -489,8 +491,8 @@ textarea {
 ----------------------------------------------------------------------
 */
 
-ol > *:not(li):not(script):not(template),
-ul > *:not(li):not(script):not(template) {
+ol > *:not(li, script, template),
+ul > *:not(li, script, template) {
   @extend %error;
 
   @include alert {
@@ -498,7 +500,7 @@ ul > *:not(li):not(script):not(template) {
   }
 }
 
-dl > *:not(dt):not(dd):not(div):not(script):not(template) {
+dl > *:not(dt, dd, div, script, template) {
   @extend %error;
 
   @include alert {
@@ -506,7 +508,7 @@ dl > *:not(dt):not(dd):not(div):not(script):not(template) {
   }
 }
 
-:not(dt):not(dd) + dd {
+:not(dt, dd) + dd {
   @extend %error;
 
   @include alert {
@@ -554,7 +556,7 @@ li {
   }
 }
 
-.btn:not(button):not([href])::after {
+.btn:not(button, [href])::after {
   @include alert {
     content: 'Inaccessible control. Use a `button[type]` or a `a[href]`.' !important;
   }
@@ -575,8 +577,8 @@ li {
   }
 }
 
-.button:not(a):not(button):not(input):not([tabindex]),
-.btn:not(a):not(button):not(input):not([tabindex]) {
+.button:not(a, button, input, [tabindex]),
+.btn:not(a, button, input, [tabindex]) {
   @include alert {
     content: 'Element impossibly focusable used for as "button".' !important;
   }

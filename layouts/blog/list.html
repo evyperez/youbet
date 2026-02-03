@@ -1,63 +1,83 @@
 {{ define "main" }}
-    <div class="container">
-      {{ partial "breadcrumbs.html" . }}
-    </div>
-    <main role="main" id="conteudo" class="internal-page blog-list">
-      <div class="container">
-        <div class="blog-wrap--sidebar">
-          <div class="posts">
+{{ $paginator := .Paginate (.Pages.ByDate.Reverse) 5 }}
+<main role="main" id="conteudo" class="internal-page blog-list">
+  <div class="container">
+    <div class="blog-wrap--sidebar">
+      <div class="posts">
 
-            {{ range (.Paginate ( first 50 .Pages.ByDate.Reverse )).Pages }}
-            <article class="post">
-              {{ partial "blog/default-image.html" . }}
+        {{ range $paginator.Pages }}
+        <article class="post">
+          {{ partial "blog/list-image.html" . }}
 
-              <div class="post__header">
-                <div class="post-title">
-                  <a href="/blog/{{ .Params.slug }}" class="text-decor--none">
-                    <h2>
-                      {{ .Title }}
-                    </h2>
-                  </a>
+          <div class="post__header">
+            <div class="post-title">
+              <a href="{{ .Permalink }}" class="text-decor--none">
+                <h2>
+                  {{ .Title }}
+                </h2>
+              </a>
 
-                  {{if .Params.subtitle }}
-                  <p class="subtitle">
-                    {{.Params.subtitle}}
-                  </p>
-                  {{ end }}
-                </div>
+              {{if .Params.subtitle }}
+              <p class="subtitle">
+                {{.Params.subtitle}}
+              </p>
+              {{ end }}
+            </div>
 
-                {{ partial "blog/info.html" . }}
+            {{ partial "blog/info.html" . }}
 
-              </div>
-
-              <div class="post__body">
-
-                {{ if .Params.summary }}
-
-                <div class="rich-text">
-                  {{ .Params.summary }}
-
-                  <button>{{ i18n "readMore" }}</button>
-
-                </div>
-
-                {{ else }}
-                <div class="rich-text">
-                  {{.Content }}
-                </div>
-                {{ end }}
-
-
-              </div>
-
-            </article>
-
-            {{ end }}
           </div>
 
-          {{ partial "sidebar.html" . }}
+          <div class="post__body">
 
-        </div>
+            {{ if .Params.summary }}
+
+            <div class="rich-text">
+              {{ .Params.summary }}
+
+              <a href="{{ .Permalink }}" class="button">{{ i18n "readMore" }}</a>
+
+            </div>
+
+            {{ else }}
+            <div class="rich-text">
+              {{.Content }}
+            </div>
+            {{ end }}
+
+
+          </div>
+
+        </article>
+
+        {{ end }}
+
+        <nav class="pagination" aria-label="{{ i18n "pagination" | default "Paginação" }}">
+          <div class="pagination__inner">
+            {{ if $paginator.HasPrev }}
+              <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}" aria-label="{{ i18n "firstPage" | default "Primeira página" }}">{{ i18n "firstPage" | default "Primeira" }}</a>
+            {{ end }}
+            <ol class="pagination__numbers">
+              {{ range $paginator.Pagers }}
+                <li>
+                  {{ if eq .PageNumber $paginator.PageNumber }}
+                    <span class="pagination__page pagination__page--current" aria-current="page">{{ .PageNumber }}</span>
+                  {{ else }}
+                    <a class="pagination__page" href="{{ .URL }}">{{ .PageNumber }}</a>
+                  {{ end }}
+                </li>
+              {{ end }}
+            </ol>
+            {{ if $paginator.HasNext }}
+              <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}" aria-label="{{ i18n "lastPage" | default "Última página" }}">{{ i18n "lastPage" | default "Última" }}</a>
+            {{ end }}
+          </div>
+        </nav>
       </div>
-    </main>
+
+      {{ partial "sidebar.html" . }}
+
+    </div>
+  </div>
+</main>
 {{ end }}

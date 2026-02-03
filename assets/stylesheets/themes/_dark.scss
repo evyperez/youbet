@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '../abstracts/index' as my;
+
 // -----------------------------------------------------------------------------
 // When having several themes, this file contains everything related to the
 // default one.
@@ -17,7 +20,7 @@
   background: my.palette('background', 'dark');
 
   .main-menu {
-    @media (max-width: breakpoint('max-laptop')) {
+    @media (max-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
       background: my.palette('menu-dark', 'sub-menu');
     }
   }

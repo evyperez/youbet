@@ -21,6 +21,7 @@ fieldset ul li {
   margin: 0;
 
   white-space: nowrap;
+
   list-style-type: none;
 
   &::before {
@@ -51,6 +52,7 @@ li label {
 
   width: auto;
   height: auto; /* 3 */
+
   padding: 0; /* 2 */
 
   vertical-align: middle;
@@ -60,7 +62,8 @@ li label {
   &:hover {
   }
 
-  &:focus {
+  /* Outline só para foco por teclado (acessibilidade), não para mouse */
+  &:focus-visible {
     @include my.focused;
 
     outline-style: auto; /* 4 */

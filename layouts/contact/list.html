@@ -7,11 +7,14 @@
               <img src="/uploads/images/ilustracao-mensagem.png" alt="{{ i18n "title404" }}" />
             </div>
             <div class="rich-text">
-              <h2 class="title">{{.Title}}</h2>
-              </p>
+              <h2 class="title">{{ .Title }}</h2>
 
               {{ .Content }}
-              <form name="contact" action="/contato/sucesso/" method="POST" data-netlify="true">
+              <form name="contact" method="POST" data-netlify="true" action="{{ with .Site.GetPage "contact/success" }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden aria-hidden="true">
+                  <label for="contact-page-bot">Não preencha: <input id="contact-page-bot" name="bot-field" tabindex="-1" autocomplete="off" /></label>
+                </p>
                 <div class="form-wrap">
                   <div class="two-columns">
                     <div class="form-group ">
@@ -60,6 +63,7 @@
                 </div>
 
               </form>
+
             </div>
           </div>
         </div>

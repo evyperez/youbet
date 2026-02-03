@@ -24,6 +24,7 @@ fieldset {
 
   min-width: 0;
   max-width: none;
+
   padding: my.$gutter 0;
   margin-top: 0;
   margin-right: my.$gutter * -0.5;
@@ -67,11 +68,14 @@ legend {
   flex-basis: 100%;
 
   max-width: 100%; /* 1 */
+
   padding: 0; /* 3 */
   margin-bottom: my.$gutter;
 
   font-weight: my.font-weight('extrabold');
+
   color: inherit; /* 2 */
+
   white-space: normal; /* 1 */
 }
 
@@ -84,7 +88,9 @@ label {
   margin-bottom: f.to-rem(4px);
 
   font-size: f.to-em(12px);
+
   line-height: f.to-rem(20px);
+
   color: my.palette('text', 'faded');
 
   cursor: pointer;
@@ -101,6 +107,7 @@ label {
 // stylelint-disable-next-line selector-no-qualifying-type
 abbr.field__required {
   color: my.palette('feedback', 'danger');
+
   text-decoration: none;
 }
 
@@ -111,10 +118,11 @@ fieldset,
 form p {
   position: relative;
 
-  flex-basis: 100%;
   flex-grow: 1;
+  flex-basis: 100%;
 
   max-width: none;
+
   margin-bottom: my.$gutter;
 
   &:last-child {
@@ -191,30 +199,36 @@ form br {
   // stylelint-disable-next-line property-units
   padding: 1px; /* 2 */
   margin: 0;
+
   overflow: visible;
 
   font-family: inherit; /* 1 */
   font-size: inherit; /* 1 */
+
   line-height: inherit; /* 1 */
+  vertical-align: top;
+
   color: inherit;
+
   text-align: inherit;
   text-transform: inherit; /* 3 */
   letter-spacing: inherit;
   white-space: normal;
-  vertical-align: top;
+
+  outline: 0;
 
   border-color: my.palette('border');
   border-style: solid;
   border-width: my.$stroke;
   border-radius: my.$rounded-corner;
-  outline: 0;
   // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-font-smoothing: inherit;
 
   &:hover {
   }
 
-  &:focus {
+  /* Outline só para foco por teclado (acessibilidade), não para mouse */
+  &:focus-visible {
     @include my.focused;
   }
 
@@ -328,18 +342,18 @@ form br {
   text-align: start !important;
   white-space: nowrap;
 
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-appearance: none;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -moz-appearance: none;
+  appearance: normal;
+
   background-color: transparent; /* 1 */
   // stylelint-disable-next-line declaration-no-important
   border-style: none !important;
 
   // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-box-align: baseline;
-
-  // stylelint-disable-next-line property-no-vendor-prefix
-  -webkit-appearance: none;
-  // stylelint-disable-next-line property-no-vendor-prefix
-  -moz-appearance: none;
-  appearance: normal;
 
   -moz-binding: none;
 }
@@ -351,7 +365,9 @@ form br {
   height: inherit;
 
   font-size: inherit;
+
   color: inherit;
+
   letter-spacing: inherit;
 
   background-color: inherit;
@@ -362,9 +378,11 @@ form br {
   box-sizing: content-box;
 
   height: inherit;
+
   padding: 0;
 
   font-size: inherit;
+
   white-space: normal;
 
   // stylelint-disable-next-line property-no-vendor-prefix
@@ -383,15 +401,14 @@ form br {
 ::-webkit-file-upload-button {
   font: inherit; /* 4 */
 
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-appearance: button; /* 1 */
   cursor: pointer;
 
   background-color: my.palette('button'); /* 2 */
   border-color: my.palette('border'); /* 3 */
   border-style: solid; /* 3 */
   border-width: 1px; /* 3 */
-
-  // stylelint-disable-next-line property-no-vendor-prefix
-  -webkit-appearance: button; /* 1 */
 
   &:hover {
     background-color: my.palette('button', 'focus');
@@ -476,6 +493,7 @@ form br {
   margin-top: 8px;
 
   font-size: f.to-em(12px);
+
   line-height: f.to-rem(16px);
 }
 
@@ -496,5 +514,6 @@ form br {
 
 .required {
   font-weight: bold;
+
   color: palette('feedback', 'danger');
 }

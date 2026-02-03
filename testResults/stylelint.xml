@@ -1,0 +1,6 @@
+
+assets/stylesheets/layout/_navigation.scss
+  236:3  ✖  Unexpected qualifying type selector "a.active"  selector-no-qualifying-type
+
+✖ 1 problem (1 error, 0 warnings)
+

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../abstracts/index' as my;
 
 // -----------------------------------------------------------------------------
@@ -23,10 +24,11 @@
 
 .header-container {
   max-width: my.$max-width;
+
   padding: to-rem(12px) to-rem(16px);
   margin: auto;
 
-  @media screen and (min-width: breakpoint('desktop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'desktop')}) {
     max-width: my.$max-width--desktop;
   }
 }

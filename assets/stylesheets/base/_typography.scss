@@ -13,8 +13,9 @@
 ::before,
 ::after {
   line-height: inherit;
-  text-decoration: inherit; /* 1 */
   vertical-align: inherit; /* 2 */
+
+  text-decoration: inherit; /* 1 */
 }
 
 /**
@@ -24,7 +25,9 @@ body {
   font-family: my.$text-font-stack;
   font-size: my.$body-font-size;
   font-weight: my.font-weight('text');
+
   line-height: my.$leading;
+
   color: my.palette('text', 'dark');
 }
 
@@ -59,6 +62,7 @@ details > summary {
   }
 }
 
+
 ms.$modularscale: (
   base: 1rem,
   ratio: 1.2,
@@ -68,10 +72,12 @@ ms.$modularscale: (
   font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(4);
   font-weight: my.font-weight('bold');
+
   line-height: f.to-rem(41px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     font-size: ms.ms(5);
+
     line-height: f.to-rem(47px);
   }
 }
@@ -80,10 +86,12 @@ ms.$modularscale: (
   font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(3);
   font-weight: my.font-weight('bold');
+
   line-height: f.to-rem(35px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     font-size: ms.ms(4);
+
     line-height: f.to-rem(41px);
   }
 }
@@ -92,10 +100,12 @@ ms.$modularscale: (
   font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(1);
   font-weight: my.font-weight('bold');
+
   line-height: f.to-rem(27px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     font-size: ms.ms(3);
+
     line-height: f.to-rem(35px);
   }
 }
@@ -104,6 +114,7 @@ ms.$modularscale: (
   font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(1);
   font-weight: my.font-weight('bold');
+
   line-height: f.to-rem(27px);
 }
 
@@ -111,6 +122,7 @@ ms.$modularscale: (
   font-family: fs.$ASAP-FONT-STACK;
   font-size: ms.ms(0);
   font-weight: my.font-weight('bold');
+
   line-height: f.to-rem(27px);
 }
 
@@ -141,6 +153,7 @@ h5,
 
 summary {
   color: my.palette('neutral', 'dark');
+
   text-decoration: none;
 
   details > & {
@@ -167,10 +180,12 @@ legend a,
 caption a,
 dt a {
   color: inherit;
+
   text-decoration: inherit;
 
   &:link {
     color: inherit;
+
     text-decoration: inherit;
   }
 }
@@ -184,10 +199,10 @@ p {
  * @see: http://demosthenes.info/blog/946/Controlling-Widows--Orphans
  */
 article p {
+  widows: 3;
   // max-width: map.get(my.$line-lengths, 'max');
 
   orphans: 3;
-  widows: 3;
 }
 
 // article p + p {
@@ -285,6 +300,7 @@ mark {
  */
 small {
   font-size: 83.3333%;
+
   line-height: inherit;
 }
 
@@ -298,6 +314,7 @@ sup {
   position: relative;
 
   font-size: 83.3333%; /* 1 */
+
   line-height: 0;
   vertical-align: baseline;
 }
@@ -378,6 +395,7 @@ s {
 %updated {
   &::before {
     font-weight: my.font-weight('bold');
+
     text-decoration: none;
 
     content: '[update] ';
@@ -461,6 +479,7 @@ blockquote > p {
 q,
 blockquote {
   font-style: italic;
+
   color: my.palette('quotes');
 }
 
@@ -498,6 +517,7 @@ blockquote.verse p {
   display: inline-block;
 
   width: auto;
+
   margin-right: auto;
   margin-left: auto;
 
@@ -517,6 +537,10 @@ blockquote.verse p {
     margin: auto;
   }
 
+  p {
+    margin-bottom: 0.5em;
+  }
+
   a:not([class]) {
     text-decoration: underline;
 
@@ -527,6 +551,7 @@ blockquote.verse p {
 
   .image-topics {
     max-width: 214px;
+
     margin: 0 auto f.to-rem(16px) auto;
 
     @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
@@ -571,10 +596,12 @@ blockquote.verse p {
 
 .pre-title {
   font-size: f.to-rem(12px);
+
   line-height: f.to-rem(20px);
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     font-size: f.to-rem(14px);
+
     line-height: f.to-rem(22px);
   }
 }
@@ -584,17 +611,21 @@ blockquote.verse p {
 
   font-size: f.to-rem(12px);
   font-weight: my.font-weight('extrabold');
+
   line-height: f.to-rem(19px);
+
   text-transform: uppercase;
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     font-size: f.to-rem(14px);
+
     line-height: f.to-rem(20px);
   }
 }
 
 .sidebar-title {
   font-size: f.to-rem(18px);
+
   line-height: f.to-rem(26px);
 }
 
@@ -606,6 +637,8 @@ blockquote.verse p {
 
 .subtitle {
   font-size: f.to-rem(18px);
+
   line-height: f.to-rem(26px);
+
   color: my.palette('gray', '80%');
 }

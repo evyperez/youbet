@@ -1,110 +1,105 @@
 {{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<main role="main" id="conteudo" class="internal-page">
+
+  <article class="blog-post">
     <div class="container">
-      {{ partial "breadcrumbs.html" . }}
-    </div>
+      <div blog-wrap--sidebar>
+        <div class="blog-content">
 
-    <main role="main" id="conteudo" class="internal-page">
+          <div class="post__header">
+            <div class="post-title">
+              <h1 class="heading-2">
+                {{ .Title }}
+              </h1>
 
-      <article class="blog-post">
-        <div class="container">
-          <div blog-wrap--sidebar>
-            <div class="blog-content">
-
-              <div class="post__header">
-                <div class="post-title">
-                    <h1 class="heading-2">
-                      {{ .Title }}
-                    </h1>
-
-                  {{if .Params.subtitle }}
-                  <p class="subtitle">
-                    {{.Params.subtitle}}
-                  </p>
-                  {{ end }}
-                </div>
-
-                {{ partial "blog/info.html" . }}
-
-              </div>
-              <div>
-                {{ if .Params.image }}
-
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-                {{ end }}
-              </div>
-
-              <div class=" rich-text">
-
-
-                {{ .Content }}
-              </div>
-
-
-              {{ if .Params.tags }}
-              <div class="tags">
-                <h2 class="heading-5">Tags</h2>
-                <div class="tag">
-                  {{ range .Params.tags }}
-                  <a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">
-                    {{ . }}
-                  </a>
-                  {{ end}}
-                </div>
-              </div>
+              {{if .Params.subtitle }}
+              <p class="subtitle">
+                {{.Params.subtitle}}
+              </p>
               {{ end }}
+            </div>
+
+            {{ partial "blog/info.html" . }}
+
+          </div>
+          <div>
+            {{ partial "blog/single-media.html" . }}
+          </div>
+
+          <div class=" rich-text">
 
 
-              {{ if .Params.authors }}
+            {{ .Content }}
+          </div>
 
 
-                {{- range .Params.authors }}
-                {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-
-                <div class="author">
-                  <div class="avatar avatar--big">
-                    <a href="/autores/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
-                  </div>
-
-                  <div class="author__about">
-                    <p class="category-title">{{ i18n "postBy" | title }}:</p>
-                    <h2 class="heading-4"><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></h2>
-                    {{ .Content }}
-                  </div>
-                </div>
-
-                {{ end }}
-                {{ end }}
-
-
-              {{ end }}
-
+          {{ if .Params.tags }}
+          <div class="tags">
+            <h2 class="heading-5">Tags</h2>
+            <div class="tag">
+              {{ range .Params.tags }}
+              <a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">
+                {{ . }}
+              </a>
+              {{ end}}
             </div>
           </div>
-        </div>
-      </article>
+          {{ end }}
 
-      {{ if .Params.relatedProjects }}
-      <aside>
-        <div class="container">
-          <h2 class="title">{{ i18n "seeAlso" | title }}</h2>
-          <ul class="posts">
-            {{ range .Params.relatedProjects }}
-            {{ range where $.Site.Pages "Params.slug" .project }}
-            <li class="post">
-              <div class="post__content">
-                <a href="../{{ .Params.slug }}">
-                  <h4>{{ if .Params.shortTitle }}{{ .Params.shortTitle }}{{ else }}{{ .Title }}{{ end }}</h4>
-                </a>
-                <a class="nav-link nav-link--plus--orange" href="../{{ .Params.slug }}">{{ i18n "Title" }}</a>
-              </div>
-            </li>
-            {{ end }}
-            {{ end }}
-          </ul>
-        </div>
-      </aside>
-      {{ end }}
 
-    </main>
+          {{ if .Params.authors }}
+
+
+          {{- range .Params.authors }}
+          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+
+          <div class="author">
+            <div class="avatar avatar--big">
+              <a href="{{ .RelPermalink }}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+            </div>
+
+            <div class="author__about">
+              <p class="category-title">{{ i18n "postBy" | title }}:</p>
+              <h2 class="heading-4"><a href="{{ .RelPermalink }}">{{ .Params.Name }}</a></h2>
+              {{ .Content }}
+            </div>
+          </div>
+
+          {{ end }}
+          {{ end }}
+
+
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {{ if .Params.relatedProjects }}
+  <aside>
+    <div class="container">
+      <h2 class="title">{{ i18n "seeAlso" | title }}</h2>
+      <ul class="posts">
+        {{ range .Params.relatedProjects }}
+        {{ range where $.Site.Pages "Params.slug" .project }}
+        <li class="post">
+          <div class="post__content">
+            <a href="../{{ .Params.slug }}">
+              <h4>{{ if .Params.shortTitle }}{{ .Params.shortTitle }}{{ else }}{{ .Title }}{{ end }}</h4>
+            </a>
+            <a class="nav-link nav-link--plus--orange" href="../{{ .Params.slug }}">{{ i18n "Title" }}</a>
+          </div>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </aside>
+  {{ end }}
+
+</main>
 
 {{ end }}

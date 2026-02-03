@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../layout/form';
 @use '../abstracts/index' as my;
 @use 'abstracts/functions' as f;
@@ -33,26 +34,30 @@ $colors: 'button', 'button-secondary', 'button-neutral';
   width: auto; /* 3 */
   min-width: 88px;
   height: f.to-rem(40px);
+
   padding: 0 f.to-rem(16px);
+
   overflow: visible; /* 3 */
 
   font-family: Asap, sans-serif;
   font-size: f.to-rem(12px);
   font-weight: bold;
+
   line-height: f.to-rem(40px);
+
   text-align: center;
-  text-decoration: none;
   text-indent: 0;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: inherit;
 
+  text-decoration: none;
+
+  appearance: button; /* 1 */
   cursor: pointer; /* 2 */
 
   background: unset;
   border: unset;
-
-  appearance: button; /* 1 */
 
   &::-moz-focus-inner {
     padding: 0; /* 4 */
@@ -60,15 +65,17 @@ $colors: 'button', 'button-secondary', 'button-neutral';
     border: 0;
   }
 
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     height: f.to-rem(48px);
+
     padding: 0 f.to-rem(16px);
 
     font-size: f.to-rem(14px);
+
     line-height: f.to-rem(48px);
   }
 
-  @media screen and (min-width: breakpoint('laptop')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     padding: 0 f.to-rem(32px);
   }
 
@@ -257,7 +264,7 @@ html [type='button'] {
 }
 
 .button--full-mobile {
-  @media screen and (max-width: breakpoint('tablet__portrait')) {
+  @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     width: 100%;
   }
 }
@@ -293,13 +300,17 @@ input:-moz-focusring {
   width: unset;
   min-width: unset;
   height: unset;
+
   padding: unset;
 
   font-family: my.$text-font-stack;
   font-size: unset;
   font-weight: unset;
+
   line-height: unset;
+
   color: unset;
+
   text-transform: unset;
   letter-spacing: unset;
 

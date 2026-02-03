@@ -14,7 +14,7 @@
   {{ else }}
   {{ if .Params.image }}
     <div class="post__image">
-      <a href="/blog/{{ .Params.slug }}">
+      <a href="{{ .Permalink }}">
         <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt }}" />
       </a>
     </div>

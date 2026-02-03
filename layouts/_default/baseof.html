@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  lang="{{ with .Site.Language.Params.locale }}{{ . }}{{ else }}{{ .Site.LanguageCode }}{{ end }}"
+  lang="{{ .Site.LanguageCode }}"
   class="
     {{ if .IsHome }}home-page {{ end }}
     {{ $.Scratch.Get "rootClass" }}{{ .Params.rootClass }}

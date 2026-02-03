@@ -137,6 +137,7 @@
     @include _italic-overflow;
     font-family: fs.$AMPERSAND-FONT-STACK;
     font-size: 2em;
+
     line-height: 0.25;
     vertical-align: middle;
 
@@ -217,11 +218,11 @@
   $_inline-block-font-stack: 'FreeSans', 'Arimo', 'Droid Sans', 'Helvetica', 'Arial', sans-serif;
   font-family: $_inline-block-font-stack;
   font-size: 0;
+
+  word-spacing: -0.43em\9; /* IE < 8: collapse white-space between units */
   letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
   // stylelint-disable-next-line declaration-block-no-duplicate-properties
   letter-spacing: normal\9; /* reset IE < 8 */
-
-  word-spacing: -0.43em\9; /* IE < 8: collapse white-space between units */
 
   text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
 }
@@ -263,12 +264,13 @@
 
   font-family: c.$text-font-stack;
   font-size: $font-size;
-  letter-spacing: normal;
+
   vertical-align: string.unquote($align);
 
-  zoom: 1;
-
   word-spacing: normal;
+  letter-spacing: normal;
+
+  zoom: 1;
 
   text-rendering: auto;
 }
@@ -373,7 +375,9 @@
   font-style: normal;
   font-weight: font-weight('normal');
   font-variant: normal;
+
   line-height: 1;
+
   text-transform: none;
 
   speak: none;
@@ -395,6 +399,7 @@
     display: table; /* 2 */
 
     border-collapse: collapse; /* 3 */
+
     content: ''; /* 1 */
   }
 
@@ -412,6 +417,7 @@
   &:link,
   &:visited {
     color: inherit;
+
     text-decoration: inherit;
 
 
@@ -462,17 +468,20 @@
 
   width: 1px !important;
   height: 1px !important;
+
   padding: 0 !important;
   margin: -1px;
+
   overflow: hidden !important;
-  clip: rect(1px 1px 1px 1px) !important;
-  // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  clip-path: inset(50%) !important;
 
   white-space: nowrap !important;
 
   border: 0 !important;
+
+  clip: rect(1px 1px 1px 1px) !important;
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
 }
 
 @mixin visually-hidden--focusable {
@@ -484,12 +493,15 @@
 
     width: auto !important;
     height: auto !important;
+
     margin: auto;
+
     overflow: visible !important;
-    clip: auto !important;
-    clip-path: none !important;
 
     white-space: normal !important;
+
+    clip: auto !important;
+    clip-path: none !important;
   }
 }
 
@@ -549,11 +561,11 @@
 
     max-height: $leading * $lines;
     // stylelint-disable-next-line declaration-colon-space-after
-    overflow:hidden;
     // stylelint-disable-next-line declaration-no-important, declaration-block-no-duplicate-properties
     overflow: hidden !important;
 
     line-height: $leading;
+
     text-overflow: ellipsis;
     -webkit-line-clamp: $lines;
   } @else {
@@ -618,6 +630,7 @@
 	 *    See: https://code.google.com/p/chromium/issues/detail?id=457146
 	 */
   padding: 0; /* 1 */
+
   overflow: hidden;
 
   text-indent: 101%;
@@ -636,7 +649,9 @@
     direction: ltr;
   } @else {
     font: 0/0;
+
     color: transparent;
+
     text-shadow: none;
 
     border: 0;
@@ -839,15 +854,16 @@
 
   &::before {
     float: left;
+
     padding-top: (math.div($h, $w) * 100%);
 
     content: '';
   }
 
   &::after {
-    display: table;
-
     clear: both;
+
+    display: table;
 
     content: '';
   }
@@ -900,6 +916,7 @@
 @mixin focused {
   outline: 0;
   outline-style: dashed;
+
   box-shadow: 0 0 0 0.05rem color.scale(f.palette('neutral', 'black'), $alpha: 20%);
 }
 
@@ -918,6 +935,7 @@
 @mixin container {
   width: 100%;
   max-width: c.$max-width;
+
   padding-right: c.$gutter;
   padding-left: c.$gutter;
   margin-right: auto;
@@ -930,6 +948,7 @@
   left: 50%;
 
   width: 100vw;
+
   margin-right: -50vw;
   margin-left: -50vw;
 }

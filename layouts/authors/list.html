@@ -27,7 +27,7 @@
               {{ end }}  */}}
 
 
-              <a href="{{if .Params.slug}} /autores/{{.Params.slug}} {{else}} {{.Params.Name | urlize }} {{ end }}" class="text-decor--none text-align--center">
+              <a href="{{ .Permalink }}" class="text-decor--none text-align--center">
                 <h2 class="heading-4">
                   {{ .Params.Name }}
                 </h2>

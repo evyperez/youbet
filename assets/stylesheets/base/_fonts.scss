@@ -9,6 +9,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
+
   src: local('Roboto'), url('/fonts/roboto/Roboto-Regular.ttf') format('truetype');
 }
 
@@ -16,6 +17,7 @@
   font-family: Roboto;
   font-style: italic;
   font-weight: 400;
+
   src: local('Roboto Italic'), url('/fonts/roboto/Roboto-Italic.ttf') format('truetype');
 }
 
@@ -23,6 +25,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
+
   src: local('Roboto Bold'), url('/fonts/roboto/Roboto-Bold.ttf') format('truetype');
 }
 
@@ -30,6 +33,7 @@
   font-family: Roboto;
   font-style: italic;
   font-weight: 700;
+
   src: local('Roboto BoldItalic'), url('/fonts/roboto/Roboto-BoldItalic.ttf') format('truetype');
 }
 
@@ -37,5 +41,6 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
+
   src: local('Roboto Black'), url('/fonts/roboto/Roboto-Black.ttf') format('truetype');
 }

@@ -10,27 +10,30 @@
 
   width: 100%;
   height: f.to-rem(40px);
+
   padding: 0 f.to-rem(12px);
 
   font-size: 16px;
+
   line-height: f.to-rem(40px);
+
   color: palette('gray');
 
+  appearance: textfield;
   cursor: text;
+  outline: none;
 
   background-color: palette('form', 'background');
   border-color: palette('form', 'border');
-  outline: none;
-
-  appearance: textfield;
 
   &:-moz-ui-invalid {
     border-color: palette('feeback', 'default');
   }
 
   &:focus {
-    border-color: palette('feeback', 'selected');
     outline: 0;
+
+    border-color: palette('feeback', 'selected');
   }
 }
 
@@ -68,11 +71,12 @@
 
   padding-left: 3rem;
 
+  outline-offset: -2px;
+
   background-color: palette('gray', '10%');
   background-image: url('~src/assets/icons/magnifying-glass.svg');
   background-repeat: no-repeat;
   background-position: left 0.5rem center;
-  outline-offset: -2px;
 }
 
 /**
@@ -97,7 +101,9 @@ textarea {
   @extend %text-field-reset;
 
   min-height: f.to-rem(90px);
+
   padding: f.to-rem(12px) f.to-rem(12px);
+
   overflow: auto;
 
   line-height: inherit;

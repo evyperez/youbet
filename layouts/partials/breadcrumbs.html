@@ -1,11 +1,23 @@
-<div  class="breadcrumbs">
-  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-</div>
+<nav class="breadcrumbs" aria-label="{{ i18n "breadcrumb" | default "Breadcrumb" }}">
+  <div class="breadcrumbs-wrap">
+    <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+    </ol>
+  </div>
+</nav>
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}
-{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 ) }}
 {{ else if not .p1.IsHome }}
-{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
 {{ end }}
-  <a {{ if eq .p1 .p2 }} class="active"{{ end }} href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+<li class="breadcrumbs__item{{ if eq .p1 .p2 }} breadcrumbs__item--current{{ end }}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+  {{ if eq .p1 .p2 }}
+    <span class="breadcrumbs__current" aria-current="page" itemprop="name">{{ .p1.Title }}</span>
+  {{ else }}
+    <a href="{{ .p1.Permalink }}" itemprop="item">
+      <span itemprop="name">{{ .p1.Title }}</span>
+    </a>
+  {{ end }}
+</li>
 {{ end }}

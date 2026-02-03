@@ -4,79 +4,115 @@
 @use 'abstracts/functions' as f;
 
 .breadcrumbs {
+  border-bottom: 1px solid my.palette('gray', '10%');
+
+  padding:  0 0.5em;
+}
+
+.breadcrumbs-wrap {
+  width: 100%;
+  max-width: my.$max-width--desktop;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.breadcrumbs__list {
   display: flex;
 
   flex: 1;
+  flex-direction: row;
   flex-wrap: wrap;
 
+  gap: 0;
   align-items: center;
 
   padding: f.to-rem(4px) 0;
+  padding-left: 0;
+  margin: 0;
 
   font-size: f.to-rem(11px);
+
   line-height: f.to-rem(20px);
+
   word-wrap: break-word;
   overflow-wrap: break-word;
-  list-style: none;
 
-  border-bottom: 1px solid my.palette('gray', '10%');
+  list-style: none;
+  list-style-type: none;
+  counter-reset: none;
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
     padding: f.to-rem(12px) 0;
 
     font-size: f.to-rem(12px);
   }
+}
+
+.breadcrumbs__item {
+  display: flex;
+
+  flex-shrink: 0;
+
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+  list-style-type: none;
+
+  &::marker {
+    display: none;
+
+    font-size: 0;
+
+    content: none;
+  }
+
+  &:not(:last-child)::after {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: f.to-rem(8px);
+    margin-left: f.to-rem(8px);
+
+    vertical-align: middle;
+
+    content: '';
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Cpath d='M2.5 7 L5.5 4 L2.5 1' stroke='%23666' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 
   a {
     @include my.truncate;
 
     max-width: 100%;
-    margin-right: f.to-rem(4px);
+
+    margin-right: 0;
 
     color: my.palette('gray');
-    text-decoration: unset;
+
     word-wrap: break-word;
     overflow-wrap: break-word;
 
+    text-decoration: unset;
+
     &:hover {
       color: my.palette('orange', '110%');
+
       text-decoration: unset;
     }
-
-    &:last-of-type {
-      margin-right: 0;
-
-      &::after {
-        content: none;
-      }
-    }
-
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-      margin-right: f.to-rem(12px);
-    }
-
-    &::after {
-      display: inline-block;
-
-      width: 5px;
-      height: 5px;
-      margin-left: f.to-rem(4px);
-
-      line-height: f.to-rem(20px);
-
-      content: '';
-
-      background: my.palette('gray', '30%');
-      border-radius: 50%;
-
-      @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-        margin-left: f.to-rem(12px);
-      }
-    }
-
   }
+}
 
-  .active {
-    font-weight: 500;
-  }
+.breadcrumbs__item--current .breadcrumbs__current {
+  font-weight: 500;
+
+  color: my.palette('gray');
 }

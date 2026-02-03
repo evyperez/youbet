@@ -2,7 +2,7 @@
 
   <a href="{{ .Permalink }}" class="img-hover-border">
     <div>
-      <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{.Params.thumbnailAlt}}">
+      <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{ .Params.thumbnailAlt | default .Title }}">
     </div>
   </a>
 

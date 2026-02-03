@@ -60,12 +60,13 @@ main,
 .container {
   width: 100%;
   max-width: my.$max-width;
+
   padding-right: my.$small-gutter;
   padding-left: my.$small-gutter;
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (min-width: breakpoint('phone')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'phone__portrait')}) {
     padding-right: my.$gutter;
     padding-left: my.$gutter;
   }
@@ -76,7 +77,7 @@ main,
 }
 
 .container--narrow {
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     max-width: my.$max-width--narrow;
   }
 }
@@ -85,7 +86,7 @@ main,
   padding-top: f.to-em(32px);
   padding-bottom: f.to-em(32px);
 
-  @media screen and (min-width: breakpoint('tablet__portrait')) {
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
     padding-top: f.to-em(68px);
     padding-bottom: f.to-em(68px);
   }

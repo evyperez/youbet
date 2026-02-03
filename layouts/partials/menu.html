@@ -1,43 +1,43 @@
 <div class="narrow-container">
   {{ if ne .Kind "404" }}
-  <nav class="skip-links">
+  <nav class="skip-links" aria-label="{{ i18n "skipLinksLabel" }}">
     <div>
-      <div class="to-menu"><a href="#menu">menu</a></div>
-      <div class="to-content"><a href="#conteudo">conteúdo</a></div>
+      <a href="#menu" class="to-menu" aria-label="{{ i18n "skipToMenu" }}">menu</a>
+      <a href="#conteudo" class="to-content" aria-label="{{ i18n "skipToContent" }}">conteúdo</a>
     </div>
   </nav>
   {{ end }}
 
 
   <div class="main-navigation">
-    <label for="menu-controller" onclick></label>
+    <label for="menu-controller" aria-label="{{ i18n "openMenu" }}" onclick></label>
 
     <div class="logo logo-{{ .Site.LanguageCode  | lower }}">
       <a href="{{ .Site.Home.RelPermalink }}"><img src="/uploads/images/youbet.svg" alt="YouBet!" /></a>
     </div>
 
     {{ if .Site.Menus.main }}
-    <nav class="main-menu" id="menu">
+    <nav class="main-menu" id="menu" role="navigation" aria-label="{{ i18n "mainMenuLabel" }}">
 
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       {{ if .HasChildren }}
-      <input type="checkbox" id="{{ .Identifier }}-controler" class="controller" hidden />
+      <input type="checkbox" id="{{ .Identifier }}-controler" class="controller" hidden aria-hidden="true" />
 
       <div class="has-sub-menu {{ if $currentPage.HasMenuCurrent " main" . }}is-active{{ end }}">
 
-        <label for="{{ .Identifier }}-controler" class="controller-label">
+        <label for="{{ .Identifier }}-controler" class="controller-label" aria-haspopup="true">
           <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}">
             {{ .Pre }}
             {{ .Name }}
           </a>
         </label>
 
-        <div class="sub-menu">
+        <ul class="sub-menu" role="menu">
           {{ range .Children }}
-          <a href="{{ .URL }}">{{ .Name }}</a>
+          <li role="none"><a href="{{ .URL }}" role="menuitem">{{ .Name }}</a></li>
           {{ end }}
-        </div>
+        </ul>
       </div>
       {{ else }}
       <div>
@@ -48,6 +48,27 @@
       </div>
       {{ end }}
       {{ end }}
+
+      {{/* Dropdown de idiomas (igual ao de Programas) */}}
+      <input type="checkbox" id="lang-controler" class="controller" hidden aria-hidden="true" />
+
+      <div class="has-sub-menu">
+        <label for="lang-controler" class="controller-label" aria-haspopup="true" aria-expanded="false" aria-label="{{ printf (i18n "languageLabel") (i18n (printf "languageName_%s" .Site.Language.Lang)) }}">
+          <span class="lang-current">
+            {{ i18n (printf "languageName_%s" .Site.Language.Lang) }}
+          </span>
+        </label>
+
+        <ul class="sub-menu" role="menu">
+          {{ range .Site.Home.AllTranslations }}
+          <li role="none">
+            <a href="{{ .RelPermalink }}" role="menuitem" {{ if eq .Lang $.Site.Language.Lang }}class="active" aria-current="page"{{ end }}>
+              {{ i18n (printf "languageName_%s" .Lang) }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
 
     </nav>
     {{ end }}

@@ -30,9 +30,10 @@ select {
 
   width: 100%;
 
+  text-overflow: '';
+
   // stylelint-disable-next-line property-units
   text-indent: 0.01px;
-  text-overflow: '';
 
   // stylelint-disable-next-line property-no-vendor-prefix
   -moz-appearance: none;
@@ -66,9 +67,10 @@ optgroup {
 option {
   padding: 0 0.4em 0 0.1em;
   margin: 0;
-  overflow: hidden;
 
+  overflow: hidden;
   text-overflow: ellipsis;
+
   white-space: nowrap;
 
   &:hover,

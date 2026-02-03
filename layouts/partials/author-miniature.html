@@ -4,11 +4,11 @@
 
 <div class="author">
   <div class="avatar avatar--small">
-    <a href="/autores/{{ .Params.slug}}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+    <a href="{{ .RelPermalink }}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
   </div>
   <div>
     {{if .Params.Name}}
-    <p class="small"><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></p>
+    <p class="small"><a href="{{ .RelPermalink }}">{{ .Params.Name }}</a></p>
     {{ end }}
   </div>
 </div>

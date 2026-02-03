@@ -1,8 +1,19 @@
 {{ if .Params.form }}
 <article class="contact-form">
   <div class="container container--narrow ">
-    <h2 class="title-section">{{ i18n "getAQuote" }}</h2>
-    <form id="contato" name="contact" action="/contato/sucesso/" method="POST" data-netlify="true">
+    <div class="rich-text contact-form__intro">
+      <h2 class="title-section">{{ i18n "getAQuote" }}</h2>
+      {{ $emailLink := `<a href="mailto:contato@youbetschool.com">contato@youbetschool.com</a>` }}
+      {{ $whatsappLink := `<a href="https://wa.me/5511987366608" target="_blank" rel="noopener">+55 11 98736-6608</a>` }}
+      <p>{{ printf (i18n "contactAlternatives") $emailLink $whatsappLink | safeHTML }}</p>
+    </div>
+    <form id="contato" name="contact" method="POST" data-netlify="true" action="{{ with .Site.GetPage "contact/success"
+      }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden aria-hidden="true">
+        <label for="contact-bot">Não preencha: <input id="contact-bot" name="bot-field" tabindex="-1"
+            autocomplete="off" /></label>
+      </p>
       <div class="form-wrap">
         <div class="two-columns">
           <div class="form-group ">

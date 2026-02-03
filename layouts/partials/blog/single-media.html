@@ -1,0 +1,42 @@
+{{/* Na página do artigo: mostra vídeo do YouTube se existir, senão a imagem */}}
+{{ $videoURL := .Params.video | default .Params.youtube }}
+{{ if $videoURL }}
+  {{/* Extrai o ID do vídeo (embed, watch ou youtu.be) e monta a URL de embed */}}
+  {{ $id := "" }}
+  {{ if findRE "youtube\\.com/embed/[a-zA-Z0-9_-]+" $videoURL }}
+    {{ $id = index (findRE "youtube\\.com/embed/([a-zA-Z0-9_-]+)" $videoURL) 0 }}
+    {{ $id = replace $id "youtube.com/embed/" "" }}
+  {{ else if findRE "youtube\\.com/watch\\?v=" $videoURL }}
+    {{ $id = index (findRE "youtube\\.com/watch\\?v=([a-zA-Z0-9_-]+)" $videoURL) 0 }}
+    {{ $id = replace $id "youtube.com/watch?v=" "" }}
+  {{ else if findRE "youtu\\.be/" $videoURL }}
+    {{ $id = index (findRE "youtu\\.be/([a-zA-Z0-9_-]+)" $videoURL) 0 }}
+    {{ $id = replace $id "youtu.be/" "" }}
+  {{ end }}
+  {{ $embedURL := "" }}
+  {{ if $id }}
+    {{ $embedURL = printf "https://www.youtube.com/embed/%s" $id }}
+  {{ else }}
+    {{/* Fallback: normaliza a URL como antes */}}
+    {{ $embedURL = replace $videoURL "http://" "https://" }}
+    {{ $embedURL = replace $embedURL "youtube.com/embed" "www.youtube.com/embed" }}
+    {{ $embedURL = replace $embedURL "youtu.be/" "www.youtube.com/embed/" }}
+  {{ end }}
+  <div class="embed-container">
+    <iframe
+      width="560"
+      height="315"
+      src="{{ $embedURL }}"
+      title="{{ .Title }} - YouTube"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+{{ else if .Params.image }}
+  <div class="post__image">
+    <img src="{{ .Params.image }}" alt="{{ .Params.imageAlt | default .Title }}" />
+  </div>
+{{ end }}

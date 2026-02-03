@@ -34,6 +34,8 @@
   translation: 'Precios'
 - id: content404
   translation: 'No hemos encontrado lo que busca. Vuelva al inicio.'
+- id: contactAlternatives
+  translation: 'También puede contactarnos por correo electrónico en %s o por WhatsApp al %s.'
 - id: email
   translation: 'Correo electrónico'
 - id: faq
@@ -72,6 +74,8 @@
   translation: '¡Vaya! Página no encontrada'
 - id: whatsApp
   translation: 'WhatsApp'
+- id: whatsappContactAlt
+  translation: 'Contáctenos por WhatsApp'
 - id: writtenBy
   translation: 'Escrito por'
 - id: term
@@ -156,3 +160,41 @@
   translation: 'Ver también'
 - id: Title
   translation: 'Título'
+- id: footerLabel
+  translation: 'Pie de página'
+- id: openMenu
+  translation: 'Abrir menú'
+- id: languageLabel
+  translation: 'Idioma: %s'
+- id: languageName_pt
+  translation: 'Português'
+- id: languageName_en
+  translation: 'English'
+- id: languageName_es
+  translation: 'Español'
+- id: mainMenuLabel
+  translation: 'Menú principal'
+- id: privacyPolicy
+  translation: 'Política de Privacidad'
+- id: privacyPolicyUrl
+  translation: '/es/politica-de-privacidad/'
+- id: skipLinksLabel
+  translation: 'Enlaces de acceso rápido'
+- id: skipToContent
+  translation: 'Ir al contenido'
+- id: skipToMenu
+  translation: 'Ir al menú'
+- id: pagination
+  translation: 'Paginación'
+- id: prev
+  translation: 'Anterior'
+- id: next
+  translation: 'Siguiente'
+- id: firstPage
+  translation: 'Primera'
+- id: lastPage
+  translation: 'Última'
+- id: of
+  translation: 'de'
+- id: noTags
+  translation: 'Aún no hay etiquetas.'

@@ -8,42 +8,57 @@
       {{ i18n "blog" }}
     </h2>
 
-    <div class="glide glide-blog">
-      <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+    <div class="glide-wrap glide-wrap--loading">
+      <div class="glide-wrap__loading" aria-hidden="true">
+        <svg class="glide-wrap__loading-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true">
+          <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="40" cy="100">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;1" keySplines=".5 0 .5 1;.5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-0.4s"></animate>
+          </circle>
+          <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="100" cy="100">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;1" keySplines=".5 0 .5 1;.5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-0.2s"></animate>
+          </circle>
+          <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="160" cy="100">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;1" keySplines=".5 0 .5 1;.5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0s"></animate>
+          </circle>
+        </svg>
       </div>
+      <div class="glide glide-blog">
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+        </div>
 
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
-          {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-            <li class="glide__slide">
-              <a href="{{ .Permalink }}" class="text-decor--none">
-                <div class="post">
-                  <div class="post__image">
-                    <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
-                  </div>
-                  <div class="img-subtitle">
-                    {{/*  {{ range .Params.authors }}
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
+              <li class="glide__slide">
+                <a href="{{ .Permalink }}" class="text-decor--none">
+                  <div class="post">
+                    <div class="post__image">
+                      <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
+                    </div>
+                    <div class="img-subtitle">
+                      {{/*  {{ range .Params.authors }}
+                        {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                          <p class="img-subtitle__author">{{ .Title }}</p>
+                        {{ end }}
+                      {{ end }}  */}}
+
+                      {{ if .Params.authors }}
+                      {{- range .Params.authors }}
                       {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                        <p class="img-subtitle__author">{{ .Title }}</p>
+                         <strong> <p class="heading-4"><a href="{{ .RelPermalink }}">{{ .Params.Name }}</a></p></strong>
                       {{ end }}
-                    {{ end }}  */}}
-
-                    {{ if .Params.authors }}
-                    {{- range .Params.authors }}
-                    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                       <strong> <p class="heading-4"><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></p></strong>
+                      {{ end }}
                     {{ end }}
-                    {{ end }}
-                  {{ end }}
+                    </div>
+                    <h2 class="heading-5">{{ .Title }}</h2>
                   </div>
-                  <h2 class="heading-5">{{ .Title }}</h2>
-                </div>
-              </a>
-            </li>
-          {{ end }}
-        </ul>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
       </div>
     </div>
   </div>

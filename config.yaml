@@ -18,6 +18,8 @@ buildFuture: true
 FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
 removePathAccents: true
+pagination:
+  pagerSize: 5
 taxonomies:
   role: 'role'
   tag: 'tags'
@@ -53,6 +55,7 @@ languages:
     title: 'YouBet! School'
     weight: 1
     params:
+      locale: 'pt_BR'
       tagline: 'Quer se tornar um Cidadão Global?'
       email: 'contato@youbetschool.com'
       mailchimpList: '#'
@@ -130,6 +133,7 @@ languages:
     title: 'YouBet! Real English'
     weight: 2
     params:
+      locale: 'en_US'
       tagline: 'cultural immersion'
       email: 'contato@youbetschool.com'
       mailchimpList: '#'
@@ -201,6 +205,7 @@ languages:
     title: 'YouBet! School'
     weight: 3
     params:
+      locale: 'es_ES'
       tagline: 'Inmersión cultural'
       email: 'contato@youbetschool.com'
       mailchimpList: '#'
@@ -258,7 +263,7 @@ languages:
           Pre: ''
           Weight: 4
           Identifier: 'partners'
-          URL: '/es/socios'
+          URL: '/es/partners'
         - Name: 'Contacto'
           Pre: ''
           Weight: 5
@@ -267,6 +272,8 @@ languages:
 
 params:
   googleTag: 'GTM-PXT9Q4L'
+  sitename: 'YouBet! School'
+  ogimage: 'assets/images/compartilhamento.jpg'
   authors:
     - Name: 'Evelyn Perez'
       Weight: 1

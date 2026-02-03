@@ -5,4 +5,7 @@ url: "contato"
 draft: false
 ---
 
-Faça um orçamento agora e realize seu sonho de fazer um intercâmbio!
+Entre em contato conosco preenchendo o formulário abaixo.
+
+Se preferir, você pode enviar um e-mail para **contato@youbetschool.com**
+ou entrar em contato pelo WhatsApp [**+55 11 98736-6608**](https://api.whatsapp.com/send?phone=5511987366608&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida).
