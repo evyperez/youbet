@@ -1,23 +1,23 @@
-{{/* Na página do artigo: mostra vídeo do YouTube se existir, senão a imagem */}}
 {{ $videoURL := .Params.video | default .Params.youtube }}
 {{ if $videoURL }}
-  {{/* Extrai o ID do vídeo (embed, watch ou youtu.be) e monta a URL de embed */}}
   {{ $id := "" }}
-  {{ if findRE "youtube\\.com/embed/[a-zA-Z0-9_-]+" $videoURL }}
-    {{ $id = index (findRE "youtube\\.com/embed/([a-zA-Z0-9_-]+)" $videoURL) 0 }}
-    {{ $id = replace $id "youtube.com/embed/" "" }}
-  {{ else if findRE "youtube\\.com/watch\\?v=" $videoURL }}
-    {{ $id = index (findRE "youtube\\.com/watch\\?v=([a-zA-Z0-9_-]+)" $videoURL) 0 }}
-    {{ $id = replace $id "youtube.com/watch?v=" "" }}
-  {{ else if findRE "youtu\\.be/" $videoURL }}
-    {{ $id = index (findRE "youtu\\.be/([a-zA-Z0-9_-]+)" $videoURL) 0 }}
-    {{ $id = replace $id "youtu.be/" "" }}
+  {{ $subs := findRESubmatch "(?:youtube\\.com/(?:embed/|watch\\?v=)|youtu\\.be/)([a-zA-Z0-9_-]{10,12})" $videoURL }}
+  {{ if and $subs (index $subs 0) (index (index $subs 0) 1) }}
+    {{ $id = index (index $subs 0) 1 }}
+  {{ else }}
+    {{ $u := $videoURL }}
+    {{ if in $u "youtube.com/embed/" }}
+      {{ $id = replaceRE ".*youtube\\.com/embed/([a-zA-Z0-9_-]+).*" "$1" $u }}
+    {{ else if in $u "youtube.com/watch" }}
+      {{ $id = replaceRE ".*[?&]v=([a-zA-Z0-9_-]{10,12}).*" "$1" $u }}
+    {{ else if in $u "youtu.be/" }}
+      {{ $id = replaceRE ".*youtu\\.be/([a-zA-Z0-9_-]+).*" "$1" $u }}
+    {{ end }}
   {{ end }}
   {{ $embedURL := "" }}
   {{ if $id }}
-    {{ $embedURL = printf "https://www.youtube.com/embed/%s" $id }}
+    {{ $embedURL = printf "https://www.youtube.com/embed/%s" (strings.TrimSpace $id) }}
   {{ else }}
-    {{/* Fallback: normaliza a URL como antes */}}
     {{ $embedURL = replace $videoURL "http://" "https://" }}
     {{ $embedURL = replace $embedURL "youtube.com/embed" "www.youtube.com/embed" }}
     {{ $embedURL = replace $embedURL "youtu.be/" "www.youtube.com/embed/" }}

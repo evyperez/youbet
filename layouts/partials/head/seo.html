@@ -2,7 +2,6 @@
 <meta content="width=device-width,initial-scale=1.0" name="viewport" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 
-<!-- Title: uma única tag, correto para home e páginas internas -->
 {{ $title := .Site.Title }}
 {{ if not .IsHome }}
   {{ $title = printf "%s | %s" .Title .Site.Title }}
@@ -13,7 +12,6 @@
 <meta itemprop="name" content="{{ $title }}" />
 <meta property="og:site_name" content="{{ .Site.Params.sitename | default .Site.Title }}" />
 
-<!-- Description: fallback para descrição do site quando a página não tem -->
 {{ $description := .Params.description }}
 {{ if not $description }}
   {{ with .Site.Params.description }}{{ $description = . }}{{ end }}
@@ -26,13 +24,11 @@
 <meta name="twitter:description" content="{{ $description }}" />
 {{ end }}
 
-<!-- Canonical e URL (sem <base> para não quebrar links relativos) -->
 <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
 <meta name="url" content="{{ .Permalink }}" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 
-<!-- Hreflang: idiomas + x-default para o idioma padrão -->
 {{ $locale := .Site.Language.Params.locale | default (replace .Site.LanguageCode "-" "_") }}
 <meta property="og:locale" content="{{ $locale }}" />
 <meta name="language" content="{{ .Language.LanguageName }}" />
@@ -43,7 +39,6 @@
   <link rel="alternate" hreflang="x-default" href="{{ .RelPermalink }}" />
 {{ end }}
 
-<!-- Imagem: og:image e twitter:image (nomes corretos); fallback para params do site -->
 {{ $img := .Params.imageSeo }}
 {{ if not $img }}{{ $img = .Params.image }}{{ end }}
 {{ if not $img }}{{ $img = .Site.Params.ogimage }}{{ end }}

@@ -1,30 +1,30 @@
 {{ define "main" }}
-        {{ partial "breadcrumbs.html" . }}
-      <main role="main" id="conteudo" class="internal-page">
-        <div class="container">
-          <div class="author">
-            <div class="three-columns">
-              {{ range .Data.Pages.ByDate.Reverse }}
+{{ partial "breadcrumbs.html" . }}
+<main role="main" id="conteudo" class="internal-page">
+  <div class="container">
+    <div class="author">
+      <div class="three-columns">
+        {{ range .Data.Pages.ByDate.Reverse }}
 
-                <div class="card">
-                  <div class="card__body">
-                    <div class="rich-text">
-                      <a href="/college/{{ .Params.slug }}">
-                        <p>
-                          <strong>
-                            {{ .Title }}
+        <div class="card">
+          <div class="card__body">
+            <div class="rich-text">
+              <a href="/college/{{ .Params.slug }}">
+                <p>
+                  <strong>
+                    {{ .Title }}
 
-                          </strong>
-                        </p>
-                      </a>
+                  </strong>
+                </p>
+              </a>
 
-                      {{ .Content }}
-                    </div>
-                  </div>
-                </div>
-              {{ end }}
+              {{ .Content }}
             </div>
           </div>
         </div>
-      </main>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</main>
 {{ end }}
