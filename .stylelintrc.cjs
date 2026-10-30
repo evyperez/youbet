@@ -4,7 +4,7 @@ module.exports = (async () => {
   return {
     customSyntax: 'postcss-scss',
     extends: [
-      'stylelint-config-standard',
+      'stylelint-config-standard-scss',
       'stylelint-config-sass-guidelines',
       'stylelint-config-recess-order',
     ],
@@ -81,6 +81,11 @@ module.exports = (async () => {
       'media-query-no-invalid': null,
       // Legacy color notation (hsl, etc.) and custom SCSS functions
       'color-function-notation': null,
+      'color-function-alias-notation': null,
+      'nesting-selector-no-missing-scoping-root': null,
+      'property-no-deprecated': null,
+      'scss/at-if-no-null': null,
+      'scss/operator-no-newline-after': null,
       'hue-degree-notation': null,
       'alpha-value-notation': null,
       'declaration-property-value-no-unknown': null,

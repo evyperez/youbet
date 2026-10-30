@@ -9,9 +9,9 @@ command = """\
   """
 
 [build.environment]
-  HUGO_VERSION = "0.124.1"
-  NODE_VERSION = "20"
-  DART_SASS_VERSION = "1.72.0"
+  HUGO_VERSION = "0.169.0"
+  NODE_VERSION = "22"
+  DART_SASS_VERSION = "1.107.0"
   NETLIFY_USE_YARN = "false"
 
 [context.production]
@@ -22,6 +22,16 @@ command = """\
 
 [context.branch-deploy]
   command = "npm run build"
+
+[[redirects]]
+  from = "/ser-parceiro"
+  to = "/parceiros/#seja-parceiro"
+  status = 301
+
+[[redirects]]
+  from = "/en/be-partner"
+  to = "/en/partners/#seja-parceiro"
+  status = 301
 
 [[redirects]]
   from = "/*"

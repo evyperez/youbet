@@ -4,5 +4,10 @@
   "no-inline-html": false,
   "no-trailing-punctuation": false,
   "no-duplicate-heading": false,
-  "no-bare-urls": false
+  "no-bare-urls": false,
+  "first-line-heading": false,
+  "single-title": { "front_matter_title": "" },
+  "link-fragments": false,
+  "no-emphasis-as-heading": false,
+  "ol-prefix": false
 }
