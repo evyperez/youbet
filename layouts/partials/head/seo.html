@@ -1,136 +1,130 @@
 <meta charset="utf-8" />
-<meta content="width=device-width,initial-scale=1.0" name="viewport" />
-<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-{{ $title := .Site.Title }}
-{{ if not .IsHome }}
-  {{ $title = printf "%s | %s" .Title .Site.Title }}
-{{ end }}
+{{- $title := .Site.Title -}}
+{{- if .IsHome -}}
+  {{- with .Params.seoTitle }}{{ $title = . }}{{ end -}}
+{{- else -}}
+  {{- $title = printf "%s | %s" (.Params.seoTitle | default .Title | default .Params.name) .Site.Title -}}
+{{- end }}
 <title>{{ $title }}</title>
 <meta property="og:title" content="{{ $title }}" />
 <meta name="twitter:title" content="{{ $title }}" />
-<meta itemprop="name" content="{{ $title }}" />
 <meta property="og:site_name" content="{{ .Site.Params.sitename | default .Site.Title }}" />
 
-{{ $description := .Params.description }}
-{{ if not $description }}
-  {{ with .Site.Params.description }}{{ $description = . }}{{ end }}
-  {{ if not $description }}{{ with .Site.Language.Params.description }}{{ $description = .default }}{{ end }}{{ end }}
-{{ end }}
-{{ if $description }}
-<meta name="description" content="{{ $description }}" />
-<meta itemprop="description" content="{{ $description }}" />
-<meta property="og:description" content="{{ $description }}" />
-<meta name="twitter:description" content="{{ $description }}" />
-{{ end }}
+{{- $description := .Params.description | default .Params.summary -}}
+{{- if and .IsPage (lt (len (plainify ($description | default ""))) 70) .Summary -}}
+  {{- $description = .Summary -}}
+{{- else if eq .Kind "term" -}}
+  {{- if eq .Data.Plural "authors" -}}
+    {{- $description = printf (i18n "authorDescription") (.Params.name | default .Title) -}}
+  {{- else -}}
+    {{- $description = printf (i18n "termDescription") .Title -}}
+  {{- end -}}
+{{- end }}
+{{- if not $description -}}
+  {{- with .Site.Language.Params.description }}{{ $description = .default }}{{ end -}}
+{{- end }}
+{{- with $description }}
+<meta name="description" content="{{ . | plainify | truncate 160 }}" />
+<meta property="og:description" content="{{ . | plainify | truncate 200 }}" />
+<meta name="twitter:description" content="{{ . | plainify | truncate 200 }}" />
+{{- end }}
 
-<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
-<meta name="url" content="{{ .Permalink }}" />
-<meta name="twitter:url" content="{{ .Permalink }}" />
+{{- if or .Params.noindex (eq .Kind "404") (eq .Kind "taxonomy") }}
+<meta name="robots" content="noindex, follow" />
+{{- end }}
+
+<link rel="canonical" href="{{ .Permalink }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 
-{{ $locale := .Site.Language.Params.locale | default (replace .Site.LanguageCode "-" "_") }}
+{{- $locale := .Site.Language.Params.locale | default "pt_BR" }}
 <meta property="og:locale" content="{{ $locale }}" />
-<meta name="language" content="{{ .Language.LanguageName }}" />
-{{ range .AllTranslations }}
-  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" />
-{{ end }}
-{{ with index .Site.Home.AllTranslations 0 }}
-  <link rel="alternate" hreflang="x-default" href="{{ .RelPermalink }}" />
-{{ end }}
+{{- if .IsTranslated }}
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+{{- end }}
+{{- with index .AllTranslations 0 }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+{{- end }}
+{{- end }}
 
-{{ $img := .Params.imageSeo }}
-{{ if not $img }}{{ $img = .Params.image }}{{ end }}
-{{ if not $img }}{{ $img = .Site.Params.ogimage }}{{ end }}
-{{ if not $img }}{{ with .Site.Language.Params.shareImages }}{{ $img = .default }}{{ end }}{{ end }}
-{{ if $img }}
-  {{ $imgAbs := $img | absURL }}
-  <meta itemprop="image" content="{{ $imgAbs }}" />
-  <meta property="og:image" content="{{ $imgAbs }}" />
-  <meta name="twitter:image" content="{{ $imgAbs }}" />
-  <meta name="twitter:image:src" content="{{ $imgAbs }}" />
-{{ end }}
+{{- $img := "/uploads/images/compartilhamento.jpg" }}
+{{- with .Site.Language.Params.shareImages }}{{ with .default }}{{ $img = . }}{{ end }}{{ end }}
+{{- with .Params.thumbnail }}{{ $img = . }}{{ end }}
+{{- with .Params.imageSeo }}{{ $img = . }}{{ end }}
+{{- with $img }}
+{{- $imgAbs := . | absURL }}
+<meta property="og:image" content="{{ $imgAbs }}" />
+<meta name="twitter:image" content="{{ $imgAbs }}" />
+{{- end }}
+<meta name="twitter:card" content="summary_large_image" />
 
-<!-- Data e sitemap -->
-<meta property="og:updated_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "sitemap.xml" | absURL }}" />
-
-{{ with .OutputFormats.Get "RSS" }}
-  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-{{ end }}
-
-{{ if eq .Section "blog" }}
-
-  {{ if .IsNode }}
-  {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
-  {{ if $paginator }}
-    <link rel="first" href="{{ $paginator.First.URL }}" />
-    <link rel="last" href="{{ $paginator.Last.URL }}" />
-    {{ if $paginator.HasPrev }}
-      <link rel="prev" href="{{ $paginator.Prev.URL }}" />
-    {{ end }}
-    {{ if $paginator.HasNext }}
-      <link rel="next" href="{{ $paginator.Next.URL }}" />
-    {{ end }}
-  {{ end }}
-  {{ end }}
-
-  <meta property="og:type" content="article" />
-  {{ with .Site.Params.facebook }}
-  <meta property="article:publisher" content="{{ . }}" />
-  {{ end }}
-  <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
-  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
-
-  {{ with .Params.author }}
-    <meta property="og:article:author" content="{{ humanize . }}" />
-    <meta property="article:author" content="{{ humanize . }}" />
-    <meta name="author" content="{{ humanize . }}" />
-  {{ end }}
-
-  {{ with .Params.category }}
-    <meta name="news_keywords" content="{{ index . 0 }}" />
-    <meta property="article:section" content="{{ index . 0 }}" />
-  {{ end }}
-
-{{ else }}
-
-<meta property="og:type" content="website" />
-{{ with .Site.Params.author }}
-<meta name="author" content="{{ . }}" />
-{{ end }}
-{{ $logo := .Site.Params.logo | default "/uploads/images/youbet.svg" | absURL }}
-{{ $siteDesc := $description | default .Site.Language.Params.tagline | default "" }}
-{{ $sameAs := slice }}
-{{ with .Site.Params.facebook }}{{ $sameAs = $sameAs | append . }}{{ end }}
-{{ with .Site.Params.twitter }}{{ $handle := replace . "@" "" }}{{ $sameAs = $sameAs | append (printf "https://twitter.com/%s" $handle) }}{{ end }}
-{{ with .Site.Params.github }}{{ $sameAs = $sameAs | append . }}{{ end }}
+{{- if and .IsPage (eq .Section "blog") }}
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+{{- $authors := slice }}
+{{- range .Params.authors }}
+  {{- with $.Site.GetPage (printf "/authors/%s" (urlize .)) }}{{ $authors = $authors | append (dict "@type" "Person" "name" .Params.Name "url" .Permalink) }}{{ end }}
+{{- end }}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": {{ .Permalink | jsonify }},
-  "name": {{ .Site.Title | jsonify }},
-  "description": {{ $siteDesc | jsonify }},
-  "inLanguage": {{ .Site.Language.Lang | jsonify }},
-  "logo": {{ $logo | jsonify }}
-  {{ if $sameAs }},
-  "sameAs": {{ $sameAs | jsonify }}
-  {{ end }}
-}
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "description" ($description | plainify)
+  "image" (($img | default "") | absURL)
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "inLanguage" .Site.Language.Lang
+  "mainEntityOfPage" .Permalink
+  "author" $authors
+  "publisher" (dict "@type" "Organization" "name" .Site.Title "logo" (dict "@type" "ImageObject" "url" ("/uploads/images/youbet.svg" | absURL)))
+  | jsonify | safeJS }}
 </script>
+{{- else }}
+<meta property="og:type" content="website" />
+{{- end }}
 
-{{ end }}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@graph" (slice
+    (dict
+      "@type" "EducationalOrganization"
+      "@id" (printf "%s#organization" .Site.Home.Permalink)
+      "name" "YouBet! School"
+      "url" .Site.Home.Permalink
+      "logo" ("/uploads/images/youbet.svg" | absURL)
+      "email" "contato@youbetschool.com"
+      "telephone" "+55 11 98736-6608"
+      "description" ($description | plainify)
+      "areaServed" "BR"
+      "contactPoint" (dict "@type" "ContactPoint" "contactType" "customer service" "telephone" "+55 11 98736-6608" "email" "contato@youbetschool.com" "availableLanguage" (slice "Portuguese" "English" "Spanish"))
+    )
+    (dict
+      "@type" "WebSite"
+      "name" .Site.Title
+      "url" .Site.Home.Permalink
+      "inLanguage" .Site.Language.Lang
+      "publisher" (dict "@id" (printf "%s#organization" .Site.Home.Permalink))
+    )
+  )
+  | jsonify | safeJS }}
+</script>
+{{- end }}
 
-<!-- Crawlers -->
-<meta name="robots" content="index,follow" />
-<meta name="googlebot" content="index,follow" />
-
-{{ with .Site.Params.twitter }}
-<meta name="twitter:site" content="{{ . }}" />
-<meta name="twitter:creator" content="{{ . }}" />
-{{ end }}
-{{ with .Site.Params.fbAppId }}
-<meta property="fb:app_id" content="{{ . }}" />
-{{ end }}
+{{- if and .IsPage (ne .Section "blog") (gt (len .Ancestors) 0) }}
+<script type="application/ld+json">
+{{- $items := slice }}
+{{- $i := 1 }}
+{{- range .Ancestors.Reverse }}
+  {{- $items = $items | append (dict "@type" "ListItem" "position" $i "name" .Title "item" .Permalink) }}
+  {{- $i = add $i 1 }}
+{{- end }}
+{{- $items = $items | append (dict "@type" "ListItem" "position" $i "name" .Title "item" .Permalink) }}
+{{ dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items | jsonify | safeJS }}
+</script>
+{{- end }}

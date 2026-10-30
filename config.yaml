@@ -1,27 +1,18 @@
-baseURL: '/'
+baseURL: 'https://youbetschool.com/'
 defaultContentLanguage: pt
 languageCode: 'pt-br'
 disableKinds:
   - 'RSS'
-  - 'sitemap'
-enableRobotsTXT: false
-metaDataFormat: 'yaml'
-enableMissingTranslationPlaceholders: true
-disableFastRender: true
+enableRobotsTXT: true
+enableMissingTranslationPlaceholders: false
 ignoreFiles: ['\\.tmp$', '\\.tmp\\-browserify']
-stepAnalysis: true
-templateMetrics: true
 pluralizeListTitles: true
-preserveTaxonomyNames: true
-googleAnalytics: 'UA-90457577-1'
 buildFuture: true
-FootnoteReturnLinkContents: '↩'
 disableHugoGeneratorInject: true
 removePathAccents: true
 pagination:
   pagerSize: 5
 taxonomies:
-  role: 'role'
   tag: 'tags'
   category: 'categories'
   author: 'authors'
@@ -64,9 +55,9 @@ languages:
         twitter: 'Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio'
         facebook: 'Queremos criar um país bilíngue de mente globalizada, impulsionando o intercâmbio'
       shareImages:
-        default: 'assets/images/compartilhamento.jpg'
-        twitter: 'assets/images/twitter-compartilhamento.jpg'
-        facebook: 'assets/images/facebook-compartilhamento.jpg'
+        default: '/uploads/images/compartilhamento.jpg'
+        twitter: '/uploads/images/compartilhamento.jpg'
+        facebook: '/uploads/images/compartilhamento.jpg'
 
     menu:
       main:
@@ -122,7 +113,7 @@ languages:
           Identifier: 'partners'
         - Name: 'Contato'
           Pre: ''
-          Weight: 5
+          Weight: 6
           Identifier: 'contact'
           URL: '/contato'
 
@@ -130,7 +121,7 @@ languages:
     contentDir: content/en
     languageName: 'English'
     languageCode: 'en'
-    title: 'YouBet! Real English'
+    title: 'YouBet! School'
     weight: 2
     params:
       locale: 'en_US'
@@ -142,8 +133,8 @@ languages:
         twitter: 'We want to create a bilingual country with a global mind, promoting exchange'
         facebook: 'We want to create a bilingual country with a global mind, promoting exchange'
       shareImages:
-        default: 'assets/images/compartilhamento.jpg'
-        twitter: 'assets/images/twitter-compartilhamento.jpg'
+        default: '/uploads/images/compartilhamento.jpg'
+        twitter: '/uploads/images/compartilhamento.jpg'
 
     menu:
       main:
@@ -194,7 +185,7 @@ languages:
           URL: '/en/partners'
         - Name: 'Contact'
           Pre: ''
-          Weight: 5
+          Weight: 6
           Identifier: 'contact'
           URL: '/en/contact'
 
@@ -214,8 +205,8 @@ languages:
         twitter: 'Queremos crear un país bilingüe con una mente global, impulsando el intercambio cultural'
         facebook: 'Queremos crear un país bilingüe con una mente global, impulsando el intercambio cultural'
       shareImages:
-        default: 'assets/images/compartilhamento.jpg'
-        twitter: 'assets/images/twitter-compartilhamento.jpg'
+        default: '/uploads/images/compartilhamento.jpg'
+        twitter: '/uploads/images/compartilhamento.jpg'
 
     menu:
       main:
@@ -263,7 +254,7 @@ languages:
           Pre: ''
           Weight: 4
           Identifier: 'partners'
-          URL: '/es/partners'
+          URL: '/es/socios'
         - Name: 'Contacto'
           Pre: ''
           Weight: 5
@@ -273,7 +264,7 @@ languages:
 params:
   googleTag: 'GTM-PXT9Q4L'
   sitename: 'YouBet! School'
-  ogimage: 'assets/images/compartilhamento.jpg'
+  ogimage: '/uploads/images/compartilhamento.jpg'
   authors:
     - Name: 'Evelyn Perez'
       Weight: 1
