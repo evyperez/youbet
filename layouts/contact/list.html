@@ -10,7 +10,7 @@
               <h1 class="title">{{ .Title }}</h1>
 
               {{ .Content }}
-              <form name="contact" method="POST" data-netlify="true" action="{{ with .Site.GetPage "contact/success" }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ with .Site.GetPage "contact/success" }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
                 <input type="hidden" name="form-name" value="contact" />
                 <p hidden aria-hidden="true">
                   <label for="contact-page-bot">Não preencha: <input id="contact-page-bot" name="bot-field" tabindex="-1" autocomplete="off" /></label>

@@ -32,9 +32,10 @@
         </ul>
       </aside>
       <div class="contact-card__form">
-    <form id="contato" name="contact" method="POST" data-netlify="true" action="{{ with .Site.GetPage "contact/success"
+    {{ $formName := cond (.Params.formInstitution | default false) "partner" "contact" }}
+    <form id="contato" name="{{ $formName }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ with .Site.GetPage "contact/success"
       }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="{{ $formName }}" />
       <p hidden aria-hidden="true">
         <label for="contact-bot">Não preencha: <input id="contact-bot" name="bot-field" tabindex="-1"
             autocomplete="off" /></label>
