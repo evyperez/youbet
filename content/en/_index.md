@@ -2,7 +2,9 @@
 title: Home
 date: 2017-01-16 14:53:44+00:00
 draft: false
-description: 'YouBet! School – Cultural exchange and study abroad programs in the United States. High School, Summer and Winter programs, and soccer exchange.'
+form: 'Home page'
+seoTitle: 'YouBet! School | Exchange programs and high school abroad'
+description: 'YouBet! School – Cultural exchange and study abroad programs for young people: High School, Summer and Winter programs, and soccer exchange.'
 programs:
   - futebol
   - ensino-medio

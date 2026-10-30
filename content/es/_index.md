@@ -2,7 +2,9 @@
 title: Inicio
 date: 2017-01-16 14:53:44+00:00
 draft: false
-description: 'YouBet! School – Intercambio cultural y programas de estudios en Estados Unidos. Bachillerato, programas de verano e invierno e intercambio de fútbol.'
+form: 'Página de inicio'
+seoTitle: 'YouBet! School | Intercambio y bachillerato en el extranjero'
+description: 'YouBet! School – Intercambio cultural y programas de estudios en el exterior para jóvenes: bachillerato, programas de verano e invierno e intercambio de fútbol.'
 programs:
   - futebol
   - ensino-medio

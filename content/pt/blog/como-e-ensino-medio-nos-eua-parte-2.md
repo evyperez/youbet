@@ -14,8 +14,8 @@ categories:
 tags:
   - ensino médio
   - vídeo
-description: 'O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas escolas americanas.'
+description: 'O Amigo Gringo responde às principais perguntas sobre como é o dia a dia nas escolas americanas.'
 draft: false
 ---
 
-O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas escolas americanas.
+O Amigo Gringo responde às principais perguntas sobre como é o dia a dia nas escolas americanas.

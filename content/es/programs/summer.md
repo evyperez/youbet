@@ -24,8 +24,6 @@ age: '13 a 18 años'
 languageLevel: 'Inglés básico'
 accommodations: 'Habitaciones compartidas'
 feeding: 'Tres comidas al día'
-partners:
-  - partner: 'auburn'
 summary: 'El intercambio de verano es un programa de corta duración para aprender un nuevo idioma con certificación internacional e inmersión cultural, además de actividades propias del verano.'
 whatIsIncludedImage: 'friends-reading'
 whatIsIncludedImageAlt: 'Amigos estudiando juntos'

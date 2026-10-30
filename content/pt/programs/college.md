@@ -38,7 +38,7 @@ draft: true
 ## Ensino Médio
 
 O que acha de fazer seu ensino médio nos Estados Unidos, encontrar pessoas do mundo inteiro e conhecer uma nova
-cultura? Na YouBet você pode contar com o melhor custo e formas de pagamento para estudar em um colégio tradicional americano. Nossos colégios proporcionam a você uma típica vida americana com a melhor estrutura acadêmica.
-Você não precisa se preocupar com nada, pois os colégios possuem dormitórios, alimentação saudavel e excelência na educação, você volta com capacitação profissional e experiência cultural, além de ser apto para fazer faculdade nas melhores universidades do mundo.
+cultura? Na YouBet! você pode contar com o melhor custo e formas de pagamento para estudar em um colégio tradicional americano. Nossos colégios proporcionam a você uma típica vida americana com a melhor estrutura acadêmica.
+Você não precisa se preocupar com nada, pois os colégios possuem dormitórios, alimentação saudável e excelência na educação. Você volta com capacitação profissional e experiência cultural, além de estar apto a cursar a faculdade nas melhores universidades do mundo.
 
 **Aposte em você! Pense no seu futuro**

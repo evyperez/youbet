@@ -28,7 +28,7 @@ o processo, desde o preenchimento do formulário até o seu recebimento. O valor
 de R$ 250.
 
 Fale agora com um de nossos especialistas pelo e-mail contato@youbetschool.com
-ou pelo Whatsapp (11) 97737-8840 e tire todas as suas dúvidas. ;)
+ou pelo WhatsApp (11) 97737-8840 e tire todas as suas dúvidas. ;)
 
 _Obs.: As taxas ficam por conta do cliente._
 
@@ -38,17 +38,16 @@ Veja o passo a passo para solicitar o visto americano:
 
 ![Gato Digitando](/uploads/images/gato-digitando.gif)
 
-
 Disponível no site [https://goo.gl/9Z7b](https://goo.gl/9Z7b), o formulário deve
 ser preenchido em inglês e com informações precisas e atualizadas (coloque o
-cursor em cima da pergunta que aparecerá a tradução em português). Salve cada
+cursor em cima da pergunta para ver a tradução em português). Salve cada
 etapa para evitar que a página expire e você tenha que fazer o preenchimento
 desde o início novamente. Ao terminar o processo, imprima a página de
 confirmação.
 
-1. **Agendar a entrevista:**
+2. **Agendar a entrevista:**
 
-<iframe src="https://giphy.com/embed/9zHYb8ovK6NXy" height="480" width="424" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>09
+<iframe src="https://giphy.com/embed/9zHYb8ovK6NXy" height="480" width="424" allowfullscreen="allowfullscreen" class="giphy-embed" frameborder="0"></iframe>
 
 ![Jornalista](/uploads/images/jornalista.gif)
 
@@ -115,7 +114,7 @@ d) Certidão de casamento;
 
 e) Documentos de veículos.
 
-Essa não é uma lista oficial, mas que pode ajudar na hora de comprovar o
+Essa não é uma lista oficial, mas pode ajudar na hora de comprovar o
 "motivo" que o visitante tem para voltar ao seu país de origem.
 
 5. **Aguardar o visto:**
@@ -123,7 +122,7 @@ Essa não é uma lista oficial, mas que pode ajudar na hora de comprovar o
 ![muppets](/uploads/images/muppets.gif)
 
 Depois desses passos, o solicitante receberá o visto em até dez dias úteis após
-a entrevista. Você pode checar o status nesse link:
+a entrevista. Você pode checar o status neste link:
 [https://goo.gl/EVcFo](https://goo.gl/EVcFo).
 
 É possível pedir para retirar o documento no CASV ou recebê-lo em casa, e a

@@ -24,7 +24,7 @@ extraordinária do começo ao fim e, claro, sem surpresas.
 
 Se começou a considerar essa aventura enriquecedora para a sua vida,
 provavelmente você pensou rapidamente em algumas perguntas para esse início,
-como por exemplo: qual será o destino, passaporte, visto, hospedagem, passagens,
+como, por exemplo, o destino, passaporte, visto, hospedagem, passagens,
 seguro-saúde etc.
 
 Se você considerou essas perguntas, inicialmente sem respostas, você já está no
@@ -50,20 +50,20 @@ planejamento de seis meses a um ano de antecedência.
 **Quais as vantagens de adquirir um pacote na agência?**
 
 Por ter todo um suporte para as burocracias que um intercâmbio exige, a agência
-pode abreviar os prazos e deixar tudo mais fácil para o estudante. Fora que é
-muito mais seguro ter o apoio de uma escola para qualquer contratempo do que ter
+pode abreviar os prazos e deixar tudo mais fácil para o estudante. Além disso, é
+muito mais seguro ter o apoio de uma agência para qualquer contratempo do que ter
 que resolver tudo sozinho e entrar em desespero por não saber o que fazer.
 
 Na **YouBet!** você conta com uma assessoria exclusiva para a emissão do visto
 americano e toda a estrutura para a sua experiência no exterior. Fale agora com
-um de nossos especialistas pelo e-mail contato@youbetschool.com, ou pelo
-Whatsapp (11) 97737-8840, e tire todas as suas dúvidas. ;)
+um de nossos especialistas pelo e-mail contato@youbetschool.com ou pelo
+WhatsApp (11) 97737-8840, e tire todas as suas dúvidas. ;)
 
 _Obs.: As taxas ficam por conta do cliente._
 
 **Qual será o destino?**
 
-Isso depende do estilo do estudante, orçamento e o que ele procura no lugar em
+Isso depende do estilo do estudante, do orçamento e do que ele procura no lugar em
 que irá passar alguns meses. Há quatro pontos que devem ser levados em
 consideração:
 
@@ -91,7 +91,7 @@ idade do viajante e o destino escolhido.
 
 **Qual o nível de conhecimento do idioma?**
 
-Se você quiser ir para treinar o inglês, não há regras, pode ser do básico ao
+Se você quiser ir para treinar o inglês, não há regras: pode ser do básico ao
 mais avançado. Afinal, você irá para aprender. Agora, se for para fazer um curso
 específico ou até mesmo o high school, é necessário ter o nível intermediário.
 Porém, muito mais importante do que o conhecimento prévio é a vontade de

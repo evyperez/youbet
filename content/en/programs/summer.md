@@ -24,8 +24,6 @@ age: '13 to 18 years'
 languageLevel: 'Basic English'
 accommodations: 'Shared rooms'
 feeding: 'Three meals per day'
-partners:
-  - partner: 'auburn'
 summary: 'The summer exchange is a short-term program to learn a new language with international certification and cultural immersion, plus summer-specific activities.'
 whatIsIncludedImage: 'friends-reading'
 whatIsIncludedImageAlt: 'Friends studying together'

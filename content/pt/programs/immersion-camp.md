@@ -1,6 +1,6 @@
 ---
 title: 'Immersion Camp'
-description: 'Immersion Camp é um acampamento de férias, um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
+description: 'Immersion Camp é um acampamento de férias, um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turísticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
 imageSeo: '/uploads/images/program-steam.png'
 mainImage: 'criancas-experimentos'
 mainImageAlt: 'adolescente brincando com a neve'
@@ -24,9 +24,7 @@ languageLevel: 'Inglês básico'
 accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
 weight: 3
-partners :
-  - partner:
-summary: 'Immersion Camp é um acampamento de férias, é um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turisticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
+summary: 'Immersion Camp é um acampamento de férias, um programa de atividades de ciências, tecnologia, engenharia, arte, matemática e aviação, incluindo viagem para Nova York, Washington D.C, pontos turísticos da Pensilvânia e visitas para as universidades de UPenn, Princeton e Columbia'
 whatIsIncludedImage: 'garota-ciencias'
 whatIsIncludedImageAlt: 'garotas estudando ciências'
 form: 'Immersion Camp'
@@ -42,13 +40,13 @@ draft: true
 
 ## Acampamento de Verão
 
-Immersion Camp é um acampamento de férias. Um programa de atividades educativas, em ciências, tecnologia, engenharia, arte, matemática e aviação.
+Immersion Camp é um acampamento de férias. Um programa de atividades educativas em ciências, tecnologia, engenharia, arte, matemática e aviação.
 
 O programa também inclui passeios e excursões em parques, centros e outlets.
 
 ### Construção de Caráter
 
- O acampamento incentiva os campistas a viver uma vida de honra, integridade e honestidade.
+O acampamento incentiva os campistas a viver uma vida de honra, integridade e honestidade.
 
 ### Ciência
 
@@ -56,11 +54,11 @@ Os campistas são expostos a diferentes princípios de química, física e aplic
 
 ### Tecnologia
 
-Os alunos também aprendem como construir robôs e programá-los. E terão a disposição computadores para criar uma apresentação que documenta sua experiência durante o acampamento.
+Os alunos também aprendem como construir robôs e programá-los. Também têm à disposição computadores para criar uma apresentação que documenta sua experiência durante o acampamento.
 
 ### Engenharia
 
-O que faz um edifício alto não cair, uma represa reter água ou como faz uma ponte para cobrir um rio?  Os alunos aprenderão as respostas para essas perguntas e muito mais, através de prática, observação e princípios sólidos de engenharia.
+O que faz um edifício alto não cair, uma represa reter água ou uma ponte atravessar um rio? Os alunos aprenderão as respostas para essas perguntas e muito mais, através de prática, observação e princípios sólidos de engenharia.
 
 ### Artes
 
@@ -72,7 +70,7 @@ A matemática está em todo lugar. Os campistas exploram como os números desemp
 
 ### Pensamento crítico
 
-Os campistas aprendam a pensar fora da caixa, enquanto aplicam os princípios do trabalho em equipe, além de encontrar soluções para os problemas que lhes são apresentados.
+Os campistas aprendem a pensar fora da caixa, enquanto aplicam os princípios do trabalho em equipe, além de encontrar soluções para os problemas que lhes são apresentados.
 
 ### Empreendedorismo
 

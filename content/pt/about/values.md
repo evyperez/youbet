@@ -1,12 +1,20 @@
 ---
-title: 'Valores'
+title: 'Nossos valores'
 date: 2016-11-03 18:19:28+00:00
 image: '/uploads/images/talking.svg'
 alt: 'jovens conversando e rindo'
+build:
+  render: never
+  list: never
+items:
+  - title: 'Comprometimento com o cliente'
+    text: 'Estamos comprometidos com o desenvolvimento dos nossos estudantes.'
+  - title: 'Cidadania global'
+    text: 'Somos bons cidadãos e parte de uma comunidade global.'
+  - title: 'Respeito'
+    text: 'Valorizamos a diversidade e as culturas.'
+  - title: 'Colaboração'
+    text: 'Valorizamos o trabalho em equipe.'
+  - title: 'Educação'
+    text: 'Estamos sempre ensinando e aprendendo.'
 ---
-
-1. Comprometimento com cliente: estamos comprometidos no desenvolvimento dos nossos estudantes
-2. Cidadania Global: somos bons cidadãos e parte de uma comunidade global
-3. Respeito: valorizamos a diversidade e as culturas
-4. Colaboração: valorizamos trabalho em equipe
-5. Educação: estamos sempre ensinando e aprendendo

@@ -1,6 +1,6 @@
 ---
 title: 'Intercâmbio de Inverno'
-description: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
+description: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais, e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
 imageSeo: '/uploads/images/program-winter.png'
 mainImage: 'garota-neve'
 mainImageAlt: 'adolescente brincando com a neve'
@@ -24,18 +24,16 @@ languageLevel: 'Inglês básico'
 accommodations: 'Quartos compartilhados'
 feeding: 'Três refeições por dia'
 weight: 6
-partners :
-  - partner:
-summary: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
+summary: 'O intercâmbio de inverno tem aulas, palestras e passeios culturais, e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.'
 whatIsIncludedImage: 'girls-snow'
 whatIsIncludedImageAlt: 'garotas na neve'
 form: 'Intercâmbio de Inverno'
 included :
   - Acomodação
   - Alimentação
-  - Taxa de Matrícula
+  - Taxa de matrícula
   - 8h de inglês por semana
-  - Programa ESL. English as a Second Language
+  - Programa ESL (English as a Second Language)
   - Certificado de conclusão de curso em inglês
 partners :
   - auburn-academy
@@ -46,10 +44,8 @@ draft: false
 
 ## Winter Experience
 
-O intercâmbio de inverno é um programa de curta duração que visa ensinar uma nova língua com certificação internacional e imersão cultural. O curso tem aulas, palestras e passeios culturais e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.
+O intercâmbio de inverno é um programa de curta duração que visa ensinar uma nova língua com certificação internacional e imersão cultural. O curso tem aulas, palestras e passeios culturais, e você tem a oportunidade de conhecer o inverno do hemisfério norte, além de praticar atividades exclusivas de inverno.
 
-Você também participa do programa de ESL – English as a Second Language, que permite melhorar as habilidades de leitura, escrita, escuta e fala, além de fornecer instrução individual para você atingir seu objetivo pessoal de proficiência em Inglês.
+Você também participa do programa de ESL (English as a Second Language), que permite melhorar as habilidades de leitura, escrita, escuta e fala, além de fornecer instrução individual para você atingir seu objetivo pessoal de proficiência em inglês.
 
-Todas as aulas serão ministradas por professores americanos, aprofundando o conhecimento e elevando a cultura.
-
-
+Todas as aulas são ministradas por professores americanos, aprofundando o conhecimento e elevando a cultura.

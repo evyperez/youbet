@@ -1,9 +1,9 @@
 ---
 title: 'Parceiros'
-description: 'Confiram nossos parceiros'
+description: 'Conheça nossos parceiros'
 imageSeo: '/uploads/images/mount-rushmore-monument-landmark-scenic.jpeg'
 mainImage: 'grupo-estudantes'
-mainImageAlt: 'Grupo de estudantes no Gramado do Colégio'
+mainImageAlt: 'Grupo de estudantes no gramado do colégio'
 backgroundColor: 'white'
 backgroundImage: '/uploads/images/textures/papyrus.png'
 backgroundImageDesktop: '/uploads/images/textures/papyrus.png'

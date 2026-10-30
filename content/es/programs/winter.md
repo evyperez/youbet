@@ -24,8 +24,6 @@ languageLevel: 'Inglés básico'
 accommodations: 'Habitaciones compartidas'
 feeding: 'Tres comidas al día'
 weight: 6
-partners:
-  - partner:
 summary: 'Intercambio de invierno con clases, charlas y salidas culturales. Vive el invierno del hemisferio norte y actividades exclusivas de invierno.'
 whatIsIncludedImage: 'girls-snow'
 whatIsIncludedImageAlt: 'Jóvenes en la nieve'

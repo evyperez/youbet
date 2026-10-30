@@ -23,8 +23,6 @@ age: '14 a 18 años'
 languageLevel: 'Inglés básico'
 accommodations: 'Habitaciones compartidas'
 feeding: 'Tres comidas al día'
-partners:
-  - partner:
 summary: 'Este programa es para quien quiere mejorar su inglés y jugar mucho al fútbol. Participa del programa ESL, juega al fútbol y compite en Estados Unidos.'
 whatIsIncludedImage: 'girl-play-futebol'
 whatIsIncludedImageAlt: 'Estudiantes en clase'

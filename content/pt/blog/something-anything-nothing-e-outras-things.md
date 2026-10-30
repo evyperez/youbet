@@ -15,19 +15,19 @@ tags:
   - something
   - anything
   - nothing
-description: "Existem técnicas que ajudam os estudantes a fixar o novo vocabulário"
+description: "Aprenda quando usar something, anything e nothing em inglês"
 draft: false
 ---
 
 Ah, o inglês e suas formas de falar das coisas…
 
-Muito provavelmente você já se deparou com alguma dessas três palavrinhas em algum texto em inglês – seja ele oral ou escrito. Se houve dúvidas em como usá-las e expressar frases em inglês que nos parecem boas no português, como "Eu não"enho nada’’ ou ‘’Eu quero alguma coisa’’, seus problemas acabaram!
+Muito provavelmente você já se deparou com alguma dessas três palavrinhas em algum texto em inglês – seja ele oral ou escrito. Se você ficou em dúvida sobre como usá-las para expressar em inglês frases que soam naturais em português, como “Eu não tenho nada” ou “Eu quero alguma coisa”, seus problemas acabaram!
 
 O assunto dialoga bastante com as estruturas sintáticas de negação da nossa língua, o português. Ao ler um pouquinho mais sobre essas três palavrinhas e outras com formação parecida (Somebody, Anywhere etc.), é fácil perceber alguns outros fundamentos estruturais das sentenças no inglês.
 
 Agora vamos direto ao assunto...
 
-### **Como usar o SOMETHING?**
+## **Como usar o SOMETHING?**
 
 ![Something](/uploads/images/something.jpg)
 "Se você quer fazer algo para si mesmo, trabalhe mais do que todos os outros" Arte: @kylesteed!
@@ -52,15 +52,15 @@ Você gostaria de alguma coisa para comer?
 **Can you bring me something to eat?**
 Você pode me trazer alguma coisa para comer?
 
-Repare que no caso de frases interrogativas, o "something" só é colocado a partir do momento em que se deseja que a resposta à interrogação seja positiva ou respondida com "Sim" ou "Não" simplesmente.
+Repare que, em frases interrogativas, o “something” é usado quando se espera uma resposta positiva, como em ofertas e pedidos.
 
-### **Como usar o ANYTHING?**
+## **Como usar o ANYTHING?**
 
 ![anything](/uploads/images/anything.jpg)
 
 "Faça qualquer coisa que você queira fazer" Arte: Maria Anne!
 
-Em busca por uma resposta imediata às maneiras como o ‘’anything’’ pode ser interpretado, pode-se dizer que há três formas de emprego para esta palavra: em frases negativas, ‘’nada’’; em frases interrogativas, ‘’alguma coisa’’ e em frases afirmativas, ‘’qualquer coisa’’. Aos exemplos:
+Em busca de uma resposta imediata às maneiras como o ‘’anything’’ pode ser interpretado, pode-se dizer que há três formas de emprego para esta palavra: em frases negativas, ‘’nada’’; em frases interrogativas, ‘’alguma coisa’’ e em frases afirmativas, ‘’qualquer coisa’’. Aos exemplos:
 
 **Exemplos:**
 
@@ -73,13 +73,13 @@ _Você pode ouvir algo?_
 **If you need anything, I’ll be awake**
 _Se você precisar de qualquer coisa, estarei acordado_
 
-Ao compreender o uso dessas três palavras, em especial o uso do ‘’anything’’, percebemos que, diferente do português, o inglês não admite a dupla negação, como já mencionei no começo. Isso significa que não se pode traduzir algo como ‘’Ele não faz nada’’ de forma literal. Entenderemos melhor com a explicação do uso do ‘’nothing’’.
+Ao compreender o uso dessas três palavras, em especial o uso do ‘’anything’’, percebemos que, diferentemente do português, o inglês não admite a dupla negação. Isso significa que não se pode traduzir algo como ‘’Ele não faz nada’’ de forma literal. Entenderemos melhor com a explicação do uso do ‘’nothing’’.
 
-### **Como usar o NOTHING?**
+## **Como usar o NOTHING?**
 
 ![nothing](/uploads/images/nothing.jpg)
 
-Em primeiro caso, será esta a palavra para ‘’Nada’’. Qualquer tentativa de explicação e maiores dúvidas provém da probabilidade de fazer uma confusão na hora de decidir entre ‘’nothing’’ e ‘’anything’’. Lembrando-se, então, de que o inglês não faz dupla negação.
+Em primeiro lugar, esta é a palavra para ‘’nada’’. A maior parte das dúvidas vem da confusão na hora de decidir entre ‘’nothing’’ e ‘’anything’’. Lembre-se, então, de que o inglês não faz dupla negação.
 
 **Exemplos:**
 

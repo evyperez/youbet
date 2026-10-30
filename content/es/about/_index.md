@@ -2,9 +2,10 @@
 title: Sobre nosotros
 date: 2016-11-03 18:19:28+00:00
 url: sobre
+eyebrow: 'Desde 2016'
 slug: sobre
 draft: false
-description: 'YouBet! nació en 2016 para promover la inmersión cultural. Nos especializamos en programas de intercambio y Bachillerato americano en EE.UU. y Brasil.'
+description: 'YouBet! nació en 2016 para promover la inmersión cultural. Nos especializamos en enviar estudiantes a estudiar en el exterior.'
 imageSeo: '/uploads/images/program-high-school.png'
 imageDesktop: 'about-youbet'
 imageDesktopAlt: 'Jóvenes conversando y riendo'
@@ -12,7 +13,7 @@ image: 'about-youbet'
 imageAlt: 'Jóvenes conversando y riendo'
 ---
 
-## Nuestra historia
+# Nuestra historia
 
 En 2016, YouBet! nació con el objetivo de ofrecer un curso de idiomas con inmersión cultural. Con los años y gracias a alianzas sólidas, YouBet! se ha especializado en enviar estudiantes a otros países, sobre todo para cursar Bachillerato.
 
@@ -20,15 +21,15 @@ En 2019, YouBet! creó el programa de Bachillerato americano en escuelas brasile
 
 Actualmente, YouBet! School busca un crecimiento constante y más alianzas que hagan posible la educación y la transformación de la vida de las personas.
 
-### Misión
+## Misión
 
 Transformar la vida de miles de personas, impulsando el intercambio y el intercambio cultural, creando una mente global y mejorando el desarrollo social.
 
-### Visión
+## Visión
 
 Ser una referencia nacional en el desarrollo de ciudadanos globales, fomentando una cultura internacional.
 
-### Valores
+## Valores
 
 1. Compromiso con el cliente: estamos comprometidos con el desarrollo de nuestros estudiantes.
 2. Ciudadanía global: somos buenos ciudadanos y parte de una comunidad global.

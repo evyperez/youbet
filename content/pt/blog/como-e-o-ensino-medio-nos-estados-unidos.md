@@ -15,10 +15,9 @@ tags:
   - dicas
   - ensino médio
   - vídeo
-description: 'O Amigo Gringo responde as principais perguntas sobre como é o dia a dia nas escolas americanas.'
-draft: false
+description: 'O Amigo Gringo responde às principais perguntas sobre como é o dia a dia nas escolas americanas.'
 ---
 
-Como é o Ensino Médio nos Estados Unidos? Será que é igual os filmes?
+Como é o Ensino Médio nos Estados Unidos? Será que é igual aos filmes?
 
-Nosso Amigo Gringo responde as principais perguntas sobre como funciona o High School nos Estados Unidos.
+Nosso Amigo Gringo responde às principais perguntas sobre como funciona o High School nos Estados Unidos.

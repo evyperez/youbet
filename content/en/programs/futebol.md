@@ -23,8 +23,6 @@ age: '14 to 18 years'
 languageLevel: 'Basic English'
 accommodations: 'Shared rooms'
 feeding: 'Three meals per day'
-partners:
-  - partner:
 summary: 'This program is for those who want to improve their English and play a lot of soccer. Join the ESL program, play soccer, and compete in the United States.'
 whatIsIncludedImage: 'girl-play-futebol'
 whatIsIncludedImageAlt: 'Students in class'

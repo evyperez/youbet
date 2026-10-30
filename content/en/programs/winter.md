@@ -24,8 +24,6 @@ languageLevel: 'Basic English'
 accommodations: 'Shared rooms'
 feeding: 'Three meals per day'
 weight: 6
-partners:
-  - partner:
 summary: 'Winter exchange with classes, talks, and cultural outings. Experience northern winter and winter-only activities.'
 whatIsIncludedImage: 'girls-snow'
 whatIsIncludedImageAlt: 'Teens in the snow'
