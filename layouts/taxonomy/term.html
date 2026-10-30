@@ -1,8 +1,9 @@
 {{ define "main" }}
+<main role="main" id="conteudo" class="internal-page blog-list">
+  <h1 class="visually-hidden">{{ .Title }}</h1>
     <div class="container">
       {{ partial "breadcrumbs.html" . }}
     </div>
-    <main role="main" id="conteudo" class="internal-page blog-list">
       <div class="container">
         <div class="blog-wrap--sidebar">
           <div class="posts">

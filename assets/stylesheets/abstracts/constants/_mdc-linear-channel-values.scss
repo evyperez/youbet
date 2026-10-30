@@ -1,40 +1,7 @@
-//
-// Copyright 2017 Google Inc. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
-// Precomputed linear color channel values, for use in contrast calculations.
-// See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
-//
-// Algorithm, for c in 0 to 255:
-// f(c) {
-//   c = c / 255;
-//   return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-// }
-//
-// This lookup table is needed since there is no `pow` in SASS.
-//
-// @see for https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
+// stylelint-disable scss/comment-no-empty
 
 // stylelint-disable scss/dollar-variable-pattern
 
-/// MDC Linear Channel Values
-///
-/// @group math
-/// @access private
-/// @type list
-///
 $MDC-LINEAR-CHANNEL-VALUES: 0 0.0003035269835488375 0.000607053967097675 0.0009105809506465125 0.00121410793419535 0.0015176349177441874
   0.001821161901293025 0.0021246888848418626 0.0024282158683907 0.0027317428519395373 0.003035269835488375 0.003346535763899161
   0.003676507324047436 0.004024717018496307 0.004391442037410293 0.004776953480693729 0.005181516702338386 0.005605391624202723

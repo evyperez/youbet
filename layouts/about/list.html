@@ -1,57 +1,62 @@
 {{ define "main" }}
 
 <main role="main" id="conteudo" class="internal-page about">
-  <section class="section position--relative ">
-    <div class="container">
-      <div class="two-columns two-columns--image align-items--center">
-
-        <div class="rich-text">
-          {{ .Content }}
-        </div>
-
-        {{ if .Params.imageDesktop }}
-
-        <div class="image-wrap">
-          <picture>
-            <source media="(min-width: 1024px)" srcset="/uploads/images/{{.Params.imageDesktop}}--1131X0.webp">
-            <source media="(min-width: 800px)" srcset="/uploads/images/{{.Params.image}}--900X0.webp">
-            <source media="(min-width: 500px)" srcset="/uploads/images/{{.Params.image}}--900X0.webp">
-            <img src="/uploads/images/{{.Params.image}}.jpeg" class="img-fluid" width="1131" height="518"
-              alt="{{.Params.imageAlt}}">
-          </picture>
-        </div>
-        {{ end }}
-
+  <section class="about-intro">
+    <div class="container about-intro__grid">
+      <div class="rich-text about-intro__text">
+        {{ with .Params.eyebrow }}<p class="about-intro__eyebrow">{{ . }}</p>{{ end }}
+        {{ .Content }}
       </div>
 
+      {{ if .Params.imageDesktop }}
+      <div class="about-photo">
+        <span class="about-photo__frame" aria-hidden="true"></span>
+        <picture>
+          <source media="(min-width: 800px)" srcset="/uploads/images/{{ .Params.imageDesktop }}--900X0.webp">
+          <source media="(min-width: 300px)" srcset="/uploads/images/{{ .Params.imageDesktop }}--800X0.webp">
+          <img src="/uploads/images/{{ .Params.image | default .Params.imageDesktop }}.jpeg" class="about-photo__img" width="900" height="760" alt="{{ .Params.imageAlt }}">
+        </picture>
+        <span class="about-photo__mark about-photo__mark--plus-lg" aria-hidden="true">+</span>
+        <span class="about-photo__mark about-photo__mark--plus-sm" aria-hidden="true">+</span>
+        <span class="about-photo__mark about-photo__mark--times" aria-hidden="true">×</span>
+      </div>
+      {{ end }}
     </div>
-
-
   </section>
 
-{{/*
-  <section class="section section--blockquote position--relative">
+  {{- $mission := .Site.GetPage "/about/mission" }}
+  {{- $vision := .Site.GetPage "/about/vision" }}
+  {{- $values := .Site.GetPage "/about/values" }}
+  {{- if or $mission $vision $values }}
+  <section class="about-purpose">
     <div class="container">
-      <div class="lala">
-        <div class="rich-text">
-          {{ range where .Site.Pages ".File.TranslationBaseName" "mission" }}
-            <h2>{{ .Title }}</h2>
-            {{ .Content }}
-          {{ end }}
-          {{ range where .Site.Pages ".File.TranslationBaseName" "vision" }}
-            <h2>{{ .Title }}</h2>
-            {{ .Content }}
-          {{ end }}
-          {{ range where .Site.Pages ".File.TranslationBaseName" "values" }}
-            <h2>{{ .Title }}</h2>
-            {{ .Content }}
-          {{ end }}
-        </div>
+      {{- with $mission }}
+      <h2 class="about-purpose__eyebrow">{{ .Title }}</h2>
+      <p class="about-purpose__mission">{{ .Plain | strings.TrimSpace }}</p>
+      {{- end }}
+
+      {{- with $vision }}
+      <div class="about-purpose__vision">
+        <h2 class="about-purpose__eyebrow">{{ .Title }}</h2>
+        <p>{{ .Plain | strings.TrimSpace }}</p>
       </div>
+      {{- end }}
+
+      {{- with $values }}
+      <h2 class="about-purpose__eyebrow about-purpose__eyebrow--values">{{ .Title }}</h2>
+      <ol class="about-values">
+        {{- range $i, $v := .Params.items }}
+        <li class="about-values__item">
+          <span class="about-values__number" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+          <h3>{{ $v.title }}</h3>
+          <p>{{ $v.text }}</p>
+        </li>
+        {{- end }}
+      </ol>
+      {{- end }}
     </div>
-  </section>  */}}
-
-
+  </section>
+  {{- end }}
 
 </main>
 

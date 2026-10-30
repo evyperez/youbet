@@ -1,34 +1,39 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.globalCitizen }}
-
-<section class="image-with-text">
+<section class="hero">
   <div class="container">
-    <div class="two-columns align-items--center reverse-content--odd">
-      <div class="section-image">
-        <img src="{{ .image }}" alt="{{ .alt }}" />
-      </div>
-      <div>
-        {{ if .content }}
-        <div class="rich-text">
-          {{ if .title }}
-          <h2>{{ .title }}</h2>
+    <div class="hero__grid">
+      <div class="hero__content">
+        {{ with .eyebrow }}<p class="hero__eyebrow">{{ . }}</p>{{ end }}
+        {{ if .title }}
+        <h1 class="hero__title">
+          {{ if .titleHighlight }}
+            {{ replace .title .titleHighlight (printf `<mark>%s</mark>` .titleHighlight) | safeHTML }}
+          {{ else }}
+            {{ .title }}
           {{ end }}
-          <p>{{ .content | markdownify }}</p>
-
+        </h1>
+        {{ end }}
+        {{ with .lead }}<p class="hero__lead">{{ . | markdownify }}</p>{{ else }}{{ with .content }}<p class="hero__lead">{{ . | markdownify }}</p>{{ end }}{{ end }}
+        <div class="hero__actions">
           {{ if .buttonUrl }}
-          <div>
-            <a href="{{ .buttonUrl }}" class="button-secondary button-secondary--solid">{{ .buttonText }}</a>
-          </div>
-
+          <a href="{{ .buttonUrl | relLangURL }}" class="button-secondary button-secondary--solid">{{ .buttonText }}</a>
+          {{ end }}
+          {{ if .secondaryButtonUrl }}
+          <a href="{{ .secondaryButtonUrl | relLangURL }}" class="hero__link">{{ .secondaryButtonText }} <span aria-hidden="true">→</span></a>
           {{ end }}
         </div>
+        {{ with .highlights }}
+        <ul class="hero__highlights">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
         {{ end }}
-
       </div>
       {{ if .image }}
-
+      <div class="hero__media">
+        <img src="{{ .image }}" alt="{{ .alt }}" width="560" height="560" />
+      </div>
       {{ end }}
-
     </div>
   </div>
 </section>

@@ -1,10 +1,10 @@
 {{ define "main" }}
+<main role="main" id="conteudo" class="internal-page">
 
  {{partial "page-title.html" .}}
 
 
     {{ partial "breadcrumbs.html" . }}
-      <main role="main" id="conteudo" class="internal-page">
         <article>
             <div class="container">
               <div class="three-columns three-columns--list">
@@ -16,6 +16,20 @@
               </div>
           </div>
         </article>
+
+        {{ with .Site.GetPage "/be-partner" }}
+        <section class="be-partner-section" id="seja-parceiro" aria-label="{{ .Title }}">
+          <div class="container">
+            <div class="be-partner-section__intro">
+              <p class="be-partner-section__eyebrow">{{ i18n "forSchools" }}</p>
+              <div class="rich-text be-partner-section__content">
+                {{ .Content }}
+              </div>
+            </div>
+          </div>
+          {{ partial "contact-form.html" . }}
+        </section>
+        {{ end }}
 
       </main>
 {{ end }}

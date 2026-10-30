@@ -1,13 +1,13 @@
 {{ define "main" }}
     <main role="main" id="conteudo" class="internal-page">
-      <section class="section">
+      <section class="section contact-page">
         <div class="container">
           <div class="two-columns">
             <div class="section-image">
               <img src="/uploads/images/ilustracao-mensagem.png" alt="{{ i18n "title404" }}" />
             </div>
             <div class="rich-text">
-              <h2 class="title">{{ .Title }}</h2>
+              <h1 class="title">{{ .Title }}</h1>
 
               {{ .Content }}
               <form name="contact" method="POST" data-netlify="true" action="{{ with .Site.GetPage "contact/success" }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
@@ -15,53 +15,29 @@
                 <p hidden aria-hidden="true">
                   <label for="contact-page-bot">Não preencha: <input id="contact-page-bot" name="bot-field" tabindex="-1" autocomplete="off" /></label>
                 </p>
-                <div class="form-wrap">
-                  <div class="two-columns">
-                    <div class="form-group ">
-                      <label for="firstName">
-                        {{ i18n "firstName" | title }} <span class="required">*</span>
-                      </label>
-                      <input type="text" id="firstName" name="firstName" required />
-                    </div>
-                    <div class="form-group ">
-                      <label for="lastName">
-                        {{ i18n "lastName" | title }} <span class="required">*</span>
-                      </label>
-                      <input type="text" id="lastName" name="lastName" required />
-                    </div>
-                  </div>
-                  <div class="two-columns">
-                    <div class="form-group">
-                      <label for="phone">
-                        {{ i18n "phone" | title }}
-                      </label>
-                      <input type="text" id="phone" name="phone" />
-                    </div>
-                    <div class="form-group">
-                      <label for="whatsapp">
-                        {{ i18n "whatsApp" | title }}
-                      </label>
-                      <input type="text" id="whatsapp" name="whatsapp" />
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="email">
-                      {{ i18n "email" | title }} <span class="required">*</span>
-                    </label>
-                    <input type="email" id="email" name="email" required />
-                  </div>
-                  <div class="form-group">
-                    <label for="message">
-                      {{ i18n "message" | title }} <span class="required">*</span>
-                    </label>
-                    <textarea id="message" name="message" required></textarea>
-                  </div>
-                  <div class="button-wrap">
-                    <button type="submit" class="button-secondary button-secondary--solid">{{ i18n "send" }}</button>
-                  </div>
-                </div>
-
+      <div class="form-wrap">
+        <div class="form-group">
+          <label for="cp-name">{{ i18n "fullName" }} <span class="required">*</span></label>
+          <input type="text" id="cp-name" name="name" autocomplete="name" required />
+        </div>
+        <div class="two-columns">
+          <div class="form-group">
+            <label for="cp-whatsapp">{{ i18n "whatsApp" }} <span class="required">*</span></label>
+            <input type="tel" id="cp-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required />
+          </div>
+          <div class="form-group">
+            <label for="cp-email">{{ i18n "email" }} <span class="required">*</span></label>
+            <input type="email" id="cp-email" name="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cp-message">{{ i18n "message" }} <span class="optional">({{ i18n "optional" }})</span></label>
+          <textarea id="cp-message" name="message" rows="4" placeholder="{{ i18n "messagePlaceholder" }}"></textarea>
+        </div>
+        <div class="button-wrap">
+          <button type="submit" class="button-secondary button-secondary--solid">{{ i18n "send" }}</button>
+        </div>
+      </div>
               </form>
 
             </div>

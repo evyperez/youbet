@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 5 }}
 <main role="main" id="conteudo" class="internal-page blog-list">
+  <h1 class="visually-hidden">{{ .Title }}</h1>
   <div class="container">
     <div class="blog-wrap--sidebar">
       <div class="posts">
@@ -52,10 +53,10 @@
 
         {{ end }}
 
-        <nav class="pagination" aria-label="{{ i18n "pagination" | default "Paginação" }}">
+        <nav class="pagination" aria-label="{{ i18n "pagination" }}">
           <div class="pagination__inner">
             {{ if $paginator.HasPrev }}
-              <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}" aria-label="{{ i18n "firstPage" | default "Primeira página" }}">{{ i18n "firstPage" | default "Primeira" }}</a>
+              <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}">{{ i18n "firstPage" }}</a>
             {{ end }}
             <ol class="pagination__numbers">
               {{ range $paginator.Pagers }}
@@ -69,7 +70,7 @@
               {{ end }}
             </ol>
             {{ if $paginator.HasNext }}
-              <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}" aria-label="{{ i18n "lastPage" | default "Última página" }}">{{ i18n "lastPage" | default "Última" }}</a>
+              <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">{{ i18n "lastPage" }}</a>
             {{ end }}
           </div>
         </nav>

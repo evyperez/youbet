@@ -1,22 +1,18 @@
-<div class="img-description rich-text">
+<div class="img-description img-description--card rich-text">
 
-  <a href="{{ .Permalink }}" class="img-hover-border">
+  <div class="img-hover-border">
     <div>
-      <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{ .Params.thumbnailAlt | default .Title }}">
+      <img src="{{.Params.thumbnail}}" class="img-fluid" alt="{{ .Params.thumbnailAlt | default .Title }}" loading="lazy" decoding="async">
     </div>
-  </a>
+  </div>
 
   {{ if .Title }}
-
-  <a href="{{ .Permalink }}" class="heading-4">{{ .Title }}</a>
-
+  <a href="{{ .Permalink }}" class="heading-4 img-description__link">{{ .Title }}</a>
   {{ end }}
 
   {{ if .Params.Summary }}
-
   <p>{{ .Params.Summary }}</p>
-
   {{ end }}
 
-<a href="{{ .Permalink }}" class="category-title">{{ i18n "knowMore" }} + </a>
+  <span class="category-title" aria-hidden="true">{{ i18n "knowMore" }} +</span>
 </div>

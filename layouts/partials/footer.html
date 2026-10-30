@@ -1,69 +1,75 @@
-<a class="whatsapp"
-  href="https://api.whatsapp.com/send?phone=5511987366608&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida"
-  target="_blank" rel="noopener">
-  <img src="/uploads/images/logo-whatsapp.svg" alt="{{ i18n "whatsappContactAlt" }}" />
-</a>
 <footer class="footer" role="contentinfo" aria-label="{{ i18n "footerLabel" }}">
+  <a class="whatsapp"
+    href="https://api.whatsapp.com/send?phone=5511987366608&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida"
+    target="_blank" rel="noopener">
+    <img src="/uploads/images/logo-whatsapp.svg" alt="{{ i18n "whatsappContactAlt" }}" />
+  </a>
   <div class="container">
+    <div class="footer__grid">
 
-    <div class="footer__copyright">
-      <p>YouBet! School - Todos os direitos reservados - 2021</p>
-      <p class="footer__legal">
-        <a href="{{ i18n "privacyPolicyUrl" }}">{{ i18n "privacyPolicy" }}</a>
-      </p>
-    </div>
+      <div class="footer__brand">
+        <a href="{{ .Site.Home.RelPermalink }}" class="footer__logo">
+          <img src="/uploads/images/youbet.svg" alt="YouBet!" width="150" height="34" loading="lazy" />
+        </a>
+        {{ with .Site.Params.description.default }}
+        <p class="footer__tagline">{{ . }}</p>
+        {{ end }}
+      </div>
 
-    {{/*  <div>
-
-      <a href="#p1"><strong>{{ .Language.LanguageName }}</strong></a>
-
-      <nav class="languages-nav">
-        <p><strong>{{ i18n "languages"}}</strong></p>
-        {{ range $.Site.Home.AllTranslations }}
-          <option><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></option>
-        {{ end}}
-      </nav>
-    </div>
-  */}}
-
-
-
-
-    {{/*
-    {{ if .Site.Menus.footer }}
-    <nav class="footer-menu" id="menu">
-
-      <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
-          <a href="#">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-        </li>
-        <ul class="sub-menu">
+      {{ with .Site.Menus.main }}
+      {{ range . }}
+      {{ if .HasChildren }}
+      <nav class="footer__col" aria-label="{{ .Name }}">
+        <h2 class="footer__title">{{ .Name }}</h2>
+        <ul>
           {{ range .Children }}
-          <li class="{{ if $currentPage.IsMenuCurrent " main" . }}active{{ end }}">
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
           {{ end }}
         </ul>
-        {{ else }}
-        <li>
-          <a href="{{ .URL }}">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-        </li>
+      </nav>
+      {{ end }}
+      {{ end }}
+
+      <nav class="footer__col" aria-label="{{ i18n "footerInstitutional" }}">
+        <h2 class="footer__title">{{ i18n "footerInstitutional" }}</h2>
+        <ul>
+          {{ range . }}
+          {{ if and (not .HasChildren) (ne .Identifier "contact") }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+          {{ end }}
+          {{ with $.Site.GetPage "/partners" }}
+          <li><a href="{{ .RelPermalink }}#seja-parceiro">{{ i18n "beSchoolPartner" }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+      {{ end }}
+
+      <div class="footer__col">
+        <h2 class="footer__title">{{ i18n "footerContact" }}</h2>
+        <ul class="footer__contact">
+          <li>
+            <a href="https://wa.me/5511987366608" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.8.83-3-.2-.31a8.2 8.2 0 1 1 6.97 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47a.9.9 0 0 0-.66.31 2.76 2.76 0 0 0-.86 2.06c0 1.21.88 2.39 1 2.55.13.17 1.74 2.65 4.2 3.72 1.57.67 2.18.73 2.97.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.17-.47-.29Z"/></svg>
+              +55 11 98736-6608
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contato@youbetschool.com">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              contato@youbetschool.com
+            </a>
+          </li>
+        </ul>
+        {{ with .Site.GetPage "contact" }}
+        <a href="{{ .RelPermalink }}" class="footer__cta">{{ i18n "getAQuote" }} <span aria-hidden="true">→</span></a>
         {{ end }}
-        {{ end }}
-      </ul>
-    </nav>
-    {{ end }} */}}
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {{ now.Year }} YouBet! School. {{ i18n "allRightsReserved" }}</p>
+      <p><a href="{{ i18n "privacyPolicyUrl" }}">{{ i18n "privacyPolicy" }}</a></p>
+    </div>
   </div>
-
-
-
 </footer>

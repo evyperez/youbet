@@ -1,5 +1,6 @@
 {{ define "main" }}
     <main role="main" id="conteudo" class="internal-page">
+      <h1 class="visually-hidden">{{ .Title }}</h1>
       <div class="container">
         <div class="three-columns">
 
@@ -16,15 +17,6 @@
 
             <div class="card__body">
 
-              {{/*  {{ range .Params.authors }}
-              {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-
-              {{if .Params.Name }}
-              <p><a href="/autores/{{ .Params.slug}}">{{ .Params.Name }}</a></p>
-              {{ end }}
-
-              {{ end }}
-              {{ end }}  */}}
 
 
               <a href="{{ .Permalink }}" class="text-decor--none text-align--center">

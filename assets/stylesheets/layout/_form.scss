@@ -1,14 +1,6 @@
 @use '../abstracts/index' as my;
 @use 'abstracts/functions' as f;
 
-/* FORMS
-============================================================================ */
-
-/**
- * Property compatibility table for form widgets
- * @see https://developer.mozilla.org/en-US/docs/Property_compatibility_table_for_form_widgets
- */
-
 form {
   margin: 0 0 my.$gutter 0;
 }
@@ -50,33 +42,23 @@ fieldset {
   }
 }
 
-fieldset fieldset {
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- * 4. to override default firefox style
- */
-fieldset > legend, /* 4 */
+fieldset > legend,
 legend {
-  box-sizing: border-box; /* 1 */
-  display: table; /* 1 */
+  box-sizing: border-box;
+  display: table;
 
   flex-basis: 100%;
 
-  max-width: 100%; /* 1 */
+  max-width: 100%;
 
-  padding: 0; /* 3 */
+  padding: 0;
   margin-bottom: my.$gutter;
 
   font-weight: my.font-weight('extrabold');
 
-  color: inherit; /* 2 */
+  color: inherit;
 
-  white-space: normal; /* 1 */
+  white-space: normal;
 }
 
 .label,
@@ -95,10 +77,6 @@ label {
 
   cursor: pointer;
 
-  .tooltip {
-    margin-left: 8px;
-  }
-
   &:focus-within {
     color: my.palette('text', 'title');
   }
@@ -111,9 +89,6 @@ abbr.field__required {
   text-decoration: none;
 }
 
-
-/* paragraphs inside forms
----------------------------------------------------------------------------- */
 fieldset,
 form p {
   position: relative;
@@ -136,26 +111,22 @@ form p {
 
     align-content: flex-start;
 
-    min-width: my.$max-width * 0.2; /* 256px */
-  }
+    min-width: my.$max-width * 0.2;  }
 
   &[data-size='20'] {
     flex-basis: calc(20% - #{my.$gutter});
 
-    min-width: my.$max-width * 0.125; /* 160px */
-  }
+    min-width: my.$max-width * 0.125;  }
 
   &[data-size='25'] {
     flex-basis: calc(25% - #{my.$gutter});
 
-    min-width: my.$max-width * 0.15; /* 192px */
-  }
+    min-width: my.$max-width * 0.15;  }
 
   &[data-size='33'] {
     flex-basis: calc(33% - #{my.$gutter});
 
-    min-width: my.$max-width * 0.175; /* 224px */
-  }
+    min-width: my.$max-width * 0.175;  }
 
   &[data-size='40'] {
     flex-basis: calc(40% - #{my.$gutter});
@@ -182,36 +153,26 @@ form br {
   clear: both;
 }
 
-/* common rules
- * @see https://github.com/jonathantneal/sanitize.css/issues/115#issue-178563944
----------------------------------------------------------------------------- */
-
-/**
- * 1. Change the font styles in all browsers (opinionated).
- * 2. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- * 3. Address inconsistent `text-transform` inheritance for `button` and `select`.
- * 4. Allow setting the same size for all form fields.
- */
 %os-element-reset {
-  box-sizing: border-box; /* 4 */
+  box-sizing: border-box;
   display: inline-block;
 
   // stylelint-disable-next-line property-units
-  padding: 1px; /* 2 */
+  padding: 1px;
   margin: 0;
 
   overflow: visible;
 
-  font-family: inherit; /* 1 */
-  font-size: inherit; /* 1 */
+  font-family: inherit;
+  font-size: inherit;
 
-  line-height: inherit; /* 1 */
+  line-height: inherit;
   vertical-align: top;
 
   color: inherit;
 
   text-align: inherit;
-  text-transform: inherit; /* 3 */
+  text-transform: inherit;
   letter-spacing: inherit;
   white-space: normal;
 
@@ -224,10 +185,6 @@ form br {
   // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-font-smoothing: inherit;
 
-  &:hover {
-  }
-
-  /* Outline só para foco por teclado (acessibilidade), não para mouse */
   &:focus-visible {
     @include my.focused;
   }
@@ -241,15 +198,6 @@ form br {
   }
 }
 
-:enabled {
-}
-
-:optional {
-}
-
-/**
- * Correct the text style of placeholders
- */
 @mixin placeholder {
   color: my.palette('placeholder');
 
@@ -268,9 +216,6 @@ form br {
   @include placeholder--focus;
 }
 
-/* impossible inputs
-============================================================================ */
-
 [type='file'],
 [type='color'],
 [type='image'] {
@@ -283,59 +228,36 @@ form br {
   border: 0;
 }
 
-/**
- * Consistent display mode in Firefox when image field is empty.
- */
-
 [type='image'] {
   display: inline-block;
 }
 
-/**
- * Consistent background color on Chrome.
- */
 [type='color'] {
   background-color: my.palette('white');
 }
 
-/**
- * Remove the inside button border in Chrome.
- */
 ::-webkit-color-swatch {
   border: 0;
 }
 
-/**
- * Remove the inside button border in Firefox.
- */
 ::-moz-color-swatch {
   border: 0;
 }
 
-/**
- * Remove the inside button padding in Chrome.
- */
 ::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-/**
- * Remove the inside button padding in Firefox.
- */
 ::-moz-color-swatch-wrapper {
   padding: 0;
 }
 
-/**
- * 1. Consistent background color on Edge and IE.
- * 2. override Opera margin and padding
- */
 [type='file'] {
   min-width: 250px;
   height: 2em;
   // stylelint-disable-next-line declaration-no-important
-  padding: 0 !important; /* 2 */
-  margin: 0; /* 2 */
+  padding: 0 !important;
+  margin: 0;
 
   font-family: inherit;
   // stylelint-disable-next-line declaration-no-important
@@ -348,7 +270,7 @@ form br {
   -moz-appearance: none;
   appearance: normal;
 
-  background-color: transparent; /* 1 */
+  background-color: transparent;
   // stylelint-disable-next-line declaration-no-important
   border-style: none !important;
 
@@ -357,9 +279,6 @@ form br {
 
   -moz-binding: none;
 }
-
-// [type='file'][multiple] {
-// }
 
 [type='file'] > [type='text'] {
   height: inherit;
@@ -391,125 +310,51 @@ form br {
   appearance: button;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Consistent background color for all browsers (same than above).
- * 3. Consistent style, width and color between all fields (same than above).
- * 4. Change font properties to `inherit` in Safari.
- */
-
 ::-webkit-file-upload-button {
-  font: inherit; /* 4 */
+  font: inherit;
 
   // stylelint-disable-next-line property-no-vendor-prefix
-  -webkit-appearance: button; /* 1 */
+  -webkit-appearance: button;
   cursor: pointer;
 
-  background-color: my.palette('button'); /* 2 */
-  border-color: my.palette('border'); /* 3 */
-  border-style: solid; /* 3 */
-  border-width: 1px; /* 3 */
+  background-color: my.palette('button');
+  border-color: my.palette('border');
+  border-style: solid;
+  border-width: 1px;
 
   &:hover {
     background-color: my.palette('button', 'focus');
   }
 }
-
-/**
- * Add a focus outline for color field (Chrome) and file selector field (Chrome & Safari) (same than above).
- */
 
 :focus::-webkit-color-swatch,
 :focus::-webkit-file-upload-button {
   outline: 1px dotted my.palette('black');
 }
 
-/**
- * Consistent style, width and color between all fields (same than above).
- */
-
 ::-ms-browse {
-  border-color: my.palette('border'); /* 1 */
-  border-style: solid; /* 1 */
-  border-width: 1px; /* 1 */
+  border-color: my.palette('border');
+  border-style: solid;
+  border-width: 1px;
 
   &:hover {
     background-color: my.palette('button', 'focus');
   }
 }
 
-/**
- * Add a focus outline for file selector field in Edge and IE (same than above).
- */
-
 :focus::-ms-browse {
   outline: 1px dotted my.palette('black');
 }
-
-// /* ALERTS and FORMS */
-// .success {
-// }
-
-// :valid {
-// }
-
-// :in-range {
-// }
-
-// :required:valid {
-// }
-
-// .warning {
-// }
 
 [required],
 :required {
   box-shadow: none;
 }
 
-// .alert {
-// }
-
-// :out-of-range {
-// }
-
-// [type='submit']:-moz-submit-invalid {
-// }
-
-// x-moz-errormessage {
-// }
-
-/**
- * Remove the focus outline in Firefox to only keep the original effect.
- */
 [type='range']:-moz-focusring,
 [type='checkbox']:-moz-focusring,
 [type='radio']:-moz-focusring {
   outline-width: 0;
-}
-
-.validation {
-  margin: 0;
-  margin-top: 8px;
-
-  font-size: f.to-em(12px);
-
-  line-height: f.to-rem(16px);
-}
-
-.validation--success > span,
-.validation--success {
-  color: palette('feedback', 'success');
-}
-
-.validation--warning > span,
-.validation--warning {
-  color: palette('feedback', 'warning');
-}
-
-.validation--error > span,
-.validation--error {
-  color: palette('feedback', 'danger');
 }
 
 .required {

@@ -2,5 +2,5 @@
 @use 'abstracts/functions' as f;
 
 .programs article:nth-of-type(even) {
-  @include my.texture(my.palette('orange', '10%'), 18, 0);
+  background-color: my.palette('orange', '10%');
 }

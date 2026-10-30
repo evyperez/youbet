@@ -104,7 +104,7 @@
     text-decoration: unset;
 
     &:hover {
-      color: my.palette('orange', '110%');
+      color: my.palette('orange', 'text');
 
       text-decoration: unset;
     }

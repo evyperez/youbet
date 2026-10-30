@@ -24,37 +24,29 @@
       </div>
       <div class="glide glide-blog">
         <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+          <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="{{ i18n "prev" }}"></button>
+          <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="{{ i18n "next" }}"></button>
         </div>
 
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             {{ range ( where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
               <li class="glide__slide">
-                <a href="{{ .Permalink }}" class="text-decor--none">
-                  <div class="post">
-                    <div class="post__image">
-                      <img class="" src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.thumbnailAlt }}" />
-                    </div>
-                    <div class="img-subtitle">
-                      {{/*  {{ range .Params.authors }}
-                        {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                          <p class="img-subtitle__author">{{ .Title }}</p>
-                        {{ end }}
-                      {{ end }}  */}}
-
-                      {{ if .Params.authors }}
-                      {{- range .Params.authors }}
-                      {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                         <strong> <p class="heading-4"><a href="{{ .RelPermalink }}">{{ .Params.Name }}</a></p></strong>
-                      {{ end }}
-                      {{ end }}
-                    {{ end }}
-                    </div>
-                    <h2 class="heading-5">{{ .Title }}</h2>
+                <article class="post post--card">
+                  <div class="post__image">
+                    <img src="{{ .Params.thumbnail | relURL }}" alt="" loading="lazy" />
                   </div>
-                </a>
+                  {{ with .Params.authors }}
+                  <p class="img-subtitle">
+                    {{- range . }}
+                    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                    <span class="img-subtitle__author">{{ .Params.Name }}</span>
+                    {{- end }}
+                    {{- end }}
+                  </p>
+                  {{ end }}
+                  <h3 class="heading-5"><a href="{{ .Permalink }}" class="post__link">{{ .Title }}</a></h3>
+                </article>
               </li>
             {{ end }}
           </ul>

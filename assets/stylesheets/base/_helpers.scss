@@ -3,208 +3,6 @@
 @use 'abstracts' as my;
 @use 'abstracts/functions' as f;
 
-// -----------------------------------------------------------------------------
-// This file contains CSS helper classes.
-// -----------------------------------------------------------------------------
-
-/* CLASSES
-============================================================================ */
-%loading-bg {
-  background-color: my.palette('loading', 'background');
-  background-image: my.image('loading.svg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-}
-
-%loading-el {
-  overflow: hidden;
-
-  cursor: wait;
-
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: my.layer('modal');
-
-    content: '';
-  }
-}
-
-/// Content which loads **after** the page does, should be informed to user.
-///
-/// `[aria-busy='true']` adds a loading background to any loading element
-/// which can't be a parent and a pseudo element over any element other than
-/// `html`.
-///
-/// Don't forget to customize it to your needs. Speacially the background
-/// color.
-///
-/// Already applied to `embed` and `img`, which can cause issues with
-/// transparent images.
-///
-/// @author Sobral
-/// @group helpers
-///
-/// @example html
-///
-/// <dialog open aria-busy="true">
-/// 	<form method="dialog">
-/// 		[...]
-/// 	</form>
-/// </dialog>
-///
-[aria-busy='true'] {
-  > body,
-  &:not(html, .skeleton) {
-    @extend %loading-el;
-
-    position: relative;
-
-    &::after {
-      @extend %loading-bg;
-    }
-  }
-}
-
-img,
-embed {
-  &::before {
-    @extend %loading-bg;
-
-    display: block;
-
-    content: '';
-
-    background-size: auto;
-  }
-
-  &::after {
-    /*
-     *	Future proof reset
-     */
-    content: none;
-  }
-}
-
-input,
-output,
-keygen,
-textarea {
-  &[aria-busy='true'] {
-    @extend %loading-bg;
-
-    background-size: auto;
-  }
-}
-
-.skeleton {
-  pointer-events: none;
-
-  background-color: transparent;
-
-  &.skeleton__bone--vertebra,
-  &.skeleton__bone,
-  .skeleton__bone--vertebra,
-  .skeleton__bone {
-    @include my.on-event(true) {
-      text-decoration: none;
-
-      border: 0;
-      border-radius: my.$rounded-corner;
-
-      &::before,
-      &::after {
-        all: unset;
-
-        position: static;
-
-        display: block;
-
-        height: 0;
-
-        content: '';
-
-        border: 0;
-      }
-
-      &::before {
-        height: 1em;
-      }
-    }
-  }
-
-  .skeleton__bone {
-    @include my.on-event(true) {
-      display: block;
-
-      background-color: #d9d9d9;
-      background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0, 0, 0, 0.05) 20%, #d9d9d9 40%, #d9d9d9 100%);
-      background-repeat: no-repeat;
-      background-size: 450px 400px;
-
-      animation: shimmer 1s linear infinite;
-    }
-  }
-
-  .skeleton__bone--vertebra {
-    @include my.on-event(true) {
-      &::before,
-      &::after {
-        display: inline-block;
-
-        height: 1em;
-
-        background-color: #d9d9d9;
-        background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0, 0, 0, 0.05) 20%, #d9d9d9 40%, #d9d9d9 100%);
-        background-repeat: no-repeat;
-        background-size: 450px 400px;
-
-        animation: shimmer 1s linear infinite;
-        box-decoration-break: clone;
-      }
-
-      &::before {
-        width: 100%;
-        max-width: 37.5em;
-
-        content: '\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0';
-      }
-
-      &::after {
-        width: 66%;
-        max-width: 22.5em;
-
-        content: '\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0 \0000a0\0000a0\0000a0\0000a0\0000a0';
-      }
-    }
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -450px 0;
-  }
-
-  100% {
-    background-position: 450px 0;
-  }
-}
-
-/// Load grid image background under the class `grid`
-/// @author Sobral
-/// @group helpers
-///
-/// @example html
-/// <html class="grid">
-/// 	<body>
-/// 		[...]
-/// 	</body>
-/// </html>
-///
 .grid {
   $n: my.$mobile-columns - 1;
 
@@ -269,28 +67,6 @@ textarea {
   @include my.container;
 }
 
-.full-width {
-  @include my.full-width;
-}
-
-.max-height--vh {
-  height: 100vh;
-}
-
-.max-height {
-  height: 100%;
-}
-
-.one-column {
-  display: grid;
-
-  grid-template-rows: auto;
-
-  row-gap: my.$gutter;
-
-  width: 100%;
-}
-
 .two-columns {
   display: grid;
   /* stylelint-disable-next-line property-no-unknown */
@@ -306,69 +82,6 @@ textarea {
 
     row-gap: f.to-rem(32px);
     column-gap: f.to-rem(24px);
-  }
-}
-
-.two-columns--image {
-  $image-size: calc(my.$gutter * 2);
-
-  grid-template-columns: unset;
-
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-    grid-template-columns: 1fr 1fr;
-
-    row-gap: 0;
-    column-gap: 0;
-  }
-
-  .image-wrap {
-    width: calc(100% + $image-size);
-
-    margin-right: calc(my.$gutter * -1);
-    margin-left: calc(my.$gutter * -1);
-  }
-
-  .image-wrap picture {
-    width: 100%;
-    height: auto;
-  }
-
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-    > div {
-      padding-right: f.to-rem(60px);
-    }
-
-    .image-wrap {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      width: 50%;
-      height: 100%;
-
-      margin: unset;
-    }
-
-    .image-wrap img {
-      position: absolute;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-    }
-  }
-}
-
-.two-columns--image-left {
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-    .rich-text {
-      padding-left: f.to-rem(60px);
-    }
-
-    .image-wrap {
-      left: 0;
-    }
   }
 }
 
@@ -449,10 +162,6 @@ textarea {
 
   width: 100%;
 
-  .one-column {
-    row-gap: f.to-rem(12px);
-  }
-
   .two-columns {
     row-gap: f.to-rem(12px);
 
@@ -472,10 +181,6 @@ textarea {
   }
 }
 
-.color-white {
-  color: my.palette('white');
-}
-
 .align-items--center {
   align-items: center;
 }
@@ -484,28 +189,10 @@ textarea {
   text-align: center;
 }
 
-.text-decoration--none {
-  text-decoration: none;
-}
-
-.reverse-content--even:nth-of-type(even) > div:nth-of-type(even) {
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-    order: -1;
-  }
-}
-
-.reverse-content--odd:nth-of-type(odd) {
-  > div:nth-of-type(even) {
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-      order: -1;
-    }
-  }
-}
-
 .column-gap--18 {
   column-gap: f.to-rem(18px);
 }
 
-.position--relative {
-  position: relative;
+.visually-hidden {
+  @include my.visually-hidden;
 }

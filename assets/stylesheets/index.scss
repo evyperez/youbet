@@ -1,34 +1,23 @@
 @charset 'UTF-8';
 
-// 2. External
 @use '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
-
-// 3. Base stuff
-@use 'base/variables';
 @use 'base/base';
-@use 'base/fonts';
 @use 'base/typography';
 @use 'base/helpers';
 
-// 4. Layout-related sections
 @use 'layout/lists';
 @use 'layout/navigation';
 @use 'layout/table';
 @use 'layout/form';
-@use 'layout/gallery';
 @use 'layout/main';
 @use 'layout/header';
 @use 'layout/footer';
-@use 'layout/h-feed';
 
-// 5. Components
-@use 'components/h-entry';
 @use 'components/figure';
 @use 'components/text-field';
 @use 'components/button';
 @use 'components/checkbox-and-radio';
-@use 'components/output';
 @use 'components/progress';
 @use 'components/select';
 @use 'components/slider';
@@ -44,12 +33,10 @@
 @use 'components/tags';
 @use 'components/carousel';
 
-// 6. Page-specific styles
 @use 'pages/home';
 @use 'pages/programs';
 @use 'pages/about';
 
-// 7. Patials styles
 @use 'partials/blog';
 @use 'partials/contact';
 @use 'partials/pricing-partial';
@@ -57,7 +44,6 @@
 @use 'partials/programs-partial';
 @use 'partials/faq';
 
-// 8. Themes
-@use 'themes/default';
+@use 'themes/dark-mode';
 @use 'themes/print';
 

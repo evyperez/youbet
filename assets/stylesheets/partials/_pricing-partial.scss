@@ -3,7 +3,7 @@
 @use 'abstracts/functions' as f;
 
 .pricing-partial {
-  @include my.texture(my.palette('blue', '10%'), 8, 1);
+  background-color: my.palette('blue', '10%');
 
   .card {
     background: my.palette('blue', '10%');

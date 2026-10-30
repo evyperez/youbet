@@ -1,41 +1,13 @@
 <!DOCTYPE html>
-<html
-  lang="{{ .Site.LanguageCode }}"
-  class="
-    {{ if .IsHome }}home-page {{ end }}
-    {{ $.Scratch.Get "rootClass" }}{{ .Params.rootClass }}
-    {{ if eq (getenv "HUGO_ENVIRONMENT") "development" }}grid{{ end }}
-    no-js
-  "
-  data-run="buildTicketPage registerDevice"
->
-<head>
+<html lang="{{ .Site.LanguageCode }}"{{ if eq (getenv "HUGO_ENVIRONMENT") "development" }} class="grid"{{ end }}>
 {{ partial "head/head.html" . }}
 
-{{ block "headInsert" . }}
-  <!-- The part of the page that begins to differ between templates -->
-{{ end }}
-
-</head>
-
-
-<body class="theme-dark">
-  <!-- Google Tag Manager (noscript) -->
+<body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTag }}" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <input type="checkbox" id="menu-controller" class="menu-controller" hidden />
-
   {{ partial "header.html" . }}
 
-  {{ block "main" . }}
-    <!-- The part of the page that begins to differ between templates -->
-
-  {{ end }}
-
-  {{ block "footer" . }}
-    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-  {{ end }}
+  {{ block "main" . }}{{ end }}
 
   {{ partial "footer.html" . }}
 

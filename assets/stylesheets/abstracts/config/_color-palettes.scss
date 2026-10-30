@@ -1,35 +1,11 @@
 @use 'sass:map';
 @use 'sass:color';
 
-////
-/// This file contains all application-wide Sass color palettes
-///
-/// @group config-palettes
-/// @prop {map} color - Map of colors
-/// @todo Customize to match the needs of your design.
-////
-
-/// Store all available colors and tones.
-///
-/// @access private
-///
-/// @prop {color | map} color.tone - Pure colors or returned color value of functions
-///
 $palette: () !default;
-
 $accent-color: hsl(330, 72%, 42%) !default;
-
-///
-/// @colors base
-///
 $base: (
   'accent': $accent-color,
 );
-
-
-///
-/// @colors neutral
-///
 $neutral: (
   'white': hsl(240, 2%, 91%),
   'x-light': color.scale(hsl(216, 11%, 91%), $whiteness: 10%),
@@ -40,13 +16,9 @@ $neutral: (
   'black': hsl(200, 20%, 9%)
 );
 $palette: map.set($palette, 'neutral', $neutral);
-
-
-///
-/// @colors orange
-///
 $orange: (
   '110%': rgb(222, 151, 0),
+  'text': rgb(143, 91, 0),
   'base': rgb(247, 168, 0),
   '80%': rgb(249, 185, 51),
   '60%': rgb(250, 203, 102),
@@ -55,24 +27,16 @@ $orange: (
   '5%': rgb(255, 251, 242),
 );
 $palette: map.set($palette, 'orange', $orange);
-
-///
-/// @colors blue
-///
 $blue: (
-  '110': rgb(0, 71, 222),
-  'base': rgb(0, 79, 247),
-  '80%': rgb(51, 114, 249),
-  '60%': rgb(102, 149, 250),
-  '30%': rgb(178, 202, 253),
-  '10%': rgb(229, 237, 254),
-  '5%': rgb(242, 246, 255),
+  '110': rgb(18, 29, 54),
+  'base': rgb(27, 42, 74),
+  '80%': rgb(77, 88, 113),
+  '60%': rgb(118, 127, 146),
+  '30%': rgb(186, 191, 200),
+  '10%': rgb(232, 233, 236),
+  '5%': rgb(243, 244, 245),
 );
 $palette: map.set($palette, 'blue', $blue);
-
-///
-/// @colors gray
-///
 $gray: (
   '110%': rgb(46, 46, 46),
   'base': rgb(51, 51, 51),
@@ -83,10 +47,6 @@ $gray: (
   '5%': rgb(245, 245, 245),
 );
 $palette: map.set($palette, 'gray', $gray);
-
-///
-/// @colors text
-///
 $text: (
   'dark': hsl(0, 0%, 13%),
   'title': $accent-color,
@@ -95,10 +55,6 @@ $text: (
   'quotes': hsl(0, 0%, 34%),
 );
 $palette: map.set($palette, 'text', $text);
-
-///
-/// @colors anchor
-///
 $anchor: (
   'base': rgb(51, 51, 51),
   'link': rgb(51, 51, 51),
@@ -108,10 +64,6 @@ $anchor: (
   'active': rgb(222, 151, 0),
 );
 $palette: map.set($palette, 'anchor', $anchor);
-
-///
-/// @colors anchor-dark
-///
 $anchor-dark: (
   'base': rgb(253, 229, 178),
   'link': rgb(253, 229, 178),
@@ -121,26 +73,18 @@ $anchor-dark: (
   'active': rgb(253, 229, 178),
 );
 $palette: map.set($palette, 'anchor-dark', $anchor-dark);
-
-///
-/// @colors menu
-///
 $menu: (
   'base': rgb(255, 255, 255),
-  'background': rgb(230, 230, 230),
-  'text': rgb(20, 20, 20),
-  'border': rgb(230, 230, 230),
-  'sub-menu': rgb(250, 249, 249),
+  'background': rgb(255, 255, 255),
+  'text': rgb(18, 29, 54),
+  'border': rgb(237, 232, 222),
+  'sub-menu': rgb(255, 255, 255),
   'sub-menu-text': rgb(45, 45, 45),
   'sub-menu-hover': rgb(51, 51, 51),
   'anchor': rgb(247, 168, 0),
   'shadow': rgba(0, 0, 0, 0.74),
 );
 $palette: map.set($palette, 'menu', $menu);
-
-///
-/// @colors menu-dark
-///
 $menu-dark: (
   'base': rgb(20, 20, 20),
   'background': rgb(20, 20, 20),
@@ -152,10 +96,6 @@ $menu-dark: (
   'anchor': rgb(247, 168, 0),
 );
 $palette: map.set($palette, 'menu-dark', $menu-dark);
-
-///
-/// @colors footer
-///
 $footer: (
   'base': rgb(255, 255, 255),
   'text': rgb(20, 20, 20),
@@ -163,10 +103,6 @@ $footer: (
   'anchor': rgb(247, 168, 0),
 );
 $palette: map.set($palette, 'footer', $footer);
-
-///
-/// @colors footer-dark
-///
 $footer: (
   'base': rgb(20, 20, 20),
   'text': rgb(202, 202, 202),
@@ -174,11 +110,6 @@ $footer: (
   'anchor': rgb(247, 168, 0),
 );
 $palette: map.set($palette, 'footer', $footer);
-
-
-///
-/// @colors button
-///
 $button: (
   'base': rgba(247, 168, 0, 1),
   'dark': rgba(222, 151, 0, 1),
@@ -190,25 +121,17 @@ $button: (
   'reset': transparent,
 );
 $palette: map.set($palette, 'button', $button);
-
-///
-/// @colors button-secondary
-///
 $button-secondary: (
-  'base': rgba(0, 79, 247, 1),
-  'dark': rgba(0, 71, 222, 1),
-  'light': rgba(102, 149, 250, 1),
-  'disabled': rgba(229, 237, 254, 1),
+  'base': rgba(27, 42, 74, 1),
+  'dark': rgba(18, 29, 54, 1),
+  'light': rgba(118, 127, 146, 1),
+  'disabled': rgba(232, 233, 236, 1),
   'focus': rgb(229, 241, 251),
   'slider': hsl(0, 0%, 40%),
   'submit': rgb(217, 83, 79),
   'reset': transparent,
 );
 $palette: map.set($palette, 'button-secondary', $button-secondary);
-
-///
-/// @colors button-neutral
-///
 $button-neutral: (
   'base': rgba(51, 51, 51, 1),
   'dark': rgba(46, 46, 46, 1),
@@ -220,10 +143,6 @@ $button-neutral: (
   'reset': transparent,
 );
 $palette: map.set($palette, 'button-neutral', $button-neutral);
-
-///
-/// @colors form
-///
 $form: (
   'background': rgb(255, 255, 255),
   'border': rgb(215, 216, 217),
@@ -232,10 +151,6 @@ $form: (
   'placefolder': rgb(136, 137, 141),
 );
 $palette: map.set($palette, 'form', $form);
-
-///
-/// @colors feedback
-///
 $feedback: (
   'default': rgb(119, 119, 119),
   'primary': rgb(51, 122, 183),
@@ -245,51 +160,26 @@ $feedback: (
   'danger': rgb(217, 83, 79),
 );
 $palette: map.set($palette, 'feedback', $feedback);
-
-
-///
-/// @colors border
-///
 $border: (
   'base': rgb(192, 192, 192),
   'focus': rgb(0, 0, 0),
 );
 $palette: map.set($palette, 'border', $border);
-
-
-///
-/// @colors disabled
-///
 $disabled: (
   'foreground': hsl(0, 0%, 42%),
   'background': hsl(0, 0%, 94%),
 );
 $palette: map.set($palette, 'disabled', $disabled);
-
-
-///
-/// @colors loading
-///
 $loading: (
   'foreground': map.get($neutral, 'x-dark'),
   'background': map.get($neutral, 'base'),
 );
 $palette: map.set($palette, 'loading', $loading);
-
-
-///
-/// @colors placeholder
-///
 $placeholder: (
   'base': hsl(0, 0%, 34%),
   'focus': hsl(0, 0%, 56%),
 );
 $palette: map.set($palette, 'placeholder', $placeholder);
-
-
-///
-/// @colors effects
-///
 $effects: (
   'backdrop': rgba(0, 0, 0, 0.5),
   'shadow': rgba(0, 0, 0, 0.75),
@@ -297,21 +187,11 @@ $effects: (
   'target-highlight': rgb(255, 255, 102),
 );
 $palette: map.set($palette, 'effects', $effects);
-
-
-///
-/// @colors selection
-///
 $selection: (
   'foreground': rgb(255, 255, 255),
   'background': rgb(20, 105, 140),
 );
 $palette: map.set($palette, 'selection', $selection);
-
-
-///
-/// @colors mark
-///
 $mark: (
   'foreground': rgb(51, 51, 51),
   'background': rgb(215, 255, 90),

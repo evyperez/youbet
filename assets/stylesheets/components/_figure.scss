@@ -1,16 +1,5 @@
 @use '../abstracts/index' as my;
 
-/* figures
----------------------------------------------------------------------------- */
-
-/**
- * 1. Address margin not present in IE 8/9 and Safari 5.
- * 2. http://thenewcode.com/662/Design-From-the-Inside-Out-With-CSS-Min-Content
- */
-
-figure {
-}
-
 figcaption {
   width: min-content;
 

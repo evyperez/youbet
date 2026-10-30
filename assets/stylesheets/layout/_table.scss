@@ -8,8 +8,6 @@
   width: 100%;
 }
 
-/* TABLES
-============================================================================ */
 table,
 thead,
 tbody,
@@ -24,7 +22,6 @@ td {
   font-size: 1em;
 
   vertical-align: top;
-
 
   background-color: transparent;
   border: 0;
@@ -55,7 +52,7 @@ table {
 
 thead,
 tfoot {
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
 
   text-transform: uppercase;
 
@@ -83,9 +80,6 @@ tfoot {
 table p,
 table li {
   font-size: 1em;
-}
-
-caption {
 }
 
 tr {

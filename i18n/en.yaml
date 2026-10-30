@@ -1,13 +1,9 @@
-- id: about
-  translation: 'About'
-- id: activities
-  translation: 'Activities'
 - id: article
   translation: 'article'
-- id: author
-  translation: 'Author'
 - id: authors
   translation: 'Authors'
+- id: breadcrumb
+  translation: 'You are here'
 - id: blog
   translation: 'Blog'
 - id: by
@@ -34,40 +30,24 @@
   translation: 'Pricing'
 - id: content404
   translation: 'We did not find what you are looking for'
-- id: contactAlternatives
-  translation: 'You can also contact us by email at %s or by WhatsApp at %s.'
 - id: email
   translation: 'Email'
 - id: faq
   translation: 'FAQ'
-- id: firstName
-  translation: 'First name'
 - id: home
   translation: 'Home'
-- id: lastName
-  translation: 'Last name'
-- id: lastPosts
-  translation: 'Last posts'
 - id: message
   translation: 'Message'
-- id: notFound
-  translation: 'Not found'
-- id: phone
-  translation: 'Phone'
 - id: programs
   translation: 'Programs'
 - id: partner
   translation: 'Partner'
-- id: partners
-  translation: 'Partners'
 - id: somePartners
   translation: 'Partners'
 - id: knowMore
   translation: 'Know more'
 - id: send
   translation: 'Send'
-- id: subject
-  translation: 'Subject'
 - id: tags
   translation: 'Tags'
 - id: title404
@@ -76,8 +56,6 @@
   translation: 'WhatsApp'
 - id: whatsappContactAlt
   translation: 'Contact us via WhatsApp'
-- id: writtenBy
-  translation: 'Written by'
 - id: term
   translation: 'Term'
 - id: age
@@ -92,14 +70,8 @@
   translation: 'Details'
 - id: whatIsIncluded
   translation: 'Included'
-- id: allYouNeed
-  translation: 'All you need'
-- id: total
-  translation: 'Total'
 - id: scholarship
   translation: 'Scholarship'
-- id: commonQuestions
-  translation: 'Common questions'
 - id: getAQuote
   translation: 'Get a quote'
 - id: January
@@ -136,24 +108,6 @@
   translation: 'Select'
 - id: "que tipo de curso quer fazer"
   translation: 'What type of course do you want'
-- id: search
-  translation: 'Search'
-- id: filterByTopic
-  translation: 'Filter by topic'
-- id: selectTopic
-  translation: 'Select topic'
-- id: filterBySecretary
-  translation: 'Filter by secretary'
-- id: selectSecretary
-  translation: 'Select secretary'
-- id: filterByBadge
-  translation: 'Filter by badge'
-- id: selectBadge
-  translation: 'Select badge'
-- id: clearFilters
-  translation: 'Clear filters'
-- id: page
-  translation: 'Page'
 - id: readMore
   translation: 'Read more'
 - id: seeAlso
@@ -164,8 +118,6 @@
   translation: 'Footer'
 - id: openMenu
   translation: 'Open menu'
-- id: languageLabel
-  translation: 'Language: %s'
 - id: languageName_pt
   translation: 'Português'
 - id: languageName_en
@@ -194,7 +146,33 @@
   translation: 'First'
 - id: lastPage
   translation: 'Last'
-- id: of
-  translation: 'of'
 - id: noTags
   translation: 'No tags yet.'
+- id: contactEyebrow
+  translation: 'Talk to us'
+- id: contactIntro
+  translation: 'Tell us a little about yourself and the program you are interested in. We will get back to you with a personalized quote.'
+- id: fullName
+  translation: 'Full name'
+- id: optional
+  translation: 'optional'
+- id: messagePlaceholder
+  translation: 'E.g.: I''m 16 and I''d like to study abroad next year.'
+- id: footerInstitutional
+  translation: 'Company'
+- id: footerContact
+  translation: 'Contact'
+- id: allRightsReserved
+  translation: 'All rights reserved.'
+- id: forSchools
+  translation: 'For schools and universities'
+- id: beSchoolPartner
+  translation: 'Become a partner school'
+- id: institutionName
+  translation: 'Institution name'
+- id: toggleDarkMode
+  translation: 'Toggle dark mode'
+- id: authorDescription
+  translation: "Articles by %s on the YouBet! School blog about exchange programs, studying abroad and English."
+- id: termDescription
+  translation: "Articles about %s on the YouBet! School blog: tips on exchange programs, studying abroad and English."

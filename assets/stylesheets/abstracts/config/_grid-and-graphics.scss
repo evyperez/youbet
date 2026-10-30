@@ -2,44 +2,14 @@
 @use 'sass:math';
 @use 'sass:meta';
 
-////
-/// Typographic settings
-///
-/// @group config-grid-and-graphics
-/// @access public
-/// @type list
-/// @todo Customize it to match your design needs or combine with the already available font stacks.
-///
-////
 @use './typography' as t;
 
-/// Default border-radius
-/// @todo Customize it to match your design.
-/// @type number
-///
 $rounded-corner: 8px !default;
 $rounded-corner-s: 4px !default;
-
-/// border default width
-/// @todo Customize it to match your design.
-/// @type number
-///
 $stroke: 1px !default;
-
-
-/// gutter default width
-/// @todo Customize it to match your design.
-/// @type number
-///
 $small-gutter: 1rem; // 16px
 $gutter: 1.5rem;
-
-/// column basis width
-/// @todo Customize it to match your design.
-/// @type number
-///
 $column-basis: 17rem;
-
 $mobile-columns: 2;
 $_new-width: 0;
 $_device-width: 20em;
@@ -61,10 +31,6 @@ $_i: $mobile-columns;
   @return $new-breakpoints;
 }
 
-/// my.breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual my.breakpoints expressed in pixels
-///
 $breakpoints: _im-to-em(
   (
     'phone__portrait': 320px,
@@ -75,17 +41,11 @@ $breakpoints: _im-to-em(
     'wide': 1600px,
   )
 ) !default;
-
 $toggle-breakpoints: (
   'toggle-table-layout': 48em,
   'toggle-menu': 64em,
 );
-
 $breakpoints: map.merge($breakpoints, $toggle-breakpoints);
-
-/// Container's maximum width
-/// @type number
-///
 $max-width: 60.125em !default; // 1128px + gutter
 $max-width--narrow: 40.75em; // 668 px
 $max-width--desktop: 70.5em !default; // 1128 + gutter
@@ -103,23 +63,12 @@ $breakpoints: map.merge(
   $breakpoints: map-merge($breakpoints, ('#{$_i}col': $_device-width));
 }
 
-/// Z-indexes map, gathering all Z layers of the application. Avoid to edit it.
-/// @access public
-/// @type Map
-///
 $layers: (
   'modal': 5000,
   'dropdown': 4000,
   'default': 1,
   'below': -1,
 );
-
-/// Relative or absolute URL where all assets are served from.
-/// @todo Customize it to match your setup.
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'http://cdn.example.com/assets/';
-///
 $base-url: '/assets/' !default;
 
 @function _im-to-px($breakpoints, $base-value: 16px) {
@@ -134,7 +83,7 @@ $base-url: '/assets/' !default;
       )
     );
 
-    @if (math.unit($value) != 'em' and math.unit($value) != 'px') {
+    @if math.unit($value) != 'em' and math.unit($value) != 'px' {
       @error 'all media queries units should be either `em` or `px`. `#{math.unit($value)}` given.';
     } @else {
       $px-value: if(math.unit($value) == 'em', math.div($value, 1em) * $base-value, $value);

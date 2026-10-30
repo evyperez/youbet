@@ -1,12 +1,37 @@
 {{ if .Params.form }}
-<article class="contact-form">
-  <div class="container container--narrow ">
-    <div class="rich-text contact-form__intro">
-      <h2 class="title-section">{{ i18n "getAQuote" }}</h2>
-      {{ $emailLink := `<a href="mailto:contato@youbetschool.com">contato@youbetschool.com</a>` }}
-      {{ $whatsappLink := `<a href="https://wa.me/5511987366608" target="_blank" rel="noopener">+55 11 98736-6608</a>` }}
-      <p>{{ printf (i18n "contactAlternatives") $emailLink $whatsappLink | safeHTML }}</p>
-    </div>
+<section class="contact-form" id="orcamento">
+  <div class="container">
+    <div class="contact-card">
+      <aside class="contact-card__aside">
+        <p class="contact-card__eyebrow">{{ i18n "contactEyebrow" }}</p>
+        <h2 class="contact-card__title">{{ .Params.formTitle | default (i18n "getAQuote") }}</h2>
+        <p class="contact-card__text">{{ .Params.formIntro | default (i18n "contactIntro") }}</p>
+        <ul class="contact-channels">
+          <li>
+            <a class="contact-channel" href="https://wa.me/5511987366608" target="_blank" rel="noopener">
+              <span class="contact-channel__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.8.83-3-.2-.31a8.2 8.2 0 1 1 6.97 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47a.9.9 0 0 0-.66.31 2.76 2.76 0 0 0-.86 2.06c0 1.21.88 2.39 1 2.55.13.17 1.74 2.65 4.2 3.72 1.57.67 2.18.73 2.97.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.17-.47-.29Z"/></svg>
+              </span>
+              <span class="contact-channel__text">
+                <span class="contact-channel__label">WhatsApp</span>
+                <span class="contact-channel__value">+55 11 98736-6608</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-channel" href="mailto:contato@youbetschool.com">
+              <span class="contact-channel__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" fill="none"/><path d="m3 7 9 6 9-6" fill="none"/></svg>
+              </span>
+              <span class="contact-channel__text">
+                <span class="contact-channel__label">E-mail</span>
+                <span class="contact-channel__value">contato@youbetschool.com</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <div class="contact-card__form">
     <form id="contato" name="contact" method="POST" data-netlify="true" action="{{ with .Site.GetPage "contact/success"
       }}{{ .Permalink }}{{ else }}/contato/sucesso/{{ end }}">
       <input type="hidden" name="form-name" value="contact" />
@@ -14,65 +39,39 @@
         <label for="contact-bot">Não preencha: <input id="contact-bot" name="bot-field" tabindex="-1"
             autocomplete="off" /></label>
       </p>
+      <input type="hidden" name="subject" value="{{ .Params.form }}" />
       <div class="form-wrap">
-        <div class="two-columns">
-          <div class="form-group ">
-            <label for="firstName">
-              {{ i18n "firstName" | title }} <span class="required">*</span>
-            </label>
-            <input type="text" id="firstName" name="firstName" required />
-          </div>
-          <div class="form-group ">
-            <label for="lastName">
-              {{ i18n "lastName" | title }} <span class="required">*</span>
-            </label>
-            <input type="text" id="lastName" name="lastName" required />
-          </div>
+        <div class="form-group">
+          <label for="name">{{ i18n "fullName" }} <span class="required">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
         </div>
+        {{ if .Params.formInstitution }}
+        <div class="form-group">
+          <label for="institution">{{ i18n "institutionName" }} <span class="required">*</span></label>
+          <input type="text" id="institution" name="institution" autocomplete="organization" required />
+        </div>
+        {{ end }}
         <div class="two-columns">
           <div class="form-group">
-            <label for="phone">
-              {{ i18n "phone" | title }}
-            </label>
-            <input type="text" id="phone" name="phone" />
+            <label for="whatsapp">{{ i18n "whatsApp" }} <span class="required">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required />
           </div>
           <div class="form-group">
-            <label for="whatsapp">
-              {{ i18n "whatsApp" | title }}
-            </label>
-            <input type="text" id="whatsapp" name="whatsapp" />
+            <label for="email">{{ i18n "email" }} <span class="required">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
           </div>
         </div>
         <div class="form-group">
-          <label for="email">
-            {{ i18n "email" | title }} <span class="required">*</span>
-          </label>
-          <input type="email" id="email" name="email" required />
+          <label for="message">{{ i18n "message" }} <span class="optional">({{ i18n "optional" }})</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="{{ .Params.formPlaceholder | default (i18n "messagePlaceholder") }}"></textarea>
         </div>
-        <div class="form-group">
-          <label for="subject">
-            {{ i18n "subject" | title }} <span class="required">*</span>
-          </label>
-          <input type="text" value="{{.Params.form}}" id="subject" name="subject" required />
-        </div>
-        <div class="form-group" hidden>
-          <label for="page">
-            {{ i18n "page" | title }} <span class="required">*</span>
-          </label>
-          <input type="hidden" value="{{.Params.form}}" name="page" value="{{.Params.form}}">
-        </div>
-        <div class="form-group">
-          <label for="message">
-            {{ i18n "message" | title }} <span class="required">*</span>
-          </label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <div class="button-wrap button-wrap--center">
+        <div class="button-wrap">
           <button type="submit" class="button-secondary button-secondary--solid">{{ i18n "send" }}</button>
         </div>
       </div>
-
     </form>
+      </div>
+    </div>
   </div>
-</article>
+</section>
 {{end}}

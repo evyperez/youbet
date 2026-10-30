@@ -2,14 +2,6 @@
 @use './text-field' as *;
 @use '../abstracts/index' as my;
 
-/* selects
----------------------------------------------------------------------------- */
-
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-
 select,
 option {
   width: auto;
@@ -20,9 +12,6 @@ option {
   cursor: pointer;
 }
 
-/**
- * @see https://github.com/necolas/normalize.css/issues/579#issue-148022816
- */
 select {
   @extend %text-field-reset;
 
@@ -46,18 +35,13 @@ select {
   }
 }
 
-select,
-.ie6-9:invalid {
+select {
   padding-right: my.$gutter;
 
   background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'6\' viewBox=\'0 0 12 6\'%3E%3Cpolygon fill=\'#a8a8a8\' points=\'0,0 12,0 6,6\'/%3E%3C/svg%3E');
   background-position: right 6px top 50%;
 }
 
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
 optgroup {
   @extend %os-element-reset;
 

@@ -1,27 +1,26 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.benefits }}
-
-  <section class="benefits">
-    <div class="container">
-      {{ if .title }}
-        <h2 class="title-section">{{ .title }}</h2>
-      {{ end }}
-      <div class="three-columns">
-        {{ range .list }}
-          <div class="rich-text">
-            {{ if .image }}
-              <img src="{{ .image }}" alt="{{ .alt }}" class="image-topics">
-            {{ end }}
-            {{ if .title }}
-              <h2 class="heading-4">{{ .title }}</h2>
-            {{ end }}
-
-            {{ if .text }}
-              <p>{{ .text }}</p>
-            {{ end }}
-          </div>
+<section class="benefits">
+  <div class="container">
+    <header class="benefits__header">
+      {{ with .eyebrow }}<p class="benefits__eyebrow">{{ . }}</p>{{ end }}
+      {{ with .title }}<h2 class="benefits__title">{{ . }}</h2>{{ end }}
+    </header>
+    <ul class="benefits__list">
+      {{ range .list }}
+      <li class="polaroid">
+        {{ if .photo }}
+        <picture class="polaroid__photo">
+          <source type="image/webp" media="(min-width: 600px)" srcset="/uploads/images/{{ .photo }}--900.webp">
+          <source type="image/webp" srcset="/uploads/images/{{ .photo }}--500.webp">
+          <img src="/uploads/images/{{ .photo }}.jpg" alt="{{ .alt }}" width="900" height="763" loading="lazy" decoding="async">
+        </picture>
         {{ end }}
-      </div>
-    </div>
-  </section>
+        <h3 class="polaroid__title">{{ .title }}</h3>
+        <p class="polaroid__text">{{ .text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
 {{ end }}

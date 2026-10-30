@@ -1,12 +1,6 @@
 @use '../abstracts/index' as my;
 @use 'abstracts/functions' as f;
 
-/* LISTS
-============================================================================ */
-
-/**
- * @see http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
- */
 ul,
 ol {
   padding-left: 1em;
@@ -17,12 +11,6 @@ ol {
   counter-reset: li;
 }
 
-li ol,
-li ul {
-}
-
-/* definition
----------------------------------------------------------------------------- */
 dl {
   padding: 0;
 }

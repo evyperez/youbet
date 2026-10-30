@@ -2,25 +2,9 @@
 @use '../layout/form';
 @use '../abstracts/index' as my;
 @use 'abstracts/functions' as f;
-
-/* buttons
----------------------------------------------------------------------------- */
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Improve usability and consistency of cursor style between image-type `input` and others.
- * 3. Address `overflow` set to `hidden` in IE 8/9/10. Corrects inner spacing displayed oddly in IE6/7
- * 4. Remove inner padding and border in Firefox 4+.
- * 5. Consistent buttons background color for all browsers (opinionated).
- * 6. Consistent paddings.
- * @see  http://archivist.incutio.com/viewlist/css-discuss/98999
- * @see  http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
- * @see  http://christophzillgens.com/en/articles/equal-height-input-and-button-elements-in-firefox-and-safari
- * @see  http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
- */
+@use '../abstracts/constants/font-stacks' as fs;
 
 $colors: 'button', 'button-secondary', 'button-neutral';
-
 $colors: 'button', 'button-secondary', 'button-neutral';
 
 %button-reset {
@@ -31,36 +15,36 @@ $colors: 'button', 'button-secondary', 'button-neutral';
 
   align-items: center;
 
-  width: auto; /* 3 */
+  width: auto;
   min-width: 88px;
   height: f.to-rem(40px);
 
   padding: 0 f.to-rem(16px);
 
-  overflow: visible; /* 3 */
+  overflow: visible;
 
-  font-family: Asap, sans-serif;
-  font-size: f.to-rem(12px);
-  font-weight: bold;
+  font-family: fs.$TITLE-FONT-STACK;
+  font-size: f.to-rem(15px);
+  font-weight: 600;
 
   line-height: f.to-rem(40px);
 
   text-align: center;
   text-indent: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  text-transform: none;
+  letter-spacing: 0;
   white-space: inherit;
 
   text-decoration: none;
 
-  appearance: button; /* 1 */
-  cursor: pointer; /* 2 */
+  appearance: button;
+  cursor: pointer;
 
   background: unset;
   border: unset;
 
   &::-moz-focus-inner {
-    padding: 0; /* 4 */
+    padding: 0;
 
     border: 0;
   }
@@ -70,7 +54,7 @@ $colors: 'button', 'button-secondary', 'button-neutral';
 
     padding: 0 f.to-rem(16px);
 
-    font-size: f.to-rem(14px);
+    font-size: f.to-rem(16px);
 
     line-height: f.to-rem(48px);
   }
@@ -82,12 +66,6 @@ $colors: 'button', 'button-secondary', 'button-neutral';
   &:disabled {
     cursor: not-allowed;
   }
-}
-
-.button-wrap--center {
-  display: flex;
-
-  justify-content: center;
 }
 
 button,
@@ -107,12 +85,10 @@ button,
     @extend %button-reset;
   }
 
-  // $styles: 'solid', 'solid-inverted', 'inverted', 'ghost', 'ghost-inverted', 'bordeless', 'bordeless-inverted';
-
   .#{$color}[class*='solid'] {
     color: my.palette('white');
 
-    background: my.palette(#{$color}); /* 5 */
+    background: my.palette(#{$color});
     border: 2px solid my.palette(#{$color});
 
     &:hover,
@@ -135,7 +111,7 @@ button,
 
   .#{$color}[class*='inverted'],
   .#{$color}[class*='solid-inverted'] {
-    color: my.palette(#{$color}); /* 5 */
+    color: my.palette(#{$color});
 
     background: my.palette('white');
     border: 2px solid my.palette('white');
@@ -159,7 +135,7 @@ button,
   }
 
   .#{$color}[class*='ghost'] {
-    color: my.palette(#{$color}); /* 5 */
+    color: my.palette(#{$color});
 
     background: my.palette('button', 'reset');
     border: 2px solid my.palette(#{$color});
@@ -183,7 +159,7 @@ button,
   }
 
   .#{$color}[class*='ghost-inverted'] {
-    color: my.palette(#{$color}, 'light'); /* 5 */
+    color: my.palette(#{$color}, 'light');
 
     border: 2px solid my.palette(#{$color}, 'light');
 
@@ -205,7 +181,7 @@ button,
   }
 
   .#{$color}[class*='bordeless'] {
-    color: my.palette(#{$color}); /* 5 */
+    color: my.palette(#{$color});
 
     background: my.palette('button', 'reset');
     border: unset;
@@ -247,73 +223,12 @@ button,
   @include button(#{$color});
 }
 
-/**
- * Avoid the WebKit bug in Android 4.0.* where (1) destroys native `audio`
- * and `video` controls.
- * Please note that this fix DOES NOT work for buttons contained inside table elements.
- * @see https://github.com/necolas/normalize.css/commit/79b3d21b697e94675d748cd9d42409b83318d2b5
- * @see https://github.com/necolas/normalize.css/issues/20
- */
-
 html [type='button'] {
   appearance: button;
 }
 
-.button--full {
-  width: 100%;
-}
-
-.button--full-mobile {
-  @media screen and (max-width: #{map.get(my.$breakpoints, 'tablet__portrait')}) {
-    width: 100%;
-  }
-}
-
-// .button--disabled {
-//   cursor: not-allowed;
-
-//   background-color: my.palette('button', 'disabled');
-
-//   border: 2px solid my.palette('button', 'disabled');
-
-//   &:hover,
-//   &:focus {
-//     &:not([type='reset']) {
-//       background-color: my.palette('button', 'disabled');
-
-//       border: 2px solid my.palette('button', 'disabled');
-
-//       outline: none;
-//     }
-//   }
-// }
-
-/**
-* Replace focus style removed in the border reset above
-*/
 button:-moz-focusring,
 input:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-.button--reset {
-  width: unset;
-  min-width: unset;
-  height: unset;
-
-  padding: unset;
-
-  font-family: my.$text-font-stack;
-  font-size: unset;
-  font-weight: unset;
-
-  line-height: unset;
-
-  color: unset;
-
-  text-transform: unset;
-  letter-spacing: unset;
-
-  background-color: unset;
-  border-radius: unset;
-}

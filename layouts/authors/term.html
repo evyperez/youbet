@@ -4,11 +4,11 @@
         <div class="rich-text">
           <div class="author author--center column-gap--18">
             <div class="avatar avatar--big">
-              <a href="{{ .Permalink }}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+              <img src="{{ .Params.avatar }}" alt="" />
             </div>
             <div>
               {{if .Params.Name}}
-              <h2>{{ .Params.Name }}</h2>
+              <h1>{{ .Params.Name }}</h1>
               {{ end }}
             </div>
           </div>
@@ -21,11 +21,11 @@
 
         <div class="rich-text">
           <hr>
-          <h3>
+          <h2>
             {{ i18n "article" }}{{ if gt (len .Data.Pages) 1 }}s{{ end }}
             {{ i18n "by" | lower }}
             {{ .Params.Name }}
-          </h3>
+          </h2>
 
           <div class="three-columns">
             {{ range .Data.Pages.ByDate.Reverse }}

@@ -245,7 +245,6 @@
   row-gap: f.to-rem(4px);
 }
 
-.post__footer,
 .post__header,
 .post__body {
   display: grid;
@@ -257,7 +256,6 @@
   width: 100%;
 }
 
-// Paginação da lista do blog
 .pagination {
   margin-top: f.to-rem(32px);
   margin-bottom: f.to-rem(32px);
@@ -319,4 +317,39 @@
   background: my.palette('orange');
   color: my.palette('white');
   cursor: default;
+}
+
+.post--card {
+  position: relative;
+
+  .img-subtitle {
+    font-size: f.to-rem(14px);
+    font-weight: 700;
+  }
+
+  .post__link {
+    text-decoration: none;
+
+    color: inherit;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+
+      content: '';
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        outline: 3px solid my.palette('orange');
+        outline-offset: 4px;
+      }
+    }
+  }
+
+  &:hover .post__link {
+    color: my.palette('orange', 'text');
+  }
 }

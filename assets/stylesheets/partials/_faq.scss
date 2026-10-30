@@ -2,7 +2,7 @@
 @use 'abstracts/functions' as f;
 
 .faq-partial {
-  @include my.texture(my.palette('blue', '30%'), 14, 0);
+  background-color: my.palette('blue', '30%');
 }
 
 .faq {

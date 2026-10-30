@@ -3,5 +3,5 @@
 @use 'abstracts/functions' as f;
 
 .programs-partial {
-  @include my.texture(my.palette('orange', '5%'), 16, 0);
+  background-color: my.palette('orange', '5%');
 }

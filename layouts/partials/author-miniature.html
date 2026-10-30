@@ -4,7 +4,7 @@
 
 <div class="author">
   <div class="avatar avatar--small">
-    <a href="{{ .RelPermalink }}"><img src="{{ .Params.avatar }}" alt="{{ .Params.alt }}" /></a>
+    <a href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ .Params.avatar }}" alt="" /></a>
   </div>
   <div>
     {{if .Params.Name}}

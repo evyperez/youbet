@@ -45,12 +45,6 @@
   @extend %text-field-reset;
 }
 
-/**
-* Fix the cursor style for Chrome's increment/decrement buttons. For certain
-* `font-size` values of the `input`, it causes the cursor style of the
-* decrement button to change from `default` to `text`.
-*/
-
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
   height: auto;
@@ -60,12 +54,6 @@
   @extend %text-field-reset;
 }
 
-/**
-* Jakob Nielsen survey suggests that 27 characters could be good for search fields. They said that around 9 in 10 queries will fit in that space.
-*
-* 1. Correct the outline style in Safari.
-* 2. iPhone bug displaying search input with rounded angles before entering into the field
-*/
 [type='search'] {
   @extend %text-field-reset;
 
@@ -78,12 +66,6 @@
   background-repeat: no-repeat;
   background-position: left 0.5rem center;
 }
-
-/**
-* Remove inner padding and search cancel button in Safari and Chrome on OS X.
-* Safari (but not Chrome) clips the cancel button when the search input has
-* padding (and `textfield` appearance).
-*/
 
 [type='tel'] {
   @extend %text-field-reset;

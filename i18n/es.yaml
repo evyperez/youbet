@@ -1,13 +1,9 @@
-- id: about
-  translation: 'Sobre nosotros'
-- id: activities
-  translation: 'Actividades'
 - id: article
   translation: 'artículo'
-- id: author
-  translation: 'Autor'
 - id: authors
   translation: 'Autores'
+- id: breadcrumb
+  translation: 'Usted está aquí'
 - id: blog
   translation: 'Blog'
 - id: by
@@ -34,40 +30,24 @@
   translation: 'Precios'
 - id: content404
   translation: 'No hemos encontrado lo que busca. Vuelva al inicio.'
-- id: contactAlternatives
-  translation: 'También puede contactarnos por correo electrónico en %s o por WhatsApp al %s.'
 - id: email
   translation: 'Correo electrónico'
 - id: faq
   translation: 'Preguntas frecuentes'
-- id: firstName
-  translation: 'Nombre'
 - id: home
   translation: 'Inicio'
-- id: lastName
-  translation: 'Apellidos'
-- id: lastPosts
-  translation: 'Últimas entradas'
 - id: message
   translation: 'Mensaje'
-- id: notFound
-  translation: 'No encontrado'
-- id: phone
-  translation: 'Teléfono'
 - id: programs
   translation: 'Programas'
 - id: partner
   translation: 'Socio'
-- id: partners
-  translation: 'Socios'
 - id: somePartners
   translation: 'Socios'
 - id: knowMore
   translation: 'Saber más'
 - id: send
   translation: 'Enviar'
-- id: subject
-  translation: 'Asunto'
 - id: tags
   translation: 'Etiquetas'
 - id: title404
@@ -76,8 +56,6 @@
   translation: 'WhatsApp'
 - id: whatsappContactAlt
   translation: 'Contáctenos por WhatsApp'
-- id: writtenBy
-  translation: 'Escrito por'
 - id: term
   translation: 'Período'
 - id: age
@@ -92,14 +70,8 @@
   translation: 'Detalles'
 - id: whatIsIncluded
   translation: '¿Qué está incluido?'
-- id: allYouNeed
-  translation: 'Todo lo que necesitas'
-- id: total
-  translation: 'Total'
 - id: scholarship
   translation: 'Beca'
-- id: commonQuestions
-  translation: 'Preguntas frecuentes'
 - id: getAQuote
   translation: 'Solicitar presupuesto'
 - id: January
@@ -136,24 +108,6 @@
   translation: 'Seleccionar'
 - id: "que tipo de curso quer fazer"
   translation: '¿Qué tipo de curso desea?'
-- id: search
-  translation: 'Buscar'
-- id: filterByTopic
-  translation: 'Filtrar por tema'
-- id: selectTopic
-  translation: 'Seleccionar tema'
-- id: filterBySecretary
-  translation: 'Filtrar por secretaría'
-- id: selectSecretary
-  translation: 'Seleccionar secretaría'
-- id: filterByBadge
-  translation: 'Filtrar por sello'
-- id: selectBadge
-  translation: 'Seleccionar sello'
-- id: clearFilters
-  translation: 'Limpiar filtros'
-- id: page
-  translation: 'Página'
 - id: readMore
   translation: 'Leer más'
 - id: seeAlso
@@ -164,8 +118,6 @@
   translation: 'Pie de página'
 - id: openMenu
   translation: 'Abrir menú'
-- id: languageLabel
-  translation: 'Idioma: %s'
 - id: languageName_pt
   translation: 'Português'
 - id: languageName_en
@@ -194,7 +146,33 @@
   translation: 'Primera'
 - id: lastPage
   translation: 'Última'
-- id: of
-  translation: 'de'
 - id: noTags
   translation: 'Aún no hay etiquetas.'
+- id: contactEyebrow
+  translation: 'Habla con nosotros'
+- id: contactIntro
+  translation: 'Cuéntanos un poco sobre ti y el programa que te interesa. Te responderemos con un presupuesto personalizado.'
+- id: fullName
+  translation: 'Nombre completo'
+- id: optional
+  translation: 'opcional'
+- id: messagePlaceholder
+  translation: 'Ej.: tengo 16 años y quiero hacer un intercambio el próximo año.'
+- id: footerInstitutional
+  translation: 'Institucional'
+- id: footerContact
+  translation: 'Contacto'
+- id: allRightsReserved
+  translation: 'Todos los derechos reservados.'
+- id: forSchools
+  translation: 'Para escuelas y universidades'
+- id: beSchoolPartner
+  translation: 'Sea una escuela asociada'
+- id: institutionName
+  translation: 'Nombre de la institución'
+- id: toggleDarkMode
+  translation: 'Cambiar modo oscuro'
+- id: authorDescription
+  translation: "Artículos de %s en el blog de YouBet! School sobre intercambio, estudiar en el extranjero e inglés."
+- id: termDescription
+  translation: "Artículos sobre %s en el blog de YouBet! School: consejos de intercambio, estudiar en el extranjero e inglés."

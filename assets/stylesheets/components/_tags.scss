@@ -40,9 +40,6 @@
   }
 }
 
-/* Página de listagem de tags (taxonomy list) – nuvem de tags + paginação
----------------------------------------------------------------------------- */
-
 .tags-list {
   padding: 0.5em 0;
 }
@@ -117,21 +114,3 @@
   font-size: f.to-rem(14px);
 }
 
-.pagination__prev,
-.pagination__next {
-  padding: f.to-rem(8px) f.to-rem(16px);
-
-  color: my.palette('anchor');
-  text-decoration: none;
-
-  background: my.palette('gray', '10%');
-  border-radius: 4px;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.pagination__info {
-  color: my.palette('gray');
-}

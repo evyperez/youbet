@@ -5,22 +5,15 @@
 @use 'abstracts/constants/font-stacks' as fs;
 @use '../../node_modules/modularscale-sass/stylesheets/modularscale' as ms;
 
-/**
- * 1. Add text decoration inheritance in all browsers (opinionated).
- * 2. Add vertical alignment inheritence in all browsers (opinionated).
- */
 *,
 ::before,
 ::after {
   line-height: inherit;
-  vertical-align: inherit; /* 2 */
+  vertical-align: inherit;
 
-  text-decoration: inherit; /* 1 */
+  text-decoration: inherit;
 }
 
-/**
- * Basic typography style for copy text
- */
 body {
   font-family: my.$text-font-stack;
   font-size: my.$body-font-size;
@@ -31,13 +24,6 @@ body {
   color: my.palette('text', 'dark');
 }
 
-/* HEADINGS AND TITLES */
-
-/**
- * @see https://developer.mozilla.org/en/CSS/-moz-font-feature-settings
- * @see https://bugzilla.mozilla.org/show_bug.cgi?id=458634
- * @see https://bugzilla.mozilla.org/show_bug.cgi?id=611780
- */
 h1,
 h2,
 h3,
@@ -50,7 +36,7 @@ details > summary {
   padding: 0;
   margin: 0;
 
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
   font-weight: my.font-weight('bold');
   font-feature-settings: 'case' 1, 'cpsp' 1, 'cswh' 1, 'liga' 1, 'locl' 1, 'lnum' 1, 'pnum' 1, 'titl' 1, 'zero' 1;
 
@@ -62,14 +48,13 @@ details > summary {
   }
 }
 
-
 ms.$modularscale: (
   base: 1rem,
   ratio: 1.2,
 );
 
 %heading-h1 {
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
   font-size: ms.ms(4);
   font-weight: my.font-weight('bold');
 
@@ -83,7 +68,7 @@ ms.$modularscale: (
 }
 
 %heading-h2 {
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
   font-size: ms.ms(3);
   font-weight: my.font-weight('bold');
 
@@ -97,7 +82,7 @@ ms.$modularscale: (
 }
 
 %heading-h3 {
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
   font-size: ms.ms(1);
   font-weight: my.font-weight('bold');
 
@@ -111,7 +96,7 @@ ms.$modularscale: (
 }
 
 %heading-h4 {
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
   font-size: ms.ms(1);
   font-weight: my.font-weight('bold');
 
@@ -119,15 +104,14 @@ ms.$modularscale: (
 }
 
 %heading-h5 {
-  font-family: fs.$ASAP-FONT-STACK;
+  font-family: fs.$TITLE-FONT-STACK;
   font-size: ms.ms(0);
   font-weight: my.font-weight('bold');
 
   line-height: f.to-rem(27px);
 }
 
-h1,
-.heading-1 {
+h1 {
   @extend %heading-h1;
 }
 
@@ -136,8 +120,7 @@ h2,
   @extend %heading-h2;
 }
 
-h3,
-.heading-3 {
+h3 {
   @extend %heading-h3;
 }
 
@@ -169,7 +152,6 @@ summary {
   }
 }
 
-
 h1 a,
 h2 a,
 h3 a,
@@ -195,18 +177,11 @@ p {
   margin: 0;
 }
 
-/**
- * @see: http://demosthenes.info/blog/946/Controlling-Widows--Orphans
- */
 article p {
   widows: 3;
-  // max-width: map.get(my.$line-lengths, 'max');
 
   orphans: 3;
 }
-
-// article p + p {
-// }
 
 article h1 + p,
 article h2 + p,
@@ -221,28 +196,16 @@ article fieldset > p:first-child {
   text-indent: 0;
 }
 
-/* INLINE TEXT
-============================================================================ */
-
-/**
- * 1. Address styling not present in IE 8/9, Safari 5, and Chrome.
- * 2. Firefox uses `text-decoration: dotted underline;` to follow the specification standard
- * @see http://www.w3.org/TR/css-text-decor-3/#default-stylesheet
- * @see https://bugzilla.mozilla.org/show_bug.cgi?id=1157083
- * @see https://github.com/necolas/normalize.css/pull/451
- * @see http://caniuse.com/#feat=text-decoration
- */
-
 %abbr-title {
   &[title] {
     text-decoration: none;
 
-    cursor: help; /* 1 */
+    cursor: help;
 
     border-bottom: 1px dotted;
 
     @supports (text-decoration: dotted underline) {
-      text-decoration: dotted underline; /* 2 */
+      text-decoration: dotted underline;
 
       border-bottom: inherit;
     }
@@ -255,65 +218,34 @@ abbr {
   letter-spacing: 0.1em;
 }
 
-/**
- * 1. Address styling not present in Safari 5 and Chrome.
- */
 dfn {
   @extend %abbr-title;
   font-size: 1em;
-  font-style: italic; /* 1 */
+  font-style: italic;
 }
 
-/**
- * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome.
- * b/strong must be bolder than parent; one rule avoids duplicate/contradictory declarations.
- *
- * @see https://github.com/necolas/normalize.css/pull/342
- * @see https://github.com/necolas/normalize.css/pull/342#issuecomment-173801037
- */
 b,
 strong {
   font-weight: my.font-weight('bold');
 }
 
-// em,
-// i {
-// }
-
-// i[lang] {
-// }
-
-/**
- * Address styling not present in IE 8/9.
- */
 mark {
   color: my.palette('mark', 'foreground');
 
   background: my.palette('mark', 'background');
 }
 
-// meter {
-// }
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
 small {
   font-size: 83.3333%;
 
   line-height: inherit;
 }
 
-/**
- * Change the positioning on superscript and subscript elements
- * in all browsers (opinionated).
- * 1. Correct the font size in all browsers.
- */
 sub,
 sup {
   position: relative;
 
-  font-size: 83.3333%; /* 1 */
+  font-size: 83.3333%;
 
   line-height: 0;
   vertical-align: baseline;
@@ -335,43 +267,20 @@ time {
   }
 }
 
-/* codes
-============================================================================ */
-
-/**
- * 1. Address odd `em`-unit font size rendering in all browsers.
- * @see https://github.com/necolas/normalize.css/pull/295#issuecomment-34787724
- * 2. Fix the font-sizing bug by repeating the value.
- * @see https://github.com/necolas/normalize.css/blob/2bdda84272650aedfb45d8abe11a6d177933a803/README.md#extended-details
- */
 code,
 kbd,
 pre,
 samp,
 var {
-  font-family: my.$code-font-stack, monospace; /* 2 */
-  font-size: 1em; /* 1 */
+  font-family: my.$code-font-stack, monospace;
+  font-size: 1em;
 }
 
-// code {
-// }
-
-// kbd {
-// }
-
-/**
- * Formatting quoted code in blog posts: CSS2.1 white-space: pre-wrap
- * @see http://www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
- * Contain overflow in all browsers.
- */
 pre {
-  word-wrap: break-word; /* IE */
-  white-space: pre; /* CSS2 */
-  // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  white-space: pre-wrap; /* CSS 2.1 */
-  // stylelint-disable-next-line declaration-block-no-duplicate-properties
-  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-}
+  word-wrap: break-word;
+  white-space: pre;  // stylelint-disable-next-line declaration-block-no-duplicate-properties
+  white-space: pre-wrap;  // stylelint-disable-next-line declaration-block-no-duplicate-properties
+  white-space: pre-line;}
 
 samp {
   font-style: italic;
@@ -381,8 +290,6 @@ var {
   font-style: italic;
 }
 
-/* text edition
-============================================================================ */
 del,
 s {
   text-decoration: line-through;
@@ -446,36 +353,6 @@ del {
   }
 }
 
-/* quotes
-============================================================================ */
-///
-/// Blockquote problems and solutions
-///
-/// @group components
-/// @source http://oli.jp/2011/blockquote/
-///
-/// @example html
-/// <blockquote>
-/// 	<p>To teach how to live without certainty, and yet without being
-/// 	paralyzed by hesitation, is perhaps the chief thing that philosophy,
-/// 	in our age, can still do for those who study it.</p>
-/// 	<footer>
-/// 		<p>Bertrand Russell,
-/// 		<cite>A History of Western Philosophy</cite></p>
-/// 	</footer>
-/// </blockquote>
-///
-blockquote {
-}
-
-blockquote > p {
-  &::before {
-  }
-
-  &:last-of-type::after {
-  }
-}
-
 q,
 blockquote {
   font-style: italic;
@@ -497,9 +374,6 @@ blockquote footer {
 blockquote footer cite {
   font-style: italic;
 }
-
-// q {
-// }
 
 blockquote p,
 blockquote pre,
@@ -524,10 +398,6 @@ blockquote.verse p {
   text-align: left;
 }
 
-
-/* rich-text
-============================================================================ */
-
 .rich-text {
   width: 100%;
 
@@ -545,19 +415,8 @@ blockquote.verse p {
     text-decoration: underline;
 
     &:hover {
-      color: my.palette('orange');
+      color: my.palette('orange', 'text');
     }
-  }
-
-  .image-topics {
-    max-width: 214px;
-
-    margin: 0 auto f.to-rem(16px) auto;
-
-    @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-      margin: 0 0 f.to-rem(24px) 0;
-    }
-
   }
 
   > * {
@@ -571,7 +430,6 @@ blockquote.verse p {
       margin-bottom: 0;
     }
   }
-
 }
 
 .rich-text > ul,
@@ -590,19 +448,6 @@ blockquote.verse p {
     &:last-child {
       margin-bottom: 0;
     }
-  }
-}
-
-
-.pre-title {
-  font-size: f.to-rem(12px);
-
-  line-height: f.to-rem(20px);
-
-  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__landscape')}) {
-    font-size: f.to-rem(14px);
-
-    line-height: f.to-rem(22px);
   }
 }
 

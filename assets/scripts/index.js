@@ -1,1 +1,2 @@
 import './glide';
+import './theme';

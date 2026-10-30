@@ -3,13 +3,8 @@
 @media print {
   // stylelint-disable disable-block, no-color-literals, declaration-no-important
 
-  /**
-   * @see http://www.alistapart.com/articles/goingtoprint/
-   * @see http://www.merttol.com/articles/css/too-light-for-print.html
-   */
-  * {
-    color: rgb(0, 0, 0) !important; /* Black prints faster: h5bp.com/s */
-
+    * {
+    color: rgb(0, 0, 0) !important;
     text-shadow: none !important;
 
     background: transparent !important;
@@ -22,7 +17,6 @@
     height: auto;
     max-height: none;
   }
-
 
   body {
     font: 12pt/1.33333 'Palatino Linotype', Palatino, 'Times New Roman', Times, serif;
@@ -55,10 +49,7 @@
     content: ' (' attr(href) ') ';
   }
 
-  /**
-  * Don't show links for images, or javascript/internal links
-  */
-
+  
   a[href^='javascript:'],
   a[href^='#'] {
     &::after {
@@ -79,10 +70,7 @@
     border: 1px solid rgb(153, 153, 153);
   }
 
-  /**
-   * @see css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
+    thead {
     display: table-header-group;
   }
 

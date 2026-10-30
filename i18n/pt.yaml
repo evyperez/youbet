@@ -1,13 +1,9 @@
-- id: about
-  translation: 'Sobre'
-- id: activities
-  translation: 'Atividades'
 - id: article
   translation: 'Artigo'
-- id: author
-  translation: 'Autor'
 - id: authors
   translation: 'Autores'
+- id: breadcrumb
+  translation: 'Você está em'
 - id: blog
   translation: 'Blog'
 - id: by
@@ -29,45 +25,29 @@
 - id: postBy
   translation: 'Post por'
 - id: pricingSubtitle
-  translation: 'Atenção: preços para o ano de 2023, esses valores podem alterar sem aviso prévio. Alguns valores já estão com o valor da bolsa para brasileiros embutido, qualquer dúvida entre em contato'
+  translation: 'Atenção: preços referentes ao ano de 2023. Os valores podem ser alterados sem aviso prévio. Alguns já incluem o desconto da bolsa para brasileiros. Em caso de dúvida, entre em contato.'
 - id: pricing
   translation: 'Preços'
 - id: content404
-  translation: 'Não encontramos o que você está procurando, volte para home'
-- id: contactAlternatives
-  translation: 'Você também pode entrar em contato por e-mail em %s ou pelo WhatsApp no número %s.'
+  translation: 'Não encontramos o que você está procurando. Volte para a página inicial.'
 - id: email
   translation: 'E-mail'
 - id: faq
   translation: 'Perguntas Frequentes'
-- id: firstName
-  translation: 'Nome'
 - id: home
   translation: 'Home'
-- id: lastName
-  translation: 'Sobrenome'
-- id: lastPosts
-  translation: 'Últimos posts'
 - id: message
   translation: 'Mensagem'
-- id: notFound
-  translation: 'Não encontrado'
-- id: phone
-  translation: 'Telefone'
 - id: programs
   translation: 'Programas'
 - id: partner
   translation: 'Parceiro'
-- id: partners
-  translation: 'Parceiros'
 - id: somePartners
   translation: 'Alguns parceiros'
 - id: knowMore
   translation: 'Saiba mais'
 - id: send
   translation: 'Enviar'
-- id: subject
-  translation: 'Assunto'
 - id: tags
   translation: 'Tags'
 - id: title404
@@ -75,9 +55,7 @@
 - id: whatsApp
   translation: 'WhatsApp'
 - id: whatsappContactAlt
-  translation: 'Entre em contato através do WhatsApp'
-- id: writtenBy
-  translation: 'Escrito por'
+  translation: 'Entre em contato pelo WhatsApp'
 - id: term
   translation: 'Período'
 - id: age
@@ -92,14 +70,8 @@
   translation: 'Detalhes'
 - id: whatIsIncluded
   translation: 'O que está incluso?'
-- id: allYouNeed
-  translation: 'Tudo o que você precisa'
-- id: total
-  translation: 'Total'
 - id: scholarship
   translation: 'Bolsa de estudos'
-- id: commonQuestions
-  translation: 'Perguntas frequentes'
 - id: getAQuote
   translation: 'Solicite um orçamento'
 - id: January
@@ -136,24 +108,6 @@
   translation: 'Selecionar'
 - id: "que tipo de curso quer fazer"
   translation: 'Que tipo de curso quer fazer'
-- id: search
-  translation: 'Buscar'
-- id: filterByTopic
-  translation: 'Filtrar por tópico'
-- id: selectTopic
-  translation: 'Selecionar tópico'
-- id: filterBySecretary
-  translation: 'Filtrar por secretaria'
-- id: selectSecretary
-  translation: 'Selecionar secretaria'
-- id: filterByBadge
-  translation: 'Filtrar por selo'
-- id: selectBadge
-  translation: 'Selecionar selo'
-- id: clearFilters
-  translation: 'Limpar filtros'
-- id: page
-  translation: 'Página'
 - id: readMore
   translation: 'Leia mais'
 - id: seeAlso
@@ -164,8 +118,6 @@
   translation: 'Rodapé'
 - id: openMenu
   translation: 'Abrir menu'
-- id: languageLabel
-  translation: 'Idioma: %s'
 - id: languageName_pt
   translation: 'Português'
 - id: languageName_en
@@ -194,7 +146,33 @@
   translation: 'Primeira'
 - id: lastPage
   translation: 'Última'
-- id: of
-  translation: 'de'
 - id: noTags
   translation: 'Nenhuma tag ainda.'
+- id: contactEyebrow
+  translation: 'Fale com a gente'
+- id: contactIntro
+  translation: 'Conte um pouco sobre você e o programa que te interessa. Respondemos com um orçamento personalizado para o seu objetivo.'
+- id: fullName
+  translation: 'Nome completo'
+- id: optional
+  translation: 'opcional'
+- id: messagePlaceholder
+  translation: 'Ex.: tenho 16 anos e quero fazer intercâmbio no próximo ano.'
+- id: footerInstitutional
+  translation: 'Institucional'
+- id: footerContact
+  translation: 'Contato'
+- id: allRightsReserved
+  translation: 'Todos os direitos reservados.'
+- id: forSchools
+  translation: 'Para escolas e universidades'
+- id: beSchoolPartner
+  translation: 'Seja uma escola parceira'
+- id: institutionName
+  translation: 'Nome da instituição'
+- id: toggleDarkMode
+  translation: 'Alternar modo escuro'
+- id: authorDescription
+  translation: "Artigos de %s no blog da YouBet! School sobre intercâmbio, estudo no exterior e inglês."
+- id: termDescription
+  translation: "Artigos sobre %s no blog da YouBet! School: dicas de intercâmbio, estudo no exterior e inglês."

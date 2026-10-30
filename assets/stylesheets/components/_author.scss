@@ -26,13 +26,11 @@
   padding: 0;
 
   border: unset;
-
 }
 
 .author--center {
   align-items: center;
 }
-
 
 .avatar {
   width: f.to-rem(38px);
@@ -42,11 +40,6 @@
 .avatar--big {
   width: f.to-rem(90px);
   height: f.to-rem(90px);
-}
-
-.avatar--medium {
-  width: f.to-rem(48px);
-  height: f.to-rem(48px);
 }
 
 .author a {

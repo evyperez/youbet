@@ -1,9 +1,9 @@
 {{ define "main" }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
+<main role="main" id="conteudo" class="internal-page programs">
 
 {{partial "page-title.html" .}}
   {{ partial "breadcrumbs.html" . }}
-<main role="main" id="conteudo" class="internal-page programs">
   <article>
     <div class="container">
       {{ if .Params.mainImage }}

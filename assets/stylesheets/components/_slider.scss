@@ -80,7 +80,7 @@
   }
 
   &::-ms-thumb {
-    margin-top: 0; // reset value used for webkit. Weird, right?
+    margin-top: 0;
 
     appearance: none;
 
@@ -88,21 +88,10 @@
   }
 }
 
-@mixin vertical-input-range {
-
-  // stylelint-disable-next-line property-no-vendor-prefix
-  -webkit-appearance: slider-vertical;
-
-  writing-mode: bt-lr;
-}
-
-/**
- * 1. required for proper track sizing in FF
- */
 [type='range'] {
   display: block;
 
-  width: 100%; /* 1 */
+  width: 100%;
 
   padding: 0;
 
@@ -112,7 +101,7 @@
   cursor: pointer;
 
   background: transparent;
-  border: 0; /* 1 */
+  border: 0;
 
   // stylelint-disable-next-line mixins-before-declarations
   @include range-track($height: 0.125rem, $thumb-height: 1.5rem, $bg-fallback: null) {
@@ -129,14 +118,10 @@
     border: 0;
   }
 
-  /**
-   * 1. Remove the focus border in Firefox.
-   */
-  &::-moz-focus-outer {
-    border: 0; /* 1 */
+    &::-moz-focus-outer {
+    border: 0;
   }
 
-  /* hide the outline behind the border */
   &:-moz-focusring {
     outline: 1px solid transparent;
     outline-offset: -1px;
