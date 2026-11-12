@@ -35,7 +35,9 @@
   "license": "MIT",
   "homepage": "http://youbetschool.com",
   "dependencies": {
-    "@glidejs/glide": "^3.7.1"
+    "@glidejs/glide": "^3.7.1",
+    "posthog-js": "1.438.24",
+    "vanilla-cookieconsent": "3.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

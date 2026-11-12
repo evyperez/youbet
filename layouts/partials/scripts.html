@@ -1,3 +1,11 @@
+{{- $consent := dict "privacyUrl" (i18n "privacyPolicyUrl") -}}
+{{- with .Site.Params.posthog -}}
+  {{- if and .key hugo.IsProduction -}}
+    {{- $ph := resources.Get "/scripts/posthog.js" | js.Build (dict "minify" true) | resources.Fingerprint "sha512" -}}
+    {{- $consent = merge $consent (dict "posthogKey" .key "posthogHost" .host "posthogSrc" $ph.RelPermalink "posthogIntegrity" $ph.Data.Integrity) -}}
+  {{- end -}}
+{{- end }}
+<script type="application/json" id="consent-config">{{ $consent | jsonify | safeJS }}</script>
 {{ $js := resources.Get "/scripts/index.js" | js.Build }}
 {{ $secureJS := $js | js.Build | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>

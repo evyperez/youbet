@@ -176,3 +176,5 @@
   translation: "Artigos de %s no blog da YouBet! School sobre intercâmbio, estudo no exterior e inglês."
 - id: termDescription
   translation: "Artigos sobre %s no blog da YouBet! School: dicas de intercâmbio, estudo no exterior e inglês."
+- id: cookiePreferences
+  translation: 'Preferências de cookies'

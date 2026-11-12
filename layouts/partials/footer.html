@@ -69,7 +69,11 @@
 
     <div class="footer__bottom">
       <p>© {{ now.Year }} YouBet! School. {{ i18n "allRightsReserved" }}</p>
-      <p><a href="{{ i18n "privacyPolicyUrl" }}">{{ i18n "privacyPolicy" }}</a></p>
+      <p>
+        <a href="{{ i18n "privacyPolicyUrl" }}">{{ i18n "privacyPolicy" }}</a>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="footer__cookie-btn" data-cc="show-preferencesModal">{{ i18n "cookiePreferences" }}</button>
+      </p>
     </div>
   </div>
 </footer>
