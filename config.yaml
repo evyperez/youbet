@@ -263,12 +263,6 @@ languages:
 
 params:
   googleTag: 'GTM-PXT9Q4L'
-  # PostHog: cole a chave do projeto (phc_...) em Settings > Project.
-  # Conta na Europa? troque o host para https://eu.i.posthog.com
-  # Com a chave vazia, o PostHog não é carregado.
-  posthog:
-    key: 'phc_xzEiyPpfLiq9rzdRLqDiGJCqP8WiQsLEfPgqqT8uBGkK'
-    host: 'https://eu.i.posthog.com'
   sitename: 'YouBet! School'
   ogimage: '/uploads/images/compartilhamento.jpg'
   authors:

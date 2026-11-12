@@ -1,10 +1,26 @@
 {{- $consent := dict "privacyUrl" (i18n "privacyPolicyUrl") -}}
-{{- with .Site.Params.posthog -}}
-  {{- if and .key hugo.IsProduction -}}
-    {{- $ph := resources.Get "/scripts/posthog.js" | js.Build (dict "minify" true) | resources.Fingerprint "sha512" -}}
-    {{- $consent = merge $consent (dict "posthogKey" .key "posthogHost" .host "posthogSrc" $ph.RelPermalink "posthogIntegrity" $ph.Data.Integrity) -}}
-  {{- end -}}
-{{- end }}
+{{- $posthogKey := getenv "HUGO_PARAMS_POSTHOG_KEY" -}}
+{{- $posthogHost := getenv "HUGO_PARAMS_POSTHOG_HOST" -}}
+{{- if and $posthogKey $posthogHost -}}
+  {{- $ph := resources.Get "/scripts/posthog.js" | js.Build (dict "minify" true) | resources.Fingerprint "sha512" -}}
+  {{- $consent = merge $consent (dict "posthogKey" $posthogKey "posthogHost" $posthogHost "posthogEnvironment" hugo.Environment "posthogSrc" $ph.RelPermalink "posthogIntegrity" $ph.Data.Integrity) -}}
+{{- end -}}
+{{- if not hugo.IsProduction -}}
+  {{- if not $posthogKey }}
+    <script>
+      console.error(
+        'HUGO_PARAMS_POSTHOG_KEY variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once HUGO_PARAMS_POSTHOG_KEY is configured'
+      );
+    </script>
+  {{ end -}}
+  {{- if not $posthogHost }}
+    <script>
+      console.error(
+        'HUGO_PARAMS_POSTHOG_HOST variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once HUGO_PARAMS_POSTHOG_HOST is configured'
+      );
+    </script>
+  {{ end -}}
+{{- end -}}
 <script type="application/json" id="consent-config">{{ $consent | jsonify | safeJS }}</script>
 {{ $js := resources.Get "/scripts/index.js" | js.Build }}
 {{ $secureJS := $js | js.Build | resources.Minify | resources.Fingerprint "sha512" }}
