@@ -1,0 +1,31 @@
+{{- /* Google Consent Mode v2: tudo negado por padrão até a pessoa escolher no aviso de cookies.
+       Precisa vir ANTES do Google Tag Manager. Lê a escolha salva (cookie cc_cookie) para
+       visitantes que já responderam o aviso. */ -}}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  (function () {
+    var analytics = false;
+    var marketing = false;
+    try {
+      var match = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
+      if (match) {
+        var saved = JSON.parse(decodeURIComponent(match[1]));
+        var categories = (saved && saved.categories) || [];
+        analytics = categories.indexOf('analytics') > -1;
+        marketing = categories.indexOf('marketing') > -1;
+      }
+    } catch (e) { /* sem escolha salva */ }
+    gtag('consent', 'default', {
+      analytics_storage: analytics ? 'granted' : 'denied',
+      ad_storage: marketing ? 'granted' : 'denied',
+      ad_user_data: marketing ? 'granted' : 'denied',
+      ad_personalization: marketing ? 'granted' : 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', false);
+  })();
+</script>

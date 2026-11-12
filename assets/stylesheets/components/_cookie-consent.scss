@@ -1,0 +1,29 @@
+@use '../abstracts/index' as my;
+@use '../abstracts/constants/font-stacks' as fs;
+
+/* stylelint-disable selector-max-id -- o CookieConsent usa o id #cc-main */
+
+// Cores do aviso de cookies (CookieConsent) alinhadas à paleta da YouBet!.
+#cc-main {
+  --cc-font-family: #{fs.$NATIVE-FONT-STACK};
+  --cc-modal-border-radius: 0.75rem;
+  --cc-btn-border-radius: 999px;
+  --cc-link-color: #{my.palette('blue', 'base')};
+  --cc-btn-primary-bg: #{my.palette('blue', 'base')};
+  --cc-btn-primary-border-color: #{my.palette('blue', 'base')};
+  --cc-btn-primary-hover-bg: #{my.palette('blue', '110')};
+  --cc-btn-primary-hover-border-color: #{my.palette('blue', '110')};
+  --cc-toggle-on-bg: #{my.palette('blue', 'base')};
+}
+
+.cc--darkmode #cc-main {
+  --cc-bg: #172238;
+  --cc-link-color: #{my.palette('orange')};
+  --cc-btn-primary-bg: #{my.palette('orange')};
+  --cc-btn-primary-color: #{my.palette('blue', '110')};
+  --cc-btn-primary-border-color: #{my.palette('orange')};
+  --cc-btn-primary-hover-bg: #{my.palette('orange', '80%')};
+  --cc-btn-primary-hover-color: #{my.palette('blue', '110')};
+  --cc-btn-primary-hover-border-color: #{my.palette('orange', '80%')};
+  --cc-toggle-on-bg: #{my.palette('orange')};
+}

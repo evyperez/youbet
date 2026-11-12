@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 @use '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
+@use '../../node_modules/vanilla-cookieconsent/dist/cookieconsent';
 
 @use 'base/base';
 @use 'base/typography';
@@ -32,6 +33,7 @@
 @use 'components/page-title';
 @use 'components/tags';
 @use 'components/carousel';
+@use 'components/cookie-consent';
 
 @use 'pages/home';
 @use 'pages/programs';

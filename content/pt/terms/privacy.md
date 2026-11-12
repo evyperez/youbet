@@ -1,7 +1,7 @@
 ---
 title: 'Política de Privacidade'
 date: 2021-12-03 15:40:28+00:00
-lastmod: 2026-10-30
+lastmod: 2026-11-12
 url: "politica-de-privacidade"
 draft: false
 description: 'Política de Privacidade e Proteção de Dados da YouBet! School, em conformidade com a LGPD (Lei nº 13.709/2018).'
@@ -86,7 +86,8 @@ Compartilhamos dados apenas quando necessário e com os seguintes agentes:
 - **Provedores de tecnologia** que operam o site e os nossos canais, como:
   - **Netlify**, que hospeda o site e recebe os envios dos formulários;
   - **Google** (Google Tag Manager, Google Analytics e Google Fonts), para medição de audiência e carregamento de fontes;
-  - **Cookiebot (Usercentrics)**, que gerencia o aviso e as preferências de cookies;
+  - **PostHog**, para entender como o site é usado (por exemplo, páginas visitadas e cliques), somente com o seu consentimento;
+  - **Cloudflare**, que protege o site e mede o número de visitas de forma agregada, sem usar cookies;
   - **Meta (WhatsApp)**, quando você escolhe falar com a gente pelo WhatsApp;
   - **YouTube e Giphy**, quando você assiste a vídeos ou animações incorporados ao blog.
 - **Escolas parceiras no exterior**, somente quando você decide avançar com a contratação de um programa e na medida necessária para a matrícula.
@@ -98,7 +99,7 @@ Exigimos dos nossos fornecedores um nível de proteção compatível com esta po
 
 ## 7. Transferência internacional de dados
 
-Alguns dos fornecedores citados acima, como Netlify e Google, armazenam dados em servidores fora do Brasil, principalmente nos Estados Unidos. Além disso, a contratação de um programa envolve o envio de dados às escolas parceiras no exterior. Nesses casos, a transferência é feita conforme o art. 33 da LGPD, por exemplo com base em cláusulas contratuais ou quando necessária para a execução do contrato que você solicitou.
+Alguns dos fornecedores citados acima, como Netlify, Google, PostHog e Cloudflare, armazenam dados em servidores fora do Brasil, principalmente nos Estados Unidos. Além disso, a contratação de um programa envolve o envio de dados às escolas parceiras no exterior. Nesses casos, a transferência é feita conforme o art. 33 da LGPD, por exemplo com base em cláusulas contratuais ou quando necessária para a execução do contrato que você solicitou.
 
 ---
 
@@ -111,12 +112,12 @@ Cookies são pequenos arquivos salvos no seu navegador quando você visita um si
 ### Quais cookies usamos
 
 - **Necessários:** essenciais para o funcionamento e a segurança do site, incluindo o registro das suas escolhas sobre cookies. Não podem ser desativados.
-- **Estatísticos:** ajudam a entender, de forma agregada, como os visitantes usam o site (por exemplo, Google Analytics). São usados apenas com o seu consentimento.
-- **Marketing:** podem ser usados para medir campanhas e exibir conteúdos relevantes. São usados apenas com o seu consentimento.
+- **Estatísticos:** ajudam a entender, de forma agregada, como os visitantes usam o site (Google Analytics e PostHog). São usados apenas com o seu consentimento.
+- **Marketing:** podem ser usados para medir os resultados dos nossos anúncios (por exemplo, Google Ads e Meta) e exibir conteúdos relevantes. São usados apenas com o seu consentimento.
 
 ### Como gerenciar
 
-Ao acessar o site pela primeira vez, você vê um aviso de cookies (Cookiebot) e pode aceitar, recusar ou personalizar as categorias. Você pode mudar a sua escolha a qualquer momento pelo ícone de cookies exibido no site ou apagando os cookies nas configurações do seu navegador. Recusar cookies não necessários não impede o uso do site.
+Ao acessar o site pela primeira vez, você vê um aviso de cookies e pode aceitar, recusar ou personalizar as categorias. Antes da sua escolha, nenhum cookie estatístico ou de marketing é usado. Você pode mudar a sua escolha a qualquer momento pelo link “Preferências de cookies”, no rodapé de todas as páginas, ou apagando os cookies nas configurações do seu navegador. Recusar cookies não necessários não impede o uso do site.
 
 ---
 

@@ -121,16 +121,17 @@ Cookies are small files stored on your device when you visit the website. They h
 ### How we use cookies
 
 - **Essential:** necessary for the website to function (e.g., language preferences).
-- **Analytics:** to understand how the site is used (e.g., Google Analytics), in aggregate form, to improve content and navigation.
+- **Analytics:** to understand how the site is used (Google Analytics and PostHog), in aggregate form, only with your consent, to improve content and navigation.
 - **Preferences:** to remember settings you have chosen.
+- **Marketing:** to measure the results of our ads (e.g., Google Ads and Meta), only with your consent.
 
 ### Third-party cookies
 
-We may use third-party tools (e.g., Google Analytics) that set their own cookies. Use of such data is governed by those third parties’ privacy policies. You can configure your browser to refuse or limit cookies; in some cases, this may affect website functionality.
+We use third-party tools (Google Analytics and PostHog) that set their own cookies, only after your consent. Cloudflare also counts visits in aggregate form, without cookies. Use of such data is governed by those third parties’ privacy policies. You can configure your browser to refuse or limit cookies; in some cases, this may affect website functionality.
 
 ### Managing cookies
 
-You can adjust cookie settings in your browser (Help or Settings menu). Consent for marketing/analytics cookies may also be managed through a consent tool displayed on the website, when available.
+You can adjust cookie settings in your browser (Help or Settings menu). On your first visit, a cookie notice lets you accept, reject or customize each category; no analytics or marketing cookies are used before you choose. You can change your choice at any time through the “Cookie preferences” link in the footer of every page.
 
 ---
 

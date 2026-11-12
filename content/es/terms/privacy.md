@@ -121,16 +121,17 @@ Las cookies son pequeños archivos almacenados en su dispositivo cuando visita e
 ### Cómo utilizamos las cookies
 
 - **Esenciales:** necesarias para el funcionamiento del sitio (ej.: preferencias de idioma).
-- **Analíticas:** para entender cómo se usa el sitio (ej.: Google Analytics), de forma agregada, con el fin de mejorar contenido y navegación.
+- **Analíticas:** para entender cómo se usa el sitio (Google Analytics y PostHog), de forma agregada, solo con su consentimiento, con el fin de mejorar contenido y navegación.
 - **Preferencias:** para recordar la configuración que ha elegido.
+- **Marketing:** para medir los resultados de nuestros anuncios (ej.: Google Ads y Meta), solo con su consentimiento.
 
 ### Cookies de terceros
 
-Podemos utilizar herramientas de terceros (ej.: Google Analytics) que definen sus propias cookies. El uso de esos datos se rige por las políticas de privacidad de esos terceros. Puede configurar su navegador para rechazar o limitar las cookies; en algunos casos, esto puede afectar funcionalidades del sitio.
+Utilizamos herramientas de terceros (Google Analytics y PostHog) que definen sus propias cookies, solo después de su consentimiento. Cloudflare también cuenta las visitas de forma agregada, sin cookies. El uso de esos datos se rige por las políticas de privacidad de esos terceros. Puede configurar su navegador para rechazar o limitar las cookies; en algunos casos, esto puede afectar funcionalidades del sitio.
 
 ### Gestión de cookies
 
-Puede ajustar la configuración de cookies en su navegador (menú “Ayuda” o “Configuración”). La gestión del consentimiento para cookies de marketing/analíticas puede hacerse también mediante la herramienta de consentimiento mostrada en el sitio, cuando esté disponible.
+Puede ajustar la configuración de cookies en su navegador (menú “Ayuda” o “Configuración”). En su primera visita, un aviso de cookies le permite aceptar, rechazar o personalizar cada categoría; no se usan cookies analíticas ni de marketing antes de su elección. Puede cambiar su elección en cualquier momento con el enlace “Preferencias de cookies” del pie de página.
 
 ---
 
