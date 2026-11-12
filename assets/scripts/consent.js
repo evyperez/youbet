@@ -226,19 +226,30 @@ function track(event, properties = {}) {
   window.dataLayer.push({event, ...properties});
   if (window.posthog && CookieConsent.acceptedCategory('analytics')) {
     window.posthog.capture(event, properties);
+    window.posthog.logger.info('marketing conversion captured', {
+      conversion_event: event,
+      conversion_location: properties.link_location || 'contact_form',
+    });
   }
 }
 
 document.addEventListener('click', (e) => {
-  const link = e.target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com/"]');
-  if (link) {
-    let location = 'page';
-    if (link.classList.contains('whatsapp')) {
-      location = 'floating_button';
-    } else if (link.closest('footer')) {
-      location = 'footer';
-    }
+  const link = e.target.closest('a[href]');
+  if (!link) {
+    return;
+  }
+
+  let location = 'page';
+  if (link.classList.contains('whatsapp')) {
+    location = 'floating_button';
+  } else if (link.closest('footer')) {
+    location = 'footer';
+  }
+
+  if (link.matches('[href*="wa.me/"], [href*="api.whatsapp.com/"]')) {
     track('whatsapp_click', {link_location: location});
+  } else if (link.matches('[href^="mailto:"]')) {
+    track('email_contact_click', {link_location: location});
   }
 });
 
