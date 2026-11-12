@@ -189,3 +189,6 @@ $RECYCLE.BIN/
 
 # Local lint reports
 /testResults/
+
+# Generated CSS (npm run build:css)
+/static/dist/
